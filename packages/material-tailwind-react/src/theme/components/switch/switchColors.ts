@@ -5,9 +5,9 @@ const switchColors: object = {
     before: "peer-checked:before:bg-blue-gray-500",
   },
   gray: {
-    input: "checked:bg-gray-500",
-    circle: "peer-checked:border-gray-500",
-    before: "peer-checked:before:bg-gray-500",
+    input: "checked:bg-gray-900",
+    circle: "peer-checked:border-gray-900",
+    before: "peer-checked:before:bg-gray-900",
   },
   brown: {
     input: "checked:bg-brown-500",

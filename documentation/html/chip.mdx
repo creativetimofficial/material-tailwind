@@ -1,340 +1,399 @@
 ---
 title: Tailwind CSS Chip - Material Tailwind
-description: Customise your web projects with our easy-to-use Chip component for Tailwind CSS using Material Design guidelines.
+description: Use our chip component examples styled with Tailwind CSS to represent inputs, attributes, or actions. Customize them to fit your project's needs.
 navigation:
   [
     "chip",
     "chip-variants",
+    "chip-sizes",
     "chip-colors",
     "chip-with-icon",
     "chip-dismissible",
     "chip-with-avatar",
-    "chip-data-attributes",
-    "chip-trigger-data-attributes",
-    "required-script",
+    "chip-pills",
+    "chip-with-status",
+    "chip-with-checkbox",
+    "similar-components",
+    "more-examples",
+    "best-practices",
   ]
 github: chip
 prev: checkbox
-next: dialog
+next: collapse
 ---
 
-# Tailwind CSS Chips
+# Tailwind CSS Chip
 
-Get started on your web projects with our Tailwind CSS chip which is a compact elements that represent an input, attribute, or action. This element appears dynamically as a group of multiple interactive elements and allows users to enter information, make selections, filter content, or trigger actions.
+Get started on your web projects with our Tailwind CSS Chip (also known as Pills or Tags) which is a compact element that represents an input, attribute, or action. This element appears dynamically as a group of multiple interactive elements and allows users to enter information, make selections, filter content, or trigger actions. 
 
-See below our simple chip component example that you can use for your Tailwind CSS project.
+They often come with the capability to be removed or interacted with, allowing users to manipulate the data or selection represented by the chip.
+
+See below our responsive chip component examples styled with Tailwind CSS that you can use for your web or mobile projects.
 
 <br />
+
+## Chip Examples:
+
+## Default Chip 
+
+Use this simple chip with slate background as a starting point for your application.
 
 <CodePreview
   id="chip"
   link="chip#chip"
-  component={
-    <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      chip
-    </div>
-  }
+  component={<HTMLChipExamples.ChipDefault/>}
 >
-  ```html
-  <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-    chip
-  </div>
-  ```
+```html
+<div class="rounded-md bg-slate-800 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+  Chip
+</div>
+```
 </CodePreview>
 
 ---
 
 ## Chips Variants
 
-Use this example to create a simple and versatile badge component.
+This example presents 4 different styles of chip components styled with Tailwind CSS, showcasing the versatility of chip design for different UI use cases.
 
 <CodePreview
   id="chip-variants"
   link="chip#chip-variants"
-  component={
-    <div className="flex gap-2">
-      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-        <div className="mt-px">chip filled</div>
-      </div>
-      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-        <div className="mt-px">chip gradient</div>
-      </div>
-    </div>
-  }
+  component={<HTMLChipExamples.ChipVariants/>}
 >
-  ```html
-  <div class="flex gap-2">
-    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-blue-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div class="mt-px">chip filled</div>
-    </div>
-    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div class="mt-px">chip gradient</div>
-    </div>
+```html
+<div class="flex gap-2">
+  <div class="rounded-md bg-slate-800 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Chip Filled
   </div>
-  ```
+  <div class="rounded-md bg-gradient-to-tr from-slate-800 to-slate-700 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Chip Gradient
+  </div>
+  <div class="rounded-md border border-slate-300 py-0.5 px-2.5 text-center text-sm transition-all shadow-sm text-slate-600">
+    Chip Outlined
+  </div>
+  <div class="rounded-md bg-slate-100 py-0.5 px-2.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm">
+    Chip Ghost
+  </div>
+</div>
+```
 </CodePreview>
+
+---
+<br />
+
+Each chip is contained within a `<div>` element and designed with a consistent structure but different visual styles: filled, gradient, outlined, and ghost.
+
+## Chips Sizes
+
+Check out this example to see how you can implement chips with different sizes. The differences in size are primarily achieved through varying the padding values.
+
+<CodePreview
+  id="chip-sizes"
+  link="chip#chip-sizes"
+  component={<HTMLChipExamples.ChipSizes/>}
+>
+```html
+<div class="rounded-md bg-slate-800 py-0.5 px-2.5 border border-transparent text-xs text-white transition-all shadow-sm">
+  Small Chip
+</div>
+<div class="rounded-md bg-slate-800 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+  Medium Chip
+</div>
+<div class="rounded-md bg-slate-800 py-1 px-3 border border-transparent text-sm text-white transition-all shadow-sm">
+  Large Chip
+</div>
+```
+</CodePreview>
+
+<br />
+
+The varying sizes allow web designers to cater to different spatial and functional requirements within an interface.
 
 ---
 
 ## Chips Colors
 
-The Chip component comes with 19 different colors that you can change it using the color class, below there are some examples of the colors
+The Chip component comes with 19 different colors like blue, red, green, and amber that you can change using the color class. Check out below some of the available colors in action.
 
 <CodePreview
   id="chip-colors"
   link="chip#chip-colors"
-  component={
-    <div className="flex gap-2">
-      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-blue-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-        <div className="mt-px">blue</div>
-      </div>
-      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-red-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-        <div className="mt-px">red</div>
-      </div>
-      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-green-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-        <div className="mt-px">green</div>
-      </div>
-      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-amber-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-black">
-        <div className="mt-px">amber</div>
-      </div>
-      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-        <div className="mt-px">pink</div>
-      </div>
-      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-indigo-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-        <div className="mt-px">indigo</div>
-      </div>
-      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-purple-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-        <div className="mt-px">purple</div>
-      </div>
-      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-teal-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-        <div className="mt-px">teal</div>
-      </div>
-      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-cyan-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-        <div className="mt-px">cyan</div>
-      </div>
-    </div>
-  }
+  component={<HTMLChipExamples.ChipColors/>}
 >
-  ```html
-  <div class="flex gap-2">
-    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-blue-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div class="mt-px">blue</div>
-    </div>
-    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-red-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div class="mt-px">red</div>
-    </div>
-    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-green-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div class="mt-px">green</div>
-    </div>
-    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-amber-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-black">
-      <div class="mt-px">amber</div>
-    </div>
-    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div class="mt-px">pink</div>
-    </div>
-    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-indigo-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div class="mt-px">indigo</div>
-    </div>
-    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-purple-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div class="mt-px">purple</div>
-    </div>
-    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-teal-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div class="mt-px">teal</div>
-    </div>
-    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-cyan-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div class="mt-px">cyan</div>
-    </div>
+```html
+<div class="flex gap-2">
+  <div class="rounded-md bg-blue-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Blue 
   </div>
-  ```
+  <div class="rounded-md bg-red-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Red 
+  </div>
+  <div class="rounded-md bg-green-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Green 
+  </div>
+  <div class="rounded-md bg-amber-600 py-0.5 px-2.5 border border-transparent text-sm text-slate-800 transition-all shadow-sm">
+    Amber 
+  </div>
+  <div class="rounded-md bg-pink-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Pink 
+  </div>
+  <div class="rounded-md bg-indigo-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Indigo 
+  </div>
+  <div class="rounded-md bg-purple-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Purple 
+  </div>
+  <div class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Teal 
+  </div>
+  <div class="rounded-md bg-cyan-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Cyan 
+  </div>
+</div>
+```
 </CodePreview>
 
 ---
 
 ## Chips with Icon
 
-Use this example to create a simple and versatile badge component.
+The icons, in this example, add a visual element that can improve user understanding or interaction with the chip, such as representing user accounts, settings, notifications, etc.
 
 <CodePreview
   id="chip-with-icon"
   link="chip#chip-with-icon"
-  component={
-    <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div className="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z"></path>
-        </svg>
-      </div>
-      <div className="ml-4  mt-px">downloads</div>
-    </div>
-  }
+  component={<HTMLChipExamples.ChipIcon/>}
 >
-  ```html
-  <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-    <div class="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z"></path>
-      </svg>
-    </div>
-    <div class="ml-4 mt-px">downloads</div>
+```html
+<div class="flex gap-2">
+  <div class="rounded-md flex items-center bg-slate-800 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 mr-1.5">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+    </svg>
+
+    Chip Filled
   </div>
-  ```
+  <div class="rounded-md flex items-center bg-gradient-to-tr from-slate-800 to-slate-700 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 mr-1.5">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+    </svg>
+    
+    Chip Gradient
+  </div>
+  <div class="rounded-md flex items-center border border-slate-300 py-0.5 px-2.5 text-center text-sm transition-all shadow-sm text-slate-600">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 mr-1.5">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+    </svg>
+
+    Chip Outlined
+  </div>
+  <div class="rounded-md flex items-center bg-slate-100 py-0.5 px-2.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 mr-1.5">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+    </svg>
+
+    Chip Ghost
+  </div>
+</div>
+```
 </CodePreview>
 
 ---
 
 ## Chips Dismissible
 
-You can make a chip dismissible by adding the <Code html>data-dismissible="{`chipName`}"</Code> data attribute to the chip element and the <Code html>data-dismissible-target="{`chipName`}"</Code> data attribute to the element that you want to close the chip with.
+You can make a chip dismissible by adding the <Code>data-dismissible="{`chipName`}"</Code> data attribute to the chip element and the <Code>data-dismissible-target="{`chipName`}"</Code> data attribute to the element that you want to close the chip with.
 
 <CodePreview
   id="chip-dismissible"
   link="chip#chip-dismissible"
-  component={
-    <div
-      className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white"
-      data-dismissible="chip"
-    >
-      <div className="mr-5 mt-px">Dismissible</div>
-      <div
-        className="absolute top-1 right-1 mx-px mt-[0.5px] w-max rounded-md bg-pink-800 transition-colors hover:bg-pink-900"
-        data-dismissible-target="chip"
-      >
-        <div role="button" className="h-5 w-5 p-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="3"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
-        </div>
-      </div>
-    </div>
-  }
+   component={<HTMLChipExamples.ChipDismissible/>}
 >
-  ```html
-  <div
-    class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white"
-    data-dismissible="chip"
+```html
+<div id="chip" class="relative rounded-md flex bg-slate-800 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-white transition-all shadow-sm">
+  Dismissible 
+
+  <button
+    class="flex items-center justify-center transition-all p-1 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5"
+    type="button"
+    onclick="closeAlert()"
   >
-    <div class="mr-5 mt-px">Dismissible</div>
-    <div
-      class="absolute top-1 right-1 mx-px mt-[0.5px] w-max rounded-md bg-pink-800 transition-colors hover:bg-pink-900"
-      data-dismissible-target="chip"
-    >
-      <div role="button" class="h-5 w-5 p-1">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="3"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
-        </svg>
-      </div>
-    </div>
-  </div>
-  ```
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+      <path d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
+    </svg>
+  </button>
+</div>
+
+<script>
+  function closeAlert() {
+    const chipElement = document.getElementById('chip');
+    chipElement.style.display = 'none'; // Hide the chip
+  }
+</script>
+```
 </CodePreview>
+
+<br />
+
+The example offers users the ability to remove or dismiss the chip from the UI, typically used in scenarios where users can select and then opt to remove choices, such as tags, filters, or selections. 
 
 ---
 
 ## Chips with Avatar
 
-Use the example below for a chip containing an avatar.
+Use the example below for a chip component containing an avatar. It incorporates visual identity alongside textual information, making it ideal for user interfaces where user recognition is key, such as in social media platforms, messaging apps, or user dashboards.
 
 <CodePreview
   id="chip-with-avatar"
   link="chip#chip-with-avatar"
-  component={
-    <div className="center relative inline-block select-none whitespace-nowrap rounded-full bg-teal-500 px-3.5 py-1.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-      <div className="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
-        <img
-          alt="candice wu"
-          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
-          className="relative inline-block h-5 w-5 translate-x-px translate-y-px rounded-full object-cover object-center"
-        />
-      </div>
-      <div className="ml-4 mt-px">
-        <p className="block font-sans text-sm font-medium capitalize leading-none text-white antialiased">
-          Candice Wu
-        </p>
-      </div>
-    </div>
-  }
+  component={<HTMLChipExamples.ChipWithAvatar/>}
 >
-  ```html
-  <div class="center relative inline-block select-none whitespace-nowrap rounded-full bg-teal-500 px-3.5 py-1.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-    <div class="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
-      <img
-        alt="candice wu"
-        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
-        class="relative inline-block h-5 w-5 translate-x-px translate-y-px rounded-full object-cover object-center"
-      />
-    </div>
-    <div class="ml-4 mt-px">
-      <p class="block font-sans text-sm font-medium capitalize leading-none text-white antialiased">
-        Candice Wu
-      </p>
-    </div>
+```html
+<div class="rounded-full flex items-center bg-slate-800 py-0.5 pr-2.5 pl-1.5 border border-transparent text-sm text-white transition-all shadow-sm">
+  <div class="h-5 w-5 mr-2">
+    <img
+      alt="Tania Andrew"
+      src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+      class="h-full w-full rounded-full object-cover object-center"
+    />
   </div>
-  ```
+  
+  Tania Andrew 
+</div>
+```
 </CodePreview>
 
 ---
 
-## Chip Data Attributes
+## Chip Pills
 
-<span id="chip-data-attributes" className="scroll-mt-48" />
-The following data attributes are available for chip element.
+Use this example of chip if you want to implement a pill-like shape for your component - fully rounded ends (<Code>rounded-full</Code> in Tailwind CSS).
 
-| Attribute          | Description                                                                                                  |
-| ------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `data-dismissible` | Set the chip dismissible name, it should be the same as the <br /> `data-dismissible-target` data attribute. |
-
----
-
-## Chip Trigger Data Attributes
-
-<span id="chip-trigger-data-attributes" className="scroll-mt-48" />
-The following data attributes are available for chip trigger element (The element
-that you want to close the chip with).
-
-| Attribute                 | Description                                                                                                                                  |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `data-dismissible-target` | Hide the chip element that has the same value of `data-dismissible-target` <br /> data attribute for it's `data-dismissible` data attribute. |
-
----
-
-## Required Scrips
-
-<span id="required-script" className="scroll-mt-56" />
-
-The chip component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
-
+<CodePreview
+  id="chip-with-pills"
+  link="chip#chip-with-pills"
+  component={<HTMLChipExamples.ChipPills/>}
+>
 ```html
-<!-- from node_modules -->
-<script src="node_modules/@material-tailwind/html@latest/scripts/dismissible.js"></script>
-
-<!-- from cdn -->
-<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/dismissible.js"></script>
+ <div class="flex gap-2">
+  <div class="rounded-full bg-slate-800 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Chip Filled
+  </div>
+  <div class="rounded-full bg-gradient-to-tr from-slate-800 to-slate-700 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Chip Gradient
+  </div>
+  <div class="rounded-full border border-slate-300 py-0.5 px-2.5 text-center text-sm transition-all shadow-sm text-slate-600">
+    Chip Outlined
+  </div>
+  <div class="rounded-full bg-slate-100 py-0.5 px-2.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm">
+    Chip Ghost
+  </div>
+</div>
 ```
+</CodePreview>
+
+---
+
+## Chip with Status
+
+This example showcases 2 status indicator chips: one indicating "Online" status and the other indicating "Offline" status. These chips use color coding, text, and a visual marker to convey the status clearly and concisely.
+
+<CodePreview
+  id="chip-with-status"
+  link="chip#chip-with-status"
+  component={<HTMLChipExamples.ChipWithStatus/>}
+>
+```html
+<div class="flex gap-2">
+  <div class="rounded-md flex items-center bg-green-100 py-0.5 px-2.5 border border-transparent text-sm text-green-800 transition-all shadow-sm">
+    <div class="mx-auto block h-2 w-2 rounded-full bg-green-800 mr-2"></div>
+    Online 
+  </div>
+
+  <div class="rounded-md flex items-center bg-red-100 py-0.5 px-2.5 border border-transparent text-sm text-red-800 transition-all shadow-sm">
+    <div class="mx-auto block h-2 w-2 rounded-full bg-red-800 mr-2"></div>
+    Offline 
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Chip with Checkbox
+
+This example showcases 2 interactive status indicator chips featuring "Online" and "Offline" statuses, each with a toggleable checkbox to change the status.
+
+<CodePreview
+  id="chip-with-checkbox"
+  link="chip#chip-with-checkbox"
+  component={<HTMLChipExamples.ChipWithCheckbox/>}
+>
+```html
+<div class="flex gap-2">
+<div class="rounded-md flex items-center bg-green-100 py-0.5 pr-2.5 pl-1.5 border border-transparent text-sm text-green-800 transition-all shadow-sm">
+  <div class="inline-flex items-center mr-2">
+    <label class="flex items-center cursor-pointer relative">
+      <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded border border-green-300 checked:bg-green-600 checked:border-green-600" id="check4" />
+      <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  Online 
+</div>
+
+<div class="rounded-md flex items-center bg-red-100 py-0.5 pr-2.5 pl-1.5 border border-transparent text-sm text-red-800 transition-all shadow-sm">
+  <div class="inline-flex items-center mr-2">
+    <label class="flex items-center cursor-pointer relative">
+      <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded border border-red-300 checked:bg-red-600 checked:border-red-600" id="check5" />
+      <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  Offline 
+</div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+
+<span id="more-examples"></span>
+## Explore More Tailwind CSS Examples
+Check out more chip components examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.
+
+
+---
+<span id="similar-components"></span>
+## Similar Components
+
+Similar components to the chip include: <b><a href="https://www.material-tailwind.com/docs/html/badge" target="_blank">badges</a>, tags, pills, <a href="https://www.material-tailwind.com/docs/html/button" target="_blank">buttons</a>, <a href="https://www.material-tailwind.com/docs/html/tooltip" target="_blank">tooltips</a></b>.
+
+
+---
+<br />
+
+<span id="best-practices"></span>
+## Chip Components Best Practices for Developers <br />
+• Chips should have concise and descriptive labels that clearly convey their purpose or the information they represent.<br />
+• Keep a consistent look and feel for chips across your application to maintain a cohesive user interface.<br />
+• For chips that perform actions (e.g., deletable or selectable chips), make it clear that they are interactive.<br /> 
+• Ensure that chips are large enough to be easily tapped on touch devices, following recommended touch target sizes.<br />
+• Avoid overwhelming users with too many chips at once. 
+
+
+
+
+

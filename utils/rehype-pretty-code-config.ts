@@ -1,4 +1,4 @@
-const config = {
+export const rehypePrettyCodeConfig = {
   theme: "github-dark",
   onVisitLine(node) {
     if (node.children.length === 0) {
@@ -11,6 +11,7 @@ const config = {
   onVisitHighlightedWord(node) {
     node.properties.className = ["word"];
   },
+  keepBackground: false,
 };
 
-export default config;
+export default rehypePrettyCodeConfig;

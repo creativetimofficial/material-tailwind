@@ -12,7 +12,7 @@ import { propTypesColors } from "../generic";
 // typescript types
 export type variant = "standard" | "outlined" | "static";
 export type size = "md" | "lg";
-export type color = colors;
+export type color = "black" | "white" | colors;
 export type label = string;
 export type error = boolean;
 export type success = boolean;
@@ -30,7 +30,7 @@ export type className = string;
 // javascript prop-types
 export const propTypesVariant: any = ["standard", "outlined", "static"];
 export const propTypesSize: any = ["md", "lg"];
-export const propTypesColor: any = propTypesColors;
+export const propTypesColor: any = ["black", "white", ...propTypesColors];
 export const propTypesLabel: any = PropTypes.string;
 export const propTypesError: any = PropTypes.bool;
 export const propTypesSuccess: any = PropTypes.bool;

@@ -1,0 +1,461 @@
+---
+title: Tailwind CSS Image Gallery for HTML - Material Tailwind
+description: Start with our image gallery examples styled with Tailwind CSS if you want to allow users to browse, view, or interact with a collection of images.
+navigation:
+  [
+    "gallery",
+    "masonry-grid-gallery",
+    "featured-image-gallery",
+    "quad-gallery",
+    "gallery-with-tab",
+    "more-examples"
+  ]
+github: skeleton
+prev: form
+next: icon-button
+---
+
+<DocsTitle href="gallery">
+# Tailwind CSS Image Gallery
+</DocsTitle>
+
+Get started with our image gallery component if you want to allow users to browse, view, or interact with a collection of images.  
+
+Image galleries can be implemented in various ways, including grid layouts, carousels, or slideshows, depending on the design and user experience goals. 
+
+See below our simple <Code>Gallery</Code> examples styled with Tailwind CSS that you can use in your development projects.
+
+<br />
+
+## Image Gallery Examples:
+
+## Simple Grid Image Gallery
+
+Use this example if you are looking for a clean, straightforward presentation of images in a grid format that adapts from a single column on smaller screens to multiple columns on larger screens.
+
+All images are styled to have the same width and height, creating a uniform look across the gallery. The <Code>object-cover</Code> CSS class ensures that images fill their designated space without distorting their aspect ratios, cropping as necessary.
+
+<CodePreview component={<HTMLGalleryExamples.DefaultGallery />}>
+```html
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+  <div>
+    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+      src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
+      alt="gallery-photo" />
+  </div>
+  <div>
+    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+      src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
+      alt="gallery-photo" />
+  </div>
+  <div>
+    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+      src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2560&amp;q=80"
+      alt="gallery-photo" />
+  </div>
+  <div>
+    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+      src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+      alt="gallery-photo" />
+  </div>
+  <div>
+    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+      src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
+      alt="gallery-photo" />
+  </div>
+  <div>
+    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+      src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+      alt="gallery-photo" />
+  </div>
+  <div>
+    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+      src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg" alt="gallery-photo" />
+  </div>
+  <div>
+    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+      src="https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg" alt="gallery-photo" />
+  </div>
+  <div>
+    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+      src="https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1493&amp;q=80"
+      alt="gallery-photo" />
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="masonry-grid-gallery">
+## Masonry Grid Galery
+</DocsTitle>
+
+Use this example of responsive image gallery component if you want to add an additional layer of complexity by embedding grids within grids.
+
+<br/>
+
+<CodePreview component={<HTMLGalleryExamples.MasonryGridGallery />}>
+```html
+<div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+  <div class="grid gap-4">
+    <div>
+      <img
+        class="h-auto max-w-full rounded-lg object-cover object-center"
+        src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
+        alt="gallery-photo"
+      />
+    </div>
+    <div>
+      <img
+        class="h-auto max-w-full rounded-lg object-cover object-center "
+        src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80"
+        alt="gallery-photo"
+      />
+    </div>
+    <div>
+      <img
+        class="h-auto max-w-full rounded-lg object-cover object-center"
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+        alt="gallery-photo"
+      />
+    </div>
+  </div>
+  <div class="grid gap-4">
+    <div>
+      <img
+        class="h-auto max-w-full rounded-lg object-cover object-center"
+        src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
+        alt="gallery-photo"
+      />
+    </div>
+    <div>
+      <img
+        class="h-auto max-w-full rounded-lg object-cover object-center"
+        src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+        alt="gallery-photo"
+      />
+    </div>
+    <div>
+      <img
+        class="h-auto max-w-full rounded-lg object-cover object-center "
+        src="https://docs.material-tailwind.com/img/team-3.jpg"
+        alt="gallery-photo"
+      />
+    </div>
+  </div>
+  <div class="grid gap-4">
+    <div>
+      <img
+        class="h-auto max-w-full rounded-lg object-cover object-center"
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+        alt="gallery-photo"
+      />
+    </div>
+    <div>
+      <img
+        class="h-auto max-w-full rounded-lg object-cover object-center "
+        src="https://docs.material-tailwind.com/img/team-3.jpg"
+        alt="gallery-photo"
+      />
+    </div>
+    <div>
+      <img
+        class="h-auto max-w-full rounded-lg object-cover object-center"
+        src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
+        alt="gallery-photo"
+      />
+    </div>
+  </div>
+  <div class="grid gap-4">
+    <div>
+      <img
+        class="h-auto max-w-full rounded-lg object-cover object-center"
+        src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
+        alt="gallery-photo"
+      />
+    </div>
+    <div>
+      <img
+        class="h-auto max-w-full rounded-lg object-cover object-center"
+        src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80"
+        alt="gallery-photo"
+      />
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+<br />
+
+The nested grid approach adds a layer of visual hierarchy, making the gallery more interesting and dynamic compared to a simple flat grid. It allows for grouping images in a way that can tell a story or highlight certain aspects of a collection.
+
+---
+
+
+<DocsTitle href="featured-image-gallery">
+##  Featured Image Galery 
+</DocsTitle>
+
+This example showcases one large featured image followed by a row of smaller thumbnail images. This design structure is common in product galleries, portfolios, and anywhere a featured image alongside selectable alternatives is wanted. 
+
+<br/>
+
+<CodePreview component={<HTMLGalleryExamples.FeaturedImageGallery />}>
+```html
+<div class="grid gap-4">
+  <div>
+    <img class="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
+      src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
+      alt="" />
+  </div>
+  <div class="grid grid-cols-5 gap-4">
+    <div>
+      <img
+        src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
+        class="object-cover object-center h-20 max-w-full rounded-lg cursor-pointer" alt="gallery-image" />
+    </div>
+    <div>
+      <img
+        src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
+        class="object-cover object-center h-20 max-w-full rounded-lg cursor-pointer" alt="gallery-image" />
+    </div>
+    <div>
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+        class="object-cover object-center h-20 max-w-full rounded-lg cursor-pointer" alt="gallery-image" />
+    </div>
+    <div>
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
+        class="object-cover object-center h-20 max-w-full rounded-lg cursor-pointer" alt="gallery-image" />
+    </div>
+    <div>
+      <img
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+        class="object-cover object-center h-20 max-w-full rounded-lg cursor-pointer" alt="gallery-image" />
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+
+<DocsTitle href="quad-gallery">
+##  Quad Image Galery
+</DocsTitle>
+
+Use this example of image gallery component styled with Tailwind CSS to display images in a horizontal scrollable format on smaller screens, and in a more expanded layout on larger screens.
+
+<br/>
+
+<CodePreview component={<HTMLGalleryExamples.QuadGallery />}>
+```html
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+  <div class="grid grid-cols-2 gap-2">
+    <div>
+      <img class="object-cover object-center h-40 max-w-full rounded-lg md:h-60"
+        src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
+        alt="" />
+    </div>
+    <div>
+      <img class="object-cover object-center h-40 max-w-full rounded-lg md:h-60"
+        src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
+        alt="" />
+    </div>
+    <div>
+      <img class="object-cover object-center h-40 max-w-full rounded-lg md:h-60"
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2560&amp;q=80"
+        alt="" />
+    </div>
+    <div>
+      <img class="object-cover object-center h-40 max-w-full rounded-lg md:h-60"
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+        alt="" />
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+<br />
+
+Each image is wrapped in its own <Code>div</Code> and styled with classes to ensure they are displayed effectively:<br />
+
+• <Code>object-cover object-center</Code> ensures the image covers its container without distorting the aspect ratio, with the focus on the center of the image.<br />
+• <Code>h-40 max-w-full rounded-lg</Code> sets a fixed height of 40 units for the images, ensures they don't exceed the width of their container, and applies rounded corners.<br />
+• <Code>md:h-60</Code> increases the height of the images to 60 units on medium screens and larger, offering a responsive design that adapts to different screen sizes.
+
+---
+
+
+<DocsTitle href="gallery-with-tab">
+##  Image Gallery With Tab  
+</DocsTitle>
+
+Use this example of gallery component if you want to allow users to switch between different sets of images by clicking on tabs labeled "App", "Messages", and "Settings".  The tabbed interface is perfect for applications where categorizing images into groups is necessary.
+
+<br/>
+
+<CodePreview component={<HTMLGalleryExamples.GalleryWithTab />}>
+```html
+<div class="w-full">
+  <div class="relative right-0">
+    <div class="w-full">
+      <div class="relative right-0">
+        <ul class="relative flex flex-wrap px-1.5 py-1.5 list-none rounded-md bg-slate-100" data-tabs="tabs" role="list">
+          <li class="z-30 flex-auto text-center">
+            <a
+              class="z-30 flex items-center justify-center w-full px-0 py-2 text-sm mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+              data-tab-target=""
+              role="tab"
+              aria-selected="true"
+              aria-controls="app"
+            >
+              <span class="ml-1">App</span>
+            </a>
+          </li>
+          <li class="z-30 flex-auto text-center">
+            <a
+              class="z-30 flex items-center justify-center w-full px-0 py-2 text-sm mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+              data-tab-target=""
+              role="tab"
+              aria-selected="false"
+              aria-controls="message"
+            >
+              <span class="ml-1">Messages</span>
+            </a>
+          </li>
+          <li class="z-30 flex-auto text-center">
+            <a class="z-30 flex items-center justify-center w-full px-0 py-2 text-sm mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+              data-tab-target=""
+              role="tab"
+              aria-selected="false"
+              aria-controls="settings"
+            >
+              Settings
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div> 
+    <div data-tab-content="" class="p-5">
+      <div class="block opacity-100" id="app" role="tabpanel">
+        <div role="tabpanel"
+          class="grid w-full grid-cols-3 gap-4 p-4 font-sans text-base antialiased font-light leading-relaxed text-gray-700 h-max"
+          data-value="html">
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+              alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
+              alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+              alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg" alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg" alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1493&amp;q=80"
+              alt="image-photo" />
+          </div>
+        </div>
+      </div>
+      <div class="hidden opacity-0" id="message" role="tabpanel">
+        <div role="tabpanel"
+          class="grid w-full grid-cols-3 gap-4 p-4 font-sans text-base antialiased font-light leading-relaxed text-gray-700 h-max"
+          data-value="html">
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg" alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg" alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1493&amp;q=80"
+              alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+              alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
+              alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+              alt="image-photo" />
+          </div>
+        </div>
+      </div>
+      <div class="hidden opacity-0" id="settings" role="tabpanel">
+        <div role="tabpanel"
+          class="grid w-full grid-cols-3 gap-4 p-4 font-sans text-base antialiased font-light leading-relaxed text-gray-700 h-max"
+          data-value="html">
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+              alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
+              alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg" alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg" alt="image-photo" />
+          </div>
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1493&amp;q=80"
+              alt="image-photo" />
+          </div>
+
+          <div>
+            <img class="w-full h-40 max-w-full rounded-lg"
+              src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+              alt="image-photo" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+<span id="more-examples"></span>
+## Explore More Tailwind CSS Examples
+Check out more gallery component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

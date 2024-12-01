@@ -1,18 +1,17 @@
 ---
 title: Tailwind CSS Alert - Material Tailwind
-description: Customise your web projects with our easy-to-use Alert component for Tailwind CSS using Material Design guidelines.
+description: Use our beautiful examples of alert component examples styled with Tailwind CSS to provide contextual feedback messages for typical user actions.
 navigation:
   [
     "alert",
     "alert-variants",
     "alert-colors",
     "alert-with-icon",
+    "alert-with-list",
     "alert-dismissible",
     "custom-alert-close-icon",
     "alert-with-content",
-    "alert-data-attributes",
-    "alert-trigger-data-attributes",
-    "required-script",
+    "more-examples",
   ]
 github: alert
 prev: accordion
@@ -28,192 +27,249 @@ An alert displays a short and important message attracting the user's attention 
 Below we are presenting examples of alerts that you can use in your Tailwind CSS project. The examples come in different colors and styles so you can adapt them easily to your needs.
 
 <br />
+
+## Alert Examples:
+
+## Simple Alert
+This example of alert with white text and dark gray background creates a high contrast ratio that improves readability and attracts attention.
+
 <CodePreview
   id="alert"
   link="alert#alert"
-  component={
-    <div className="font-regular relative block w-full rounded-lg bg-pink-500 p-4 text-base leading-5 text-white opacity-100">
-      Alert primary
-    </div>
-  }
+  component={<HTMLAlertExamples.AlertDefault />}
 >
-  ```html
-  <div class="font-regular relative block w-full rounded-lg bg-pink-500 p-4 text-base leading-5 text-white opacity-100">
-    Alert primary
-  </div>
-  ```
+```html
+<div role="alert" class="mt-3 relative flex w-full p-3 text-sm text-white bg-slate-800 rounded-md">
+  A simple filled alert for showing message.
+  <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+  </button>
+</div>
+```
 </CodePreview>
 
 ---
 
 ## Alert Variants
 
-The alert component comes with 2 different variants that you can change it using the gradient classes.
+The alert component comes with 3 different variants that you can change using the gradient classes.
 
 <CodePreview
   id="alert-variants"
   link="alert#alert-variants"
-  component={
-    <div className="flex w-full flex-col gap-2">
-      <div className="font-regular relative block w-full rounded-lg bg-pink-500 p-4 text-base leading-5 text-white opacity-100">
-        Alert primary
-      </div>
-      <div className="font-regular relative mb-4 block w-full rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 p-4 text-base leading-5 text-white opacity-100">
-        Alert primary
-      </div>
-    </div>
-  }
+  component={<HTMLAlertExamples.AlertVariants />}
 >
-  ```html
-  <div class="flex w-full flex-col gap-2">
-    <div class="font-regular relative block w-full rounded-lg bg-pink-500 p-4 text-base leading-5 text-white opacity-100">
-      Alert primary
-    </div>
-    <div class="font-regular relative mb-4 block w-full rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 p-4 text-base leading-5 text-white opacity-100">
-      Alert primary
-    </div>
-  </div>
-  ```
+```html
+<div role="alert" class="mt-3 relative flex w-full p-3 text-sm text-white bg-slate-800 rounded-md">
+  A simple filled alert for showing message.
+  <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+  </button>
+</div>
+
+<div role="alert" class="mt-3 relative flex w-full p-3 text-sm text-white bg-slate-800 rounded-md">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+  A simple filled alert for showing message.
+  <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+  </button>
+</div>
+
+<div role="alert" class="mt-3 relative flex w-full p-3 text-sm text-white bg-gradient-to-tr from-slate-800 to-slate-700 rounded-md">
+  A simple gradient alert for showing message.
+  <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+  </button>
+</div>
+
+<div role="alert" class="mt-3 relative flex w-full p-3 text-sm text-slate-600 border border-slate-300 rounded-lg font-regular">
+  A simple outlined alert for showing message.
+  <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-slate-100 active:bg-slate-100 absolute top-1.5 right-1.5" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5 text-slate-600" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+  </button>
+</div>
+
+<div role="alert" class="mt-3 relative flex w-full p-3 text-sm text-slate-600 rounded-md bg-slate-100">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>    
+  A simple ghost alert for showing message.
+  <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-slate-200 active:bg-slate-200 absolute top-1.5 right-1.5" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5 text-slate-600" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+  </button>
+</div>
+```
 </CodePreview>
 
 ---
 
 ## Alert Colors
 
-The alert component comes with 19 different colors that you can change it using the color classes, below there are some examples of the colors but you can check all of the them.
+The alert component comes with 19 different colors that you can change using the color classes, below you can find some of the available colors.
 
 <CodePreview
   id="alert-colors"
   link="alert#alert-colors"
-  component={
-    <div className="block w-full">
-      <div className="font-regular relative mb-4 block w-full rounded-lg bg-blue-500 p-4 text-base leading-5 text-white opacity-100">
-        An info alert for showing message.
-      </div>
-      <div className="font-regular relative mb-4 block w-full rounded-lg bg-red-500 p-4 text-base leading-5 text-white opacity-100">
-        An error alert for showing message.
-      </div>
-      <div className="font-regular relative mb-4 block w-full rounded-lg bg-green-500 p-4 text-base leading-5 text-white opacity-100">
-        A success alert for showing message.
-      </div>
-      <div className="font-regular relative mb-4 block w-full rounded-lg bg-orange-500 p-4 text-base leading-5 text-white opacity-100">
-        A warning alert for showing message.
-      </div>
-    </div>
-  }
+   component={<HTMLAlertExamples.AlertColors />}
 >
-  ```html
-  <div class="font-regular relative mb-4 block w-full rounded-lg bg-blue-500 p-4 text-base leading-5 text-white opacity-100">
+```html
+  <div role="alert" class="mb-4 relative flex w-full p-3 text-sm text-white bg-blue-600 rounded-md">
     An info alert for showing message.
+    <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
   </div>
-  <div class="font-regular relative mb-4 block w-full rounded-lg bg-red-500 p-4 text-base leading-5 text-white opacity-100">
-    An error alert for showing message.
+  <div role="alert" class="mb-4 relative flex w-full p-3 text-sm text-white bg-red-600 rounded-md">
+    An red alert for showing message.
+    <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
   </div>
-  <div class="font-regular relative mb-4 block w-full rounded-lg bg-green-500 p-4 text-base leading-5 text-white opacity-100">
-    A success alert for showing message.
+  <div role="alert" class="mb-4 relative flex w-full p-3 text-sm text-white bg-green-600 rounded-md">
+    An success alert for showing message.
+    <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
   </div>
-  <div class="font-regular relative mb-4 block w-full rounded-lg bg-orange-500 p-4 text-base leading-5 text-white opacity-100">
-    A warning alert for showing message.
+  <div role="alert" class="mb-4 relative flex w-full p-3 text-sm text-white bg-orange-600 rounded-md">
+    An warning alert for showing message.
+    <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
   </div>
-  ```
+```
 </CodePreview>
 
 ---
 
 ## Alert with Icon
 
-You can add an icon at the beginning of alert component using the <Code html>i</Code> tag.
+You can add an icon at the beginning of the alert component using the <Code>svg</Code> tag.
 
 <CodePreview
   id="alert-with-icon"
   link="alert#alert-with-icon"
-  component={
-    <div className="font-regular relative mb-4 block w-full rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 p-4 text-base leading-5 text-white opacity-100">
-      <i className="fas fa-exclamation mr-2"></i>
-      Alert with Icon
-    </div>
-  }
+  component={<HTMLAlertExamples.AlertIcon />}
 >
-  ```html
-  <div class="font-regular relative mb-4 block w-full rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 p-4 text-base leading-5 text-white opacity-100">
-    <i class="fas fa-exclamation mr-2"></i>
-    Alert with Icon
-  </div>
-  ```
+```html
+<div role="alert" class="mt-3 relative flex w-full p-3 text-sm text-white bg-slate-800 rounded-md">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+    A simple filled alert for showing message.
+  <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+  </button>
+</div>
+```
 </CodePreview>
 
 ---
 
+
+## Alert with List
+
+You can add any element you want for the Alert component, below you can see an example of alert with a list inside.
+
+<CodePreview
+  id="alert-with-list"
+  link="alert#alert-with-list"
+  component={<HTMLAlertExamples.AlertWithList />}
+>
+```html
+<div class="flex w-full flex-col gap-2">
+  <div role="alert" class="mt-3 relative flex flex-col w-full p-3 text-sm text-white bg-slate-800 rounded-md">
+    <p class="flex">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+      Ensure that these requirements are met:
+    </p>
+    <ul class="mt-2 ml-7 list-inside list-disc">
+      <li>At least 10 characters (and up to 100 characters)</li>
+      <li>At least one lowercase character</li>
+      <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+    </ul>
+    
+    <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+  </div>
+  <div role="alert" class="mt-3 relative flex flex-col w-full p-3 text-sm text-white bg-gradient-to-tr from-slate-800 to-slate-700 rounded-md">
+    <p class="flex">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+      Ensure that these requirements are met:
+    </p>
+    <ul class="mt-2 ml-7 list-inside list-disc">
+      <li>At least 10 characters (and up to 100 characters)</li>
+      <li>At least one lowercase character</li>
+      <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+    </ul>
+    
+    <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+  </div>
+
+
+  <div role="alert" class="mt-3 relative flex flex-col w-full p-3 text-sm text-slate-600 border border-slate-300 rounded-lg font-regular">
+    <p class="flex">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+      Ensure that these requirements are met:
+    </p>
+    <ul class="mt-2 ml-7 list-inside list-disc">
+      <li>At least 10 characters (and up to 100 characters)</li>
+      <li>At least one lowercase character</li>
+      <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+    </ul>
+    
+    <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-slate-100 active:bg-slate-100 absolute top-1.5 right-1.5" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5 text-slate-600" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+  </div>
+
+  <div role="alert" class="mt-3 relative flex flex-col w-full p-3 text-sm text-slate-600 rounded-md bg-slate-100">
+    <p class="flex">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+      Ensure that these requirements are met:
+    </p>
+    <ul class="mt-2 ml-7 list-inside list-disc">
+      <li>At least 10 characters (and up to 100 characters)</li>
+      <li>At least one lowercase character</li>
+      <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+    </ul>
+    
+    <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-slate-200 active:bg-slate-200 absolute top-1.5 right-1.5" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5 text-slate-600" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
 ## Alert Dismissible
 
-You can make an alert dismissible by adding the <Code html>data-dismissible="{`alertName`}"</Code> data attribute to the alert element and the <Code html>data-dismissible-target="{`alertName`}"</Code> data attribute to the element that you want to close the alert with.
+The dismissible alert is a user interface component that displays a message with the option to close or hide it. It includes a close button, allowing users to easily dismiss the alert by clicking the button, enhancing the user experience by keeping the interface clean and free of unnecessary messages. Ideal for notifications, warnings, or informational messages that the user can manually dismiss.
 
 <CodePreview
   id="alert-dismissible"
   link="alert#alert-dismissible"
-  component={
-    <div
-      className="font-regular relative block w-full rounded-lg bg-pink-500 p-4 text-base leading-5 text-white opacity-100"
-      data-dismissible="alert"
-    >
-      <div className="mr-12">Alert dismissible</div>
-      <div
-        className="absolute top-2.5 right-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20"
-        data-dismissible-target="alert"
-      >
-        <button role="button" className="w-max rounded-lg p-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-  }
+  component={<HTMLAlertExamples.AlertDismissible />}
 >
-  ```html
-  <div
-    class="font-regular relative block w-full rounded-lg bg-pink-500 p-4 text-base leading-5 text-white opacity-100"
-    data-dismissible="alert"
-  >
-    <div class="mr-12">Alert dismissible</div>
-    <div
-      class="absolute top-2.5 right-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20"
-      data-dismissible-target="alert"
-    >
-      <button
-        role="button"
-        class="w-max rounded-lg p-1"
-        data-alert-dimissible="true"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
-        </svg>
-      </button>
-    </div>
-  </div>
-  ```
+```html
+<div role="alert" class="mt-3 relative flex w-full p-3 text-sm text-white bg-slate-800 rounded-md" id="alert">
+  A dismissible alert with closing button.
+  <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button" onclick="closeAlert()">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+</div> 
+
+<script>
+  function closeAlert() {
+    const alertElement = document.getElementById('alert');
+    alertElement.style.display = 'none'; // Hides the alert
+  }
+</script>
+```
 </CodePreview>
 
 ---
@@ -225,240 +281,63 @@ You can use any DOM element as the alert closing icon.
 <CodePreview
   id="custom-alert-close-icon"
   link="alert#custom-alert-close-icon"
-  component={
-    <div
-      className="font-regular relative block w-full rounded-lg bg-gradient-to-tr from-red-600 to-red-400 px-4 py-4 text-base text-white"
-      data-dismissible="alert"
-    >
-      <div className="absolute top-4 left-4">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          aria-hidden="true"
-          className="h-6 w-6"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
-            clip-rule="evenodd"
-          ></path>
-        </svg>
-      </div>
-      <div className="ml-8 mr-12">
-        Sorry, something went wrong please try again.
-      </div>
-      <div
-        className="absolute top-3 right-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20"
-        data-dismissible-target="alert"
-      >
-        <div role="button" className="w-max">
-          <button
-            className="select-none rounded-lg py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white transition-all hover:bg-white/10 active:bg-white/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-            type="button"
-            data-ripple-dark="true"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  }
+  component={<HTMLAlertExamples.AlertCustomCloseIcon />}
 >
-  ```html
-  <div
-    class="font-regular relative block w-full rounded-lg bg-gradient-to-tr from-red-600 to-red-400 px-4 py-4 text-base text-white"
-    data-dismissible="alert"
-  >
-    <div class="absolute top-4 left-4">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        aria-hidden="true"
-        class="h-6 w-6"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
-          clip-rule="evenodd"
-        ></path>
-      </svg>
-    </div>
-    <div class="ml-8 mr-12">Sorry, something went wrong please try again.</div>
-    <div
-      class="absolute top-3 right-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20"
-      data-dismissible-target="alert"
-    >
-      <div role="button" class="w-max">
-        <button
-          class="select-none rounded-lg py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white transition-all hover:bg-white/10 active:bg-white/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-          type="button"
-          data-ripple-dark="true"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-  ```
+```html
+<div
+  role="alert"
+  class="mt-3 relative flex w-full p-3 text-sm text-white bg-slate-800 rounded-md"
+  id="alert"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+  </svg>
+
+  Sorry, something went wrong please try again.
+  <button onclick="closeAlert()" class="flex items-center justify-center transition-all px-2 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+    Close
+  </button>
+</div>
+
+<script>
+  function closeAlert() {
+    const alertElement = document.getElementById('alert');
+    alertElement.style.display = 'none'; // Hides the alert
+  }
+</script>
+```
 </CodePreview>
 
 ---
 
 ## Alert with Content
 
-Use the example below to use alert component with more content like title and description.
+Use the example below to use an alert component with content elements like title and description.
 
 <CodePreview
   id="alert-with-content"
   link="alert#alert-with-content"
-  component={
-    <div
-      className="font-regular relative block w-full max-w-screen-md rounded-lg bg-green-500 px-4 py-4 text-base text-white"
-      data-dismissible="alert"
-    >
-      <div className="absolute top-4 left-4">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          aria-hidden="true"
-          className="mt-px h-6 w-6"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-            clip-rule="evenodd"
-          ></path>
-        </svg>
-      </div>
-      <div className="ml-8 mr-12">
-        <h5 className="block font-sans text-xl font-semibold leading-snug tracking-normal text-white antialiased">
-          Success
-        </h5>
-        <p className="mt-2 block font-sans text-base font-normal leading-relaxed text-white antialiased">
-          I don't know what that word means. I'm happy. But success, that goes
-          back to what in somebody's eyes success means. For me, success is
-          inner peace. That's a good day htmlFor me.
-        </p>
-      </div>
-      <div
-        data-dismissible-target="alert"
-        data-ripple-dark="true"
-        className="absolute top-3 right-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20"
-      >
-        <div role="button" className="w-max rounded-lg p-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
-        </div>
-      </div>
-    </div>
-  }
+  component={<HTMLAlertExamples.AlertWithContent />}
 >
-  ```html
-  <div
-    class="font-regular relative block w-full max-w-screen-md rounded-lg bg-green-500 px-4 py-4 text-base text-white"
-    data-dismissible="alert"
-  >
-    <div class="absolute top-4 left-4">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        aria-hidden="true"
-        class="mt-px h-6 w-6"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-          clip-rule="evenodd"
-        ></path>
-      </svg>
-    </div>
-    <div class="ml-8 mr-12">
-      <h5 class="block font-sans text-xl font-semibold leading-snug tracking-normal text-white antialiased">
-        Success
-      </h5>
-      <p class="mt-2 block font-sans text-base font-normal leading-relaxed text-white antialiased">
-        I don't know what that word means. I'm happy. But success, that goes
-        back to what in somebody's eyes success means. For me, success is inner
-        peace. That's a good day for me.
-      </p>
-    </div>
-    <div
-      data-dismissible-target="alert"
-      data-ripple-dark="true"
-      class="absolute top-3 right-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20"
-    >
-      <div role="button" class="w-max rounded-lg p-1">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
-        </svg>
-      </div>
-    </div>
-  </div>
-  ```
+```html
+<div role="alert" class="mt-3 relative flex flex-col w-full p-3 text-sm text-white bg-green-600 rounded-md">
+  <p class="flex text-base">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 mr-2 mt-0.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+    Success
+  </p>
+  <p class="ml-4 p-3">
+    I don&apos;t know what that word means. Im happy. But success, that goes back to what in somebody&apos;s eyes success means. For me, success is inner peace. That&apos;s a good day for me.
+  </p>
+  
+  <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+  </button>
+</div>
+```
 </CodePreview>
 
 ---
+<span id="more-examples"></span>
 
-## Alert Data Attributes
-
-<span id="alert-data-attributes" className="scroll-mt-48" />
-The following data attributes are available for alert element.
-
-| Attribute          | Description                                                                                                   |
-| ------------------ | ------------------------------------------------------------------------------------------------------------- |
-| `data-dismissible` | Set the alert dismissible name, it should be the same as the <br /> `data-dismissible-target` data attribute. |
-
----
-
-## Alert Trigger Data Attributes
-
-<span id="alert-trigger-data-attributes" className="scroll-mt-48" />
-The following data attributes are available for alert trigger element (The element
-that you want to close the alert with).
-
-| Attribute                 | Description                                                                                                                                   |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `data-dismissible-target` | Hide the alert element that has the same value of `data-dismissible-target` <br /> data attribute for it's `data-dismissible` data attribute. |
-
----
-
-## Required Scrips
-
-<span id="required-script" className="scroll-mt-56" />
-
-The alert component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
-
-```html
-<!-- from node_modules -->
-<script src="node_modules/@material-tailwind/html@latest/scripts/dismissible.js"></script>
-
-<!-- from cdn -->
-<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/dismissible.js"></script>
-```
+## Explore More Tailwind CSS Examples
+Looking for more alert examples? Check out our **<a href="https://www.material-tailwind.com/blocks/banner-sections" target="_blank">banner examples</a>** from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

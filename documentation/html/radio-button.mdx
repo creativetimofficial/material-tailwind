@@ -1,693 +1,708 @@
 ---
-title: Tailwind CSS Radio - Material Tailwind
-description: Customise your web projects with our easy-to-use Radio component for Tailwind CSS using Material Design guidelines.
+title: Tailwind CSS Radio Button - Material Tailwind
+description: Create easy-to-use radio buttons for your web projects starting from our Tailwind CSS component examples. The radio button will let your users choose only one of a predefined set of mutually exclusive options.
 navigation:
   [
     "radio-button",
     "radio-button-colors",
-    "radio-button-ripple-effect",
+    "radio-ripple-effect",
+    "radio-disabled",
+    "radio-with-link",
+    "radio-with-description",
+    "radio-custom-icon",
+    "radio-vertical-list-group",
+    "radio-horizontal-list-group",
+    "radio-custom-styles",
     "required-script",
+    "more-examples",
+    "best-practices",
   ]
 github: radio-button
 prev: progress-bar
-next: select
+next: Rating
 ---
 
-# Tailwind CSS Radio
+# Tailwind CSS Radio Button
 
-Our Tailwind CSS radio button component will let your users choose only one of a predefined set of mutually exclusive options. Radio buttons should be used instead of radioes if only one item can be selected from a list.
+Our Tailwind CSS radio button component will let your users choose only one of a predefined set of mutually exclusive options.
+
+Radio buttons are circular and typically appear in groups; when a user selects one radio button in a group, any previously selected radio button in the same group is automatically deselected. This behavior makes sure that the user can choose only one option from the group, making radio buttons ideal for choices where only one option is applicable.
 
 Use the following example to create simple radio buttons for your projects.
 
 <br />
 
+## Radio Button Examples:
+
+## Simple Radio Button with Text
+
+The example features two radio buttons, labeled "HTML" and "React", allowing users to select one of these two options. 
+
 <CodePreview
   id="radio"
   link="radio#radio"
   className="mt-4"
-  component={
-    <div className="flex gap-10">
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="html"
-          data-ripple-dark="true"
-        >
-          <input
-            id="html"
-            name="type"
-            type="radio"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-            defaultChecked
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-        <label
-          className="mt-px cursor-pointer select-none font-light text-gray-700"
-          htmlFor="html"
-        >
-          HTML
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="react"
-          data-ripple-dark="true"
-        >
-          <input
-            id="react"
-            name="type"
-            type="radio"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-        <label
-          className="mt-px cursor-pointer select-none font-light text-gray-700"
-          htmlFor="react"
-        >
-          React
-        </label>
-      </div>
-    </div>
-  }
+  component={<HTMLRadioExamples.RadioDefault/>}
 >
-  ```html
-  <div class="flex gap-10">
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="html"
-        data-ripple-dark="true"
-      >
-        <input
-          id="html"
-          name="type"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-      <label
-        class="mt-px cursor-pointer select-none font-light text-gray-700"
-        for="html"
-      >
-        HTML
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="react"
-        data-ripple-dark="true"
-      >
-        <input
-          id="react"
-          name="type"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-      <label
-        class="mt-px cursor-pointer select-none font-light text-gray-700"
-        for="react"
-      >
-        React
-      </label>
-    </div>
+```html
+<div class="flex gap-10">
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="html">
+      <input name="framework" type="radio" class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all" id="html">
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      </span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="html">HTML</label>
   </div>
-  ```
+
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="react">
+      <input name="framework" type="radio" class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all" id="react" checked="">
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      </span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="react">React</label>
+  </div>
+</div>
+```
 </CodePreview>
 
 ---
 
 ## Radio Colors
 
+This example showcases a set of custom-styled radio buttons designed for selecting colors, with options for black, gray, blue, green, red, amber, and a disabled state for purple. 
+
 <CodePreview
   id="radio-colors"
   link="radio#radio-colors"
   className="mt-4"
-  component={
-    <div className="flex w-max gap-4">
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="pink"
-        >
-          <input
-            id="pink"
-            name="color"
-            type="radio"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-            defaultChecked
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="red"
-        >
-          <input
-            id="red"
-            name="color"
-            type="radio"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-red-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-red-500 checked:before:bg-red-500 hover:before:opacity-10"
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-red-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="green"
-        >
-          <input
-            id="green"
-            name="color"
-            type="radio"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-green-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:before:bg-green-500 hover:before:opacity-10"
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-green-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="amber"
-        >
-          <input
-            id="amber"
-            name="color"
-            type="radio"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-amber-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-amber-500 checked:before:bg-amber-500 hover:before:opacity-10"
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-amber-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="teal"
-        >
-          <input
-            id="teal"
-            name="color"
-            type="radio"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-teal-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-teal-500 checked:before:bg-teal-500 hover:before:opacity-10"
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-teal-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="indigo"
-        >
-          <input
-            id="indigo"
-            name="color"
-            type="radio"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-indigo-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-indigo-500 checked:before:bg-indigo-500 hover:before:opacity-10"
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-indigo-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="purple"
-        >
-          <input
-            id="purple"
-            name="color"
-            type="radio"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-purple-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-500 checked:before:bg-purple-500 hover:before:opacity-10"
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-purple-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="blue"
-        >
-          <input
-            id="blue"
-            name="color"
-            type="radio"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-blue-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-      </div>
-    </div>
-  }
+  component={<HTMLRadioExamples.RadioColors/>}
 >
-  ```html
-  <div class="flex w-max gap-4">
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="pink"
-      >
-        <input
-          id="pink"
-          name="color"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-          checked
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="red"
-      >
-        <input
-          id="red"
-          name="color"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-red-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-red-500 checked:before:bg-red-500 hover:before:opacity-10"
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-red-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="green"
-      >
-        <input
-          id="green"
-          name="color"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-green-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:before:bg-green-500 hover:before:opacity-10"
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-green-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="amber"
-      >
-        <input
-          id="amber"
-          name="color"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-amber-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-amber-500 checked:before:bg-amber-500 hover:before:opacity-10"
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-amber-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="teal"
-      >
-        <input
-          id="teal"
-          name="color"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-teal-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-teal-500 checked:before:bg-teal-500 hover:before:opacity-10"
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-teal-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="indigo"
-      >
-        <input
-          id="indigo"
-          name="color"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-indigo-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-indigo-500 checked:before:bg-indigo-500 hover:before:opacity-10"
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-indigo-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="purple"
-      >
-        <input
-          id="purple"
-          name="color"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-purple-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-500 checked:before:bg-purple-500 hover:before:opacity-10"
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-purple-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="blue"
-      >
-        <input
-          id="blue"
-          name="color"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-blue-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-    </div>
+```html
+<div class="flex gap-10">
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="slate-800">
+      <input
+        name="color"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+        id="slate-800"
+        checked
+      />
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
   </div>
-  ````
+
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="slate-400">
+      <input
+        name="color"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+        id="slate-400"
+      />
+      <span class="absolute bg-slate-400 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+  </div>
+
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="blue-600">
+      <input
+        name="color"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-blue-400 transition-all"
+        id="blue-600"
+      />
+      <span class="absolute bg-blue-600 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+  </div>
+
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="green-600">
+      <input
+        name="color"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-green-400 transition-all"
+        id="green-600"
+      />
+      <span class="absolute bg-green-600 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+  </div>
+
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="red-600">
+      <input
+        name="color"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-red-400 transition-all"
+        id="red-600"
+      />
+      <span class="absolute bg-red-600 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+  </div>
+
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="amber-600">
+      <input
+        name="color"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-amber-400 transition-all"
+        id="amber-600"
+      />
+      <span class="absolute bg-amber-600 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+  </div>
+
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="purple-600">
+      <input
+        name="color"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-purple-400 transition-all"
+        id="purple-600"
+      />
+      <span class="absolute bg-purple-600 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+  </div>
+</div>
+```
 </CodePreview>
 
 ---
 
 ## Radio Ripple Effect
 
+The radio button component example provides visual feedback when the user interacts with the radio buttons, such as hovering or selecting an option. This interaction enhances the user experience by making the interface feel more responsive and dynamic.
+
 <CodePreview
   id="radio-ripple-effect"
   link="radio#radio-ripple-effect"
   className="mt-4"
-  component={
-    <>
-      <div className="flex gap-10">
-        <div className="inline-flex items-center">
-          <label
-            className="relative flex cursor-pointer items-center rounded-full p-3"
-            htmlFor="ripple-on"
-            data-ripple-dark="true"
-          >
-            <input
-              id="ripple-on"
-              name="ripple"
-              type="radio"
-              className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-              defaultChecked
-            />
-            <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-3.5 w-3.5"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-              >
-                <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-              </svg>
-            </div>
-          </label>
-          <label
-            className="mt-px cursor-pointer select-none font-light text-gray-700"
-            htmlFor="ripple-on"
-          >
-            Ripple Effect On
-          </label>
-        </div>
-        <div className="inline-flex items-center">
-          <label
-            className="relative flex cursor-pointer items-center rounded-full p-3"
-            htmlFor="ripple-off"
-          >
-            <input
-              id="ripple-off"
-              name="ripple"
-              type="radio"
-              className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-            />
-            <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-3.5 w-3.5"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-              >
-                <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
-              </svg>
-            </div>
-          </label>
-          <label
-            className="mt-px cursor-pointer select-none font-light text-gray-700"
-            htmlFor="ripple-off"
-          >
-            Ripple Effect Off
-          </label>
-        </div>
-      </div>
-    </>
-  }
+  component={<HTMLRadioExamples.RadioRippleEffect/>}
 >
-  ```html
-  <div class="flex gap-10">
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="ripple-on"
-        data-ripple-dark="true"
-      >
-        <input
-          id="ripple-on"
-          name="ripple"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-          checked
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-      <label
-        class="mt-px cursor-pointer select-none font-light text-gray-700"
-        for="ripple-on"
-      >
-        Ripple Effect On
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
-        for="ripple-off"
-      >
-        <input
-          id="ripple-off"
-          name="ripple"
-          type="radio"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-        />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-          </svg>
-        </div>
-      </label>
-      <label
-        class="mt-px cursor-pointer select-none font-light text-gray-700"
-        for="ripple-off"
-      >
-        Ripple Effect Off
-      </label>
-    </div>
+```html
+<div class="flex gap-10">
+  <div class="inline-flex items-center">
+    <label
+      class="relative flex cursor-pointer items-center rounded-full p-3"
+      for="on"
+      data-ripple-dark="true"
+    >
+      <input
+        name="ripple"
+        type="radio"
+        class="before:content[''] peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-slate-400 before:opacity-0 before:transition-opacity hover:before:opacity-10"
+        id="on"
+      />
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+    <label
+      class="text-slate-600 cursor-pointer text-sm"
+      for="on"
+    >
+      Ripple Effect On
+    </label>
   </div>
-  ```
+  <div class="inline-flex items-center">
+    <label
+      class="relative flex cursor-pointer items-center rounded-full p-3"
+      for="off"
+    >
+      <input
+        name="ripple"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+        id="off"
+      />
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+    <label
+      class="text-slate-600 cursor-pointer text-sm"
+      for="off"
+    >
+      Ripple Effect Off
+    </label>
+  </div>
+</div>
+```
 </CodePreview>
 
 ---
+
+
+## Radio Button Disabled
+
+Both radio buttons are explicitly marked as disabled using the disabled attribute on the <Code>\<input></Code> elements. This attribute prevents users from being able to select these options, making sure the form behaves correctly in contexts where "HTML" and "React" options should not be selectable.
+
+<CodePreview
+  id="radio-disabled"
+  link="radio#radio-disabled"
+  className="mt-4"
+  component={<HTMLRadioExamples.RadioDisabled/>}
+>
+```html
+<div class="flex gap-10">
+  <div class="inline-flex items-center pointer-events-none">
+    <label class="relative flex items-center cursor-pointer" for="html-disabled">
+      <input
+        disabled
+        name="framework"
+        type="radio"
+        class="peer disabled:opacity-50 h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+        id="html-disabled"
+      />
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm opacity-50" for="html-disabled">
+      HTML
+    </label>
+  </div>
+
+  <div class="inline-flex items-center pointer-events-none">
+    <label class="relative flex items-center cursor-pointer" for="react-disabled">
+      <input
+        disabled
+        name="framework"
+        type="radio"
+        class="peer disabled:opacity-50 h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+        id="react-disabled"
+      />
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm opacity-50" for="react-disabled">
+      React
+    </label>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Radio Button with Link
+
+This example showcases how you can implement radio buttons with labels that includes a hyperlink.
+
+<CodePreview
+  id="radio-with-link"
+  link="radio#radio-with-link"
+  className="mt-4"
+  component={<HTMLRadioExamples.RadioWithLink/>}
+>
+```html
+<div class="flex flex-col gap-10">
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="html-link">
+      <input
+        name="framework"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+        id="html-link"
+        checked
+      />
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="html-link">
+      <p>
+        I agree with HTML&nbsp;
+        <a
+          href="#"
+          class="font-medium hover:text-slate-800 underline"
+        >
+          terms and conditions
+        </a>
+        .
+      </p>
+    </label>
+  </div>
+
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="react-link">
+      <input
+        name="framework"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+        id="react-link"
+      />
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="react-link">
+      <p>
+        I agree with React&nbsp;
+        <a
+          href="#"
+          class="font-medium hover:text-slate-800 underline"
+        >
+          terms and conditions
+        </a>
+        .
+      </p>
+    </label>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Radio Button with Description
+
+This example presents a radio button example that incorporates detailed descriptions. This is a more complex and informative approach to presenting radio button options.
+
+<CodePreview
+  id="radio-with-description"
+  link="radio#radio-with-description"
+  className="mt-4"
+  component={<HTMLRadioExamples.RadioWithDescription/>}
+>
+```html
+<div class="flex flex-col gap-10">
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="html-description">
+      <input
+        name="framework"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+        id="html-description"
+        checked
+      />
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="html-description">
+      <div>
+        <p class="font-medium">
+          HTML Version
+        </p>
+        <p class="text-slate-500">
+          @material-tailwind/html, packed with rich components and widgets.
+        </p>
+      </div>
+    </label>
+  </div>
+
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="react-description">
+      <input
+        name="framework"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+        id="react-description"
+      />
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="react-description">
+      <div>
+        <p class="font-medium">
+          React Version
+        </p>
+        <p class="text-slate-500">
+          @material-tailwind/react, packed with rich components and widgets.
+        </p>
+      </div>
+    </label>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+## Radio Button Custom Icon
+
+This example presents a radio button example that incorporates detailed descriptions. This is a more complex and informative approach to presenting radio button options.
+
+<CodePreview
+  id="radio-custom-icon"
+  link="radio#radio-custom-icon"
+  className="mt-4"
+  component={<HTMLRadioExamples.RadioCustomIcon/>}
+>
+```html
+<div class="flex gap-10">
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="html-custom-icon">
+      <input
+        name="framework-custom-icon"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-800 transition-all"
+        id="html-custom-icon"
+        checked
+      />
+      <span class="absolute w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-2 left-2 transform -translate-x-1/2 -translate-y-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+          <path d="M2 6.342a3.375 3.375 0 0 1 6-2.088 3.375 3.375 0 0 1 5.997 2.26c-.063 2.134-1.618 3.76-2.955 4.784a14.437 14.437 0 0 1-2.676 1.61c-.02.01-.038.017-.05.022l-.014.006-.004.002h-.002a.75.75 0 0 1-.592.001h-.002l-.004-.003-.015-.006a5.528 5.528 0 0 1-.232-.107 14.395 14.395 0 0 1-2.535-1.557C3.564 10.22 1.999 8.558 1.999 6.38L2 6.342Z" />
+        </svg>
+      </span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="html-custom-icon">
+      HTML
+    </label>
+  </div>
+
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="react-custom-icon">
+      <input
+        name="framework-custom-icon"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-800 transition-all"
+        id="react-custom-icon"
+      />
+      <span class="absolute w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-2 left-2 transform -translate-x-1/2 -translate-y-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+          <path d="M2 6.342a3.375 3.375 0 0 1 6-2.088 3.375 3.375 0 0 1 5.997 2.26c-.063 2.134-1.618 3.76-2.955 4.784a14.437 14.437 0 0 1-2.676 1.61c-.02.01-.038.017-.05.022l-.014.006-.004.002h-.002a.75.75 0 0 1-.592.001h-.002l-.004-.003-.015-.006a5.528 5.528 0 0 1-.232-.107 14.395 14.395 0 0 1-2.535-1.557C3.564 10.22 1.999 8.558 1.999 6.38L2 6.342Z" />
+        </svg>
+      </span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="react-custom-icon">
+      React
+    </label>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Radio Button Vertical List Group
+
+This example represents a navigation menu implemented as a vertical list of radio button options.  The use of <Code>hover:bg-blue-gray-50</Code>, <Code>focus:bg-blue-gray-50</Code>, and <Code>active:bg-blue-gray-50</Code> (along with corresponding opacity and text color changes) makes sure that users receive immediate visual feedback as they interact with the menu.
+
+<CodePreview
+  id="radio-vertical-list-group"
+  link="radio#radio-vertical-list-group"
+  className="mt-4"
+  component={<HTMLRadioExamples.RadioVerticalList/>}
+>
+```html
+<div class="relative flex flex-col rounded-xl bg-white shadow">
+  <nav class="flex min-w-[240px] flex-col gap-1 p-2">
+    <div
+      role="button"
+      class="flex w-full items-center rounded-lg p-0 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      <label
+        for="react-vertical"
+        class="flex w-full cursor-pointer items-center px-3 py-2"
+      >
+        <div class="inline-flex items-center">
+          <label class="relative flex items-center cursor-pointer" for="react-vertical">
+            <input
+              name="framework"
+              type="radio"
+              class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+              id="react-vertical"
+              checked
+            />
+            <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+          </label>
+          <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="react-vertical">
+            React.js
+          </label>
+        </div>
+      </label>
+    </div>
+    <div
+      role="button"
+      class="flex w-full items-center rounded-lg p-0 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      <label
+        for="vue-vertical"
+        class="flex w-full cursor-pointer items-center px-3 py-2"
+      >
+        <div class="inline-flex items-center">
+          <label class="relative flex items-center cursor-pointer" for="vue-vertical">
+            <input
+              name="framework"
+              type="radio"
+              class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+              id="vue-vertical"
+            />
+            <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+          </label>
+          <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="vue-vertical">
+            Vue.js
+          </label>
+        </div>
+      </label>
+    </div>
+    <div
+      role="button"
+      class="flex w-full items-center rounded-lg p-0 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      <label
+        for="svelte-vertical"
+        class="flex w-full cursor-pointer items-center px-3 py-2"
+      >
+        <div class="inline-flex items-center">
+          <label class="relative flex items-center cursor-pointer" for="svelte-vertical">
+            <input
+              name="framework"
+              type="radio"
+              class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+              id="svelte-vertical"
+            />
+            <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+          </label>
+          <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="svelte-vertical">
+            Svelte.js
+          </label>
+        </div>
+      </label>
+    </div>
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Radio Button Horizontal List Group
+
+Use the example below to implement horizontal list of radio buttons. The horizontal layout of the radio buttons makes this design ideal for use cases where navigation options need to be compactly presented side by side, such as in a header or toolbar. 
+
+<CodePreview
+  id="radio-horizontal-list-group"
+  link="radio#radio-horizontal-list-group"
+  className="mt-4"
+  component={<HTMLRadioExamples.RadioHorizontalList/>}
+>
+```html
+<div class="relative max-w-sm flex w-full flex-col rounded-xl bg-white shadow">
+  <nav class="flex min-w-[240px] flex-row gap-1 p-2">
+    <div
+      role="button"
+      class="flex w-full items-center rounded-lg p-0 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      <label
+        for="react-horizontal"
+        class="flex w-full cursor-pointer items-center px-3 py-2"
+      >
+        <div class="inline-flex items-center">
+          <label class="relative flex items-center cursor-pointer" for="react-horizontal">
+            <input
+              name="framework-horizontal"
+              type="radio"
+              class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+              id="react-horizontal"
+              checked
+            />
+            <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+          </label>
+          <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="react-horizontal">
+            React.js
+          </label>
+        </div>
+      </label>
+    </div>
+    <div
+      role="button"
+      class="flex w-full items-center rounded-lg p-0 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      <label
+        for="vue-horizontal"
+        class="flex w-full cursor-pointer items-center px-3 py-2"
+      >
+        <div class="inline-flex items-center">
+          <label class="relative flex items-center cursor-pointer" for="vue-horizontal">
+            <input
+              name="framework-horizontal"
+              type="radio"
+              class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+              id="vue-horizontal"
+            />
+            <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+          </label>
+          <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="vue-horizontal">
+            Vue.js
+          </label>
+        </div>
+      </label>
+    </div>
+    <div
+      role="button"
+      class="flex w-full items-center rounded-lg p-0 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      <label
+        for="svelte-horizontal"
+        class="flex w-full cursor-pointer items-center px-3 py-2"
+      >
+        <div class="inline-flex items-center">
+          <label class="relative flex items-center cursor-pointer" for="svelte-horizontal">
+            <input
+              name="framework-horizontal"
+              type="radio"
+              class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-slate-400 transition-all"
+              id="svelte-horizontal"
+            />
+            <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+          </label>
+          <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="svelte-horizontal">
+            Svelte.js
+          </label>
+        </div>
+      </label>
+    </div>
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+
+
+## Radio Button Custom Styles
+
+Check out the example below for implementing custom styles on your radio button component.
+
+<CodePreview
+  id="radio-custom-styles"
+  link="radio#radio-custom-styles"
+  className="mt-4"
+  component={<HTMLRadioExamples.RadioCustomStyles/>}
+>
+```html
+<div class="flex flex-col gap-10">
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="html-custom">
+      <input
+        name="framework-custom"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-200 bg-slate-100 checked:border-slate-300 transition-all"
+        id="html-custom"
+        checked
+      />
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="html-custom">
+      HTML
+    </label>
+  </div>
+
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center cursor-pointer" for="react-custom">
+      <input
+        name="framework-custom"
+        type="radio"
+        class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-200 bg-slate-100 checked:border-slate-300 transition-all"
+        id="react-custom"
+      />
+      <span class="absolute bg-slate-800 w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+    </label>
+    <label class="ml-2 text-slate-600 cursor-pointer text-sm" for="react-custom">
+      React
+    </label>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
 
 ## Required Scrips
 
@@ -702,3 +717,26 @@ The radio component needs a required script file for ripple effect to work, you 
 <!-- from cdn -->
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 ```
+---
+<span id="more-examples"></span>
+
+## Explore More Tailwind CSS Examples
+Looking for more radio button examples? Check out our **<a href="https://www.material-tailwind.com/blocks/contact-sections" target="_blank">Contact Sections</a>** from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.
+
+
+---
+<span id="more-examples"></span>
+
+## Explore More Tailwind CSS Examples
+Looking for more radio button examples? Check out our **<a href="https://www.material-tailwind.com/blocks/contact-sections" target="_blank">Contact Sections</a>** from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.
+
+
+---
+
+<span id="best-practices"></span>
+## Radio Buttons Best Practices for Developers
+
+• Radio buttons are best used for mutually exclusive choices within a group. <br />
+• Each radio button should have a concise and descriptive label that clearly indicates what the option represents.<br />
+• Utilize CSS to provide visual feedback for different states such as hover, focus, and selected. <br />
+• Avoid using radio buttons for yes/no choices.

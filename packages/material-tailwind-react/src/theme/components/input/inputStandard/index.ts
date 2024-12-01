@@ -7,6 +7,7 @@ const inputStandard = {
     input: {
       borderWidth: "border-b",
       borderColor: "placeholder-shown:border-blue-gray-200",
+      placeholder: "placeholder:opacity-0 focus:placeholder:opacity-100",
     },
     inputWithIcon: {
       pr: "!pr-7",

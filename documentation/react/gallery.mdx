@@ -1,0 +1,556 @@
+---
+title: Tailwind CSS Gallery for React - Material Tailwind
+description: Customise your web projects with our easy-to-use gallery component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "gallery",
+    "masonry-grid-gallery",
+    "featured-image-gallery",
+    "quad-gallery",
+    "gallery-with-carousel",
+    "gallery-with-tab",
+    "more-examples"
+  ]
+github: skeleton
+prev: form
+next: icon-button
+---
+
+<DocsTitle href="gallery">
+# Tailwind CSS Gallery - React
+</DocsTitle>
+
+Use the image gallery component 
+
+See below our simple <Code>Gallery</Code> example that you can use in your Tailwind CSS and React project.
+
+<br />
+
+<CodePreview component={<GalleryExamples.DefaultGallery />}>
+```jsx
+export function DefaultGallery() {
+  const data = [
+    {
+      imageLink:
+        "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    },
+    {
+      imageLink:
+        "https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    },
+    {
+      imageLink:
+        "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
+    },
+    {
+      imageLink:
+        "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+    },
+    {
+      imageLink:
+        "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+    },
+    {
+      imageLink:
+        "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80",
+    },
+    {
+      imageLink:
+        "https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg",
+    },
+    {
+      imageLink:
+        "https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg",
+    },
+    {
+      imageLink:
+        "https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1493&q=80",
+    },
+  ];
+
+  return (
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+      {data.map(({ imageLink }, index) => (
+        <div key={index}>
+          <img
+            className="h-40 w-full max-w-full rounded-lg object-cover object-center"
+            src={imageLink}
+            alt="gallery-photo"
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="masonry-grid-gallery">
+## Masonry Grid Galery - React
+</DocsTitle>
+<br/>
+
+<CodePreview component={<GalleryExamples.MasonryGridGallery />}>
+```jsx
+export function MasonryGridGallery() {
+  return (
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div className="grid gap-4">
+        <div>
+          <img
+            className="h-auto max-w-full rounded-lg object-cover object-center"
+            src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+            alt="gallery-photo"
+          />
+        </div>
+        <div>
+          <img
+            className="h-auto max-w-full rounded-lg object-cover object-center "
+            src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
+            alt="gallery-photo"
+          />
+        </div>
+        <div>
+          <img
+            className="h-auto max-w-full rounded-lg object-cover object-center"
+            src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+            alt="gallery-photo"
+          />
+        </div>
+      </div>
+      <div className="grid gap-4">
+        <div>
+          <img
+            className="h-auto max-w-full rounded-lg object-cover object-center"
+            src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+            alt="gallery-photo"
+          />
+        </div>
+        <div>
+          <img
+            className="h-auto max-w-full rounded-lg object-cover object-center"
+            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            alt="gallery-photo"
+          />
+        </div>
+        <div>
+          <img
+            className="h-auto max-w-full rounded-lg object-cover object-center "
+            src="https://docs.material-tailwind.com/img/team-3.jpg"
+            alt="gallery-photo"
+          />
+        </div>
+      </div>
+      <div className="grid gap-4">
+        <div>
+          <img
+            className="h-auto max-w-full rounded-lg object-cover object-center"
+            src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+            alt="gallery-photo"
+          />
+        </div>
+        <div>
+          <img
+            className="h-auto max-w-full rounded-lg object-cover object-center "
+            src="https://docs.material-tailwind.com/img/team-3.jpg"
+            alt="gallery-photo"
+          />
+        </div>
+        <div>
+          <img
+            className="h-auto max-w-full rounded-lg object-cover object-center"
+            src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+            alt="gallery-photo"
+          />
+        </div>
+      </div>
+      <div className="grid gap-4">
+        <div>
+          <img
+            className="h-auto max-w-full rounded-lg object-cover object-center"
+            src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+            alt="gallery-photo"
+          />
+        </div>
+        <div>
+          <img
+            className="h-auto max-w-full rounded-lg object-cover object-center"
+            src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
+            alt="gallery-photo"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="featured-image-gallery">
+##  Featured Image Galery 
+</DocsTitle>
+<br/>
+
+<CodePreview component={<GalleryExamples.FeaturedImageGallery />}>
+```jsx
+import React from "react";
+export function FeaturedImageGallery() {
+  const data = [
+    {
+      imgelink:
+        "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    },
+    {
+      imgelink:
+        "https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    },
+    {
+      imgelink:
+        "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+    },
+    {
+      imgelink:
+        "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+    },
+    {
+      imgelink:
+        "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80",
+    },
+  ];
+
+  const [active, setActive] = React.useState(
+    "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  );
+
+  return (
+    <div className="grid gap-4">
+      <div>
+        <img
+          className="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
+          src={active}
+          alt=""
+        />
+      </div>
+      <div className="grid grid-cols-5 gap-4">
+        {data.map(({ imgelink }, index) => (
+          <div key={index}>
+            <img
+              onClick={() => setActive(imgelink)}
+              src={imgelink}
+              className="h-20 max-w-full cursor-pointer rounded-lg object-cover object-center"
+              alt="gallery-image"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+
+<DocsTitle href="quad-gallery">
+##  Quad Galery
+</DocsTitle>
+<br/>
+
+<CodePreview component={<GalleryExamples.QuadGallery />}>
+```jsx
+export function QuadGallery() {
+  const data = [
+    {
+      imageLink:
+        "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    },
+    {
+      imageLink:
+        "https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    },
+    {
+      imageLink:
+        "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
+    },
+    {
+      imageLink:
+        "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+    },
+  ];
+
+  return (
+    <div className="grid grid-cols-2 gap-2">
+      {data.map(({ imageLink }, index) => (
+        <div key={index}>
+          <img
+            className="h-40 max-w-full rounded-lg object-cover object-center md:h-60"
+            src={imageLink}
+            alt=""
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+
+<DocsTitle href="gallery-with-carousel">
+##  Gallery With Carousel  
+</DocsTitle>
+<br/>
+
+<CodePreview component={<GalleryExamples.GalleryWithCarousel />}>
+```jsx
+import { Carousel } from "@material-tailwind/react";
+
+export function GalleryWithCarousel() {
+  return (
+    <Carousel loop={true} autoplay={true} className="rounded-xl">
+      <img
+        src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover object-center"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover object-center"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover object-center"
+      />
+    </Carousel>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="gallery-with-tab">
+##  Gallery With Tab  - React
+</DocsTitle>
+<br/>
+
+<CodePreview component={<GalleryExamples.GalleryWithTab />}>
+```jsx
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+
+export function GalleryWithTab() {
+  const data = [
+    {
+      label: "HTML",
+      value: "html",
+      images: [
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80",
+        },
+        {
+          imageLink:
+            "https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg",
+        },
+        {
+          imageLink:
+            "https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1493&q=80",
+        },
+      ],
+    },
+    {
+      label: "React",
+      value: "react",
+      images: [
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80",
+        },
+      ],
+    },
+    {
+      label: "Vue",
+      value: "vue",
+      images: [
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80",
+        },
+        {
+          imageLink:
+            "https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg",
+        },
+        {
+          imageLink:
+            "https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1493&q=80",
+        },
+      ],
+    },
+    {
+      label: "Angular",
+      value: "angular",
+      images: [
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80",
+        },
+      ],
+    },
+    {
+      label: "Svelte",
+      value: "svelte",
+      images: [
+        {
+          imageLink:
+            "https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg",
+        },
+        {
+          imageLink:
+            "https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1493&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+        },
+        {
+          imageLink:
+            "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <Tabs value="html">
+      <TabsHeader>
+        {data.map(({ label, value }) => (
+          <Tab key={value} value={value}>
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody className="grid grid-cols-1 gap-4 ">
+        {data.map(({ value, images }) => (
+          <TabPanel
+            className="grid grid-cols-2 gap-4 md:grid-cols-3"
+            key={value}
+            value={value}
+          >
+            {images?.map(({ imageLink }, index) => (
+              <div key={index}>
+                <img
+                  className="h-40 w-full max-w-full rounded-lg object-cover object-center"
+                  src={imageLink}
+                  alt="image-photo"
+                />
+              </div>
+            ))}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more button component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

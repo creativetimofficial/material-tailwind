@@ -49,7 +49,7 @@ export const CardHeader = React.forwardRef<HTMLDivElement, CardHeaderProps>(
     color = color ?? defaultProps.color;
     shadow = shadow ?? defaultProps.shadow;
     floated = floated ?? defaultProps.floated;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const cardHeaderRoot = objectsToString(base.initial);

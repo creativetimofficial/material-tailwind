@@ -1,0 +1,65 @@
+---
+title: Tailwind CSS Algolia Search for React - Material Tailwind
+description: Customise your web projects with our easy-to-use algolia search example for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "aloglia-search",
+  ]
+github: plugins/aloglia-search
+prev: plugins/date-picker
+next: plugins/charts
+---
+
+<DocsTitle href="date-picker">
+# Tailwind CSS Algolia Search - React
+</DocsTitle>
+
+Use our Tailwind CSS Algolia Search example to add global search in your web projects.
+
+See below our beautiful Aloglia Search example that you can use in your Tailwind CSS and React project. The example below is using the `@docsearch/react` library, make sure to install it before using the example.
+
+```bash
+npm i @docsearch/react
+```
+
+<br />
+<br />
+
+<CodePreview component={<Plugins.AlgoliaSearch />}>
+```jsx
+import React from "react";
+import { DocSearch } from "@docsearch/react";
+import { Input } from "@material-tailwind/react";
+
+const APP_ID = "your-app-id";
+const INDEX_NAME = "your-index-name";
+const API_KEY = "your-algolia-api-key";
+
+export function AlgoliaSearch() {
+  return (
+    <div className="group relative">
+      <Input
+        type="email"
+        placeholder="Search"
+        className="focus:!border-t-gray-900 group-hover:border-2 group-hover:!border-gray-900"
+        labelProps={{
+          className: "hidden",
+        }}
+        readOnly
+      />
+      <div className="absolute top-[calc(50%-1px)] right-2.5 -translate-y-2/4">
+        <kbd className="rounded border border-blue-gray-100 bg-white px-1 pt-px pb-0 text-xs font-medium text-gray-900 shadow shadow-black/5">
+          <span className="mr-0.5 inline-block translate-y-[1.5px] text-base">
+            ⌘
+          </span>
+          K
+        </kbd>
+      </div>
+      <div className="absolute inset-0 w-full opacity-0">
+        <DocSearch indexName={INDEX_NAME} apiKey={API_KEY} appId={APP_ID} />
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>

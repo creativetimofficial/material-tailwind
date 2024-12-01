@@ -1,0 +1,115 @@
+---
+title: Tailwind CSS Spinner for React - Material Tailwind
+description: Customise your web projects with our spinner component for Tailwind CSS and React using Material Design guidelines.
+navigation: [
+  "spinner", 
+  "spinner-sizes", 
+  "spinner-colors",
+  "spinner-custom-styles", 
+  "more-examples" 
+]
+github: spinner
+prev: speed-dial
+next: stepper
+---
+
+<DocsTitle href="spinner">
+# Tailwind CSS Spinner - React
+</DocsTitle>
+
+Use our Tailwind CSS <Code>Spinner</Code> component in your web projects. The <Code>Spinner</Code> can be used for loading states on your website.
+
+See below our beautiful <Code>Spinner</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview component={<SpinnerExamples.DefaultSpinner />}>
+```jsx
+import { Spinner } from "@material-tailwind/react";
+
+export function DefaultSpinner() {
+  return <Spinner />;
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="spinner-sizes">
+## Spinner Sizes
+</DocsTitle>
+
+You can customize the size of the <Code>Spinner</Code> component using the tailwind css <Code>w-{`*`}</Code> and <Code>h-{`*`}</Code> classes or using the <Code>width</Code> and <Code>height</Code> props.
+
+<CodePreview component={<SpinnerExamples.SpinnerSizes />}>
+```jsx
+import { Spinner } from "@material-tailwind/react";
+
+export function SpinnerSizes() {
+  return (
+    <div className="flex items-end gap-8">
+      <Spinner className="h-4 w-4" />
+      <Spinner className="h-6 w-6" />
+      <Spinner className="h-8 w-8" />
+      <Spinner className="h-10 w-10" />
+      <Spinner className="h-12 w-12" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="spinner-colors">
+## Spinner Colors
+</DocsTitle>
+
+The <Code>Spinner</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+
+<CodePreview component={<SpinnerExamples.SpinnerColors />}>
+```jsx
+import { Spinner } from "@material-tailwind/react";
+
+export function SpinnerColors() {
+  return (
+    <div className="flex gap-8">
+      <Spinner color="blue" />
+      <Spinner color="red" />
+      <Spinner color="green" />
+      <Spinner color="amber" />
+      <Spinner color="teal" />
+      <Spinner color="indigo" />
+      <Spinner color="purple" />
+      <Spinner color="pink" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="spinner-custom-styles">
+## Spinner with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Spinner</Code> component.
+
+<CodePreview component={<SpinnerExamples.CustomSpinner />}>
+```jsx
+import { Spinner } from "@material-tailwind/react";
+
+export function CustomSpinner() {
+  return <Spinner className="h-16 w-16 text-gray-900/50" />;
+}
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+Check out more spinner examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

@@ -5,33 +5,32 @@ navigation:
   [
     "chip",
     "chip-variants",
+    "chip-sizes",
     "chip-colors",
-    "chip-with-icon",
+    "chip-icon",
+    "chip-pills",
+    "chip-with-status",
+    "chip-with-checkbox",
     "chip-dismissible",
-    "custom-chip-animation",
+    "chip-custom-animation",
     "chip-with-avatar",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/chip",
-      description: "Learn more about props definition and types of chip component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/chip",
-      description: "Learn how to customize the theme and styles for chip component.",
-    },
+    "chip-props",
+    "types-variant",
+    "types-color",
+    "types-animate",
+    "chip-theme",
+    "chip-theme-object-type",
+    "chip-theme-customization",
+    "more-examples",
   ]
 github: chip
 prev: checkbox
-next: dialog
+next: collapse
 ---
 
+<DocsTitle href="chip">
 # Tailwind CSS Chip - React
+</DocsTitle>
 
 Get started on your web projects with our Tailwind CSS <Code>Chip</Code> which is a compact elements that represent an input, attribute, or action. This element appears dynamically as a group of multiple interactive elements and allows users to enter information, make selections, filter content, or trigger actions.
 
@@ -39,11 +38,11 @@ See below our simple <Code>Chip</Code> component example that you can use for yo
 
 <br />
 
-<CodePreview id="chip" link="chip#chip" component={<Chip value="chip" />}>
+<CodePreview link="chip#chip" component={<ChipExamples.ChipDefault />}>
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
-export default function Example() {
+export function ChipDefault() {
   return <Chip value="chip" />;
 }
 ```
@@ -51,24 +50,23 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="chip-variants">
 ## Chip Variants
+</DocsTitle>
 
-The <Code>Chip</Code> component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Chip</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
-<CodePreview id="chip-variants" link="chip#chip-variants" component={
-  <div className="flex gap-2">
-    <Chip value="chip filled" />
-    <Chip variant="gradient" value="chip gradient" />
-  </div>
-}>
+<CodePreview link="chip#chip-variants" component={<ChipExamples.ChipVariants />}>
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
-export default function Variants() {
+export function ChipVariants() {
   return (
     <div className="flex gap-2">
-      <Chip variant="filled" value="chip filled" />
+      <Chip value="chip filled" />
       <Chip variant="gradient" value="chip gradient" />
+      <Chip variant="outlined" value="chip outlined" />
+      <Chip variant="ghost" value="chip ghost" />
     </div>
   );
 }
@@ -77,27 +75,41 @@ export default function Variants() {
 
 ---
 
-## Chip Colors
+<DocsTitle href="chip-sizes">
+## Chip Sizes
+</DocsTitle>
 
-The <Code>Chip</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+The <Code>Chip</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
-<CodePreview id="chip-colors" link="chip#chip-colors" component={
-  <div className="flex gap-2">
-    <Chip value="blue" />
-    <Chip color="red" value="red" />
-    <Chip color="green" value="green" />
-    <Chip color="amber" value="amber" />
-    <Chip color="pink" value="pink" />
-    <Chip color="indigo" value="indigo" />
-    <Chip color="purple" value="purple" />
-    <Chip color="teal" value="teal" />
-    <Chip color="cyan" value="cyan" />
-  </div>
-}>
+<CodePreview component={<ChipExamples.ChipSizes />}>
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
-export default function Colors() {
+export function ChipSizes() {
+  return (
+    <div className="flex items-end gap-2">
+      <Chip size="sm" value="chip small" />
+      <Chip size="md" value="chip medium" />
+      <Chip size="lg" value="chip large" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="chip-colors">
+## Chip Colors
+</DocsTitle>
+
+The <Code>Chip</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+
+<CodePreview link="chip#chip-colors" component={<ChipExamples.ChipColors />}>
+```jsx
+import { Chip } from "@material-tailwind/react";
+
+export function ChipColors() {
   return (
     <div className="flex gap-2">
       <Chip color="blue" value="blue" />
@@ -117,41 +129,41 @@ export default function Colors() {
 
 ---
 
-## Chip with Icon
+<DocsTitle href="chip-icon">
+## Chip Icon
+</DocsTitle>
 
 You can add an icon at the beginning of <Code>Chip</Code> component using the <Code>icon</Code> prop.
 
-<CodePreview id="chip-with-icon" link="chip#chip-with-icon" component={
-  <Chip
-    value="downloads"
-    icon={
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z" />
-      </svg>
-    }
-  />
-}>
+<CodePreview link="chip#chip-icon" component={<ChipExamples.ChipIcon />}>
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
-export default function Example() {
+function Icon() {
   return (
-    <Chip
-      value="downloads"
-      icon={
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z" />
-        </svg>
-      }
-    />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-5 w-5"
+    >
+      <path
+        fillRule="evenodd"
+        d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+export function ChipIcon() {
+  return (
+    <div className="flex gap-2">
+      <Chip value="account" icon={<Icon />} />
+      <Chip value="account" variant="gradient" icon={<Icon />} />
+      <Chip value="account" variant="outlined" icon={<Icon />} />
+      <Chip value="account" variant="ghost" icon={<Icon />} />
+    </div>
   );
 }
 ```
@@ -159,64 +171,140 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="chip-pills">
+## Chip Pills
+</DocsTitle>
+
+You can pass tailwind css classes for the <Code>Chip</Code> component using the <Code>className</Code> prop this helps to do any sort of customization for the chip.
+
+<CodePreview component={<ChipExamples.ChipPills />}>
+```jsx
+import { Chip } from "@material-tailwind/react";
+
+export function ChipPills() {
+  return (
+    <div className="flex gap-2">
+      <Chip value="chip filled" className="rounded-full" />
+      <Chip variant="gradient" value="chip gradient" className="rounded-full" />
+      <Chip variant="outlined" value="chip outlined" className="rounded-full" />
+      <Chip variant="ghost" value="chip ghost" className="rounded-full" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="chip-with-status">
+## Chip with Status
+</DocsTitle>
+
+This chip element example is perfect if you want to announce the status of a particular item, process, or person.
+
+<CodePreview component={<ChipExamples.ChipWithStatus />}>
+```jsx
+import { Chip } from "@material-tailwind/react";
+
+export function ChipWithStatus() {
+  return (
+    <div className="flex gap-2">
+      <Chip
+        variant="ghost"
+        color="green"
+        size="sm"
+        value="Online"
+        icon={
+          <span className="mx-auto mt-1 block h-2 w-2 rounded-full bg-green-900 content-['']" />
+        }
+      />
+      <Chip
+        variant="ghost"
+        color="red"
+        size="sm"
+        value="Offline"
+        icon={
+          <span className="mx-auto mt-1 block h-2 w-2 rounded-full bg-red-900 content-['']" />
+        }
+      />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="chip-with-checkbox">
+## Chip with Checkbox
+</DocsTitle>
+
+Use this example to represent selectable items or options in a compact manner. 
+
+<CodePreview component={<ChipExamples.ChipWithCheckbox />}>
+```jsx
+import { Chip, Checkbox } from "@material-tailwind/react";
+
+export function ChipWithCheckbox() {
+  return (
+    <div className="flex gap-2">
+      <Chip
+        value="Online"
+        variant="ghost"
+        color="green"
+        icon={
+          <Checkbox
+            color="green"
+            ripple={false}
+            containerProps={{ className: "p-0" }}
+            className="-ml-px border-2 border-green-900 before:hidden checked:border-green-900 checked:bg-green-900"
+          />
+        }
+      />
+      <Chip
+        value="Offline"
+        variant="ghost"
+        color="red"
+        icon={
+          <Checkbox
+            color="red"
+            ripple={false}
+            containerProps={{ className: "p-0" }}
+            className="-ml-px border-2 border-red-900 before:hidden checked:border-red-900 checked:bg-red-900"
+          />
+        }
+      />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="chip-dismissible">
 ## Chip Dismissible
+</DocsTitle>
 
 The <Code>Chip</Code> component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
 
-<CodePreview id="chip-dismissible" link="chip#chip-dismissible" component={
-  <State initialState={{ show: true }}>
-    <Observe>
-      {({ setState, show }) => (
-        <>
-          {!show && (
-            <Button
-              variant="gradient"
-              className="absolute"
-              onClick={() => setState((s) => ({ show: true }))}
-            >
-              Show Chip
-            </Button>
-          )}
-          <Chip
-            variant="gradient"
-            show={show}
-            dismissible={{
-              onClose: () => setState((s) => ({ show: false })),
-            }}
-            value="Dismissible"
-          />
-        </>
-      )}
-    </Observe>
-  </State>
-}>
+<CodePreview  link="chip#chip-dismissible" component={<ChipExamples.ChipDismissible />}>
 ```jsx
-import { useState, Fragment } from "react";
+import React from "react";
 import { Chip, Button } from "@material-tailwind/react";
 
-export default function Dismissible() {
-  const [show, setShow] = useState(true);
+export function ChipDismissible() {
+  const [open, setOpen] = React.useState(true);
 
   return (
-    <Fragment>
-      {!show && (
-        <Button
-          variant="gradient"
-          className="absolute"
-          onClick={() => setShow(true)}
-        >
+    <>
+      {!open && (
+        <Button className="absolute" onClick={() => setOpen(true)}>
           Show Chip
         </Button>
       )}
-      <Chip
-        variant="gradient"
-        show={show}
-        dismissible={{
-          onClose: () => setShow(false),
-        }}
-        value="Dismissible"
-      />
-    </Fragment>
+      <Chip open={open} value="Dismissible" onClose={() => setOpen(false)} />
+    </>
   );
 }
 ```
@@ -224,124 +312,63 @@ export default function Dismissible() {
 
 ---
 
-## Custom Chip Animation
+<DocsTitle href="chip-custom-animation">
+## Chip Custom Animation
+</DocsTitle>
 
 You can modify the open/close state animation for <Code>Chip</Code> component using the <Code>animate</Code> prop.
 
-<CodePreview id="custom-chip-animation" component={
-  <State initialState={{ show: true }}>
-    <Observe>
-      {({ setState, show }) => (
-        <>
-          {!show && (
-            <Button
-              variant="gradient"
-              className="absolute"
-              onClick={() => setState((s) => ({ show: true }))}
-            >
-              Show Chip
-            </Button>
-          )}
-          <Chip
-            variant="gradient"
-            show={show}
-            animate={{
-              mount: {
-                y: 0,
-              },
-              unmount: {
-                y: 50,
-              },
-            }}
-            dismissible={{
-              onClose: () => setState((s) => ({ show: false })),
-            }}
-            value="Custom Animation"
-          />
-        </>
-      )}
-    </Observe>
-  </State>
-}>
+<CodePreview component={<ChipExamples.ChipCustomAnimation />}>
 ```jsx
-import { useState, Fragment } from "react";
+import React from "react";
 import { Chip, Button } from "@material-tailwind/react";
 
-export default function Colors() {
-  const [show, setShow] = useState(true);
+export function ChipCustomAnimation() {
+  const [open, setOpen] = React.useState(true);
 
   return (
-    <Fragment>
-      {!show && (
-        <Button
-          variant="gradient"
-          className="absolute"
-          onClick={() => setShow(true)}
-        >
+    <>
+      {!open && (
+        <Button className="absolute" onClick={() => setOpen(true)}>
           Show Chip
         </Button>
       )}
       <Chip
-        variant="gradient"
-        show={show}
+        open={open}
         animate={{
           mount: { y: 0 },
           unmount: { y: 50 },
         }}
-        dismissible={{
-          onClose: () => setShow(false),
-        }}
         value="Custom Animation"
+        onClose={() => setOpen(false)}
       />
-    </Fragment>
+    </>
   );
 }
-````
-
+```
 </CodePreview>
 
 ---
 
+<DocsTitle href="chip-with-avatar">
 ## Chip with Avatar
+</DocsTitle>
 
 Use the example below for a chip containing an avatar.
 
-<CodePreview id="chip-with-avatar" link="chip#chip-with-avatar" component={
-  <Chip
-    icon={
-      <Avatar
-        size="xs"
-        variant="circular"
-        className="h-5 w-5 translate-x-px translate-y-px"
-        alt="candice wu"
-        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-      />
-    }
-    value={
-      <Typography
-        variant="small"
-        color="white"
-        className="font-medium capitalize leading-none"
-      >
-        Candice Wu
-      </Typography>
-    }
-    color="teal"
-    className="rounded-full py-1.5"
-  />
-}>
+<CodePreview link="chip#chip-with-avatar" component={<ChipExamples.ChipWithAvatar />}>
 ```jsx
 import { Chip, Avatar, Typography } from "@material-tailwind/react";
 
-export default function Example() {
+export function ChipWithAvatar() {
   return (
     <Chip
       icon={
         <Avatar
           size="xs"
           variant="circular"
-          className="h-5 w-5 translate-x-px translate-y-px"
-          alt="candice wu"
+          className="h-full w-full -translate-x-0.5"
+          alt="Tania Andrew"
           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
         />
       }
@@ -351,10 +378,9 @@ export default function Example() {
           color="white"
           className="font-medium capitalize leading-none"
         >
-          Candice Wu
+          Tania Andrew
         </Typography>
       }
-      color="teal"
       className="rounded-full py-1.5"
     />
   );
@@ -362,5 +388,604 @@ export default function Example() {
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="chip-props">
+## Chip Props
+</DocsTitle>
+
+The following props are available for button component. These are the custom props
+that we've added for the chip component and you can use all the other native props
+as well.
+
+| Attribute   | Type                      | Description                                   | Default                                |
+| ----------- | ------------------------- | --------------------------------------------- | -------------------------------------- |
+| `variant`   | [Variant](#types-variant) | Change chip variant                           | <Code>filled</Code>                    |
+| `color`     | [Color](#types-color)     | Change chip color                             | <Code>gray</Code>                      |
+| `value`     | <Code>node</Code>         | Add content for chip                          | No default value it's a required prop. |
+| `onClose`   | <Code>func</Code>         | Callback for closing the chip component       | <Code>undefined</Code>                 |
+| `action`    | <Code>node</Code>         | Change the <Code>onClose</Code> action button | <Code>undefined</Code>                 |
+| `open`      | <Code>boolean</Code>      | Change chip visibility                        | <Code>true</Code>                      |
+| `animate`   | [Animate](#types-animate) | Change chip animation                         | <Code>undefined</Code>                 |
+| `icon`      | <Code>node</Code>         | Add icon at the beginning of chip             | <Code>undefined</Code>                 |
+| `className` | <Code>string</Code>       | Add custom className for chip                 | `''`                                   |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { ChipProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-variant">
+## Types - Variant
+</DocsTitle>
+
+```ts
+type variant = "filled" | "gradient" | "outlined" | "ghost";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="chip-theme">
+## Chip Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for chip component, the theme object for chip component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of chip component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for chip component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of chip component.<br />
+
+You can customize the theme and styles of chip component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="chip-theme-object-type">
+## Chip Theme Object Type
+</DocsTitle>
+
+```ts
+interface ChipStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    icon: node;
+    open: boolean;
+    action: node;
+    onClose: func;
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      chip: object;
+      action: object;
+    };
+    variants: {
+      filled: object;
+      gradient: object;
+      outlined: object;
+      ghost: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import { ChipStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="chip-theme-customization">
+## Chip Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  chip: {
+    defaultProps: {
+      variant: "filled",
+      size: "md",
+      color: "blue",
+      icon: undefined,
+      open: true,
+      onClose: undefined,
+      action: undefined,
+      animate: {
+        unmount: {},
+        mount: {},
+      },
+      className: "",
+    },
+    valid: {
+      variants: ["filled", "gradient", "outlined", "ghost"],
+      sizes: ["sm", "md", "lg"],
+      colors: [
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
+    styles: {
+      base: {
+        chip: {
+          position: "relative",
+          display: "grid",
+          placeItems: "items-center",
+          fontFamily: "font-sans",
+          fontWeight: "font-bold",
+          textTransform: "uppercase",
+          lineHeight: "leading-none",
+          whiteSpace: "whitespace-nowrap",
+          userSelect: "select-none",
+        },
+        action: {
+          position: "!absolute",
+          top: "top-2/4",
+          right: "right-1",
+          translate: "-translate-y-2/4",
+          mx: "mx-px",
+          rounded: "rounded-md",
+        },
+        icon: {
+          position: "absolute",
+          top: "top-2/4",
+          translate: "-translate-y-2/4",
+        },
+      },
+      sizes: {
+        sm: {
+          chip: {
+            py: "py-1",
+            px: "px-2",
+            fontSize: "text-xs",
+            borderRadius: "rounded-md",
+          },
+          action: {
+            width: "w-4",
+            height: "h-4",
+          },
+          icon: {
+            width: "w-4",
+            height: "h-4",
+            left: "left-1",
+          },
+        },
+        md: {
+          chip: {
+            py: "py-1.5",
+            px: "px-3",
+            fontSize: "text-xs",
+            borderRadius: "rounded-lg",
+          },
+          action: {
+            width: "w-5",
+            height: "h-5",
+          },
+          icon: {
+            width: "w-5",
+            height: "h-5",
+            left: "left-1.5",
+          },
+        },
+        lg: {
+          chip: {
+            py: "py-2",
+            px: "px-4",
+            fontSize: "text-xs",
+            borderRadius: "rounded-lg",
+          },
+          action: {
+            width: "w-6",
+            height: "h-6",
+          },
+          icon: {
+            width: "w-6",
+            height: "h-6",
+            left: "left-1.5",
+          },
+        },
+      },
+      variants: {
+        filled: {
+          "blue-gray": {
+            backgroud: "bg-blue-gray-500",
+            color: "text-white",
+          },
+          gray: {
+            backgroud: "bg-gray-500",
+            color: "text-white",
+          },
+          brown: {
+            backgroud: "bg-brown-500",
+            color: "text-white",
+          },
+          "deep-orange": {
+            backgroud: "bg-deep-orange-500",
+            color: "text-white",
+          },
+          orange: {
+            backgroud: "bg-orange-500",
+            color: "text-white",
+          },
+          amber: {
+            backgroud: "bg-amber-500",
+            color: "text-black",
+          },
+          yellow: {
+            backgroud: "bg-yellow-500",
+            color: "text-black",
+          },
+          lime: {
+            backgroud: "bg-lime-500",
+            color: "text-black",
+          },
+          "light-green": {
+            backgroud: "bg-light-green-500",
+            color: "text-white",
+          },
+          green: {
+            backgroud: "bg-green-500",
+            color: "text-white",
+          },
+          teal: {
+            backgroud: "bg-teal-500",
+            color: "text-white",
+          },
+          cyan: {
+            backgroud: "bg-cyan-500",
+            color: "text-white",
+          },
+          "light-blue": {
+            backgroud: "bg-light-blue-500",
+            color: "text-white",
+          },
+          blue: {
+            backgroud: "bg-blue-500",
+            color: "text-white",
+          },
+          indigo: {
+            backgroud: "bg-indigo-500",
+            color: "text-white",
+          },
+          "deep-purple": {
+            backgroud: "bg-deep-purple-500",
+            color: "text-white",
+          },
+          purple: {
+            backgroud: "bg-purple-500",
+            color: "text-white",
+          },
+          pink: {
+            backgroud: "bg-pink-500",
+            color: "text-white",
+          },
+          red: {
+            backgroud: "bg-red-500",
+            color: "text-white",
+          },
+        },
+        gradient: {
+          "blue-gray": {
+            backgroud: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400",
+            color: "text-white",
+          },
+          gray: {
+            backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
+            color: "text-white",
+          },
+          brown: {
+            backgroud: "bg-gradient-to-tr from-brown-600 to-brown-400",
+            color: "text-white",
+          },
+          "deep-orange": {
+            backgroud: "bg-gradient-to-tr from-deep-orange-600 to-deep-orange-400",
+            color: "text-white",
+          },
+          orange: {
+            backgroud: "bg-gradient-to-tr from-orange-600 to-orange-400",
+            color: "text-white",
+          },
+          amber: {
+            backgroud: "bg-gradient-to-tr from-amber-600 to-amber-400",
+            color: "text-black",
+          },
+          yellow: {
+            backgroud: "bg-gradient-to-tr from-yellow-600 to-yellow-400",
+            color: "text-black",
+          },
+          lime: {
+            backgroud: "bg-gradient-to-tr from-lime-600 to-lime-400",
+            color: "text-black",
+          },
+          "light-green": {
+            backgroud: "bg-gradient-to-tr from-light-green-600 to-light-green-400",
+            color: "text-white",
+          },
+          green: {
+            backgroud: "bg-gradient-to-tr from-green-600 to-green-400",
+            color: "text-white",
+          },
+          teal: {
+            backgroud: "bg-gradient-to-tr from-teal-600 to-teal-400",
+            color: "text-white",
+          },
+          cyan: {
+            backgroud: "bg-gradient-to-tr from-cyan-600 to-cyan-400",
+            color: "text-white",
+          },
+          "light-blue": {
+            backgroud: "bg-gradient-to-tr from-light-blue-600 to-light-blue-400",
+            color: "text-white",
+          },
+          blue: {
+            backgroud: "bg-gradient-to-tr from-blue-600 to-blue-400",
+            color: "text-white",
+          },
+          indigo: {
+            backgroud: "bg-gradient-to-tr from-indigo-600 to-indigo-400",
+            color: "text-white",
+          },
+          "deep-purple": {
+            backgroud: "bg-gradient-to-tr from-deep-purple-600 to-deep-purple-400",
+            color: "text-white",
+          },
+          purple: {
+            backgroud: "bg-gradient-to-tr from-purple-600 to-purple-400",
+            color: "text-white",
+          },
+          pink: {
+            backgroud: "bg-gradient-to-tr from-pink-600 to-pink-400",
+            color: "text-white",
+          },
+          red: {
+            backgroud: "bg-gradient-to-tr from-red-600 to-red-400",
+            color: "text-white",
+          },
+        },
+        outlined: {
+          "blue-gray": {
+            border: "border border-blue-gray-500",
+            color: "text-blue-gray-700",
+          },
+          gray: {
+            border: "border border-gray-500",
+            color: "text-gray-700",
+          },
+          brown: {
+            border: "border border-brown-500",
+            color: "text-brown-700",
+          },
+          "deep-orange": {
+            border: "border border-deep-orange-500",
+            color: "text-deep-orange-700",
+          },
+          orange: {
+            border: "border border-orange-500",
+            color: "text-orange-700",
+          },
+          amber: {
+            border: "border border-amber-500",
+            color: "text-amber-700",
+          },
+          yellow: {
+            border: "border border-yellow-500",
+            color: "text-yellow-700",
+          },
+          lime: {
+            border: "border border-lime-500",
+            color: "text-lime-700",
+          },
+          "light-green": {
+            border: "border border-light-green-500",
+            color: "text-light-green-700",
+          },
+          green: {
+            border: "border border-green-500",
+            color: "text-green-700",
+          },
+          teal: {
+            border: "border border-teal-500",
+            color: "text-teal-700",
+          },
+          cyan: {
+            border: "border border-cyan-500",
+            color: "text-cyan-700",
+          },
+          "light-blue": {
+            border: "border border-light-blue-500",
+            color: "text-light-blue-700",
+          },
+          blue: {
+            border: "border border-blue-500",
+            color: "text-blue-700",
+          },
+          indigo: {
+            border: "border border-indigo-500",
+            color: "text-indigo-700",
+          },
+          "deep-purple": {
+            border: "border border-deep-purple-500",
+            color: "text-deep-purple-700",
+          },
+          purple: {
+            border: "border border-purple-500",
+            color: "text-purple-700",
+          },
+          pink: {
+            border: "border border-pink-500",
+            color: "text-pink-700",
+          },
+          red: {
+            border: "border border-red-500",
+            color: "text-red-700",
+          },
+        },
+        ghost: {
+          "blue-gray": {
+            backgroud: "bg-blue-gray-500/20",
+            color: "text-blue-gray-900",
+          },
+          gray: {
+            backgroud: "bg-gray-500/20",
+            color: "text-gray-900",
+          },
+          brown: {
+            backgroud: "bg-brown-500/20",
+            color: "text-brown-900",
+          },
+          "deep-orange": {
+            backgroud: "bg-deep-orange-500/20",
+            color: "text-deep-orange-900",
+          },
+          orange: {
+            backgroud: "bg-orange-500/20",
+            color: "text-orange-900",
+          },
+          amber: {
+            backgroud: "bg-amber-500/20",
+            color: "text-amber-900",
+          },
+          yellow: {
+            backgroud: "bg-yellow-500/20",
+            color: "text-yellow-900",
+          },
+          lime: {
+            backgroud: "bg-lime-500/20",
+            color: "text-lime-900",
+          },
+          "light-green": {
+            backgroud: "bg-light-green-500/20",
+            color: "text-light-green-900",
+          },
+          green: {
+            backgroud: "bg-green-500/20",
+            color: "text-green-900",
+          },
+          teal: {
+            backgroud: "bg-teal-500/20",
+            color: "text-teal-900",
+          },
+          cyan: {
+            backgroud: "bg-cyan-500/20",
+            color: "text-cyan-900",
+          },
+          "light-blue": {
+            backgroud: "bg-light-blue-500/20",
+            color: "text-light-blue-900",
+          },
+          blue: {
+            backgroud: "bg-blue-500/20",
+            color: "text-blue-900",
+          },
+          indigo: {
+            backgroud: "bg-indigo-500/20",
+            color: "text-indigo-900",
+          },
+          "deep-purple": {
+            backgroud: "bg-deep-purple-500/20",
+            color: "text-deep-purple-900",
+          },
+          purple: {
+            backgroud: "bg-purple-500/20",
+            color: "text-purple-900",
+          },
+          pink: {
+            backgroud: "bg-pink-500/20",
+            color: "text-pink-900",
+          },
+          red: {
+            backgroud: "bg-red-500/20",
+            color: "text-red-900",
+          },
+        },
+      },
+    },
+  },
+};
+```
+---
+
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more chip component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

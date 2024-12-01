@@ -1,0 +1,193 @@
+---
+title: Tailwind CSS Image Examples - Material Tailwind 
+description: Add style to your images with the easy-to-use Tailwind CSS Image component. Customize and integrate easily it into your web project.
+
+navigation:
+  [
+    "image",
+    "image-with-rounded-corners",
+    "circular-image",
+    "image-with-caption",
+    "image-with-shadow",
+    "image-with-blurred-caption",        
+    "more-examples",    
+  ]
+github: image
+prev: footer
+next: table
+---
+
+# Tailwind CSS Image 
+
+Our Tailwind CSS Image component simplifies image handling and styling, offering an array of classes to achieve the image effects that you are looking for in your website or application. 
+
+From adjusting image sizes to creating visually appealing galleries, Tailwind CSS empowers you to optimize and customize your web images with ease.
+
+See below our examples of image UI components.
+
+
+<br />
+
+## Tailwind CSS Image Examples:
+
+## Default Image
+
+This example displays a simple image within a scrollable, centered grid layout. The responsive design classes ensure that the layout adapts to different screen sizes, enhancing the user experience across devices.
+
+<CodePreview
+  id="image"
+  link="image#image"
+  component={<HTMLImageExamples.DefaultImg/>}
+>
+```html
+    <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+      <img
+        class="object-cover object-center w-full h-96"
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+        alt="nature image"
+      />
+    </div>
+```
+</CodePreview>
+
+---
+
+## Image With Rounded Corners
+
+Check this example to see how you can implement rounded corners for your images.
+
+<CodePreview
+  id="image-with-rounded-corners"
+  link="image#image-with-rounded-corners"
+  className="mt-4"
+  component={<HTMLImageExamples.ImgWithRoundedCorners/>}
+>
+```html
+      <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+      <img
+        class="object-cover object-center w-full rounded-lg h-96"
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+        alt="nature image"
+      />
+    </div>
+```
+</CodePreview>
+
+---
+
+
+## Circular Image
+
+Use <Code>rounded-full </Code> class to round the corners of the image into a circle. This effect will be most noticeable if the image is square; otherwise, the image will look elliptical.
+
+<CodePreview
+  id="circular-image"
+  link="image#circular-image"
+  className="mt-4"
+  component={<HTMLImageExamples.CircularImg/>}
+>
+```html
+      <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+        <img
+          class="object-cover object-center rounded-full h-96 w-96"
+          src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+          alt="nature image"
+        />
+      </div>
+```
+</CodePreview>
+
+---
+
+
+## Image with Caption
+
+Use this example if you want to include a caption below the image. Adding images with captions enriches the content and provides visual breaks in the text.
+
+<CodePreview
+  id="image-with-caption"
+  link="image#image-with-caption"
+  className="mt-4"
+  component={<HTMLImageExamples.ImgWithCaption/>}
+>
+```html
+      <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+      <img
+        class="object-cover object-center w-full rounded-lg h-96"
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+        alt="nature image"
+      />
+      <div class="block mt-2 font-sans text-sm antialiased font-normal leading-normal text-center text-inherit">
+        Image caption
+      </div>
+    </div>
+```
+</CodePreview>
+
+---
+
+## Image with Shadow
+
+In this example, the <Code>shadow-xl shadow-blue-gray-900/50</Code> classes add a large shadow effect with a specific color (blue-gray-900) and opacity (50%). This creates a sense of depth and improves the image visually from its background, making it stand out more prominently.
+
+<CodePreview
+  id="image-with-shadow"
+  link="image#image-with-shadow"
+  className="mt-4"
+  component={<HTMLImageExamples.ImgWithShadow/>}
+>
+```html
+   <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+      <img
+        class="object-cover object-center w-full rounded-lg shadow-xl h-96 shadow-blue-gray-900/50"
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+        alt="nature image"
+      />
+    </div>
+```
+</CodePreview>
+
+---
+
+
+## Image with Blurred Caption
+
+In the example below, the styling includes a semi-transparent white background with a blur effect (<Code>backdrop-blur-sm</Code>), making the text readable regardless of the image behind it. The border, padding, and shadow improve visibility and aesthetic appeal.
+
+<CodePreview
+  id="image-with-blurred-caption"
+  link="image#image-with-blurred-caption"
+  className="mt-4"
+  component={<HTMLImageExamples.ImgWithBlurredCaption/>}
+>
+```html
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+  <figure class="relative w-full h-96">
+    <img class="object-cover object-center w-full h-full rounded-xl"
+      src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+      alt="nature image" />
+    <figcaption className="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 justify-between rounded-xl border border-white bg-white/75 py-4 px-6 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
+      <div>
+        <h5 className="text-xl font-medium text-slate-800">
+          Sara Lamalo
+        </h5>
+        <p className="mt-2 text-slate-600">
+          20 July 2022
+        </p>
+      </div>
+      <h5 className="text-xl font-medium text-slate-800">
+        Growth
+      </h5>
+    </figcaption>
+  </figure>
+</div>
+```
+</CodePreview>
+
+---
+<span id="more-examples"></span>
+## Explore More Tailwind CSS Examples
+Check out more image component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
+
+• <a href="https://www.material-tailwind.com/blocks/team-sections" target="_blank">Team Blocks</a><br />
+• <a href="https://www.material-tailwind.com/blocks/logo-sections" target="_blank">Logo Blocks</a><br />

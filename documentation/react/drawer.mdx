@@ -1,0 +1,739 @@
+---
+title: Tailwind CSS Drawer for React - Material Tailwind
+description: Customise your web projects with our easy-to-use drawer component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "drawer",
+    "drawer-placement",
+    "drawer-with-navigation",
+    "drawer-with-form",
+    "drawer-props",
+    "types-placement",
+    "types-overlay-ref",
+    "types-overlay-props",
+    "types-dismiss",
+    "drawer-theme", 
+    "drawer-theme-object-type",
+    "drawer-theme-customization",
+    "more-examples"
+  ]
+github: drawer
+prev: dialog
+next: icon-button
+---
+
+<DocsTitle href="drawer">
+# Tailwind CSS Drawer - React
+</DocsTitle>
+
+Use our Tailwind CSS drawer for side menus in your website.
+
+See below our simple <Code>Drawer</Code> example that you can use in your Tailwind CSS and React project.
+
+<br />
+
+<CodePreview id="drawer" component={<DrawerExamples.DrawerDefault />}>
+```jsx
+import React from "react";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+
+export function DrawerDefault() {
+  const [open, setOpen] = React.useState(false);
+
+  const openDrawer = () => setOpen(true);
+  const closeDrawer = () => setOpen(false);
+
+  return (
+    <React.Fragment>
+      <Button onClick={openDrawer}>Open Drawer</Button>
+      <Drawer open={open} onClose={closeDrawer} className="p-4">
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray">
+            Material Tailwind
+          </Typography>
+          <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </IconButton>
+        </div>
+        <Typography color="gray" className="mb-8 pr-4 font-normal">
+          Material Tailwind features multiple React and HTML components, all
+          written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outlined">
+            Documentation
+          </Button>
+          <Button size="sm">Get Started</Button>
+        </div>
+      </Drawer>
+    </React.Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="drawer-placement">
+## Drawer Placement
+</DocsTitle>
+
+You can change the position of the <Code>Drawer</Code> component using the <Code>placement</Code> prop.
+
+<CodePreview component={<DrawerExamples.DrawerPlacement />}>
+```jsx
+import React from "react";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+
+export function DrawerPlacement() {
+  const [openTop, setOpenTop] = React.useState(false);
+  const [openRight, setOpenRight] = React.useState(false);
+  const [openBottom, setOpenBottom] = React.useState(false);
+  const [openLeft, setOpenLeft] = React.useState(false);
+
+  const openDrawerTop = () => setOpenTop(true);
+  const closeDrawerTop = () => setOpenTop(false);
+  const openDrawerRight = () => setOpenRight(true);
+  const closeDrawerRight = () => setOpenRight(false);
+  const openDrawerBottom = () => setOpenBottom(true);
+  const closeDrawerBottom = () => setOpenBottom(false);
+  const openDrawerLeft = () => setOpenLeft(true);
+  const closeDrawerLeft = () => setOpenLeft(false);
+
+  return (
+    <React.Fragment>
+      <div className="flex flex-wrap gap-4">
+        <Button onClick={openDrawerTop}>Open Drawer Top</Button>
+        <Button onClick={openDrawerRight}>Open Drawer Right</Button>
+        <Button onClick={openDrawerBottom}>Open Drawer Bottom</Button>
+        <Button onClick={openDrawerLeft}>Open Drawer Left</Button>
+      </div>
+       <Drawer
+        placement="top"
+        open={openTop}
+        onClose={closeDrawerTop}
+        className="p-4"
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray">
+            Material Tailwind
+          </Typography>
+          <IconButton variant="text" color="blue-gray" onClick={closeDrawerTop}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </IconButton>
+        </div>
+        <Typography color="gray" className="mb-8 pr-4 font-normal">
+          Material Tailwind features multiple React and HTML components, all
+          written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outlined">
+            Documentation
+          </Button>
+          <Button size="sm">Get Started</Button>
+        </div>
+      </Drawer>
+      <Drawer
+        placement="right"
+        open={openRight}
+        onClose={closeDrawerRight}
+        className="p-4"
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray">
+            Material Tailwind
+          </Typography>
+          <IconButton
+            variant="text"
+            color="blue-gray"
+            onClick={closeDrawerRight}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </IconButton>
+        </div>
+        <Typography color="gray" className="mb-8 pr-4 font-normal">
+          Material Tailwind features multiple React and HTML components, all
+          written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outlined">
+            Documentation
+          </Button>
+          <Button size="sm">Get Started</Button>
+        </div>
+      </Drawer>
+      <Drawer
+        placement="bottom"
+        open={openBottom}
+        onClose={closeDrawerBottom}
+        className="p-4"
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray">
+            Material Tailwind
+          </Typography>
+          <IconButton
+            variant="text"
+            color="blue-gray"
+            onClick={closeDrawerBottom}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </IconButton>
+        </div>
+        <Typography color="gray" className="mb-8 pr-4 font-normal">
+          Material Tailwind features multiple React and HTML components, all
+          written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outlined">
+            Documentation
+          </Button>
+          <Button size="sm">Get Started</Button>
+        </div>
+      </Drawer>
+      <Drawer
+        placement="left"
+        open={openLeft}
+        onClose={closeDrawerLeft}
+        className="p-4"
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray">
+            Material Tailwind
+          </Typography>
+          <IconButton
+            variant="text"
+            color="blue-gray"
+            onClick={closeDrawerLeft}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </IconButton>
+        </div>
+        <Typography color="gray" className="mb-8 pr-4 font-normal">
+          Material Tailwind features multiple React and HTML components, all
+          written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outlined">
+            Documentation
+          </Button>
+          <Button size="sm">Get Started</Button>
+        </div>
+      </Drawer>
+    </React.Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="drawer-with-navigation">
+## Drawer with Navigation
+</DocsTitle>
+
+Use this beautiful and versatile example to display navigation options in a hidden panel that can be accessed by clicking a button. These components are usually used in various apps and systems.
+
+<CodePreview component={<DrawerExamples.DrawerWithNavigation />}>
+```jsx
+import React from "react";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Chip,
+} from "@material-tailwind/react";
+
+export function DrawerWithNavigation() {
+  const [open, setOpen] = React.useState(false);
+  const openDrawer = () => setOpen(true);
+  const closeDrawer = () => setOpen(false);
+
+  return (
+    <React.Fragment>
+      <Button onClick={openDrawer}>Open Drawer</Button>
+      <Drawer open={open} onClose={closeDrawer}>
+        <div className="mb-2 flex items-center justify-between p-4">
+          <Typography variant="h5" color="blue-gray">
+            Material Tailwind
+          </Typography>
+          <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </IconButton>
+        </div>
+        <List>
+          <ListItem>
+            <ListItemPrefix>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M2.25 2.25a.75.75 0 000 1.5H3v10.5a3 3 0 003 3h1.21l-1.172 3.513a.75.75 0 001.424.474l.329-.987h8.418l.33.987a.75.75 0 001.422-.474l-1.17-3.513H18a3 3 0 003-3V3.75h.75a.75.75 0 000-1.5H2.25zm6.04 16.5l.5-1.5h6.42l.5 1.5H8.29zm7.46-12a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0v-6zm-3 2.25a.75.75 0 00-1.5 0v3.75a.75.75 0 001.5 0V9zm-3 2.25a.75.75 0 00-1.5 0v1.5a.75.75 0 001.5 0v-1.5z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </ListItemPrefix>
+            Dashboard
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </ListItemPrefix>
+            Analytics
+            <ListItemSuffix>
+              <Chip
+                value="5"
+                size="sm"
+                color="green"
+                className="rounded-full"
+              />
+            </ListItemSuffix>
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M6.912 3a3 3 0 00-2.868 2.118l-2.411 7.838a3 3 0 00-.133.882V18a3 3 0 003 3h15a3 3 0 003-3v-4.162c0-.299-.045-.596-.133-.882l-2.412-7.838A3 3 0 0017.088 3H6.912zm13.823 9.75l-2.213-7.191A1.5 1.5 0 0017.088 4.5H6.912a1.5 1.5 0 00-1.434 1.059L3.265 12.75H6.11a3 3 0 012.684 1.658l.256.513a1.5 1.5 0 001.342.829h3.218a1.5 1.5 0 001.342-.83l.256-.512a3 3 0 012.684-1.658h2.844z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </ListItemPrefix>
+            Sales
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </ListItemPrefix>
+            Profile
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 00-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 00-2.282.819l-.922 1.597a1.875 1.875 0 00.432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 000 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 00-.432 2.385l.922 1.597a1.875 1.875 0 002.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 002.28-.819l.923-1.597a1.875 1.875 0 00-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 000-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 00-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 00-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 00-1.85-1.567h-1.843zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </ListItemPrefix>
+            Tables
+          </ListItem>
+        </List>
+        <Button className="mt-3 ml-5" size="sm">
+          Documentation
+        </Button>
+      </Drawer>
+    </React.Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="drawer-with-form">
+## Drawer with Form
+</DocsTitle>
+
+Similar to the previous example, this drawer will display a form instead of displaying navigation options.
+
+<CodePreview component={<DrawerExamples.DrawerWithForm />}>
+```jsx
+import React from "react";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+  Input,
+  Textarea,
+} from "@material-tailwind/react";
+
+export function DrawerWithForm() {
+  const [open, setOpen] = React.useState(false);
+  const openDrawer = () => setOpen(true);
+  const closeDrawer = () => setOpen(false);
+
+  return (
+    <React.Fragment>
+      <Button onClick={openDrawer}>Open Drawer</Button>
+     <Drawer open={open} onClose={closeDrawer}>
+        <div className="flex items-center justify-between px-4 pb-2">
+          <Typography variant="h5" color="blue-gray">
+            Contact Us
+          </Typography>
+          <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </IconButton>
+        </div>
+        <div className="mb-5 px-4">
+          <Typography variant="small" color="gray" className="font-normal ">
+            Write the message and then click button.
+          </Typography>
+        </div>
+        <form className="flex flex-col gap-6 p-4">
+          <Typography variant="h6" color="blue-gray" className="-mb-3">
+            Your Email
+          </Typography>
+          <Input type="email" label="Email" />
+          <Input label="Subject" />
+          <Textarea rows={6} label="Message" />
+          <Button>Send Message</Button>
+        </form>
+      </Drawer>
+    </React.Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="drawer-props">
+## Drawer Props
+</DocsTitle>
+
+The following props are available for drawer component. These are the custom props
+that we've added for the drawer component and you can use all the other native props
+as well.[Navigation](#types-navigation)
+
+| Attribute      | Type                                  | Description                                                            | Default                                                     |
+| -------------- | ------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------- |
+| `open`         | <Code>boolean</Code>                  | Sets the open and close state of drawer                                | No default value it's a required prop.                      |
+| `size`         | <Code>number</Code>                   | Set's the width/height of the drawer depending on the drawer placement | <Code>250</Code>                                            |
+| `placement`    | [Placement](#types-placement)         | Sets the drawer placement                                              | <Code>left</Code>                                           |
+| `overlay`      | <Code>boolean</Code>                  | Sets the overlay visibility for the drawer                             | <Code>true</Code>                                           |
+| `overlayRef`   | [Overlay Ref](#types-overlay-ref)     | Add reference for the drawer overlay                                   | <Code>undefined</Code>                                      |
+| `overlayProps` | [Overlay Props](#types-overlay-props) | Sets the rest props for the drawer overlay                             | <Code>undefined</Code>                                      |
+| `dismiss`      | [dismiss](#types-dismiss)             | Change dismiss listeners for drawer                                    | <Code>undefined</Code>                                      |
+| `onClose`      | <Code>function</Code>                 | Sets the callback function for closing the drawer                      | <Code>undefined</Code>                                      |
+| `transition`   | Framer Motion                         | Sets the transition for drawer                                         | <Code>`transition: { type: "tween", duration: 0.5 }`</Code> |
+| `className`    | <Code>string</Code>                   | Add custom className for drawer                                        | `''`                                                        |
+| `children`     | <Code>node</Code>                     | Add content for drawer                                                 | No default value it's a required prop.                      |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DrawerProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-placement">
+## Types - Placement
+</DocsTitle>
+
+```ts
+export type placement = "top" | "right" | "bottom" | "left";
+```
+
+---
+
+<DocsTitle href="types-overlay-ref">
+## Types - Overlay Reference
+</DocsTitle>
+
+```ts
+export type overlayRef = React.Ref<HTMLDivElement>;
+```
+
+---
+
+<DocsTitle href="types-overlay-props">
+## Types - Overlay Props
+</DocsTitle>
+
+```ts
+export type overlayProps = React.ComponentProps<"div">;
+```
+
+---
+
+<DocsTitle href="types-dismiss">
+## Types - Dismiss
+</DocsTitle>
+
+```ts
+type dismissType = {
+  enabled?: boolean;
+  escapeKey?: boolean;
+  referencePress?: boolean;
+  referencePressEvent?: "pointerdown" | "mousedown" | "click";
+  outsidePress?: boolean | ((event: MouseEvent) => boolean);
+  outsidePressEvent?: "pointerdown" | "mousedown" | "click";
+  ancestorScroll?: boolean;
+  bubbles?:
+    | boolean
+    | {
+        escapeKey?: boolean;
+        outsidePress?: boolean;
+      };
+};
+```
+
+---
+
+<DocsTitle href="drawer-theme">
+## Drawer Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for drawer component, the theme object for drawer component has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of drawer component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of drawer component.<br />
+
+You can customize the theme and styles of drawer component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="drawer-theme-object-type">
+## Drawer Theme Object Type
+</DocsTitle>
+
+```ts
+interface DrawerStylesType {
+  defaultProps: {
+    size: number;
+    overlay: boolean;
+    placement: "top" | "right" | "bottom" | "left";
+    overlayProps: React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>;
+    className: string;
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePress: boolean;
+      referencePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      outsidePress: boolean | ((event: MouseEvent) => boolean);
+      outsidePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      ancestorScroll: boolean;
+      bubbles: boolean | {
+          escapeKey: boolean;
+          outsidePress: boolean;
+      };
+    };
+    onClose: () => void;
+    transition: object;
+  };
+  styles: {
+    base: {
+      container: object;
+      overlay: object;
+      drawer: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import { DrawerStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="drawer-theme-customization">
+## Drawer Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  drawer: {
+    defaultProps: {
+      size: 300,
+      overlay: true,
+      placement: "left",
+      overlayProps: undefined,
+      className: "",
+      dismiss: undefined,
+      onClose: undefined,
+      transition: {
+        type: "tween",
+        duration: 0.3,
+      },
+    },
+    styles: {
+      base: {
+        drawer: {
+          position: "fixed",
+          zIndex: "z-[9999]",
+          pointerEvents: "pointer-events-auto",
+          backgroundColor: "bg-white",
+          boxSizing: "box-border",
+          width: "w-full",
+          boxShadow: "shadow-2xl shadow-blue-gray-900/10",
+        },
+        overlay: {
+          position: "absolute",
+          inset: "inset-0",
+          width: "w-full",
+          height: "h-full",
+          pointerEvents: "pointer-events-auto",
+          zIndex: "z-[9995]",
+          backgroundColor: "bg-black",
+          backgroundOpacity: "bg-opacity-60",
+          backdropBlur: "backdrop-blur-sm",
+        },
+      },
+    },
+  },
+};
+```
+
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more drawer examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

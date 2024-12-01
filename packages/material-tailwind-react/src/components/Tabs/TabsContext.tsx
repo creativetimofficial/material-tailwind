@@ -8,7 +8,10 @@ import {
   children,
   propTypesValue,
   indicatorProps,
+  isInitial,
+  orientation,
   propTypesId,
+  propTypesOrientation,
 } from "../../types/components/tabs";
 import { propTypesChildren } from "../../types/components/tabs";
 
@@ -16,14 +19,16 @@ export interface TabsContextType {
   state: {
     id: id;
     active: valueType;
-    isInitial: boolean;
+    isInitial: isInitial;
+    orientation: orientation;
     appliedAnimation: animate;
     indicatorProps: indicatorProps;
   };
   dispatch: React.Dispatch<{
     id: id;
     active: valueType;
-    isInitial: boolean;
+    isInitial: isInitial;
+    orientation: orientation;
     appliedAnimation: animate;
     indicatorProps: indicatorProps;
   }>;
@@ -32,6 +37,7 @@ export interface TabsContextType {
 export interface TabsContextProviderProps {
   id?: id;
   value: valueType;
+  orientation?: orientation;
   children: children;
 }
 
@@ -51,6 +57,9 @@ function reducer(state, action) {
     }
     case "SET_IS_INITIAL": {
       return { ...state, isInitial: action.value };
+    }
+    case "SET_ORIENTATION": {
+      return { ...state, orientation: action.value };
     }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
@@ -73,11 +82,17 @@ export function useTabs() {
   return context;
 }
 
-export const TabsContextProvider = ({ id, value, children }: TabsContextProviderProps) => {
+export const TabsContextProvider = ({
+  id,
+  value,
+  orientation,
+  children,
+}: TabsContextProviderProps) => {
   const initialState = React.useMemo(
     () => ({
       id: id ?? "indicator",
       active: value,
+      orientation,
       isInitial: true,
       appliedAnimation: {
         initial: {},
@@ -86,7 +101,7 @@ export const TabsContextProvider = ({ id, value, children }: TabsContextProvider
       },
       indicatorProps: undefined,
     }),
-    [id, value],
+    [id, value, orientation],
   );
 
   const [state, dispatch] = React.useReducer(reducer, initialState);
@@ -103,12 +118,15 @@ export const setAnimation = (dispatch: (arg: object) => void, value: animate) =>
   dispatch({ type: "SET_ANIMATION", value });
 export const setIndicator = (dispatch: (arg: object) => void, value: indicatorProps) =>
   dispatch({ type: "SET_INDICATOR", value });
-export const setIsInitial = (dispatch: (arg: object) => void, value: boolean) =>
+export const setIsInitial = (dispatch: (arg: object) => void, value: isInitial) =>
   dispatch({ type: "SET_IS_INITIAL", value });
+export const setOrientation = (dispatch: (arg: object) => void, value: orientation) =>
+  dispatch({ type: "SET_ORIENTATION", value });
 
 TabsContextProvider.propTypes = {
   id: propTypesId,
   value: propTypesValue,
+  orientation: propTypesOrientation,
   children: propTypesChildren,
 };
 

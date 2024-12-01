@@ -1,0 +1,4156 @@
+---
+title: Tailwind CSS Table Examples - Material Tailwind 
+description:  Add style to your tables with the versatile Tailwind CSS Table component. Customize and integrate it easily into your web project.
+
+navigation:
+  [
+    "table",
+    "plain-table",
+    "table-with-hover",
+    "table-with-title-description",
+    "table-with-striped-rows",
+    "table-footer-total",
+    "table-with-search",
+    "table-with-pagination",
+    "table-with-action-buttons",
+    "transaction-table",
+    "members-table",
+    "ecommerce-products-table",
+    "sortable-table",
+    "simple-sortable-table",
+    "table-with-modal",
+    "comparison-table",
+    "dark-table",
+    "dark-table-striped-rows",
+    "dark-table-striped-columns",
+    "best-practices",
+ ]
+github: table
+prev: image
+
+---
+
+# Tailwind CSS Table 
+
+The Tailwind CSS Tables are used to organize structured data in a grid-like format,  presenting the information in a visually organized manner. The tables help users understand and interact with data by making it easy for them to scan and compare data points. Table components are used to present various types of data (product listings, financial reports, user profiles, etc). 
+
+See below Material Tailwind's examples of table components that help developers display information in a clear, organized manner, making it easier for users to read, understand, and interact with data.
+
+
+<br />
+
+### Table Examples:
+
+## Default Table
+
+Use our simple 4 columns table styled with Tailwind CSS to organize your data in a responsive way.
+
+<CodePreview
+  id="table"
+  link="table#table"
+  component={<HTMLTableExamples.DefaultTable/>}
+>
+```html
+<div
+  class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+      <tr>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            Name
+          </p>
+        </th>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            Job
+          </p>
+        </th>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            Employed
+          </p>
+        </th>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70"></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            John Michael
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Manager
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            23/04/18
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Alexa Liras
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Developer
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            23/04/18
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Laurent Perrier
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Executive
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            19/09/17
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Michael Levi
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Developer
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            24/12/08
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Richard Gran
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Manager
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            04/10/21
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+</CodePreview>
+
+---
+
+## Plain Table (Table without Border)
+
+Use this example of a tailwind plain table for a clean and minimalist look. This design focuses on the content without any distractions, making it ideal for simple data presentation.
+
+<CodePreview
+  id="plain-table"
+  link="table#plain-table"
+  component={<HTMLTableExamples.PlainTable/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max text-slate-800">
+    <thead>
+      <tr class="text-slate-500 border-b border-slate-300 bg-slate-50">
+        <th class="p-4">
+          <p class="text-sm leading-none font-normal">
+            Project Name
+          </p>
+        </th>
+        <th class="p-4">
+          <p class="text-sm leading-none font-normal">
+            Start Date
+          </p>
+        </th>
+        <th class="p-4">
+          <p class="text-sm leading-none font-normal">
+            End Date
+          </p>
+        </th>
+        <th class="p-4">
+          <p class="text-sm leading-none font-normal">
+            Owner
+          </p>
+        </th>
+        <th class="p-4">
+          <p class="text-sm leading-none font-normal">
+            Budget
+          </p>
+        </th>
+        <th class="p-4">
+          <p></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4">
+          <p class="text-sm font-bold">
+            Project Alpha
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            01/01/2024
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            30/06/2024
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            John Michael
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            $50,000
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="text-sm font-semibold ">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4">
+          <p class="text-sm font-bold">
+            Beta Campaign
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            15/02/2024
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            15/08/2024
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            Alexa Liras
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            $75,000
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="text-sm font-semibold ">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4">
+          <p class="text-sm font-bold">
+            Campaign Delta
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            01/03/2024
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            01/09/2024
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            Laurent Perrier
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            $60,000
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="text-sm font-semibold ">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4">
+          <p class="text-sm font-bold">
+            Gamma Outreach
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            10/04/2024
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            10/10/2024
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            Michael Levi
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            $80,000
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="text-sm font-semibold ">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4">
+          <p class="text-sm font-bold">
+            Omega Strategy
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            01/05/2024
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            01/11/2024
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            Richard Gran
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="text-sm">
+            $100,000
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="text-sm font-semibold ">
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+</CodePreview>
+
+---
+
+## Table With Hover State
+
+Try this table example to highlight rows when users hover over them. The hover state improves interactivity and readability, allowing users to easily follow and identify specific rows.
+
+<CodePreview
+  id="table-with-hover"
+  link="table#table-with-hover"
+  className="mt-4"
+  component={<HTMLTableExamples.TableWithHover/>}
+>
+```html
+ <div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+      <tr>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Name
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Job
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Employed
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500"></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            John Michael
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Manager
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            23/04/18
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Alexa Liras
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Developer
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            23/04/18
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Laurent Perrier
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Executive
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            19/09/17
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Michael Levi
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Developer
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            24/12/08
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4">
+          <p class="block text-sm text-slate-800">
+            Richard Gran
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block text-sm text-slate-800">
+            Manager
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block text-sm text-slate-800">
+            04/10/21
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+```
+</CodePreview>
+
+---
+
+## Table with Title and Description
+
+This caption table example includes a title and a description above the table, providing context and additional information about the data presented. Ideal for detailed reports or sections where a brief explanation is beneficial.
+
+<CodePreview
+  id="table-with-title-description"
+  link="table#table-with-title-description"
+  className="mt-4"
+  component={<HTMLTableExamples.TableWithTitleDescription/>}
+>
+```html
+ <div class="w-full">
+  <h3 class="text-lg font-semibold ml-3 text-slate-800">Team Members and Roles</h3>
+  <p class="text-slate-500 mb-5 ml-3">Overview of the key persons involved in the next project and their geographical distribution.</p>
+ </div>
+ <div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+        <tr>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+                <p class="block text-sm font-normal leading-none text-slate-500">
+                    Name
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+                <p class="block text-sm font-normal leading-none text-slate-500">
+                    Role
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+                <p class="block text-sm font-normal leading-none text-slate-500">
+                    Email
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+                <p class="block text-sm font-normal leading-none text-slate-500">
+                    Location
+                </p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    John Michael
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Manager
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    john.michael@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    New York, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Alexa Liras
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    alexa.liras@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    San Francisco, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Laurent Perrier
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Executive
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    laurent.perrier@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Paris, France
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Michael Levi
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    michael.levi@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    London, UK
+                </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+```
+</CodePreview>
+
+---
+
+## Table with Footer and Total
+
+This table example includes a footer section for summarizing information such as totals or additional notes. The footer improves data comprehension by providing a summary or additional context at the end of the table.
+
+<CodePreview
+  id="table-footer-total"
+  link="table#table-footer-total"
+  className="mt-4"
+  component={<HTMLTableExamples.TableFooterTotal/>}
+>
+```html
+<div class="text-left w-full">
+    <h3 class="text-lg font-semibold ml-3 text-slate-800">Home and Deco List</h3>
+    <p class="text-slate-500 mb-5 ml-3">Example of product list and total calculation for Home & Deco items.</p>
+</div>
+<div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+    <table id="productTable" class="w-full text-left table-auto min-w-max">
+        <thead>
+        <tr>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+                Product Name
+            </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+                Category
+            </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+                Qty
+            </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+                Price
+            </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+                Total
+            </p>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Wooden Chair
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Furniture
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                2
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $85.00
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $170.00
+            </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Table Lamp
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Lighting
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                1
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $45.00
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $45.00
+            </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Wall Art
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Decor
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                3
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $30.00
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $90.00
+            </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Sofa
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Furniture
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                1
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $300.00
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $300.00
+            </p>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="2" class="p-4 text-left font-bold text-slate-800 border-t border-slate-300">
+            Total:
+            </td>
+            <td colspan="2" class="p-4 font-bold text-slate-800 border-t border-slate-300">
+            7
+            </td>
+            <td colspan="1" class="p-4 font-semibold text-slate-800 border-t border-slate-300">
+            $605.00
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+```
+</CodePreview>
+
+
+---
+
+## Table with Search
+
+Use this example of a table with a search functionality to allow users to quickly find specific information within the table. The search bar at the top enables users to type in keywords or phrases, filtering the table content in real-time to match the search query.
+
+<CodePreview
+  id="table-with-search"
+  link="table#table-with-search"
+  className="mt-4"
+  component={<HTMLTableExamples.TableWithSearch/>}
+>
+```html
+<div class="w-full flex justify-between items-center mb-3 mt-1 pl-3">
+    <div>
+        <h3 class="text-lg font-semibold text-slate-800">Generated Invoice for this Month</h3>
+        <p class="text-slate-500">Overview of the invoices.</p>
+    </div>
+    <div class="ml-3">
+        <div class="w-full max-w-sm min-w-[200px] relative">
+        <div class="relative">
+            <input
+            class="bg-white w-full pr-11 h-10 pl-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            placeholder="Search for invoice..."
+            />
+            <button
+            class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-white rounded "
+            type="button"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-8 h-8 text-slate-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            </button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+      <tr>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Invoice Number
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Customer
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Amount
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Issued
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Due Date
+          </p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block font-semibold text-sm text-slate-800">INV-1001</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">John Doe</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">$1,200.00</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">2024-08-01</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">2024-08-15</p>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block font-semibold text-sm text-slate-800">INV-1002</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">Jane Smith</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">$850.00</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">2024-08-05</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">2024-08-20</p>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block font-semibold text-sm text-slate-800">INV-1003</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">Acme Corp</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">$2,500.00</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">2024-08-07</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">2024-08-21</p>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 py-5">
+          <p class="block font-semibold text-sm text-slate-800">INV-1004</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">Global Inc</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">$4,750.00</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">2024-08-10</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">2024-08-25</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+</CodePreview>
+
+---
+
+## Table with Pagination
+
+Use this example of a table with pagination to manage and display large datasets efficiently. The pagination controls at the bottom of the table allow users to navigate through different pages of data.
+
+<CodePreview
+  id="table-with-pagination"
+  link="table#table-with-pagination"
+  component={<HTMLTableExamples.TableWithPagination/>}
+>
+```html
+<div class="w-full flex justify-between items-center mb-3 mt-1 pl-3">
+    <div>
+        <h3 class="text-lg font-semibold text-slate-800">Projects with Invoices</h3>
+        <p class="text-slate-500">Overview of the current activities.</p>
+    </div>
+    <div class="ml-3">
+        <div class="w-full max-w-sm min-w-[200px] relative">
+        <div class="relative">
+            <input
+            class="bg-white w-full pr-11 h-10 pl-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-200 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            placeholder="Search for invoice..."
+            />
+            <button
+            class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-white rounded "
+            type="button"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-8 h-8 text-slate-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            </button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+      <tr>
+        <th class="p-4 border-b border-slate-200 bg-slate-50">
+          <p class="text-sm font-normal leading-none text-slate-500">
+            Invoice Number
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-200 bg-slate-50">
+          <p class="text-sm font-normal leading-none text-slate-500">
+            Customer
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-200 bg-slate-50">
+          <p class="text-sm font-normal leading-none text-slate-500">
+            Amount
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-200 bg-slate-50">
+          <p class="text-sm font-normal leading-none text-slate-500">
+            Issued
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-200 bg-slate-50">
+          <p class="text-sm font-normal leading-none text-slate-500">
+            Due Date
+          </p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-slate-50 border-b border-slate-200">
+        <td class="p-4 py-5">
+          <p class="block font-semibold text-sm text-slate-800">PROJ1001</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">John Doe</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">$1,200.00</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">2024-08-01</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">2024-08-15</p>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50 border-b border-slate-200">
+        <td class="p-4 py-5">
+          <p class="block font-semibold text-sm text-slate-800">PROJ1002</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">Jane Smith</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">$850.00</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">2024-08-05</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">2024-08-20</p>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50 border-b border-slate-200">
+        <td class="p-4 py-5">
+          <p class="block font-semibold text-sm text-slate-800">PROJ1003</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">Acme Corp</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">$2,500.00</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">2024-08-07</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">2024-08-21</p>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50 border-b border-slate-200">
+        <td class="p-4 py-5">
+          <p class="block font-semibold text-sm text-slate-800">PROJ1004</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">Global Inc</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">$4,750.00</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">2024-08-10</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="text-sm text-slate-500">2024-08-25</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="flex justify-between items-center px-4 py-3">
+    <div class="text-sm text-slate-500">
+      Showing <b>1-5</b> of 45
+    </div>
+    <div class="flex space-x-1">
+      <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+        Prev
+      </button>
+      <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-white bg-slate-800 border border-slate-800 rounded hover:bg-slate-600 hover:border-slate-600 transition duration-200 ease">
+        1
+      </button>
+      <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+        2
+      </button>
+      <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+        3
+      </button>
+      <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+        Next
+      </button>
+    </div>
+  </div>
+</div>
+
+```
+</CodePreview>
+
+---
+
+
+## Table with Action Buttons
+
+Use this example of a table with a search functionality and different buttons actions for each row. 
+
+<CodePreview
+  id="table-with-action-buttons"
+  link="table#table-with-action-buttons"
+  className="mt-4"
+  component={<HTMLTableExamples.TableWithActionButtons/>}
+>
+```html
+<div class="w-full flex justify-between items-center mb-3 mt-1 pl-3">
+    <div>
+        <h3 class="text-lg font-bold text-slate-800">Manage your Invoice</h3>
+        <p class="text-slate-500">Overview of the invoices.</p>
+    </div>
+    <div class="ml-3">
+      <div class="w-full max-w-sm min-w-[200px] relative">
+        <div class="relative">
+          <input
+            class="bg-white w-full pr-11 h-10 pl-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            placeholder="Search for invoice..."
+            />
+            <button
+              class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-white rounded "
+              type="button"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-8 h-8 text-slate-600">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+    <table class="w-full text-left table-auto min-w-max">
+      <thead>
+        <tr>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+              Invoice Number
+            </p>
+          </th>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+              Customer
+            </p>
+          </th>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+              Amount
+            </p>
+          </th>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+              Issued
+            </p>
+          </th>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+              Due Date
+            </p>
+          </th>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-slate-50 border-b border-slate-200">
+          <td class="p-4 py-5">
+            <p class="block font-semibold text-sm text-slate-800">INV-1001</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">John Doe</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">$1,200.00</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-01</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-15</p>
+          </td>
+          <td class="p-4 py-5">
+              <div class="block text-center">
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                          <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                      </svg>
+                  </button>
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 0 1 3.75 3.75v1.875C13.5 8.161 14.34 9 15.375 9h1.875A3.75 3.75 0 0 1 21 12.75v3.375C21 17.16 20.16 18 19.125 18h-9.75A1.875 1.875 0 0 1 7.5 16.125V3.375Z" />
+                          <path d="M15 5.25a5.23 5.23 0 0 0-1.279-3.434 9.768 9.768 0 0 1 6.963 6.963A5.23 5.23 0 0 0 17.25 7.5h-1.875A.375.375 0 0 1 15 7.125V5.25ZM4.875 6H6v10.125A3.375 3.375 0 0 0 9.375 19.5H16.5v1.125c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V7.875C3 6.839 3.84 6 4.875 6Z" />
+                      </svg>
+                  </button>
+              </div>
+          </td>
+        </tr>
+        <tr class="hover:bg-slate-50 border-b border-slate-200">
+          <td class="p-4 py-5">
+            <p class="block font-semibold text-sm text-slate-800">INV-1002</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">Jane Smith</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">$850.00</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-05</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-20</p>
+          </td>
+          <td class="p-4 py-5">
+              <div class="block text-center">
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                          <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                      </svg>
+                  </button>
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 0 1 3.75 3.75v1.875C13.5 8.161 14.34 9 15.375 9h1.875A3.75 3.75 0 0 1 21 12.75v3.375C21 17.16 20.16 18 19.125 18h-9.75A1.875 1.875 0 0 1 7.5 16.125V3.375Z" />
+                          <path d="M15 5.25a5.23 5.23 0 0 0-1.279-3.434 9.768 9.768 0 0 1 6.963 6.963A5.23 5.23 0 0 0 17.25 7.5h-1.875A.375.375 0 0 1 15 7.125V5.25ZM4.875 6H6v10.125A3.375 3.375 0 0 0 9.375 19.5H16.5v1.125c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V7.875C3 6.839 3.84 6 4.875 6Z" />
+                      </svg>
+                  </button>
+              </div>
+          </td>
+        </tr>
+        <tr class="hover:bg-slate-50 border-b border-slate-200">
+          <td class="p-4 py-5">
+            <p class="block font-semibold text-sm text-slate-800">INV-1003</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">Acme Corp</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">$2,500.00</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-07</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-21</p>
+          </td>
+          <td class="p-4 py-5">
+              <div class="block text-center">
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                          <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                      </svg>
+                  </button>
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 0 1 3.75 3.75v1.875C13.5 8.161 14.34 9 15.375 9h1.875A3.75 3.75 0 0 1 21 12.75v3.375C21 17.16 20.16 18 19.125 18h-9.75A1.875 1.875 0 0 1 7.5 16.125V3.375Z" />
+                          <path d="M15 5.25a5.23 5.23 0 0 0-1.279-3.434 9.768 9.768 0 0 1 6.963 6.963A5.23 5.23 0 0 0 17.25 7.5h-1.875A.375.375 0 0 1 15 7.125V5.25ZM4.875 6H6v10.125A3.375 3.375 0 0 0 9.375 19.5H16.5v1.125c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V7.875C3 6.839 3.84 6 4.875 6Z" />
+                      </svg>
+                  </button>
+              </div>
+          </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+          <td class="p-4 py-5">
+            <p class="block font-semibold text-sm text-slate-800">INV-1004</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">Global Inc</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">$4,750.00</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-10</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-25</p>
+          </td>
+          <td class="p-4 py-5">
+              <div class="block text-center">
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                          <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                      </svg>
+                  </button>
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 0 1 3.75 3.75v1.875C13.5 8.161 14.34 9 15.375 9h1.875A3.75 3.75 0 0 1 21 12.75v3.375C21 17.16 20.16 18 19.125 18h-9.75A1.875 1.875 0 0 1 7.5 16.125V3.375Z" />
+                          <path d="M15 5.25a5.23 5.23 0 0 0-1.279-3.434 9.768 9.768 0 0 1 6.963 6.963A5.23 5.23 0 0 0 17.25 7.5h-1.875A.375.375 0 0 1 15 7.125V5.25ZM4.875 6H6v10.125A3.375 3.375 0 0 0 9.375 19.5H16.5v1.125c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V7.875C3 6.839 3.84 6 4.875 6Z" />
+                      </svg>
+                  </button>
+              </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+```
+</CodePreview>
+
+
+---
+
+## Table With Striped Rows
+
+In this example, we added the class <Code>even:bg-blue-gray-50/50</Code> applied to each row, which alternates the background color of even rows for better readability and visual appeal.
+
+<CodePreview
+  id="table-with-striped-rows"
+  link="table#table-with-striped-rows"
+  className="mt-4"
+  component={<HTMLTableExamples.TableWithStripedRows/>}
+>
+```html
+<div
+  class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md bg-clip-border rounded-xl">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+      <tr>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            Name
+          </p>
+        </th>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            Job
+          </p>
+        </th>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            Employed
+          </p>
+        </th>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70"></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="even:bg-blue-gray-50/50">
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            John Michael
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Manager
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            23/04/18
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">Edit</a>
+        </td>
+      </tr>
+      <tr class="even:bg-blue-gray-50/50">
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Alexa Liras
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Developer
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            23/04/18
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">Edit</a>
+        </td>
+      </tr>
+      <tr class="even:bg-blue-gray-50/50">
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Laurent Perrier
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Executive
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            19/09/17
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">Edit</a>
+        </td>
+      </tr>
+      <tr class="even:bg-blue-gray-50/50">
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Michael Levi
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Developer
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            24/12/08
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">Edit</a>
+        </td>
+      </tr>
+      <tr class="even:bg-blue-gray-50/50">
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Richard Gran
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Manager
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            04/10/21
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">Edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Transaction Table
+
+This example showcases a more complex and feature-rich approach to presenting and interacting with tabular data. The inclusion of a search bar and download button directly above the table improves the interface's interactivity and functionality. The use of images, status tags, and action buttons within the table rows adds a layer of complexity and utility, making the data more accessible and actionable.
+
+<CodePreview
+  id="transaction-table"
+  link="table#transaction-table"
+  className="mt-4"
+  component={<HTMLTableExamples.TransactionsTable/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+  <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white rounded-none bg-clip-border">
+    <div class="flex flex-col justify-between gap-8 mb-4 md:flex-row md:items-center">
+      <div>
+        <h5
+          class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          Recent Transactions
+        </h5>
+        <p class="block mt-1 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+          These are details about the last transactions
+        </p>
+      </div>
+      <div class="flex w-full gap-2 shrink-0 md:w-max">
+        <div class="w-full md:w-72">
+          <div class="relative h-10 w-full min-w-[200px]">
+            <div
+              class="absolute grid w-5 h-5 top-2/4 right-3 -translate-y-2/4 place-items-center text-blue-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+              </svg>
+            </div>
+            <input
+              class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 !pr-9 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+              placeholder=" " />
+            <label
+              class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+              Search
+            </label>
+          </div>
+        </div>
+        <button
+          class="flex select-none items-center gap-3 rounded-lg bg-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            aria-hidden="true" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
+            </path>
+          </svg>
+          Download
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="p-6 px-0 overflow-scroll">
+    <table class="w-full text-left table-auto min-w-max">
+      <thead>
+        <tr>
+          <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Transaction
+            </p>
+          </th>
+          <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Amount
+            </p>
+          </th>
+          <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Date
+            </p>
+          </th>
+          <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Status
+            </p>
+          </th>
+          <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Account
+            </p>
+          </th>
+          <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            </p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://docs.material-tailwind.com/img/logos/logo-spotify.svg" alt="Spotify"
+                class="relative inline-block h-12 w-12 !rounded-full border border-blue-gray-50 bg-blue-gray-50/50 object-contain object-center p-1" />
+              <p class="block font-sans text-sm antialiased font-bold leading-normal text-blue-gray-900">
+                Spotify
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              $2,500
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              Wed 3:00pm
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
+                <span class="">paid</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <div class="w-12 p-1 border rounded-md h-9 border-blue-gray-50">
+                <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/visa.png"
+                  alt="visa"
+                  class="relative inline-block h-full w-full !rounded-none  object-contain object-center p-1" />
+              </div>
+              <div class="flex flex-col">
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal capitalize text-blue-gray-900">
+                  visa 1234
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  06/2026
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://docs.material-tailwind.com/img/logos/logo-amazon.svg" alt="Amazon"
+                class="relative inline-block h-12 w-12 !rounded-full  border border-blue-gray-50 bg-blue-gray-50/50 object-contain object-center p-1" />
+              <p class="block font-sans text-sm antialiased font-bold leading-normal text-blue-gray-900">
+                Amazon
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              $5,000
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              Wed 1:00pm
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
+                <span class="">paid</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <div class="w-12 p-1 border rounded-md h-9 border-blue-gray-50">
+                <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/mastercard.png"
+                  alt="master-card"
+                  class="relative inline-block h-full w-full !rounded-none  object-contain object-center p-1" />
+              </div>
+              <div class="flex flex-col">
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal capitalize text-blue-gray-900">
+                  master card 1234
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  06/2026
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://docs.material-tailwind.com/img/logos/logo-pinterest.svg" alt="Pinterest"
+                class="relative inline-block h-12 w-12 !rounded-full  border border-blue-gray-50 bg-blue-gray-50/50 object-contain object-center p-1" />
+              <p class="block font-sans text-sm antialiased font-bold leading-normal text-blue-gray-900">
+                Pinterest
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              $3,400
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              Mon 7:40pm
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold uppercase rounded-md select-none whitespace-nowrap bg-amber-500/20 text-amber-900">
+                <span class="">pending</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <div class="w-12 p-1 border rounded-md h-9 border-blue-gray-50">
+                <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/mastercard.png"
+                  alt="master-card"
+                  class="relative inline-block h-full w-full !rounded-none object-contain object-center p-1" />
+              </div>
+              <div class="flex flex-col">
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal capitalize text-blue-gray-900">
+                  master card 1234
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  06/2026
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://docs.material-tailwind.com/img/logos/logo-google.svg" alt="Google"
+                class="relative inline-block h-12 w-12 !rounded-full  border border-blue-gray-50 bg-blue-gray-50/50 object-contain object-center p-1" />
+              <p class="block font-sans text-sm antialiased font-bold leading-normal text-blue-gray-900">
+                Google
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              $1,000
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              Wed 5:00pm
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
+                <span class="">paid</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <div class="w-12 p-1 border rounded-md h-9 border-blue-gray-50">
+                <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/visa.png"
+                  alt="visa"
+                  class="relative inline-block h-full w-full !rounded-none  object-contain object-center p-1" />
+              </div>
+              <div class="flex flex-col">
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal capitalize text-blue-gray-900">
+                  visa 1234
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  06/2026
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4">
+            <div class="flex items-center gap-3">
+              <img src="https://docs.material-tailwind.com/img/logos/logo-netflix.svg" alt="netflix"
+                class="relative inline-block h-12 w-12 !rounded-full  border border-blue-gray-50 bg-blue-gray-50/50 object-contain object-center p-1" />
+              <p class="block font-sans text-sm antialiased font-bold leading-normal text-blue-gray-900">
+                netflix
+              </p>
+            </div>
+          </td>
+          <td class="p-4">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              $14,000
+            </p>
+          </td>
+          <td class="p-4">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              Wed 3:30am
+            </p>
+          </td>
+          <td class="p-4">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-red-900 uppercase rounded-md select-none whitespace-nowrap bg-red-500/20">
+                <span class="">cancelled</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 p-1 border rounded-md h-9 border-blue-gray-50">
+                <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/visa.png"
+                  alt="visa"
+                  class="relative inline-block h-full w-full !rounded-none  object-contain object-center p-1" />
+              </div>
+              <div class="flex flex-col">
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal capitalize text-blue-gray-900">
+                  visa 1234
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  06/2026
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex items-center justify-between p-4 border-t border-blue-gray-50">
+    <button
+      class="select-none rounded-lg border border-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button">
+      Previous
+    </button>
+    <div class="flex items-center gap-2">
+      <button
+        class="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg border border-gray-900 text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+          1
+        </span>
+      </button>
+      <button
+        class="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+          2
+        </span>
+      </button>
+      <button
+        class="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+          3
+        </span>
+      </button>
+      <button
+        class="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+          ...
+        </span>
+      </button>
+      <button
+        class="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+          8
+        </span>
+      </button>
+      <button
+        class="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+          9
+        </span>
+      </button>
+      <button
+        class="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+          10
+        </span>
+      </button>
+    </div>
+    <button
+      class="select-none rounded-lg border border-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button">
+      Next
+    </button>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Members Table
+
+In this example, the combination of filtering tabs, detailed member information, search functionality, and pagination controls makes it a comprehensive solution for managing and displaying member data in a user-friendly manner.
+
+<CodePreview
+  id="members-table"
+  link="table#members-table"
+  className="mt-4"
+  component={<HTMLTableExamples.MembersTable/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+  <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white rounded-none bg-clip-border">
+    <div class="flex items-center justify-between gap-8 mb-8">
+      <div>
+        <h5
+          class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          Members list
+        </h5>
+        <p class="block mt-1 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+          See information about all members
+        </p>
+      </div>
+      <div class="flex flex-col gap-2 shrink-0 sm:flex-row">
+        <button
+          class="select-none rounded-lg border border-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button">
+          view all
+        </button>
+        <button
+          class="flex select-none items-center gap-3 rounded-lg bg-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+            stroke-width="2" class="w-4 h-4">
+            <path
+              d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z">
+            </path>
+          </svg>
+          Add member
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+      <div class="block w-full overflow-hidden md:w-max">
+        <nav>
+          <ul role="tablist" class="relative flex flex-row p-1 rounded-lg bg-blue-gray-50 bg-opacity-60">
+            <li role="tab"
+              class="relative flex items-center justify-center w-full h-full px-2 py-1 font-sans text-base antialiased font-normal leading-relaxed text-center bg-transparent cursor-pointer select-none text-blue-gray-900"
+              data-value="all">
+              <div class="z-20 text-inherit">
+                &nbsp;&nbsp;All&nbsp;&nbsp;
+              </div>
+              <div class="absolute inset-0 z-10 h-full bg-white rounded-md shadow"></div>
+            </li>
+            <li role="tab"
+              class="relative flex items-center justify-center w-full h-full px-2 py-1 font-sans text-base antialiased font-normal leading-relaxed text-center bg-transparent cursor-pointer select-none text-blue-gray-900"
+              data-value="monitored">
+              <div class="z-20 text-inherit">
+                &nbsp;&nbsp;Monitored&nbsp;&nbsp;
+              </div>
+            </li>
+            <li role="tab"
+              class="relative flex items-center justify-center w-full h-full px-2 py-1 font-sans text-base antialiased font-normal leading-relaxed text-center bg-transparent cursor-pointer select-none text-blue-gray-900"
+              data-value="unmonitored">
+              <div class="z-20 text-inherit">
+                &nbsp;&nbsp;Unmonitored&nbsp;&nbsp;
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="w-full md:w-72">
+        <div class="relative h-10 w-full min-w-[200px]">
+          <div class="absolute grid w-5 h-5 top-2/4 right-3 -translate-y-2/4 place-items-center text-blue-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+            </svg>
+          </div>
+          <input
+            class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 !pr-9 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+            placeholder=" " />
+          <label
+            class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+            Search
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-6 px-0 overflow-scroll">
+    <table class="w-full mt-4 text-left table-auto min-w-max">
+      <thead>
+        <tr>
+          <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Member
+            </p>
+          </th>
+          <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Function
+            </p>
+          </th>
+          <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Status
+            </p>
+          </th>
+          <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Employed
+            </p>
+          </th>
+          <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            </p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg"
+                alt="John Michael" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                  John Michael
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  john@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex flex-col">
+              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                Manager
+              </p>
+              <p
+                class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                Organization
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
+                <span class="">online</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              23/04/18
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg"
+                alt="Alexa Liras" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                  Alexa Liras
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  alexa@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex flex-col">
+              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                Programator
+              </p>
+              <p
+                class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                Developer
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold uppercase rounded-md select-none whitespace-nowrap bg-blue-gray-500/20 text-blue-gray-900">
+                <span class="">offline</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              23/04/18
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg"
+                alt="Laurent Perrier"
+                class="relative inline-block h-9 w-9 !rounded-full  object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                  Laurent Perrier
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  laurent@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex flex-col">
+              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                Executive
+              </p>
+              <p
+                class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                Projects
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold uppercase rounded-md select-none whitespace-nowrap bg-blue-gray-500/20 text-blue-gray-900">
+                <span class="">offline</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              19/09/17
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg"
+                alt="Michael Levi" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                  Michael Levi
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  michael@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex flex-col">
+              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                Programator
+              </p>
+              <p
+                class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                Developer
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
+                <span class="">online</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              24/12/08
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg"
+                alt="Richard Gran" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                  Richard Gran
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  richard@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex flex-col">
+              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                Manager
+              </p>
+              <p
+                class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                Executive
+              </p>
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold uppercase rounded-md select-none whitespace-nowrap bg-blue-gray-500/20 text-blue-gray-900">
+                <span class="">offline</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              04/10/21
+            </p>
+          </td>
+          <td class="p-4">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex items-center justify-between p-4 border-t border-blue-gray-50">
+    <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+      Page 1 of 10
+    </p>
+    <div class="flex gap-2">
+      <button
+        class="select-none rounded-lg border border-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        Previous
+      </button>
+      <button
+        class="select-none rounded-lg border border-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        Next
+      </button>
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+## Ecommerce Products Table
+
+Use this example to display products in an ecommerce setting. The table includes columns for product images, names, quantities, prices, and actions like removing items from the cart. This design improves user interaction and management of shopping cart items.
+
+<CodePreview
+  id="ecommerce-products-table"
+  link="table#ecommerce-products-table"
+  className="mt-4"
+  component={<HTMLTableExamples.EcommerceProductsTable/>}
+>
+```html
+<div class="w-full flex justify-between items-center mb-3 mt-1 pl-3">
+    <div>
+        <h3 class="text-lg font-semibold text-slate-800">Shopping Cart</h3>
+        <p class="text-slate-500">Review your selected items.</p>
+    </div>
+    <div class="mx-3">
+        <div class="w-full max-w-sm min-w-[200px] relative">
+        <div class="relative">
+            <input
+            class="bg-white w-full pr-11 h-10 pl-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            placeholder="Search for product..."
+            />
+            <button
+            class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-white rounded "
+            type="button"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-8 h-8 text-slate-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            </button>
+        </div>
+        </div>
+    </div>
+</div>
+ 
+<div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+      <tr class="border-b border-slate-300 bg-slate-50">
+        <th class="p-4 text-sm font-normal leading-none text-slate-500">Product</th>
+        <th class="p-4 text-sm font-normal leading-none text-slate-500">Name</th>
+        <th class="p-4 text-sm font-normal leading-none text-slate-500">Quantity</th>
+        <th class="p-4 text-sm font-normal leading-none text-slate-500">Price per Item</th>
+        <th class="p-4 text-sm font-normal leading-none text-slate-500">Total Price</th>
+        <th class="p-4 text-sm font-normal leading-none text-slate-500"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200 py-5">
+          <img src="https://demos.creative-tim.com/corporate-ui-dashboard-pro/assets/img/kam-idris-_HqHX3LBN18-unsplash.jpg" alt="Product 1" class="w-16 h-16 object-cover rounded" />
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block font-semibold text-sm text-slate-800">Beautiful Chair</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">2</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">$500</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">$1,000</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <button type="button" class="text-slate-500 hover:text-slate-700">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200 py-5">
+          <img src="https://demos.creative-tim.com/corporate-ui-dashboard-pro/assets/img/spacejoy-NpF_OYE301E-unsplash.jpg" alt="Product 2" class="w-16 h-16 object-cover rounded" />
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block font-semibold text-sm text-slate-800">Little Sofa</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">1</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">$750</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">$750</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <button type="button" class="text-slate-500 hover:text-slate-700">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200 py-5">
+          <img src="https://demos.creative-tim.com/corporate-ui-dashboard-pro/assets/img/michael-oxendine-GHCVUtBECuY-unsplash.jpg" alt="Product 3" class="w-16 h-16 object-cover rounded" />
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block font-semibold text-sm text-slate-800">Brown Coach</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">3</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">$3,000</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="text-sm text-slate-500">$9,000</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <button type="button" class="text-slate-500 hover:text-slate-700">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+</CodePreview>
+
+---
+
+## Sortable Table
+
+In this example. the table headers are interactive and sortable, as indicated by the presence of arrow icons next to the column titles ("Member", "Function", "Status", "Employed"). This feature allows users to sort the list based on different attributes, offering a tailored view of the data.
+
+<CodePreview
+  id="sortable-table"
+  link="table#sortable-table"
+  className="mt-4"
+  component={<HTMLTableExamples.SortableTable/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+  <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white rounded-none bg-clip-border">
+    <div class="flex items-center justify-between gap-8 mb-8">
+      <div>
+        <h5
+          class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          Members list
+        </h5>
+        <p class="block mt-1 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+          See information about all members
+        </p>
+      </div>
+      <div class="flex flex-col gap-2 shrink-0 sm:flex-row">
+        <button
+          class="select-none rounded-lg border border-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button">
+          view all
+        </button>
+        <button
+          class="flex select-none items-center gap-3 rounded-lg bg-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+            stroke-width="2" class="w-4 h-4">
+            <path
+              d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z">
+            </path>
+          </svg>
+          Add member
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+      <div class="block w-full overflow-hidden md:w-max">
+        <nav>
+          <ul role="tablist" class="relative flex flex-row p-1 rounded-lg bg-blue-gray-50 bg-opacity-60">
+            <li role="tab"
+              class="relative flex items-center justify-center w-full h-full px-2 py-1 font-sans text-base antialiased font-normal leading-relaxed text-center bg-transparent cursor-pointer select-none text-blue-gray-900"
+              data-value="all">
+              <div class="z-20 text-inherit">
+                &nbsp;&nbsp;All&nbsp;&nbsp;
+              </div>
+              <div class="absolute inset-0 z-10 h-full bg-white rounded-md shadow"></div>
+            </li>
+            <li role="tab"
+              class="relative flex items-center justify-center w-full h-full px-2 py-1 font-sans text-base antialiased font-normal leading-relaxed text-center bg-transparent cursor-pointer select-none text-blue-gray-900"
+              data-value="monitored">
+              <div class="z-20 text-inherit">
+                &nbsp;&nbsp;Monitored&nbsp;&nbsp;
+              </div>
+            </li>
+            <li role="tab"
+              class="relative flex items-center justify-center w-full h-full px-2 py-1 font-sans text-base antialiased font-normal leading-relaxed text-center bg-transparent cursor-pointer select-none text-blue-gray-900"
+              data-value="unmonitored">
+              <div class="z-20 text-inherit">
+                &nbsp;&nbsp;Unmonitored&nbsp;&nbsp;
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="w-full md:w-72">
+        <div class="relative h-10 w-full min-w-[200px]">
+          <div class="absolute grid w-5 h-5 top-2/4 right-3 -translate-y-2/4 place-items-center text-blue-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+            </svg>
+          </div>
+          <input
+            class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 !pr-9 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+            placeholder=" " />
+          <label
+            class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+            Search
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-6 px-0 overflow-scroll">
+    <table class="w-full mt-4 text-left table-auto min-w-max">
+      <thead>
+        <tr>
+          <th
+            class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+            <p
+              class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Member
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+              </svg>
+            </p>
+          </th>
+          <th
+            class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+            <p
+              class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Function
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+              </svg>
+            </p>
+          </th>
+          <th
+            class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+            <p
+              class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Status
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+              </svg>
+            </p>
+          </th>
+          <th
+            class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+            <p
+              class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Employed
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+              </svg>
+            </p>
+          </th>
+          <th
+            class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+            <p
+              class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            </p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg"
+                alt="John Michael" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                  John Michael
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  john@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex flex-col">
+              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                Manager
+              </p>
+              <p
+                class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                Organization
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
+                <span class="">online</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              23/04/18
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg"
+                alt="Alexa Liras" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                  Alexa Liras
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  alexa@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex flex-col">
+              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                Programator
+              </p>
+              <p
+                class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                Developer
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold uppercase rounded-md select-none whitespace-nowrap bg-blue-gray-500/20 text-blue-gray-900">
+                <span class="">offline</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              23/04/18
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg"
+                alt="Laurent Perrier"
+                class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                  Laurent Perrier
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  laurent@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex flex-col">
+              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                Executive
+              </p>
+              <p
+                class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                Projects
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold uppercase rounded-md select-none whitespace-nowrap bg-blue-gray-500/20 text-blue-gray-900">
+                <span class="">offline</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              19/09/17
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg"
+                alt="Michael Levi" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                  Michael Levi
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  michael@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="flex flex-col">
+              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                Programator
+              </p>
+              <p
+                class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                Developer
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
+                <span class="">online</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              24/12/08
+            </p>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg"
+                alt="Richard Gran" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                  Richard Gran
+                </p>
+                <p
+                  class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  richard@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex flex-col">
+              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                Manager
+              </p>
+              <p
+                class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                Executive
+              </p>
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold uppercase rounded-md select-none whitespace-nowrap bg-blue-gray-500/20 text-blue-gray-900">
+                <span class="">offline</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4">
+            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+              04/10/21
+            </p>
+          </td>
+          <td class="p-4">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex items-center justify-between p-4 border-t border-blue-gray-50">
+    <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+      Page 1 of 10
+    </p>
+    <div class="flex gap-2">
+      <button
+        class="select-none rounded-lg border border-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        Previous
+      </button>
+      <button
+        class="select-none rounded-lg border border-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        Next
+      </button>
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+
+
+---
+<span id="more-examples"></span>
+## Explore More Tailwind CSS Examples
+Check out more table examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
+
+• <a href="https://www.material-tailwind.com/blocks/tables" target="_blank">Table Blocks</a><br />
+• <a href="https://www.material-tailwind.com/blocks/tables-headers" target="_blank">Table Headers</a><br />
+• <a href="https://www.material-tailwind.com/blocks/tables-footers" target="_blank">Table Footers</a><br />
+
+
+---
+
+## Simple Sortable Table
+
+Use this example of a sortable table to enable users to organize data by different columns. Each column header can be clicked to sort the data, improving data analysis and navigation.
+
+<CodePreview
+  id="simple-sortable-table"
+  link="table#simple-sortable-table"
+  className="mt-4"
+  component={<HTMLTableExamples.SimpleSortableTable/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full overflow-scroll bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+        <tr>
+            <th
+            class="p-4 transition-colors cursor-pointer border-b border-slate-300 bg-slate-50 hover:bg-slate-100">
+                <p
+                class="flex items-center justify-between gap-2 text-sm font-normal leading-none text-slate-800">
+                Name
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                </svg>
+                </p>
+            </th>
+            
+            <th
+            class="p-4 transition-colors cursor-pointer border-b border-slate-300 bg-slate-50 hover:bg-slate-100">
+                <p
+                class="flex items-center justify-between gap-2 text-sm font-normal leading-none text-slate-800">
+                Role
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                </svg>
+                </p>
+            </th>
+            <th
+            class="p-4 transition-colors cursor-pointer border-b border-slate-300 bg-slate-50 hover:bg-slate-100">
+                <p
+                class="flex items-center justify-between gap-2 text-sm font-normal leading-none text-slate-800">
+                Email
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                </svg>
+                </p>
+            </th>
+            <th
+            class="p-4 transition-colors cursor-pointer border-b border-slate-300 bg-slate-50 hover:bg-slate-100">
+                <p
+                class="flex items-center justify-between gap-2 text-sm font-normal leading-none text-slate-800">
+                Location
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                </svg>
+                </p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    John Michael
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Manager
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    john.michael@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    New York, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Alexa Liras
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    alexa.liras@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    San Francisco, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Laurent Perrier
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Executive
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    laurent.perrier@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Paris, France
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Michael Levi
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    michael.levi@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    London, UK
+                </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+ 
+```
+</CodePreview>
+
+---
+
+## Table with Edit Modal
+
+This table example integrates an edit modal, letting users to update details directly from the table. Selecting the "Edit" button opens a modal with editable fields for quick and convenient data modifications. Perfect for management interfaces where data needs to be frequently updated.
+
+<CodePreview
+  id="table-with-modal"
+  link="table#table-with-modal"
+  className="mt-4"
+  component={<HTMLTableExamples.TableWithModal/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full text-slate-700 bg-white shadow-md rounded-xl bg-clip-border">
+  <div class="relative mx-4 mt-4 overflow-hidden text-slate-700 bg-white rounded-none bg-clip-border">
+    <div class="flex items-center justify-between ">
+        <div>
+            <h3 class="text-lg font-semibold text-slate-800">Employees List</h3>
+            <p class="text-slate-500">Review each person before edit</p>
+        </div>
+      <div class="flex flex-col gap-2 shrink-0 sm:flex-row">
+        <button
+          class="rounded border border-slate-300 py-2.5 px-3 text-center text-xs font-semibold text-slate-600 transition-all hover:opacity-75 focus:ring focus:ring-slate-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button">
+          View All
+        </button>
+        <button
+          class="flex select-none items-center gap-2 rounded bg-slate-800 py-2.5 px-4 text-xs font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+            stroke-width="2" class="w-4 h-4">
+            <path
+              d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z">
+            </path>
+          </svg>
+          Add member
+        </button>
+      </div>
+    </div>
+   
+  </div>
+  <div class="p-0 overflow-scroll">
+    <table class="w-full mt-4 text-left table-auto min-w-max">
+      <thead>
+        <tr>
+          <th
+            class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+            <p
+              class="flex items-center justify-between gap-2 font-sans text-sm font-normal leading-none text-slate-500">
+              Member
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+              </svg>
+            </p>
+          </th>
+          <th
+            class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+            <p
+              class="flex items-center justify-between gap-2 font-sans text-sm font-normal leading-none text-slate-500">
+              Function
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+              </svg>
+            </p>
+          </th>
+          <th
+            class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+            <p
+              class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
+              Status
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+              </svg>
+            </p>
+          </th>
+          <th
+            class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+            <p
+              class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
+              Employed
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+              </svg>
+            </p>
+          </th>
+          <th
+            class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+            <p
+              class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
+            </p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-4 border-b border-slate-200">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg"
+                alt="John Michael" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="text-sm font-semibold text-slate-700">
+                  John Michael
+                </p>
+                <p
+                  class="text-sm text-slate-500">
+                  john@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <div class="flex flex-col">
+              <p class="text-sm font-semibold text-slate-700">
+                Manager
+              </p>
+              <p
+                class="text-sm text-slate-500">
+                Organization
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
+                <span class="">online</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <p class="text-sm text-slate-500">
+              23/04/18
+            </p>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-slate-200">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg"
+                alt="Alexa Liras" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="text-sm font-semibold text-slate-700">
+                  Alexa Liras
+                </p>
+                <p
+                  class="text-sm text-slate-500">
+                  alexa@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <div class="flex flex-col">
+              <p class="text-sm font-semibold text-slate-700">
+                Designer
+              </p>
+              <p
+                class="text-sm text-slate-500">
+                Marketing
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold uppercase rounded-md select-none whitespace-nowrap bg-slate-100 text-slate-500">
+                <span class="">offline</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <p class="text-sm text-slate-500">
+              23/04/18
+            </p>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-slate-200">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg"
+                alt="Laurent Perrier"
+                class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="text-sm font-semibold text-slate-700">
+                  Laurent Perrier
+                </p>
+                <p
+                  class="text-sm text-slate-500">
+                  laurent@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <div class="flex flex-col">
+              <p class="text-sm font-semibold text-slate-700">
+                Executive
+              </p>
+              <p
+                class="text-sm text-slate-500">
+                Projects
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold uppercase rounded-md select-none whitespace-nowrap bg-slate-100 text-slate-500">
+                <span class="">offline</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <p class="text-sm text-slate-500">
+              19/09/17
+            </p>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-slate-200">
+            <div class="flex items-center gap-3">
+              <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg"
+                alt="Michael Levi" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+              <div class="flex flex-col">
+                <p class="text-sm font-semibold text-slate-700">
+                  Michael Levi
+                </p>
+                <p
+                  class="text-sm text-slate-500">
+                  michael@creative-tim.com
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <div class="flex flex-col">
+              <p class="text-sm font-semibold text-slate-700">
+                Designer
+              </p>
+              <p
+                class="text-sm text-slate-500">
+                Developer
+              </p>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <div class="w-max">
+              <div
+                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
+                <span class="">online</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <p class="text-sm text-slate-500">
+              24/12/08
+            </p>
+          </td>
+          <td class="p-4 border-b border-slate-200">
+            <button
+              class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-dialog-target="dialog"
+              >
+              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  class="w-4 h-4">
+                  <path
+                    d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
+  <div class="flex items-center justify-between p-3">
+    <p class="block text-sm text-slate-500">
+      Page 1 of 10
+    </p>
+    <div class="flex gap-1">
+      <button
+        class="rounded border border-slate-300 py-2.5 px-3 text-center text-xs font-semibold text-slate-600 transition-all hover:opacity-75 focus:ring focus:ring-slate-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        Previous
+      </button>
+      <button
+        class="rounded border border-slate-300 py-2.5 px-3 text-center text-xs font-semibold text-slate-600 transition-all hover:opacity-75 focus:ring focus:ring-slate-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button">
+        Next
+      </button>
+    </div>
+  </div>
+</div>
+
+<div data-dialog-backdrop="dialog" data-dialog-backdrop-close="true" class="absolute left-0 top-0 inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300">
+    <div data-dialog="dialog"
+      class="relative mx-auto flex w-full max-w-[24rem] flex-col rounded-xl bg-white bg-clip-border text-slate-700 shadow-md">
+      <div class="flex flex-col p-6">
+        <h4
+          class="text-2xl mb-1 font-semibold text-slate-700">
+          Edit Member Details
+        </h4>
+        <p class="mb-3 mt-1 text-slate-400">
+          Enter or reset each information for the member access.
+        </p>
+       
+       <div class="w-full max-w-sm min-w-[200px] mt-4">
+        <label class="block mb-1 text-sm text-slate-700">
+           Member Name
+        </label>
+        <input
+            type="text"
+            class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            placeholder="Enter your text" />
+        </div>
+        <div class="w-full max-w-sm min-w-[200px] mt-4">
+        <label class="block mb-1 text-sm text-slate-700">
+            Member Email
+        </label>
+        <input
+            type="text"
+            class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            placeholder="Enter the email" />
+        </div>
+        <div class="w-full max-w-sm min-w-[200px] mt-4">
+            <label class="block mb-1 text-sm text-slate-700">
+                Job
+            </label>
+            <input
+                type="text"
+                class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+                placeholder="Enter the job" />
+        </div>
+        <div class="w-full max-w-sm min-w-[200px] mt-4">
+            <label class="block mb-1 text-sm text-slate-700">
+                Active Status
+            </label>
+            <input
+                type="text"
+                class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+                placeholder="Offline/Online" />
+        </div>
+        
+      </div>
+      <div class="p-6 pt-0">
+        <div class="flex space-x-2">
+            <button
+                class="w-full mx-auto select-none rounded border border-red-600 py-2 px-4 text-center text-sm font-semibold text-red-600 transition-all hover:bg-red-600 hover:text-white hover:shadow-md hover:shadow-red-600/20 active:bg-red-700 active:text-white active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                type="button"
+                data-dialog-close="true">
+                Cancel
+            </button>
+
+            <button
+                class="w-full mx-auto select-none rounded bg-slate-800 py-2 px-4 text-center text-sm font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                type="button"
+                data-dialog-close="true">
+                Save
+            </button>
+        </div>
+        <p class="flex justify-center mt-4 font-sans text-sm text-slate-500">
+          Looking for more details? Contact
+          <a href="#admin"
+            class="ml-1 text-sm font-bold leading-normal text-slate-500">
+            Admin.
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>  
+ 
+```
+</CodePreview>
+
+---
+
+## Comparison Table
+
+Use this tailwind example of a comparison table to compare different products or plans. The table includes columns for various features and checkmarks indicating the presence of each feature in different plans. This design helps users make informed decisions by clearly presenting comparative data.
+
+<CodePreview
+  id="comparison-table"
+  link="table#comparison-table"
+  className="mt-4"
+  component={<HTMLTableExamples.ComparisonTable/>}
+>
+```html
+<div class="flex w-full flex-col overflow-scroll rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+  <div class="py-4">
+    <table class="w-full min-w-[768px] table-auto">
+      <thead>
+        <tr class="border-b border-slate-200">
+          <th class="px-6 py-3 text-left">
+            <span class="font-semibold text-slate-700">The Plans</span>
+          </th>
+          <th class="px-6 py-3 text-center">
+            <span class="block mb-1 text-base font-normal text-slate-400">Team</span>
+            <h5 class="block text-xl font-bold text-slate-800"> $39 </h5>
+          </th>
+          <th class="px-6 py-3 text-center">
+            <span class="block mb-1 text-base font-normal text-slate-400">Growth</span>
+            <h5 class="block text-xl font-bold text-slate-800"> $79 </h5>
+          </th>
+          <th class="px-6 py-3 text-center">
+            <span class="block mb-1 text-base  font-normal text-slate-400">Enterprise</span>
+            <h5 class="block text-xl font-bold text-slate-800"> $99 </h5>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-slate-200">
+          <td class="px-6 py-5 text-left">
+            <p class="font-sans text-sm font-medium text-slate-500"> 50+ Section Examples </p>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="mx-auto h-5 w-5 text-green-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+            </svg>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="mx-auto h-5 w-5 text-green-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+            </svg>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="mx-auto h-5 w-5 text-green-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+            </svg>
+          </td>
+        </tr>
+        <tr class="border-b border-slate-200">
+          <td class="px-6 py-5 text-left">
+            <p class="font-sans text-sm font-medium text-slate-500"> Multiple use </p>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="mx-auto h-5 w-5 text-green-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+            </svg>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <p class="block font-sans text-sm font-normal leading-normal text-inherit !text-gray-500"> upon request </p>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <p class="block font-sans text-sm font-normal leading-normal text-inherit !text-gray-500"> upon request </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="px-6 py-5 text-left"></td>
+          <td class="px-6 py-5 text-center">
+            <button class="select-none rounded bg-slate-800 py-2.5 px-4 text-center text-sm font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button" data-ripple-light="true"> Buy Now </button>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <button class="select-none rounded bg-slate-800 py-2.5 px-4 text-center text-sm font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button" data-ripple-light="true"> Buy Now </button>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <button class="select-none rounded bg-slate-800 py-2.5 px-4 text-center text-sm font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button" data-ripple-light="true"> Buy Now </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+ 
+```
+</CodePreview>
+
+---
+
+## Dark Table
+
+Use this example of a table with a dark theme to improve readability and provide a modern look. The table uses a consistent color scheme across all cells, making it easy to scan.
+
+<CodePreview
+  id="dark-table"
+  link="table#dark-table"
+  className="mt-4"
+  component={<HTMLTableExamples.DarkTable/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full overflow-scroll text-slate-300 bg-slate-800 shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+        <tr>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Name
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Role
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Email
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Location
+                </p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    John Michael
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    Manager
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    john.michael@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    New York, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Alexa Liras
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    alexa.liras@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    San Francisco, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Laurent Perrier
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    Executive
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    laurent.perrier@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    Paris, France
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Michael Levi
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    michael.levi@example.com
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    London, UK
+                </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+ 
+```
+</CodePreview>
+
+---
+
+## Dark Table with Striped Rows
+
+This table example features alternating row colors to improve readability. The striped rows help users distinguish between different rows, making it easier to follow data across the table.
+
+<CodePreview
+  id="dark-table-striped-rows"
+  link="table#dark-table-striped-rows"
+  className="mt-4"
+  component={<HTMLTableExamples.DarkTableStripedRows/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full overflow-scroll text-slate-300 bg-slate-800 shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+        <tr>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Car Name
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Year of Production
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Price
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Location
+                </p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="even:bg-slate-900 hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Ford Mustang
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    2020
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    $35,000
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    New York, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="even:bg-slate-900 hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Tesla Model S
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    2022
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    $80,000
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    San Francisco, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="even:bg-slate-900 hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    BMW 3 Series
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    2019
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    $25,000
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    Paris, France
+                </p>
+            </td>
+        </tr>
+        <tr class="even:bg-slate-900 hover:bg-slate-700">
+            <td class="p-4">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Audi A4
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    2021
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    $40,000
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    London, UK
+                </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+ 
+```
+</CodePreview>
+
+---
+
+## Dark Table with Striped Columns
+
+Use this example of a table with striped columns to highlight different sections of data vertically. This design improves the visual structure of the table, allowing users to easily compare information across columns.
+
+<CodePreview
+  id="dark-table-striped-columns"
+  link="table#dark-table-striped-columns"
+  className="mt-4"
+  component={<HTMLTableExamples.DarkTableStripedColumns/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full overflow-scroll text-slate-300 bg-slate-800 shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+        <tr>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Book Title
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Author
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Year of Publication
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Genre
+                </p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-100 font-semibold">
+                    To Kill a Mockingbird
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    Harper Lee
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-300">
+                    1960
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    Fiction
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-100 font-semibold">
+                    1984
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    George Orwell
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-300">
+                    1949
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    Dystopian
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-100 font-semibold">
+                    The Great Gatsby
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    F. Scott Fitzgerald
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-300">
+                    1925
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    Classic
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 bg-slate-900">
+                <p class="text-sm text-slate-100 font-semibold">
+                    The Catcher in the Rye
+                </p>
+            </td>
+            <td class="p-4 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    J.D. Salinger
+                </p>
+            </td>
+            <td class="p-4 bg-slate-900">
+                <p class="text-sm text-slate-300">
+                    1951
+                </p>
+            </td>
+            <td class="p-4 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    Fiction
+                </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div> 
+```
+</CodePreview>
+
+---
+
+
+
+<br />
+
+ <span id="best-practices"></span>
+## Table Best Practices for Developers
+
+• Establish a visual hierarchy to guide users through the table.<br />
+• For tables with a large number of rows, consider using pagination or infinite scroll to improve load times and usability.<br /> 
+• Use tooltips, expandable rows, or detail panels to provide additional information without overwhelming the initial view.<br />
+• Provide immediate feedback for interactions such as sorting, filtering, or editing.
+
+
+
+
+
+
+
+
+
+
+
+

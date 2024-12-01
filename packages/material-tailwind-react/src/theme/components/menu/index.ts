@@ -30,7 +30,9 @@ export const menu: MenuStylesType = {
   defaultProps: {
     placement: "bottom",
     offset: 5,
-    dismiss: {},
+    dismiss: {
+      itemPress: true
+    },
     animate: {
       unmount: {},
       mount: {},

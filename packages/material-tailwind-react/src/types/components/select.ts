@@ -45,6 +45,7 @@ export type disabled = boolean;
 export type className = string;
 export type name = string;
 export type children = ReactNode;
+export type containerProps = React.ComponentProps<"div">;
 export type contextValue = {
   selectedIndex: number;
   setSelectedIndex: (index: number) => void;
@@ -80,6 +81,7 @@ export const propTypesDisabled: any = PropTypes.bool;
 export const propTypesClassName: any = PropTypes.string;
 export const propTypesName: any = PropTypes.string;
 export const propTypesChildren: any = PropTypes.node.isRequired;
+export const propTypesContainerProps: any = PropTypes.instanceOf(Object);
 export const propTypesContextValue: any = PropTypes.shape({
   selectedIndex: PropTypes.number.isRequired,
   setSelectedIndex: PropTypes.func.isRequired,

@@ -1,0 +1,440 @@
+---
+title: Tailwind CSS List Examples - Material Tailwind 
+description: Create stylish and responsive lists with the versatile Tailwind CSS List component. Customize and integrate it easily into your web project.
+navigation:
+  [
+    "list",
+    "list-with-avatar",
+    "list-with-icon",
+    "list-with-select-item",
+    "list-with-disabled-item",
+    "list-with-link",
+    "list-with-badge",
+     "list-custom-style",
+     "more-examples",
+  ]
+github: input
+prev: form
+next: menu
+---
+
+# Tailwind CSS List
+
+Create stylish and organized lists for your web projects with our Tailwind CSS List component. Whether you need a simple bullet list, an ordered list, or even a horizontal list, Material Tailwind has you covered. 
+
+The Tailwind CSS List component allows you to build elegant and well-structured lists with minimal effort. It's perfect for various use cases, from displaying content to creating navigation menus, showing search results, presenting messages in chat applications, or listing files in a directory. 
+
+Copy-paste the following Tailwind CSS and HTML snippet code examples and you can tailor your lists to match your project's unique style.
+
+
+<br />
+
+## Tailwind CSS List Examples:
+
+## Simple List
+Check out this example if you are looking for a simple and responsive list component to integrate into your project. You can customize it as you want.
+
+<CodePreview
+  id="list"
+  link="list#list"
+  className="mt-4"
+  component={<HTMLListExamples.ListDefault/>}
+>
+```html
+<div class="relative flex flex-col rounded-lg bg-white shadow-sm border border-slate-200">
+  <nav class="flex min-w-[240px] flex-col gap-1 p-1.5">
+    <div
+      role="button"
+      class="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      Inbox
+    </div>
+      <div
+      role="button"
+        class="text-slate-800  flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        Trash
+      </div>
+      <div
+        role="button"
+        class="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        Settings
+      </div>
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+## List With Avatar
+
+Use this beautiful list example that includes profile images alongside text descriptions. It is designed to showcase a team or group of individuals for a contact list, team page, or a similar context. 
+
+<CodePreview
+  id="list-with-avatar"
+  link="list#list-with-avatar"
+  className="mt-4"
+ component={<HTMLListExamples.ListWithAvatar/>}
+>
+```html
+<div class="relative flex w-96 flex-col rounded-lg border border-slate-200 bg-white shadow-sm">
+  <nav class="flex min-w-[240px] flex-col gap-1 p-1.5">
+    <div
+      role="button"
+      class="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      <div class="mr-4 grid place-items-center">
+        <img
+          alt="candice"
+          src="https://docs.material-tailwind.com/img/face-1.jpg"
+          class="relative inline-block h-12 w-12 !rounded-full  object-cover object-center"
+        />
+      </div>
+      <div>
+        <h6 class="text-slate-800 font-medium">
+          Tania Andrew
+        </h6>
+        <p class="text-slate-500 text-sm">
+          Software Engineer @ Material Tailwind
+        </p>
+      </div>
+    </div>
+    <div
+      role="button"
+      class="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      <div class="mr-4 grid place-items-center">
+        <img
+          alt="alexander"
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          class="relative inline-block h-12 w-12 !rounded-full  object-cover object-center"
+        />
+      </div>
+      <div>
+        <h6 class="text-slate-800 font-medium">
+          Alexander
+        </h6>
+        <p class="text-slate-500 text-sm">
+          Backend Developer @ Material Tailwind
+        </p>
+      </div>
+    </div>
+    <div
+      role="button"
+      class="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      <div class="mr-4 grid place-items-center">
+        <img
+          alt="emma"
+          src="https://docs.material-tailwind.com/img/face-3.jpg"
+          class="relative inline-block h-12 w-12 !rounded-full  object-cover object-center"
+        />
+      </div>
+      <div>
+        <h6 class="text-slate-800 font-medium">
+          Emma Willever
+        </h6>
+        <p class="text-slate-500 text-sm">
+          UI/UX Designer @ Material Tailwind
+        </p>
+      </div>
+    </div>
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## List With Icon
+
+Use this example of a list with action buttons (icons). It is a more interactive variant of a list, where each item not only serves as an interactive element navigation or selection) but also includes a button for performing specific actions, such as deletion, editing, or more, indicated by the SVG icon within each button.
+
+<CodePreview
+  id="list-with-icon"
+  link="list#list-with-icon"
+  className="mt-4"
+ component={<HTMLListExamples.ListWithIcon/>}
+>
+```html
+<div class="relative flex flex-col rounded-lg bg-white shadow-sm border border-slate-200">
+  <nav class="flex min-w-[240px] flex-col gap-1 p-1.5">
+    <div
+      role="button"
+      class="text-slate-800 flex w-full items-center rounded-md p-2 pl-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      Item One
+      <div class="ml-auto grid place-items-center justify-self-end">
+        <button class="rounded-md border border-transparent p-2.5 text-center text-sm transition-all text-slate-600 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+            <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z" clip-rule="evenodd" />
+          </svg>
+        </button>
+      </div>
+    </div>
+      <div
+      role="button"
+        class="text-slate-800  flex w-full items-center rounded-md p-2 pl-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        Item Two
+        <div class="ml-auto grid place-items-center justify-self-end">
+        <button class="rounded-md border border-transparent p-2.5 text-center text-sm transition-all text-slate-600 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+            <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z" clip-rule="evenodd" />
+          </svg>
+        </button>
+      </div>
+      </div>
+      <div
+        role="button"
+        class="text-slate-800 flex w-full items-center rounded-md p-2 pl-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        Item Three
+      <div class="ml-auto grid place-items-center justify-self-end">
+        <button class="rounded-md border border-transparent p-2.5 text-center text-sm transition-all text-slate-600 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+            <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z" clip-rule="evenodd" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## List With Selected Item
+In this example, the initial state of the first item ("Inbox") differs slightly from the others; it has a semi-transparent background (<Code>bg-slate-100</Code>) that distinguishes it from the rest, indicating a selected or default state.
+
+<CodePreview
+  id="list-with-selected-item"
+  link="list#list-with-selected-item"
+  className="mt-4"
+ component={<HTMLListExamples.ListWithSelectedItem/>}
+>
+```html
+<div class="relative flex flex-col rounded-lg bg-white shadow-sm border border-slate-200">
+  <nav class="flex min-w-[240px] flex-col gap-1 p-1.5">
+    <div
+      role="button"
+      class="text-slate-800 flex w-full items-center rounded-md p-3 transition-all bg-slate-100 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      Inbox
+    </div>
+      <div
+      role="button"
+        class="mt-1 text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        Trash
+      </div>
+      <div
+        role="button"
+        class="mt-1 text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        Settings
+      </div>
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## List With Disabled Item
+
+Use this example to implement a list of UI components where one of the items is styled to appear disabled.
+<CodePreview
+  id="list-with-disabled-item"
+  link="list#list-with-disabled-item"
+  className="mt-4"
+ component={<HTMLListExamples.ListWithDisabledItem/>}
+>
+```html
+<div class="relative flex flex-col rounded-lg bg-white shadow-sm border border-slate-200">
+  <nav class="flex min-w-[240px] flex-col gap-1 p-1.5">
+    <div
+      role="button"
+      class="pointer-events-none opacity-50 text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      Inbox
+    </div>
+      <div
+      role="button"
+        class="text-slate-800  flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        Trash
+      </div>
+      <div
+        role="button"
+        class="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        Settings
+      </div>
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+## List With  Link
+
+This component example includes <Code>\<a href="#"></Code> anchor tags wrapping around each list item, effectively turning each item into a clickable link that can navigate to other pages or execute actions.
+
+<CodePreview
+  id="list-with-link"
+  link="list#list-with-link"
+  className="mt-4"
+ component={<HTMLListExamples.ListWithLink/>}
+>
+```html
+<div class="relative flex flex-col rounded-lg bg-white shadow-sm border border-slate-200">
+  <nav class="flex min-w-[240px] flex-col gap-1 p-1.5">
+    <a href="#" class="text-initial">
+      <div
+        role="button"
+        class="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        Inbox
+      </div>
+    </a>
+
+    <a href="#" class="text-initial">
+      <div
+        role="button"
+        class="text-slate-800  flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        Trash
+      </div>
+    </a>
+  
+    <a href="#" class="text-initial">
+      <div
+        role="button"
+        class="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        Settings
+      </div>
+    </a>   
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## List With Badge
+
+This example adds notification badges to each list item, indicating the number of items or messages within each category ("Inbox", "Spam", "Trash"). These badges provide a visual cue to users about the status or content volume associated with each section.
+
+<CodePreview
+  id="list-with-badge"
+  link="list#list-with-badge"
+  className="mt-4"
+ component={<HTMLListExamples.ListWithBadge/>}
+>
+```html
+<div class="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
+  <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+    <div role="button"
+      class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+      Inbox
+      <div class="grid ml-auto place-items-center justify-self-end">
+        <div
+          class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-gray-900 uppercase rounded-full select-none whitespace-nowrap bg-gray-900/10">
+          <span class="">14</span>
+        </div>
+      </div>
+    </div>
+    <div role="button"
+      class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+      Spam
+      <div class="grid ml-auto place-items-center justify-self-end">
+        <div
+          class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-gray-900 uppercase rounded-full select-none whitespace-nowrap bg-gray-900/10">
+          <span class="">2</span>
+        </div>
+      </div>
+    </div>
+    <div role="button"
+      class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+      Trash
+      <div class="grid ml-auto place-items-center justify-self-end">
+        <div
+          class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-gray-900 uppercase rounded-full select-none whitespace-nowrap bg-gray-900/10">
+          <span class="">40</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## List Custom Style
+
+Check out this example to see how you can add custom styles to your Material Tailwind list component.
+
+<CodePreview
+  id="list-custom-style"
+  link="list#list-custom-style"
+  className="mt-4"
+ component={<HTMLListExamples.ListCustomStyles/>}
+>
+```html
+<div class="relative flex flex-col rounded-lg bg-white shadow-sm border border-slate-200">
+  <nav class="flex min-w-[240px] flex-col gap-1 py-1.5">
+    <div
+      role="button"
+      class="text-slate-800 flex w-full items-center p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z" />
+      </svg>
+
+      Inbox
+    </div>
+      <div
+      role="button"
+        class="text-slate-800 flex w-full items-center p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+        </svg>
+
+        Trash
+      </div>
+      <div
+        role="button"
+        class="text-slate-800 flex w-full items-center p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+
+
+        Settings
+      </div>
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+
+<span id="more-examples"></span>
+## Explore More Tailwind CSS Examples
+Check out more list component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

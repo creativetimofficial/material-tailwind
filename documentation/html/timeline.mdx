@@ -1,0 +1,431 @@
+---
+title: Tailwind CSS Timeline for React - Material Tailwind
+description: Customise your web projects with our timeline component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "timeline",
+    "timeline-with-icon",
+    "timeline-with-avatar",
+    "activities-timeline",
+    "best-practices",
+  ]
+github: timeline
+prev: textarea
+next: tooltip
+---
+
+<DocsTitle href="timeline">
+# Tailwind CSS Timeline 
+</DocsTitle>
+
+Use our Tailwind CSS Timeline component in your web projects.
+
+The timeline is used to visualize the progression of activities, tasks, projects, or any series of events over time. A timeline can be horizontal or vertical, and it can include dates, text descriptions, icons, and sometimes images or links to provide more context about each event.
+
+See below our beautiful Timeline examples that you can use in your Tailwind CSS  project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+
+<br />
+
+## Timeline Examples:
+
+## Simple Timeline with Description
+
+Use this versatile vertical timeline example designed to display a series of events, each with a title and a descriptive text block. 
+
+<CodePreview component={<HTMLTimelineExamples.DefaultTimeline />}>
+```html
+<div class="w-[32rem]">
+  <ul class="flex flex-col w-full">
+    <li class="relative flex flex-col gap-2">
+      <span class="absolute left-0 grid justify-center transition-opacity duration-200 bg-transparent">
+        <span class="h-full w-0.5 bg-blue-gray-100"></span>
+      </span>
+      <div class="flex items-center h-3 gap-4">
+        <span
+          class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
+        <h6
+          class="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
+          Timeline Title Here.
+        </h6>
+      </div>
+      <div class="flex gap-4 pb-8">
+        <span class="flex-shrink-0 invisible h-full pointer-events-none"></span>
+        <div>
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty
+            five years of blood sweat and tears, and I&apos;m never giving
+            up, I&apos;m just getting started. I&apos;m up to something. Fan
+            luv.
+          </p>
+        </div>
+      </div>
+    </li>
+    <li class="relative flex flex-col gap-2">
+      <span class="absolute left-0 grid justify-center transition-opacity duration-200 bg-transparent">
+        <span class="h-full w-0.5 bg-blue-gray-100"></span>
+      </span>
+      <div class="flex items-center h-3 gap-4">
+        <span
+          class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
+        <h6
+          class="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
+          Timeline Title Here.
+        </h6>
+      </div>
+      <div class="flex gap-4 pb-8">
+        <span class="flex-shrink-0 invisible h-full pointer-events-none"></span>
+        <div>
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty
+            five years of blood sweat and tears, and I'm never giving
+            up, I'm just getting started. I'm up to something. Fan
+            luv.
+          </p>
+        </div>
+      </div>
+    </li>
+    <li class="relative flex flex-col gap-2">
+      <div class="flex items-center h-3 gap-4">
+        <span
+          class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
+        <h6
+          class="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
+          Timeline Title Here.
+        </h6>
+      </div>
+      <div class="flex gap-4">
+        <span class="flex-shrink-0 invisible h-full pointer-events-none"></span>
+        <div>
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty
+            five years of blood sweat and tears, and I'm never giving
+            up, I'm just getting started. I'm up to something. Fan
+            luv.
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="timeline-with-icon">
+## Timeline with Icon
+</DocsTitle>
+
+Use the example below for a timeline component with icon to denote different events or stages. Each item in the timeline is presented as a separate list item (<Code>\<li></Code>), with visual indicators and descriptive content. 
+
+<CodePreview id="timeline-with-icon" component={<HTMLTimelineExamples.TimelineWithIcon />}>
+```html
+<div class="w-[32rem]">
+  <ul class="flex flex-col w-full">
+    <li class="relative flex flex-col gap-2">
+      <span class="absolute left-0 grid justify-center transition-opacity duration-200 bg-transparent">
+        <span class="h-full w-0.5 bg-blue-gray-100"></span>
+      </span>
+      <div class="flex items-center gap-4">
+        <span class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-2 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+            class="w-4 h-4">
+            <path
+              d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z">
+            </path>
+            <path
+              d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z">
+            </path>
+          </svg>
+        </span>
+        <h5
+          class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          Timeline Title Here.
+        </h5>
+      </div>
+      <div class="flex gap-4 pb-8">
+        <span class="flex-shrink-0 invisible h-full pointer-events-none"></span>
+        <div>
+          <p class="block font-sans text-base antialiased font-normal leading-relaxed text-gray-600">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty
+            five years of blood sweat and tears, and I'm never giving
+            up, I'm just getting started. I'm up to something. Fan
+            luv.
+          </p>
+        </div>
+      </div>
+    </li>
+    <li class="relative flex flex-col gap-2">
+      <span class="absolute left-0 grid justify-center transition-opacity duration-200 bg-transparent">
+        <span class="h-full w-0.5 bg-blue-gray-100"></span>
+      </span>
+      <div class="flex items-center gap-4">
+        <span class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-2 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+            class="w-4 h-4">
+            <path fill-rule="evenodd"
+              d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </span>
+        <h5
+          class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          Timeline Title Here.
+        </h5>
+      </div>
+      <div class="flex gap-4 pb-8">
+        <span class="flex-shrink-0 invisible h-full pointer-events-none"></span>
+        <div>
+          <p class="block font-sans text-base antialiased font-normal leading-relaxed text-gray-600">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty
+            five years of blood sweat and tears, and I'm never giving
+            up, I'm just getting started. I'm up to something. Fan
+            luv.
+          </p>
+        </div>
+      </div>
+    </li>
+    <li class="relative flex flex-col gap-2">
+      <div class="flex items-center gap-4">
+        <span class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-2 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+            class="w-4 h-4">
+            <path
+              d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 01-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.323.152-.691.546-1.004zM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 01-.921.42z">
+            </path>
+            <path fill-rule="evenodd"
+              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v.816a3.836 3.836 0 00-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 01-.921-.421l-.879-.66a.75.75 0 00-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 001.5 0v-.81a4.124 4.124 0 001.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 00-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 00.933-1.175l-.415-.33a3.836 3.836 0 00-1.719-.755V6z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </span>
+        <h5
+          class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          Timeline Title Here.
+        </h5>
+      </div>
+      <div class="flex gap-4">
+        <span class="flex-shrink-0 invisible h-full pointer-events-none"></span>
+        <div>
+          <p class="block font-sans text-base antialiased font-normal leading-relaxed text-gray-600">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty
+            five years of blood sweat and tears, and I'm never giving
+            up, I'm just getting started. I'm up to something. Fan
+            luv.
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="timeline-with-avatar">
+## Timeline with Avatar
+</DocsTitle>
+
+Unlike traditional timeline elements that use abstract shapes or icons to denote events, this example uses images, specifically profile photos (avatars), to add a personal or human touch to each list item. 
+
+Each list item includes a title and a paragraph. The titles are prominent (<Code>text-xl font-semibold text-blue-gray-900</Code>), while the paragraphs provide additional information in a smaller, lighter font (<Code>text-base font-normal text-gray-600</Code>).
+
+<CodePreview id="timeline-with-avatar" component={<HTMLTimelineExamples.TimelineWithAvatar />}>
+```html
+<div class="w-[32rem]">
+  <ul class="flex flex-col w-full">
+    <li class="relative flex flex-col gap-2">
+      <span class="absolute left-0 grid justify-center transition-opacity duration-200 bg-transparent">
+        <span class="h-full w-0.5 bg-blue-gray-100"></span>
+      </span>
+      <div class="flex items-center gap-4">
+        <span class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-0 text-white">
+          <img src="https://docs.material-tailwind.com/img/team-1.jpg" alt="user 1"
+            class="relative inline-block h-9 w-9 !rounded-full  border-2 border-gray-900 object-cover object-center" />
+        </span>
+        <h5 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          Timeline Title Here.
+        </h5>
+      </div>
+      <div class="flex gap-4 pb-8">
+        <span class="flex-shrink-0 invisible h-full pointer-events-none"></span>
+        <div>
+          <p class="block font-sans text-base antialiased font-normal leading-relaxed text-gray-600">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty
+            five years of blood sweat and tears, and I'm never giving
+            up, I'm just getting started. I'm up to something. Fan
+            luv.
+          </p>
+        </div>
+      </div>
+    </li>
+    <li class="relative flex flex-col gap-2">
+      <span class="absolute left-0 grid justify-center transition-opacity duration-200 bg-transparent">
+        <span class="h-full w-0.5 bg-blue-gray-100"></span>
+      </span>
+      <div class="flex items-center gap-4">
+        <span class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-0 text-white">
+          <img src="https://docs.material-tailwind.com/img/team-2.jpg" alt="user 2"
+            class="relative inline-block h-9 w-9 !rounded-full border-2 border-gray-900 object-cover object-center" />
+        </span>
+        <h5 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          Timeline Title Here.
+        </h5>
+      </div>
+      <div class="flex gap-4 pb-8">
+        <span class="flex-shrink-0 invisible h-full pointer-events-none"></span>
+        <div>
+          <p class="block font-sans text-base antialiased font-normal leading-relaxed text-gray-600">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty
+            five years of blood sweat and tears, and I'm never giving
+            up, I'm just getting started. I'm up to something. Fan
+            luv.
+          </p>
+        </div>
+      </div>
+    </li>
+    <li class="relative flex flex-col gap-2">
+      <div class="flex items-center gap-4">
+        <span class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-0 text-white">
+          <img src="https://docs.material-tailwind.com/img/team-3.jpg" alt="user 3"
+            class="relative inline-block h-9 w-9 !rounded-full border-2 border-gray-900 object-cover object-center" />
+        </span>
+        <h5 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          Timeline Title Here.
+        </h5>
+      </div>
+      <div class="flex gap-4">
+        <span class="flex-shrink-0 invisible h-full pointer-events-none"></span>
+        <div>
+          <p class="block font-sans text-base antialiased font-normal leading-relaxed text-gray-600">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty
+            five years of blood sweat and tears, and I'm never giving
+            up, I'm just getting started. I'm up to something. Fan
+            luv.
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="activities-timeline">
+## Activities Timeline
+</DocsTitle>
+
+This example showcases a well-structured, compact, and beautiful notification list designed using HTML and Tailwind CSS, featuring different notification items with specific icons and color codes.
+
+
+<CodePreview id="activities-timeline" component={<HTMLTimelineExamples.ActivitiesTimeline />}>
+```html
+<div class="w-[25rem]">
+  <ul class="flex flex-col w-full">
+    <li class="relative flex flex-col gap-2 h-28">
+      <span class="absolute left-0 grid !w-[78px] justify-center bg-transparent transition-opacity duration-200">
+        <span class="h-full w-0.5 bg-blue-gray-100"></span>
+      </span>
+      <div
+        class="relative flex items-center gap-4 py-3 pl-4 pr-8 bg-white border shadow-lg rounded-xl border-blue-gray-50 shadow-blue-gray-900/5">
+        <span
+          class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900/10 p-3 text-gray-900">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+            class="w-5 h-5">
+            <path fill-rule="evenodd"
+              d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </span>
+        <div class="flex flex-col gap-1">
+          <h6
+            class="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-blue-gray-900">
+            $2400, Design changes
+          </h6>
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
+            22 DEC 7:20 PM
+          </p>
+        </div>
+      </div>
+    </li>
+    <li class="relative flex flex-col gap-2 h-28">
+      <span class="absolute left-0 grid !w-[78px] justify-center bg-transparent transition-opacity duration-200">
+        <span class="h-full w-0.5 bg-blue-gray-100"></span>
+      </span>
+      <div
+        class="relative flex items-center gap-4 py-3 pl-4 pr-8 bg-white border shadow-lg rounded-xl border-blue-gray-50 shadow-blue-gray-900/5">
+        <span
+          class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-red-500/10 p-3 text-red-500">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+            class="w-5 h-5">
+            <path
+              d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375z">
+            </path>
+            <path fill-rule="evenodd"
+              d="M3.087 9l.54 9.176A3 3 0 006.62 21h10.757a3 3 0 002.995-2.824L20.913 9H3.087zm6.163 3.75A.75.75 0 0110 12h4a.75.75 0 010 1.5h-4a.75.75 0 01-.75-.75z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </span>
+        <div class="flex flex-col gap-1">
+          <h6
+            class="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-blue-gray-900">
+            New order #1832412
+          </h6>
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
+            21 DEC 11 PM
+          </p>
+        </div>
+      </div>
+    </li>
+    <li class="relative flex flex-col gap-2 h-28">
+      <div
+        class="relative flex items-center gap-4 py-3 pl-4 pr-8 bg-white border shadow-lg rounded-xl border-blue-gray-50 shadow-blue-gray-900/5">
+        <span
+          class="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-green-500/10 p-3 text-green-500">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+            class="w-5 h-5">
+            <path
+              d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 01-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.323.152-.691.546-1.004zM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 01-.921.42z">
+            </path>
+            <path fill-rule="evenodd"
+              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v.816a3.836 3.836 0 00-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 01-.921-.421l-.879-.66a.75.75 0 00-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 001.5 0v-.81a4.124 4.124 0 001.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 00-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 00.933-1.175l-.415-.33a3.836 3.836 0 00-1.719-.755V6z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </span>
+        <div class="flex flex-col gap-1">
+          <h6
+            class="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-blue-gray-900">
+            Payment completed for order #4395133
+          </h6>
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
+            20 DEC 2:20 AM
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+```
+</CodePreview>
+
+<br />
+
+<span id="best-practices"></span>
+## Timeline Best Practices for Developers
+
+• Maintain consistent styling throughout the timeline for elements such as dates, event titles, and descriptions.<br />
+• Aim for brief, concise descriptions, and provide links to more detailed information if necessary.<br />
+• If the timeline is dense with information, consider adding interactive elements such as tooltips, pop-ups, or modals that provide more • details when users hover or click on an event.<br />
+• Use size, color, and typography to establish a visual hierarchy that guides users through the timeline.

@@ -56,7 +56,7 @@ const Navbar = React.forwardRef<HTMLDivElement, NavbarProps>(
     shadow = shadow ?? defaultProps.shadow;
     blurred = blurred ?? defaultProps.blurred;
     fullWidth = fullWidth ?? defaultProps.fullWidth;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const navbarRoot = classnames(objectsToString(base.navbar.initial), {

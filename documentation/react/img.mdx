@@ -1,0 +1,177 @@
+---
+title: Tailwind CSS Image for React - Material Tailwind
+description: Customise your web projects with our easy-to-use image examples for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "img",
+    "img-with-rounded-corners",
+    "circular-img",
+    "img-with-caption",
+    "img-with-shadow",
+    "img-with-blurred-caption",
+    "more-examples",
+  ]
+github: img
+prev: footer
+next: video
+---
+
+<DocsTitle href="img">
+# Tailwind CSS Image - React
+</DocsTitle>
+
+Use our Tailwind CSS <Code>img</Code> example to portray people or objects in your web projects. The <Code>img</Code> can be used to display media content on your website.
+
+See below our beautiful <Code>img</Code> examples that you can use in your Tailwind CSS and React project. The examples also comes in different styles so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview component={<ImgExamples.DefaultImg />}>
+```jsx
+export function DefaultImg() {
+  return (
+    <img
+      className="h-96 w-full object-cover object-center"
+      src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+      alt="nature image"
+    />
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="img-with-rounded-corners">
+## Image With Rounded Corners
+</DocsTitle>
+
+<CodePreview component={<ImgExamples.ImgWithRoundedCorners />}>
+```jsx
+export function ImgWithRoundedCorners() {
+  return (
+    <img
+      className="h-96 w-full rounded-lg object-cover object-center"
+      src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+      alt="nature image"
+    />
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="circular-img">
+## Circular Image
+</DocsTitle>
+
+<CodePreview component={<ImgExamples.CircularImg />}>
+```jsx
+export function CircularImg() {
+  return (
+    <img
+      className="h-96 w-96 rounded-full object-cover object-center"
+      src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+      alt="nature image"
+    />
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="img-with-caption">
+## Image with Caption
+</DocsTitle>
+
+<CodePreview component={<ImgExamples.ImgWithCaption />}>
+```jsx
+import { Typography } from "@material-tailwind/react";
+
+export function ImgWithCaption() {
+  return (
+    <figure>
+      <img
+        className="h-96 w-full rounded-lg object-cover object-center"
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+        alt="nature image"
+      />
+      <Typography as="caption" variant="small" className="mt-2 text-center font-normal">
+        Image caption
+      </Typography>
+    </figure>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="img-with-shadow">
+## Image with Shadow
+</DocsTitle>
+
+<CodePreview component={<ImgExamples.ImgWithShadow />}>
+```jsx
+export function ImgWithShadow() {
+  return (
+    <img
+      className="h-96 w-full rounded-lg object-cover object-center shadow-xl shadow-blue-gray-900/50"
+      src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+      alt="nature image"
+    />
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="img-with-blurred-caption">
+## Image with Blurred Caption
+</DocsTitle>
+
+<CodePreview component={<ImgExamples.ImgWithBlurredCaption />}>
+```jsx
+import { Typography } from "@material-tailwind/react";
+
+export function ImgWithBlurredCaption() {
+  return (
+    <figure className="relative h-96 w-full">
+      <img
+        className="h-full w-full rounded-xl object-cover object-center"
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+        alt="nature image"
+      />
+      <figcaption className="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 justify-between rounded-xl border border-white bg-white/75 py-4 px-6 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
+        <div>
+          <Typography variant="h5" color="blue-gray">
+            Sara Lamalo
+          </Typography>
+          <Typography color="gray" className="mt-2 font-normal">
+            20 July 2022
+          </Typography>
+        </div>
+        <Typography variant="h5" color="blue-gray">
+          Growth
+        </Typography>
+      </figcaption>
+    </figure>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more image component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
+
+• <a href="https://www.material-tailwind.com/blocks/team-sections" target="_blank">Team Blocks</a><br />
+• <a href="https://www.material-tailwind.com/blocks/logo-sections" target="_blank">Logo Blocks</a><br />
+---

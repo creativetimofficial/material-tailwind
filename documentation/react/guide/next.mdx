@@ -1,5 +1,5 @@
 ---
-title: Next.JS - Installation Guide
+title: Next.js - Installation Guide
 description: Learn how to use Material Tailwind components with Next.js and Tailwind CSS to easily create elegant and flexible pages.
 navigation:
   [
@@ -26,7 +26,7 @@ Learn how to setup and install @material-tailwind/react with Next.js.
 <br />
 <br />
 
-First you need to create a new project using next.js, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://nextjs.org/docs/getting-started?ref=material-tailwind">Next.JS Official Documentation</a>
+First, create a new Next.js project using the command below. When asked if you want to use Tailwind CSS with your project, select "Yes" so that it's automatically installed and set up for you. For more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://nextjs.org/docs/getting-started/installation?ref=material-tailwind">Next.js Official Documentation</a>.
 
 ```bash
 npx create-next-app@latest
@@ -34,12 +34,13 @@ npx create-next-app@latest
 
 <br />
 
-Then you need to install Tailwind CSS since @material-tailwind/react is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project.
-Check <a href="https://tailwindcss.com/docs/guides/nextjs?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation</a> for next.js on Tailwind CSS Documentation.
+If you have an existing Next.js project and need to install Tailwind CSS manually, check the guide in the <a href="https://tailwindcss.com/docs/guides/nextjs?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS documentation</a>.
 
 ---
 
+<DocsTitle href="npm">
 ## Using NPM
+</DocsTitle>
 
 Install @material-tailwind/react as a dependency using NPM by running the following command:
 
@@ -51,7 +52,9 @@ npm i @material-tailwind/react
 
 ---
 
+<DocsTitle href="yarn">
 ## Using Yarn
+</DocsTitle>
 
 Install @material-tailwind/react as a dependency using Yarn by running the following command:
 
@@ -63,7 +66,9 @@ yarn add @material-tailwind/react
 
 ---
 
+<DocsTitle href="pnpm">
 ## Using PNPM
+</DocsTitle>
 
 Install @material-tailwind/react as a dependency using PNPM by running the following command:
 
@@ -75,11 +80,13 @@ pnpm i @material-tailwind/react
 
 ---
 
-## TailwindCSS Configurations
+<DocsTitle href="tailwindcss-config">
+## Tailwind CSS Configuration
+</DocsTitle>
 
 <span id="tailwindcss-config" className="scroll-mt-48" />
 
-Once you install @material-tailwind/react you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/react/utils.
+Once you install @material-tailwind/react, you need to wrap your Tailwind CSS configuration with the <Code>withMT()</Code> function from @material-tailwind/react/utils in your <Code>tailwind.config.js</Code> file.
 
 ```js {1, 3, 9}
 const withMT = require("@material-tailwind/react/utils/withMT");
@@ -95,7 +102,40 @@ module.exports = withMT({
 
 ---
 
+<DocsTitle href="with-server-components">
+## With Next.js 13 App Router and Server Components
+</DocsTitle>
+
+<span id="with-server-components" className="scroll-mt-48" />
+
+If you want to use @material-tailwind/react with the Next.js 13 App Router, you need to make use of the <br /> <Code>'use client'</Code> directive since many Material Tailwind components can only be rendered on the client side. A simple approach is to re-export or wrap Material Tailwind components in your own components.
+
+```js
+"use client";
+
+import { ThemeProvider, Button } from "@material-tailwind/react";
+
+export { ThemeProvider, Button };
+```
+
+<br />
+<br />
+
+Once you've re-exported or wrapped any Material Tailwind components you need, simply point all imports to the new files.
+
+```js
+// ❌ invalid - this will not work on the client side
+import { Button } from "@material-tailwind/react";
+
+// ✅ valid - this will work on the client side
+import { Button } from "path/to/the/new/file";
+```
+
+---
+
+<DocsTitle href="with-monorepo">
 ## TailwindCSS Configurations with MonoRepo
+</DocsTitle>
 
 <span id="with-monorepo" className="scroll-mt-48" />
 
@@ -119,43 +159,16 @@ module.exports = withMT({
 
 ---
 
-## With Next.js 13 appDir and Server Components
-
-<span id="with-server-components" className="scroll-mt-48" />
-
-If you want to use @material-tailwind/react with Next.js 13 appDir feature you need to make use of the <br /> <Code>'use client'</Code> to makes it possible a simple approach is to make a new export file for the components you want to use from @material-tailwind/react
-
-```js
-"use client";
-
-import { ThemeProvider, Button } from "@material-tailwind/react";
-
-export { ThemeProvider, Button };
-```
-
-<br />
-<br />
-
-Once you've created the export file for the components now you need to import the
-components you want to use from that new created file rather than @material-tailwind/react.
-
-```js
-// ❌ invalid - this is not working with server components
-import { Button } from "@material-tailwind/react";
-
-// ✅ valid - this will work fine with server components
-import { Button } from "path/to/the/new/file";
-```
-
----
-
+<DocsTitle href="theme-provider">
 ## Theme Provider
+</DocsTitle>
 
 <span id="theme-provider" className="scroll-mt-48" />
 
-@material-tailwind/react comes with a theme provider that set's the default theme/styles for components or to provide your own theme/styles to your components. You need to wrap your entire application with the <Code>ThemeProvider</Code> coming from @material-tailwind/react.
+@material-tailwind/react comes with a theme provider that sets the default or custom theme/styles for Material Tailwind components. Wrap your entire application with the <Code>ThemeProvider</Code> component from @material-tailwind/react. The file to add this to depends on your Next.js setup:
 
-On the <Code>pages/\_app</Code> put the code bellow.
+With the App Router: <Code>app/layout</Code>  
+With the Pages Router: <Code>pages/\_app</Code>
 
 ```jsx {3, 7, 9}
 import "/styles/globals.css";
@@ -173,7 +186,9 @@ export default function MyApp({ Component, pageProps }) {
 
 ---
 
+<DocsTitle href="example">
 ## Example
+</DocsTitle>
 
 Now you're good to go and use @material-tailwind/react in your project.
 

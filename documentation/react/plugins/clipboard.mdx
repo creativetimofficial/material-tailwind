@@ -1,0 +1,226 @@
+---
+title: Tailwind CSS Clipboard for React - Material Tailwind
+description: Customise your web projects with our easy-to-use clipboard example for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "clipboard",
+    "clipboard-copy-input",
+    "clipboard-copy-button",
+    "clipboard-with-tooltip",
+       
+  ]
+github: plugins/clipboard
+prev: plugins/charts
+next: plugins/date-picker
+---
+
+<DocsTitle href="clipboard">
+# Tailwind CSS Clipboard - React
+</DocsTitle>
+
+Use our Tailwind CSS Date Picker example to  to facilitate the copying and pasting of data within an application.
+
+See below our beautiful clipboard example that you can use in your Tailwind CSS and React project. The example below is using the `usehooks-ts`  libraries, make sure to install them before using the example.
+
+```bash
+npm i usehooks-ts
+```
+
+<br />
+<br />
+
+<CodePreview component={<Plugins.ClipboardDefault />}>
+```jsx
+import React from "react";
+import { IconButton, Typography } from "@material-tailwind/react";
+import { useCopyToClipboard } from "usehooks-ts";
+import { CheckIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
+
+export function ClipboardDefault() {
+  const [value, copy] = useCopyToClipboard();
+  const [copied, setCopied] = React.useState(false);
+
+  return (
+    <div>
+      <div className="flex items-center gap-x-4">
+        <Typography variant="lead">npm i @material-tailwind/react</Typography>
+        <IconButton
+          onMouseLeave={() => setCopied(false)}
+          onClick={() => {
+            copy("npm i @material-tailwind/react");
+            setCopied(true);
+          }}
+        >
+          {copied ? (
+            <CheckIcon className="h-5 w-5 text-white" />
+          ) : (
+            <DocumentDuplicateIcon className="h-5 w-5 text-white" />
+          )}
+        </IconButton>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="clipboard-copy-input">
+## Copy from Input  
+</DocsTitle>
+
+
+<CodePreview component={<Plugins.ClipboardCopyInput />}>
+```jsx
+import React from "react";
+import { Input, Button } from "@material-tailwind/react";
+import { useCopyToClipboard } from "usehooks-ts";
+import { CheckIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
+
+export function ClipboardCopyInput() {
+  const [value, copy] = useCopyToClipboard();
+  const [copied, setCopied] = React.useState(false);
+  const [inputValue, setInputValue] = React.useState(
+    "npm i @material-tailwind/react",
+  );
+
+  return (
+    <div className="flex items-center gap-4">
+      <div className="w-72">
+        <Input
+          value={inputValue}
+          type="email"
+          placeholder="Enter to copy"
+          className="!border !border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-gray-900 focus:!border-t-gray-900 focus:ring-gray-900/10"
+          labelProps={{
+            className: "hidden",
+          }}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+          }}
+          containerProps={{ className: "min-w-[100px]" }}
+        />
+      </div>
+      <Button
+        size="md"
+        onMouseLeave={() => setCopied(false)}
+        onClick={() => {
+          copy(inputValue);
+          setCopied(true);
+        }}
+        className="flex items-center gap-2"
+      >
+        {copied ? (
+          <>
+            <CheckIcon className="h-4 w-4 text-white" />
+            Copied
+          </>
+        ) : (
+          <>
+            <DocumentDuplicateIcon className="h-4 w-4 text-white" />
+            Copy
+          </>
+        )}
+      </Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="clipboard-copy-button">
+## Copy Button  
+</DocsTitle>
+
+
+<CodePreview component={<Plugins.ClipboardCopyButton />}>
+```jsx
+import React from "react";
+import { Typography, Button } from "@material-tailwind/react";
+import { useCopyToClipboard } from "usehooks-ts";
+import { CheckIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
+
+export function ClipboardCopyButton() {
+  const [value, copy] = useCopyToClipboard();
+  const [copied, setCopied] = React.useState(false);
+
+  return (
+    <Button
+      onMouseLeave={() => setCopied(false)}
+      onClick={() => {
+        copy("npm i @material-tailwind/react");
+        setCopied(true);
+      }}
+      className="flex items-center gap-x-3 px-4 py-2.5 lowercase"
+    >
+      <Typography
+        className="border-r border-gray-400/50 pr-3 font-normal"
+        variant="small"
+      >
+        npm i @material-tailwind/react
+      </Typography>
+      {copied ? (
+        <CheckIcon className="h-4 w-4 text-white" />
+      ) : (
+        <DocumentDuplicateIcon className="h-4 w-4 text-white" />
+      )}
+    </Button>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+
+<DocsTitle href="clipboard-with-tooltip">
+## Copy Button With Tooltip 
+</DocsTitle>
+
+
+<CodePreview component={<Plugins.ClipboardWithTooltip />}>
+```jsx
+import React from "react";
+import { Typography, Button, Tooltip } from "@material-tailwind/react";
+import { useCopyToClipboard } from "usehooks-ts";
+import { CheckIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
+
+export function ClipboardWithTooltip() {
+  const [value, copy] = useCopyToClipboard();
+  const [copied, setCopied] = React.useState(false);
+
+  return (
+    <Tooltip content={copied ? "Copied" : "Copy"}>
+      <Button
+        onMouseLeave={() => setCopied(false)}
+        onClick={() => {
+          copy("npm i @material-tailwind/react");
+          setCopied(true);
+        }}
+        className="flex items-center gap-x-3 px-4 py-2.5 lowercase"
+      >
+        <Typography
+          className="border-r border-gray-400/50 pr-3 font-normal"
+          variant="small"
+        >
+          npm i @material-tailwind/react
+        </Typography>
+        {copied ? (
+          <CheckIcon className="h-4 w-4 text-white" />
+        ) : (
+          <DocumentDuplicateIcon className="h-4 w-4 text-white" />
+        )}
+      </Button>
+    </Tooltip>
+  );
+}
+```
+</CodePreview>
+
+---

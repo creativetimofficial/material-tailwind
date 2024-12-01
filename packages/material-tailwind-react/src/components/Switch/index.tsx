@@ -12,12 +12,20 @@ import objectsToString from "../../utils/objectsToString";
 import { useTheme } from "../../context/theme";
 
 // types
-import type { color, label, ripple, className, objectType } from "../../types/components/checkbox";
+import type {
+  color,
+  label,
+  ripple,
+  className,
+  disabled,
+  objectType,
+} from "../../types/components/checkbox";
 import {
   propTypesColor,
   propTypesLabel,
   propTypesRipple,
   propTypesClassName,
+  propTypesDisabled,
   propTypesObject,
 } from "../../types/components/checkbox";
 
@@ -26,6 +34,7 @@ export interface SwitchProps extends React.ComponentProps<"input"> {
   label?: label;
   ripple?: ripple;
   className?: className;
+  disabled?: disabled;
   containerProps?: objectType;
   labelProps?: objectType;
   circleProps?: objectType;
@@ -34,24 +43,42 @@ export interface SwitchProps extends React.ComponentProps<"input"> {
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
   (
-    { color, label, ripple, className, containerProps, circleProps, labelProps, inputRef, ...rest },
+    {
+      color,
+      label,
+      ripple,
+      className,
+      disabled,
+      containerProps,
+      circleProps,
+      labelProps,
+      inputRef,
+      ...rest
+    },
     ref,
   ) => {
     // 1. init
     const { switch: toggle } = useTheme();
     const { defaultProps, valid, styles } = toggle;
     const { base, colors } = styles;
+    const switchId = React.useId();
 
     // 2. set default props
     color = color ?? defaultProps.color;
     ripple = ripple ?? defaultProps.ripple;
-    className = className ?? defaultProps.className;
+    disabled = disabled ?? defaultProps.disabled;
+    containerProps = containerProps ?? defaultProps.containerProps;
+    labelProps = labelProps ?? defaultProps.labelProps;
+    circleProps = circleProps ?? defaultProps.circleProps;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
 
     // 4. set styles
-    const rootClasses = classnames(objectsToString(base.root));
+    const rootClasses = classnames(objectsToString(base.root), {
+      [objectsToString(base.disabled)]: disabled,
+    });
     const containerClasses = twMerge(
       classnames(objectsToString(base.container)),
       containerProps?.className,
@@ -59,15 +86,15 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     const inputClasses = twMerge(
       classnames(
         objectsToString(base.input),
-        objectsToString(colors[findMatch(valid.colors, color, "blue")]),
+        objectsToString(colors[findMatch(valid.colors, color, "gray")]),
       ),
       className,
     );
     const circleClasses = twMerge(
       classnames(
         objectsToString(base.circle),
-        colors[findMatch(valid.colors, color, "blue")].circle,
-        colors[findMatch(valid.colors, color, "blue")].before,
+        colors[findMatch(valid.colors, color, "gray")].circle,
+        colors[findMatch(valid.colors, color, "gray")].before,
       ),
       circleProps?.className,
     );
@@ -82,10 +109,11 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
             {...rest}
             ref={inputRef}
             type="checkbox"
-            id={rest.id || "switch"}
+            disabled={disabled}
+            id={rest.id || switchId}
             className={inputClasses}
           />
-          <label {...circleProps} htmlFor={rest.id || "switch"} className={circleClasses}>
+          <label {...circleProps} htmlFor={rest.id || switchId} className={circleClasses}>
             {ripple && (
               <div
                 className={rippleClasses}
@@ -103,7 +131,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
           </label>
         </div>
         {label && (
-          <label {...labelProps} htmlFor={rest.id || "switch"} className={labelClasses}>
+          <label {...labelProps} htmlFor={rest.id || switchId} className={labelClasses}>
             {label}
           </label>
         )}
@@ -117,6 +145,7 @@ Switch.propTypes = {
   label: propTypesLabel,
   ripple: propTypesRipple,
   className: propTypesClassName,
+  disabled: propTypesDisabled,
   containerProps: propTypesObject,
   labelProps: propTypesObject,
   circleProps: propTypesObject,

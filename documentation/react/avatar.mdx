@@ -1,97 +1,162 @@
 ---
 title: Tailwind CSS Avatar for React - Material Tailwind
 description: Customise your web projects  with our easy-to-use avatar component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["avatar", "avatar-variants", "avatar-sizes", "avatar-stack", "props", "theme"]
-related:
+navigation:
   [
-    {
-      title: "Props",
-      route: "props/avatar",
-      description: "Learn more about props definition and types of avatar component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/avatar",
-      description: "Learn how to customize the theme and styles for avatar component.",
-    },
+    "avatar",
+    "avatar-variants",
+    "avatar-sizes",
+    "avatar-with-border",
+    "avatar-with-text",
+    "avatar-stack",
+    "avatar-with-dot-indicator",
+    avatar-with-user-dropdown,
+    "avatar-custom-styles",
+    "avatar-props",
+    "types-variant",
+    "types-size",
+    "types-color",
+    "avatar-theme",
+    "avatar-theme-object-type",
+    "avatar-theme-customization",
+    "more-examples"
   ]
 github: avatar
 prev: alert
-next: breadcrumbs
+next: badge
 ---
 
+<DocsTitle href="avatar">
 # Tailwind CSS Avatar - React
+</DocsTitle>
 
-Use our Tailwind CSS <Code>Avatar</Code> component to portray people or objects in your web projects. The <Code>Avatar</Code> can be used as a visual identifier for a user profile on your website.
+Our React Avatar component is used to represent people or objects in your web projects. The avatar component usually displays a profile picture or a placeholder graphic if no image is available. Commonly places for avatars include: user profiles, comment sections, user lists, and anywhere else where a visual representation of a user is needed.
 
-See below our beautiful <Code>Avatar</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+To jumpstart your development process, we offer a range of pre-designed Avatar examples that are ready to be integrated into your project. All our examples are based on React and styled with Tailwind CSS.
 
 <br />
 
-<CodePreview id="avatar" link="avatar#avatar" component={<Avatar src="/img/face-2.jpg" alt="avatar" />}>
+## Avatar Examples
+
+<DocsTitle href="default-avatar">
+## Default Avatar 
+</DocsTitle>
+
+Get started with this simple avatar example that comes with a pre-set image, ensuring that your avatars look great from the start. You can easily replace the default <Code>src</Code> with any image URL to display user-specific avatars.
+
+<CodePreview link="avatar#avatar" component={<AvatarExamples.AvatarDefault />}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
-export default function Example() {
-  return <Avatar src="/img/face-2.jpg" alt="avatar" />;
+export function AvatarDefault() {
+  return <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" />;
 }
 ```
 </CodePreview>
 
+<br />
+
+Also, use the <Code>alt</Code> tag, set as "avatar", to make sure that the component is accessible. This feature is essential for screen readers, search engine optimization, and aligns with web accessibility standards
+
 ---
 
+<DocsTitle href="avatar-variants">
 ## Avatar Variants
+</DocsTitle>
 
-The <Code>Avatar</Code> component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Avatar</Code> component comes with 3 different variants that you can change using the <Code>variant</Code> prop.
 
-<CodePreview id="avatar-variants" link="avatar#avatar-variants" component={
-  <div className="flex gap-4">
-    <Avatar src="/img/face-2.jpg" alt="avatar" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" variant="circular" />
-  </div>
-}>
+<CodePreview link="avatar#avatar-variants" component={<AvatarExamples.AvatarVariants />}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
-export default function Variants() {
+export function AvatarVariants() {
   return (
     <div className="flex gap-4">
-      <Avatar src="/img/face-2.jpg" alt="avatar" />
-      <Avatar src="/img/face-2.jpg" alt="avatar" variant="circular" />
+      <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" />
+      <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" variant="rounded" />
+      <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" variant="square" />
     </div>
   );
 }
 ```
 </CodePreview>
 
+<br />
+As showcased in the example above, here are the avatar component variants:
+
+ִ• default (circular) variant - perfect for social media platforms, forums, and chat applications.<br/>
+• rounded variant - can be used in business applications, professional networks, or team collaboration tools.<br/>
+• square variant -  ideal for corporate environments, document management systems, or platforms where a more serious tone is preferred.<br/>
+
 ---
 
+<DocsTitle href="avatar-sizes">
 ## Avatar Sizes
+</DocsTitle>
 
-The <Code>Avatar</Code> component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
+The Avatar component comes with 6 different sizes that you can change it using the size prop: extra-small (xs), small (sm), medium (md), large (lg), extra-large (xl), and double extra-large (XXL). 
 
-<CodePreview id="avatar-sizes" link="avatar#avatar-sizes" component={
-  <div className="flex w-max items-end gap-4">
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="xs" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="sm" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="md" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="lg" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="xl" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="xxl" />
-  </div>
-}>
+<CodePreview link="avatar#avatar-sizes" component={<AvatarExamples.AvatarSizes />}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
-export default function Sizes() {
+export function AvatarSizes() {
   return (
     <div className="flex w-max items-end gap-4">
-      <Avatar src="/img/face-2.jpg" alt="avatar" size="xs" />
-      <Avatar src="/img/face-2.jpg" alt="avatar" size="sm" />
-      <Avatar src="/img/face-2.jpg" alt="avatar" size="md" />
-      <Avatar src="/img/face-2.jpg" alt="avatar" size="lg" />
-      <Avatar src="/img/face-2.jpg" alt="avatar" size="xl" />
-      <Avatar src="/img/face-2.jpg" alt="avatar" size="xxl" />
+      <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" size="xs" />
+      <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" size="sm" />
+      <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" size="md" />
+      <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" size="lg" />
+      <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" size="xl" />
+      <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" size="xxl" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+<br />
+This range provides great flexibility, allowing the avatars to fit perfectly in diverse contexts.
+
+---
+
+<DocsTitle href="avatar-with-border">
+## Avatar with border
+</DocsTitle>
+
+Add an  extra layer of visual appeal to your avatar with this example. You can add a border around the avatar using the <Code>withBorder</Code> prop. To change the color of the avatar border use the <Code>color</Code> prop, by default it's <Code>gray</Code>.
+
+<CodePreview component={<AvatarExamples.AvatarWithBorder />}>
+```jsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarWithBorder() {
+  return (
+    <div className="flex gap-4">
+      <Avatar
+        src="https://docs.material-tailwind.com/img/face-2.jpg"
+        alt="avatar"
+        withBorder={true}
+        className="p-0.5"
+      />
+      <Avatar
+        src="https://docs.material-tailwind.com/img/face-2.jpg"
+        alt="avatar"
+        variant="rounded"
+        withBorder={true}
+        color="green"
+        className="p-0.5"
+      />
+      <Avatar
+        src="https://docs.material-tailwind.com/img/face-2.jpg"
+        alt="avatar"
+        variant="square"
+        withBorder={true}
+        color="pink"
+        className="p-0.5"
+      />
     </div>
   );
 }
@@ -100,13 +165,65 @@ export default function Sizes() {
 
 ---
 
-## Avatar Stack
+<DocsTitle href="avatar-with-text">
+## Avatar with Text
+</DocsTitle>
 
-<CodePreview id="avatar-stack" link="avatar#avatar-stack" className="mt-4" component={<AvatarStack />}>
+You can use avatar with other components as well, see the example below. This component showcases a combination of avatars and typography elements to create a complete user profile presentation.
+
+<CodePreview component={<AvatarExamples.AvatarWithText />}>
+```jsx
+import { Avatar, Typography } from "@material-tailwind/react";
+
+export function AvatarWithText() {
+  return (
+    <div className="flex flex-col gap-6">
+      <div className="flex items-center gap-4">
+        <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" />
+        <div>
+          <Typography variant="h6">Tania Andrew</Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            Web Developer
+          </Typography>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" variant="rounded" />
+        <div>
+          <Typography variant="h6">Tania Andrew</Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            Web Developer
+          </Typography>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" variant="square" />
+        <div>
+          <Typography variant="h6">Tania Andrew</Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            Web Developer
+          </Typography>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="avatar-stack">
+## Avatar Stack
+</DocsTitle>
+
+Use this example of overlapped avatars to represent a group of users in a friendly and compact way. For example, showing multiple people involved in a team.
+
+<CodePreview link="avatar#avatar-stack" className="mt-4" component={<AvatarExamples.AvatarStack />}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
-export default function Example() {
+export function AvatarStack() {
   return (
     <div className="flex items-center -space-x-4">
       <Avatar
@@ -145,5 +262,504 @@ export default function Example() {
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="avatar-with-dot-indicator">
+## Avatar with Dot Indicator
+</DocsTitle>
+
+<CodePreview component={<AvatarExamples.AvatarWithDotIndicator />}>
+```jsx
+import { Avatar, Badge } from "@material-tailwind/react";
+
+export function AvatarWithDotIndicator() {
+  return (
+    <div className="flex gap-4">
+      <Badge placement="top-end" overlap="circular" color="green" withBorder>
+        <Avatar
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+        />
+      </Badge>
+      <Badge placement="top-end" color="green" withBorder>
+        <Avatar
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+          variant="rounded"
+        />
+      </Badge>
+      <Badge placement="bottom-end" overlap="circular" color="red" withBorder>
+        <Avatar
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+        />
+      </Badge>
+      <Badge placement="bottom-end" color="red" withBorder>
+        <Avatar
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+          variant="rounded"
+        />
+      </Badge>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="avatar-with-user-dropdown">
+## Avatar with User dropdown
+</DocsTitle>
+
+<CodePreview component={<AvatarExamples.AvatarWithUserDropdown />}>
+```jsx
+import React from "react";
+import {
+  Avatar,
+  Button,
+  Menu,
+  MenuHandler,
+  MenuItem,
+  MenuList,
+  Typography,
+} from "@material-tailwind/react";
+import {
+  Cog6ToothIcon,
+  InboxArrowDownIcon,
+  LifebuoyIcon,
+  PowerIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/solid";
+
+// profile menu component
+const profileMenuItems = [
+  {
+    label: "My Profile",
+    icon: UserCircleIcon,
+  },
+  {
+    label: "Edit Profile",
+    icon: Cog6ToothIcon,
+  },
+  {
+    label: "Inbox",
+    icon: InboxArrowDownIcon,
+  },
+  {
+    label: "Help",
+    icon: LifebuoyIcon,
+  },
+  {
+    label: "Sign Out",
+    icon: PowerIcon,
+  },
+];
+
+export function AvatarWithUserDropdown() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
+  return (
+    <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
+      <MenuHandler>
+        <Button
+          variant="text"
+          color="blue-gray"
+          className="flex items-center rounded-full p-0"
+        >
+          <Avatar
+            variant="circular"
+            size="md"
+            alt="tania andrew"
+            withBorder={true}
+            color="blue-gray"
+            className=" p-0.5"
+            src="https://docs.material-tailwind.com/img/face-2.jpg"
+          />
+        </Button>
+      </MenuHandler>
+      <MenuList className="p-1">
+        {profileMenuItems.map(({ label, icon }, key) => {
+          const isLastItem = key === profileMenuItems.length - 1;
+          return (
+            <MenuItem
+              key={label}
+              onClick={closeMenu}
+              className={`flex items-center gap-2 rounded ${
+                isLastItem
+                  ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
+                  : ""
+              }`}
+            >
+              {React.createElement(icon, {
+                className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
+                strokeWidth: 2,
+              })}
+              <Typography
+                as="span"
+                variant="small"
+                className="font-normal"
+                color={isLastItem ? "red" : "inherit"}
+              >
+                {label}
+              </Typography>
+            </MenuItem>
+          );
+        })}
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="avatar-custom-styles">
+## Avatar with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the Avatar component. Like in the example below - apply a border with <Code>border-green-500</Code> for a pop of color and layered shadows <Code>shadow-xl shadow-green-900/20</Code> for depth, creating a striking visual effect.
+
+<CodePreview component={<AvatarExamples.AvatarCustomStyles />}>
+```jsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarCustomStyles() {
+  return (
+    <Avatar
+      size="lg"
+      alt="avatar"
+      src="https://docs.material-tailwind.com/img/face-2.jpg"
+      className="border border-green-500 shadow-xl shadow-green-900/20 ring-4 ring-green-500/30"
+    />
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="avatar-props">
+## Avatar Props
+</DocsTitle>
+
+The following props are available for the avatar component. These are the custom props that we've added for
+the avatar component and you can use all the other native image props as well.
+
+| Attribute    | Type                      | Description                      | Default               |
+| ------------ | ------------------------- | -------------------------------- | --------------------- |
+| `variant`    | [Variant](#types-variant) | Change avatar variant            | <Code>circular</Code> |
+| `size`       | [Size](#types-size)       | Change avatar size               | <Code>md</Code>       |
+| `color`      | [Color](#types-color)     | Change avatar border color       | <Code>gray</Code>     |
+| `className`  | <Code>string</Code>       | Add custom className for avatar  | `''`                  |
+| `withBorder` | <Code>boolean</Code>      | Add 2px border around the avatar | <Code>false</Code>    |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+Our avatar component is Typescript friendly. Use this to make sure that the correct prop types are passed to the component.
+
+```tsx
+import type { AvatarProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-variant">
+## Types - Variant
+</DocsTitle>
+
+Set of predefined styling variants available for our React and Tailwind CSS Avatar component.
+
+```ts
+type variant = "rounded" | "circular";
+```
+
+---
+
+<DocsTitle href="types-size">
+## Types - Size
+</DocsTitle>
+
+Check out Material Tailwind’s set of predefined sizes available for the Avatar component.
+
+```ts
+type size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+Set of predefined colors available for our Avatar component. Choose from our extensive 20+ list of colors like: orange, brown, amber, yellow, blue, etc. Customize the component to fit your web project's needs.
+
+```ts
+type color =
+  | "white"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="avatar-theme">
+## Avatar Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for avatar component, the theme object for avatar component has three main objects:
+
+**1.** The <Code>defaultProps</Code> object for setting up the default value for props of avatar component.<br />
+**2.** The <Code>valid</Code> object for customizing the valid values for avatar component props.<br />
+**3.** The <Code>styles</Code> object for customizing the theme and styles of avatar component.<br />
+
+You can customize the theme and styles of avatar component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="avatar-theme-object-type">
+## Avatar Theme Object Type
+</DocsTitle>
+
+```ts
+interface AvatarStyleTypes {
+  defaultProps: {
+    variant: string;
+    size: string;
+    className: string;
+    withBorder: boolean;
+    color: string;
+  };
+  valid: {
+    variants: string[];
+    sizes: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      initial: object;
+      withBorder: object;
+    };
+    sizes: {
+      xs: object;
+      sm: object;
+      md: object;
+      lg: object;
+      xl: object;
+      xxl: object;
+    };
+    variants: {
+      square: object;
+      rounded: object;
+      circular: object;
+    };
+    borderColor: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AvatarStyleTypes } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="avatar-theme-customization">
+## Avatar Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  avatar: {
+    defaultProps: {
+      variant: "circular",
+      size: "md",
+      className: "",
+      withBorder: false,
+      color: "blue",
+    },
+    valid: {
+      variants: ["circular", "rounded", "square"],
+      sizes: ["xs", "sm", "md", "lg", "xl", "xxl"],
+      colors: [
+        "white",
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
+    styles: {
+      base: {
+        initial: {
+          display: "inline-block",
+          position: "relative",
+          objectFit: "object-cover",
+          objectPosition: "object-center",
+        },
+        withBorder: {
+          border: "border-2",
+        },
+      },
+      sizes: {
+        xs: {
+          width: "w-6",
+          height: "h-6",
+          borderRadius: "rounded-md",
+        },
+        sm: {
+          width: "w-9",
+          height: "h-9",
+          borderRadius: "rounded-md",
+        },
+        md: {
+          width: "w-12",
+          height: "h-12",
+          borderRadius: "rounded-lg",
+        },
+        lg: {
+          width: "w-[58px]",
+          height: "h-[58px]",
+          borderRadius: "rounded-lg",
+        },
+        xl: {
+          width: "w-[74px]",
+          height: "h-[74px]",
+          borderRadius: "rounded-xl",
+        },
+        xxl: {
+          width: "w-[110px]",
+          height: "h-[110px]",
+          borderRadius: "rounded-2xl",
+        },
+      },
+      variants: {
+        rounded: {},
+        square: {
+          borderRadius: "!rounded-none",
+        },
+        circular: {
+          borderRadius: "!rounded-full",
+        },
+      },
+      borderColor: {
+        white: {
+          borderColor: "border-white",
+        },
+        "blue-gray": {
+          borderColor: "border-blue-gray-500",
+        },
+        gray: {
+          borderColor: "border-gray-500",
+        },
+        brown: {
+          borderColor: "border-brown-500",
+        },
+        "deep-orange": {
+          borderColor: "border-deep-orange-500",
+        },
+        orange: {
+          borderColor: "border-orange-500",
+        },
+        amber: {
+          borderColor: "border-amber-500",
+        },
+        yellow: {
+          borderColor: "border-yellow-500",
+        },
+        lime: {
+          borderColor: "border-lime-500",
+        },
+        "light-green": {
+          borderColor: "border-light-green-500",
+        },
+        green: {
+          borderColor: "border-green-500",
+        },
+        teal: {
+          borderColor: "border-teal-500",
+        },
+        cyan: {
+          borderColor: "border-cyan-500",
+        },
+        "light-blue": {
+          borderColor: "border-light-blue-500",
+        },
+        blue: {
+          borderColor: "border-blue-500",
+        },
+        indigo: {
+          borderColor: "border-indigo-500",
+        },
+        "deep-purple": {
+          borderColor: "border-deep-purple-500",
+        },
+        purple: {
+          borderColor: "border-purple-500",
+        },
+        pink: {
+          borderColor: "border-pink-500",
+        },
+        red: {
+          borderColor: "border-red-500",
+        },
+      },
+    },
+  },
+};
+```
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more avatar component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
+
+• <a href="https://www.material-tailwind.com/blocks/testimonial-sections" target="_blank">Testimonial sections</a><br />
+• <a href="https://www.material-tailwind.com/blocks/team-sections" target="_blank">Team sections</a><br />

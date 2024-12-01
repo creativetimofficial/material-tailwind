@@ -18,6 +18,7 @@ import type {
   icon,
   ripple,
   className,
+  disabled,
   objectType,
 } from "../../types/components/checkbox";
 import {
@@ -26,6 +27,7 @@ import {
   propTypesIcon,
   propTypesRipple,
   propTypesClassName,
+  propTypesDisabled,
   propTypesObject,
 } from "../../types/components/checkbox";
 
@@ -35,6 +37,7 @@ export interface RadioProps extends React.ComponentProps<"input"> {
   icon?: icon;
   ripple?: ripple;
   className?: className;
+  disabled?: disabled;
   containerProps?: objectType;
   labelProps?: objectType;
   iconProps?: objectType;
@@ -49,6 +52,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
       icon,
       ripple,
       className,
+      disabled,
       containerProps,
       labelProps,
       iconProps,
@@ -61,22 +65,26 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     const { radio } = useTheme();
     const { defaultProps, valid, styles } = radio;
     const { base, colors } = styles;
+    const radioId = React.useId();
 
     // 2. set default props
     color = color ?? defaultProps.color;
     label = label ?? defaultProps.label;
     icon = icon ?? defaultProps.icon;
     ripple = ripple ?? defaultProps.ripple;
-    className = className ?? defaultProps.className;
+    disabled = disabled ?? defaultProps.disabled;
     containerProps = containerProps ?? defaultProps.containerProps;
     labelProps = labelProps ?? defaultProps.labelProps;
     iconProps = iconProps ?? defaultProps.iconProps;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
 
     // 4. set styles
-    const rootClasses = classnames(objectsToString(base.root));
+    const rootClasses = classnames(objectsToString(base.root), {
+      [objectsToString(base.disabled)]: disabled,
+    });
     const containerClasses = twMerge(
       classnames(objectsToString(base.container)),
       containerProps?.className,
@@ -84,14 +92,14 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     const inputClasses = twMerge(
       classnames(
         objectsToString(base.input),
-        objectsToString(colors[findMatch(valid.colors, color, "blue")]),
+        objectsToString(colors[findMatch(valid.colors, color, "gray")]),
       ),
       className,
     );
     const labelClasses = twMerge(classnames(objectsToString(base.label)), labelProps?.className);
     const radioIconClasses = classnames(
       classnames(objectsToString(base.icon)),
-      colors[findMatch(valid.colors, color, "blue")].color,
+      colors[findMatch(valid.colors, color, "gray")].color,
       iconProps?.className,
     );
 
@@ -100,7 +108,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
         <label
           {...containerProps}
           className={containerClasses}
-          htmlFor={rest.id || "radio"}
+          htmlFor={rest.id || radioId}
           onMouseDown={(e) => {
             const onMouseDown = containerProps?.onMouseDown;
 
@@ -115,8 +123,9 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
             {...rest}
             ref={inputRef}
             type="radio"
+            disabled={disabled}
             className={inputClasses}
-            id={rest.id || "radio"}
+            id={rest.id || radioId}
           />
           <span className={radioIconClasses}>
             {icon || (
@@ -132,7 +141,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
           </span>
         </label>
         {label && (
-          <label {...labelProps} className={labelClasses} htmlFor={rest.id || "radio"}>
+          <label {...labelProps} className={labelClasses} htmlFor={rest.id || radioId}>
             {label}
           </label>
         )}
@@ -147,6 +156,7 @@ Radio.propTypes = {
   icon: propTypesIcon,
   ripple: propTypesRipple,
   className: propTypesClassName,
+  disabled: propTypesDisabled,
   containerProps: propTypesObject,
   labelProps: propTypesObject,
 };

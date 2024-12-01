@@ -5,9 +5,9 @@ const checkboxColors: object = {
     before: "checked:before:bg-blue-gray-500",
   },
   gray: {
-    background: "checked:bg-gray-500",
-    border: "checked:border-gray-500",
-    before: "checked:before:bg-gray-500",
+    background: "checked:bg-gray-900",
+    border: "checked:border-gray-900",
+    before: "checked:before:bg-gray-900",
   },
   brown: {
     background: "checked:bg-brown-500",

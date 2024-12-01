@@ -1,0 +1,619 @@
+---
+title: Tailwind CSS Badge for React - Material Tailwind
+description: Customise your web projects with our easy-to-use badge component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "badge",
+    "badge-colors",
+    "badge-placement",
+    "badge-overlap",
+    "badge-with-border",
+    "badge-dot",
+    "badge-custom-styles",
+    "badge-props",
+    "types-color",
+    "types-overlap",
+    "types-placement",
+    "badge-theme",
+    "badge-theme-object-type",
+    "badge-theme-customization",
+    "more-examples"
+  ]
+github: badge
+prev: avatar
+next: breadcrumbs
+---
+
+<DocsTitle href="badge">
+# Tailwind CSS Badge - React
+</DocsTitle>
+
+Use our Tailwind CSS <Code>Badge</Code> component to show status in your web projects. The <Code>Badge</Code> can be used as a visual identifier for notifications on your website.
+
+See below our beautiful <Code>Badge</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview component={<BadgeExamples.BadgeDefault />}>
+```jsx
+import { Badge, Button } from "@material-tailwind/react";
+
+export function BadgeDefault() {
+  return (
+    <Badge content="5">
+      <Button>Notifications</Button>
+    </Badge>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="badge-colors">
+## Badge Colors
+</DocsTitle>
+
+The <Code>Badge</Code> component comes with 20 different colors that you can change it using the <Code>color</Code> prop.
+
+<CodePreview component={<BadgeExamples.BadgeColors />}>
+```jsx
+import { Badge, Button } from "@material-tailwind/react";
+
+export function BadgeColors() {
+  return (
+    <div className="flex items-center gap-4">
+      <Badge color="red">
+        <Button>Red</Button>
+      </Badge>
+      <Badge color="green">
+        <Button>Green</Button>
+      </Badge>
+      <Badge color="amber">
+        <Button>Amber</Button>
+      </Badge>
+      <Badge color="purple">
+        <Button>Purple</Button>
+      </Badge>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="badge-placement">
+## Badge Placement
+</DocsTitle>
+
+You can change the position of the <Code>Badge</Code> component using the <Code>placement</Code> prop.
+
+<CodePreview component={<BadgeExamples.BadgePlacement />}>
+```jsx
+import { Badge, Button } from "@material-tailwind/react";
+
+export function BadgePlacement() {
+  return (
+    <div className="flex items-center gap-4">
+      <Badge placement="top-start">
+        <Button>Top Start</Button>
+      </Badge>
+      <Badge placement="top-end">
+        <Button>Top End</Button>
+      </Badge>
+      <Badge placement="bottom-start">
+        <Button>Bottom Start</Button>
+      </Badge>
+      <Badge placement="bottom-end">
+        <Button>Bottom End</Button>
+      </Badge>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="badge-overlap">
+## Badge Overlap
+</DocsTitle>
+
+You can change the overlap of the <Code>Badge</Code> component using the <Code>overlap</Code> prop. This can help to place the <Code>Badge</Code> component on it's right place when using it with circular elements.
+
+<CodePreview component={<BadgeExamples.BadgeOverlap />}>
+```jsx
+import { Badge, IconButton, Avatar } from "@material-tailwind/react";
+import { HomeIcon } from "@heroicons/react/24/solid";
+
+export function BadgeOverlap() {
+  return (
+    <div className="flex items-center gap-8">
+      <Badge content="5">
+        <IconButton>
+          <HomeIcon className="h-4 w-4" />
+        </IconButton>
+      </Badge>
+      <Badge>
+        <IconButton>
+          <HomeIcon className="h-4 w-4" />
+        </IconButton>
+      </Badge>
+      <Badge content="5" overlap="circular" placement="bottom-end">
+        <Avatar
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+          alt="profile picture"
+        />
+      </Badge>
+      <Badge overlap="circular" placement="bottom-end">
+        <Avatar
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+          alt="profile picture"
+        />
+      </Badge>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="badge-with-border">
+## Badge with Border
+</DocsTitle>
+
+You can add a border to the <Code>Badge</Code> component using the <Code>withBorder</Code> prop.
+
+<CodePreview component={<BadgeExamples.BadgeWithBorder />}>
+```jsx
+import { Badge, Button } from "@material-tailwind/react";
+
+export function BadgeWithBorder() {
+  return (
+    <Badge content="5" withBorder>
+      <Button>Notifications</Button>
+    </Badge>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="badge-dot">
+## Badge Dot
+</DocsTitle>
+
+You can use the <Code>Badge</Code> component as a dot when you don't provide and <Code>content</Code> prop.
+
+<CodePreview component={<BadgeExamples.BadgeDot />}>
+```jsx
+import { Badge, Button } from "@material-tailwind/react";
+
+export function BadgeDot() {
+  return (
+    <Badge>
+      <Button>Settings</Button>
+    </Badge>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="badge-custom-styles">
+## Badge Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Badge</Code> component.
+
+<CodePreview component={<BadgeExamples.BadgeCustomStyles />}>
+```jsx
+import { Badge, Button } from "@material-tailwind/react";
+import {CheckIcon} from "@heroicons/react/24/outline";
+
+export function BadgeCustomStyles() {
+  return (
+    <Badge
+      content={<CheckIcon className="h-4 w-4 text-white" strokeWidth={2.5} />}
+      className="bg-gradient-to-tr from-green-400 to-green-600 border-2 border-white shadow-lg shadow-black/20"
+    >
+      <Button>Notifications</Button>
+    </Badge>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="badge-props">
+## Badge Props
+</DocsTitle>
+
+The following props are available for badge component. These are the custom props
+that we've added for the badge component and you can use all the other native props
+as well.
+
+| Attribute         | Type                            | Description                               | Default                 |
+| ----------------- | ------------------------------- | ----------------------------------------- | ----------------------- |
+| `color`           | [Color](#types-color)           | Change badge color                        | <Code>red</Code>        |
+| `invisible`       | <Code>boolean</Code>            | Change the badge visibility               | <Code>false</Code>      |
+| `withBorder`      | <Code>boolean</Code>            | Add white border around badge             | <Code>false</Code>      |
+| `overlap`         | [overlap](#types-overlap)       | Shape the badge should overlap.           | <Code>square</Code>     |
+| `content`         | <Code>node</Code>               | Add content for the badge                 | <Code>undefined</Code>  |
+| `children`        | <Code>node</Code>               | The element that badge should be add to   | <Code>undefined</Code>  |
+| `placement`       | [Placement](#types-placement)   | Change the badge placement                | <Code>top-end</Code>    |
+| `className`       | <Code>string</Code>             | Add custom className for badge            | `''`                    |
+| `containerProps`  | <Code>object</Code>             | Add custom props for badge container      | <Code>undefined</Code>  |
+| `containerRef`    | <Code>ref</Code>                | Reference to badge container.             | <Code>undefined</Code>  |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { BadgeProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "white"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="types-overlap">
+## Types - Overlap
+</DocsTitle>
+
+```ts
+type size = "circular" | "square";
+```
+
+---
+
+<DocsTitle href="types-placement">
+## Types - Placement
+</DocsTitle>
+
+```ts
+type placement = "top-start" | "top-end" | "bottom-start" | "bottom-end";
+```
+
+---
+
+<DocsTitle href="badge-theme">
+## Badge Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for badge component, the theme object for badge component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of badge component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for badge component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of badge component.<br />
+
+You can customize the theme and styles of badge component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="badge-theme-object-type">
+## Badge Theme Object Type
+</DocsTitle>
+
+```ts
+interface BadgeStyleTypes {
+  defaultProps?: {
+    color?: string;
+    invisible?: boolean;
+    placement?: string;
+    withBorder?: boolean;
+    overlap?: string;
+    content?: node;
+    className?: string;
+    containerProps?: object;
+  };
+  valid?: {
+    colors?: string[];
+    overlaps?: string[];
+    placements?: string[];
+  };
+  styles?: {
+    base?: {
+      container?: object;
+      badge?: {
+        initial?: object;
+        withBorder?: object;
+        withContent?: object;
+      };
+    };
+    placements?: {
+      "top-start"?: {
+        square?: object;
+        circular?: object;
+      };
+      "top-end"?: {
+        square?: object;
+        circular?: object;
+      };
+      "bottom-start"?: {
+        square?: object;
+        circular?: object;
+      };
+      "bottom-end"?: {
+        square?: object;
+        circular?: object;
+      };
+    };
+    colors?: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { BadgeStyleTypes } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="badge-theme-customization">
+## Badge Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  badge: {
+    defaultProps: {
+      color: "red",
+      invisible: false,
+      withBorder: false,
+      overlap: "square",
+      content: undefined,
+      placement: "top-end",
+      className: undefined,
+      containerProps: undefined,
+    },
+    valid: {
+      colors: [
+        "white",
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+      overlaps: ["circular", "square"],
+      placements: ["top-start", "top-end", "bottom-start", "bottom-end"],
+    },
+    styles: {
+      base: {
+        container: {
+          position: "relative",
+          display: "inline-flex",
+        },
+        badge: {
+          initial: {
+            position: "absolute",
+            minWidth: "min-w-[12px]",
+            minHeight: "min-h-[12px]",
+            borderRadius: "rounded-full",
+            paddingY: "py-1",
+            paddingX: "px-1",
+            fontSize: "text-xs",
+            fontWeight: "font-medium",
+            content: "content-['']",
+            lineHeight: "leading-none",
+            display: "grid",
+            placeItems: "place-items-center",
+          },
+          withBorder: {
+            borderWidth: "border-2",
+            borderColor: "border-white",
+          },
+          withContent: {
+            minWidth: "min-w-[24px]",
+            minHeight: "min-h-[24px]",
+          },
+        },
+      },
+      placements: {
+        "top-start": {
+          square: {
+            top: "top-[4%]",
+            left: "left-[2%]",
+            translateX: "-translate-x-2/4",
+            translateY: "-translate-y-2/4",
+          },
+          circular: {
+            top: "top-[14%]",
+            left: "left-[14%]",
+            translateX: "-translate-x-2/4",
+            translateY: "-translate-y-2/4",
+          },
+        },
+        "top-end": {
+          square: {
+            top: "top-[4%]",
+            right: "right-[2%]",
+            translateX: "translate-x-2/4",
+            translateY: "-translate-y-2/4",
+          },
+          circular: {
+            top: "top-[14%]",
+            right: "right-[14%]",
+            translateX: "translate-x-2/4",
+            translateY: "-translate-y-2/4",
+          },
+        },
+        "bottom-start": {
+          square: {
+            bottom: "bottom-[4%]",
+            left: "left-[2%]",
+            translateX: "-translate-x-2/4",
+            translateY: "translate-y-2/4",
+          },
+          circular: {
+            bottom: "bottom-[14%]",
+            left: "left-[14%]",
+            translateX: "-translate-x-2/4",
+            translateY: "translate-y-2/4",
+          },
+        },
+        "bottom-end": {
+          square: {
+            bottom: "bottom-[4%]",
+            right: "right-[2%]",
+            translateX: "translate-x-2/4",
+            translateY: "translate-y-2/4",
+          },
+          circular: {
+            bottom: "bottom-[14%]",
+            right: "right-[14%]",
+            translateX: "translate-x-2/4",
+            translateY: "translate-y-2/4",
+          },
+        },
+      },
+      colors: {
+        white: {
+          backgroud: "bg-white",
+          color: "text-blue-gray-900",
+        },
+        "blue-gray": {
+          backgroud: "bg-blue-gray-500",
+          color: "text-white",
+        },
+        gray: {
+          backgroud: "bg-gray-500",
+          color: "text-white",
+        },
+        brown: {
+          backgroud: "bg-brown-500",
+          color: "text-white",
+        },
+        "deep-orange": {
+          backgroud: "bg-deep-orange-500",
+          color: "text-white",
+        },
+        orange: {
+          backgroud: "bg-orange-500",
+          color: "text-white",
+        },
+        amber: {
+          backgroud: "bg-amber-500",
+          color: "text-black",
+        },
+        yellow: {
+          backgroud: "bg-yellow-500",
+          color: "text-black",
+        },
+        lime: {
+          backgroud: "bg-lime-500",
+          color: "text-black",
+        },
+        "light-green": {
+          backgroud: "bg-light-green-500",
+          color: "text-white",
+        },
+        green: {
+          backgroud: "bg-green-500",
+          color: "text-white",
+        },
+        teal: {
+          backgroud: "bg-teal-500",
+          color: "text-white",
+        },
+        cyan: {
+          backgroud: "bg-cyan-500",
+          color: "text-white",
+        },
+        "light-blue": {
+          backgroud: "bg-light-blue-500",
+          color: "text-white",
+        },
+        blue: {
+          backgroud: "bg-blue-500",
+          color: "text-white",
+        },
+        indigo: {
+          backgroud: "bg-indigo-500",
+          color: "text-white",
+        },
+        "deep-purple": {
+          backgroud: "bg-deep-purple-500",
+          color: "text-white",
+        },
+        purple: {
+          backgroud: "bg-purple-500",
+          color: "text-white",
+        },
+        pink: {
+          backgroud: "bg-pink-500",
+          color: "text-white",
+        },
+        red: {
+          backgroud: "bg-red-500",
+          color: "text-white",
+        },
+      },
+    },
+  },
+};
+```
+
+---
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Looking for more badge examples? Check out our **<a href="https://www.material-tailwind.com/blocks/tables" target="_blank">Table Examples</a>** from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.
+

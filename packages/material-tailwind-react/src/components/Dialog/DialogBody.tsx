@@ -32,7 +32,7 @@ export const DialogBody = React.forwardRef<HTMLDivElement, DialogBodyProps>(
     } = dialogBody;
 
     // 2. set default props
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const dialogBodyClasses = twMerge(

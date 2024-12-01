@@ -48,7 +48,7 @@ export const iconButton: IconButtonStyleTypes = {
   defaultProps: {
     variant: "filled",
     size: "md",
-    color: "blue",
+    color: "gray",
     fullWidth: false,
     ripple: true,
     className: "",

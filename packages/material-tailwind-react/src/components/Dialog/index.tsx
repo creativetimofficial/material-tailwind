@@ -16,7 +16,7 @@ import {
 } from "@floating-ui/react";
 
 // framer-motion
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m, domAnimation, LazyMotion } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -79,7 +79,7 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
     size = size ?? defaultProps.size;
     dismiss = dismiss ?? defaultProps.dismiss;
     animate = animate ?? defaultProps.animate;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const backdropClasses = classnames(objectsToString(base.backdrop));
@@ -144,45 +144,47 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
 
     // 7. return
     return (
-      <FloatingPortal>
-        <NewAnimatePresence>
-          {open && (
-            <FloatingOverlay
-              style={{
-                zIndex: 9999,
-              }}
-              lockScroll
-            >
-              <FloatingFocusManager context={context}>
-                <motion.div
-                  className={size === "xxl" ? "" : backdropClasses}
-                  initial="unmount"
-                  exit="unmount"
-                  animate={open ? "mount" : "unmount"}
-                  variants={backdropAnimation}
-                  transition={{ duration: 0.2 }}
-                >
-                  <motion.div
-                    {...getFloatingProps({
-                      ...rest,
-                      ref: mergedRef,
-                      className: dialogClasses,
-                      "aria-labelledby": labelId,
-                      "aria-describedby": descriptionId,
-                    })}
+      <LazyMotion features={domAnimation}>
+        <FloatingPortal>
+          <NewAnimatePresence>
+            {open && (
+              <FloatingOverlay
+                style={{
+                  zIndex: 9999,
+                }}
+                lockScroll
+              >
+                <FloatingFocusManager context={context}>
+                  <m.div
+                    className={size === "xxl" ? "" : backdropClasses}
                     initial="unmount"
                     exit="unmount"
                     animate={open ? "mount" : "unmount"}
-                    variants={appliedAnimation}
+                    variants={backdropAnimation}
+                    transition={{ duration: 0.2 }}
                   >
-                    {children}
-                  </motion.div>
-                </motion.div>
-              </FloatingFocusManager>
-            </FloatingOverlay>
-          )}
-        </NewAnimatePresence>
-      </FloatingPortal>
+                    <m.div
+                      {...getFloatingProps({
+                        ...rest,
+                        ref: mergedRef,
+                        className: dialogClasses,
+                        "aria-labelledby": labelId,
+                        "aria-describedby": descriptionId,
+                      })}
+                      initial="unmount"
+                      exit="unmount"
+                      animate={open ? "mount" : "unmount"}
+                      variants={appliedAnimation}
+                    >
+                      {children}
+                    </m.div>
+                  </m.div>
+                </FloatingFocusManager>
+              </FloatingOverlay>
+            )}
+          </NewAnimatePresence>
+        </FloatingPortal>
+      </LazyMotion>
     );
   },
 );

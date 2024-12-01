@@ -14,6 +14,7 @@ import type {
   labelProps,
   shrink,
   className,
+  containerProps,
 } from "../../../types/components/input";
 import { propTypesVariant, propTypesSize, propTypesColor } from "../../../types/components/input";
 
@@ -59,6 +60,7 @@ export interface InputStylesType {
     success?: success;
     icon?: icon;
     labelProps?: labelProps;
+    containerProps?: containerProps;
     shrink?: shrink;
     className?: className;
   };
@@ -87,12 +89,13 @@ export const input: InputStylesType = {
   defaultProps: {
     variant: "outlined",
     size: "md",
-    color: "blue",
+    color: "gray",
     label: "",
     error: false,
     success: false,
     icon: undefined,
-    labelProps: {},
+    labelProps: undefined,
+    containerProps: undefined,
     shrink: false,
     className: "",
   },
@@ -117,7 +120,7 @@ export const input: InputStylesType = {
         fontFamily: "font-sans",
         fontWeight: "font-normal",
         outline: "outline outline-0 focus:outline-0",
-        disabled: "disabled:bg-blue-gray-50 disabled:border-0",
+        disabled: "disabled:bg-blue-gray-50 disabled:border-0 disabled:cursor-not-allowed",
         transition: "transition-all",
       },
       label: {
@@ -129,6 +132,8 @@ export const input: InputStylesType = {
         position: "absolute",
         left: "left-0",
         fontWeight: "font-normal",
+        overflow: "!overflow-visible",
+        textOverflow: "truncate",
         color: "peer-placeholder-shown:text-blue-gray-500",
         lineHeight: "leading-tight peer-focus:leading-tight",
         disabled:

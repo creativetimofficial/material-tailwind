@@ -1,13 +1,15 @@
 import React from "react";
 
-// framer-motion
+// @floating-ui
 import {
   FloatingPortal,
   FloatingOverlay,
   FloatingFocusManager,
   useMergeRefs,
 } from "@floating-ui/react";
-import { AnimatePresence, motion } from "framer-motion";
+
+// framer-motion
+import { AnimatePresence, m, LazyMotion, domAnimation } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -25,6 +27,7 @@ import { propTypesClassName, propTypesChildren } from "../../types/components/me
 
 export interface MenuListProps extends React.ComponentProps<"ul"> {
   className?: className;
+  dismissible?: boolean;
   children: children;
 }
 
@@ -51,6 +54,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
       activeIndex,
       tree,
       allowHover,
+      internalAllowHover,
       setActiveIndex,
       nested,
     } = useMenu();
@@ -69,7 +73,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
 
     // 6. menu component
     const menuComponent = (
-      <motion.div
+      <m.div
         {...rest}
         ref={mergedRef}
         style={{
@@ -108,28 +112,43 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
                   listItemsRef.current[index] = node;
                 },
                 onClick(event) {
-                  child.props.onClick?.(event);
+                  if (child.props.onClick) {
+                    child.props.onClick?.(event);
+                  }
+
                   tree?.events.emit("click");
                 },
                 onMouseEnter() {
-                  if (allowHover && open) {
+                  if ((allowHover && open) || (internalAllowHover && open)) {
                     setActiveIndex(index);
                   }
                 },
               }),
             ),
         )}
-      </motion.div>
+      </m.div>
     );
 
     // 7. return
     return (
-      <FloatingPortal>
-        <NewAnimatePresence>
-          {open && (
-            <>
-              {lockScroll ? (
-                <FloatingOverlay lockScroll>
+      <LazyMotion features={domAnimation}>
+        <FloatingPortal>
+          <NewAnimatePresence>
+            {open && (
+              <>
+                {lockScroll ? (
+                  <FloatingOverlay lockScroll>
+                    <FloatingFocusManager
+                      context={context}
+                      modal={!nested}
+                      initialFocus={nested ? -1 : 0}
+                      returnFocus={!nested}
+                      visuallyHiddenDismiss
+                    >
+                      {menuComponent}
+                    </FloatingFocusManager>
+                  </FloatingOverlay>
+                ) : (
                   <FloatingFocusManager
                     context={context}
                     modal={!nested}
@@ -139,22 +158,12 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
                   >
                     {menuComponent}
                   </FloatingFocusManager>
-                </FloatingOverlay>
-              ) : (
-                <FloatingFocusManager
-                  context={context}
-                  modal={!nested}
-                  initialFocus={nested ? -1 : 0}
-                  returnFocus={!nested}
-                  visuallyHiddenDismiss
-                >
-                  {menuComponent}
-                </FloatingFocusManager>
-              )}
-            </>
-          )}
-        </NewAnimatePresence>
-      </FloatingPortal>
+                )}
+              </>
+            )}
+          </NewAnimatePresence>
+        </FloatingPortal>
+      </LazyMotion>
     );
   },
 );

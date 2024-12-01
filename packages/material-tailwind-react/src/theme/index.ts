@@ -30,8 +30,27 @@ import tabPanel from "./components/tabs/tabPanel";
 import textarea from "./components/textarea";
 import tooltip from "./components/tooltip";
 import typography from "./components/typography";
+import collapse from "./components/collapse";
+import list from "./components/list";
+import buttonGroup from "./components/buttonGroup";
+import carousel from "./components/carousel";
+import drawer from "./components/drawer";
+import badge from "./components/badge";
+import rating from "./components/rating";
+import slider from "./components/slider";
+import spinner from "./components/spinner";
+import {
+  timeline,
+  timelineItem,
+  timelineIcon,
+  timelineConnector,
+  timelineHeader,
+  timelineBody,
+} from "./components/timeline";
+import { step, stepper } from "./components/stepper";
+import { speedDial, speedDialContent, speedDialAction } from "./components/speedDial";
 
-const theme = {
+const theme: any = {
   accordion,
   alert,
   avatar,
@@ -64,6 +83,26 @@ const theme = {
   textarea,
   tooltip,
   typography,
+  collapse,
+  list,
+  buttonGroup,
+  carousel,
+  drawer,
+  badge,
+  rating,
+  slider,
+  spinner,
+  timeline,
+  timelineItem,
+  timelineIcon,
+  timelineHeader,
+  timelineBody,
+  timelineConnector,
+  step,
+  stepper,
+  speedDial,
+  speedDialContent,
+  speedDialAction,
 };
 
 export * from "./components/accordion";
@@ -98,4 +137,16 @@ export * from "./components/tabs/tabPanel";
 export * from "./components/textarea";
 export * from "./components/tooltip";
 export * from "./components/typography";
+export * from "./components/collapse";
+export * from "./components/list";
+export * from "./components/buttonGroup";
+export * from "./components/carousel";
+export * from "./components/drawer";
+export * from "./components/badge";
+export * from "./components/rating";
+export * from "./components/slider";
+export * from "./components/spinner";
+export * from "./components/timeline";
+export * from "./components/stepper";
+export * from "./components/speedDial";
 export default theme;

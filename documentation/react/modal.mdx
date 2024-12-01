@@ -1,0 +1,1669 @@
+---
+title: Tailwind CSS Modal for React - Material Tailwind
+description: Explore our Tailwind CSS modal component examples for React projects that inform users about important tasks that requires their attention.
+navigation:
+  [
+    "modal",
+    "modal-sizes",
+    "modal-custom-animation",
+    "modal-with-form",
+    "modal-with-image",
+    "web-3-modal",
+    "long-modal",
+    "message-modal",
+    "notification-modal",
+    "add-product-modal-crud",
+    "modal-with-checkbox",
+    "modal-with-select",
+    "modal-with-timeline-and-details",
+    "modal-with-progress-bar",
+    "modal-with-billing-form",
+  ]
+github: modal
+prev: chip
+next: icon-button
+---
+
+<DocsTitle href="modal">
+# Tailwind CSS Modal - React
+</DocsTitle>
+
+Use our Tailwind CSS <Code>Modal</Code> components to provide additional information or interaction to your users. The modal is placed on top of the main content and built to be responsive and accessible.
+
+Check out below the <Code>Modal</Code> examples that you can use for your React project.
+
+<br />
+
+<CodePreview link="modal#modal" component={<DialogExamples.DialogDefault />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+
+export function DialogDefault() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen} variant="gradient">
+        Open Modal
+      </Button>
+      <Dialog open={open} handler={handleOpen}>
+        <DialogHeader>Its a simple modal.</DialogHeader>
+        <DialogBody>
+          The key to more success is to have a lot of pillows. Put it this way,
+          it took me twenty five years to get these plants, twenty five years of
+          blood sweat and tears, and I&apos;m never giving up, I&apos;m just
+          getting started. I&apos;m up to something. Fan luv.
+        </DialogBody>
+        <DialogFooter>
+          <Button
+            variant="text"
+            color="red"
+            onClick={handleOpen}
+            className="mr-1"
+          >
+            <span>Cancel</span>
+          </Button>
+          <Button variant="gradient" color="green" onClick={handleOpen}>
+            <span>Confirm</span>
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="modal-sizes">
+## Modal Sizes
+</DocsTitle>
+
+Our Material Tailwind <Code>Modal</Code> component comes with 6 different sizes that you can change using the <Code>size</Code> prop.
+
+<CodePreview link="modal#modal-sizes" component={<DialogExamples.DialogSizes />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+
+export function DialogSizes() {
+  const [size, setSize] = React.useState(null);
+
+  const handleOpen = (value) => setSize(value);
+
+  return (
+    <>
+      <div className="mb-3 flex gap-3">
+        <Button onClick={() => handleOpen("xs")} variant="gradient">
+          Open Modal XS
+        </Button>
+        <Button onClick={() => handleOpen("sm")} variant="gradient">
+          Open Modal SM
+        </Button>
+        <Button onClick={() => handleOpen("md")} variant="gradient">
+          Open Modal MD
+        </Button>
+      </div>
+      <div className="flex gap-3">
+        <Button onClick={() => handleOpen("lg")} variant="gradient">
+          Open Modal LG
+        </Button>
+        <Button onClick={() => handleOpen("xl")} variant="gradient">
+          Open Modal XL
+        </Button>
+        <Button onClick={() => handleOpen("xxl")} variant="gradient">
+          Open Modal XXL
+        </Button>
+      </div>
+      <Dialog
+        open={
+          size === "xs" ||
+          size === "sm" ||
+          size === "md" ||
+          size === "lg" ||
+          size === "xl" ||
+          size === "xxl"
+        }
+        size={size || "md"}
+        handler={handleOpen}
+      >
+        <DialogHeader>Its a simple modal.</DialogHeader>
+        <DialogBody>
+          The key to more success is to have a lot of pillows. Put it this way,
+          it took me twenty five years to get these plants, twenty five years of
+          blood sweat and tears, and I&apos;m never giving up, I&apos;m just
+          getting started. I&apos;m up to something. Fan luv.
+        </DialogBody>
+        <DialogFooter>
+          <Button
+            variant="text"
+            color="red"
+            onClick={() => handleOpen(null)}
+            className="mr-1"
+          >
+            <span>Cancel</span>
+          </Button>
+          <Button
+            variant="gradient"
+            color="green"
+            onClick={() => handleOpen(null)}
+          >
+            <span>Confirm</span>
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="modal-custom-animation">
+## Modal Custom Animation
+</DocsTitle>
+
+Use the <code>animate</code> property to modify the open/close animations of our modal component.
+
+<CodePreview link="modal#modal-custom-animation" component={<DialogExamples.DialogCustomAnimation />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+
+export function DialogCustomAnimation() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen} variant="gradient">
+        Open Modal
+      </Button>
+      <Dialog
+        open={open}
+        handler={handleOpen}
+        animate={{
+          mount: { scale: 1, y: 0 },
+          unmount: { scale: 0.9, y: -100 },
+        }}
+      >
+        <DialogHeader>Its a simple modal.</DialogHeader>
+        <DialogBody>
+          The key to more success is to have a lot of pillows. Put it this way,
+          it took me twenty five years to get these plants, twenty five years of
+          blood sweat and tears, and I&apos;m never giving up, I&apos;m just
+          getting started. I&apos;m up to something. Fan luv.
+        </DialogBody>
+        <DialogFooter>
+          <Button
+            variant="text"
+            color="red"
+            onClick={handleOpen}
+            className="mr-1"
+          >
+            <span>Cancel</span>
+          </Button>
+          <Button variant="gradient" color="green" onClick={handleOpen}>
+            <span>Confirm</span>
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="modal-with-form">
+## Modal with Form
+</DocsTitle>
+
+Use the Tailwind CSS component below to create a modal with a Sign-in form.
+
+<CodePreview link="modal#modal-with-form" component={<DialogExamples.DialogWithForm />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Input,
+  Checkbox,
+} from "@material-tailwind/react";
+
+export function DialogWithForm() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen((cur) => !cur);
+
+  return (
+    <>
+      <Button onClick={handleOpen}>Sign In</Button>
+      <Dialog
+        size="xs"
+        open={open}
+        handler={handleOpen}
+        className="bg-transparent shadow-none"
+      >
+        <Card className="mx-auto w-full max-w-[24rem]">
+          <CardBody className="flex flex-col gap-4">
+            <Typography variant="h4" color="blue-gray">
+              Sign In
+            </Typography>
+            <Typography
+              className="mb-3 font-normal"
+              variant="paragraph"
+              color="gray"
+            >
+              Enter your email and password to Sign In.
+            </Typography>
+            <Typography className="-mb-2" variant="h6">
+              Your Email
+            </Typography>
+            <Input label="Email" size="lg" />
+            <Typography className="-mb-2" variant="h6">
+              Your Password
+            </Typography>
+            <Input label="Password" size="lg" />
+            <div className="-ml-2.5 -mt-3">
+              <Checkbox label="Remember Me" />
+            </div>
+          </CardBody>
+          <CardFooter className="pt-0">
+            <Button variant="gradient" onClick={handleOpen} fullWidth>
+              Sign In
+            </Button>
+            <Typography variant="small" className="mt-4 flex justify-center">
+              Don&apos;t have an account?
+              <Typography
+                as="a"
+                href="#signup"
+                variant="small"
+                color="blue-gray"
+                className="ml-1 font-bold"
+                onClick={handleOpen}
+              >
+                Sign up
+              </Typography>
+            </Typography>
+          </CardFooter>
+        </Card>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="modal-with-image">
+## Modal with Image
+</DocsTitle>
+
+Try this example to create a modal with an image inside. This layout is clean, with the focus on the image and minimal distractions, ideal for presenting visual content with essential user interactions.
+
+<CodePreview link="modal#modal-with-image" component={<DialogExamples.DialogWithImage />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  Avatar,
+  IconButton,
+  Typography,
+  Card,
+} from "@material-tailwind/react";
+
+export function ModalWithImage() {
+  const [open, setOpen] = React.useState(false);
+  const [isFavorite, setIsFavorite] = React.useState(false);
+
+  const handleOpen = () => setOpen((cur) => !cur);
+  const handleIsFavorite = () => setIsFavorite((cur) => !cur);
+
+  return (
+    <>
+      <Card
+        className="h-64 w-96 cursor-pointer overflow-hidden transition-opacity hover:opacity-90"
+        onClick={handleOpen}
+      >
+        <img
+          alt="nature"
+          className="h-full w-full object-cover object-center"
+          src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2717&q=80"
+        />
+      </Card>
+       <Dialog size="xl" open={open} handler={handleOpen}>
+        <DialogHeader className="justify-between">
+          <div className="flex items-center gap-3">
+            <Avatar
+              size="sm"
+              variant="circular"
+              alt="tania andrew"
+              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+            />
+            <div className="-mt-px flex flex-col">
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="font-medium"
+              >
+                Tania Andrew
+              </Typography>
+              <Typography
+                variant="small"
+                color="gray"
+                className="text-xs font-normal"
+              >
+                @emmaroberts
+              </Typography>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <IconButton
+              variant="text"
+              size="sm"
+              color={isFavorite ? "red" : "blue-gray"}
+              onClick={handleIsFavorite}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5"
+              >
+                <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+              </svg>
+            </IconButton>
+            <Button color="gray" size="sm">
+              Free Download
+            </Button>
+          </div>
+        </DialogHeader>
+        <DialogBody>
+          <img
+            alt="nature"
+            className="h-[48rem] w-full rounded-lg object-cover object-center"
+            src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2717&q=80"
+          />
+        </DialogBody>
+        <DialogFooter className="justify-between">
+          <div className="flex items-center gap-16">
+            <div>
+              <Typography variant="small" color="gray" className="font-normal">
+                Views
+              </Typography>
+              <Typography color="blue-gray" className="font-medium">
+                44,082,044
+              </Typography>
+            </div>
+            <div>
+              <Typography variant="small" color="gray" className="font-normal">
+                Downloads
+              </Typography>
+              <Typography color="blue-gray" className="font-medium">
+                553,031
+              </Typography>
+            </div>
+          </div>
+          <Button
+            size="sm"
+            variant="outlined"
+            color="blue-gray"
+            className="mr-5 flex items-center"
+          >
+            Share
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="web-3-modal">
+## Web 3.0 Modal
+</DocsTitle>
+
+The example below can be used to create a crypto wallet connect modal.
+
+<CodePreview link="modal#web-3-modal" component={<DialogExamples.Web3Dialog />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  IconButton,
+  Typography,
+  MenuItem,
+} from "@material-tailwind/react";
+
+export function Web3Dialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen((cur) => !cur);
+
+  return (
+    <>
+      <Button onClick={handleOpen}>Connect Wallet</Button>
+    <Dialog size="xs" open={open} handler={handleOpen}>
+        <DialogHeader className="justify-between">
+          <div>
+            <Typography variant="h5" color="blue-gray">
+              Connect a Wallet
+            </Typography>
+            <Typography color="gray" variant="paragraph">
+              Choose which card you want to connect
+            </Typography>
+          </div>
+          <IconButton
+            color="blue-gray"
+            size="sm"
+            variant="text"
+            onClick={handleOpen}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </IconButton>
+        </DialogHeader>
+        <DialogBody className="overflow-y-scroll !px-5">
+          <div className="mb-6">
+            <Typography
+              variant="paragraph"
+              color="blue-gray"
+              className="py-3 font-semibold uppercase opacity-70"
+            >
+              Popular
+            </Typography>
+            <ul className="mt-3 -ml-2 flex flex-col gap-1">
+              <MenuItem className="mb-4 flex items-center justify-center gap-3 !py-4 shadow-md">
+                <img
+                  src="https://docs.material-tailwind.com/icons/metamask.svg"
+                  alt="metamast"
+                  className="h-6 w-6"
+                />
+                <Typography
+                  className="uppercase"
+                  color="blue-gray"
+                  variant="h6"
+                >
+                  Connect with MetaMask
+                </Typography>
+              </MenuItem>
+              <MenuItem className="mb-1 flex items-center justify-center gap-3 !py-4 shadow-md">
+                <img
+                  src="https://docs.material-tailwind.com/icons/coinbase.svg"
+                  alt="metamast"
+                  className="h-6 w-6 rounded-md"
+                />
+                <Typography
+                  className="uppercase"
+                  color="blue-gray"
+                  variant="h6"
+                >
+                  Connect with Coinbase
+                </Typography>
+              </MenuItem>
+            </ul>
+          </div>
+          <div>
+            <Typography
+              variant="paragraph"
+              color="blue-gray"
+              className="py-4 font-semibold uppercase opacity-70"
+            >
+              Other
+            </Typography>
+            <ul className="mt-4 -ml-2.5 flex flex-col gap-1">
+              <MenuItem className="mb-4 flex items-center justify-center gap-3 !py-4 shadow-md">
+                <img
+                  src="https://docs.material-tailwind.com/icons/trust-wallet.svg"
+                  alt="metamast"
+                  className="h-7 w-7 rounded-md border border-blue-gray-50"
+                />
+                <Typography
+                  className="uppsecase"
+                  color="blue-gray"
+                  variant="h6"
+                >
+                  Connect with Trust Wallet
+                </Typography>
+              </MenuItem>
+            </ul>
+          </div>
+        </DialogBody>
+        <DialogFooter className="justify-between gap-2">
+          <Typography variant="small" color="gray" className="font-normal">
+            New to Ethereum wallets?
+          </Typography>
+          <Button variant="outlined" size="sm">
+            Learn More
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="long-modal">
+## Long Modal
+</DocsTitle>
+
+Use this long modal to display detailed information that needs careful reading. It's designed to handle lengthy content while staying readable and accessible.
+
+<CodePreview className="mt-4" component={<DialogExamples.LongDialog />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  Typography,
+} from "@material-tailwind/react";
+
+export function LongDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen}>Long Modal</Button>
+      <Dialog open={open} handler={handleOpen}>
+        <DialogHeader>Long Modal</DialogHeader>
+        <DialogBody className="h-[42rem] overflow-scroll">
+          <Typography className="font-normal">
+            I&apos;ve always had unwavering confidence in my abilities, and I
+            believe our thoughts and self-perception are the primary forces that
+            shape us. Many people limit themselves by their own self-doubt,
+            slowing their progress. Fortunately, I was raised with the belief
+            that I could achieve anything.
+            <br />
+            <br />
+            As we journey through life, we often encounter challenges that
+            harden our hearts. Pain, insults, broken trust, and betrayal can
+            make us hesitant to help others. Love can lead to heartbreak, and
+            time can distance us from family. These experiences can gradually
+            erode our optimism.
+            <br /> <br />
+            Life doesn&apos;t always place us where we want to be. We grow, make
+            mistakes, and strive to express ourselves and fulfill our dreams. If
+            we&apos;re fortunate enough to participate in life&apos;s journey,
+            we should cherish every moment. Regrettably, some only recognize the
+            value of a moment after it&apos;s passed.
+            <br /> <br />
+            One thing I&apos;ve learned is that I can excel at anything I set my
+            mind to. My skill is my ability to learn. I&apos;m here to learn, to
+            grow, and to inspire others to do the same. Don&apos;t fear making
+            mistakes; they teach us far more than compliments ever will.
+            Ultimately, what truly matters is how our actions inspire and
+            motivate others. Some will be ignited by our endeavors, while others
+            may be offended—it&apos;s all part of the process. I'm here to
+            pursue my dreams and encourage others to do the same.
+            <br /> <br />
+            Now is the time to embrace greatness without fear of judgment. Some
+            may resent those who shine brightly or stand out, but it&apos;s time
+            to be the best version of ourselves. Do you have faith in your
+            beliefs, even if you&apos;re the only one who does?
+          </Typography>
+        </DialogBody>
+        <DialogFooter className="space-x-2">
+          <Button variant="text" color="blue-gray" onClick={handleOpen}>
+            cancel
+          </Button>
+          <Button variant="gradient" color="green" onClick={handleOpen}>
+            confirm
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="message-modal">
+## Message Modal
+</DocsTitle>
+
+Use this message modal for easy user-to-user communication. It includes fields for entering a username and message, offering a simple interface for sending messages.
+
+<CodePreview className="mt-4" component={<DialogExamples.MessageDialog />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  Input,
+  Textarea,
+} from "@material-tailwind/react";
+
+export function MessageDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen}>Message Modal</Button>
+    <Dialog open={open} size="xs" handler={handleOpen}>
+        <div className="flex items-center justify-between">
+          <DialogHeader className="flex flex-col items-start">
+            {" "}
+            <Typography className="mb-1" variant="h4">
+              New message to @{" "}
+            </Typography>
+          </DialogHeader>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="mr-3 h-5 w-5"
+            onClick={handleOpen}
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </div>
+        <DialogBody>
+          <Typography className="mb-10 -mt-7 " color="gray" variant="lead">
+            Write the message and then click button.
+          </Typography>
+          <div className="grid gap-6">
+            <Typography className="-mb-1" color="blue-gray" variant="h6">
+              Username
+            </Typography>
+            <Input label="Username" />
+            <Textarea label="Message" />
+          </div>
+        </DialogBody>
+        <DialogFooter className="space-x-2">
+          <Button variant="text" color="gray" onClick={handleOpen}>
+            cancel
+          </Button>
+          <Button variant="gradient" color="gray" onClick={handleOpen}>
+            send message
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="notification-modal">
+## Notification Modal
+</DocsTitle>
+
+Use this example of a notification Modal to draw users' attention to important information or actions required. The modal includes a prominent title, a message area for detailed information, and action buttons for user response. 
+
+<CodePreview className="mt-4" component={<DialogExamples.NotificationDialog />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  Typography,
+} from "@material-tailwind/react";
+
+export function NotificationDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen}>Notification</Button>
+      <Dialog open={open} handler={handleOpen}>
+        <DialogHeader>
+          <Typography variant="h5" color="blue-gray">
+            Your Attention is Required!
+          </Typography>
+        </DialogHeader>
+        <DialogBody divider className="grid place-items-center gap-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-16 w-16 text-red-500"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <Typography color="red" variant="h4">
+            You should read this!
+          </Typography>
+          <Typography className="text-center font-normal">
+            A small river named Duden flows by their place and supplies it with
+            the necessary regelialia.
+          </Typography>
+        </DialogBody>
+        <DialogFooter className="space-x-2">
+          <Button variant="text" color="blue-gray" onClick={handleOpen}>
+            close
+          </Button>
+          <Button variant="gradient" onClick={handleOpen}>
+            Ok, Got it
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="add-product-modal-crud">
+## Add Product Modal CRUD
+</DocsTitle>
+
+This Tailwind CSS modal lets users manage items with input fields for name, category, weight, size, and an optional description. It's simple to use, with an 'Add Product' button to submit the information.
+
+<CodePreview className="mt-4" component={<DialogExamples.AddProductDialog />}>
+```jsx
+import React from "react";
+import {
+  Input,
+  Option,
+  Select,
+  Button,
+  Dialog,
+  Textarea,
+  IconButton,
+  Typography,
+  DialogBody,
+  DialogHeader,
+  DialogFooter,
+} from "@material-tailwind/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
+export function AddProductDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen} variant="gradient">
+        Add Product
+      </Button>
+      <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
+        <DialogHeader className="relative m-0 block">
+          <Typography variant="h4" color="blue-gray">
+            Manage Item
+          </Typography>
+          <Typography className="mt-1 font-normal text-gray-600">
+            Keep your records up-to-date and organized.
+          </Typography>
+          <IconButton
+            size="sm"
+            variant="text"
+            className="!absolute right-3.5 top-3.5"
+            onClick={handleOpen}
+          >
+            <XMarkIcon className="h-4 w-4 stroke-2" />
+          </IconButton>
+        </DialogHeader>
+        <DialogBody className="space-y-4 pb-6">
+          <div>
+            <Typography
+              variant="small"
+              color="blue-gray"
+              className="mb-2 text-left font-medium"
+            >
+              Name
+            </Typography>
+            <Input
+              color="gray"
+              size="lg"
+              placeholder="eg. White Shoes"
+              name="name"
+              className="placeholder:opacity-100 focus:!border-t-gray-900"
+              containerProps={{
+                className: "!min-w-full",
+              }}
+              labelProps={{
+                className: "hidden",
+              }}
+            />
+          </div>
+          <div>
+            <Typography
+              variant="small"
+              color="blue-gray"
+              className="mb-2 text-left font-medium"
+            >
+              Category
+            </Typography>
+            <Select
+              className="!w-full !border-[1.5px] !border-blue-gray-200/90 !border-t-blue-gray-200/90 bg-white text-gray-800 ring-4 ring-transparent placeholder:text-gray-600 focus:!border-primary focus:!border-t-blue-gray-900 group-hover:!border-primary"
+              placeholder="1"
+              labelProps={{
+                className: "hidden",
+              }}
+            >
+              <Option>Clothing</Option>
+              <Option>Fashion</Option>
+              <Option>Watches</Option>
+            </Select>
+          </div>
+          <div className="flex gap-4">
+            <div className="w-full">
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="mb-2 text-left font-medium"
+              >
+                Weight
+              </Typography>
+              <Input
+                color="gray"
+                size="lg"
+                placeholder="eg. <8.8oz | 250g"
+                name="weight"
+                className="placeholder:opacity-100 focus:!border-t-gray-900"
+                containerProps={{
+                  className: "!min-w-full",
+                }}
+                labelProps={{
+                  className: "hidden",
+                }}
+              />
+            </div>
+            <div className="w-full">
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="mb-2 text-left font-medium"
+              >
+                Size
+              </Typography>
+              <Input
+                color="gray"
+                size="lg"
+                placeholder="eg. US 8"
+                name="size"
+                className="placeholder:opacity-100 focus:!border-t-gray-900"
+                containerProps={{
+                  className: "!min-w-full",
+                }}
+                labelProps={{
+                  className: "hidden",
+                }}
+              />
+            </div>
+          </div>
+          <div>
+            <Typography
+              variant="small"
+              color="blue-gray"
+              className="mb-2 text-left font-medium"
+            >
+              Description (Optional)
+            </Typography>
+            <Textarea
+              rows={7}
+              placeholder="eg. This is a white shoes with a comfortable sole."
+              className="!w-full !border-[1.5px] !border-blue-gray-200/90 !border-t-blue-gray-200/90 bg-white text-gray-600 ring-4 ring-transparent focus:!border-primary focus:!border-t-blue-gray-900 group-hover:!border-primary"
+              labelProps={{
+                className: "hidden",
+              }}
+            />
+          </div>
+        </DialogBody>
+        <DialogFooter>
+          <Button className="ml-auto" onClick={handleOpen}>
+            Add Product
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="modal-with-checkbox">
+## Modal with Checkbox
+</DocsTitle>
+
+Try this checkbox modal to help users organize their contacts based on interests and interactions. Users can select categories such as “Updates”, “Leads”, and “Webinars”. A "Save Categories" button enables users to save their selections.
+
+<CodePreview className="mt-4" component={<DialogExamples.SelectCategoriesDialog />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  Checkbox,
+  Typography,
+  DialogBody,
+  IconButton,
+  DialogHeader,
+  DialogFooter,
+} from "@material-tailwind/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
+export function SelectCategoriesDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen} variant="gradient">
+        Select Categories Modal
+      </Button>
+      <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
+        <DialogHeader className="relative m-0 block">
+          <Typography variant="h4" color="blue-gray">
+            Select Categories
+          </Typography>
+          <Typography className="mt-1 font-normal text-gray-600">
+            Categories help you organize your contacts based on their interests
+            and interactions.
+          </Typography>
+          <IconButton
+            size="sm"
+            variant="text"
+            className="!absolute right-3.5 top-3.5"
+            onClick={handleOpen}
+          >
+            <XMarkIcon className="h-4 w-4 stroke-2" />
+          </IconButton>
+        </DialogHeader>
+        <DialogBody className="space-y-4 px-2">
+          <Checkbox
+            label={
+              <div>
+                <Typography color="blue-gray" className="text-base font-medium">
+                  Updates
+                </Typography>
+                <Typography
+                  variant="small"
+                  color="gray"
+                  className="font-normal"
+                >
+                  Receive the latest news and updates.
+                </Typography>
+              </div>
+            }
+            containerProps={{
+              className: "-mt-5",
+            }}
+          />
+          <Checkbox
+            label={
+              <div>
+                <Typography color="blue-gray" className="font-medium">
+                  Leads
+                </Typography>
+                <Typography
+                  variant="small"
+                  color="gray"
+                  className="font-normal"
+                >
+                  Potential clients and interested parties.
+                </Typography>
+              </div>
+            }
+            containerProps={{
+              className: "-mt-5",
+            }}
+          />
+          <Checkbox
+            label={
+              <div>
+                <Typography color="blue-gray" className="font-medium">
+                  Webinars
+                </Typography>
+                <Typography
+                  variant="small"
+                  color="gray"
+                  className="font-normal"
+                >
+                  Interested in attending webinars and online events.
+                </Typography>
+              </div>
+            }
+            containerProps={{
+              className: "-mt-5",
+            }}
+          />
+        </DialogBody>
+        <DialogFooter>
+          <Button className="ml-auto" onClick={handleOpen}>
+            save categories
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="modal-with-select">
+## Modal with Select
+</DocsTitle>
+
+This modal example lets users choose their preferred delivery method, highlighting the selection for clarity. Users can confirm their choice by clicking the call-to-action(CTA) button.
+
+<CodePreview className="mt-4" component={<DialogExamples.DeliveryMethodDialog />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  IconButton,
+  Typography,
+  DialogBody,
+  DialogHeader,
+  DialogFooter,
+} from "@material-tailwind/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
+export function DeliveryMethodDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen} variant="gradient">
+        Delivery Method Modal
+      </Button>
+      <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
+        <DialogHeader className="relative m-0 block">
+          <Typography variant="h4" color="blue-gray">
+            Delivery Method
+          </Typography>
+          <Typography className="mt-1 font-normal text-gray-600">
+            Please select your preferred delivery method for your order.
+          </Typography>
+          <IconButton
+            size="sm"
+            variant="text"
+            className="!absolute right-3.5 top-3.5"
+            onClick={handleOpen}
+          >
+            <XMarkIcon className="h-4 w-4 stroke-2" />
+          </IconButton>
+        </DialogHeader>
+        <DialogBody>
+          <div className="space-y-4">
+            <div>
+              <input
+                type="radio"
+                id="standard"
+                name="hosting"
+                value="standard"
+                className="peer hidden"
+                required
+              />
+              <label
+                htmlFor="standard"
+                className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 ring-1 ring-transparent peer-checked:border-gray-900 peer-checked:ring-gray-900"
+              >
+                <div className="block">
+                  <Typography className="font-semibold">
+                    Express Delivery
+                  </Typography>
+                  <Typography className="font-normal text-gray-600">
+                    5-7 business days.{" "}
+                    <strong className="text-gray-900">Free</strong>
+                  </Typography>
+                </div>
+              </label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="express"
+                name="hosting"
+                defaultChecked
+                value="express"
+                className="peer hidden"
+                required
+              />
+              <label
+                htmlFor="express"
+                className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 ring-1 ring-transparent peer-checked:border-gray-900 peer-checked:ring-gray-900"
+              >
+                <div className="block">
+                  <Typography className="font-semibold">
+                    Express Delivery
+                  </Typography>
+                  <Typography className="font-normal text-gray-600">
+                    2-3 business days.{" "}
+                    <strong className="text-gray-900">$10.00</strong>
+                  </Typography>
+                </div>
+              </label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="store"
+                name="hosting"
+                value="store"
+                className="peer hidden"
+                required
+              />
+              <label
+                htmlFor="store"
+                className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 ring-1 ring-transparent peer-checked:border-gray-900 peer-checked:ring-gray-900"
+              >
+                <div className="block">
+                  <Typography className="font-semibold">
+                    Pickup In-Store
+                  </Typography>
+                  <Typography className="font-normal text-gray-600">
+                    Available for pickup within 24 hours.{" "}
+                    <strong className="text-gray-900">Free</strong>
+                  </Typography>
+                </div>
+              </label>
+            </div>
+          </div>
+        </DialogBody>
+        <DialogFooter>
+          <Button className="ml-auto" onClick={handleOpen}>
+            confirm delivery method
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+ 
+---
+
+<DocsTitle href="modal-with-timeline-and-details">
+## Modal with Timeline and Details
+</DocsTitle>
+
+This modal shows detailed order information in a timeline format, helping users track their order status. They can click the -More Details-  button for additional information.
+
+<CodePreview className="mt-4" component={<DialogExamples.OrderDetailsDialog />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  IconButton,
+  Typography,
+  DialogBody,
+  DialogHeader,
+  DialogFooter,
+  Timeline,
+  TimelineItem,
+  TimelineConnector,
+  TimelineHeader,
+  TimelineIcon,
+  TimelineBody,
+} from "@material-tailwind/react";
+import {
+  HomeIcon,
+  BellIcon,
+  CurrencyDollarIcon,
+} from "@heroicons/react/24/solid";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
+export function OrderDetailsDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen} variant="gradient">
+        Order Details Modal
+      </Button>
+      <Dialog size="sm" open={open} handler={handleOpen}>
+        <DialogHeader className="relative m-0 block p-6">
+          <Typography variant="h4" color="blue-gray">
+            Delivery Method
+          </Typography>
+          <Typography className="mt-1 font-normal text-gray-600">
+            Please select your preferred delivery method for your order.
+          </Typography>
+          <IconButton
+            size="sm"
+            variant="text"
+            className="!absolute right-3.5 top-3.5"
+            onClick={handleOpen}
+          >
+            <XMarkIcon className="h-4 w-4 stroke-2" />
+          </IconButton>
+        </DialogHeader>
+        <DialogBody className="mx-4 -mt-4">
+          <Timeline>
+            <TimelineItem>
+              <TimelineConnector />
+              <TimelineHeader>
+                <TimelineIcon className="p-2">
+                  <HomeIcon className="h-4 w-4" />
+                </TimelineIcon>
+                <Typography color="blue-gray" className="font-semibold">
+                  $2,400, Design Changes
+                </Typography>
+              </TimelineHeader>
+              <TimelineBody className="-mt-2 pb-8">
+                <Typography color="gray" className="font-normal text-gray-600">
+                  22 Dec 6:20 PM
+                </Typography>
+              </TimelineBody>
+            </TimelineItem>
+            <TimelineItem>
+              <TimelineConnector />
+              <TimelineHeader>
+                <TimelineIcon className="p-2">
+                  <BellIcon className="h-4 w-4" />
+                </TimelineIcon>
+                <Typography color="blue-gray" className="font-semibold">
+                  New order #1832412
+                </Typography>
+              </TimelineHeader>
+              <TimelineBody className="-mt-2 pb-8">
+                <Typography color="gray" className="font-normal text-gray-600">
+                  21 Dec 8:20 PM
+                </Typography>
+              </TimelineBody>
+            </TimelineItem>
+            <TimelineItem>
+              <TimelineConnector />
+              <TimelineHeader>
+                <TimelineIcon className="p-2">
+                  <CurrencyDollarIcon className="h-4 w-4" />
+                </TimelineIcon>
+                <Typography color="blue-gray" className="font-semibold">
+                  Payment Completed
+                </Typography>
+              </TimelineHeader>
+              <TimelineBody className="-mt-2">
+                <Typography color="gray" className="font-normal text-gray-600">
+                  17 Dec 4:20 PM
+                </Typography>
+              </TimelineBody>
+            </TimelineItem>
+          </Timeline>
+        </DialogBody>
+        <DialogFooter>
+          <Button className="mr-auto" onClick={handleOpen}>
+            more details
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+ 
+ ---
+
+ <DocsTitle href="modal-with-progress-bar">
+## Modal with Progress Bar
+</DocsTitle>
+
+Use this modal with progress bar examples to provide real-time feedback on the upload status of a file. Users can see the file name, file size, and a progress bar indicating the upload percentage. This Tailwind CSS modal also includes options to cancel the upload if required.
+
+<CodePreview className="mt-4" component={<DialogExamples.UploadProgressDialog />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  Progress,
+  Typography,
+  DialogBody,
+  IconButton,
+  DialogHeader,
+  DialogFooter,
+} from "@material-tailwind/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { InformationCircleIcon } from "@heroicons/react/24/solid";
+
+export function UploadProgressDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen} variant="gradient">
+        Upload Progress Modal
+      </Button>
+      <Dialog open={open} handler={handleOpen} className="p-4">
+        <DialogHeader className="relative m-0 block">
+          <Typography variant="h4" color="blue-gray">
+            Upload Progress
+          </Typography>
+          <Typography className="mt-1 font-normal text-gray-600">
+            Please wait while we process your request. You can track the upload
+            progress below.
+          </Typography>
+          <IconButton
+            size="sm"
+            variant="text"
+            className="!absolute right-3.5 top-3.5"
+            onClick={handleOpen}
+          >
+            <XMarkIcon className="h-4 w-4 stroke-2" />
+          </IconButton>
+        </DialogHeader>
+        <DialogBody>
+          <div className="w-full">
+            <div className="mb-2 flex items-center justify-between gap-4">
+              <Typography
+                color="blue-gray"
+                variant="small"
+                className="font-semibold"
+              >
+                Uploading...
+              </Typography>
+              <Typography
+                variant="small"
+                className="font-semibold text-gray-600"
+              >
+                50%
+              </Typography>
+            </div>
+            <Progress value={50} />
+          </div>
+          <div className="mt-6 flex gap-16">
+            <div>
+              <Typography className="font-normal text-gray-600">
+                File Name
+              </Typography>
+              <Typography color="blue-gray" className="font-semibold">
+                project_proposal.pdf
+              </Typography>
+            </div>
+            <div>
+              <Typography className="font-normal text-gray-600">
+                File Size
+              </Typography>
+              <Typography color="blue-gray" className="font-semibold">
+                10 MB
+              </Typography>
+            </div>
+          </div>
+        </DialogBody>
+        <DialogFooter className="flex flex-wrap justify-between gap-4">
+          <Typography
+            variant="small"
+            className="flex gap-2 font-normal text-gray-600 md:items-center"
+          >
+            <InformationCircleIcon className="h-5 w-5 text-gray-900" />
+            Closing this window may interrupt the upload process.
+          </Typography>
+          <Button onClick={handleOpen} className="w-full lg:max-w-fit">
+            cancel upload
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="modal-with-billing-form">
+## Modal With Billing Form
+</DocsTitle>
+
+Use this modal to link a payment card with fields for cardholder name, card number, expiration date, and CVV. It ends with a -Submit- button.
+
+<CodePreview className="mt-4" component={<DialogExamples.DialogWithBillingForm />}>
+```jsx
+import React from "react";
+import {
+  Input,
+  Button,
+  Dialog,
+  IconButton,
+  Typography,
+  DialogBody,
+  DialogHeader,
+  DialogFooter,
+} from "@material-tailwind/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
+export function DialogWithBillingForm() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen} variant="gradient">
+        Modal With Billing Form
+      </Button>
+      <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
+        <DialogHeader className="relative m-0 block">
+          <Typography variant="h4" color="blue-gray">
+            Link Payment Card
+          </Typography>
+          <Typography className="mt-1 font-normal text-gray-600">
+            Complete the form below with your card details to link your card.
+          </Typography>
+          <IconButton
+            size="sm"
+            variant="text"
+            className="!absolute right-3.5 top-3.5"
+            onClick={handleOpen}
+          >
+            <XMarkIcon className="h-4 w-4 stroke-2" />
+          </IconButton>
+        </DialogHeader>
+        <DialogBody className="space-y-4 pb-6">
+          <Button
+            fullWidth
+            variant="outlined"
+            className="h-12 border-blue-500 focus:ring-blue-100/50"
+          >
+            <img
+              src="/icons/Paypal icon.svg"
+              className="mx-auto grid h-12 w-16 -translate-y-7 place-items-center"
+              alt="paypal"
+            />
+          </Button>
+          <div>
+            <Typography
+              variant="small"
+              color="blue-gray"
+              className="mb-2 text-left font-medium"
+            >
+              Cardholder Name
+            </Typography>
+            <Input
+              color="gray"
+              size="lg"
+              placeholder="e.g., John Doe"
+              name="name"
+              className="placeholder:opacity-100 focus:!border-t-gray-900"
+              containerProps={{
+                className: "!min-w-full",
+              }}
+              labelProps={{
+                className: "hidden",
+              }}
+            />
+          </div>
+          <div>
+            <Typography
+              variant="small"
+              color="blue-gray"
+              className="mb-2 text-left font-medium"
+            >
+              Card Number
+            </Typography>
+            <Input
+              color="gray"
+              size="lg"
+              placeholder="1234 5678 9012 3456"
+              name="number"
+              className="placeholder:opacity-100 focus:!border-t-gray-900"
+              containerProps={{
+                className: "!min-w-full",
+              }}
+              labelProps={{
+                className: "hidden",
+              }}
+            />
+          </div>
+          <div className="flex gap-4">
+            <div className="w-full">
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="mb-2 text-left font-medium"
+              >
+                Expiration Date
+              </Typography>
+              <Input
+                color="gray"
+                size="lg"
+                placeholder="MM/YY"
+                name="date"
+                className="placeholder:opacity-100 focus:!border-t-gray-900"
+                containerProps={{
+                  className: "!min-w-full",
+                }}
+                labelProps={{
+                  className: "hidden",
+                }}
+              />
+            </div>
+            <div className="w-full">
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="mb-2 text-left font-medium"
+              >
+                CVV
+              </Typography>
+              <Input
+                color="gray"
+                size="lg"
+                placeholder="123"
+                name="CVV"
+                className="placeholder:opacity-100 focus:!border-t-gray-900"
+                containerProps={{
+                  className: "!min-w-full",
+                }}
+                labelProps={{
+                  className: "hidden",
+                }}
+              />
+            </div>
+          </div>
+        </DialogBody>
+        <DialogFooter>
+          <Button className="ml-auto" onClick={handleOpen}>
+            submit
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more Modal component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
+
+• <a href="https://www.material-tailwind.com/blocks/modals" target="_blank">Modals</a><br />
+• <a href="https://www.material-tailwind.com/blocks/popup-sections" target="_blank">Popup Blocks</a><br />

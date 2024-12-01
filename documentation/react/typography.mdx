@@ -7,28 +7,22 @@ navigation:
     "typography-variants",
     "typography-colors",
     "typography-gradient-color",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/typography",
-      description: "Learn more about props definition and types of typography component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/typography",
-      description: "Learn how to customize the theme and styles for typography component.",
-    },
+    "typography-props",
+    "types-variant",
+    "types-color",
+    "typography-theme",
+    "typography-theme-object-type",
+    "typography-theme-customization",
+    "more-examples"
   ]
 github: typography
 prev: tooltip
 next: footer
 ---
 
+<DocsTitle href="typography">
 # Tailwind CSS Typography - React
+</DocsTitle>
 
 Use our Tailwind CSS <Code>Typography</Code> to present your website/web app as clearly and efficiently as possible.
 
@@ -36,17 +30,11 @@ Below we are presenting a simple <Code>Typography</Code> component example. It c
 
 <br />
 
-<CodePreview id="typography" link="typography#paragraph" component={
-  <Typography>
-    {`Material Tailwind is an easy to use components library for Tailwind CSS and
-    Material Design. It provides a simple way to customize your components, you
-    can change the colors, fonts, breakpoints and everything you need.`}
-  </Typography>
-}>
+<CodePreview link="typography#paragraph" component={<TypographyExamples.TypographyDefault />}>
 ```jsx
 import { Typography } from "@material-tailwind/react";
 
-export default function Example() {
+export function TypographyDefault() {
   return (
     <Typography>
       Material Tailwind is an easy to use components library for Tailwind CSS
@@ -61,44 +49,19 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="typography-variants">
 ## Typography Variants
+</DocsTitle>
 
 The <Code>Typography</Code> component comes with 9 different variants that you can change it using the <Code>variant</Code> prop.
 
-<CodePreview id="typography-variants" link="typography#typography" component={
-  <div className="flex flex-col gap-8 text-left">
-    <Typography variant="h1">Material Tailwind</Typography>
-    <Typography variant="h2">Material Tailwind</Typography>
-    <Typography variant="h3">Material Tailwind</Typography>
-    <Typography variant="h4">Material Tailwind</Typography>
-    <Typography variant="h5">Material Tailwind</Typography>
-    <Typography variant="h6" className="capitalize">
-      {`Material Tailwind`}
-    </Typography>
-    <Typography variant="lead">
-      {`Material Tailwind is an easy to use components library for Tailwind CSS and
-      Material Design. It provides a simple way to customize your components, you
-      can change the colors, fonts, breakpoints and everything you need.`}
-    </Typography>
-    <Typography variant="paragraph">
-      {`Material Tailwind is an easy to use components library for Tailwind CSS and
-      Material Design. It provides a simple way to customize your components, you
-      can change the colors, fonts, breakpoints and everything you need.`}
-    </Typography>
-    <Typography variant="small">
-      {`Material Tailwind is an easy to use components library for Tailwind CSS and
-      Material Design. It provides a simple way to customize your components, you
-      can change the colors, fonts, breakpoints and everything you need.`}
-    </Typography>
-  </div>
-}>
+<CodePreview link="typography#typography" component={<TypographyExamples.TypographyVariants />}>
 ```jsx
-import { Fragment } from "react";
 import { Typography } from "@material-tailwind/react";
 
-export default function Variants() {
+export function TypographyVariants() {
   return (
-    <Fragment>
+    <>
       <Typography variant="h1">Material Tailwind</Typography>
       <Typography variant="h2">Material Tailwind</Typography>
       <Typography variant="h3">Material Tailwind</Typography>
@@ -123,7 +86,7 @@ export default function Variants() {
         components, you can change the colors, fonts, breakpoints and everything
         you need.
       </Typography>
-    </Fragment>
+    </>
   );
 }
 ```
@@ -131,33 +94,19 @@ export default function Variants() {
 
 ---
 
+<DocsTitle href="typography-colors">
 ## Typography Colors
+</DocsTitle>
 
 The <Code>Typography</Code> component comes with 23 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="typography-colors" link="typography#typography-colors" component={
-  <div className="flex flex-col gap-8 text-left">
-    <Typography variant="h1" color="blue-gray">
-      {`Material Tailwind`}
-    </Typography>
-    <Typography variant="h1" color="blue">
-      {`Material Tailwind`}
-    </Typography>
-    <Typography variant="h1" color="red">
-      {`Material Tailwind`}
-    </Typography>
-    <Typography variant="h1" color="green">
-      {`Material Tailwind`}
-    </Typography>
-  </div>
-}>
+<CodePreview link="typography#typography-colors" component={<TypographyExamples.TypographyColors />}>
 ```jsx
-import { Fragment } from "react";
 import { Typography } from "@material-tailwind/react";
 
-export default function Colors() {
+export function TypographyColors() {
   return (
-    <Fragment>
+    <>
       <Typography variant="h1" color="blue-gray">
         Material Tailwind
       </Typography>
@@ -170,7 +119,7 @@ export default function Colors() {
       <Typography variant="h1" color="green">
         Material Tailwind
       </Typography>
-    </Fragment>
+    </>
   );
 }
 ```
@@ -178,19 +127,17 @@ export default function Colors() {
 
 ---
 
+<DocsTitle href="typography-gradient-color">
 ## Typography Gradient Colors
+</DocsTitle>
 
 You can change the <Code>Typography</Code> text color into a gradient color using the <Code>textGradient</Code> prop.
 
-<CodePreview id="typography-gradient-color" link="typography#typography-gradient-color" component={
-  <Typography variant="h1" color="blue" textGradient>
-    {`Material Tailwind`}
-  </Typography>
-}>
+<CodePreview link="typography#typography-gradient-color" component={<TypographyExamples.TypographyGradientColor />}>
 ```jsx
 import { Typography } from "@material-tailwind/react";
 
-export default function GradientColor() {
+export function TypographyGradientColor() {
   return (
     <Typography variant="h1" color="blue" textGradient>
       Material Tailwind
@@ -200,5 +147,388 @@ export default function GradientColor() {
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="typography-props">
+# Typography Props
+</DocsTitle>
+
+The following props are available for typography component. These are the custom
+props that we've added for the typography component and you can use all
+the other native props as well.
+
+| Attribute      | Type                      | Description                                   | Default                                |
+| -------------- | ------------------------- | --------------------------------------------- | -------------------------------------- |
+| `variant`      | [Variant](#types-variant) | Change typography variant                     | <Code>paragraph</Code>                 |
+| `color`        | [Color](#types-color)     | Change typography color                       | <Code>inherit</Code>                   |
+| `textGradient` | <Code>boolean</Code>      | Change typography color into a gradient color | <Code>false</Code>                     |
+| `as`           | <Code>element</Code>      | Change the typography rendered element        | <Code>undefined</Code>                 |
+| `className`    | <Code>string</Code>       | Add custom className for typography           | `''`                                   |
+| `children`     | <Code>node</Code>         | Add content for typography                    | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TypographyProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-variant">
+## Types - Variant
+</DocsTitle>
+
+```ts
+type variant =
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "lead"
+  | "paragraph"
+  | "small";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "inherit"
+  | "current"
+  | "black"
+  | "white"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="typography-theme">
+# Typography Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for typography component, the theme object for typography component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of typography component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for typography component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of typography component.<br />
+
+You can customize the theme and styles of typography component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="typography-theme-object-type">
+## Typography Theme Object Type
+</DocsTitle>
+
+```ts
+interface TypographyStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    as: string;
+    textGradient: boolean;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    colors: string[];
+  };
+  styles: {
+    variants: {
+      h1: object;
+      h2: object;
+      h3: object;
+      h4: object;
+      h5: object;
+      h6: object;
+      lead: object;
+      paragraph: object;
+      small: object;
+    };
+    textGradient: object;
+    colors: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TypographyStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="typography-theme-customization">
+## Typography Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  typography: {
+    defaultProps: {
+      variant: "paragraph",
+      color: "inherit",
+      textGradient: false,
+      className: "",
+    },
+    valid: {
+      variants: [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "lead",
+        "paragraph",
+        "small",
+      ],
+      colors: [
+        "inherit",
+        "current",
+        "black",
+        "white",
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
+    styles: {
+      variants: {
+        h1: {
+          display: "block",
+          fontSmoothing: "antialiased",
+          letterSpacing: "tracking-normal",
+          fontFamily: "font-sans",
+          fontSize: "text-5xl",
+          fontWeight: "font-semibold",
+          lineHeight: "leading-tight",
+        },
+        h2: {
+          display: "block",
+          fontSmoothing: "antialiased",
+          letterSpacing: "tracking-normal",
+          fontFamily: "font-sans",
+          fontSize: "text-4xl",
+          fontWeight: "font-semibold",
+          lineHeight: "leading-[1.3]",
+        },
+        h3: {
+          display: "block",
+          fontSmoothing: "antialiased",
+          letterSpacing: "tracking-normal",
+          fontFamily: "font-sans",
+          fontSize: "text-3xl",
+          fontWeight: "font-semibold",
+          lineHeight: "leading-snug",
+        },
+        h4: {
+          display: "block",
+          fontSmoothing: "antialiased",
+          letterSpacing: "tracking-normal",
+          fontFamily: "font-sans",
+          fontSize: "text-2xl",
+          fontWeight: "font-semibold",
+          lineHeight: "leading-snug",
+        },
+        h5: {
+          display: "block",
+          fontSmoothing: "antialiased",
+          letterSpacing: "tracking-normal",
+          fontFamily: "font-sans",
+          fontSize: "text-xl",
+          fontWeight: "font-semibold",
+          lineHeight: "leading-snug",
+        },
+        h6: {
+          display: "block",
+          fontSmoothing: "antialiased",
+          letterSpacing: "tracking-normal",
+          fontFamily: "font-sans",
+          fontSize: "text-base",
+          fontWeight: "font-semibold",
+          lineHeight: "leading-relaxed",
+        },
+        lead: {
+          display: "block",
+          fontSmoothing: "antialiased",
+          fontFamily: "font-sans",
+          fontSize: "text-xl",
+          fontWeight: "font-normal",
+          lineHeight: "leading-relaxed",
+        },
+        paragraph: {
+          display: "block",
+          fontSmoothing: "antialiased",
+          fontFamily: "font-sans",
+          fontSize: "text-base",
+          fontWeight: "font-light",
+          lineHeight: "leading-relaxed",
+        },
+        small: {
+          display: "block",
+          fontSmoothing: "antialiased",
+          fontFamily: "font-sans",
+          fontSize: "text-sm",
+          fontWeight: "font-light",
+          lineHeight: "leading-normal",
+        },
+      },
+      textGradient: {
+        bgClip: "bg-clip-text",
+        color: "text-transparent",
+      },
+      colors: {
+        inherit: {
+          color: "text-inherit",
+        },
+        current: {
+          color: "text-current",
+        },
+        black: {
+          color: "text-black",
+        },
+        white: {
+          color: "text-white",
+        },
+        "blue-gray": {
+          color: "text-blue-gray-900",
+          gradient: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400",
+        },
+        gray: {
+          color: "text-gray-700",
+          gradient: "bg-gradient-to-tr from-gray-600 to-gray-400",
+        },
+        brown: {
+          color: "text-brown-500",
+          gradient: "bg-gradient-to-tr from-brown-600 to-brown-400",
+        },
+        "deep-orange": {
+          color: "text-deep-orange-500",
+          gradient: "bg-gradient-to-tr from-deep-orange-600 to-deep-orange-400",
+        },
+        orange: {
+          color: "text-orange-500",
+          gradient: "bg-gradient-to-tr from-orange-600 to-orange-400",
+        },
+        amber: {
+          color: "text-amber-500",
+          gradient: "bg-gradient-to-tr from-amber-600 to-amber-400",
+        },
+        yellow: {
+          color: "text-yellow-500",
+          gradient: "bg-gradient-to-tr from-yellow-600 to-yellow-400",
+        },
+        lime: {
+          color: "text-lime-500",
+          gradient: "bg-gradient-to-tr from-lime-600 to-lime-400",
+        },
+        "light-green": {
+          color: "text-light-green-500",
+          gradient: "bg-gradient-to-tr from-light-green-600 to-light-green-400",
+        },
+        green: {
+          color: "text-green-500",
+          gradient: "bg-gradient-to-tr from-green-600 to-green-400",
+        },
+        teal: {
+          color: "text-teal-500",
+          gradient: "bg-gradient-to-tr from-teal-600 to-teal-400",
+        },
+        cyan: {
+          color: "text-cyan-500",
+          gradient: "bg-gradient-to-tr from-cyan-600 to-cyan-400",
+        },
+        "light-blue": {
+          color: "text-light-blue-500",
+          gradient: "bg-gradient-to-tr from-light-blue-600 to-light-blue-400",
+        },
+        blue: {
+          color: "text-blue-500",
+          gradient: "bg-gradient-to-tr from-blue-600 to-blue-400",
+        },
+        indigo: {
+          color: "text-indigo-500",
+          gradient: "bg-gradient-to-tr from-indigo-600 to-indigo-400",
+        },
+        "deep-purple": {
+          color: "text-deep-purple-500",
+          gradient: "bg-gradient-to-tr from-deep-purple-600 to-deep-purple-400",
+        },
+        purple: {
+          color: "text-purple-500",
+          gradient: "bg-gradient-to-tr from-purple-600 to-purple-400",
+        },
+        pink: {
+          color: "text-pink-500",
+          gradient: "bg-gradient-to-tr from-pink-600 to-pink-400",
+        },
+        red: {
+          color: "text-red-500",
+          gradient: "bg-gradient-to-tr from-red-600 to-red-400",
+        },
+      },
+    },
+  },
+};
+```
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more typography examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
+
+• <a href="https://www.material-tailwind.com/blocks/hero-sections" target="_blank">Hero Blocks</a><br />
+• <a href="https://www.material-tailwind.com/blocks/feature-sections" target="_blank">Feature Blocks</a><br />
+• <a href="https://www.material-tailwind.com/blocks/content-sections" target="_blank">Content Blocks</a><br />
+• <a href="https://www.material-tailwind.com/blocks/blog-sections" target="_blank">Blog Templates</a><br />

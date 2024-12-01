@@ -2,26 +2,30 @@
 title: Tailwind CSS Tooltip for React - Material Tailwind
 description: Customise your web projects with our easy-to-use tooltip component for Tailwind CSS and React using Material Design guidelines.
 navigation:
-  ["tooltip", "tooltip-placement", "custom-tooltip-animation", "props", "theme"]
-related:
   [
-    {
-      title: "Props",
-      route: "props/tooltip",
-      description: "Learn more about props definition and types of tooltip components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/tooltip",
-      description: "Learn how to customize the theme and styles for tooltip components.",
-    },
-  ]
+    "tooltip",
+    "tooltip-placement",
+    "tooltip-custom-animation",
+    "tooltip-with-helper-icon",
+    "tooltip-custom-styles",
+    "tooltip-props",
+    "types-placement",
+    "types-offset",
+    "types-dismiss",
+    "types-animate",
+    "tooltip-theme",
+    "tooltip-theme-object-type",
+    "tooltip-theme-customization",
+    "more-examples"
+]
 github: tooltip
-prev: textarea
+prev: timeline
 next: typography
 ---
 
+<DocsTitle href="tooltip">
 # Tailwind CSS Tooltip - React
+</DocsTitle>
 
 Customise your web projects with an easy-to-use and responsive Tailwind CSS <Code>Tooltip</Code>!
 
@@ -31,18 +35,14 @@ See below our example that will help you create a simple <Code>Tooltip</Code> fo
 
 <br />
 
-<CodePreview id="tooltip" link="tooltip#tooltip" component={
-  <Tooltip content="Material Tailwind">
-    <Button variant="gradient">Show Tooltip</Button>
-  </Tooltip>
-}>
+<CodePreview link="tooltip#tooltip" component={<TooltipExamples.TooltipDefault />}>
 ```jsx
 import { Tooltip, Button } from "@material-tailwind/react";
 
-export default function Example() {
+export function TooltipDefault() {
   return (
     <Tooltip content="Material Tailwind">
-      <Button variant="gradient">Show Tooltip</Button>
+      <Button>Show Tooltip</Button>
     </Tooltip>
   );
 }
@@ -51,110 +51,64 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="tooltip-placement">
 ## Tooltip Placement
+</DocsTitle>
 
 You can change the position of the <Code>Tooltip</Code> component using the <Code>placement</Code> prop.
 
-<CodePreview id="tooltip-placement" link="tooltip#tooltip-placement" component={
-  <>
-    <div className="mb-3 flex gap-3">
-      <Tooltip content="Material Tailwind" placement="top">
-        <Button variant="gradient">Top</Button>
-      </Tooltip>
-      <Tooltip content="Material Tailwind" placement="top-start">
-        <Button variant="gradient">Top Start</Button>
-      </Tooltip>
-      <Tooltip content="Material Tailwind" placement="top-end">
-        <Button variant="gradient">Top End</Button>
-      </Tooltip>
-    </div>
-    <div className="mb-3 flex gap-3">
-      <Tooltip content="Material Tailwind" placement="right">
-        <Button variant="gradient">Right</Button>
-      </Tooltip>
-      <Tooltip content="Material Tailwind" placement="right-start">
-        <Button variant="gradient">Right Start</Button>
-      </Tooltip>
-      <Tooltip content="Material Tailwind" placement="right-end">
-        <Button variant="gradient">Right End</Button>
-      </Tooltip>
-    </div>
-    <div className="mb-3 flex gap-3">
-      <Tooltip content="Material Tailwind" placement="bottom">
-        <Button variant="gradient">Bottom</Button>
-      </Tooltip>
-      <Tooltip content="Material Tailwind" placement="bottom-start">
-        <Button variant="gradient">Bottom Start</Button>
-      </Tooltip>
-      <Tooltip content="Material Tailwind" placement="bottom-end">
-        <Button variant="gradient">Bottom End</Button>
-      </Tooltip>
-    </div>
-    <div className="flex gap-3">
-      <Tooltip content="Material Tailwind" placement="left">
-        <Button variant="gradient">Left</Button>
-      </Tooltip>
-      <Tooltip content="Material Tailwind" placement="left-start">
-        <Button variant="gradient">Left Start</Button>
-      </Tooltip>
-      <Tooltip content="Material Tailwind" placement="left-end">
-        <Button variant="gradient">Left End</Button>
-      </Tooltip>
-    </div>
-  </>
-}>
+<CodePreview link="tooltip#tooltip-placement" component={<TooltipExamples.TooltipPlacement />}>
 ```jsx
-import { Fragment } from "react";
 import { Tooltip, Button } from "@material-tailwind/react";
 
-export default function Example() {
+export function TooltipPlacement() {
   return (
-    <Fragment>
+    <>
       <div className="mb-3 flex gap-3">
         <Tooltip content="Material Tailwind" placement="top">
-          <Button variant="gradient">Top</Button>
+          <Button>Top</Button>
         </Tooltip>
         <Tooltip content="Material Tailwind" placement="top-start">
-          <Button variant="gradient">Top Start</Button>
+          <Button>Top Start</Button>
         </Tooltip>
         <Tooltip content="Material Tailwind" placement="top-end">
-          <Button variant="gradient">Top End</Button>
+          <Button>Top End</Button>
         </Tooltip>
       </div>
       <div className="mb-3 flex gap-3">
         <Tooltip content="Material Tailwind" placement="right">
-          <Button variant="gradient">Right</Button>
+          <Button>Right</Button>
         </Tooltip>
         <Tooltip content="Material Tailwind" placement="right-start">
-          <Button variant="gradient">Right Start</Button>
+          <Button>Right Start</Button>
         </Tooltip>
         <Tooltip content="Material Tailwind" placement="right-end">
-          <Button variant="gradient">Right End</Button>
+          <Button>Right End</Button>
         </Tooltip>
       </div>
       <div className="mb-3 flex gap-3">
         <Tooltip content="Material Tailwind" placement="bottom">
-          <Button variant="gradient">Bottom</Button>
+          <Button>Bottom</Button>
         </Tooltip>
         <Tooltip content="Material Tailwind" placement="bottom-start">
-          <Button variant="gradient">Bottom Start</Button>
+          <Button>Bottom Start</Button>
         </Tooltip>
         <Tooltip content="Material Tailwind" placement="bottom-end">
-          <Button variant="gradient">Bottom End</Button>
+          <Button>Bottom End</Button>
         </Tooltip>
       </div>
       <div className="flex gap-3">
         <Tooltip content="Material Tailwind" placement="left">
-          <Button variant="gradient">Left</Button>
+          <Button>Left</Button>
         </Tooltip>
         <Tooltip content="Material Tailwind" placement="left-start">
-          <Button variant="gradient">Left Start</Button>
+          <Button>Left Start</Button>
         </Tooltip>
         <Tooltip content="Material Tailwind" placement="left-end">
-          <Button variant="gradient">Left End</Button>
+          <Button>Left End</Button>
         </Tooltip>
       </div>
-    </Fragment>
+    </>
   );
 }
 ```
@@ -162,25 +116,17 @@ export default function Example() {
 
 ---
 
-## Custom Tooltip Animation
+<DocsTitle href="tooltip-custom-animation">
+## Tooltip Custom Animation
+</DocsTitle>
 
 You can modify the open/close state animation for <Code>Tooltip</Code> component using the <Code>animate</Code> prop.
 
-<CodePreview id="custom-tooltip-animation" link="tooltip#custom-tooltip-animation" component={
-  <Tooltip
-    content="Material Tailwind"
-    animate={{
-      mount: { scale: 1, y: 0 },
-      unmount: { scale: 0, y: 25 },
-    }}
-  >
-    <Button variant="gradient">Show Tooltip</Button>
-  </Tooltip>
-}>
+<CodePreview link="tooltip#tooltip-custom-animation" component={<TooltipExamples.TooltipCustomAnimation />}>
 ```jsx
 import { Tooltip, Button } from "@material-tailwind/react";
 
-export default function Example() {
+export default function TooltipCustomAnimation() {
   return (
     <Tooltip
       content="Material Tailwind"
@@ -189,12 +135,331 @@ export default function Example() {
         unmount: { scale: 0, y: 25 },
       }}
     >
-      <Button variant="gradient">Show Tooltip</Button>
+      <Button>Show Tooltip</Button>
     </Tooltip>
   );
 }
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="tooltip-with-helper-icon">
+## Tooltip with Helper Icon
+</DocsTitle>
+
+This tooltip example is perfect if you want to avoid cluttering the screen. It provides additional info about a specific element on the website.
+
+<CodePreview component={<TooltipExamples.TooltipWithHelperIcon />}>
+```jsx
+import { Tooltip, Typography } from "@material-tailwind/react";
+
+export function TooltipWithHelperIcon() {
+  return (
+    <Tooltip
+      content={
+        <div className="w-80">
+          <Typography color="white" className="font-medium">
+            Material Tailwind
+          </Typography>
+          <Typography
+            variant="small"
+            color="white"
+            className="font-normal opacity-80"
+          >
+            Material Tailwind is an easy to use components library for Tailwind
+            CSS and Material Design.
+          </Typography>
+        </div>
+      }
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
+        className="h-5 w-5 cursor-pointer text-blue-gray-500"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+        />
+      </svg>
+    </Tooltip>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="tooltip-custom-styles">
+## Tooltip Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Tooltip</Code> component.
+
+<CodePreview component={<TooltipExamples.TooltipCustomStyles />}>
+```jsx
+import { Tooltip, Typography } from "@material-tailwind/react";
+
+export function TooltipCustomStyles() {
+  return (
+    <Tooltip
+      placement="bottom"
+      className="border border-blue-gray-50 bg-white px-4 py-3 shadow-xl shadow-black/10"
+      content={
+        <div className="w-80">
+          <Typography color="blue-gray" className="font-medium">
+            Material Tailwind
+          </Typography>
+          <Typography
+            variant="small"
+            color="blue-gray"
+            className="font-normal opacity-80"
+          >
+            Material Tailwind is an easy to use components library for Tailwind
+            CSS and Material Design.
+          </Typography>
+        </div>
+      }
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
+        className="h-5 w-5 cursor-pointer text-blue-gray-500"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+        />
+      </svg>
+    </Tooltip>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="tooltip-props">
+## Tooltip Props
+</DocsTitle>
+
+The following props are available for tooltip component. These are the custom props
+that we've added for the tooltip component and you can use all the other
+native props as well.
+
+| Attribute     | Type                          | Description                                        | Default                                |
+| ------------- | ----------------------------- | -------------------------------------------------- | -------------------------------------- |
+| `open`        | <Code>boolean</Code>          | Makes the tooltip open, when tooltip is controlled | <Code>undefined</Code>                 |
+| `handler`     | <Code>function</Code>         | Change open state for controlled tooltip           | <Code>undefined</Code>                 |
+| `content`     | <Code>node</Code>             | Add content for tooltip                            | <Code>undefined</Code>                 |
+| `interactive` | <Code>boolean</Code>          | Make tooltip interactive                           | <Code>false</Code>                     |
+| `placement`   | [Placement](#types-placement) | Change tooltip placement                           | <Code>top</Code>                       |
+| `offset`      | [Offset](#types-offset)       | Change tooltip offset from it's handler            | <Code>5</Code>                         |
+| `dismiss`     | [Dismiss](#types-dismiss)     | Change dismiss listeners when clicking outside     | <Code>undefined</Code>                 |
+| `animate`     | [Animate](#types-animate)     | Change tooltip animation                           | <Code>undefined</Code>                 |
+| `className`   | <Code>string</Code>           | Add custom className for tooltip                   | `''`                                   |
+| `children`    | <Code>node</Code>             | The element that tooltip will reference to         | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TooltipProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-placement">
+## Types - Placement
+</DocsTitle>
+
+```ts
+type placement =
+  | "top"
+  | "top-start"
+  | "top-end"
+  | "right"
+  | "right-start"
+  | "right-end"
+  | "bottom"
+  | "bottom-start"
+  | "bottom-end"
+  | "left"
+  | "left-start"
+  | "left-end";
+```
+
+---
+
+<DocsTitle href="types-offset">
+## Types - Offset
+</DocsTitle>
+
+```ts
+type offset =
+  | number
+  | {
+      mainAxis?: number;
+      crossAxis?: number;
+      alignmentAxis?: number | null;
+    };
+```
+
+---
+
+<DocsTitle href="types-dismiss">
+## Types - Dismiss
+</DocsTitle>
+
+```ts
+type dismissType = {
+  enabled?: boolean;
+  escapeKey?: boolean;
+  referencePress?: boolean;
+  referencePressEvent?: 'pointerdown' | 'mousedown' | 'click';
+  outsidePress?: boolean | ((event: MouseEvent) => boolean);
+  outsidePressEvent?: 'pointerdown' | 'mousedown' | 'click';
+  ancestorScroll?: boolean;
+  bubbles?: boolean | {
+      escapeKey?: boolean;
+      outsidePress?: boolean;
+  };
+};
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="tooltip-theme">
+## Tooltip Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for tooltip components, the theme object for tooltip components has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of tooltip component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of tooltip component.<br />
+
+You can customize the theme and styles of tooltip components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="tooltip-theme-object-type">
+## Tooltip Theme Object Type
+</DocsTitle>
+
+```ts
+interface TooltipStylesType {
+  defaultProps: {
+    interactive: string;
+    placement: string;
+    offset:
+      | number
+      | {
+          mainAxis: number;
+          crossAxis: number;
+          alignmentAxis: number;
+        };
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePress: boolean;
+      referencePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      outsidePress: boolean | ((event: MouseEvent) => boolean);
+      outsidePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      ancestorScroll: boolean;
+      bubbles: boolean | {
+          escapeKey: boolean;
+          outsidePress: boolean;
+      };
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TooltipStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="tooltip-theme-customization">
+## Tooltip Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  tooltip: {
+    defaultProps: {
+      interactive: false,
+      placement: "top",
+      offset: 5,
+      dismiss: {},
+      animate: {
+        unmount: {},
+        mount: {},
+      },
+      className: "",
+    },
+    styles: {
+      base: {
+        bg: "bg-black",
+        py: "py-1.5",
+        px: "px-3",
+        borderRadius: "rounded-lg",
+        fontFamily: "font-sans",
+        fontSize: "text-sm",
+        fontWeight: "font-normal",
+        color: "text-white",
+        outline: "focus:outline-none",
+        overflowWrap: "break-words",
+        zIndex: "z-[999]",
+        whiteSpace: "whitespace-normal",
+      },
+    },
+  },
+};
+```
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more tooltip component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

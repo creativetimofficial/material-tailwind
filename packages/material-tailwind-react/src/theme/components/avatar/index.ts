@@ -1,19 +1,26 @@
 // types
-import type { variant, size, className } from "../../../types/components/avatar";
-import { propTypesVariant, propTypesSize } from "../../../types/components/avatar";
+import type { variant, size, className, withBorder, color } from "../../../types/components/avatar";
+import { propTypesVariant, propTypesSize, propTypesColor } from "../../../types/components/avatar";
+import avatarBorderColor from "./avatarBorderColor";
 
 export interface AvatarStyleTypes {
   defaultProps?: {
     variant?: variant;
     size?: size;
     className?: className;
+    withBorder?: withBorder;
+    color?: color;
   };
   valid?: {
     variants?: string[];
     sizes?: string[];
+    colors?: string[];
   };
   styles?: {
-    base?: object;
+    base?: {
+      initial?: object;
+      withBorder?: object;
+    };
     sizes?: {
       xs?: object;
       sm?: object;
@@ -23,28 +30,38 @@ export interface AvatarStyleTypes {
       xxl?: object;
     };
     variants?: {
+      square?: object;
       rounded?: object;
       circular?: object;
     };
+    borderColor?: typeof avatarBorderColor;
   };
 }
 
 export const avatar: AvatarStyleTypes = {
   defaultProps: {
-    variant: "rounded",
+    variant: "circular",
     size: "md",
     className: "",
+    withBorder: false,
+    color: "gray",
   },
   valid: {
     variants: propTypesVariant,
     sizes: propTypesSize,
+    colors: propTypesColor,
   },
   styles: {
     base: {
-      display: "inline-block",
-      position: "relative",
-      objectFit: "object-cover",
-      objectPosition: "object-center",
+      initial: {
+        display: "inline-block",
+        position: "relative",
+        objectFit: "object-cover",
+        objectPosition: "object-center",
+      },
+      withBorder: {
+        border: "border-2",
+      },
     },
     sizes: {
       xs: {
@@ -80,10 +97,14 @@ export const avatar: AvatarStyleTypes = {
     },
     variants: {
       rounded: {},
+      square: {
+        borderRadius: "!rounded-none",
+      },
       circular: {
         borderRadius: "!rounded-full",
       },
     },
+    borderColor: avatarBorderColor,
   },
 };
 

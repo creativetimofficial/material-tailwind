@@ -1,0 +1,283 @@
+---
+title: Django - Installation Guide
+description: Learn how to use Material Tailwind components with Django and Tailwind CSS to easily create elegant and flexible pages.
+navigation:
+  [
+    "installation",
+    "npm",
+    "yarn",
+    "pnpm",
+    "tailwindcss-config",
+    "ripple-effect",
+    "example",
+  ]
+github: guide/django
+prev: installation
+next: license
+---
+
+# Material Tailwind with Django
+
+<span id="installation" className="scroll-mt-48" />
+Learn how to setup and install @material-tailwind/html with Django.
+
+<br />
+<br />
+
+First you need to create a new project using Django, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://docs.djangoproject.com/en/5.0/topics/install/?ref=material-tailwind">Django Official Documentation</a>
+
+```bash
+django-admin startproject mysite
+```
+<br />
+
+Create a new **templates** directory inside the project folder and update **settings.py** file:
+
+```php
+TEMPLATES = [
+    {
+        ...
+        'DIRS': [BASE_DIR / 'templates'],
+        ...
+    },
+]
+```
+<br />
+
+Install the **django-compressor** by running the following command in your terminal:
+
+```bash
+python -m pip install django-compressor
+```
+<br />
+And add the **compressor** to the installed apps inside the **settings.py** file:
+
+```php
+INSTALLED_APPS = [
+    ...
+    'compressor',
+]
+```
+
+<br />
+
+Configure the **compressor** inside the **settings.py** file:
+
+```php
+COMPRESS_ROOT = BASE_DIR / 'static'
+
+COMPRESS_ENABLED = True
+
+STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+```
+<br />
+
+Create two new folders and an **input.css** file inside the **static/src/** folder:
+```bash
+static
+└── src
+    └── input.css
+```
+
+<br />
+
+Create a new **views.py** file inside `mysite/` next to **urls.py** and add the following code:
+
+```php
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'index.html')
+```
+
+<br />
+Import the newly created view instance inside the **urls.py** file:
+
+```php
+from .views import index
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', index, name='index')
+]
+```
+
+<br />
+Create a new **_base.html** file inside the **templates** directory and the following code:
+
+```html
+{% load compress %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Tailwind with Django</title>
+
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    {% endcompress %}
+
+</head>
+
+  <body class="flex items-center justify-center h-screen">
+    {% block content %} {% endblock content %}
+  </body>
+
+</html>
+```
+<br />
+Create an **index.html** file inside the **templates** folder that will serve as the homepage. At the moment ignore the Tailwind CSS classes as we will install it shortly.
+```html
+{% extends "_base.html" %}
+
+{% block content %}
+    <h1 class="block font-sans text-5xl antialiased font-semibold leading-tight tracking-normal text-transparent bg-gradient-to-tr from-blue-600 to-blue-400 bg-clip-text">
+      Material Tailwind with Django!
+    </h1>
+{% endblock content %}
+```
+<br />
+
+Then you need to install Tailwind CSS since @material-tailwind/html works with Tailwind CSS classes and you need to have Tailwind CSS installed on your project. 
+```bash
+npm install -D tailwindcss
+npx tailwindcss init
+```
+
+---
+
+<DocsTitle href="npm">
+## Using NPM
+</DocsTitle>
+
+Install @material-tailwind/html as a dependency using NPM by running the following command:
+
+<span id="npm" className="scroll-mt-48" />
+
+```bash
+npm i @material-tailwind/html
+```
+
+---
+
+<DocsTitle href="yarn">
+## Using Yarn
+</DocsTitle>
+
+Install @material-tailwind/html as a dependency using Yarn by running the following command:
+
+<span id="yarn" className="scroll-mt-48" />
+
+```bash
+yarn add @material-tailwind/html
+```
+
+---
+
+## Using PNPM
+
+Install @material-tailwind/html as a dependency using PNPM by running the following command:
+
+<span id="pnpm" className="scroll-mt-48" />
+
+```bash
+pnpm i @material-tailwind/html
+```
+
+---
+
+<DocsTitle href="tailwindcss-config">
+## TailwindCSS Configurations
+</DocsTitle>
+
+<span id="tailwindcss-config" className="scroll-mt-48" />
+
+Once you install @material-tailwind/html you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/html/utils.
+
+```js {1, 4,6, 12}
+import withMT from "@material-tailwind/html/utils/withMT";
+
+/** @type {import('tailwindcss').Config} */
+module.exports = withMT({
+  content: [
+    './templates/**/*.html'
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+});
+```
+<br />
+Import the Tailwind CSS directives inside the **input.css** file:
+```css
+/* static/src/input.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+<br />
+Run the following command to watch for changes and compile the Tailwind CSS code:
+
+```bash
+npx tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch
+```
+<br />
+
+Finally, create a local server by running the following command:
+```bash
+python manage.py runserver
+```
+---
+
+<br />
+## Ripple Effect
+
+<span id="ripple-effect" className="scroll-mt-48" />
+
+@material-tailwind/html comes with a ripple effect script file same as Material Design ripple effect and you can simply use it by adding it's CDN link to you project and add the <Code>data-ripple-light="true"</Code> for light ripple effect and <Code>data-ripple-dark="true"</Code> for dark ripple effect as an attribute for components
+
+The ripple effect used in @material-tailwind/html is a separate package called <a href="https://www.npmjs.com/package/material-ripple-effects?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">material-ripple-effect</a>
+
+
+```html
+<!-- from node_modules -->
+<script async src="node_modules/@material-tailwind/html/scripts/ripple.js"></script>
+
+<!-- from cdn -->
+<script defer async src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+```
+
+---
+
+<DocsTitle href="example">
+## Example
+</DocsTitle>
+
+Now you're good to go and use @material-tailwind/html in your project.
+
+<CodePreview id="example" component={
+  <button
+    type="button"
+    data-ripple-light="true"
+    className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+  >
+    Button
+  </button>
+}>
+```html
+<button
+  type="button"
+  data-ripple-light="true"
+  class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+>
+  Button
+</button>
+```
+</CodePreview>

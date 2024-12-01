@@ -1,0 +1,745 @@
+---
+title: Tailwind CSS Modal - Material Tailwind
+description: Customise your web projects with our easy-to-use modal component for Tailwind CSS using Material Design guidelines.
+navigation:
+  [
+    "modal",
+    "modal-sizes",   
+    "web-3-modal",
+    "modal-custom-animation",
+    "modal-with-form",
+    "modal-with-image",
+  ]
+github: modal
+prev: menu
+next: navbar
+---
+
+# Tailwind CSS Modal
+
+<a href="/docs/html/modal#required-script" className="mb-6 mt-2 block">
+  <div class="inline-flex items-center bg-slate-100 hover:bg-slate-200 transition-all p-1 pr-4 text-sm text-slate-700 rounded-full">
+        <span class="mr-2 inline-flex justify-center items-center w-8 h-8 rounded-full bg-white shadow-md text-orange-500">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                <path fill-rule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+            </svg>
+        </span>
+        <span>Requires extra Javascript Scripts</span>
+    </div>
+</a>
+
+
+Use our Tailwind CSS **modal** component to inform users about tasks or important information that require decisions or involve multiple steps.
+
+A modal is a window that displays critical information, disabling all app functionality when it appears, and remains on screen until confirmed or dismissed.
+
+See below our modal examples styled with Tailwind CSS that you can use for your web or mobile apps.
+
+To initialize a new modal:
+
+Add <Code>data-dialog-target="`{modal}`"</Code> to the trigger element. Add <Code>data-dialog-backdrop="`{modalName}`"</Code> to the backdrop element. Add <Code>data-dialog="`{modalName}`"</Code> to the modal element itself.
+
+Make sure that the values for these data attributes are the same.
+
+To close the modal when an element is clicked, add <Code>data-dialog-close="true"</Code> to that element.
+
+<br />
+
+### Modal Examples:
+
+## Default Modal 
+
+This coded example demonstrates a modal component; it includes a trigger button, a backdrop, and 
+customizable styling for the modal's content and actions. Upon clicking the "Open Modal" button, 
+the modal is rendered over the backdrop, ensuring a focused interaction for the user. The content and 
+behavior can be easily adjusted to suit your website's requirements.
+
+<CodePreview
+  id="modal"
+  link="modal#modal"
+  component={<HTMLModalExamples.ModalDefault/>}
+>
+```html
+<button 
+  data-dialog-target="modal"
+  class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+  Open Modal
+</button>
+<div
+  data-dialog-backdrop="modal"
+  data-dialog-backdrop-close="true"
+  class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+>
+  <div
+    data-dialog="modal"
+    class="relative m-4 p-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white shadow-sm"
+  >
+    <div class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800">
+      Its a simple Modal
+    </div>
+    <div class="relative border-t border-slate-200 py-4 leading-normal text-slate-600 font-light">
+      The key to more success is to have a lot of pillows. Put it this
+      way, it took me twenty five years to get these plants, twenty five
+      years of blood sweat and tears, and I&apos;m never giving up,
+      I&apos;m just getting started. I&apos;m up to something. Fan luv.
+    </div>
+    <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+      <button data-dialog-close="true" class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+        Cancel
+      </button>
+      <button data-dialog-close="true" class="rounded-md bg-green-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-green-700 hover:bg-green-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+        Confirm
+      </button>
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+## Modal Sizes
+
+You can set the size of the modal on your own using the Tailwind CSS classes. We already made some default sizes for you, 
+check the examples below for implementation details.
+
+<CodePreview
+  id="modal-sizes"
+  link="modal#sizes"
+  component={<HTMLModalExamples.ModalSizes/>}
+>
+```html
+<div class="mb-3 flex gap-3">
+  <button 
+    data-dialog-target="modal-xs"
+    class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+    Open Modal XS
+  </button>
+  <div
+    data-dialog-backdrop="modal-xs"
+    data-dialog-backdrop-close="true"
+    class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+  >
+    <div
+      data-dialog="modal-xs"
+      class="relative m-4 p-4 w-1/4 rounded-lg bg-white shadow-sm"
+    >
+      <div class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800">
+        Its a simple modal.
+      </div>
+      <div class="relative border-t border-slate-200 py-4 leading-normal text-slate-600 font-light">
+        The key to more success is to have a lot of pillows. Put it this
+        way, it took me twenty five years to get these plants, twenty five
+        years of blood sweat and tears, and I&apos;m never giving up,
+        I&apos;m just getting started. I&apos;m up to something. Fan luv.
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+        <button data-dialog-close="true" class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          Cancel
+        </button>
+        <button data-dialog-close="true" class="rounded-md bg-green-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-green-700 hover:bg-green-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <button 
+    data-dialog-target="modal-sm"
+    class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+    Open Modal SM
+  </button>
+  <div
+    data-dialog-backdrop="modal-sm"
+    data-dialog-backdrop-close="true"
+    class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+  >
+    <div
+      data-dialog="modal-sm"
+      class="relative m-4 p-4 w-1/3 rounded-lg bg-white shadow-sm"
+    >
+      <div class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800">
+        Its a simple modal.
+      </div>
+      <div class="relative border-t border-slate-200 py-4 leading-normal text-slate-600 font-light">
+        The key to more success is to have a lot of pillows. Put it this
+        way, it took me twenty five years to get these plants, twenty five
+        years of blood sweat and tears, and I&apos;m never giving up,
+        I&apos;m just getting started. I&apos;m up to something. Fan luv.
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+        <button data-dialog-close="true" class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          Cancel
+        </button>
+        <button data-dialog-close="true" class="rounded-md bg-green-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-green-700 hover:bg-green-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <button 
+    data-dialog-target="modal-md"
+    class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+    Open Modal MD
+  </button>
+  <div
+    data-dialog-backdrop="modal-md"
+    data-dialog-backdrop-close="true"
+    class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+  >
+    <div
+      data-dialog="modal-md"
+      class="relative m-4 p-4 w-2/5 rounded-lg bg-white shadow-sm"
+    >
+      <div class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800">
+        Its a simple modal.
+      </div>
+      <div class="relative border-t border-slate-200 py-4 leading-normal text-slate-600 font-light">
+        The key to more success is to have a lot of pillows. Put it this
+        way, it took me twenty five years to get these plants, twenty five
+        years of blood sweat and tears, and I&apos;m never giving up,
+        I&apos;m just getting started. I&apos;m up to something. Fan luv.
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+        <button data-dialog-close="true" class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          Cancel
+        </button>
+        <button data-dialog-close="true" class="rounded-md bg-green-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-green-700 hover:bg-green-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mb-3 flex gap-3">
+  <button 
+    data-dialog-target="modal-lg"
+    class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+    Open Modal LG
+  </button>
+  <div
+    data-dialog-backdrop="modal-lg"
+    data-dialog-backdrop-close="true"
+    class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+  >
+    <div
+      data-dialog="modal-lg"
+      class="relative m-4 p-4 w-3/5 rounded-lg bg-white shadow-sm"
+    >
+      <div class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800">
+        Its a simple modal.
+      </div>
+      <div class="relative border-t border-slate-200 py-4 leading-normal text-slate-600 font-light">
+        The key to more success is to have a lot of pillows. Put it this
+        way, it took me twenty five years to get these plants, twenty five
+        years of blood sweat and tears, and I&apos;m never giving up,
+        I&apos;m just getting started. I&apos;m up to something. Fan luv.
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+        <button data-dialog-close="true" class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          Cancel
+        </button>
+        <button data-dialog-close="true" class="rounded-md bg-green-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-green-700 hover:bg-green-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button 
+    data-dialog-target="modal-xl"
+    class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+    Open Modal XL
+  </button>
+  <div
+    data-dialog-backdrop="modal-xl"
+    data-dialog-backdrop-close="true"
+    class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+  >
+    <div
+      data-dialog="modal-xl"
+      class="relative m-4 p-4 w-3/4 rounded-lg bg-white shadow-sm"
+    >
+      <div class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800">
+        Its a simple modal.
+      </div>
+      <div class="relative border-t border-slate-200 py-4 leading-normal text-slate-600 font-light">
+        The key to more success is to have a lot of pillows. Put it this
+        way, it took me twenty five years to get these plants, twenty five
+        years of blood sweat and tears, and I&apos;m never giving up,
+        I&apos;m just getting started. I&apos;m up to something. Fan luv.
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+        <button data-dialog-close="true" class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          Cancel
+        </button>
+        <button data-dialog-close="true" class="rounded-md bg-green-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-green-700 hover:bg-green-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button 
+    data-dialog-target="dialog-xxl"
+    class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+    Open Modal XXL
+  </button>
+  <div
+    data-dialog-backdrop="modal-xxl"
+    data-dialog-backdrop-close="true"
+    class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+  >
+    <div
+      data-dialog="modal-xxl"
+      class="relative w-screen h-screen bg-white shadow-sm"
+    >
+      <div class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800">
+        Its a simple modal.
+      </div>
+      <div class="relative border-t border-slate-200 py-4 leading-normal text-slate-600 font-light">
+        The key to more success is to have a lot of pillows. Put it this
+        way, it took me twenty five years to get these plants, twenty five
+        years of blood sweat and tears, and I&apos;m never giving up,
+        I&apos;m just getting started. I&apos;m up to something. Fan luv.
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+        <button data-dialog-close="true" class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          Cancel
+        </button>
+        <button data-dialog-close="true" class="rounded-md bg-green-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-green-700 hover:bg-green-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Web 3.0 Modal
+
+This example of a modal component is for connecting a Web 3.0 wallet to a web application. 
+It features a button to open the modal, a backdrop, wallet options, and additional informational elements.
+
+<CodePreview
+  id="web-3-modal"
+  link="modal#web-3-modal"
+  component={<HTMLModalExamples.Web3Modal/>}
+>
+```html
+<button 
+  data-dialog-target="web-3-modal"
+  class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+  Connect Web 3.0 Wallet
+</button>
+<div
+  data-dialog-backdrop="web-3-modal"
+  data-dialog-backdrop-close="true"
+  class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+>
+  <div
+    class="relative m-4 w-1/4 rounded-lg bg-white shadow-sm"
+    data-dialog="web-3-modal"
+  >
+    <div class="flex items-start justify-between p-4">
+      <div>
+        <h5 class="text-xl font-medium text-slate-800">
+          Connect Web 3.0 Wallet
+        </h5>
+        <p class="text-slate-500 text-sm font-light">
+          Choose which card you want to connect
+        </p>
+      </div>
+      <button
+        data-ripple-dark="true"
+        data-dialog-close="true"
+        class="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            class="h-5 w-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div class="relative px-4">
+      <div class="mb-6">
+        <p class="pt-3 text-xs uppercase text-slate-500">
+          Popular
+        </p>
+        <button class="w-full mt-3 rounded-md flex items-center justify-center border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          <img
+            src="https://docs.material-tailwind.com/icons/metamask.svg"
+            alt="metamask"
+            class="h-5 w-5 mr-2"
+          />
+          Connect Wallet
+        </button>
+
+        <button class="w-full mt-2 rounded-md flex items-center justify-center border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          <img
+            src="https://docs.material-tailwind.com/icons/coinbase.svg"
+            alt="metamast"
+            class="h-5 w-5 mr-2 rounded-md"
+          />
+          Connect with Coinbase
+        </button>
+      </div>
+      <div>
+        <p class="pt-3 text-xs uppercase text-slate-500">
+          Other
+        </p>
+        <button class="mt-3 w-full rounded-md flex items-center justify-center border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          <img
+            src="https://docs.material-tailwind.com/icons/trust-wallet.svg"
+            alt="metamast"
+            class="h-5 w-5 rounded-md mr-2 border border-slate-300"
+          />
+          Connect with Trust Wallet
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-2 p-4 text-blue-gray-500 mt-2">
+      <p class="text-sm text-slate-500">
+        New to Ethereum wallets?
+      </p>
+      <button class="rounded-md border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+        Learn More
+      </button>
+    </div>
+  </div>
+</div>
+```
+
+</CodePreview>
+
+---
+
+
+## Modal with Custom Animation
+
+You can modify the open/close state animations for the modal by adding the
+ <Code>data-dialog-mount="`{opacity-100}`"</Code>, <Code>data-dialog-unmount="`{opacity-0}`"</Code> 
+ and <Code>data-dialog-transition="`{transition-opacity}`"</Code> data attributes to the modal 
+ component. You can pass Tailwind CSS classnames for those data attributes for animating the modal. 
+ Check more about animation data attributes for modal <a className="hover:text-blue-500 font-medium" href="#dialog-data-attributes">here</a>.
+
+<CodePreview
+  id="custom-modal-animation"
+  link="modal#custom-modal-animation"
+  component={<HTMLModalExamples.ModalCustomAnimation/>}
+>
+```html
+<button 
+  data-dialog-target="animated-modal"
+  class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+  Open Animation Modal
+</button>
+<div
+  data-dialog-backdrop="animated-modal"
+  data-dialog-backdrop-close="true"
+  class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+>
+  <div
+    data-dialog="animated-modal"
+    data-dialog-mount="opacity-100 translate-y-0 scale-100"
+    data-dialog-unmount="opacity-0 -translate-y-28 scale-90 pointer-events-none"
+    data-dialog-transition="transition-all duration-300"
+    class="relative m-4 p-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white shadow-sm"
+  >
+    <div class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800">
+      Custom Animation Modal
+    </div>
+    <div class="relative border-t border-slate-200 py-4 leading-normal text-slate-600 font-light">
+      The key to more success is to have a lot of pillows. Put it this
+      way, it took me twenty five years to get these plants, twenty five
+      years of blood sweat and tears, and I&apos;m never giving up,
+      I&apos;m just getting started. I&apos;m up to something. Fan luv.
+    </div>
+    <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+      <button data-dialog-close="true" class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+        Cancel
+      </button>
+      <button data-dialog-close="true" class="rounded-md bg-green-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-green-700 hover:bg-green-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+        Confirm
+      </button>
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+## Modal with Form
+
+Use the example below to create a modal with a Sign In form, Register form, or any other form like CRUD examples.
+
+<CodePreview
+  id="modal-with-form"
+  link="modal#modal-with-form"
+  component={<HTMLModalExamples.ModalWithForm/>}
+>
+```html
+<button 
+  data-dialog-target="sign-in-modal"
+  class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+  Open Modal Form
+</button>
+<div
+  data-dialog-backdrop="sign-in-modal"
+  data-dialog-backdrop-close="true"
+  class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+>
+  <div
+    data-dialog="sign-in-modal"
+    class="relative mx-auto w-full max-w-[24rem] rounded-lg overflow-hidden shadow-sm"
+  >
+    <div class="relative flex flex-col bg-white">
+      <div class="relative m-2.5 items-center flex justify-center text-white h-24 rounded-md bg-slate-800">
+        <h3 class="text-2xl">
+          Sign In
+        </h3>
+      </div>
+      <div class="flex flex-col gap-4 p-6">
+        <div class="w-full max-w-sm min-w-[200px]">
+            <label class="block mb-2 text-sm text-slate-600">
+              Email
+            </label>
+            <input type="email" class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Your Email" />
+        </div>
+        
+        <div class="w-full max-w-sm min-w-[200px]">
+          <label class="block mb-2 text-sm text-slate-600">
+            Password
+          </label>
+          <input type="password" class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Your Password" />
+        </div>
+    
+        <div class="inline-flex items-center mt-2">
+          <label class="flex items-center cursor-pointer relative" htmlFor="check-2">
+            <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800" id="check-2" />
+            <span class="absolute text-white opacity-0 pointer-events-none peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </span>
+          </label>
+          <label class="cursor-pointer ml-2 text-slate-600 text-sm" htmlFor="check-2">
+            Remember Me
+          </label>
+        </div>
+      </div>
+      <div class="p-6 pt-0">
+        <button class="w-full rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          Sign In
+        </button>
+        <p class="flex justify-center mt-6 text-sm text-slate-600">
+          Don&apos;t have an account?
+          <a href="#signup" class="ml-1 text-sm font-semibold text-slate-700 underline">
+            Sign up
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+## Modal with Image
+
+Use the example below to create a modal with an image inside (you can find your images on Unsplash) and other details.
+
+<CodePreview
+  id="modal-with-image"
+  link="modal#modal-with-image"
+  component={<HTMLModalExamples.ModalWithImage/>}
+>
+```html
+<div
+  class="relative flex h-64 w-96 cursor-pointer flex-col overflow-hidden rounded-lg bg-white bg-clip-border shadow-sm transition-opacity hover:opacity-90"
+  data-dialog-target="image-modal"
+>
+  <img
+    alt="nature"
+    class="h-full w-full object-cover object-center"
+    src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2717&amp;q=80"
+  />
+</div>
+<div
+  data-dialog-backdrop="image-modal"
+  data-dialog-backdrop-close="true"
+  class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+>
+  <div
+    class="relative m-4 w-2/4 rounded-lg bg-white shadow-sm"
+    role="modal"
+    data-dialog="image-modal"
+  >
+    <div class="flex items-center justify-between p-4">
+      <div class="flex items-center gap-3">
+        <img
+          alt="tania andrew"
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=1300&amp;q=80"
+          class="relative inline-block h-9 w-9 rounded-full object-cover object-center"
+        />
+        <div class="-mt-px flex flex-col">
+          <p class="text-sm text-slate-800 font-medium">
+            Tania Andrew
+          </p>
+          <p class="text-xs font-normal text-slate-500">
+            @andrew
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button class="rounded-md border border-transparent p-2.5 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+            <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+          </svg>
+        </button>
+        <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          Free Download
+        </button>
+      </div>
+    </div>
+    <div class="relative border-b border-t border-b-blue-gray-100 border-t-blue-gray-100 p-0 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+      <img
+        alt="nature"
+        class="h-[30rem] w-full object-cover object-center"
+        src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2717&amp;q=80"
+      />
+    </div>
+    <div class="flex shrink-0 flex-wrap items-center justify-between p-4 text-blue-gray-500">
+      <div class="flex items-center gap-16">
+        <div>
+          <p class="text-slate-500 text-sm">
+            Views
+          </p>
+          <p class="text-slate-800 font-medium">
+            44,082,044
+          </p>
+        </div>
+        <div>
+          <p class="text-slate-500 text-sm">
+            Downloads
+          </p>
+          <p class="text-slate-800 font-medium">
+            553,031
+          </p>
+        </div>
+      </div>
+      <button class="flex items-center rounded-md border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+          class="h-4 w-4 mr-1.5"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        Share
+      </button>
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+## Modal Trigger Data Attributes
+
+<span id="dialog-trigger-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for modal trigger element.
+
+| Attribute            | Description                                                                                                                                                                  |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data-dialog-target` | Set the modal target element, it should be the same as the `data-dialog` <br /> and `data-dialog-backdrop` data attributes.                                                 |
+| `data-dialog-close`  | It's an optional data attribute, you can set it for any element and it will turn the element <br /> to a close trigger for modal when click event happened on that element. |
+
+---
+
+## Modal Backdrop Data Attributes
+
+<span id="dialog-backdrop-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for modal backdrop element.
+
+| Attribute                    | Description                                                                                                                  |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `data-dialog-backdrop`       | Set the modal backdrop element, it should be the same as the `data-dialog` <br /> and `data-dialog-target` data attributes. |
+| `data-dialog-backdrop-close` | Sets whether to close modal when clicking on it's backdrop or not.                                                          |
+
+---
+
+## Modal Data Attributes
+
+<span id="dialog-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for modal element.
+
+| Attribute                 | Description                                                                                     | Default                                                                                                       |
+| ------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `data-dialog`             | Set the name of the modal and reference it to the <br /> modal trigger and backdrop elements. |                                                                                                               |
+| `data-popover-mount`      | Set the classnaes that should be used when the <br /> modal is visible.                        | <Code>opacity-1</Code><br /><Code>translate-y-0</Code>                                              |
+| `data-popover-unmount`    | Set the classnaes that should be used when the <br /> modal is hidden.                         | <Code>opacity-0</Code><br /><Code>-translate-y-14</Code><br /><Code>pointer-events-none</Code> |
+| `data-popover-transition` | Set the classnaes that should be used for <br /> transition of the modal.                      | <Code>transition-all</Code><br /><Code>duration-300</Code>                                          |
+
+---
+
+## Required Scripts
+
+<span id="required-script" className="scroll-mt-56" />
+
+The modal component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
+
+```html
+<!-- from node_modules -->
+<script src="node_modules/@material-tailwind/html@latest/scripts/dialog.js"></script>
+
+<!-- from cdn -->
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/dialog.js"></script>
+```
+
+---
+<span id="more-examples"></span>
+## Explore More Tailwind CSS Examples
+Check out more modal component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
+
+• <a href="https://www.material-tailwind.com/blocks/modals" target="_blank">Modals</a><br />
+• <a href="https://www.material-tailwind.com/blocks/popup-sections" target="_blank">Popup Blocks</a><br />
+
+---
+<span id="best-practices"></span>
+## Modal Best Practices for Developers
+
+• Prioritize user experience by making modals unobtrusive and easy to dismiss.<br />
+• Include clear and easily accessible close buttons, and allow users to close the modal by clicking outside it.<br />
+• Maintain a consistent design language and layout across modals to create a familiar user experience.<br />
+• Use subtle animations and transitions to open and close modals smoothly. Make sure that animations do not distract users.<br />
+• Implement validation and error handling for form elements within the modal.<br />
+

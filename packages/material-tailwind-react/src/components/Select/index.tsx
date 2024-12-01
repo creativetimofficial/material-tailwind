@@ -19,7 +19,13 @@ import {
 } from "@floating-ui/react";
 
 // framer-motion
-import { AnimatePresence, motion, useIsomorphicLayoutEffect } from "framer-motion";
+import {
+  AnimatePresence,
+  m,
+  useIsomorphicLayoutEffect,
+  LazyMotion,
+  domAnimation,
+} from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -55,6 +61,7 @@ import type {
   disabled,
   name,
   children,
+  containerProps,
 } from "../../types/components/select";
 import {
   propTypesVariant,
@@ -77,6 +84,7 @@ import {
   propTypesDisabled,
   propTypesName,
   propTypesChildren,
+  propTypesContainerProps,
 } from "../../types/components/select";
 
 // select components
@@ -103,6 +111,7 @@ export interface SelectProps extends Omit<React.ComponentProps<"div">, "value" |
   disabled?: disabled;
   name?: name;
   children: children;
+  containerProps?: containerProps;
 }
 
 const Select = React.forwardRef<HTMLDivElement, SelectProps>(
@@ -128,6 +137,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       disabled,
       name,
       children,
+      containerProps,
       ...rest
     },
     ref,
@@ -154,7 +164,11 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     animate = animate ?? defaultProps.animate;
     labelProps = labelProps ?? defaultProps.labelProps;
     menuProps = menuProps ?? defaultProps.menuProps;
-    className = className ?? defaultProps.className;
+    containerProps =
+      merge(containerProps, defaultProps?.containerProps || {}) ?? defaultProps.containerProps;
+    className = twMerge(defaultProps.className || "", className);
+
+    children = Array.isArray(children) ? children : [children];
 
     // 3. @floating-ui
     const listItemsRef = React.useRef<Array<HTMLLIElement | null>>([]);
@@ -271,14 +285,15 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     const selectSize = selectVariant.sizes[findMatch(valid.sizes, size, "md")];
     const selectError = selectVariant.error.select;
     const selectSuccess = selectVariant.success.select;
-    const selectColor = selectVariant.colors.select[findMatch(valid.colors, color, "blue")];
+    const selectColor = selectVariant.colors.select[findMatch(valid.colors, color, "gray")];
     const labelError = selectVariant.error.label;
     const labelSuccess = selectVariant.success.label;
-    const labelColor = selectVariant.colors.label[findMatch(valid.colors, color, "blue")];
+    const labelColor = selectVariant.colors.label[findMatch(valid.colors, color, "gray")];
     const stateClasses = selectVariant.states[state];
     const containerClasses = classnames(
       objectsToString(base.container),
       objectsToString(selectSize.container),
+      containerProps?.className,
     );
     const selectClasses = twMerge(
       classnames(
@@ -350,7 +365,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     // 8. select menu
     const selectMenu = (
       <FloatingFocusManager context={context} modal={false}>
-        <motion.ul
+        <m.ul
           {...getFloatingProps({
             ...menuProps,
             ref: refs.setFloating,
@@ -402,14 +417,14 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
                 id: `material-tailwind-select-${index}`,
               }),
           )}
-        </motion.ul>
+        </m.ul>
       </FloatingFocusManager>
     );
 
     // 9. return
     return (
       <SelectContextProvider value={contextValue}>
-        <div ref={ref} className={containerClasses}>
+        <div {...containerProps} ref={ref} className={containerClasses}>
           <button
             type="button"
             {...getReferenceProps({
@@ -444,17 +459,19 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
           <label {...labelProps} className={labelClasses}>
             {label}
           </label>
-          <NewAnimatePresence>
-            {open && (
-              <>
-                {lockScroll ? (
-                  <FloatingOverlay lockScroll>{selectMenu}</FloatingOverlay>
-                ) : (
-                  selectMenu
-                )}
-              </>
-            )}
-          </NewAnimatePresence>
+          <LazyMotion features={domAnimation}>
+            <NewAnimatePresence>
+              {open && (
+                <>
+                  {lockScroll ? (
+                    <FloatingOverlay lockScroll>{selectMenu}</FloatingOverlay>
+                  ) : (
+                    selectMenu
+                  )}
+                </>
+              )}
+            </NewAnimatePresence>
+          </LazyMotion>
         </div>
       </SelectContextProvider>
     );
@@ -482,6 +499,7 @@ Select.propTypes = {
   disabled: propTypesDisabled,
   name: propTypesName,
   children: propTypesChildren,
+  containerProps: propTypesContainerProps,
 };
 
 Select.displayName = "MaterialTailwind.Select";

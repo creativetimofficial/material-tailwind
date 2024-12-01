@@ -7,6 +7,7 @@ import type {
   icon,
   ripple,
   className,
+  disabled,
   objectType,
 } from "../../../types/components/checkbox";
 import { propTypesColor } from "../../../types/components/checkbox";
@@ -18,6 +19,7 @@ export interface CheckboxStylesType {
     icon?: icon;
     ripple?: ripple;
     className?: className;
+    disabled?: disabled;
     containerProps?: objectType;
     labelProps?: objectType;
     iconProps?: objectType;
@@ -32,6 +34,7 @@ export interface CheckboxStylesType {
       input?: object;
       label?: object;
       icon?: object;
+      disabled?: object;
     };
     colors: typeof checkboxColors;
   };
@@ -39,11 +42,12 @@ export interface CheckboxStylesType {
 
 export const checkbox: CheckboxStylesType = {
   defaultProps: {
-    color: "blue",
+    color: "gray",
     label: undefined,
     icon: undefined,
     ripple: true,
     className: "",
+    disabled: false,
     containerProps: undefined,
     labelProps: undefined,
     iconProps: undefined,
@@ -107,6 +111,10 @@ export const checkbox: CheckboxStylesType = {
         pointerEvents: "pointer-events-none",
         opacity: "opacity-0 peer-checked:opacity-100",
         transition: "transition-opacity",
+      },
+      disabled: {
+        opacity: "opacity-50",
+        pointerEvents: "pointer-events-none",
       },
     },
     colors: checkboxColors,

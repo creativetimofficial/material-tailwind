@@ -4,7 +4,7 @@ const alertFilled: object = {
     color: "text-white",
   },
   gray: {
-    backgroud: "bg-gray-500",
+    backgroud: "bg-gray-900",
     color: "text-white",
   },
   brown: {

@@ -1,0 +1,91 @@
+---
+title: Tailwind CSS Video - Material Tailwind
+description: Build your web projects faster with our easy-to-use video player examples for Tailwind CSS and HTML using Material Design guidelines.
+navigation:
+  [
+    "video",
+    "autoplay-video",
+    "muted-video",
+    "more-examples",
+
+  ]
+github: video
+prev: img
+next: sidebar
+---
+
+<DocsTitle href="video">
+# Tailwind CSS Video 
+</DocsTitle>
+
+Use our Tailwind CSS video examples to add video player to your web project. This component displays media content (video) on your website.
+
+Our component encapsulates all the functionalities needed to play videos, including but not limited to playback controls (like play/pause, volume control, fullscreen toggle), loading of video sources, display of video metadata (such as duration and current time).
+
+Check out below our component examples.
+
+<br />
+
+## Video Examples:
+
+## Simple Video Player
+
+Add videos to your website using our component that comes with rounded corners and playback controls.
+
+<CodePreview component={<HTMLVideoExamples.DefaultVideo />}>
+```html
+    <video class="h-full w-full rounded-lg" controls>
+      <source
+        src="https://docs.material-tailwind.com/demo.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="autoplay-video">
+## Autoplay Video
+</DocsTitle>
+
+This example includes the autoPlay attribute on the <Code>\<video></Code> tag making the video start playing automatically as soon as it is loaded, without requiring the user to initiate playback manually. 
+
+<CodePreview component={<HTMLVideoExamples.AutoplayVideo />}>
+```html
+    <video class="h-full w-full rounded-lg" controls autoPlay>
+      <source src="/demo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="muted-video">
+## Muted Video
+</DocsTitle>
+
+By adding <Code>muted</Code> to the \<video> tag, the video will play without sound by default when the page loads. This attribute is particularly important in conjunction with autoPlay, as many modern web browsers restrict autoplay functionality for videos with sound to prevent disrupting the user experience. 
+
+<CodePreview component={<HTMLVideoExamples.MutedVideo />}>
+```html
+    <video class="h-full w-full rounded-lg" controls autoPlay muted>
+      <source src="/demo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+```
+</CodePreview>
+
+<br />
+
+Videos that autoplay with sound can be intrusive, so this restriction aims to improve the overall browsing experience. 
+
+However, videos that are muted are typically allowed to autoplay, making this combination useful for background videos, promotional content, or any scenario where immediate engagement is desired without audio disruption.
+
+--- 
+
+<span id="more-examples"></span>
+## Explore More Tailwind CSS Examples
+Check out more video component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

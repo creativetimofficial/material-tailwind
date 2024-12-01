@@ -1,0 +1,133 @@
+---
+title: Material Tailwind Migration Guide - React & Tailwind CSS Components Library
+description: Learn how to migrate to @material-tailwind/react@2.0.0.
+navigation: ["alert", "chip", "avatar"]
+github: 2.x-migration-guide
+prev: what-is-tailwind-css
+next: theming
+---
+
+# 2.x Migration Guide
+
+Material Tailwind React 2.0 introduces a number of breaking changes, We tried keeping the amount of breaking changes to a minimum.
+
+<br />
+
+## Breaking Changes
+
+The following changes are made to the components for a better developer experience.
+
+<br />
+
+<DocsTitle href="alert">
+### Alert
+</DocsTitle>
+
+<span id="alert" className="scroll-mt-48" />
+**1.** The <Code>show</Code> prop renamed to <Code>open</Code>.
+
+```jsx
+// ❌ The `show` prop won't work anymore
+<Alert show={true}>
+  A dismissible alert for showing message.
+</Alert>
+
+// ✅ Use `open` prop instead.
+<Alert open={true}>
+  A dismissible alert for showing message.
+</Alert>
+```
+
+<br />
+<br />
+
+**2.** The <Code>dismissible</Code> prop replaced with <Code>onClose</Code> and <Code>action</Code> props.
+
+```jsx
+// ❌ The `dismissible` prop won't work anymore and it's separated to `onClose` and `action` props.
+<Alert
+  dismissible={{
+    onClose: () => {},
+    action: <i className="fa fas-xmark" />,
+  }}
+>
+  A dismissible alert for showing message.
+</Alert>
+
+// ✅ Use `onClose` and `action` props instead.
+<Alert
+  onClose={() => {}}
+  action={<i className="fa fas-xmark" />}
+>
+  A dismissible alert for showing message.
+</Alert>
+```
+
+<br />
+
+For more details check the <Link href="/docs/react/props/alert" className="font-medium text-blue-gray-900 transition-colors hover:text-blue-500">Alert Props</Link> page.
+
+---
+
+<DocsTitle href="chip">
+### Chip
+</DocsTitle>
+
+<span id="chip" className="scroll-mt-48" />
+**1.** The <Code>show</Code> prop renamed to <Code>open</Code>.
+
+```jsx
+// ❌ The `show` prop won't work anymore
+<Chip show={true} value="React" />
+
+// ✅ Use `open` prop instead.
+<Chip open={true} value="React" />
+```
+
+<br />
+<br />
+
+**2.** The <Code>dismissible</Code> prop replaced with <Code>onClose</Code> and <Code>action</Code> props.
+
+```jsx
+// ❌ The `dismissible` prop won't work anymore and it's separated to `onClose` and `action` props.
+<Chip
+  value="React"
+  dismissible={{
+    onClose: () => {},
+    action: <i className="fa fas-xmark" />,
+  }}
+/>
+
+// ✅ Use `onClose` and `action` props instead.
+<Chip
+  value="React"
+  onClose={() => {}}
+  action={<i className="fa fas-xmark" />}
+/>
+```
+
+<br />
+
+For more details check the <Link href="/docs/react/props/chip" className="font-medium text-blue-gray-900 transition-colors hover:text-blue-500">Chip Props</Link> page.
+
+---
+
+<DocsTitle href="avatar">
+### Avatar
+</DocsTitle>
+
+<span id="avatar" className="scroll-mt-48" />
+The default value for <Code>variant</Code> prop changed from <Code>rounded</Code> to <Code>
+  circular
+</Code> and the <Code>{`<Avatar />`}</Code> will be circular by default, you can still use the <Code>
+  rounded
+</Code> value, check the example below:
+
+```jsx
+<Avatar src="..." alt="..." variant="rounded" />
+```
+
+<br />
+
+For more details check the <Link href="/docs/react/props/avatar" className="font-medium text-blue-gray-900 transition-colors hover:text-blue-500">Avatar Props</Link> page.

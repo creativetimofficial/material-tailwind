@@ -6,33 +6,30 @@ navigation:
     "alert",
     "alert-variants",
     "alert-colors",
-    "alert-with-icon",
+    "alert-icon",
+    "alert-with-list",
     "alert-dismissible",
-    "custom-alert-animation",
-    "custom-alert-close-icon",
+    "alert-custom-animation",
+    "alert-custom-close-icon",
     "alert-with-content",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/alert",
-      description: "Learn more about props definition and types of alert component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/alert",
-      description: "Learn how to customize the theme and styles for alert component.",
-    },
+    "alert-custom-styles",
+    "alert-props",
+    "types-variant",
+    "types-color",
+    "types-animate",
+    "alert-theme",
+    "alert-theme-object-type",
+    "alert-theme-customization",
+    "more-examples",
   ]
 github: alert
 prev: accordion
 next: avatar
 ---
 
+<DocsTitle href="alert">
 # Tailwind CSS Alert - React
+</DocsTitle>
 
 Get started on your web projects with our Tailwind CSS <Code>Alert</Code> which provides contextual feedback messages for typical user actions.
 
@@ -42,11 +39,11 @@ See below our simple <Code>Alert</Code> example that you can use in your Tailwin
 
 <br />
 
-<CodePreview id="alert" link="alert#alert" component={<Alert>A simple alert for showing message.</Alert>}>
+<CodePreview link="alert#alert" component={<AlertExamples.AlertDefault />}>
 ```jsx
 import { Alert } from "@material-tailwind/react";
 
-export default function Example() {
+export function AlertDefault() {
   return <Alert>A simple alert for showing message.</Alert>;
 }
 ```
@@ -54,27 +51,28 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="alert-variants">
 ## Alert Variants
+</DocsTitle>
 
-The <Code>Alert</Code> component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Alert</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
-<CodePreview id="alert-variants" link="alert#alert-variants" component={
-  <div className="flex w-full flex-col gap-2">
-    <Alert>A simple filled alert for showing message.</Alert>
-    <Alert variant="gradient">
-      <span>A simple gradient alert for showing message.</span>
-    </Alert>
-  </div>
-}>
+<CodePreview link="alert#alert-variants" component={<AlertExamples.AlertVariants />}>
 ```jsx
 import { Alert } from "@material-tailwind/react";
 
-export default function Variants() {
+export function AlertVariants() {
   return (
-    <div className="flex flex-col gap-2">
-      <Alert variant="filled">A simple filled alert for showing message.</Alert>
+    <div className="flex w-full flex-col gap-2">
+      <Alert>A simple filled alert for showing message.</Alert>
       <Alert variant="gradient">
-        A simple gradient alert for showing message.
+        <span>A simple gradient alert for showing message.</span>
+      </Alert>
+      <Alert variant="outlined">
+        <span>A simple outlined alert for showing message.</span>
+      </Alert>
+      <Alert variant="ghost">
+        <span>A simple ghost alert for showing message.</span>
       </Alert>
     </div>
   );
@@ -84,22 +82,17 @@ export default function Variants() {
 
 ---
 
+<DocsTitle href="alert-colors">
 ## Alert Colors
+</DocsTitle>
 
 The <Code>Alert</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="alert-colors" link="alert#alert-colors" component={
-  <div className="flex w-full flex-col gap-2">
-    <Alert>An info alert for showing message.</Alert>
-    <Alert color="red">An error alert for showing message.</Alert>
-    <Alert color="green">A success alert for showing message.</Alert>
-    <Alert color="amber">A warning alert for showing message.</Alert>
-  </div>
-}>
+<CodePreview link="alert#alert-colors" component={<AlertExamples.AlertColors />}>
 ```jsx
 import { Alert } from "@material-tailwind/react";
 
-export default function Colors() {
+export function AlertColors() {
   return (
     <div className="flex w-full flex-col gap-2">
       <Alert color="blue">An info alert for showing message.</Alert>
@@ -114,57 +107,38 @@ export default function Colors() {
 
 ---
 
-## Alert with Icon
+<DocsTitle href="alert-icon">
+## Alert Icon
+</DocsTitle>
 
 You can add an icon at the beginning of <Code>Alert</Code> component using the <Code>icon</Code> prop.
 
-<CodePreview id="alert-with-icon" link="alert#alert-with-icon" component={
-  <Alert
-    icon={
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={2}
-        stroke="currentColor"
-        className="h-6 w-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-    }
-  >
-    {`A simple alert with icon for showing message.`}
-  </Alert>
-}>
+<CodePreview link="alert#alert-icon" component={<AlertExamples.AlertIcon />}>
 ```jsx
 import { Alert } from "@material-tailwind/react";
 
-export default function Example() {
+function Icon() {
   return (
-    <Alert
-      icon={
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="h-6 w-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      }
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      className="h-6 w-6"
     >
-      A simple alert with icon for showing message.
-    </Alert>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+      />
+    </svg>
+  );
+}
+
+export function AlertIcon() {
+  return (
+    <Alert icon={<Icon />}>A simple alert with icon for showing message</Alert>
   );
 }
 ```
@@ -172,299 +146,284 @@ export default function Example() {
 
 ---
 
-## Alert Dismissible
+<DocsTitle href="alert-with-list">
+## Alert with List
+</DocsTitle>
 
-The <Code>Alert</Code> component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
+You can add any element you want for the <Code>Alert</Code> component, below is a example of alert with a list inside.
 
-<CodePreview id="alert-dismissible" link="alert#alert-dismissible" component={
-  <State initialState={{ show: true }}>
-    <Observe>
-      {({ setState, show }) => (
-        <>
-          {!show && (
-            <Button
-              variant="gradient"
-              className="absolute"
-              onClick={() => setState((s) => ({ show: true }))}
-            >
-              Show Alert
-            </Button>
-          )}
-          <Alert
-            variant="gradient"
-            show={show}
-            dismissible={{
-              onClose: () => setState((s) => ({ show: false })),
-            }}
-          >
-            A dismissible alert for showing message.
-          </Alert>
-        </>
-      )}
-    </Observe>
-  </State>
-}>
+<CodePreview component={<AlertExamples.AlertWithList />}>
 ```jsx
-import { useState, Fragment } from "react";
-import { Alert, Button } from "@material-tailwind/react";
+import { Alert, Typography } from "@material-tailwind/react";
 
-export default function Colors() {
-  const [show, setShow] = useState(true);
-
-return (
-
-<Fragment>
-  {!show && (
-    <Button
-      variant="gradient"
-      className="absolute"
-      onClick={() => setShow(true)}
+function IconOutlined() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      className="h-6 w-6"
     >
-      Show Alert
-    </Button>
-  )}
-  <Alert
-    show={show}
-    dismissible={{
-      onClose: () => setShow(false),
-    }}
-  >
-    A dismissible alert for showing message.
-  </Alert>
-</Fragment>
-); }
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+      />
+    </svg>
+  );
+}
 
-````
+function IconSolid() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-6 w-6"
+    >
+      <path
+        fillRule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+export function AlertWithList() {
+  return (
+    <div className="flex w-full flex-col gap-2">
+      <Alert icon={<IconOutlined />}>
+        <Typography className="font-medium">
+          Ensure that these requirements are met:
+        </Typography>
+        <ul className="mt-2 ml-2 list-inside list-disc">
+          <li>At least 10 characters (and up to 100 characters)</li>
+          <li>At least one lowercase character</li>
+          <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+        </ul>
+      </Alert>
+      <Alert variant="gradient" icon={<IconOutlined />}>
+        <Typography className="font-medium">
+          Ensure that these requirements are met:
+        </Typography>
+        <ul className="mt-2 ml-2 list-inside list-disc">
+          <li>At least 10 characters (and up to 100 characters)</li>
+          <li>At least one lowercase character</li>
+          <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+        </ul>
+      </Alert>
+      <Alert variant="outlined" icon={<IconSolid />}>
+        <Typography className="font-medium">
+          Ensure that these requirements are met:
+        </Typography>
+        <ul className="mt-2 ml-2 list-inside list-disc">
+          <li>At least 10 characters (and up to 100 characters)</li>
+          <li>At least one lowercase character</li>
+          <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+        </ul>
+      </Alert>
+      <Alert variant="ghost" icon={<IconSolid />}>
+        <Typography className="font-medium">
+          Ensure that these requirements are met:
+        </Typography>
+        <ul className="mt-2 ml-2 list-inside list-disc">
+          <li>At least 10 characters (and up to 100 characters)</li>
+          <li>At least one lowercase character</li>
+          <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+        </ul>
+      </Alert>
+    </div>
+  );
+}
+```
 </CodePreview>
 
 ---
 
-## Custom Alert Animation
+<DocsTitle href="alert-dismissible">
+## Alert Dismissible
+</DocsTitle>
+
+The <Code>Alert</Code> component is a dismissible component that you can control it using the <Code>onClose</Code> and <Code>open</Code> props.
+
+<CodePreview link="alert#alert-dismissible" component={<AlertExamples.AlertDismissible />}>
+```jsx
+import React from "react";
+import { Alert, Button } from "@material-tailwind/react";
+
+export function AlertDismissible() {
+  const [open, setOpen] = React.useState(true);
+
+  return (
+    <>
+      {!open && (
+        <Button className="absolute" onClick={() => setOpen(true)}>
+          Show Alert
+        </Button>
+      )}
+      <Alert open={open} onClose={() => setOpen(false)}>
+        A dismissible alert for showing message.
+      </Alert>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="alert-custom-animation">
+## Alert Custom Animation
+</DocsTitle>
 
 You can modify the open/close state animation for <Code>Alert</Code> component using the <Code>animate</Code> prop.
 
-<CodePreview id="custom-alert-animation" component={
-  <State initialState={{ show: true }}>
-    <Observe>
-      {({ setState, show }) => (
-        <>
-          {!show && (
-            <Button
-              variant="gradient"
-              className="absolute"
-              onClick={() => setState((s) => ({ show: true }))}
-            >
-              Show Alert
-            </Button>
-          )}
-          <Alert
-            variant="gradient"
-            show={show}
-            animate={{
-              mount: {
-                y: 0,
-              },
-              unmount: {
-                y: 100,
-              },
-            }}
-            dismissible={{
-              onClose: () => setState((s) => ({ show: false })),
-            }}
-          >
-            A dismissible alert with custom animation.
-          </Alert>
-        </>
-      )}
-    </Observe>
-  </State>
-}>
+<CodePreview component={<AlertExamples.AlertCustomAnimation />}>
 ```jsx
-import { useState, Fragment } from "react";
+import React from "react";
 import { Alert, Button } from "@material-tailwind/react";
 
-export default function Colors() {
-  const [show, setShow] = useState(true);
+export function AlertCustomAnimation() {
+  const [open, setOpen] = React.useState(true);
 
   return (
-    <Fragment>
-      {!show && (
-        <Button
-          variant="gradient"
-          className="absolute"
-          onClick={() => setShow(true)}
-        >
+    <>
+      {!open && (
+        <Button className="absolute" onClick={() => setOpen(true)}>
           Show Alert
         </Button>
       )}
       <Alert
-        show={show}
+        open={open}
+        onClose={() => setOpen(false)}
         animate={{
           mount: { y: 0 },
           unmount: { y: 100 },
         }}
-        dismissible={{
-          onClose: () => setShow(false),
-        }}
       >
         A dismissible alert with custom animation.
       </Alert>
-    </Fragment>
+    </>
   );
 }
-````
-
+```
 </CodePreview>
 
 ---
 
-## Custom Alert Close Icon
+<DocsTitle href="alert-custom-close-icon">
+## Alert Custom Close Icon
+</DocsTitle>
 
 You can modify the close icon for <Code>Alert</Code> component using the <Code>dismissible</Code> prop.
 
-<CodePreview id="custom-alert-close-icon" link="alert#custom-alert-close-icon" component={
-  <State initialState={{ show: true }}>
-    <Observe>
-      {({ setState, show }) => (
-        <>
-          {!show && (
-            <Button
-              color="red"
-              variant="gradient"
-              className="absolute"
-              onClick={() => setState((s) => ({ show: true }))}
-            >
-              Show Alert
-            </Button>
-          )}
-          <Alert
-            variant="gradient"
-            color="red"
-            show={show}
-            icon={<SolidIcons.ExclamationTriangleIcon className="h-6 w-6" />}
-            dismissible={{
-              onClose: () => setState((s) => ({ show: false })),
-              action: (
-                <Button variant="text" color="white" size="sm">
-                  Close
-                </Button>
-              ),
-            }}
-          >
-            Sorry, something went wrong please try again.
-          </Alert>
-        </>
-      )}
-    </Observe>
-  </State>
-}>
+<CodePreview link="alert#alert-custom-close-icon" component={<AlertExamples.AlertCustomCloseIcon />}>
 ```jsx
 import React from "react";
 import { Alert, Button } from "@material-tailwind/react";
-import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
 
-export default function Example() {
-  const [show, setShow] = React.useState(true);
+function Icon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-6 w-6"
+    >
+      <path
+        fillRule="evenodd"
+        d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
 
-return (
+export default function AlertCustomCloseIcon() {
+  const [open, setOpen] = React.useState(true);
 
-<React.Fragment>
-  {!show && (
-    <Button className="absolute" color="red" onClick={() => setShow(true)}>
-      Show Alert
-    </Button>
-  )}
-  <Alert
-    show={show}
-    color="red"
-    icon={<ExclamationTriangleIcon className="h-6 w-6" />}
-    dismissible={{
-      onClose: () => setShow(false),
-      action: (
-        <Button variant="text" color="white" size="sm">
-          Close
+  return (
+    <>
+      {!open && (
+        <Button className="absolute" onClick={() => setOpen(true)}>
+          Show Alert
         </Button>
-      ),
-    }}
-  >
-    Sorry, something went wrong please try again.
-  </Alert>
-</React.Fragment>
-); }
-
-````
+      )}
+      <Alert
+        variant="gradient"
+        open={open}
+        icon={<Icon />}
+        action={
+          <Button
+            variant="text"
+            color="white"
+            size="sm"
+            className="!absolute top-3 right-3"
+            onClick={() => setOpen(false)}
+          >
+            Close
+          </Button>
+        }
+      >
+        Sorry, something went wrong please try again.
+      </Alert>
+    </>
+  );
+}
+```
 </CodePreview>
 
 ---
 
+<DocsTitle href="alert-with-content">
 ## Alert with Content
+</DocsTitle>
 
 Use the example below to use <Code>Alert</Code> component with more content like title and description.
 
-<CodePreview id="alert-with-content" link="alert#alert-with-content" className="mt-4" component={
-  <State initialState={{ show: true }}>
-    <Observe>
-      {({ setState, show }) => (
-        <>
-          {!show && (
-            <Button
-              color="green"
-              className="absolute"
-              onClick={() => setState((s) => ({ show: true }))}
-            >
-              Show Alert
-            </Button>
-          )}
-          <Alert
-            show={show}
-            color="green"
-            className="max-w-screen-md"
-            icon={<SolidIcons.CheckCircleIcon className="mt-px h-6 w-6" />}
-            dismissible={{
-              onClose: () => setState((s) => ({ show: false })),
-            }}
-          >
-            <Typography variant="h5" color="white">
-              Success
-            </Typography>
-            <Typography color="white" className="mt-2 font-normal">
-              I don&apos;t know what that word means. I&apos;m happy. But success,
-              that goes back to what in somebody&apos;s eyes success means. For me,
-              success is inner peace. That&apos;s a good day for me.
-            </Typography>
-          </Alert>
-        </>
-      )}
-    </Observe>
-  </State>
-}>
+<CodePreview link="alert#alert-with-content" className="mt-4" component={<AlertExamples.AlertWithContent />}>
 ```jsx
 import React from "react";
 import { Alert, Button, Typography } from "@material-tailwind/react";
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
-export default function Example() {
-  const [show, setShow] = React.useState(true);
+function Icon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-6 w-6"
+    >
+      <path
+        fillRule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+export function AlertWithContent() {
+  const [open, setOpen] = React.useState(true);
 
   return (
-    <React.Fragment>
-      {!show && (
+    <>
+      {!open && (
         <Button
-          color="green"
           className="absolute"
-          onClick={() => setShow(true)}
+          onClick={() => setOpen(true)}
         >
           Show Alert
         </Button>
       )}
       <Alert
-        show={show}
-        color="green"
+        open={open}
         className="max-w-screen-md"
-        icon={<CheckCircleIcon className="mt-px h-6 w-6" />}
-        dismissible={{
-          onClose: () => setShow(false),
-        }}
+        icon={<Icon />}
+        onClose={() => setOpen(false)}
       >
         <Typography variant="h5" color="white">
           Success
@@ -475,12 +434,588 @@ export default function Example() {
           success is inner peace. That&apos;s a good day for me.
         </Typography>
       </Alert>
-    </React.Fragment>
+    </>
   );
 }
-````
-
+```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="alert-custom-styles">
+## Alert Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Alert</Code> component.
+
+<CodePreview component={<AlertExamples.AlertCustomStyles />}>
+```jsx
+import { Alert } from "@material-tailwind/react";
+
+function Icon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-6 w-6"
+    >
+      <path
+        fillRule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+export function AlertCustomStyles() {
+  return (
+    <Alert
+      icon={<Icon />}
+      className="rounded-none border-l-4 border-[#2ec946] bg-[#2ec946]/10 font-medium text-[#2ec946]"
+    >
+      A simple alert for showing message.
+    </Alert>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="alert-props">
+## Alert Props
+</DocsTitle>
+
+The following props are available for button component. These are the custom props
+that we've added for the alert component and you can use all the other native props
+as well.
+
+| Attribute   | Type                      | Description                                   | Default                                |
+| ----------- | ------------------------- | --------------------------------------------- | -------------------------------------- |
+| `variant`   | [Variant](#types-variant) | Change alert variant                          | <Code>filled</Code>                    |
+| `color`     | [Color](#types-color)     | Change alert color                            | <Code>gray</Code>                      |
+| `onClose`   | <Code>func</Code>         | Callback for closing the alert component      | <Code>undefined</Code>                 |
+| `action`    | <Code>node</Code>         | Change the <Code>onClose</Code> action button | <Code>undefined</Code>                 |
+| `animate`   | [Animate](#types-animate) | Change alert animation                        | <Code>undefined</Code>                 |
+| `open`      | <Code>boolean</Code>      | Change alert visibility                       | <Code>true</Code>                      |
+| `icon`      | <Code>node</Code>         | Add icon at the beginning of alert            | <Code>undefined</Code>                 |
+| `className` | <Code>string</Code>       | Add custom className for alert                | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for alert                         | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AlertProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-variant">
+## Types - Variant
+</DocsTitle>
+
+```ts
+type variant = "filled" | "gradient" | "outlined" | "ghost";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="alert-theme">
+## Alert Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for alert component, the theme object for alert component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of alert component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for alert component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of alert component.<br />
+
+You can customize the theme and styles of alert component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="alert-theme-object-type">
+## Alert Theme Object Type
+</DocsTitle>
+
+```ts
+interface AlertStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    icon: node;
+    open: boolean;
+    action: node;
+    onClose: func;
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      alert: object;
+      action: object;
+    };
+    variants: {
+      filled: object;
+      gradient: object;
+      outlined: object;
+      ghost: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import { AlertStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="alert-theme-customization">
+## Alert Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  alert: {
+    defaultProps: {
+      variant: "filled",
+      color: "blue",
+      icon: undefined,
+      open: true,
+      action: undefined,
+      onClose: undefined,
+      animate: {
+        unmount: {},
+        mount: {},
+      },
+      className: "",
+    },
+    valid: {
+      variants: ["filled", "gradient", "outlined", "ghost"],
+      colors: [
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
+    styles: {
+      base: {
+        alert: {
+          position: "relative",
+          display: "block",
+          width: "w-full",
+          fontFamily: "font-sans",
+          fontSize: "text-base",
+          fontWeight: "font-regular",
+          px: "px-4",
+          py: "py-4",
+          borderRadius: "rounded-lg",
+        },
+        action: {
+          position: "!absolute",
+          top: "top-3",
+          right: "right-3",
+        },
+      },
+      variants: {
+        filled: {
+          "blue-gray": {
+            backgroud: "bg-blue-gray-500",
+            color: "text-white",
+          },
+          gray: {
+            backgroud: "bg-gray-500",
+            color: "text-white",
+          },
+          brown: {
+            backgroud: "bg-brown-500",
+            color: "text-white",
+          },
+          "deep-orange": {
+            backgroud: "bg-deep-orange-500",
+            color: "text-white",
+          },
+          orange: {
+            backgroud: "bg-orange-500",
+            color: "text-white",
+          },
+          amber: {
+            backgroud: "bg-amber-500",
+            color: "text-black",
+          },
+          yellow: {
+            backgroud: "bg-yellow-500",
+            color: "text-black",
+          },
+          lime: {
+            backgroud: "bg-lime-500",
+            color: "text-black",
+          },
+          "light-green": {
+            backgroud: "bg-light-green-500",
+            color: "text-white",
+          },
+          green: {
+            backgroud: "bg-green-500",
+            color: "text-white",
+          },
+          teal: {
+            backgroud: "bg-teal-500",
+            color: "text-white",
+          },
+          cyan: {
+            backgroud: "bg-cyan-500",
+            color: "text-white",
+          },
+          "light-blue": {
+            backgroud: "bg-light-blue-500",
+            color: "text-white",
+          },
+          blue: {
+            backgroud: "bg-blue-500",
+            color: "text-white",
+          },
+          indigo: {
+            backgroud: "bg-indigo-500",
+            color: "text-white",
+          },
+          "deep-purple": {
+            backgroud: "bg-deep-purple-500",
+            color: "text-white",
+          },
+          purple: {
+            backgroud: "bg-purple-500",
+            color: "text-white",
+          },
+          pink: {
+            backgroud: "bg-pink-500",
+            color: "text-white",
+          },
+          red: {
+            backgroud: "bg-red-500",
+            color: "text-white",
+          },
+        },
+        gradient: {
+          "blue-gray": {
+            backgroud: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400",
+            color: "text-white",
+          },
+          gray: {
+            backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
+            color: "text-white",
+          },
+          brown: {
+            backgroud: "bg-gradient-to-tr from-brown-600 to-brown-400",
+            color: "text-white",
+          },
+          "deep-orange": {
+            backgroud: "bg-gradient-to-tr from-deep-orange-600 to-deep-orange-400",
+            color: "text-white",
+          },
+          orange: {
+            backgroud: "bg-gradient-to-tr from-orange-600 to-orange-400",
+            color: "text-white",
+          },
+          amber: {
+            backgroud: "bg-gradient-to-tr from-amber-600 to-amber-400",
+            color: "text-black",
+          },
+          yellow: {
+            backgroud: "bg-gradient-to-tr from-yellow-600 to-yellow-400",
+            color: "text-black",
+          },
+          lime: {
+            backgroud: "bg-gradient-to-tr from-lime-600 to-lime-400",
+            color: "text-black",
+          },
+          "light-green": {
+            backgroud: "bg-gradient-to-tr from-light-green-600 to-light-green-400",
+            color: "text-white",
+          },
+          green: {
+            backgroud: "bg-gradient-to-tr from-green-600 to-green-400",
+            color: "text-white",
+          },
+          teal: {
+            backgroud: "bg-gradient-to-tr from-teal-600 to-teal-400",
+            color: "text-white",
+          },
+          cyan: {
+            backgroud: "bg-gradient-to-tr from-cyan-600 to-cyan-400",
+            color: "text-white",
+          },
+          "light-blue": {
+            backgroud: "bg-gradient-to-tr from-light-blue-600 to-light-blue-400",
+            color: "text-white",
+          },
+          blue: {
+            backgroud: "bg-gradient-to-tr from-blue-600 to-blue-400",
+            color: "text-white",
+          },
+          indigo: {
+            backgroud: "bg-gradient-to-tr from-indigo-600 to-indigo-400",
+            color: "text-white",
+          },
+          "deep-purple": {
+            backgroud: "bg-gradient-to-tr from-deep-purple-600 to-deep-purple-400",
+            color: "text-white",
+          },
+          purple: {
+            backgroud: "bg-gradient-to-tr from-purple-600 to-purple-400",
+            color: "text-white",
+          },
+          pink: {
+            backgroud: "bg-gradient-to-tr from-pink-600 to-pink-400",
+            color: "text-white",
+          },
+          red: {
+            backgroud: "bg-gradient-to-tr from-red-600 to-red-400",
+            color: "text-white",
+          },
+        },
+        outlined: {
+          "blue-gray": {
+            border: "border border-blue-gray-500",
+            color: "text-blue-gray-700",
+          },
+          gray: {
+            border: "border border-gray-500",
+            color: "text-gray-700",
+          },
+          brown: {
+            border: "border border-brown-500",
+            color: "text-brown-700",
+          },
+          "deep-orange": {
+            border: "border border-deep-orange-500",
+            color: "text-deep-orange-700",
+          },
+          orange: {
+            border: "border border-orange-500",
+            color: "text-orange-700",
+          },
+          amber: {
+            border: "border border-amber-500",
+            color: "text-amber-700",
+          },
+          yellow: {
+            border: "border border-yellow-500",
+            color: "text-yellow-700",
+          },
+          lime: {
+            border: "border border-lime-500",
+            color: "text-lime-700",
+          },
+          "light-green": {
+            border: "border border-light-green-500",
+            color: "text-light-green-700",
+          },
+          green: {
+            border: "border border-green-500",
+            color: "text-green-700",
+          },
+          teal: {
+            border: "border border-teal-500",
+            color: "text-teal-700",
+          },
+          cyan: {
+            border: "border border-cyan-500",
+            color: "text-cyan-700",
+          },
+          "light-blue": {
+            border: "border border-light-blue-500",
+            color: "text-light-blue-700",
+          },
+          blue: {
+            border: "border border-blue-500",
+            color: "text-blue-700",
+          },
+          indigo: {
+            border: "border border-indigo-500",
+            color: "text-indigo-700",
+          },
+          "deep-purple": {
+            border: "border border-deep-purple-500",
+            color: "text-deep-purple-700",
+          },
+          purple: {
+            border: "border border-purple-500",
+            color: "text-purple-700",
+          },
+          pink: {
+            border: "border border-pink-500",
+            color: "text-pink-700",
+          },
+          red: {
+            border: "border border-red-500",
+            color: "text-red-700",
+          },
+        },
+        ghost: {
+          "blue-gray": {
+            backgroud: "bg-blue-gray-500/20",
+            color: "text-blue-gray-900",
+          },
+          gray: {
+            backgroud: "bg-gray-500/20",
+            color: "text-gray-900",
+          },
+          brown: {
+            backgroud: "bg-brown-500/20",
+            color: "text-brown-900",
+          },
+          "deep-orange": {
+            backgroud: "bg-deep-orange-500/20",
+            color: "text-deep-orange-900",
+          },
+          orange: {
+            backgroud: "bg-orange-500/20",
+            color: "text-orange-900",
+          },
+          amber: {
+            backgroud: "bg-amber-500/20",
+            color: "text-amber-900",
+          },
+          yellow: {
+            backgroud: "bg-yellow-500/20",
+            color: "text-yellow-900",
+          },
+          lime: {
+            backgroud: "bg-lime-500/20",
+            color: "text-lime-900",
+          },
+          "light-green": {
+            backgroud: "bg-light-green-500/20",
+            color: "text-light-green-900",
+          },
+          green: {
+            backgroud: "bg-green-500/20",
+            color: "text-green-900",
+          },
+          teal: {
+            backgroud: "bg-teal-500/20",
+            color: "text-teal-900",
+          },
+          cyan: {
+            backgroud: "bg-cyan-500/20",
+            color: "text-cyan-900",
+          },
+          "light-blue": {
+            backgroud: "bg-light-blue-500/20",
+            color: "text-light-blue-900",
+          },
+          blue: {
+            backgroud: "bg-blue-500/20",
+            color: "text-blue-900",
+          },
+          indigo: {
+            backgroud: "bg-indigo-500/20",
+            color: "text-indigo-900",
+          },
+          "deep-purple": {
+            backgroud: "bg-deep-purple-500/20",
+            color: "text-deep-purple-900",
+          },
+          purple: {
+            backgroud: "bg-purple-500/20",
+            color: "text-purple-900",
+          },
+          pink: {
+            backgroud: "bg-pink-500/20",
+            color: "text-pink-900",
+          },
+          red: {
+            backgroud: "bg-red-500/20",
+            color: "text-red-900",
+          },
+        },
+      },
+    },
+  },
+};
+```
+
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+Looking for more alert examples? Check out our **<a href="https://www.material-tailwind.com/blocks/banner-sections" target="_blank">banner examples</a>** from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

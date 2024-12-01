@@ -1,11 +1,21 @@
 const textareaStaticColors: object = {
+  black: {
+    color: "!text-black",
+    borderColor: "!border-black",
+    borderColorFocused: "focus:!border-black",
+  },
+  white: {
+    color: "!text-white",
+    borderColor: "!border-white",
+    borderColorFocused: "focus:!border-white",
+  },
   "blue-gray": {
     borderColor: "border-blue-gray-200",
     borderColorFocused: "focus:border-blue-gray-500",
   },
   gray: {
     borderColor: "border-blue-gray-200",
-    borderColorFocused: "focus:border-gray-500",
+    borderColorFocused: "focus:border-gray-900",
   },
   brown: {
     borderColor: "border-blue-gray-200",

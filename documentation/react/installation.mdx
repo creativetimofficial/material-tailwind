@@ -6,7 +6,6 @@ navigation:
     "quick-start",
     "installation",
     "frameworks-integration",
-    "tailwindcss-config",
     "typescript",
   ]
 github: installation
@@ -16,70 +15,136 @@ next: license
 # Get Started with Material Tailwind
 
 <span id="quick-start" className="scroll-mt-48" />
-Material Tailwind is free and open-source components library for ReactJS and Tailwind
+Material Tailwind is a free and open-source components library for ReactJS and Tailwind
 CSS inspired by Material Design.
 
 <br />
 <br />
 
+<DocsTitle href="installation">
 ## Installation
+</DocsTitle>
 
 <span id="installation" className="scroll-mt-48" />
 
 Learn how to use @material-tailwind/react components from this documentation to quickly and easily create elegant and flexible pages using Tailwind CSS.
 
-@material-tailwind/react is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/installation/framework-guides?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation.</a>
+@material-tailwind/react is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/installation/framework-guides?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation Guide.</a>
 
 <br />
 <br />
 
+## Using NPM
+
+Install @material-tailwind/react as a dependency using NPM by running the following command:
+
+<span id="npm" className="scroll-mt-48" />
+
+```bash
+npm i @material-tailwind/react
+```
+
+---
+
+## Using Yarn
+
+Install @material-tailwind/react as a dependency using Yarn by running the following command:
+
+<span id="yarn" className="scroll-mt-48" />
+
+```bash
+yarn add @material-tailwind/react
+```
+
+---
+
+## Using PNPM
+
+Install @material-tailwind/react as a dependency using PNPM by running the following command:
+
+<span id="pnpm" className="scroll-mt-48" />
+
+```bash
+pnpm i @material-tailwind/react
+```
+
+---
+
+## TailwindCSS Configurations
+
+<span id="tailwindcss-config" className="scroll-mt-48" />
+
+Once you install @material-tailwind/react you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from <Code>@material-tailwind/react/utils</Code>.
+
+```js {1, 3, 9}
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+});
+```
+
+<br />
+
+For more guides on how to use @material-tailwind/react with different frameworks, check the <a href="#frameworks-integration" className="font-medium hover:text-blue-500 transition-colors">Frameworks Integration</a> section.
+
+---
+
+<DocsTitle href="frameworks-integration">
 ## Frameworks Integration
+</DocsTitle>
+
+Framework-specific guides that cover our recommended approach to installing @material-tailwind/react in a number of popular environments. Select your preferred framework from the list below and follow the instructions.
 
 <div
   className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4"
   id="frameworks-integration"
 >
   <Tooltip content="Next.js" placement="bottom" offset={-13}>
-    <Framework route="/docs/react/guide/next" center>
+    <FrameworkCard route="/docs/react/guide/next" center>
       <span className="my-6 grid h-24 w-24 place-items-center">
         <NextLogo />
       </span>
-    </Framework>
+    </FrameworkCard>
   </Tooltip>
   <Tooltip content="Create React App" placement="bottom" offset={-13}>
-    <Framework route="/docs/react/guide/cra" center>
+    <FrameworkCard route="/docs/react/guide/cra" center>
       <span className="my-6 grid h-24 w-24 place-items-center">
         <CraLogo />
       </span>
-    </Framework>
+    </FrameworkCard>
   </Tooltip>
   <Tooltip content="Remix" placement="bottom" offset={-13}>
-    <Framework route="/docs/react/guide/remix" center>
+    <FrameworkCard route="/docs/react/guide/remix" center>
       <span className="my-6 grid h-24 w-24 place-items-center">
         <RemixLogo />
       </span>
-    </Framework>
+    </FrameworkCard>
   </Tooltip>
   <Tooltip content="Vite" placement="bottom" offset={-13}>
-    <Framework route="/docs/react/guide/vite" center>
+    <FrameworkCard route="/docs/react/guide/vite" center>
       <span className="my-6 grid h-24 w-24 place-items-center">
         <ViteLogo />
       </span>
-    </Framework>
+    </FrameworkCard>
   </Tooltip>
   <Tooltip content="Astro" placement="bottom" offset={-13}>
-    <Framework route="/docs/react/guide/astro" center>
+    <FrameworkCard route="/docs/react/guide/astro" center>
       <span className="my-6 grid h-24 w-24 place-items-center">
         <AstroLogo />
       </span>
-    </Framework>
+    </FrameworkCard>
   </Tooltip>
   <Tooltip content="Gatsby" placement="bottom" offset={-13}>
-    <Framework route="/docs/react/guide/gatsby" center>
+    <FrameworkCard route="/docs/react/guide/gatsby" center>
       <span className="my-6 grid h-24 w-24 place-items-center">
         <GatsbyLogo />
       </span>
-    </Framework>
+    </FrameworkCard>
   </Tooltip>
 </div>
 
@@ -87,7 +152,9 @@ Learn how to use @material-tailwind/react components from this documentation to 
 <br />
 <br />
 
+<DocsTitle href="typescript">
 ## TypeScript
+</DocsTitle>
 
 <span id="typescript" className="scroll-mt-48" />
 

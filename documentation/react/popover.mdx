@@ -5,31 +5,32 @@ navigation:
   [
     "popover",
     "popover-placement",
-    "custom-popover-animation",
+    "popover-custom-animation",
+    "subscription-popover",
+    "contact-popover",
+    "popover-with-image",
     "profile-info-popover",
     "popover-with-description",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/popover",
-      description: "Learn more about props definition and types of popover components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/popover",
-      description: "Learn how to customize the theme and styles for popover components.",
-    },
+    "popover-props",
+    "popover-handler-props",
+    "popover-content-props",
+    "types-placement",
+    "types-offset",
+    "types-dismiss",
+    "types-animate",
+    "popover-theme",
+    "popover-theme-object-type",
+    "popover-theme-customization",
+    "more-examples"
   ]
 github: checkbox
 prev: navbar
 next: progress-bar
 ---
 
+<DocsTitle href="popover">
 # Tailwind CSS Popover - React
+</DocsTitle>
 
 Our <Code>Popover</Code> component for Tailwind CSS & React is a small overlay of content that is used to demonstrate secondary information of any component when a user clicks it.
 
@@ -37,16 +38,7 @@ See below our simple <Code>Popover</Code> example that you can use in your web p
 
 <br />
 
-<CodePreview id="popover" link="popover#popover" component={
-  <Popover>
-    <PopoverHandler>
-      <Button variant="gradient">Show Popover</Button>
-    </PopoverHandler>
-    <PopoverContent>
-      <span>This is a very beautiful popover, show some love.</span>
-    </PopoverContent>
-  </Popover>
-}>
+<CodePreview link="popover#popover" component={<PopoverExamples.PopoverDefault />}>
 ```jsx
 import {
   Popover,
@@ -55,11 +47,11 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function PopoverDefault() {
   return (
-    <Popover>
+  <Popover>
       <PopoverHandler>
-        <Button variant="gradient">Show Popover</Button>
+        <Button>Popover</Button>
       </PopoverHandler>
       <PopoverContent>
         This is a very beautiful popover, show some love.
@@ -72,120 +64,14 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="popover-placement">
 ## Popover Placement
+</DocsTitle>
 
 You can change the position of the <Code>Popover</Code> component using the <Code>placement</Code> prop.
 
-<CodePreview id="popover-placement" link="popover#popover-placement" component={
-  <>
-    <div className="mb-3 flex gap-3">
-      <Popover placement="top">
-        <PopoverHandler>
-          <Button variant="gradient">Top</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-      <Popover placement="top-start">
-        <PopoverHandler>
-          <Button variant="gradient">Top Start</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-      <Popover placement="top-end">
-        <PopoverHandler>
-          <Button variant="gradient">Top End</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-    </div>
-    <div className="mb-3 flex gap-3">
-      <Popover placement="right">
-        <PopoverHandler>
-          <Button variant="gradient">Right</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-      <Popover placement="right-start">
-        <PopoverHandler>
-          <Button variant="gradient">Right Start</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-      <Popover placement="right-end">
-        <PopoverHandler>
-          <Button variant="gradient">Right End</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-    </div>
-    <div className="mb-3 flex gap-3">
-      <Popover placement="bottom">
-        <PopoverHandler>
-          <Button variant="gradient">Bottom</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-      <Popover placement="bottom-start">
-        <PopoverHandler>
-          <Button variant="gradient">Bottom Start</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-      <Popover placement="bottom-end">
-        <PopoverHandler>
-          <Button variant="gradient">Bottom End</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-    </div>
-    <div className="flex gap-3">
-      <Popover placement="left">
-        <PopoverHandler>
-          <Button variant="gradient">Left</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-      <Popover placement="left-start">
-        <PopoverHandler>
-          <Button variant="gradient">Left Start</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-      <Popover placement="left-end">
-        <PopoverHandler>
-          <Button variant="gradient">Left End</Button>
-        </PopoverHandler>
-        <PopoverContent>
-          <span>This is a very beautiful popover, show some love.</span>
-        </PopoverContent>
-      </Popover>
-    </div>
-  </>
-}>
+<CodePreview link="popover#popover-placement" component={<PopoverExamples.PopoverPlacement />}>
 ```jsx
-import { Fragment } from "react";
 import {
   Popover,
   PopoverHandler,
@@ -193,13 +79,13 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function PopoverPlacement() {
   return (
-    <Fragment>
+     <>
       <div className="mb-3 flex gap-3">
         <Popover placement="top">
           <PopoverHandler>
-            <Button variant="gradient">Top</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -207,7 +93,7 @@ export default function Example() {
         </Popover>
         <Popover placement="top-start">
           <PopoverHandler>
-            <Button variant="gradient">Top Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -215,7 +101,7 @@ export default function Example() {
         </Popover>
         <Popover placement="top-end">
           <PopoverHandler>
-            <Button variant="gradient">Top End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -225,7 +111,7 @@ export default function Example() {
       <div className="mb-3 flex gap-3">
         <Popover placement="right">
           <PopoverHandler>
-            <Button variant="gradient">Right</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -233,7 +119,7 @@ export default function Example() {
         </Popover>
         <Popover placement="right-start">
           <PopoverHandler>
-            <Button variant="gradient">Right Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -241,7 +127,7 @@ export default function Example() {
         </Popover>
         <Popover placement="right-end">
           <PopoverHandler>
-            <Button variant="gradient">Right End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -251,7 +137,7 @@ export default function Example() {
       <div className="mb-3 flex gap-3">
         <Popover placement="bottom">
           <PopoverHandler>
-            <Button variant="gradient">Bottom</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -259,7 +145,7 @@ export default function Example() {
         </Popover>
         <Popover placement="bottom-start">
           <PopoverHandler>
-            <Button variant="gradient">Bottom Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -267,7 +153,7 @@ export default function Example() {
         </Popover>
         <Popover placement="bottom-end">
           <PopoverHandler>
-            <Button variant="gradient">Bottom End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -277,7 +163,7 @@ export default function Example() {
       <div className="flex gap-3">
         <Popover placement="left">
           <PopoverHandler>
-            <Button variant="gradient">Left</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -285,7 +171,7 @@ export default function Example() {
         </Popover>
         <Popover placement="left-start">
           <PopoverHandler>
-            <Button variant="gradient">Left Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -293,14 +179,14 @@ export default function Example() {
         </Popover>
         <Popover placement="left-end">
           <PopoverHandler>
-            <Button variant="gradient">Left End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
           </PopoverContent>
         </Popover>
       </div>
-    </Fragment>
+    </>
   );
 }
 ```
@@ -308,25 +194,13 @@ export default function Example() {
 
 ---
 
-## Custom Popover Animation
+<DocsTitle href="popover-custom-animation">
+## Popover Custom Animation
+</DocsTitle>
 
 You can modify the open/close state animation for <Code>Popover</Code> component using the <Code>animate</Code> prop.
 
-<CodePreview id="custom-popover-animation" link="popover#custom-popover-animation" component={
-  <Popover
-    animate={{
-      mount: { scale: 1, y: 0 },
-      unmount: { scale: 0, y: 25 },
-    }}
-  >
-    <PopoverHandler>
-      <Button variant="gradient">Show Popover</Button>
-    </PopoverHandler>
-    <PopoverContent>
-      <span>This is a very beautiful popover, show some love.</span>
-    </PopoverContent>
-  </Popover>
-}>
+<CodePreview link="popover#popover-custom-animation" component={<PopoverExamples.PopoverCustomAnimation />}>
 ```jsx
 import {
   Popover,
@@ -335,7 +209,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function PopoverCustomAnimation() {
   return (
     <Popover
       animate={{
@@ -344,7 +218,7 @@ export default function Example() {
       }}
     >
       <PopoverHandler>
-        <Button variant="gradient">Show Popover</Button>
+        <Button>Popover</Button>
       </PopoverHandler>
       <PopoverContent>
         This is a very beautiful popover, show some love.
@@ -357,84 +231,264 @@ export default function Example() {
 
 ---
 
-## Profile Info Popover
+<DocsTitle href="subscription-popover">
+## Subscription Popover
+</DocsTitle>
 
-<CodePreview id="profile-info-popover" link="popover#profile-info-popover" className="mt-4" component={
-  <State initialState={{ open: false }}>
-    <Observe>
-      {({ setState, open }) => (
-        <Popover open={open} handler={setState}>
-          <PopoverHandler
-            onMouseEnter={() => setState((s) => ({ open: true }))}
-            onMouseLeave={() => setState((s) => ({ open: false }))}
-          >
-            <Button variant="text">Profile Info</Button>
-          </PopoverHandler>
-          <PopoverContent
-            className="max-w-[24rem]"
-            onMouseEnter={() => setState((s) => ({ open: true }))}
-            onMouseLeave={() => setState((s) => ({ open: false }))}
-          >
-            <div className="mb-2 flex items-center justify-between gap-4">
-              <Avatar
-                size="md"
-                variant="circular"
-                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-                alt="candice wu"
-              />
-              <Button
-                variant="gradient"
-                color="blue"
-                size="sm"
-                className="font-medium capitalize"
-              >
-                Follow
-              </Button>
-            </div>
+Use this beautiful popover if you want to let the users subscribe easily.
+
+<CodePreview component={<PopoverExamples.SubscriptionPopover />}>
+```jsx
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+  Input,
+  Typography,
+} from "@material-tailwind/react";
+
+export function SubscriptionPopover() {
+  return (
+    <Popover placement="bottom">
+      <PopoverHandler>
+        <Button>Subscribe</Button>
+      </PopoverHandler>
+      <PopoverContent className="w-96">
+        <Typography variant="h6" color="blue-gray" className="mb-6">
+          Newsletter Subscription
+        </Typography>
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-bold"
+        >
+          Your Name
+        </Typography>
+        <div className="flex gap-2">
+          <Input
+            size="lg"
+            placeholder="name@mail.com"
+            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+            labelProps={{
+              className: "before:content-none after:content-none",
+            }}
+          />
+          <Button variant="gradient" className="flex-shrink-0">
+            Subscribe
+          </Button>
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="contact-popover">
+## Contact Popover
+</DocsTitle>
+
+Use this example of  a popover component to help users get the help they need easier.
+
+<CodePreview component={<PopoverExamples.ContactPopover />}>
+```jsx
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Avatar,
+  Button,
+  Typography,
+  List,
+  ListItem,
+  ListItemPrefix,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+   <Popover placement="bottom-end">
+      <PopoverHandler>
+        <Button>Contact Us</Button>
+      </PopoverHandler>
+      <PopoverContent className="w-72">
+        <div className="mb-4 flex items-center gap-4 border-b border-blue-gray-50 pb-4">
+          <Avatar src="https://docs.material-tailwind.com/img/team-4.jpg" alt="tania andrew" />
+          <div>
+            <Typography variant="h6" color="blue-gray">
+              Tania Andrew
+            </Typography>
             <Typography
-              variant="h6"
-              color="blue-gray"
-              className="mb-2 flex items-center gap-2 font-medium"
+              variant="small"
+              color="gray"
+              className="font-medium text-blue-gray-500"
             >
-              <span>Candice Wu</span> •{" "}
-              <a href="#" className="text-sm text-blue-gray-700">
-                @canwu
-              </a>
+              General Manager
             </Typography>
-            <Typography variant="small" color="gray" className="font-normal">
-              Frontend Developer • Major interest in Web Development: motivated to
-              achieve measurable results, to deepen my knowledge and improve my
-              skills.
-            </Typography>
-            <div className="mt-6 flex items-center gap-8 border-t border-blue-gray-50 pt-4">
-              <Typography
-                variant="small"
-                color="gray"
-                className="flex items-center gap-1 text-xs font-normal"
+          </div>
+        </div>
+        <List className="p-0">
+          <a href="#" className="text-initial font-medium text-blue-gray-500">
+            <ListItem>
+              <ListItemPrefix>
+                <svg
+                  width="14"
+                  height="16"
+                  viewBox="0 0 14 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1 2C1 1.46957 1.21071 0.960859 1.58579 0.585786C1.96086 0.210714 2.46957 0 3 0H11C11.5304 0 12.0391 0.210714 12.4142 0.585786C12.7893 0.960859 13 1.46957 13 2V14C13.2652 14 13.5196 14.1054 13.7071 14.2929C13.8946 14.4804 14 14.7348 14 15C14 15.2652 13.8946 15.5196 13.7071 15.7071C13.5196 15.8946 13.2652 16 13 16H10C9.73478 16 9.48043 15.8946 9.29289 15.7071C9.10536 15.5196 9 15.2652 9 15V13C9 12.7348 8.89464 12.4804 8.70711 12.2929C8.51957 12.1054 8.26522 12 8 12H6C5.73478 12 5.48043 12.1054 5.29289 12.2929C5.10536 12.4804 5 12.7348 5 13V15C5 15.2652 4.89464 15.5196 4.70711 15.7071C4.51957 15.8946 4.26522 16 4 16H1C0.734784 16 0.48043 15.8946 0.292893 15.7071C0.105357 15.5196 0 15.2652 0 15C0 14.7348 0.105357 14.4804 0.292893 14.2929C0.48043 14.1054 0.734784 14 1 14V2ZM4 3H6V5H4V3ZM6 7H4V9H6V7ZM8 3H10V5H8V3ZM10 7H8V9H10V7Z"
+                    fill="#90A4AE"
+                  />
+                </svg>
+              </ListItemPrefix>
+              ABC Construction
+            </ListItem>
+          </a>
+          <a href="#" className="text-initial font-medium text-blue-gray-500">
+            <ListItem>
+              <ListItemPrefix>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 1C0 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0H3.153C3.38971 0.000108969 3.6187 0.0841807 3.79924 0.23726C3.97979 0.390339 4.10018 0.602499 4.139 0.836L4.879 5.271C4.91436 5.48222 4.88097 5.69921 4.78376 5.89003C4.68655 6.08085 4.53065 6.23543 4.339 6.331L2.791 7.104C3.34611 8.47965 4.17283 9.72928 5.22178 10.7782C6.27072 11.8272 7.52035 12.6539 8.896 13.209L9.67 11.661C9.76552 11.4695 9.91994 11.3138 10.1106 11.2166C10.3012 11.1194 10.5179 11.0859 10.729 11.121L15.164 11.861C15.3975 11.8998 15.6097 12.0202 15.7627 12.2008C15.9158 12.3813 15.9999 12.6103 16 12.847V15C16 15.2652 15.8946 15.5196 15.7071 15.7071C15.5196 15.8946 15.2652 16 15 16H13C5.82 16 0 10.18 0 3V1Z"
+                    fill="#90A4AE"
+                  />
+                </svg>
+              </ListItemPrefix>
+              00 123 456 789
+            </ListItem>
+          </a>
+          <a href="#" className="text-initial font-medium text-blue-gray-500">
+            <ListItem>
+              <ListItemPrefix>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.00299 5.884L9.99999 9.882L17.997 5.884C17.9674 5.37444 17.7441 4.89549 17.3728 4.54523C17.0015 4.19497 16.5104 3.99991 16 4H3.99999C3.48958 3.99991 2.99844 4.19497 2.62717 4.54523C2.2559 4.89549 2.03259 5.37444 2.00299 5.884Z"
+                    fill="#90A4AE"
+                  />
+                  <path
+                    d="M18 8.11798L10 12.118L2 8.11798V14C2 14.5304 2.21071 15.0391 2.58579 15.4142C2.96086 15.7893 3.46957 16 4 16H16C16.5304 16 17.0391 15.7893 17.4142 15.4142C17.7893 15.0391 18 14.5304 18 14V8.11798Z"
+                    fill="#90A4AE"
+                  />
+                </svg>
+              </ListItemPrefix>
+              person@example.com
+            </ListItem>
+          </a>
+        </List>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="popover-with-image">
+## Popover with Image
+</DocsTitle>
+
+This example is used to show more information. It contains an image, headline, description, and link.
+
+<CodePreview component={<PopoverExamples.PopoverWithImage />}>
+```jsx
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+  Typography,
+} from "@material-tailwind/react";
+
+export function PopoverWithImage() {
+  return (
+      <Popover>
+      <PopoverHandler>
+        <Button>More Info</Button>
+      </PopoverHandler>
+      <PopoverContent className="z-[999] grid w-[28rem] grid-cols-2 overflow-hidden p-0">
+        <div className="p-4">
+          <Typography color="blue-gray" className="mb-2 text-lg font-bold">
+            Material Tailwind
+          </Typography>
+          <Typography
+            variant="small"
+            color="gray"
+            className="mb-14 font-normal text-blue-gray-500"
+          >
+            Material Tailwind is an easy to use components library for Tailwind
+            CSS and Material Design. It features multiple React and HTML
+            components, all written with Tailwind CSS classes and Material
+            Design guidelines.
+          </Typography>
+          <a href="#" className="-ml-3 inline-block">
+            <Button
+              size="sm"
+              variant="text"
+              className="flex items-center gap-x-2 capitalize"
+            >
+              Read More
+              <svg
+                width="7"
+                height="12"
+                viewBox="0 0 7 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <OutlineIcons.MapPinIcon strokeWidth={2} className="-mt-0.5 h-3.5 w-3.5" />
-                United Kingdom
-              </Typography>
-              <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="gray"
-                className="flex items-center gap-1 text-xs font-normal"
-              >
-                <OutlineIcons.BuildingOffice2Icon
-                  strokeWidth={2}
-                  className="-mt-0.5 h-3.5 w-3.5"
+                <path
+                  d="M1.25 1.91669L5.33333 6.00002L1.25 10.0834"
+                  stroke="#212121"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 />
-                Material Tailwind
-              </Typography>
-            </div>
-          </PopoverContent>
-        </Popover>
-      )}
-    </Observe>
-  </State>
-}>
+              </svg>
+            </Button>
+          </a>
+        </div>
+
+        <div className="min-h-full !w-full p-3">
+          <img
+            src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhbSUyMGJ1aWxkaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            alt="image"
+            className="h-full w-full rounded-lg object-cover"
+          />
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="profile-info-popover">
+## Profile Info Popover
+</DocsTitle>
+
+Use this example to help the user find out more information about a profile.
+
+<CodePreview link="popover#profile-info-popover" component={<PopoverExamples.ProfileInfoPopover />}>
 ```jsx
 import React from "react";
 import {
@@ -445,10 +499,10 @@ import {
   Avatar,
   Typography,
 } from "@material-tailwind/react";
-import { MapPinIcon, BuildingOffice2Icon } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function ProfileInfoPopover() {
   const [openPopover, setOpenPopover] = React.useState(false);
+
   const triggers = {
     onMouseEnter: () => setOpenPopover(true),
     onMouseLeave: () => setOpenPopover(false),
@@ -459,17 +513,16 @@ export default function Example() {
       <PopoverHandler {...triggers}>
         <Button variant="text">Profile Info</Button>
       </PopoverHandler>
-      <PopoverContent {...triggers} className="max-w-[24rem]">
+      <PopoverContent {...triggers} className="z-50 max-w-[24rem]">
         <div className="mb-2 flex items-center justify-between gap-4">
           <Avatar
             size="md"
             variant="circular"
             src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-            alt="candice wu"
+            alt="tania andrew"
           />
           <Button
             variant="gradient"
-            color="blue"
             size="sm"
             className="font-medium capitalize"
           >
@@ -477,27 +530,42 @@ export default function Example() {
           </Button>
         </div>
         <Typography
-          variant="h6"
+          variant="h5"
           color="blue-gray"
           className="mb-2 flex items-center gap-2 font-medium"
         >
-          <span>Candice Wu</span> •{" "}
-          <a href="#" className="text-sm text-blue-gray-700">
-            @canwu
+          <span>Tania Andrew</span> •{" "}
+          <a href="#" className="text-md font-medium text-gray-900">
+            @emmaro
           </a>
         </Typography>
-        <Typography variant="small" color="gray" className="font-normal">
-          Frontend Developer • Major interest in Web Development: motivated to
-          achieve measurable results, to deepen my knowledge and improve my
-          skills.
+        <Typography
+          variant="small"
+          color="gray"
+          className="font-normal text-blue-gray-500"
+        >
+          A skilled developer with a passion for creating innovative solutions and a proven track record in full-stack development. Adept at working with a variety of technologies to build robust applications.
         </Typography>
         <div className="mt-6 flex items-center gap-8 border-t border-blue-gray-50 pt-4">
           <Typography
             variant="small"
             color="gray"
-            className="flex items-center gap-1 text-xs font-normal"
+            className="flex items-center gap-2 text-sm font-normal text-blue-gray-500"
           >
-            <MapPinIcon strokeWidth={2} className="-mt-0.5 h-3.5 w-3.5" />
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM2.332 6.027C2.70329 4.96372 3.36579 4.0261 4.244 3.321C4.512 3.73 4.974 4 5.5 4C5.89782 4 6.27936 4.15804 6.56066 4.43934C6.84196 4.72064 7 5.10218 7 5.5V6C7 6.53043 7.21071 7.03914 7.58579 7.41421C7.96086 7.78929 8.46957 8 9 8C9.53043 8 10.0391 7.78929 10.4142 7.41421C10.7893 7.03914 11 6.53043 11 6C10.9998 5.55242 11.1498 5.11773 11.4259 4.76547C11.702 4.41321 12.0883 4.16375 12.523 4.057C13.4773 5.14867 14.0022 6.55002 14 8C14 8.34 13.972 8.675 13.917 9H13C12.4696 9 11.9609 9.21071 11.5858 9.58579C11.2107 9.96086 11 10.4696 11 11V13.197C10.0883 13.7245 9.05331 14.0015 8 14V12C8 11.4696 7.78929 10.9609 7.41421 10.5858C7.03914 10.2107 6.53043 10 6 10C5.46957 10 4.96086 9.78929 4.58579 9.41421C4.21071 9.03914 4 8.53043 4 8C4.00018 7.527 3.83271 7.06924 3.52733 6.70803C3.22195 6.34681 2.79844 6.10552 2.332 6.027Z"
+                fill="#90A4AE"
+              />
+            </svg>
             United Kingdom
           </Typography>
           <Typography
@@ -505,12 +573,22 @@ export default function Example() {
             href="#"
             variant="small"
             color="gray"
-            className="flex items-center gap-1 text-xs font-normal"
+            className="flex items-center gap-2 text-sm font-normal text-blue-gray-500"
           >
-            <BuildingOffice2Icon
-              strokeWidth={2}
-              className="-mt-0.5 h-3.5 w-3.5"
-            />
+            <svg
+              width="14"
+              height="16"
+              viewBox="0 0 14 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1 2C1 1.46957 1.21071 0.960859 1.58579 0.585786C1.96086 0.210714 2.46957 0 3 0H11C11.5304 0 12.0391 0.210714 12.4142 0.585786C12.7893 0.960859 13 1.46957 13 2V14C13.2652 14 13.5196 14.1054 13.7071 14.2929C13.8946 14.4804 14 14.7348 14 15C14 15.2652 13.8946 15.5196 13.7071 15.7071C13.5196 15.8946 13.2652 16 13 16H10C9.73478 16 9.48043 15.8946 9.29289 15.7071C9.10536 15.5196 9 15.2652 9 15V13C9 12.7348 8.89464 12.4804 8.70711 12.2929C8.51957 12.1054 8.26522 12 8 12H6C5.73478 12 5.48043 12.1054 5.29289 12.2929C5.10536 12.4804 5 12.7348 5 13V15C5 15.2652 4.89464 15.5196 4.70711 15.7071C4.51957 15.8946 4.26522 16 4 16H1C0.734784 16 0.48043 15.8946 0.292893 15.7071C0.105357 15.5196 0 15.2652 0 15C0 14.7348 0.105357 14.4804 0.292893 14.2929C0.48043 14.1054 0.734784 14 1 14V2ZM4 3H6V5H4V3ZM6 7H4V9H6V7ZM8 3H10V5H8V3ZM10 7H8V9H10V7Z"
+                fill="#90A4AE"
+              />
+            </svg>
             Material Tailwind
           </Typography>
         </div>
@@ -523,70 +601,11 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="popover-with-description">
 ## Popover with Description
+</DocsTitle>
 
-<CodePreview id="popover-with-description" link="popover#popover-with-description" className="mt-4" component={
-  <State initialState={{ open: false }}>
-    <Observe>
-      {({ setState, open }) => (
-        <Popover open={open} handler={setState}>
-          <PopoverHandler
-            onMouseEnter={() => setState((s) => ({ open: true }))}
-            onMouseLeave={() => setState((s) => ({ open: false }))}
-          >
-            <Button>Repository Details</Button>
-          </PopoverHandler>
-          <PopoverContent
-            className="max-w-[26rem]"
-            onMouseEnter={() => setState((s) => ({ open: true }))}
-            onMouseLeave={() => setState((s) => ({ open: false }))}
-          >
-            <div className="mb-2 flex items-center gap-3">
-              <Typography
-                as="a"
-                href="#"
-                variant="h6"
-                color="blue-gray"
-                className="font-medium transition-colors hover:text-blue-500"
-              >
-                @material-tailwind
-              </Typography>
-              <Chip
-                value="Public"
-                color="blue"
-                className="rounded-full py-1 px-2 font-medium capitalize tracking-wide"
-              />
-            </div>
-            <Typography variant="small" color="gray" className="font-normal">
-              @material-tailwind is an easy-to-use components library for Tailwind
-              CSS and Material Design.
-            </Typography>
-            <div className="mt-4 flex items-center gap-5">
-              <div className="flex items-center gap-1">
-                <span className="h-3 w-3 rounded-full bg-blue-700" />
-                <Typography color="gray" className="text-xs font-normal">
-                  TypeScript
-                </Typography>
-              </div>
-              <div className="flex items-center gap-1">
-                <SolidIcons.StarIcon className="-mt-0.5 h-4 w-4 text-yellow-700" />
-                <Typography color="gray" className="text-xs font-normal">
-                  1,480
-                </Typography>
-              </div>
-              <div className="flex items-center gap-1">
-                <SolidIcons.CheckBadgeIcon className="-mt-px h-4 w-4 text-green-500" />
-                <Typography color="gray" className="text-xs font-normal">
-                  Veritied
-                </Typography>
-              </div>
-            </div>
-          </PopoverContent>
-        </Popover>
-      )}
-    </Observe>
-  </State>
-}>
+<CodePreview link="popover#popover-with-description" className="mt-4" component={<PopoverExamples.PopoverWithDescription />}>
 ```jsx
 import React from "react";
 import {
@@ -597,10 +616,10 @@ import {
   Chip,
   Typography,
 } from "@material-tailwind/react";
-import { StarIcon, CheckBadgeIcon } from "@heroicons/react/24/solid";
 
-export default function Example() {
+export function PopoverWithDescription() {
   const [openPopover, setOpenPopover] = React.useState(false);
+
   const triggers = {
     onMouseEnter: () => setOpenPopover(true),
     onMouseLeave: () => setOpenPopover(false),
@@ -611,43 +630,77 @@ export default function Example() {
       <PopoverHandler {...triggers}>
         <Button>Repository Details</Button>
       </PopoverHandler>
-      <PopoverContent {...triggers} className="max-w-[26rem]">
+      <PopoverContent {...triggers} className="z-50 max-w-[26rem]">
         <div className="mb-2 flex items-center gap-3">
           <Typography
             as="a"
             href="#"
             variant="h6"
             color="blue-gray"
-            className="font-medium transition-colors hover:text-blue-500"
+            className="font-bold transition-colors hover:text-gray-900"
           >
             @material-tailwind
           </Typography>
           <Chip
             value="Public"
-            color="blue"
-            className="rounded-full py-1 px-2 font-medium capitalize tracking-wide"
+            className="rounded-full px-2 py-1 font-medium capitalize tracking-wide"
           />
         </div>
-        <Typography variant="small" color="gray" className="font-normal">
+        <Typography
+          variant="small"
+          color="gray"
+          className="font-normal text-blue-gray-500"
+        >
           @material-tailwind is an easy-to-use components library for Tailwind
           CSS and Material Design.
         </Typography>
         <div className="mt-4 flex items-center gap-5">
           <div className="flex items-center gap-1">
             <span className="h-3 w-3 rounded-full bg-blue-700" />
-            <Typography color="gray" className="text-xs font-normal">
+            <Typography
+              color="gray"
+              className="text-xs font-medium text-blue-gray-500"
+            >
               TypeScript
             </Typography>
           </div>
           <div className="flex items-center gap-1">
-            <StarIcon className="-mt-0.5 h-4 w-4 text-yellow-700" />
-            <Typography color="gray" className="text-xs font-normal">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="-mt-0.5 h-4 w-4 text-yellow-700"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <Typography
+              color="gray"
+              className="text-xs font-medium text-blue-gray-500"
+            >
               1,480
             </Typography>
           </div>
           <div className="flex items-center gap-1">
-            <CheckBadgeIcon className="-mt-px h-4 w-4 text-green-500" />
-            <Typography color="gray" className="text-xs font-normal">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="-mt-px h-4 w-4 text-green-500"
+            >
+              <path
+                fillRule="evenodd"
+                d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <Typography
+              color="gray"
+              className="text-xs font-medium text-blue-gray-500"
+            >
               Veritied
             </Typography>
           </div>
@@ -659,5 +712,270 @@ export default function Example() {
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="popover-props">
+## Popover Props
+</DocsTitle>
+
+The following props are available for popover component. These are the custom props
+that we've added for the popover component and you can use all the other
+native props as well.
+
+| Attribute   | Type                          | Description                                        | Default                                |
+| ----------- | ----------------------------- | -------------------------------------------------- | -------------------------------------- |
+| `open`      | <Code>boolean</Code>          | Makes the popover open, when popover is controlled | <Code>undefined</Code>                 |
+| `handler`   | <Code>function</Code>         | Change open state for controlled popover           | <Code>undefined</Code>                 |
+| `placement` | [Placement](#types-placement) | Change popover placement                           | <Code>top</Code>                       |
+| `offset`    | [Offset](#types-offset)       | Change popover offset from it's handler            | <Code>5</Code>                         |
+| `dismiss`   | [Dismiss](#types-dismiss)     | Change dismiss listeners when clicking outside     | <Code>undefined</Code>                 |
+| `animate`   | [Animate](#types-animate)     | Change popover animation                           | <Code>undefined</Code>                 |
+| `children`  | <Code>node</Code>             | Add content for popover                            | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { PopoverProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="popover-handler-props">
+## Popover Handler Props
+</DocsTitle>
+
+The following props are available for popover handler component. These are the custom
+props that we've added for the popover handler component and you can use
+all the other native props as well.
+
+| Attribute  | Type              | Description                     | Default                                |
+| ---------- | ----------------- | ------------------------------- | -------------------------------------- |
+| `children` | <Code>node</Code> | Add content for popover handler | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { PopoverHandlerProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="popover-content-props">
+## Popover Content Props
+</DocsTitle>
+
+The following props are available for popover content component. These are the custom
+props that we've added for the popover content component and you can use
+all the other native props as well.
+
+| Attribute   | Type              | Description                              | Default                                |
+| ----------- | ----------------- | ---------------------------------------- | -------------------------------------- |
+| `className` | <Code>node</Code> | Add custom className for popover content | `''`                                   |
+| `children`  | <Code>node</Code> | Add content for popover content          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { PopoverContentProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-placement">
+## Types - Placement
+</DocsTitle>
+
+<span id="types-placement" className="scroll-mt-48" />
+
+```ts
+type placement =
+  | "top"
+  | "top-start"
+  | "top-end"
+  | "right"
+  | "right-start"
+  | "right-end"
+  | "bottom"
+  | "bottom-start"
+  | "bottom-end"
+  | "left"
+  | "left-start"
+  | "left-end";
+```
+
+---
+
+<DocsTitle href="types-offset">
+## Types - Offset
+</DocsTitle>
+
+<span id="types-offset" className="scroll-mt-48" />
+
+```ts
+type offset =
+  | number
+  | {
+      mainAxis?: number;
+      crossAxis?: number;
+      alignmentAxis?: number | null;
+    };
+```
+
+---
+
+<DocsTitle href="types-dismiss">
+## Types - Dismiss
+</DocsTitle>
+
+<span id="types-dismiss" className="scroll-mt-48" />
+
+```ts
+type dismissType = {
+  enabled?: boolean;
+  escapeKey?: boolean;
+  referencePress?: boolean;
+  referencePressEvent?: 'pointerdown' | 'mousedown' | 'click';
+  outsidePress?: boolean | ((event: MouseEvent) => boolean);
+  outsidePressEvent?: 'pointerdown' | 'mousedown' | 'click';
+  ancestorScroll?: boolean;
+  bubbles?: boolean | {
+      escapeKey?: boolean;
+      outsidePress?: boolean;
+  };
+};
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+<span id="types-animate" className="scroll-mt-48" />
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="popover-theme">
+## Popover Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for popover components, the theme object for popover components has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of popover component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of popover component.<br />
+
+You can customize the theme and styles of popover components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="popover-theme-object-type">
+## Popover Theme Object Type
+</DocsTitle>
+
+```ts
+interface PopoverStylesType {
+  defaultProps: {
+    placement: string;
+    offset:
+      | number
+      | {
+          mainAxis: number;
+          crossAxis: number;
+          alignmentAxis: number;
+        };
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePress: boolean;
+      referencePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      outsidePress: boolean | ((event: MouseEvent) => boolean);
+      outsidePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      ancestorScroll: boolean;
+      bubbles: boolean | {
+          escapeKey: boolean;
+          outsidePress: boolean;
+      };
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { PopoverStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="popover-theme-customization">
+## Popover Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  popover: {
+    defaultProps: {
+      placement: "top",
+      offset: 5,
+      dismiss: {},
+      animate: {
+        unmount: {},
+        mount: {},
+      },
+      className: "",
+    },
+    styles: {
+      base: {
+        bg: "bg-white",
+        p: "p-4",
+        border: "border border-blue-gray-50",
+        borderRadius: "rounded-lg",
+        boxShadow: "shadow-lg shadow-blue-gray-500/10",
+        fontFamily: "font-sans",
+        fontSize: "text-sm",
+        fontWeight: "font-normal",
+        color: "text-blue-gray-500",
+        outline: "focus:outline-none",
+        overflowWrap: "break-words",
+        whiteSpace: "whitespace-normal",
+      },
+    },
+  },
+};
+```
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more popover examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

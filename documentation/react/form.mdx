@@ -1,13 +1,16 @@
 ---
 title: Tailwind CSS Form for React - Material Tailwind
 description: Customise your web projects with our complex form components for Tailwind CSS and React using Material Design guidelines.
-navigation: ["simple-registration-form", "checkout-form"]
+navigation: ["simple-registration-form", "checkout-form", "more-examples"]
 github: form
 prev: input
-next: menu
+next: list
 ---
 
+
+<DocsTitle href="form">
 # Tailwind CSS Form - React
+</DocsTitle>
 
 Easily create form using our components based on Tailwind CSS and React.
 
@@ -18,57 +21,13 @@ See below our form component examples.
 
 ---
 
+<DocsTitle href="simple-registration-form">
 ## Simple Registration Form
+</DocsTitle>
 
-<CodePreview id="simple-registration-form" link="form#simple-registration-form" className="mt-4" component={
-  <Card color="transparent" shadow={false}>
-    <Typography variant="h4" color="blue-gray">
-      Sign Up
-    </Typography>
-    <Typography color="gray" className="mt-1 font-normal">
-      Enter your details to register.
-    </Typography>
-    <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
-      <div className="mb-4 flex flex-col gap-6">
-        <Input size="lg" label="Name" />
-        <Input size="lg" label="Email" />
-        <Input type="password" size="lg" label="Password" />
-      </div>
-      <Checkbox
-        label={
-          (
-            <Typography
-              variant="small"
-              color="gray"
-              className="flex items-center font-normal"
-            >
-              I agree the
-              <a
-                href="#"
-                className="font-medium transition-colors hover:text-blue-500"
-              >
-                &nbsp;Terms and Conditions
-              </a>
-            </Typography>
-          )
-        }
-        containerProps={{ className: "-ml-2.5" }}
-      />
-      <Button className="mt-6" fullWidth>
-        Register
-      </Button>
-      <Typography color="gray" className="mt-4 text-center font-normal">
-        Already have an account?{" "}
-        <a
-          href="#"
-          className="font-medium text-blue-500 transition-colors hover:text-blue-700"
-        >
-          Sign In
-        </a>
-      </Typography>
-    </form>
-  </Card>
-}>
+Use our form example if you want to allow users to leave their information for a registration process.
+
+<CodePreview link="form#simple-registration-form" component={<FormExamples.SimpleRegistrationForm />}>
 ```jsx
 import {
   Card,
@@ -78,50 +37,76 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function SimpleRegistrationForm() {
   return (
-    <Card color="transparent" shadow={false}>
+     <Card color="transparent" shadow={false}>
       <Typography variant="h4" color="blue-gray">
         Sign Up
       </Typography>
       <Typography color="gray" className="mt-1 font-normal">
-        Enter your details to register.
+        Nice to meet you! Enter your details to register.
       </Typography>
       <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
-        <div className="mb-4 flex flex-col gap-6">
-          <Input size="lg" label="Name" />
-          <Input size="lg" label="Email" />
-          <Input type="password" size="lg" label="Password" />
+        <div className="mb-1 flex flex-col gap-6">
+          <Typography variant="h6" color="blue-gray" className="-mb-3">
+            Your Name
+          </Typography>
+          <Input
+            size="lg"
+            placeholder="name@mail.com"
+            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+            labelProps={{
+              className: "before:content-none after:content-none",
+            }}
+          />
+          <Typography variant="h6" color="blue-gray" className="-mb-3">
+            Your Email
+          </Typography>
+          <Input
+            size="lg"
+            placeholder="name@mail.com"
+            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+            labelProps={{
+              className: "before:content-none after:content-none",
+            }}
+          />
+          <Typography variant="h6" color="blue-gray" className="-mb-3">
+            Password
+          </Typography>
+          <Input
+            type="password"
+            size="lg"
+            placeholder="********"
+            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+            labelProps={{
+              className: "before:content-none after:content-none",
+            }}
+          />
         </div>
         <Checkbox
           label={
-            (
-              <Typography
-                variant="small"
-                color="gray"
-                className="flex items-center font-normal"
+            <Typography
+              variant="small"
+              color="gray"
+              className="flex items-center font-normal"
+            >
+              I agree the
+              <a
+                href="#"
+                className="font-medium transition-colors hover:text-gray-900"
               >
-                I agree the
-                <a
-                  href="#"
-                  className="font-medium transition-colors hover:text-blue-500"
-                >
-                  &nbsp;Terms and Conditions
-                </a>
-              </Typography>
-            )
+                &nbsp;Terms and Conditions
+              </a>
+            </Typography>
           }
           containerProps={{ className: "-ml-2.5" }}
         />
         <Button className="mt-6" fullWidth>
-          Register
+          sign up
         </Button>
         <Typography color="gray" className="mt-4 text-center font-normal">
           Already have an account?{" "}
-          <a
-            href="#"
-            className="font-medium text-blue-500 transition-colors hover:text-blue-700"
-          >
+          <a href="#" className="font-medium text-gray-900">
             Sign In
           </a>
         </Typography>
@@ -134,9 +119,23 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="checkout-form">
 ## Checkout Form
+</DocsTitle>
 
-<CodePreview id="checkout-form" className="mt-4" component={<CheckoutForm />}>
+This checkout form is a must for your website's checkout process. You already have the options of paying with card or paying with Paypal.
+
+<br />
+
+This example is using <Code><a href="https://heroicons.com/" target="_blank">@heroicons/react</a></Code> and <Code><a href="https://www.npmjs.com/package/use-react-countries" target="_blank">use-react-countries</a></Code> make sure you have installed them.
+
+```bash
+npm i @heroicons/react use-react-countries
+```
+
+<br />
+
+<CodePreview component={<FormExamples.CheckoutForm />}>
 ```jsx
 import React from "react";
 import { useCountries } from "use-react-countries";
@@ -187,7 +186,7 @@ function formatExpires(value: string) {
     .replace(/^([0-1]{1}[0-9]{1})([0-9]{1,2}).*/g, "$1/$2");
 }
 
-export default function Example() {
+export default function CheckoutForm() {
   const { countries } = useCountries();
   const [type, setType] = React.useState("card");
   const [cardNumber, setCardNumber] = React.useState("");
@@ -196,15 +195,19 @@ export default function Example() {
   return (
     <Card className="w-full max-w-[24rem]">
       <CardHeader
-        color="blue"
+        color="gray"
         floated={false}
         shadow={false}
-        className="m-0 grid place-items-center rounded-b-none py-8 px-4 text-center"
+        className="m-0 grid place-items-center px-4 py-8 text-center"
       >
-        <div className="mb-4 rounded-full border border-white/10 bg-white/10 p-6 text-white">
-          <BanknotesIcon className="h-10 w-10" />
+        <div className="mb-4 h-20 p-6 text-white">
+          {type === "card" ? (
+            <CreditCardIcon className="h-10 w-10 text-white" />
+          ) : (
+            <img alt="paypal " className="w-14 " src="https://docs.material-tailwind.com/icons/paypall.png" />
+          )}
         </div>
-        <Typography variant="h4" color="white">
+        <Typography variant="h5" color="white">
           Material Tailwind PRO
         </Typography>
       </CardHeader>
@@ -238,52 +241,102 @@ export default function Example() {
                   <Typography
                     variant="small"
                     color="blue-gray"
-                    className="mb-4 font-medium"
+                    className="mb-2 font-medium"
                   >
-                    Personal Details
+                    Your Email
                   </Typography>
-                  <Input type="email" label="Email Address" />
+                  <Input
+                    type="email"
+                    placeholder="name@mail.com"
+                    className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                    labelProps={{
+                      className: "before:content-none after:content-none",
+                    }}
+                  />
                 </div>
 
-                <div className="my-6">
+                <div className="my-3">
                   <Typography
                     variant="small"
                     color="blue-gray"
-                    className="mb-4 font-medium"
+                    className="mb-2 font-medium "
                   >
                     Card Details
                   </Typography>
 
                   <Input
-                    label="Card Number"
                     maxLength={19}
                     value={formatCardNumber(cardNumber)}
                     onChange={(event) => setCardNumber(event.target.value)}
                     icon={
-                      <CreditCardIcon className="h-5 w-5 text-blue-gray-300" />
+                      <CreditCardIcon className="absolute left-0 h-4 w-4 text-blue-gray-300" />
                     }
+                    placeholder="0000 0000 0000 0000"
+                    className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                    labelProps={{
+                      className: "before:content-none after:content-none",
+                    }}
                   />
                   <div className="my-4 flex items-center gap-4">
-                    <Input
-                      label="Expires"
-                      maxLength={5}
-                      value={formatExpires(cardExpires)}
-                      onChange={(event) => setCardExpires(event.target.value)}
-                      containerProps={{ className: "min-w-[72px]" }}
-                    />
-                    <Input
-                      label="CVC"
-                      maxLength={4}
-                      containerProps={{ className: "min-w-[72px]" }}
-                    />
+                    <div>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="mb-2 font-medium"
+                      >
+                        Expires
+                      </Typography>
+                      <Input
+                        maxLength={5}
+                        value={formatExpires(cardExpires)}
+                        onChange={(event) => setCardExpires(event.target.value)}
+                        containerProps={{ className: "min-w-[72px]" }}
+                        placeholder="00/00"
+                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                        labelProps={{
+                          className: "before:content-none after:content-none",
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="mb-2 font-medium"
+                      >
+                        CVC
+                      </Typography>
+                      <Input
+                        maxLength={4}
+                        containerProps={{ className: "min-w-[72px]" }}
+                        placeholder="000"
+                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                        labelProps={{
+                          className: "before:content-none after:content-none",
+                        }}
+                      />
+                    </div>
                   </div>
-                  <Input label="Holder Name" />
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="mb-2 font-medium"
+                  >
+                    Holder Name
+                  </Typography>
+                  <Input
+                    placeholder="name@mail.com"
+                    className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                    labelProps={{
+                      className: "before:content-none after:content-none",
+                    }}
+                  />
                 </div>
                 <Button size="lg">Pay Now</Button>
                 <Typography
                   variant="small"
                   color="gray"
-                  className="mt-2 flex items-center justify-center gap-2 font-normal opacity-60"
+                  className="mt-2 flex items-center justify-center gap-2 font-medium opacity-60"
                 >
                   <LockClosedIcon className="-mt-0.5 h-4 w-4" /> Payments are
                   secure and encrypted
@@ -294,47 +347,86 @@ export default function Example() {
               <form className="mt-12 flex flex-col gap-4">
                 <div>
                   <Typography
-                    variant="small"
+                    variant="paragraph"
                     color="blue-gray"
                     className="mb-4 font-medium"
                   >
                     Personal Details
                   </Typography>
-                  <Input type="email" label="Email Address" />
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="mb-2 font-medium"
+                  >
+                    Your Email
+                  </Typography>
+                  <Input
+                    type="email"
+                    placeholder="name@mail.com"
+                    className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                    labelProps={{
+                      className: "before:content-none after:content-none",
+                    }}
+                  />
                 </div>
 
                 <div className="my-6">
                   <Typography
-                    variant="small"
+                    variant="paragraph"
                     color="blue-gray"
                     className="mb-4 font-medium"
                   >
                     Billing Address
                   </Typography>
-
-                  <Select label="Country" menuProps={{ className: "h-48" }}>
-                    {countries.map(({ name }: any) => (
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="mb-2 font-medium"
+                  >
+                    Country
+                  </Typography>
+                  <Select
+                    placeholder="USA"
+                    className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                    labelProps={{
+                      className: "before:content-none after:content-none",
+                    }}
+                    menuProps={{ className: "h-48" }}
+                  >
+                    {countries.map(({ name, flags }: any) => (
                       <Option key={name} value={name}>
-                        {name}
+                        <div className="flex items-center gap-x-2">
+                          <img
+                            src={flags.svg}
+                            alt={name}
+                            className="h-4 w-4 rounded-full object-cover"
+                          />
+                          {name}
+                        </div>
                       </Option>
                     ))}
                   </Select>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="mt-4 -mb-2 font-medium"
+                  >
+                    Postal Code
+                  </Typography>
                   <Input
-                    label="Postal Code"
+                    placeholder="0000"
+                    className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                    labelProps={{
+                      className: "before:content-none after:content-none",
+                    }}
                     containerProps={{ className: "mt-4" }}
                   />
                 </div>
-                <Button size="lg" color="amber" className="relative h-12">
-                  <img
-                    alt="paypal "
-                    className="absolute top-2/4 left-2/4 w-16 -translate-x-2/4 -translate-y-2/4"
-                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAxcHgiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxMDEgMzIiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiIHhtbG5zPSJodHRwOiYjeDJGOyYjeDJGO3d3dy53My5vcmcmI3gyRjsyMDAwJiN4MkY7c3ZnIj48cGF0aCBmaWxsPSIjMDAzMDg3IiBkPSJNIDEyLjIzNyAyLjggTCA0LjQzNyAyLjggQyAzLjkzNyAyLjggMy40MzcgMy4yIDMuMzM3IDMuNyBMIDAuMjM3IDIzLjcgQyAwLjEzNyAyNC4xIDAuNDM3IDI0LjQgMC44MzcgMjQuNCBMIDQuNTM3IDI0LjQgQyA1LjAzNyAyNC40IDUuNTM3IDI0IDUuNjM3IDIzLjUgTCA2LjQzNyAxOC4xIEMgNi41MzcgMTcuNiA2LjkzNyAxNy4yIDcuNTM3IDE3LjIgTCAxMC4wMzcgMTcuMiBDIDE1LjEzNyAxNy4yIDE4LjEzNyAxNC43IDE4LjkzNyA5LjggQyAxOS4yMzcgNy43IDE4LjkzNyA2IDE3LjkzNyA0LjggQyAxNi44MzcgMy41IDE0LjgzNyAyLjggMTIuMjM3IDIuOCBaIE0gMTMuMTM3IDEwLjEgQyAxMi43MzcgMTIuOSAxMC41MzcgMTIuOSA4LjUzNyAxMi45IEwgNy4zMzcgMTIuOSBMIDguMTM3IDcuNyBDIDguMTM3IDcuNCA4LjQzNyA3LjIgOC43MzcgNy4yIEwgOS4yMzcgNy4yIEMgMTAuNjM3IDcuMiAxMS45MzcgNy4yIDEyLjYzNyA4IEMgMTMuMTM3IDguNCAxMy4zMzcgOS4xIDEzLjEzNyAxMC4xIFoiPjwvcGF0aD48cGF0aCBmaWxsPSIjMDAzMDg3IiBkPSJNIDM1LjQzNyAxMCBMIDMxLjczNyAxMCBDIDMxLjQzNyAxMCAzMS4xMzcgMTAuMiAzMS4xMzcgMTAuNSBMIDMwLjkzNyAxMS41IEwgMzAuNjM3IDExLjEgQyAyOS44MzcgOS45IDI4LjAzNyA5LjUgMjYuMjM3IDkuNSBDIDIyLjEzNyA5LjUgMTguNjM3IDEyLjYgMTcuOTM3IDE3IEMgMTcuNTM3IDE5LjIgMTguMDM3IDIxLjMgMTkuMzM3IDIyLjcgQyAyMC40MzcgMjQgMjIuMTM3IDI0LjYgMjQuMDM3IDI0LjYgQyAyNy4zMzcgMjQuNiAyOS4yMzcgMjIuNSAyOS4yMzcgMjIuNSBMIDI5LjAzNyAyMy41IEMgMjguOTM3IDIzLjkgMjkuMjM3IDI0LjMgMjkuNjM3IDI0LjMgTCAzMy4wMzcgMjQuMyBDIDMzLjUzNyAyNC4zIDM0LjAzNyAyMy45IDM0LjEzNyAyMy40IEwgMzYuMTM3IDEwLjYgQyAzNi4yMzcgMTAuNCAzNS44MzcgMTAgMzUuNDM3IDEwIFogTSAzMC4zMzcgMTcuMiBDIDI5LjkzNyAxOS4zIDI4LjMzNyAyMC44IDI2LjEzNyAyMC44IEMgMjUuMDM3IDIwLjggMjQuMjM3IDIwLjUgMjMuNjM3IDE5LjggQyAyMy4wMzcgMTkuMSAyMi44MzcgMTguMiAyMy4wMzcgMTcuMiBDIDIzLjMzNyAxNS4xIDI1LjEzNyAxMy42IDI3LjIzNyAxMy42IEMgMjguMzM3IDEzLjYgMjkuMTM3IDE0IDI5LjczNyAxNC42IEMgMzAuMjM3IDE1LjMgMzAuNDM3IDE2LjIgMzAuMzM3IDE3LjIgWiI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMDMwODciIGQ9Ik0gNTUuMzM3IDEwIEwgNTEuNjM3IDEwIEMgNTEuMjM3IDEwIDUwLjkzNyAxMC4yIDUwLjczNyAxMC41IEwgNDUuNTM3IDE4LjEgTCA0My4zMzcgMTAuOCBDIDQzLjIzNyAxMC4zIDQyLjczNyAxMCA0Mi4zMzcgMTAgTCAzOC42MzcgMTAgQyAzOC4yMzcgMTAgMzcuODM3IDEwLjQgMzguMDM3IDEwLjkgTCA0Mi4xMzcgMjMgTCAzOC4yMzcgMjguNCBDIDM3LjkzNyAyOC44IDM4LjIzNyAyOS40IDM4LjczNyAyOS40IEwgNDIuNDM3IDI5LjQgQyA0Mi44MzcgMjkuNCA0My4xMzcgMjkuMiA0My4zMzcgMjguOSBMIDU1LjgzNyAxMC45IEMgNTYuMTM3IDEwLjYgNTUuODM3IDEwIDU1LjMzNyAxMCBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA2Ny43MzcgMi44IEwgNTkuOTM3IDIuOCBDIDU5LjQzNyAyLjggNTguOTM3IDMuMiA1OC44MzcgMy43IEwgNTUuNzM3IDIzLjYgQyA1NS42MzcgMjQgNTUuOTM3IDI0LjMgNTYuMzM3IDI0LjMgTCA2MC4zMzcgMjQuMyBDIDYwLjczNyAyNC4zIDYxLjAzNyAyNCA2MS4wMzcgMjMuNyBMIDYxLjkzNyAxOCBDIDYyLjAzNyAxNy41IDYyLjQzNyAxNy4xIDYzLjAzNyAxNy4xIEwgNjUuNTM3IDE3LjEgQyA3MC42MzcgMTcuMSA3My42MzcgMTQuNiA3NC40MzcgOS43IEMgNzQuNzM3IDcuNiA3NC40MzcgNS45IDczLjQzNyA0LjcgQyA3Mi4yMzcgMy41IDcwLjMzNyAyLjggNjcuNzM3IDIuOCBaIE0gNjguNjM3IDEwLjEgQyA2OC4yMzcgMTIuOSA2Ni4wMzcgMTIuOSA2NC4wMzcgMTIuOSBMIDYyLjgzNyAxMi45IEwgNjMuNjM3IDcuNyBDIDYzLjYzNyA3LjQgNjMuOTM3IDcuMiA2NC4yMzcgNy4yIEwgNjQuNzM3IDcuMiBDIDY2LjEzNyA3LjIgNjcuNDM3IDcuMiA2OC4xMzcgOCBDIDY4LjYzNyA4LjQgNjguNzM3IDkuMSA2OC42MzcgMTAuMSBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5MC45MzcgMTAgTCA4Ny4yMzcgMTAgQyA4Ni45MzcgMTAgODYuNjM3IDEwLjIgODYuNjM3IDEwLjUgTCA4Ni40MzcgMTEuNSBMIDg2LjEzNyAxMS4xIEMgODUuMzM3IDkuOSA4My41MzcgOS41IDgxLjczNyA5LjUgQyA3Ny42MzcgOS41IDc0LjEzNyAxMi42IDczLjQzNyAxNyBDIDczLjAzNyAxOS4yIDczLjUzNyAyMS4zIDc0LjgzNyAyMi43IEMgNzUuOTM3IDI0IDc3LjYzNyAyNC42IDc5LjUzNyAyNC42IEMgODIuODM3IDI0LjYgODQuNzM3IDIyLjUgODQuNzM3IDIyLjUgTCA4NC41MzcgMjMuNSBDIDg0LjQzNyAyMy45IDg0LjczNyAyNC4zIDg1LjEzNyAyNC4zIEwgODguNTM3IDI0LjMgQyA4OS4wMzcgMjQuMyA4OS41MzcgMjMuOSA4OS42MzcgMjMuNCBMIDkxLjYzNyAxMC42IEMgOTEuNjM3IDEwLjQgOTEuMzM3IDEwIDkwLjkzNyAxMCBaIE0gODUuNzM3IDE3LjIgQyA4NS4zMzcgMTkuMyA4My43MzcgMjAuOCA4MS41MzcgMjAuOCBDIDgwLjQzNyAyMC44IDc5LjYzNyAyMC41IDc5LjAzNyAxOS44IEMgNzguNDM3IDE5LjEgNzguMjM3IDE4LjIgNzguNDM3IDE3LjIgQyA3OC43MzcgMTUuMSA4MC41MzcgMTMuNiA4Mi42MzcgMTMuNiBDIDgzLjczNyAxMy42IDg0LjUzNyAxNCA4NS4xMzcgMTQuNiBDIDg1LjczNyAxNS4zIDg1LjkzNyAxNi4yIDg1LjczNyAxNy4yIFoiPjwvcGF0aD48cGF0aCBmaWxsPSIjMDA5Y2RlIiBkPSJNIDk1LjMzNyAzLjMgTCA5Mi4xMzcgMjMuNiBDIDkyLjAzNyAyNCA5Mi4zMzcgMjQuMyA5Mi43MzcgMjQuMyBMIDk1LjkzNyAyNC4zIEMgOTYuNDM3IDI0LjMgOTYuOTM3IDIzLjkgOTcuMDM3IDIzLjQgTCAxMDAuMjM3IDMuNSBDIDEwMC4zMzcgMy4xIDEwMC4wMzcgMi44IDk5LjYzNyAyLjggTCA5Ni4wMzcgMi44IEMgOTUuNjM3IDIuOCA5NS40MzcgMyA5NS4zMzcgMy4zIFoiPjwvcGF0aD48L3N2Zz4"
-                  />
-                </Button>
+                <Button size="lg">pay with paypal</Button>
                 <Typography
                   variant="small"
                   color="gray"
-                  className="mt-2 flex items-center justify-center gap-2 font-normal opacity-60"
+                  className="flex items-center justify-center gap-2 font-medium opacity-60"
                 >
                   <LockClosedIcon className="-mt-0.5 h-4 w-4" /> Payments are
                   secure and encrypted
@@ -346,6 +438,18 @@ export default function Example() {
       </CardBody>
     </Card>
   );
-}
 ```
 </CodePreview>
+
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more form examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
+
+• <a href="https://www.material-tailwind.com/blocks/login" target="_blank">Web 3.0 Login Blocks</a><br />
+• <a href="https://www.material-tailwind.com/blocks/account" target="_blank">Account Blocks</a><br />
+• <a href="https://www.material-tailwind.com/blocks/authentication" target="_blank">Authentification Blocks</a><br />
+• <a href="https://www.material-tailwind.com/blocks/contact-sections" target="_blank">Contact Us Blocks</a><br />

@@ -1,58 +1,50 @@
 ---
-title: Tailwind CSS Menu for React - Material Tailwind
-description: Customise your web projects with our complex menu component for Tailwind CSS and React using Material Design guidelines.
+title: Tailwind CSS Dropdown Menu for React - Material Tailwind
+description: Customise your web projects with our complex dropdown menu component for Tailwind CSS and React using Material Design guidelines.
 navigation:
   [
-    "menu",
-    "nested-menu",
-    "menu-placement",
-    "custom-menu-animation",
-    "menu-with-custom-list",
-    "notifications-menu",
-    "profile-menu",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/menu",
-      description: "Learn more about props definition and types of menu components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/menu",
-      description: "Learn how to customize the theme and styles for menu components.",
-    },
+    "dropdown-menu",
+    "nested-dropdown-menu",
+    "dropdown-menu-placement",
+    "dropdown-menu-custom-animation",
+    "dropdown-menu-custom-list",
+    "dropdown-menu-divider",
+    "dropdown-menu-with-checkboxes",
+    "dropdown-menu-with-search-input",
+    "dropdown-menu-with-scrolling-content",
+    "notifications-dropdown-menu",
+    "profile-dropdown-menu",
+    "dropdown-menu-props",
+    "dropdown-menu-handler-props",
+    "dropdown-menu-list-props",
+    "dropdown-menu-item-props",
+    "types-placement",
+    "types-offset",
+    "types-dismiss",
+    "types-animate",
+    "menu-theme",
+    "menu-theme-object-type",
+    "menu-theme-customization",
+    "more-examples"
   ]
 github: menu
 prev: input
 next: navbar
 ---
 
-# Tailwind CSS Menu - React
+<DocsTitle href="menu">
+# Tailwind CSS Dropdown Menu - React
+</DocsTitle>
 
-Use our responsive Tailwind CSS vertical <Code>Menu</Code>, that can take the user anywhere on your web app!
+Use our responsive Tailwind CSS vertical dropdown, that can take the user anywhere on your web app!
 
-A <Code>Menu</Code> displays a list of choices on temporary surfaces. It appears when users interact with a button, action, or other control. The <Code>Menu</Code> also ensures a consistent and predictable user experience by adhering to an established set of principles
+A dropdown menu displays a list of choices on temporary surfaces. It appears when users interact with a button, action, or other control. The dropdown also ensures a consistent and predictable user experience by adhering to an established set of principles.
 
-See below our <Code>Menu</Code> example that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt them easily to your needs.
+See below our dropdown menu examples that you can use in your Tailwind CSS and React projects. The examples come in different colors and styles, so you can adapt them easily to your needs.
 
 <br />
 
-<CodePreview id="menu" link="menu#menu" component={
-  <Menu>
-    <MenuHandler>
-      <Button variant="gradient">Open Menu</Button>
-    </MenuHandler>
-    <MenuList>
-      <MenuItem>Menu Item 1</MenuItem>
-      <MenuItem>Menu Item 2</MenuItem>
-      <MenuItem>Menu Item 3</MenuItem>
-    </MenuList>
-  </Menu>
-}>
+<CodePreview link="menu#menu" component={<MenuExamples.MenuDefault />}>
 ```jsx
 import {
   Menu,
@@ -62,11 +54,11 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function MenuDefault() {
   return (
     <Menu>
       <MenuHandler>
-        <Button variant="gradient">Open Menu</Button>
+        <Button>Menu</Button>
       </MenuHandler>
       <MenuList>
         <MenuItem>Menu Item 1</MenuItem>
@@ -81,33 +73,17 @@ export default function Example() {
 
 ---
 
-## Nested Menu
 
-You can nest one <Code>Menu</Code> inside another one very easily.
+<DocsTitle href="nested-dropdown-menu">
+## Nested Dropdown Menu
+</DocsTitle>
 
-<CodePreview id="nested-menu" link="menu#nested-menu" component={
-  <Menu>
-    <MenuHandler>
-      <Button variant="gradient">Open Nested Menu</Button>
-    </MenuHandler>
-    <MenuList>
-      <MenuItem>Menu Item 1</MenuItem>
-      <MenuItem>Menu Item 2</MenuItem>
-      <Menu placement="right-start" offset={15}>
-        <MenuHandler>
-          <MenuItem>Nested Item</MenuItem>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Nested Item 1</MenuItem>
-          <MenuItem>Nested Item 2</MenuItem>
-          <MenuItem>Nested Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <MenuItem>Menu Item 3</MenuItem>
-    </MenuList>
-  </Menu>
-}>
+You can nest one dropdown <Code>Menu</Code> inside another one very easily.
+
+<CodePreview link="menu#nested-menu" component={<MenuExamples.NestedMenu />}>
 ```jsx
+import React from "react";
+import {  ChevronUpIcon } from "@heroicons/react/24/solid";
 import {
   Menu,
   MenuHandler,
@@ -116,18 +92,34 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function NestedMenu() {
+export function NestedMenu() {
+  const [openMenu, setOpenMenu] = React.useState(false);
+
   return (
     <Menu>
       <MenuHandler>
-        <Button variant="gradient">Open Nested Menu</Button>
+        <Button> Menu</Button>
       </MenuHandler>
       <MenuList>
         <MenuItem>Menu Item 1</MenuItem>
         <MenuItem>Menu Item 2</MenuItem>
-        <Menu placement="right-start" offset={15}>
-          <MenuHandler>
-            <MenuItem>Nested Item</MenuItem>
+        <Menu
+          placement="right-start"
+          open={openMenu}
+          handler={setOpenMenu}
+          allowHover
+          offset={15}
+        >
+          <MenuHandler className="flex items-center justify-between">
+            <MenuItem>
+              Nested Item
+              <ChevronUpIcon
+                strokeWidth={2.5}
+                className={`h-3.5 w-3.5 transition-transform ${
+                  openMenu ? "rotate-90" : ""
+                }`}
+              />
+            </MenuItem>
           </MenuHandler>
           <MenuList>
             <MenuItem>Nested Item 1</MenuItem>
@@ -145,144 +137,14 @@ export default function NestedMenu() {
 
 ---
 
-## Menu Placement
+<DocsTitle href="dropdown-menu-placement">
+## Dropdown Menu Placement
+</DocsTitle>
 
-You can change the position of the <Code>Menu</Code> component using the <Code>placement</Code> prop.
+You can change the position of the dropdown menu component using the <Code>placement</Code> prop.
 
-<CodePreview id="menu-placement" component={
-  <>
-    <div className="mb-3 flex gap-3">
-      <Menu placement="top">
-        <MenuHandler>
-          <Button variant="gradient">Top</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="top-start">
-        <MenuHandler>
-          <Button variant="gradient">Top Start</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="top-end">
-        <MenuHandler>
-          <Button variant="gradient">Top End</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-    </div>
-    <div className="mb-3 flex gap-3">
-      <Menu placement="right">
-        <MenuHandler>
-          <Button variant="gradient">Right</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="right-start">
-        <MenuHandler>
-          <Button variant="gradient">Right Start</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="right-end">
-        <MenuHandler>
-          <Button variant="gradient">Right End</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-    </div>
-    <div className="mb-3 flex gap-3">
-      <Menu placement="bottom">
-        <MenuHandler>
-          <Button variant="gradient">Bottom</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="bottom-start">
-        <MenuHandler>
-          <Button variant="gradient">Bottom Start</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="bottom-end">
-        <MenuHandler>
-          <Button variant="gradient">Bottom End</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-    </div>
-    <div className="flex gap-3">
-      <Menu placement="left">
-        <MenuHandler>
-          <Button variant="gradient">Left</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="left-start">
-        <MenuHandler>
-          <Button variant="gradient">Left Start</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="left-end">
-        <MenuHandler>
-          <Button variant="gradient">Left End</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-    </div>
-  </>
-}>
+<CodePreview component={<MenuExamples.MenuPlacement />}>
 ```jsx
-import { Fragment } from "react";
 import {
   Menu,
   MenuHandler,
@@ -291,13 +153,13 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function MenuPlacement() {
   return (
-    <Fragment>
+    <>
       <div className="mb-3 flex gap-3">
         <Menu placement="top">
           <MenuHandler>
-            <Button variant="gradient">Top</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -307,7 +169,7 @@ export default function Example() {
         </Menu>
         <Menu placement="top-start">
           <MenuHandler>
-            <Button variant="gradient">Top Start</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -317,7 +179,7 @@ export default function Example() {
         </Menu>
         <Menu placement="top-end">
           <MenuHandler>
-            <Button variant="gradient">Top End</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -329,7 +191,7 @@ export default function Example() {
       <div className="mb-3 flex gap-3">
         <Menu placement="right">
           <MenuHandler>
-            <Button variant="gradient">Right</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -339,7 +201,7 @@ export default function Example() {
         </Menu>
         <Menu placement="right-start">
           <MenuHandler>
-            <Button variant="gradient">Right Start</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -349,7 +211,7 @@ export default function Example() {
         </Menu>
         <Menu placement="right-end">
           <MenuHandler>
-            <Button variant="gradient">Right End</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -361,7 +223,7 @@ export default function Example() {
       <div className="mb-3 flex gap-3">
         <Menu placement="bottom">
           <MenuHandler>
-            <Button variant="gradient">Bottom</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -371,7 +233,7 @@ export default function Example() {
         </Menu>
         <Menu placement="bottom-start">
           <MenuHandler>
-            <Button variant="gradient">Bottom Start</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -381,7 +243,7 @@ export default function Example() {
         </Menu>
         <Menu placement="bottom-end">
           <MenuHandler>
-            <Button variant="gradient">Bottom End</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -393,7 +255,7 @@ export default function Example() {
       <div className="flex gap-3">
         <Menu placement="left">
           <MenuHandler>
-            <Button variant="gradient">Left</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -403,7 +265,7 @@ export default function Example() {
         </Menu>
         <Menu placement="left-start">
           <MenuHandler>
-            <Button variant="gradient">Left Start</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -413,7 +275,7 @@ export default function Example() {
         </Menu>
         <Menu placement="left-end">
           <MenuHandler>
-            <Button variant="gradient">Left End</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -422,7 +284,7 @@ export default function Example() {
           </MenuList>
         </Menu>
       </div>
-    </Fragment>
+    </>
   );
 }
 ```
@@ -430,27 +292,13 @@ export default function Example() {
 
 ---
 
-## Custom Menu Animation
+<DocsTitle href="dropdown-menu-custom-animation">
+## Dropdown Menu Custom Animation
+</DocsTitle>
 
-You can modify the open/close state animation for <Code>Menu</Code> component using the <Code>animate</Code> prop.
+You can modify the dropdown menu component's open/close state animation using the <Code>animate</Code> prop.
 
-<CodePreview id="custom-menu-animation" component={
-  <Menu
-    animate={{
-      mount: { y: 0 },
-      unmount: { y: 25 },
-    }}
-  >
-    <MenuHandler>
-      <Button variant="gradient">Open Menu</Button>
-    </MenuHandler>
-    <MenuList>
-      <MenuItem>Menu Item 1</MenuItem>
-      <MenuItem>Menu Item 2</MenuItem>
-      <MenuItem>Menu Item 3</MenuItem>
-    </MenuList>
-  </Menu>
-}>
+<CodePreview component={<MenuExamples.MenuCustomAnimation />}>
 ```jsx
 import {
   Menu,
@@ -460,16 +308,16 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function MenuCustomAnimation() {
   return (
-    <Menu
+   <Menu
       animate={{
         mount: { y: 0 },
         unmount: { y: 25 },
       }}
     >
       <MenuHandler>
-        <Button variant="gradient">Open Menu</Button>
+        <Button> Menu</Button>
       </MenuHandler>
       <MenuList>
         <MenuItem>Menu Item 1</MenuItem>
@@ -484,82 +332,13 @@ export default function Example() {
 
 ---
 
-## Menu with Custom List
+<DocsTitle href="dropdown-menu-custom-list">
+## Dropdown Menu Custom List
+</DocsTitle>
 
-<CodePreview id="menu-with-custom-list" className="mt-4" component={
-  <State initialState={{ open: false }}>
-    <Observe>
-      {({ setState, open }) => (
-        <Menu open={open} handler={setState}>
-          <MenuHandler>
-            <Button
-              onMouseEnter={() => setState((s) => ({ open: true }))}
-              onMouseLeave={() => setState((s) => ({ open: false }))}
-              variant="text"
-              className="flex items-center gap-3 text-base font-normal capitalize tracking-normal"
-            >
-              Technology{" "}
-              <OutlineIcons.ChevronDownIcon
-                strokeWidth={2.5}
-                className={`h-3.5 w-3.5 transition-transform ${
-                  open ? "rotate-180" : ""
-                }`}
-              />
-            </Button>
-          </MenuHandler>
-          <MenuList
-            onMouseEnter={() => setState((s) => ({ open: true }))}
-            onMouseLeave={() => setState((s) => ({ open: false }))}
-            className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid"
-          >
-            <Card
-              color="blue"
-              shadow={false}
-              variant="gradient"
-              className="col-span-3 grid h-full w-full place-items-center rounded-md"
-            >
-              <OutlineIcons.RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
-            </Card>
-            <ul className="col-span-4 flex w-full flex-col gap-1">
-              {[
-                {
-                  title: "@material-tailwind/html",
-                  description:
-                    "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
-                },
-                {
-                  title: "@material-tailwind/react",
-                  description:
-                    "Learn how to use @material-tailwind/react, packed with rich components for React.",
-                },
-                {
-                  title: "Material Tailwind PRO",
-                  description:
-                    "A complete set of UI Elements for building faster websites in less time.",
-                },
-              ].map(({ title, description }) => (
-                <a href="#" key={title}>
-                  <MenuItem>
-                    <Typography variant="h6" color="blue-gray" className="mb-1">
-                      {title}
-                    </Typography>
-                    <Typography
-                      variant="small"
-                      color="gray"
-                      className="font-normal"
-                    >
-                      {description}
-                    </Typography>
-                  </MenuItem>
-                </a>
-              ))}
-            </ul>
-          </MenuList>
-        </Menu>
-      )}
-    </Observe>
-  </State>
-}>
+Use this dropdown menu example if you want to allow your users to navigate to another page in a visually appealing way. This component includes an image, clickable headline, and description.
+
+<CodePreview component={<MenuExamples.MenuCustomList />}>
 ```jsx
 import React from "react";
 import {
@@ -571,7 +350,8 @@ import {
   Card,
   Typography,
 } from "@material-tailwind/react";
-import { ChevronDownIcon, RocketLaunchIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { CursorArrowRaysIcon } from "@heroicons/react/24/solid";
 
 const menuItems = [
   {
@@ -591,19 +371,13 @@ const menuItems = [
   },
 ];
 
-export default function Day09() {
+export function MenuCustomList() {
   const [openMenu, setOpenMenu] = React.useState(false);
 
-  const triggers = {
-    onMouseEnter: () => setOpenMenu(true),
-    onMouseLeave: () => setOpenMenu(false),
-  };
-
   return (
-    <Menu open={openMenu} handler={setOpenMenu}>
+    <Menu open={openMenu} handler={setOpenMenu} allowHover>
       <MenuHandler>
         <Button
-          {...triggers}
           variant="text"
           className="flex items-center gap-3 text-base font-normal capitalize tracking-normal"
         >
@@ -616,17 +390,16 @@ export default function Day09() {
           />
         </Button>
       </MenuHandler>
-      <MenuList
-        {...triggers}
-        className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid"
-      >
+      <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
         <Card
-          color="blue"
+          color="gray"
           shadow={false}
-          variant="gradient"
-          className="col-span-3 grid h-full w-full place-items-center rounded-md"
+          className="col-span-3 flex h-full w-full items-center justify-center rounded-2xl p-4"
         >
-          <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
+          <CursorArrowRaysIcon strokeWidth={1} className="h-10 w-10" />
+          <Typography className="mt-5 text-center" variant="h5">
+            Material Tailwind PRO
+          </Typography>
         </Card>
         <ul className="col-span-4 flex w-full flex-col gap-1">
           {menuItems.map(({ title, description }) => (
@@ -655,77 +428,227 @@ export default function Day09() {
 
 ---
 
-## Notifications Menu
+<DocsTitle href="dropdown-menu-divider">
+## Dropdown Menu Divider
+</DocsTitle>
 
-<CodePreview id="notifications-menu" link="menu#notifications-menu" className="mt-4" component={
-  <Menu>
-    <MenuHandler>
-      <IconButton variant="text">
-        <SolidIcons.BellIcon className="h-5 w-5" />
-      </IconButton>
-    </MenuHandler>
-    <MenuList className="flex flex-col gap-2">
-      <MenuItem className="flex items-center gap-4 py-2 pr-8 pl-2">
-        <Avatar
-          variant="circular"
-          alt="candice wu"
-          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-        />
-        <div className="flex flex-col gap-1">
-          <Typography variant="small" color="gray" className="font-normal">
-            <span className="font-medium text-blue-gray-900">Wu</span> send
-            you a message
-          </Typography>
-          <Typography
-            variant="small"
-            className="flex items-center gap-1 text-xs text-gray-600"
+This dropdown example can be used if you want to group the menu items, improving the readability.
+
+<CodePreview component={<MenuExamples.MenuDivider />}>
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@material-tailwind/react";
+
+export function MenuDivider() {
+  return (
+   <Menu>
+      <MenuHandler>
+        <Button> Menu</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+        <hr className="my-3" />
+        <MenuItem>Menu Item 4</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="dropdown-menu-with-checkboxes">
+## Dropdown Menu with Checkboxes
+</DocsTitle>
+
+Use this simple example of a dropdown with checkboxes if you want to allow users to select multiple options from a list.
+
+<CodePreview component={<MenuExamples.MenuWithCheckbox />}>
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  Button,
+  MenuList,
+  MenuItem,
+  Checkbox,
+} from "@material-tailwind/react";
+
+export function MenuWithCheckbox() {
+  return (
+    <Menu
+      dismiss={{
+        itemPress: false,
+      }}
+    >
+      <MenuHandler>
+        <Button>Menu</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem className="p-0">
+          <label
+            htmlFor="item-1"
+            className="flex cursor-pointer items-center gap-2 p-2"
           >
-            <OutlineIcons.ClockIcon className="h-3 w-3" />
-            13 minutes ago
-          </Typography>
-        </div>
-      </MenuItem>
-      <MenuItem className="flex items-center gap-4 py-2 pr-8 pl-2">
-        <Avatar
-          variant="circular"
-          alt="natali craig"
-          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1061&q=80"
-        />
-        <div className="flex flex-col gap-1">
-          <Typography variant="small" color="gray" className="font-normal">
-            <span className="font-medium text-blue-gray-900">Natali</span>{" "}
-            reply to your email
-          </Typography>
-          <Typography
-            variant="small"
-            className="flex items-center gap-1 text-xs text-gray-600"
+            <Checkbox
+              ripple={false}
+              id="item-1"
+              containerProps={{ className: "p-0" }}
+              className="hover:before:content-none"
+            />
+            Menu Item 1
+          </label>
+        </MenuItem>
+        <MenuItem className="p-0">
+          <label
+            htmlFor="item-2"
+            className="flex cursor-pointer items-center gap-2 p-2"
           >
-            <OutlineIcons.ClockIcon className="h-3 w-3" />a hour ago
-          </Typography>
-        </div>
-      </MenuItem>
-      <MenuItem className="flex items-center gap-4 py-2 pr-8 pl-2">
-        <Avatar
-          variant="circular"
-          alt="paypal"
-          src="https://dwglogo.com/wp-content/uploads/2016/08/PayPal_Logo_Icon.png"
-        />
-        <div className="flex flex-col gap-1">
-          <Typography variant="small" color="gray" className="font-normal">
-            <span className="font-medium text-blue-gray-900">PayPal</span>{" "}
-            you&apos;ve received a payment.
-          </Typography>
-          <Typography
-            variant="small"
-            className="flex items-center gap-1 text-xs text-gray-600"
+            <Checkbox
+              ripple={false}
+              id="item-2"
+              containerProps={{ className: "p-0" }}
+              className="hover:before:content-none"
+            />
+            Menu Item 2
+          </label>
+        </MenuItem>
+        <MenuItem className="p-0">
+          <label
+            htmlFor="item-3"
+            className="flex cursor-pointer items-center gap-2 p-2"
           >
-            <OutlineIcons.ClockIcon className="h-3 w-3" />5 hours ago
-          </Typography>
-        </div>
-      </MenuItem>
-    </MenuList>
-  </Menu>
-}>
+            <Checkbox
+              ripple={false}
+              id="item-3"
+              containerProps={{ className: "p-0" }}
+              className="hover:before:content-none"
+            />
+            Menu Item 3
+          </label>
+        </MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="dropdown-menu-with-search-input">
+## Dropdown Menu with Search Input
+</DocsTitle>
+
+This example is perfect if you have more options. Use it to let the users find what they are looking for easier, without scrolling too much.
+
+<CodePreview component={<MenuExamples.MenuWithSearchInput />}>
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  Button,
+  MenuList,
+  MenuItem,
+  Input,
+} from "@material-tailwind/react";
+
+export function MenuWithSearchInput() {
+  return (
+    <Menu
+      dismiss={{
+        itemPress: false,
+      }}
+    >
+      <MenuHandler>
+        <Button>Menu</Button>
+      </MenuHandler>
+      <MenuList>
+        <Input
+          label="Search"
+          containerProps={{
+            className: "mb-4",
+          }}
+        />
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="dropdown-menu-with-scrolling-content">
+## Dropdown Menu with Scrolling Content
+</DocsTitle>
+
+You can use this dropdown example if you have more options in the list so that the users can see all of them. If you have more that 10 options, we recommend you use the search input from the previous example.
+
+<CodePreview component={<MenuExamples.MenuWithScrollingContent />}>
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  Button,
+  MenuList,
+  MenuItem,
+} from "@material-tailwind/react";
+
+export function MenuWithScrollingContent() {
+  return (
+    <Menu>
+      <MenuHandler>
+        <Button>Menu</Button>
+      </MenuHandler>
+      <MenuList className="max-h-72">
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+        <MenuItem>Menu Item 4</MenuItem>
+        <MenuItem>Menu Item 5</MenuItem>
+        <MenuItem>Menu Item 6</MenuItem>
+        <MenuItem>Menu Item 7</MenuItem>
+        <MenuItem>Menu Item 8</MenuItem>
+        <MenuItem>Menu Item 9</MenuItem>
+        <MenuItem>Menu Item 10</MenuItem>
+        <MenuItem>Menu Item 11</MenuItem>
+        <MenuItem>Menu Item 12</MenuItem>
+        <MenuItem>Menu Item 13</MenuItem>
+        <MenuItem>Menu Item 14</MenuItem>
+        <MenuItem>Menu Item 15</MenuItem>
+        <MenuItem>Menu Item 16</MenuItem>
+        <MenuItem>Menu Item 17</MenuItem>
+        <MenuItem>Menu Item 18</MenuItem>
+        <MenuItem>Menu Item 19</MenuItem>
+        <MenuItem>Menu Item 20</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="notifications-dropdown-menu">
+## Notifications Dropdown Menu
+</DocsTitle>
+
+Add this menu if you want to group all the notifications in one place, avoiding a cluttered screen.
+
+<CodePreview link="menu#notifications-menu" component={<MenuExamples.NotificationsMenu />}>
 ```jsx
 import {
   Menu,
@@ -736,73 +659,89 @@ import {
   Avatar,
   Typography,
 } from "@material-tailwind/react";
-import { BellIcon } from "@heroicons/react/24/solid";
-import { ClockIcon } from "@heroicons/react/24/outline";
 
-export default function Day10() {
+function ClockIcon() {
+  return (
+    <svg
+      width="16"
+      height="17"
+      viewBox="0 0 16 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M7.99998 14.9C9.69736 14.9 11.3252 14.2257 12.5255 13.0255C13.7257 11.8252 14.4 10.1974 14.4 8.49998C14.4 6.80259 13.7257 5.17472 12.5255 3.97449C11.3252 2.77426 9.69736 2.09998 7.99998 2.09998C6.30259 2.09998 4.67472 2.77426 3.47449 3.97449C2.27426 5.17472 1.59998 6.80259 1.59998 8.49998C1.59998 10.1974 2.27426 11.8252 3.47449 13.0255C4.67472 14.2257 6.30259 14.9 7.99998 14.9ZM8.79998 5.29998C8.79998 5.0878 8.71569 4.88432 8.56566 4.73429C8.41563 4.58426 8.21215 4.49998 7.99998 4.49998C7.7878 4.49998 7.58432 4.58426 7.43429 4.73429C7.28426 4.88432 7.19998 5.0878 7.19998 5.29998V8.49998C7.20002 8.71213 7.28434 8.91558 7.43438 9.06558L9.69678 11.3288C9.7711 11.4031 9.85934 11.4621 9.95646 11.5023C10.0536 11.5425 10.1577 11.5632 10.2628 11.5632C10.3679 11.5632 10.472 11.5425 10.5691 11.5023C10.6662 11.4621 10.7544 11.4031 10.8288 11.3288C10.9031 11.2544 10.9621 11.1662 11.0023 11.0691C11.0425 10.972 11.0632 10.8679 11.0632 10.7628C11.0632 10.6577 11.0425 10.5536 11.0023 10.4565C10.9621 10.3593 10.9031 10.2711 10.8288 10.1968L8.79998 8.16878V5.29998Z"
+        fill="#90A4AE"
+      />
+    </svg>
+  );
+}
+
+export function NotificationsMenu() {
   return (
     <Menu>
       <MenuHandler>
         <IconButton variant="text">
-          <BellIcon className="h-5 w-5" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-5 w-5"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+              clipRule="evenodd"
+            />
+          </svg>
         </IconButton>
       </MenuHandler>
       <MenuList className="flex flex-col gap-2">
-        <MenuItem className="flex items-center gap-4 py-2 pr-8 pl-2">
+        <MenuItem className="flex items-center gap-4 py-2 pl-2 pr-8">
           <Avatar
             variant="circular"
-            alt="candice wu"
+            alt="tania andrew"
             src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
           />
           <div className="flex flex-col gap-1">
-            <Typography variant="small" color="gray" className="font-normal">
-              <span className="font-medium text-blue-gray-900">Wu</span> send
-              you a message
+            <Typography variant="small" color="gray" className="font-semibold">
+              Tania send you a message
             </Typography>
-            <Typography
-              variant="small"
-              className="flex items-center gap-1 text-xs text-gray-600"
-            >
-              <ClockIcon className="h-3 w-3" />
+            <Typography className="flex items-center gap-1 text-sm font-medium text-blue-gray-500">
+              <ClockIcon />
               13 minutes ago
             </Typography>
           </div>
         </MenuItem>
-        <MenuItem className="flex items-center gap-4 py-2 pr-8 pl-2">
+        <MenuItem className="flex items-center gap-4 py-2 pl-2 pr-8">
           <Avatar
             variant="circular"
             alt="natali craig"
             src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1061&q=80"
           />
           <div className="flex flex-col gap-1">
-            <Typography variant="small" color="gray" className="font-normal">
-              <span className="font-medium text-blue-gray-900">Natali</span>{" "}
-              reply to your email
+            <Typography variant="small" color="gray" className="font-semibold">
+              Natali replied to your email.
             </Typography>
-            <Typography
-              variant="small"
-              className="flex items-center gap-1 text-xs text-gray-600"
-            >
-              <ClockIcon className="h-3 w-3" />a hour ago
+            <Typography className="flex items-center gap-1 text-sm font-medium text-blue-gray-500">
+              <ClockIcon />1 hour ago
             </Typography>
           </div>
         </MenuItem>
-        <MenuItem className="flex items-center gap-4 py-2 pr-8 pl-2">
+        <MenuItem className="flex items-center gap-4 py-2 pl-2 pr-8">
           <Avatar
             variant="circular"
             alt="paypal"
             src="https://dwglogo.com/wp-content/uploads/2016/08/PayPal_Logo_Icon.png"
           />
           <div className="flex flex-col gap-1">
-            <Typography variant="small" color="gray" className="font-normal">
-              <span className="font-medium text-blue-gray-900">PayPal</span>{" "}
-              you&apos;ve received a payment.
+            <Typography variant="small" color="gray" className="font-semibold">
+              You&apos;ve received a payment.
             </Typography>
-            <Typography
-              variant="small"
-              className="flex items-center gap-1 text-xs text-gray-600"
-            >
-              <ClockIcon className="h-3 w-3" />5 hours ago
+            <Typography className="flex items-center gap-1 text-sm font-medium text-blue-gray-500">
+              <ClockIcon />5 hours ago
             </Typography>
           </div>
         </MenuItem>
@@ -815,9 +754,13 @@ export default function Day10() {
 
 ---
 
-## Profile Menu
+<DocsTitle href="profile-dropdown-menu">
+## Profile Dropdown Menu
+</DocsTitle>
 
-<CodePreview id="profile-menu" link="menu#profile-menu" className="mt-4" component={<ProfileMenu />}>
+Are you creating a web app or a mobile app? This component is a must!
+
+<CodePreview link="menu#profile-menu" component={<MenuExamples.ProfileMenu />}>
 ```jsx
 import {
   Menu,
@@ -827,54 +770,115 @@ import {
   Avatar,
   Typography,
 } from "@material-tailwind/react";
-import {
-  Cog6ToothIcon,
-  PowerIcon,
-  InboxArrowDownIcon,
-  UserCircleIcon,
-  LifebuoyIcon,
-} from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function ProfileMenu() {
   return (
     <Menu>
       <MenuHandler>
         <Avatar
           variant="circular"
-          alt="candice wu"
+          alt="tania andrew"
           className="cursor-pointer"
           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
         />
       </MenuHandler>
       <MenuList>
         <MenuItem className="flex items-center gap-2">
-          <UserCircleIcon strokeWidth={2} className="h-4 w-4" />
-          <Typography variant="small" className="font-normal">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM10 5C10 5.53043 9.78929 6.03914 9.41421 6.41421C9.03914 6.78929 8.53043 7 8 7C7.46957 7 6.96086 6.78929 6.58579 6.41421C6.21071 6.03914 6 5.53043 6 5C6 4.46957 6.21071 3.96086 6.58579 3.58579C6.96086 3.21071 7.46957 3 8 3C8.53043 3 9.03914 3.21071 9.41421 3.58579C9.78929 3.96086 10 4.46957 10 5ZM8 9C7.0426 8.99981 6.10528 9.27449 5.29942 9.7914C4.49356 10.3083 3.85304 11.0457 3.454 11.916C4.01668 12.5706 4.71427 13.0958 5.49894 13.4555C6.28362 13.8152 7.13681 14.0009 8 14C8.86319 14.0009 9.71638 13.8152 10.5011 13.4555C11.2857 13.0958 11.9833 12.5706 12.546 11.916C12.147 11.0457 11.5064 10.3083 10.7006 9.7914C9.89472 9.27449 8.9574 8.99981 8 9Z"
+              fill="#90A4AE"
+            />
+          </svg>
+
+          <Typography variant="small" className="font-medium">
             My Profile
           </Typography>
         </MenuItem>
         <MenuItem className="flex items-center gap-2">
-          <Cog6ToothIcon strokeWidth={2} className="h-4 w-4" />
-          <Typography variant="small" className="font-normal">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M9.48999 1.17C9.10999 -0.39 6.88999 -0.39 6.50999 1.17C6.45326 1.40442 6.34198 1.62213 6.18522 1.80541C6.02845 1.9887 5.83063 2.13238 5.60784 2.22477C5.38505 2.31716 5.1436 2.35564 4.90313 2.33709C4.66266 2.31854 4.42997 2.24347 4.22399 2.118C2.85199 1.282 1.28199 2.852 2.11799 4.224C2.65799 5.11 2.17899 6.266 1.17099 6.511C-0.390006 6.89 -0.390006 9.111 1.17099 9.489C1.40547 9.54581 1.62322 9.65719 1.80651 9.81407C1.98979 9.97096 2.13343 10.1689 2.22573 10.3918C2.31803 10.6147 2.35639 10.8563 2.33766 11.0968C2.31894 11.3373 2.24367 11.5701 2.11799 11.776C1.28199 13.148 2.85199 14.718 4.22399 13.882C4.42993 13.7563 4.66265 13.6811 4.90318 13.6623C5.14371 13.6436 5.38527 13.682 5.60817 13.7743C5.83108 13.8666 6.02904 14.0102 6.18592 14.1935C6.34281 14.3768 6.45419 14.5945 6.51099 14.829C6.88999 16.39 9.11099 16.39 9.48899 14.829C9.54599 14.5946 9.65748 14.377 9.8144 14.1939C9.97132 14.0107 10.1692 13.8672 10.3921 13.7749C10.6149 13.6826 10.8564 13.6442 11.0969 13.6628C11.3373 13.6815 11.57 13.7565 11.776 13.882C13.148 14.718 14.718 13.148 13.882 11.776C13.7565 11.57 13.6815 11.3373 13.6628 11.0969C13.6442 10.8564 13.6826 10.6149 13.7749 10.3921C13.8672 10.1692 14.0107 9.97133 14.1939 9.81441C14.377 9.65749 14.5946 9.546 14.829 9.489C16.39 9.11 16.39 6.889 14.829 6.511C14.5945 6.45419 14.3768 6.34281 14.1935 6.18593C14.0102 6.02904 13.8666 5.83109 13.7743 5.60818C13.682 5.38527 13.6436 5.14372 13.6623 4.90318C13.681 4.66265 13.7563 4.42994 13.882 4.224C14.718 2.852 13.148 1.282 11.776 2.118C11.5701 2.24368 11.3373 2.31895 11.0968 2.33767C10.8563 2.35639 10.6147 2.31804 10.3918 2.22574C10.1689 2.13344 9.97095 1.9898 9.81407 1.80651C9.65718 1.62323 9.5458 1.40548 9.48899 1.171L9.48999 1.17ZM7.99999 11C8.79564 11 9.55871 10.6839 10.1213 10.1213C10.6839 9.55871 11 8.79565 11 8C11 7.20435 10.6839 6.44129 10.1213 5.87868C9.55871 5.31607 8.79564 5 7.99999 5C7.20434 5 6.44128 5.31607 5.87867 5.87868C5.31606 6.44129 4.99999 7.20435 4.99999 8C4.99999 8.79565 5.31606 9.55871 5.87867 10.1213C6.44128 10.6839 7.20434 11 7.99999 11Z"
+              fill="#90A4AE"
+            />
+          </svg>
+
+          <Typography variant="small" className="font-medium">
             Edit Profile
           </Typography>
         </MenuItem>
         <MenuItem className="flex items-center gap-2">
-          <InboxArrowDownIcon strokeWidth={2} className="h-4 w-4" />
-          <Typography variant="small" className="font-normal">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M2 0C1.46957 0 0.960859 0.210714 0.585786 0.585786C0.210714 0.960859 0 1.46957 0 2V12C0 12.5304 0.210714 13.0391 0.585786 13.4142C0.960859 13.7893 1.46957 14 2 14H12C12.5304 14 13.0391 13.7893 13.4142 13.4142C13.7893 13.0391 14 12.5304 14 12V2C14 1.46957 13.7893 0.960859 13.4142 0.585786C13.0391 0.210714 12.5304 0 12 0H2ZM2 2H12V9H10L9 11H5L4 9H2V2Z"
+              fill="#90A4AE"
+            />
+          </svg>
+
+          <Typography variant="small" className="font-medium">
             Inbox
           </Typography>
         </MenuItem>
         <MenuItem className="flex items-center gap-2">
-          <LifebuoyIcon strokeWidth={2} className="h-4 w-4" />
-          <Typography variant="small" className="font-normal">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM14 8C14 8.993 13.759 9.929 13.332 10.754L11.808 9.229C12.0362 8.52269 12.0632 7.76679 11.886 7.046L13.448 5.484C13.802 6.249 14 7.1 14 8ZM8.835 11.913L10.415 13.493C9.654 13.8281 8.83149 14.0007 8 14C7.13118 14.0011 6.27257 13.8127 5.484 13.448L7.046 11.886C7.63267 12.0298 8.24426 12.039 8.835 11.913ZM4.158 9.117C3.96121 8.4394 3.94707 7.72182 4.117 7.037L4.037 7.117L2.507 5.584C2.1718 6.34531 1.99913 7.16817 2 8C2 8.954 2.223 9.856 2.619 10.657L4.159 9.117H4.158ZM5.246 2.667C6.09722 2.22702 7.04179 1.99825 8 2C8.954 2 9.856 2.223 10.657 2.619L9.117 4.159C8.34926 3.93538 7.53214 3.94687 6.771 4.192L5.246 2.668V2.667ZM10 8C10 8.53043 9.78929 9.03914 9.41421 9.41421C9.03914 9.78929 8.53043 10 8 10C7.46957 10 6.96086 9.78929 6.58579 9.41421C6.21071 9.03914 6 8.53043 6 8C6 7.46957 6.21071 6.96086 6.58579 6.58579C6.96086 6.21071 7.46957 6 8 6C8.53043 6 9.03914 6.21071 9.41421 6.58579C9.78929 6.96086 10 7.46957 10 8Z"
+              fill="#90A4AE"
+            />
+          </svg>
+          <Typography variant="small" className="font-medium">
             Help
           </Typography>
         </MenuItem>
         <hr className="my-2 border-blue-gray-50" />
         <MenuItem className="flex items-center gap-2 ">
-          <PowerIcon strokeWidth={2} className="h-4 w-4" />
-          <Typography variant="small" className="font-normal">
+          <svg
+            width="16"
+            height="14"
+            viewBox="0 0 16 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M1 0C0.734784 0 0.48043 0.105357 0.292893 0.292893C0.105357 0.48043 0 0.734784 0 1V13C0 13.2652 0.105357 13.5196 0.292893 13.7071C0.48043 13.8946 0.734784 14 1 14C1.26522 14 1.51957 13.8946 1.70711 13.7071C1.89464 13.5196 2 13.2652 2 13V1C2 0.734784 1.89464 0.48043 1.70711 0.292893C1.51957 0.105357 1.26522 0 1 0ZM11.293 9.293C11.1108 9.4816 11.01 9.7342 11.0123 9.9964C11.0146 10.2586 11.1198 10.5094 11.3052 10.6948C11.4906 10.8802 11.7414 10.9854 12.0036 10.9877C12.2658 10.99 12.5184 10.8892 12.707 10.707L15.707 7.707C15.8945 7.51947 15.9998 7.26516 15.9998 7C15.9998 6.73484 15.8945 6.48053 15.707 6.293L12.707 3.293C12.6148 3.19749 12.5044 3.12131 12.3824 3.0689C12.2604 3.01649 12.1292 2.9889 11.9964 2.98775C11.8636 2.9866 11.7319 3.0119 11.609 3.06218C11.4861 3.11246 11.3745 3.18671 11.2806 3.2806C11.1867 3.3745 11.1125 3.48615 11.0622 3.60905C11.0119 3.73194 10.9866 3.86362 10.9877 3.9964C10.9889 4.12918 11.0165 4.2604 11.0689 4.3824C11.1213 4.50441 11.1975 4.61475 11.293 4.707L12.586 6H5C4.73478 6 4.48043 6.10536 4.29289 6.29289C4.10536 6.48043 4 6.73478 4 7C4 7.26522 4.10536 7.51957 4.29289 7.70711C4.48043 7.89464 4.73478 8 5 8H12.586L11.293 9.293Z"
+              fill="#90A4AE"
+            />
+          </svg>
+          <Typography variant="small" className="font-medium">
             Sign Out
           </Typography>
         </MenuItem>
@@ -885,5 +889,331 @@ export default function Example() {
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="dropdown-menu-props">
+## Dropdown Menu Props
+</DocsTitle>
+
+The following props are available for the dropdown component. These are the custom props
+that we've added for the dropdown menu component and you can use all the other native props
+as well.
+
+| Attribute    | Type                          | Description                                    | Default                                |
+| ------------ | ----------------------------- | ---------------------------------------------- | -------------------------------------- |
+| `open`       | <Code>boolean</Code>          | Makes the menu open, when menu is controlled   | <Code>undefined</Code>                 |
+| `handler`    | <Code>function</Code>         | Change open state for controlled menu          | <Code>undefined</Code>                 |
+| `placement`  | [Placement](#types-placement) | Change menu placement                          | <Code>bottom</Code>                    |
+| `offset`     | [Offset](#types-offset)       | Change menu offset from it's handler           | <Code>5</Code>                         |
+| `dismiss`    | [Dismiss](#types-dismiss)     | Change dismiss listeners when clicking outside | <Code>undefined</Code>                 |
+| `animate`    | [Animate](#types-animate)     | Change menu animation                          | <Code>undefined</Code>                 |
+| `lockScroll` | <Code>boolean</Code>          | Lock page scrolling when menu is opened        | <Code>false</Code>                     |
+| `allowHover` | <Code>boolean</Code>          | Open the menu when hovering it's handler.      | <Code>false</Code>                     |
+| `children`   | <Code>node</Code>             | Add content for menu                           | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="dropdown-menu-handler-props">
+## Dropdown Menu Handler Props
+</DocsTitle>
+
+The following props are available for the dropdown handler component. These are the custom
+props that we've added for the menu handler component and you can use all the other
+native props as well.
+
+| Attribute  | Type              | Description                  | Default                                |
+| ---------- | ----------------- | ---------------------------- | -------------------------------------- |
+| `children` | <Code>node</Code> | Add content for menu handler | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuHandlerProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="dropdown-menu-list-props">
+## Dropdown Menu List Props
+</DocsTitle>
+
+The following props are available for the dropdown list component. These are the custom props
+that we've added for the menu list component and you can use all the other native
+props as well.
+
+| Attribute   | Type                | Description                        | Default                                |
+| ----------- | ------------------- | ---------------------------------- | -------------------------------------- |
+| `className` | <Code>string</Code> | Add custom className for menu list | `''`                                   |
+| `children`  | <Code>node</Code>   | Add content for menu list          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuListProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="dropdown-menu-item-props">
+## Dropdown Menu Item Props
+</DocsTitle>
+
+The following props are available for the dropdown item component. These are the custom props
+that we've added for the dropdown menu item component and you can use all the other native
+props as well.
+
+| Attribute   | Type                 | Description                        | Default                                |
+| ----------- | -------------------- | ---------------------------------- | -------------------------------------- |
+| `disabled`  | <Code>boolean</Code> | Disable menu item                  | <Code>false</Code>                     |
+| `className` | <Code>string</Code>  | Add custom className for menu item | `''`                                   |
+| `children`  | <Code>node</Code>    | Add content for menu item          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuItemProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-placement">
+## Types - Placement
+</DocsTitle>
+
+```ts
+type placement =
+  | "top"
+  | "top-start"
+  | "top-end"
+  | "right"
+  | "right-start"
+  | "right-end"
+  | "bottom"
+  | "bottom-start"
+  | "bottom-end"
+  | "left"
+  | "left-start"
+  | "left-end";
+```
+
+---
+
+<DocsTitle href="types-offset">
+## Types - Offset
+</DocsTitle>
+
+```ts
+type offset =
+  | number
+  | {
+      mainAxis?: number;
+      crossAxis?: number;
+      alignmentAxis?: number | null;
+    };
+```
+
+---
+
+<DocsTitle href="types-dismiss">
+## Types - Dismiss
+</DocsTitle>
+
+```ts
+type dismissType = {
+  enabled?: boolean;
+  escapeKey?: boolean;
+  referencePress?: boolean;
+  referencePressEvent?: "pointerdown" | "mousedown" | "click";
+  outsidePress?: boolean | ((event: MouseEvent) => boolean);
+  outsidePressEvent?: "pointerdown" | "mousedown" | "click";
+  ancestorScroll?: boolean;
+  itemPress?: boolean;
+  bubbles?:
+    | boolean
+    | {
+        escapeKey?: boolean;
+        outsidePress?: boolean;
+      };
+};
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="dropdown-menu-theme">
+## Dropdown Menu Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for dropdown menu components, the theme object for dropdown components has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of menu component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for menu component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of menu component.<br />
+
+You can customize the theme and styles of dropdown menu components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="dropdown-menu-theme-object-type">
+## Dropdown Menu Theme Object Type
+</DocsTitle>
+
+```ts
+interface MenuStylesType {
+  defaultProps: {
+    placement: string;
+    offset:
+      | number
+      | {
+          mainAxis: number;
+          crossAxis: number;
+          alignmentAxis: number;
+        };
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePress: boolean;
+      referencePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      outsidePress: boolean | ((event: MouseEvent) => boolean);
+      outsidePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      ancestorScroll: boolean;
+      itemPress: boolean;
+      bubbles: boolean | {
+          escapeKey: boolean;
+          outsidePress: boolean;
+      };
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    lockScroll: boolean;
+  };
+  styles: {
+    base: {
+      menu: object;
+      item: {
+        initial: object;
+        disabled: object;
+      };
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="dropdown-menu-theme-customization">
+## Dropdown Menu Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  menu: {
+    defaultProps: {
+      placement: "bottom",
+      offset: 5,
+      dismiss: {
+        itemPress: true
+      },
+      animate: {
+        unmount: {},
+        mount: {},
+      },
+      lockScroll: false,
+    },
+    styles: {
+      base: {
+        menu: {
+          bg: "bg-white",
+          minWidth: "min-w-[180px]",
+          p: "p-3",
+          border: "border border-blue-gray-50",
+          borderRadius: "rounded-md",
+          boxShadow: "shadow-lg shadow-blue-gray-500/10",
+          fontFamily: "font-sans",
+          fontSize: "text-sm",
+          fontWeight: "font-normal",
+          color: "text-blue-gray-500",
+          overflow: "overflow-auto",
+          outline: "focus:outline-none",
+          zIndex: "z-[999]",
+        },
+        item: {
+          initial: {
+            display: "block",
+            width: "w-full",
+            pt: "pt-[9px]",
+            pb: "pb-2",
+            px: "px-3",
+            borderRadius: "rounded-md",
+            textAlign: "text-start",
+            lightHeight: "leading-tight",
+            cursor: "cursor-pointer",
+            userSelect: "select-none",
+            transition: "transition-all",
+            bg: "hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80",
+            color: "hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900",
+            outline: "outline-none",
+          },
+          disabled: {
+            opacity: "opacity-50",
+            cursor: "cursor-not-allowed",
+            pointerEvents: "pointer-events-none",
+            userSelect: "select-none",
+            bg: "hover:bg-transparent focus:bg-transparent active:bg-transparent",
+            color: "hover:text-blue-gray-500 focus:text-blue-gray-500 active:text-blue-gray-500",
+          },
+        },
+      },
+    },
+  },
+};
+```
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more menu examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

@@ -1,0 +1,296 @@
+---
+title: Tailwind CSS Badge Examples - Material Tailwind 
+description: Add style to your buttons with the versatile Tailwind CSS Badge component. Customize and integrate it easily into your web project.
+navigation:
+  [
+    "badge",
+    "badge-color",
+    "badge-placement",
+    "badge-overlap",
+    "badge-with-border",
+    "badge-dot",
+    "badge-custom-style",
+    "more-examples",
+    "best-practices"
+  ]
+github: badge
+prev: avatar
+next: breadcrumbs
+---
+
+# Tailwind CSS Badge
+
+Enhance your web application's user interface with our versatile Tailwind CSS Badge component. 
+
+Whether you want to display a notification count, highlight important updates, or add an extra layer of interactivity and a touch of style to your buttons, the Tailwind CSS Badge component is the perfect choice. 
+
+With simple integration into your Material Tailwind project and just a few lines of Tailwind CSS, you can easily create and customize badges that suit your website needs.
+
+Let's take a look at some examples of badge components.
+
+<br />
+
+## Badge Examples:
+
+## Default Badge
+Get started with this simple badge example that comes with notification button and a small indicator for the number of notifications that can be clicked to interact with them.
+
+<CodePreview
+  id="badge"
+  link="badge#badge"
+  component={<HTMLBadgeExamples.BadgeDefault />}
+>
+```html
+<div class="relative inline-flex">
+  <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+    Notifications
+  </button>
+  <span class="absolute top-0.5 right-0.5 grid min-h-[24px] min-w-[24px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-red-600 py-1 px-1 text-xs text-white">
+    5
+  </span>
+</div>
+```
+</CodePreview>
+
+---
+
+## Badge Color 
+
+Material Tailwind’s badge component comes with 20 different colors that you can change using the color classes. 
+
+Below you can check  4 of the examples: <Code>bg-red-600</Code>, <Code>bg-green-600</Code>, <Code>bg-amber-600</Code>, and <Code>bg-purple-600</Code>. The badge indicators add a visual element to the buttons, making the components more visually appealing and informative.
+
+<CodePreview
+  id="badge-color"
+  link="badge#badge-color"
+  component={<HTMLBadgeExamples.BadgeColors />}
+>
+```html
+<div class="flex items-center gap-4">
+  <div class="relative inline-flex">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      Red
+    </button>
+    <span class="absolute top-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-red-600 py-1 px-1 text-xs text-white"></span>
+  </div>
+  <div class="relative inline-flex">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      Green
+    </button>
+    <span class="absolute top-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-green-600 py-1 px-1 text-xs text-white"></span>
+  </div>
+  <div class="relative inline-flex">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      Amber
+    </button>
+    <span class="absolute top-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-amber-600 py-1 px-1 text-xs text-white"></span>
+  </div>
+  <div class="relative inline-flex">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      Purple
+    </button>
+    <span class="absolute top-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-purple-600 py-1 px-1 text-xs text-white"></span>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+##  Badge Placement 
+
+Check out this practical coded example of how to position elements in different relative locations within a container to customise your badge component to fit your project.
+
+<CodePreview
+  id="badge-placement"
+  link="badge#badge-placement"
+  component={<HTMLBadgeExamples.BadgePlacement/>}
+>
+```html
+<div class="flex items-center gap-4">
+  <div class="relative inline-flex">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      Top Start
+    </button>
+    <span class="absolute top-0.5 left-0.5 grid min-h-[12px] min-w-[12px] -translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-red-500 py-1 px-1 text-xs font-medium leading-none text-white content-['']"></span>
+  </div>
+  <div class="relative inline-flex">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      Top End
+    </button>
+    <span class="absolute top-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-red-500 py-1 px-1 text-xs font-medium leading-none text-white content-['']"></span>
+  </div>
+  <div class="relative inline-flex">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      Bottom Start
+    </button>
+    <span class="absolute bottom-0.5 left-0.5 grid min-h-[12px] min-w-[12px] -translate-x-2/4 translate-y-2/4 place-items-center rounded-full bg-red-500 py-1 px-1 text-xs font-medium leading-none text-white content-['']"></span>
+  </div>
+  <div class="relative inline-flex">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      Bottom End
+    </button>
+    <span class="absolute bottom-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 translate-y-2/4 place-items-center rounded-full bg-red-500 py-1 px-1 text-xs font-medium leading-none text-white content-['']"></span>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+## Badge Overlap
+
+This code snippet provides examples of how badge indicators can be effectively used with different UI elements to convey additional information or enhance the visual appeal of the components.
+
+<CodePreview
+  id="badge-overlap"
+  link="badge#badge-overlap"
+  class="mt-4"
+  component={<HTMLBadgeExamples.BadgeOverlap/>}
+>
+```html
+<div class="flex items-center gap-8">
+  <div class="relative inline-flex">
+    <button class="flex items-center rounded-md bg-slate-800 py-2.5 px-3 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+        <path fill-rule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <span class="absolute top-0.5 right-0.5 grid min-h-[24px] min-w-[24px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-red-500 py-1 px-1 text-xs font-medium leading-none text-white content-['']">
+      5
+    </span>
+  </div>
+  <div class="relative inline-flex">
+    <button class="flex items-center rounded-md bg-slate-800 py-2.5 px-3 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+        <path fill-rule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <span class="absolute top-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-red-500 py-1 px-1 text-xs font-medium leading-none text-white content-['']"></span>
+  </div>
+  <div class="relative inline-flex">
+    <img
+      src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+      alt="profile picture"
+      class="relative inline-block h-12 w-12 !rounded-full object-cover object-center"
+    />
+    <span class="absolute bottom-1.5 right-1.5 grid min-h-[24px] min-w-[24px] translate-x-2/4 translate-y-2/4 place-items-center rounded-full bg-red-500 py-1 px-1 text-xs font-medium leading-none text-white content-['']">
+      5
+    </span>
+  </div>
+  <div class="relative inline-flex">
+    <img
+      src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+      alt="profile picture"
+      class="relative inline-block h-12 w-12 !rounded-full object-cover object-center"
+    />
+    <span class="absolute bottom-1.5 right-1.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 translate-y-2/4 place-items-center rounded-full bg-red-500 py-1 px-1 text-xs font-medium leading-none text-white content-['']"></span>
+  </div>
+</div>
+  ```
+</CodePreview>
+
+---
+
+## Badge with Border
+
+Notify users of unread messages, alerts, or other important information using this simple badge with border and indicator.
+
+<CodePreview
+  id="badge-with-border"
+  link="badge#badge-with-border"
+  class="mt-4"
+  component={<HTMLBadgeExamples.BadgeWithBorder/>}
+>
+```html
+<div class="relative inline-flex">
+  <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+    Notifications
+  </button>
+  <span class="absolute top-0.5 right-0.5 grid min-h-[28px] min-w-[28px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-red-600 py-1 px-1 text-xs text-white border border-white">
+    5
+  </span>
+</div>
+```
+</CodePreview>
+
+<br />
+
+This badge example comes with a rounded appearance (<Code>rounded-full</Code>) and is styled with a red background (<Code>bg-red-600</Code>), white text (<Code>text-white</Code>), and a white border (<Code>border-2 border-white</Code>).
+
+---
+
+
+## Badge Dot
+
+Use this versatile example of a badge with an indicator that does not contain text and serves as a color indicator. 
+
+This component can be used in user interfaces where a visual indicator is needed to draw attention to a specific element, like a settings button.
+
+<CodePreview
+  id="badge-dot"
+  link="badge#badge-dot"
+  class="mt-4"
+  component={<HTMLBadgeExamples.BadgeDot/>}
+>
+```html
+<div class="relative inline-flex">
+  <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+    Settings
+  </button>
+  <span class="absolute top-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-red-600 py-1 px-1 text-xs text-white"></span>
+</div>
+```
+</CodePreview>
+
+---
+
+## Badge Custom Style
+
+Use this example in your project if you want to represent a completed or acknowledged state.  
+
+<CodePreview
+  id="badge-custom-style"
+  link="badge#badge-custom-style"
+  class="mt-4"
+  component={<HTMLBadgeExamples.BadgeCustomStyles/>}
+>
+```html
+<div class="relative inline-flex">
+  <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+    Notifications
+  </button>
+  <span class="absolute top-0.5 right-0.5 grid min-h-[28px] min-w-[28px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-green-600 py-1 px-1 text-xs text-white border border-white">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+      <path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd" />
+    </svg>
+  </span>
+</div>
+```
+</CodePreview>
+
+<br />
+
+The badge indicator is styled as a small, circular badge (<Code>rounded-full</Code>) with a background (<Code>bg-green-600</Code>), a white border (<Code>border border-white</Code>). It also contains an SVG icon, which is a checkmark (<Code>\<svg></Code> element), indicating a positive or completed status.
+
+---
+<span id="more-examples"></span>
+
+## Explore More Tailwind CSS Examples
+Looking for more badge examples? Check out our **<a href="https://www.material-tailwind.com/blocks/tables" target="_blank">Table Examples</a>** from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.
+
+---
+
+<span id="best-practices"></span>
+### Badge Component Best Practice for Developers
+
+• Consider subtle animations or transitions for when the badge appears, disappears, or updates its content.<br/>
+• The badge's content should be immediately understandable to the user.<br/>
+• Use colors that stand out against the background of the component it's attached to, ensuring sufficient contrast for readability.<br/>
+• Keep the badge content concise, typically to a few characters. If the count exceeds a certain number (like 99+), consider using an abbreviation.<br/>
+• Use semantic HTML and ARIA attributes where necessary to convey the badge's purpose and state.<br/>
+• If the badge is clickable, ensure that it has appropriate hover, focus, and active states for better user experience.<br/>
+
+
+
+

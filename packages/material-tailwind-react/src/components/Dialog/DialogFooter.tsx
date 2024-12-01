@@ -27,7 +27,7 @@ export const DialogFooter = React.forwardRef<HTMLDivElement, DialogFooterProps>(
     } = dialogFooter;
 
     // 2. set default props
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const dialogFooterClasses = twMerge(classnames(objectsToString(base)), className);

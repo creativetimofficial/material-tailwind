@@ -5,30 +5,29 @@ navigation:
   [
     "progress-bar",
     "progress-bar-variants",
+    "progress-bar-sizes",
     "progress-bar-colors",
-    "progress-bar-with-label",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/progress-bar",
-      description: "Learn more about props definition and types of progress bar component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/progress-bar",
-      description: "Learn how to customize the theme and styles for progress bar component.",
-    },
+    "progress-bar-label",
+    "progress-bar-sizes-label",
+    "progress-bar-label-outside",
+    "progress-bar-custom-styles",
+    "progress-bar-props",
+    "types-variant",
+    "types-color",
+    "types-label",
+    "progress-bar-theme",
+    "progress-bar-theme-object-type",
+    "progress-bar-theme-customization",
+    "more-examples"
   ]
 github: progress-bar
 prev: popover
-next: radio-button
+next: pagination
 ---
 
+<DocsTitle href="progress-bar">
 # Tailwind CSS Progress Bar - React
+</DocsTitle>
 
 Our Tailwind CSS progressbar can be used to show a user how far along he is in a process. The progress can be determinate or indeterminate. Use the Progress Bar to show an ongoing process that takes a noticeable time to finish.
 
@@ -36,11 +35,11 @@ Below we are presenting our examples of <Code>Progress</Code> component that you
 
 <br />
 
-<CodePreview id="progress-bar" link="progress-bar#progress-bar" component={<Progress value={50} />}>
+<CodePreview link="progress-bar#progress-bar" component={<ProgressExamples.ProgressDefault />}>
 ```jsx
 import { Progress } from "@material-tailwind/react";
 
-export default function Example() {
+export function ProgressDefault() {
   return <Progress value={50} />;
 }
 ```
@@ -48,20 +47,17 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="progress-bar-variants">
 ## Progress Bar Variants
+</DocsTitle>
 
 The <Code>Progress</Code> component comes with 2 different variants that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="progress-bar-variants" link="progress-bar#progress-bar-variants" component={
-  <div className="flex w-full flex-col gap-4">
-    <Progress value={50} variant="filled" />
-    <Progress value={50} variant="gradient" />
-  </div>
-}>
+<CodePreview link="progress-bar#progress-bar-variants" component={<ProgressExamples.ProgressVariants />}>
 ```jsx
 import { Progress } from "@material-tailwind/react";
 
-export default function Colors() {
+export function ProgressVariants() {
   return (
     <div className="flex w-full flex-col gap-4">
       <Progress value={50} variant="filled" />
@@ -74,26 +70,41 @@ export default function Colors() {
 
 ---
 
-## Progress Bar Colors
+<DocsTitle href="progress-bar-sizes">
+## Progress Bar Sizes
+</DocsTitle>
 
-The <Code>Progress</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+The <Code>Progress</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
-<CodePreview id="progress-bar-colors" link="progress-bar#progress-bar-colors" component={
-  <div className="flex w-full flex-col gap-4">
-    <Progress value={50} color="blue" />
-    <Progress value={50} color="red" />
-    <Progress value={50} color="green" />
-    <Progress value={50} color="amber" />
-    <Progress value={50} color="teal" />
-    <Progress value={50} color="indigo" />
-    <Progress value={50} color="purple" />
-    <Progress value={50} color="pink" />
-  </div>
-}>
+<CodePreview component={<ProgressExamples.ProgressSizes />}>
 ```jsx
 import { Progress } from "@material-tailwind/react";
 
-export default function Colors() {
+export function ProgressSizes() {
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <Progress value={25} size="sm" />
+      <Progress value={50} size="md" />
+      <Progress value={75} size="lg" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="progress-bar-colors">
+## Progress Bar Colors
+</DocsTitle>
+
+The <Code>Progress</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+
+<CodePreview link="progress-bar#progress-bar-colors" component={<ProgressExamples.ProgressColors />}>
+```jsx
+import { Progress } from "@material-tailwind/react";
+
+export function ProgressColors() {
   return (
     <div className="flex w-full flex-col gap-4">
       <Progress value={50} color="blue" />
@@ -112,19 +123,543 @@ export default function Colors() {
 
 ---
 
-## Progress Bar with Label
+<DocsTitle href="progress-bar-label">
+## Progress Bar Label
+</DocsTitle>
 
 You can add custom label inside the progress bar using the <Code>label</Code> prop.
 
-<CodePreview id="progress-bar-with-label" link="progress-bar#progress-bar-with-label" component={<Progress value={50} label="Completed" />}>
+<CodePreview link="progress-bar#progress-bar-label" component={<ProgressExamples.ProgressLabel />}>
 ```jsx
 import { Progress } from "@material-tailwind/react";
 
-export default function Example() {
+export function ProgressLabel() {
   return <Progress value={50} label="Completed" />;
 }
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="progress-bar-sizes-label">
+## Progress Bar Sizes Label
+</DocsTitle>
+
+The <Code>Progress</Code> component sizes are different when you use the <Code>label</Code> prop, this helps to make the label text more readable.
+
+<CodePreview id="progress-bar-sizes-label" component={<ProgressExamples.ProgressSizesLabel />}>
+```jsx
+import { Progress } from "@material-tailwind/react";
+
+export function ProgressSizesLabel() {
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <Progress value={25} size="sm" label="Small" />
+      <Progress value={50} size="md" label="Medium" />
+      <Progress value={75} size="lg" label="Large" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="progress-bar-label-outside">
+## Progress Bar Label Outside
+</DocsTitle>
+
+Use the example below to add the label outside the progress bar.
+
+<CodePreview id="progress-bar-label-outside" component={<ProgressExamples.ProgressLabelOutside />}>
+```jsx
+import { Progress, Typography } from "@material-tailwind/react";
+
+export function ProgressLabelOutside() {
+  return (
+    <div className="w-full">
+      <div className="mb-2 flex items-center justify-between gap-4">
+        <Typography color="blue-gray" variant="h6">
+          Completed
+        </Typography>
+        <Typography color="blue-gray" variant="h6">
+          50%
+        </Typography>
+      </div>
+      <Progress value={50} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="progress-bar-custom-styles">
+## Progress Bar Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Progress</Code> component.
+
+<CodePreview id="progress-bar-custom-styles" component={<ProgressExamples.ProgressCustomStyles />}>
+```jsx
+import { Progress } from "@material-tailwind/react";
+
+export function ProgressCustomStyles() {
+  return (
+    <Progress
+      value={50}
+      size="lg"
+      className="border border-gray-900/10 bg-gray-900/5 p-1"
+    />
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="progress-bar-props">
+## Progress Bar Props
+</DocsTitle>
+
+The following props are available for progress bar component. These are the custom
+props that we've added for the progress bar component and you can use all
+the other native props as well.
+
+| Attribute   | Type                      | Description                                      | Default                |
+| ----------- | ------------------------- | ------------------------------------------------ | ---------------------- |
+| `variant`   | [Variant](#types-variant) | Change progress bar variant                      | <Code>filled</Code>    |
+| `color`     | [Color](#types-color)     | Change progress bar color                        | <Code>gray</Code>      |
+| `size`     | [Size](#types-size)     | Change progress bar size                        | <Code>md</Code>      |
+| `label`     | [label](#types-label)     | Add label for progress bar                       | <Code>undefined</Code> |
+| `value`     | <Code>number</Code>       | Add the completed percentage for progress bar    | 0                      |
+| `barProps`  | <Code>object</Code>       | Add custom props for progress bar percentage bar | <Code>undefined</Code> |
+| `className` | <Code>string</Code>       | Add custom className for progress bar            | `''`                   |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { ProgressProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-variant">
+## Types - Variant
+</DocsTitle>
+
+```ts
+type variant = "filled" | "gradient";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="types-size">
+## Types - Size
+</DocsTitle>
+
+```ts
+type size = "sm" | "md" | "lg";
+```
+
+---
+
+<DocsTitle href="types-label">
+## Types - Label
+</DocsTitle>
+
+```ts
+type label = string | boolean;
+```
+
+---
+
+<DocsTitle href="progress-bar-theme">
+## Progress Bar Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for progress bar component, the theme object for progress bar component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of progress bar component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for progress bar component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of progress bar component.<br />
+
+You can customize the theme and styles of progress bar component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="progress-bar-theme-object-type">
+## Progress Bar Theme Object Type
+</DocsTitle>
+
+```ts
+interface ProgressStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    size: string;
+    value: number;
+    label: string | boolean;
+    barProps: object;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    colors: string[];
+    sizes: string[];
+  };
+  styles: {
+    base: {
+      container: {
+        initial: object;
+        withLabel: object;
+      };
+      bar: object;
+    };
+    sizes: {
+      sm: {
+        container: {
+          initial: object;
+          withLabel: object;
+        };
+        bar: object;
+      };
+      md: {
+        container: {
+          initial: object;
+          withLabel: object;
+        };
+        bar: object;
+      };
+      lg: {
+        container: {
+          initial: object;
+          withLabel: object;
+        };
+        bar: object;
+      };
+    };
+    variants: {
+      filled: object;
+      gradient: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { ProgressStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="progress-bar-theme-customization">
+## Progress Bar Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  progress: {
+    defaultProps: {
+      variant: "filled",
+      color: "blue",
+      size: "md",
+      value: 0,
+      label: false,
+      className: "",
+      barProps: {},
+    },
+    valid: {
+      variants: ["filled", "gradient"],
+      colors: [
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+      sizes: ["sm", "md", "lg"],
+    },
+    styles: {
+      base: {
+        container: {
+          initial: {
+            display: "flex",
+            justifyContent: "flex-start",
+            bg: "bg-blue-gray-50",
+            overflow: "overflow-hidden",
+            width: "w-full",
+            fontFamily: "font-sans",
+            borderRadius: "rounded-full",
+            fontSize: "text-xs",
+            fontWeight: "font-medium",
+          },
+          withLabel: {},
+        },
+        bar: {
+          display: "flex",
+          justifyContent: "justify-center",
+          alignItems: "items-center",
+          height: "h-full",
+          overflow: "overflow-hidden",
+          wordBreak: "break-all",
+          borderRadius: "rounded-full",
+        },
+      },
+      sizes: {
+        sm: {
+          container: {
+            initial: {
+              height: "h-1.5",
+            },
+            withLabel: {
+              height: "h-3.5",
+            },
+          },
+          bar: {},
+        },
+        md: {
+          container: {
+            initial: {
+              height: "h-2.5",
+            },
+            withLabel: {
+              height: "h-4",
+            },
+          },
+          bar: {},
+        },
+        lg: {
+          container: {
+            initial: {
+              height: "h-3.5",
+            },
+            withLabel: {
+              height: "h-5",
+            },
+          },
+          bar: {},
+        },
+      },
+      variants: {
+        filled: {
+          "blue-gray": {
+            backgroud: "bg-blue-gray-500",
+            color: "text-white",
+          },
+          gray: {
+            backgroud: "bg-gray-500",
+            color: "text-white",
+          },
+          brown: {
+            backgroud: "bg-brown-500",
+            color: "text-white",
+          },
+          "deep-orange": {
+            backgroud: "bg-deep-orange-500",
+            color: "text-white",
+          },
+          orange: {
+            backgroud: "bg-orange-500",
+            color: "text-white",
+          },
+          amber: {
+            backgroud: "bg-amber-500",
+            color: "text-black",
+          },
+          yellow: {
+            backgroud: "bg-yellow-500",
+            color: "text-black",
+          },
+          lime: {
+            backgroud: "bg-lime-500",
+            color: "text-black",
+          },
+          "light-green": {
+            backgroud: "bg-light-green-500",
+            color: "text-white",
+          },
+          green: {
+            backgroud: "bg-green-500",
+            color: "text-white",
+          },
+          teal: {
+            backgroud: "bg-teal-500",
+            color: "text-white",
+          },
+          cyan: {
+            backgroud: "bg-cyan-500",
+            color: "text-white",
+          },
+          "light-blue": {
+            backgroud: "bg-light-blue-500",
+            color: "text-white",
+          },
+          blue: {
+            backgroud: "bg-blue-500",
+            color: "text-white",
+          },
+          indigo: {
+            backgroud: "bg-indigo-500",
+            color: "text-white",
+          },
+          "deep-purple": {
+            backgroud: "bg-deep-purple-500",
+            color: "text-white",
+          },
+          purple: {
+            backgroud: "bg-purple-500",
+            color: "text-white",
+          },
+          pink: {
+            backgroud: "bg-pink-500",
+            color: "text-white",
+          },
+          red: {
+            backgroud: "bg-red-500",
+            color: "text-white",
+          },
+        },
+        gradient: 
+          "blue-gray": {
+            backgroud: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400",
+            color: "text-white",
+          },
+          gray: {
+            backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
+            color: "text-white",
+          },
+          brown: {
+            backgroud: "bg-gradient-to-tr from-brown-600 to-brown-400",
+            color: "text-white",
+          },
+          "deep-orange": {
+            backgroud: "bg-gradient-to-tr from-deep-orange-600 to-deep-orange-400",
+            color: "text-white",
+          },
+          orange: {
+            backgroud: "bg-gradient-to-tr from-orange-600 to-orange-400",
+            color: "text-white",
+          },
+          amber: {
+            backgroud: "bg-gradient-to-tr from-amber-600 to-amber-400",
+            color: "text-black",
+          },
+          yellow: {
+            backgroud: "bg-gradient-to-tr from-yellow-600 to-yellow-400",
+            color: "text-black",
+          },
+          lime: {
+            backgroud: "bg-gradient-to-tr from-lime-600 to-lime-400",
+            color: "text-black",
+          },
+          "light-green": {
+            backgroud: "bg-gradient-to-tr from-light-green-600 to-light-green-400",
+            color: "text-white",
+          },
+          green: {
+            backgroud: "bg-gradient-to-tr from-green-600 to-green-400",
+            color: "text-white",
+          },
+          teal: {
+            backgroud: "bg-gradient-to-tr from-teal-600 to-teal-400",
+            color: "text-white",
+          },
+          cyan: {
+            backgroud: "bg-gradient-to-tr from-cyan-600 to-cyan-400",
+            color: "text-white",
+          },
+          "light-blue": {
+            backgroud: "bg-gradient-to-tr from-light-blue-600 to-light-blue-400",
+            color: "text-white",
+          },
+          blue: {
+            backgroud: "bg-gradient-to-tr from-blue-600 to-blue-400",
+            color: "text-white",
+          },
+          indigo: {
+            backgroud: "bg-gradient-to-tr from-indigo-600 to-indigo-400",
+            color: "text-white",
+          },
+          "deep-purple": {
+            backgroud: "bg-gradient-to-tr from-deep-purple-600 to-deep-purple-400",
+            color: "text-white",
+          },
+          purple: {
+            backgroud: "bg-gradient-to-tr from-purple-600 to-purple-400",
+            color: "text-white",
+          },
+          pink: {
+            backgroud: "bg-gradient-to-tr from-pink-600 to-pink-400",
+            color: "text-white",
+          },
+          red: {
+            backgroud: "bg-gradient-to-tr from-red-600 to-red-400",
+            color: "text-white",
+          },
+        },
+      },
+    },
+  },
+};
+```
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more progress bar examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

@@ -1,87 +1,87 @@
 const navbarFilled: object = {
   transparent: {
-    backgroud: "bg-transparent",
+    background: "bg-transparent",
     color: "text-white",
     boxShadow: "shadow-none",
   },
   white: {
-    backgroud: "bg-white",
+    background: "bg-white",
     color: "text-white",
   },
   "blue-gray": {
-    backgroud: "bg-blue-gray-500",
+    background: "bg-blue-gray-500",
     color: "text-white",
   },
   gray: {
-    backgroud: "bg-gray-500",
+    background: "bg-gray-500",
     color: "text-white",
   },
   brown: {
-    backgroud: "bg-brown-500",
+    background: "bg-brown-500",
     color: "text-white",
   },
   "deep-orange": {
-    backgroud: "bg-deep-orange-500",
+    background: "bg-deep-orange-500",
     color: "text-white",
   },
   orange: {
-    backgroud: "bg-orange-500",
+    background: "bg-orange-500",
     color: "text-white",
   },
   amber: {
-    backgroud: "bg-amber-500",
+    background: "bg-amber-500",
     color: "text-black",
   },
   yellow: {
-    backgroud: "bg-yellow-500",
+    background: "bg-yellow-500",
     color: "text-black",
   },
   lime: {
-    backgroud: "bg-lime-500",
+    background: "bg-lime-500",
     color: "text-black",
   },
   "light-green": {
-    backgroud: "bg-light-green-500",
+    background: "bg-light-green-500",
     color: "text-white",
   },
   green: {
-    backgroud: "bg-green-500",
+    background: "bg-green-500",
     color: "text-white",
   },
   teal: {
-    backgroud: "bg-teal-500",
+    background: "bg-teal-500",
     color: "text-white",
   },
   cyan: {
-    backgroud: "bg-cyan-500",
+    background: "bg-cyan-500",
     color: "text-white",
   },
   "light-blue": {
-    backgroud: "bg-light-blue-500",
+    background: "bg-light-blue-500",
     color: "text-white",
   },
   blue: {
-    backgroud: "bg-blue-500",
+    background: "bg-blue-500",
     color: "text-white",
   },
   indigo: {
-    backgroud: "bg-indigo-500",
+    background: "bg-indigo-500",
     color: "text-white",
   },
   "deep-purple": {
-    backgroud: "bg-deep-purple-500",
+    background: "bg-deep-purple-500",
     color: "text-white",
   },
   purple: {
-    backgroud: "bg-purple-500",
+    background: "bg-purple-500",
     color: "text-white",
   },
   pink: {
-    backgroud: "bg-pink-500",
+    background: "bg-pink-500",
     color: "text-white",
   },
   red: {
-    backgroud: "bg-red-500",
+    background: "bg-red-500",
     color: "text-white",
   },
 };

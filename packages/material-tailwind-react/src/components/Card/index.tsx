@@ -44,7 +44,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     variant = variant ?? defaultProps.variant;
     color = color ?? defaultProps.color;
     shadow = shadow ?? defaultProps.shadow;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const cardRoot = objectsToString(base.initial);

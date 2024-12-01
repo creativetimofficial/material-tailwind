@@ -16,7 +16,11 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@material-tailwind/react": ["./packages/material-tailwind-react/src"]
+      "@utils": ["./utils/index.ts"],
+      "@widgets": ["./widgets/index.ts"],
+      "@material-tailwind/react": [
+        "./packages/material-tailwind-react/src/index.ts"
+      ]
     }
   },
   "include": [
@@ -24,7 +28,6 @@
     "**/*.ts",
     "**/*.tsx",
     "public/material-tailwind-html.js",
-    "public/material-ripple-effects.js"
-  ],
+    "public/material-ripple-effects.js"],
   "exclude": ["node_modules"]
 }

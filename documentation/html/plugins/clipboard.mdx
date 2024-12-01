@@ -1,0 +1,126 @@
+---
+title: Tailwind CSS Clipboard for HTML - Material Tailwind
+description: Customise your web projects with our easy-to-use clipboard example for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "clipboard",
+    "clipboard-copy-input",
+    "clipboard-copy-button",
+  ]
+github: plugins/clipboard
+prev: plugins/charts
+next: plugins/date-picker
+---
+
+<DocsTitle href="clipboard">
+# Tailwind CSS Clipboard - HTML
+</DocsTitle>
+
+Use our Tailwind CSS Clipboard example to  to facilitate the copying and pasting of data within an application.
+
+See below our beautiful clipboard example that you can use in your Tailwind CSS and HTML project. The example below is using the `clipboard`  libraries, make sure to install them before using the example.
+
+```bash
+npm install clipboard
+```
+
+<br />
+<br />
+
+<CodePreview component={<Plugins.ClipboardDefault />}>
+```html
+ <div>
+  <div class="flex items-center gap-x-4">
+    <p id="materialTailwind" class="block font-sans text-xl antialiased font-normal leading-relaxed text-inherit">
+      npm i @material-tailwind/html
+    </p>
+    <button data-clipboard-target="#materialTailwind"
+      class="btn relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg bg-gray-900 text-center align-middle font-sans text-xs font-medium uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button">
+      <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"><svg
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true" class="w-5 h-5 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75">
+          </path>
+        </svg></span>
+    </button>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+<script>
+  let clipboard = new ClipboardJS('.btn');
+</script>
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="clipboard-copy-input">
+## Copy from Input  
+</DocsTitle>
+
+<CodePreview component={<Plugins.ClipboardCopyInput />}>
+```html
+<div>
+  <div class="flex items-center gap-4">
+    <div class="w-72">
+      <div class="relative h-10 w-full min-w-[100px]">
+        <input type="email" id="materialTailwind" placeholder="Enter to copy"
+          class="peer h-full w-full rounded-[7px] !border !border-gray-300 border-t-transparent bg-transparent bg-white px-3 py-2.5 font-sans text-sm font-normal text-gray-900 shadow-lg shadow-gray-900/5 outline outline-0 ring-4 ring-transparent transition-all placeholder:text-gray-500 placeholder:opacity-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:!border-gray-900 focus:!border-t-gray-900 focus:border-t-transparent focus:outline-0 focus:ring-gray-900/10 focus:placeholder:opacity-100 disabled:cursor-not-allowed disabled:border-0 disabled:bg-blue-gray-50"
+          value="npm i @material-tailwind/html" />
+        <label
+          class="before:content[' '] after:content[' '] pointer-events-none absolute -top-1.5 left-0  hidden h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:border-blue-gray-200 before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-gray-900 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"></label>
+      </div>
+    </div>
+    <button data-clipboard-target="#materialTailwind"
+      class="btn flex select-none items-center gap-2 rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        aria-hidden="true" class="w-4 h-4 text-white">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75">
+        </path>
+      </svg>
+      Copy
+    </button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+<script>
+  let clipboard = new ClipboardJS('.btn');
+</script>
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="clipboard-copy-button">
+## Copy Button  
+</DocsTitle>
+
+<CodePreview component={<Plugins.ClipboardCopyButton />}>
+```html
+<div>
+  <button data-clipboard-text=" npm i @material-tailwind/html"
+    class="btn align-middle select-none font-sans font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none flex items-center gap-x-3 px-4 py-2.5 lowercase"
+    type="button">
+    <p
+      class="block pr-3 font-sans text-sm antialiased font-normal leading-normal border-r text-inherit border-gray-400/50">
+      npm i @material-tailwind/html</p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+      stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-4 h-4 text-white">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75">
+      </path>
+    </svg>
+  </button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+<script>
+  let clipboard = new ClipboardJS('.btn');
+</script>
+```
+</CodePreview>
+

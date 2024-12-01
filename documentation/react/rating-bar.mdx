@@ -1,0 +1,210 @@
+---
+title: Tailwind CSS Rating Bar for React - Material Tailwind
+description: Customise your web projects with our complex rating bar component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "rating",
+    "rating-colors",
+    "readonly-rating",
+    "custom-rating-icon",
+    "rating-with-text",
+    "rating-with-comment",
+    "more-examples",
+  ]
+github: rating-bar
+prev: radtio-button
+next: select
+---
+
+<DocsTitle href="rating">
+# Tailwind CSS Rating Bar - React
+</DocsTitle>
+
+Use our Tailwind CSS <Code>Rating</Code> component to show reviews and ratings in your web projects. The <Code>Rating</Code> can be used as a visual identifier for reviews and rating on your website.
+
+See below our beautiful <Code>Rating</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview component={<RatingExamples.DefaultRating />}>
+```jsx
+import { Rating } from "@material-tailwind/react";
+
+export function DefaultRating() {
+  return <Rating value={4} />;
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="rating-colors">
+## Rating Colors
+</DocsTitle>
+
+The <Code>Rating</Code> component comes with 20 different colors that you can change it using the <Code>unratedColor</Code> prop for the unrated state of <Code>Rating</Code> component and <Code>ratedColor</Code> prop for the rated state of <Code>Rating</Code> component.
+
+<CodePreview component={<RatingExamples.RatingColors />}>
+```jsx
+import { Rating } from "@material-tailwind/react";
+
+export function RatingColors() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Rating unratedColor="amber" ratedColor="amber" />
+      <Rating unratedColor="blue" ratedColor="blue" />
+      <Rating unratedColor="green" ratedColor="green" />
+      <Rating unratedColor="red" ratedColor="red" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="readonly-rating">
+## Readonly Rating
+</DocsTitle>
+
+You can make a <Code>Rating</Code> component readonly by using the <Code>readonly</Code> prop. This will prevent the user from changing the rating.
+
+<CodePreview component={<RatingExamples.ReadonlyRating />}>
+```jsx
+import { Rating } from "@material-tailwind/react";
+
+export function ReadonlyRating() {
+  return <Rating value={4} readonly />;
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="custom-rating-icon">
+## Custom Rating Icon
+</DocsTitle>
+
+You can customize the <Code>Rating</Code> component icon by using the <Code>unratedIcon</Code> and <Code>ratedIcon</Code> props.
+
+<CodePreview component={<RatingExamples.CustomRatingIcon />}>
+```jsx
+import { Rating } from "@material-tailwind/react";
+
+function RatedIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-6 w-6"
+    >
+      <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+    </svg>
+  );
+}
+
+function UnratedIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="h-6 w-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+      />
+    </svg>
+  );
+}
+
+export function CustomRatingIcon() {
+  return (
+    <Rating
+      ratedColor="red"
+      ratedIcon={<RatedIcon />}
+      unratedIcon={<UnratedIcon />}
+    />
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="rating-with-text">
+## Rating with Text
+</DocsTitle>
+
+Use the example below for a <Code>Rating</Code> component with helper text.
+
+<CodePreview component={<RatingExamples.RatingWithText />}>
+```jsx
+import React from "react";
+import { Rating, Typography } from "@material-tailwind/react";
+
+export function RatingWithText() {
+  const [rated, setRated] = React.useState(4);
+
+  return (
+    <div className="flex items-center gap-2 font-bold text-blue-gray-500">
+      {rated}.7
+      <Rating value={4} onChange={(value) => setRated(value)} />
+      <Typography color="blue-gray" className="font-medium text-blue-gray-500">
+        Based on 134 Reviews
+      </Typography>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="rating-with-comment">
+## Rating with Comment
+</DocsTitle>
+
+Use the example below for a <Code>Rating</Code> component with comment.
+
+<CodePreview component={<RatingExamples.RatingWithComment />}>
+```jsx
+import { Typography, Avatar, Rating } from "@material-tailwind/react";
+
+export function RatingWithComment() {
+  return (
+    <div className="px-8 text-center">
+      <Typography variant="h2" color="blue-gray" className="mb-6 font-medium">
+        &quot;This is an excellent product, the documentation is excellent and
+        helped me get things done more efficiently.&quot;
+      </Typography>
+      <Avatar
+        src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image"
+        size="lg"
+      />
+      <Typography variant="h6" className="mt-4">
+        Tania Andrew
+      </Typography>
+      <Typography color="gray" className="mb-4 font-normal">
+        Lead Frontend Developer
+      </Typography>
+      <Rating value={5} readonly />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Looking for more rating bar examples? Check out our **<a href="https://www.material-tailwind.com/blocks/overview-sections" target="_blank">Overview Sections</a>** from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.
+

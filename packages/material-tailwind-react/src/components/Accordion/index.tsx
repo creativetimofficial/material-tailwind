@@ -52,8 +52,8 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
     // 2. set default props
     icon = icon ?? defaultProps.icon;
     animate = animate ?? defaultProps.animate;
-    className = className ?? defaultProps.className;
     disabled = disabled ?? defaultProps.disabled;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const accordionClasses = twMerge(

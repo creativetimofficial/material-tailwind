@@ -5,7 +5,7 @@ const inputStandardLabel: object = {
     fontSize: "text-[11px] peer-focus:text-[11px]",
   },
   after: {
-    content: "after:content[' ']",
+    content: "after:content['']",
     display: "after:block",
     width: "after:w-full",
     position: "after:absolute",

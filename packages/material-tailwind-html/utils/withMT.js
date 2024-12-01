@@ -16,6 +16,7 @@ const materialTailwindConfig = {
     boxShadow: shadows,
     screens: breakpoints,
   },
+  safelist: ["hidden"],
   plugins: [],
 };
 

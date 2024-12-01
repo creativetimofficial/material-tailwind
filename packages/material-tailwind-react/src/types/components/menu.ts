@@ -28,7 +28,9 @@ export type open = boolean;
 export type handler = React.Dispatch<React.SetStateAction<any>>;
 export type placement = Placement;
 export type offset = offsetType;
-export type dismiss = dismissType;
+export interface dismiss extends dismissType {
+  itemPress?: boolean;
+}
 export type animate = animation;
 export type lockScroll = boolean;
 export type disabled = boolean;
@@ -52,6 +54,7 @@ export type contextValue = {
   context: FloatingContext<ReferenceType>;
   tree: FloatingTreeType<ReferenceType>;
   allowHover: boolean;
+  internalAllowHover: boolean;
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
   nested: boolean;
@@ -62,7 +65,23 @@ export const propTypesOpen: any = PropTypes.bool;
 export const propTypesHandler: any = PropTypes.func;
 export const propTypesPlacement: any = propTypesPlacements;
 export const propTypesOffset: any = propTypesOffsetType;
-export const propTypesDismiss: any = propTypesDismissType;
+export const propTypesDismiss: any = PropTypes.shape({
+  itemPress: PropTypes.bool,
+  enabled: PropTypes.bool,
+  escapeKey: PropTypes.bool,
+  referencePress: PropTypes.bool,
+  referencePressEvent: PropTypes.oneOf(["pointerdown", "mousedown", "click"]),
+  outsidePress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  outsidePressEvent: PropTypes.oneOf(["pointerdown", "mousedown", "click"]),
+  ancestorScroll: PropTypes.bool,
+  bubbles: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.shape({
+      escapeKey: PropTypes.bool,
+      outsidePress: PropTypes.bool,
+    }),
+  ]),
+});
 export const propTypesAnimate: any = propTypesAnimation;
 export const propTypesLockScroll: any = PropTypes.bool;
 export const propTypesDisabled: any = PropTypes.bool;

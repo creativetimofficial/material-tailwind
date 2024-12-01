@@ -1,0 +1,64 @@
+---
+title: Tailwind CSS Algolia Search - Material Tailwind
+description: Customise your web projects with our easy-to-use algolia search example for Tailwind CSS using Material Design guidelines.
+navigation:
+  [
+    "aloglia-search",
+  ]
+github: plugins/aloglia-search
+prev: plugins/date-picker
+next: plugins/charts
+---
+
+<DocsTitle href="aloglia-search">
+# Tailwind CSS Algolia Search
+</DocsTitle>
+
+Use our Tailwind CSS Algolia Search example to add global search in your web projects.
+
+See below our beautiful Aloglia Search example that you can use in your Tailwind CSS project. The example below is using the `@docsearch/js` library, make sure to add it as CDN to your project.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+```
+
+<br />
+<br />
+
+<CodePreview component={<Plugins.AlgoliaSearch />}>
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+
+<div class="group relative">
+  <div class="relative h-10 w-full min-w-[200px]">
+    <input
+      type="email"
+      placeholder="Search"
+      readonly=""
+      class="peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 focus:border-2 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 group-hover:border-2 group-hover:border-gray-900"
+    />
+  </div>
+  <div class="absolute top-[calc(50%-1px)] right-2.5 -translate-y-2/4">
+    <kbd class="rounded border border-blue-gray-100 bg-white px-1 pt-px pb-0 text-xs font-medium text-gray-900 shadow shadow-black/5">
+      <span class="mr-0.5 inline-block translate-y-[1.5px] text-base">
+        ⌘
+      </span>
+      K
+    </kbd>
+  </div>
+  <div id="docsearch" class="absolute inset-0 w-full opacity-0"></div>
+</div>
+
+<style>
+  docsearch({
+    container: '#docsearch',
+    appId: 'YOUR_APP_ID',
+    indexName: 'YOUR_INDEX_NAME',
+    apiKey: 'YOUR_SEARCH_API_KEY',
+  });
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+```
+</CodePreview>

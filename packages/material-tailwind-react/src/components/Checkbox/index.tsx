@@ -18,6 +18,7 @@ import type {
   icon,
   ripple,
   className,
+  disabled,
   objectType,
 } from "../../types/components/checkbox";
 import {
@@ -26,6 +27,7 @@ import {
   propTypesIcon,
   propTypesRipple,
   propTypesClassName,
+  propTypesDisabled,
   propTypesObject,
 } from "../../types/components/checkbox";
 
@@ -35,6 +37,7 @@ export interface CheckboxProps extends React.ComponentProps<"input"> {
   icon?: icon;
   ripple?: ripple;
   className?: className;
+  disabled?: disabled;
   containerProps?: objectType;
   labelProps?: objectType;
   iconProps?: objectType;
@@ -49,6 +52,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
       icon,
       ripple,
       className,
+      disabled,
       containerProps,
       labelProps,
       iconProps,
@@ -61,22 +65,26 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     const { checkbox } = useTheme();
     const { defaultProps, valid, styles } = checkbox;
     const { base, colors } = styles;
+    const checkboxId = React.useId();
 
     // 2. set default props
     color = color ?? defaultProps.color;
     label = label ?? defaultProps.label;
     icon = icon ?? defaultProps.icon;
     ripple = ripple ?? defaultProps.ripple;
-    className = className ?? defaultProps.className;
+    disabled = disabled ?? defaultProps.disabled;
     containerProps = containerProps ?? defaultProps.containerProps;
     labelProps = labelProps ?? defaultProps.labelProps;
     iconProps = iconProps ?? defaultProps.iconProps;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
 
     // 4. set styles
-    const rootClasses = classnames(objectsToString(base.root));
+    const rootClasses = classnames(objectsToString(base.root), {
+      [objectsToString(base.disabled)]: disabled,
+    });
     const containerClasses = twMerge(
       classnames(objectsToString(base.container)),
       containerProps?.className,
@@ -84,7 +92,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     const inputClasses = twMerge(
       classnames(
         objectsToString(base.input),
-        objectsToString(colors[findMatch(valid.colors, color, "blue")]),
+        objectsToString(colors[findMatch(valid.colors, color, "gray")]),
       ),
       className,
     );
@@ -99,7 +107,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
         <label
           {...containerProps}
           className={containerClasses}
-          htmlFor={rest.id || "checkbox"}
+          htmlFor={rest.id || checkboxId}
           onMouseDown={(e) => {
             const onMouseDown = containerProps?.onMouseDown;
 
@@ -114,8 +122,9 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
             {...rest}
             ref={inputRef}
             type="checkbox"
+            disabled={disabled}
             className={inputClasses}
-            id={rest.id || "checkbox"}
+            id={rest.id || checkboxId}
           />
           <span className={iconContainerClasses}>
             {icon || (
@@ -137,7 +146,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           </span>
         </label>
         {label && (
-          <label {...labelProps} className={labelClasses} htmlFor={rest.id || "checkbox"}>
+          <label {...labelProps} className={labelClasses} htmlFor={rest.id || checkboxId}>
             {label}
           </label>
         )}
@@ -152,6 +161,7 @@ Checkbox.propTypes = {
   icon: propTypesIcon,
   ripple: propTypesRipple,
   className: propTypesClassName,
+  disabled: propTypesDisabled,
   containerProps: propTypesObject,
   labelProps: propTypesObject,
 };

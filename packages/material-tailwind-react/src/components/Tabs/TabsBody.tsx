@@ -38,9 +38,8 @@ export const TabsBody = React.forwardRef<HTMLDivElement, TabsBodyProps>(
     const { dispatch } = useTabs();
 
     // 2. set default props
-    className = className ?? defaultProps.className;
     animate = animate ?? defaultProps.animate;
-
+    className = twMerge(defaultProps.className || "", className);
     // 3. set styles
     const tabsBodyClasses = twMerge(classnames(objectsToString(base)), className);
 

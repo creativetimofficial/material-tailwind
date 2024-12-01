@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import type { AnimatePresenceProps } from "framer-motion";
+import type { UseDismissProps } from "@floating-ui/react";
 
 // typescript types
 export type colors =
@@ -29,14 +30,7 @@ export type animation = {
   unmount?: object;
 };
 
-export type dismissType = {
-  enabled?: boolean;
-  escapeKey?: boolean;
-  referencePointerDown?: boolean;
-  outsidePointerDown?: boolean;
-  ancestorScroll?: boolean;
-  bubbles?: boolean;
-};
+export interface dismissType extends UseDismissProps {}
 
 export type offsetType =
   | number
@@ -81,10 +75,18 @@ export const propTypesAnimation = PropTypes.shape({
 export const propTypesDismissType = PropTypes.shape({
   enabled: PropTypes.bool,
   escapeKey: PropTypes.bool,
-  referencePointerDown: PropTypes.bool,
-  outsidePointerDown: PropTypes.bool,
+  referencePress: PropTypes.bool,
+  referencePressEvent: PropTypes.oneOf(["pointerdown", "mousedown", "click"]),
+  outsidePress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  outsidePressEvent: PropTypes.oneOf(["pointerdown", "mousedown", "click"]),
   ancestorScroll: PropTypes.bool,
-  bubbles: PropTypes.bool,
+  bubbles: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.shape({
+      escapeKey: PropTypes.bool,
+      outsidePress: PropTypes.bool,
+    }),
+  ]),
 });
 
 export const propTypesOffsetType = PropTypes.oneOfType([

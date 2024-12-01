@@ -15,6 +15,7 @@ export type label = ReactNode;
 export type icon = ReactNode;
 export type ripple = boolean;
 export type className = string;
+export type disabled = boolean;
 export type objectType = {
   [key: string]: any;
 };
@@ -24,4 +25,5 @@ export const propTypesLabel: any = PropTypes.node;
 export const propTypesIcon: any = PropTypes.node;
 export const propTypesRipple: any = PropTypes.bool;
 export const propTypesClassName: any = PropTypes.string;
+export const propTypesDisabled: any = PropTypes.bool;
 export const propTypesObject: any = PropTypes.instanceOf(Object);

@@ -1,35 +1,41 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === "production";
 const nextConfig = {
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+
+    return config;
+  },
   reactStrictMode: false,
   productionBrowserSourceMaps: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    domains: [
+      "images.unsplash.com",
+      "docs.material-tailwind.com",
+    ],
+  },
+  assetPrefix: isProd ? `${process.env.NEXT_PUBLIC_ROOT_DOCS_URL}` : undefined,
   async redirects() {
     return [
       {
-        source: "/documentation/quick-start",
+        source: "/",
         destination: "/docs/react/installation",
         permanent: true,
       },
-      {
-        source: "/components",
-        destination: "/docs/react/button",
-        permanent: true,
-      },
     ];
   },
-  async rewrites() {
-    return [
-      {
-        source: "/blocks",
-        destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
-      },
-      {
-        source: "/blocks/:slug*",
-        destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/:slug*",
-      },
-    ];
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/",
+  //       destination: `${process.env.NEXT_PUBLIC_ROOT_URL}`,
+  //     },
+  //   ];
+  // },
 };
 
 module.exports = nextConfig;

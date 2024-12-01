@@ -1,0 +1,1874 @@
+---
+title: Tailwind CSS Table for React - Material Tailwind
+description: Customise your web projects with our easy-to-use table examples for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "table",
+    "simple-table",
+    "table-with-striped-row",
+    "table-with-striped-columns",
+    "transactions-table",
+    "members-table",
+    "sortable-table",
+    "table-without-border",
+    "table-with-hover-state",
+    "table-with-title-and-description",
+    "table-with-search",
+    "table-with-footer",
+    "more-examples",
+  ]
+github: table
+prev: sidebar
+next: plugins/date-picker
+---
+
+<DocsTitle href="table">
+# Tailwind CSS Table - React
+</DocsTitle>
+
+Use our Tailwind CSS table example to display sets of data in your web projects.
+
+See below our beautiful table examples that you can use in your Tailwind CSS and React project. The examples also comes in different styles so you can adapt them easily to your needs.
+
+<br />
+## Table Examples
+
+Examples on this page are using <Code><a href="https://heroicons.com/" target="_blank">@heroicons/react</a></Code> make sure you have installed it.
+
+```bash
+npm i @heroicons/react
+```
+
+<br />
+<br />
+
+<DocsTitle href="simple-table">
+## Simple Table
+</DocsTitle>
+
+Use this simple table with a clean design, light header background, and subtle row dividers to ensure clarity and ease of use.
+
+<CodePreview id="table" component={<TableExamples.DefaultTable />}>
+```jsx
+import { Card, Typography } from "@material-tailwind/react";
+
+const TABLE_HEAD = ["Name", "Job", "Employed", ""];
+
+const TABLE_ROWS = [
+  {
+    name: "John Michael",
+    job: "Manager",
+    date: "23/04/18",
+  },
+  {
+    name: "Alexa Liras",
+    job: "Developer",
+    date: "23/04/18",
+  },
+  {
+    name: "Laurent Perrier",
+    job: "Executive",
+    date: "19/09/17",
+  },
+  {
+    name: "Michael Levi",
+    job: "Developer",
+    date: "24/12/08",
+  },
+  {
+    name: "Richard Gran",
+    job: "Manager",
+    date: "04/10/21",
+  },
+];
+
+export function DefaultTable() {
+  return (
+    <Card className="h-full w-full overflow-scroll">
+      <table className="w-full min-w-max table-auto text-left">
+        <thead>
+          <tr>
+            {TABLE_HEAD.map((head) => (
+              <th
+                key={head}
+                className="border-b border-blue-gray-100 bg-blue-gray-50 p-4"
+              >
+                <Typography
+                  variant="small"
+                  color="blue-gray"
+                  className="font-normal leading-none opacity-70"
+                >
+                  {head}
+                </Typography>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {TABLE_ROWS.map(({ name, job, date }, index) => {
+            const isLast = index === TABLE_ROWS.length - 1;
+            const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
+
+            return (
+              <tr key={name}>
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
+                    {name}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
+                    {job}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
+                    {date}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography
+                    as="a"
+                    href="#"
+                    variant="small"
+                    color="blue-gray"
+                    className="font-medium"
+                  >
+                    Edit
+                  </Typography>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="table-with-striped-rows">
+## Table With Striped Rows
+</DocsTitle>
+
+Use this table component that features stripped rows for improved readability, displaying a list of employees with their name, job title, employment start date, and an "Edit" option for each entry.
+
+<CodePreview component={<TableExamples.TableWithStripedRows />}>
+```jsx
+import { Card, Typography } from "@material-tailwind/react";
+
+const TABLE_HEAD = ["Name", "Job", "Employed", ""];
+
+const TABLE_ROWS = [
+  {
+    name: "John Michael",
+    job: "Manager",
+    date: "23/04/18",
+  },
+  {
+    name: "Alexa Liras",
+    job: "Developer",
+    date: "23/04/18",
+  },
+  {
+    name: "Laurent Perrier",
+    job: "Executive",
+    date: "19/09/17",
+  },
+  {
+    name: "Michael Levi",
+    job: "Developer",
+    date: "24/12/08",
+  },
+  {
+    name: "Richard Gran",
+    job: "Manager",
+    date: "04/10/21",
+  },
+];
+
+export function TableWithStripedRows() {
+  return (
+    <Card className="h-full w-full overflow-scroll">
+      <table className="w-full min-w-max table-auto text-left">
+        <thead>
+          <tr>
+            {TABLE_HEAD.map((head) => (
+              <th key={head} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
+                <Typography
+                  variant="small"
+                  color="blue-gray"
+                  className="font-normal leading-none opacity-70"
+                >
+                  {head}
+                </Typography>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {TABLE_ROWS.map(({ name, job, date }, index) => (
+            <tr key={name} className="even:bg-blue-gray-50/50">
+              <td className="p-4">
+                <Typography variant="small" color="blue-gray" className="font-normal">
+                  {name}
+                </Typography>
+              </td>
+              <td className="p-4">
+                <Typography variant="small" color="blue-gray" className="font-normal">
+                  {job}
+                </Typography>
+              </td>
+              <td className="p-4">
+                <Typography variant="small" color="blue-gray" className="font-normal">
+                  {date}
+                </Typography>
+              </td>
+              <td className="p-4">
+                <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium">
+                  Edit
+                </Typography>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="table-with-striped-columns">
+## Table With Striped Columns
+</DocsTitle>
+
+The use of stripped columns in this example, improves visual separation between data points, making it easier for users to compare information across rows. The alternating shades help guide the eye horizontally across the table, reducing cognitive load, especially with larger datasets.
+
+<CodePreview component={<TableExamples.TableWithStripedColumns />}>
+```jsx
+import { Card, Typography } from "@material-tailwind/react";
+
+const TABLE_HEAD = ["Name", "Job", "Employed", ""];
+
+const TABLE_ROWS = [
+  {
+    name: "John Michael",
+    job: "Manager",
+    date: "23/04/18",
+  },
+  {
+    name: "Alexa Liras",
+    job: "Developer",
+    date: "23/04/18",
+  },
+  {
+    name: "Laurent Perrier",
+    job: "Executive",
+    date: "19/09/17",
+  },
+  {
+    name: "Michael Levi",
+    job: "Developer",
+    date: "24/12/08",
+  },
+  {
+    name: "Richard Gran",
+    job: "Manager",
+    date: "04/10/21",
+  },
+];
+
+export function TableWithStripedColumns() {
+  return (
+    <Card className="h-full w-full overflow-scroll">
+      <table className="w-full min-w-max table-auto text-left">
+        <thead>
+          <tr>
+            {TABLE_HEAD.map((head) => (
+              <th key={head} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
+                <Typography
+                  variant="small"
+                  color="blue-gray"
+                  className="font-normal leading-none opacity-70"
+                >
+                  {head}
+                </Typography>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {TABLE_ROWS.map(({ name, job, date }, index) => {
+            const isLast = index === TABLE_ROWS.length - 1;
+            const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
+
+            return (
+              <tr key={name}>
+                <td className={classes}>
+                  <Typography variant="small" color="blue-gray" className="font-normal">
+                    {name}
+                  </Typography>
+                </td>
+                <td className={`${classes} bg-blue-gray-50/50`}>
+                  <Typography variant="small" color="blue-gray" className="font-normal">
+                    {job}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography variant="small" color="blue-gray" className="font-normal">
+                    {date}
+                  </Typography>
+                </td>
+                <td className={`${classes} bg-blue-gray-50/50`}>
+                  <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium">
+                    Edit
+                  </Typography>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="transactions-table">
+## Transactions Table
+</DocsTitle>
+
+This table example is designed for tracking financial transactions. Visual status indicators (e.g., "Paid," "Pending," "Cancelled") improve clarity. The component includes a search bar, CTA "Download" button, editable rows, and pagination for easy navigation.
+
+<CodePreview component={<TableExamples.TransactionsTable />}>
+```jsx
+import { PencilIcon } from "@heroicons/react/24/solid";
+import {
+  ArrowDownTrayIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/outline";
+import {
+  Card,
+  CardHeader,
+  Typography,
+  Button,
+  CardBody,
+  Chip,
+  CardFooter,
+  Avatar,
+  IconButton,
+  Tooltip,
+  Input,
+} from "@material-tailwind/react";
+
+const TABLE_HEAD = ["Transaction", "Amount", "Date", "Status", "Account", ""];
+
+const TABLE_ROWS = [
+  {
+    img: "https://docs.material-tailwind.com/img/logos/logo-spotify.svg",
+    name: "Spotify",
+    amount: "$2,500",
+    date: "Wed 3:00pm",
+    status: "paid",
+    account: "visa",
+    accountNumber: "1234",
+    expiry: "06/2026",
+  },
+  {
+    img: "https://docs.material-tailwind.com/img/logos/logo-amazon.svg",
+    name: "Amazon",
+    amount: "$5,000",
+    date: "Wed 1:00pm",
+    status: "paid",
+    account: "master-card",
+    accountNumber: "1234",
+    expiry: "06/2026",
+  },
+  {
+    img: "https://docs.material-tailwind.com/img/logos/logo-pinterest.svg",
+    name: "Pinterest",
+    amount: "$3,400",
+    date: "Mon 7:40pm",
+    status: "pending",
+    account: "master-card",
+    accountNumber: "1234",
+    expiry: "06/2026",
+  },
+  {
+    img: "https://docs.material-tailwind.com/img/logos/logo-google.svg",
+    name: "Google",
+    amount: "$1,000",
+    date: "Wed 5:00pm",
+    status: "paid",
+    account: "visa",
+    accountNumber: "1234",
+    expiry: "06/2026",
+  },
+  {
+    img: "https://docs.material-tailwind.com/img/logos/logo-netflix.svg",
+    name: "netflix",
+    amount: "$14,000",
+    date: "Wed 3:30am",
+    status: "cancelled",
+    account: "visa",
+    accountNumber: "1234",
+    expiry: "06/2026",
+  },
+];
+
+export function TransactionsTable() {
+  return (
+    <Card className="h-full w-full">
+      <CardHeader floated={false} shadow={false} className="rounded-none">
+        <div className="mb-4 flex flex-col justify-between gap-8 md:flex-row md:items-center">
+          <div>
+            <Typography variant="h5" color="blue-gray">
+              Recent Transactions
+            </Typography>
+            <Typography color="gray" className="mt-1 font-normal">
+              These are details about the last transactions
+            </Typography>
+          </div>
+          <div className="flex w-full shrink-0 gap-2 md:w-max">
+            <div className="w-full md:w-72">
+              <Input
+                label="Search"
+                icon={<MagnifyingGlassIcon className="h-5 w-5" />}
+              />
+            </div>
+            <Button className="flex items-center gap-3" size="sm">
+              <ArrowDownTrayIcon strokeWidth={2} className="h-4 w-4" /> Download
+            </Button>
+          </div>
+        </div>
+      </CardHeader>
+      <CardBody className="overflow-scroll px-0">
+        <table className="w-full min-w-max table-auto text-left">
+          <thead>
+            <tr>
+              {TABLE_HEAD.map((head) => (
+                <th
+                  key={head}
+                  className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4"
+                >
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal leading-none opacity-70"
+                  >
+                    {head}
+                  </Typography>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {TABLE_ROWS.map(
+              (
+                {
+                  img,
+                  name,
+                  amount,
+                  date,
+                  status,
+                  account,
+                  accountNumber,
+                  expiry,
+                },
+                index,
+              ) => {
+                const isLast = index === TABLE_ROWS.length - 1;
+                const classes = isLast
+                  ? "p-4"
+                  : "p-4 border-b border-blue-gray-50";
+
+                return (
+                  <tr key={name}>
+                    <td className={classes}>
+                      <div className="flex items-center gap-3">
+                        <Avatar
+                          src={img}
+                          alt={name}
+                          size="md"
+                          className="border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"
+                        />
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-bold"
+                        >
+                          {name}
+                        </Typography>
+                      </div>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {amount}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {date}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <div className="w-max">
+                        <Chip
+                          size="sm"
+                          variant="ghost"
+                          value={status}
+                          color={
+                            status === "paid"
+                              ? "green"
+                              : status === "pending"
+                              ? "amber"
+                              : "red"
+                          }
+                        />
+                      </div>
+                    </td>
+                    <td className={classes}>
+                      <div className="flex items-center gap-3">
+                        <div className="h-9 w-12 rounded-md border border-blue-gray-50 p-1">
+                          <Avatar
+                            src={
+                              account === "visa"
+                                ? "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/visa.png"
+                                : "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/mastercard.png"
+                            }
+                            size="sm"
+                            alt={account}
+                            variant="square"
+                            className="h-full w-full object-contain p-1"
+                          />
+                        </div>
+                        <div className="flex flex-col">
+                          <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal capitalize"
+                          >
+                            {account.split("-").join(" ")} {accountNumber}
+                          </Typography>
+                          <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal opacity-70"
+                          >
+                            {expiry}
+                          </Typography>
+                        </div>
+                      </div>
+                    </td>
+                    <td className={classes}>
+                      <Tooltip content="Edit User">
+                        <IconButton variant="text">
+                          <PencilIcon className="h-4 w-4" />
+                        </IconButton>
+                      </Tooltip>
+                    </td>
+                  </tr>
+                );
+              },
+            )}
+          </tbody>
+        </table>
+      </CardBody>
+      <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
+        <Button variant="outlined" size="sm">
+          Previous
+        </Button>
+        <div className="flex items-center gap-2">
+          <IconButton variant="outlined" size="sm">
+            1
+          </IconButton>
+          <IconButton variant="text" size="sm">
+            2
+          </IconButton>
+          <IconButton variant="text" size="sm">
+            3
+          </IconButton>
+          <IconButton variant="text" size="sm">
+            ...
+          </IconButton>
+          <IconButton variant="text" size="sm">
+            8
+          </IconButton>
+          <IconButton variant="text" size="sm">
+            9
+          </IconButton>
+          <IconButton variant="text" size="sm">
+            10
+          </IconButton>
+        </div>
+        <Button variant="outlined" size="sm">
+          Next
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="members-table">
+## Members Table
+</DocsTitle>
+
+This table includes filters and users can search the list, edit individual member details, and navigate pages through pagination controls. The "View All" and "Add Member" buttons provide quick access to additional actions, making this table ideal for managing member data.
+
+<CodePreview component={<TableExamples.MembersTable />}>
+```jsx
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { PencilIcon, UserPlusIcon } from "@heroicons/react/24/solid";
+import {
+  Card,
+  CardHeader,
+  Input,
+  Typography,
+  Button,
+  CardBody,
+  Chip,
+  CardFooter,
+  Tabs,
+  TabsHeader,
+  Tab,
+  Avatar,
+  IconButton,
+  Tooltip,
+} from "@material-tailwind/react";
+
+const TABS = [
+  {
+    label: "All",
+    value: "all",
+  },
+  {
+    label: "Monitored",
+    value: "monitored",
+  },
+  {
+    label: "Unmonitored",
+    value: "unmonitored",
+  },
+];
+
+const TABLE_HEAD = ["Member", "Function", "Status", "Employed", ""];
+
+const TABLE_ROWS = [
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
+    name: "John Michael",
+    email: "john@creative-tim.com",
+    job: "Manager",
+    org: "Organization",
+    online: true,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
+    name: "Alexa Liras",
+    email: "alexa@creative-tim.com",
+    job: "Programator",
+    org: "Developer",
+    online: false,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
+    name: "Laurent Perrier",
+    email: "laurent@creative-tim.com",
+    job: "Executive",
+    org: "Projects",
+    online: false,
+    date: "19/09/17",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg",
+    name: "Michael Levi",
+    email: "michael@creative-tim.com",
+    job: "Programator",
+    org: "Developer",
+    online: true,
+    date: "24/12/08",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg",
+    name: "Richard Gran",
+    email: "richard@creative-tim.com",
+    job: "Manager",
+    org: "Executive",
+    online: false,
+    date: "04/10/21",
+  },
+];
+
+export function MembersTable() {
+  return (
+    <Card className="h-full w-full">
+      <CardHeader floated={false} shadow={false} className="rounded-none">
+        <div className="mb-8 flex items-center justify-between gap-8">
+          <div>
+            <Typography variant="h5" color="blue-gray">
+              Members list
+            </Typography>
+            <Typography color="gray" className="mt-1 font-normal">
+              See information about all members
+            </Typography>
+          </div>
+          <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
+            <Button variant="outlined" size="sm">
+              view all
+            </Button>
+            <Button className="flex items-center gap-3" size="sm">
+              <UserPlusIcon strokeWidth={2} className="h-4 w-4" /> Add member
+            </Button>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <Tabs value="all" className="w-full md:w-max">
+            <TabsHeader>
+              {TABS.map(({ label, value }) => (
+                <Tab key={value} value={value}>
+                  &nbsp;&nbsp;{label}&nbsp;&nbsp;
+                </Tab>
+              ))}
+            </TabsHeader>
+          </Tabs>
+          <div className="w-full md:w-72">
+            <Input
+              label="Search"
+              icon={<MagnifyingGlassIcon className="h-5 w-5" />}
+            />
+          </div>
+        </div>
+      </CardHeader>
+      <CardBody className="overflow-scroll px-0">
+        <table className="mt-4 w-full min-w-max table-auto text-left">
+          <thead>
+            <tr>
+              {TABLE_HEAD.map((head) => (
+                <th
+                  key={head}
+                  className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4"
+                >
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal leading-none opacity-70"
+                  >
+                    {head}
+                  </Typography>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {TABLE_ROWS.map(
+              ({ img, name, email, job, org, online, date }, index) => {
+                const isLast = index === TABLE_ROWS.length - 1;
+                const classes = isLast
+                  ? "p-4"
+                  : "p-4 border-b border-blue-gray-50";
+
+                return (
+                  <tr key={name}>
+                    <td className={classes}>
+                      <div className="flex items-center gap-3">
+                        <Avatar src={img} alt={name} size="sm" />
+                        <div className="flex flex-col">
+                          <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal"
+                          >
+                            {name}
+                          </Typography>
+                          <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal opacity-70"
+                          >
+                            {email}
+                          </Typography>
+                        </div>
+                      </div>
+                    </td>
+                    <td className={classes}>
+                      <div className="flex flex-col">
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {job}
+                        </Typography>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal opacity-70"
+                        >
+                          {org}
+                        </Typography>
+                      </div>
+                    </td>
+                    <td className={classes}>
+                      <div className="w-max">
+                        <Chip
+                          variant="ghost"
+                          size="sm"
+                          value={online ? "online" : "offline"}
+                          color={online ? "green" : "blue-gray"}
+                        />
+                      </div>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {date}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Tooltip content="Edit User">
+                        <IconButton variant="text">
+                          <PencilIcon className="h-4 w-4" />
+                        </IconButton>
+                      </Tooltip>
+                    </td>
+                  </tr>
+                );
+              },
+            )}
+          </tbody>
+        </table>
+      </CardBody>
+      <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
+        <Typography variant="small" color="blue-gray" className="font-normal">
+          Page 1 of 10
+        </Typography>
+        <div className="flex gap-2">
+          <Button variant="outlined" size="sm">
+            Previous
+          </Button>
+          <Button variant="outlined" size="sm">
+            Next
+          </Button>
+        </div>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="sortable-table">
+## Sortable Table
+</DocsTitle>
+
+This sortable table displays member details like name, role, status, and employment date, with filtering, search, editing, and pagination options.
+
+<CodePreview component={<TableExamples.SortableTable />}>
+```jsx
+import {
+  MagnifyingGlassIcon,
+  ChevronUpDownIcon,
+} from "@heroicons/react/24/outline";
+import { PencilIcon, UserPlusIcon } from "@heroicons/react/24/solid";
+import {
+  Card,
+  CardHeader,
+  Input,
+  Typography,
+  Button,
+  CardBody,
+  Chip,
+  CardFooter,
+  Tabs,
+  TabsHeader,
+  Tab,
+  Avatar,
+  IconButton,
+  Tooltip,
+} from "@material-tailwind/react";
+
+const TABS = [
+  {
+    label: "All",
+    value: "all",
+  },
+  {
+    label: "Monitored",
+    value: "monitored",
+  },
+  {
+    label: "Unmonitored",
+    value: "unmonitored",
+  },
+];
+
+const TABLE_HEAD = ["Member", "Function", "Status", "Employed", ""];
+
+const TABLE_ROWS = [
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
+    name: "John Michael",
+    email: "john@creative-tim.com",
+    job: "Manager",
+    org: "Organization",
+    online: true,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
+    name: "Alexa Liras",
+    email: "alexa@creative-tim.com",
+    job: "Programator",
+    org: "Developer",
+    online: false,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
+    name: "Laurent Perrier",
+    email: "laurent@creative-tim.com",
+    job: "Executive",
+    org: "Projects",
+    online: false,
+    date: "19/09/17",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg",
+    name: "Michael Levi",
+    email: "michael@creative-tim.com",
+    job: "Programator",
+    org: "Developer",
+    online: true,
+    date: "24/12/08",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg",
+    name: "Richard Gran",
+    email: "richard@creative-tim.com",
+    job: "Manager",
+    org: "Executive",
+    online: false,
+    date: "04/10/21",
+  },
+];
+
+export function SortableTable() {
+  return (
+    <Card className="h-full w-full">
+      <CardHeader floated={false} shadow={false} className="rounded-none">
+        <div className="mb-8 flex items-center justify-between gap-8">
+          <div>
+            <Typography variant="h5" color="blue-gray">
+              Members list
+            </Typography>
+            <Typography color="gray" className="mt-1 font-normal">
+              See information about all members
+            </Typography>
+          </div>
+          <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
+            <Button variant="outlined" size="sm">
+              view all
+            </Button>
+            <Button className="flex items-center gap-3" size="sm">
+              <UserPlusIcon strokeWidth={2} className="h-4 w-4" /> Add member
+            </Button>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <Tabs value="all" className="w-full md:w-max">
+            <TabsHeader>
+              {TABS.map(({ label, value }) => (
+                <Tab key={value} value={value}>
+                  &nbsp;&nbsp;{label}&nbsp;&nbsp;
+                </Tab>
+              ))}
+            </TabsHeader>
+          </Tabs>
+          <div className="w-full md:w-72">
+            <Input
+              label="Search"
+              icon={<MagnifyingGlassIcon className="h-5 w-5" />}
+            />
+          </div>
+        </div>
+      </CardHeader>
+      <CardBody className="overflow-scroll px-0">
+        <table className="mt-4 w-full min-w-max table-auto text-left">
+          <thead>
+            <tr>
+              {TABLE_HEAD.map((head, index) => (
+                <th
+                  key={head}
+                  className="cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 p-4 transition-colors hover:bg-blue-gray-50"
+                >
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="flex items-center justify-between gap-2 font-normal leading-none opacity-70"
+                  >
+                    {head}{" "}
+                    {index !== TABLE_HEAD.length - 1 && (
+                      <ChevronUpDownIcon strokeWidth={2} className="h-4 w-4" />
+                    )}
+                  </Typography>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {TABLE_ROWS.map(
+              ({ img, name, email, job, org, online, date }, index) => {
+                const isLast = index === TABLE_ROWS.length - 1;
+                const classes = isLast
+                  ? "p-4"
+                  : "p-4 border-b border-blue-gray-50";
+
+                return (
+                  <tr key={name}>
+                    <td className={classes}>
+                      <div className="flex items-center gap-3">
+                        <Avatar src={img} alt={name} size="sm" />
+                        <div className="flex flex-col">
+                          <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal"
+                          >
+                            {name}
+                          </Typography>
+                          <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal opacity-70"
+                          >
+                            {email}
+                          </Typography>
+                        </div>
+                      </div>
+                    </td>
+                    <td className={classes}>
+                      <div className="flex flex-col">
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {job}
+                        </Typography>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal opacity-70"
+                        >
+                          {org}
+                        </Typography>
+                      </div>
+                    </td>
+                    <td className={classes}>
+                      <div className="w-max">
+                        <Chip
+                          variant="ghost"
+                          size="sm"
+                          value={online ? "online" : "offline"}
+                          color={online ? "green" : "blue-gray"}
+                        />
+                      </div>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {date}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Tooltip content="Edit User">
+                        <IconButton variant="text">
+                          <PencilIcon className="h-4 w-4" />
+                        </IconButton>
+                      </Tooltip>
+                    </td>
+                  </tr>
+                );
+              },
+            )}
+          </tbody>
+        </table>
+      </CardBody>
+      <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
+        <Typography variant="small" color="blue-gray" className="font-normal">
+          Page 1 of 10
+        </Typography>
+        <div className="flex gap-2">
+          <Button variant="outlined" size="sm">
+            Previous
+          </Button>
+          <Button variant="outlined" size="sm">
+            Next
+          </Button>
+        </div>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="table-without-border">
+## Table Without Border
+</DocsTitle>
+
+This borderless table presents invoice details with columns for invoice number, customer, amount, issue date, and payment date. The "Actions" column includes icons for viewing and downloading the invoice, creating a clean design while maintaining functionality.
+
+<CodePreview component={<TableExamples.TableWithoutBorder />}>
+```jsx
+import { DocumentIcon } from "@heroicons/react/24/solid";
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
+import { Card, IconButton, Typography } from "@material-tailwind/react";
+
+const TABLE_HEAD = [
+  "Number",
+  "Customer",
+  "Amount",
+  "Issued",
+  "Payment Date",
+  "Actions",
+];
+
+const TABLE_ROWS = [
+  {
+    number: "#MS-415646",
+    customer: "CompanyINC",
+    amount: "$14,000",
+    issued: "31 Jan 2024",
+    date: "31 Feb 2024",
+  },
+  {
+    number: "#MS-415647",
+    customer: "CompanyINC",
+    amount: "$4,000",
+    issued: "24 Jan 2024",
+    date: "24 Feb 2024",
+  },
+  {
+    number: "#MS-415648",
+    customer: "CompanyINC",
+    amount: "$11,000",
+    issued: "12 Jan 2024",
+    date: "12 Feb 2024",
+  },
+  {
+    number: "#MS-415649",
+    customer: "CompanyINC",
+    amount: "$2,600",
+    issued: "10 Jan 2024",
+    date: "10 Feb 2024",
+  },
+];
+
+export function TableWithoutBorder() {
+  return (
+    <Card className="h-full w-full overflow-scroll">
+      <table className="w-full min-w-max table-auto text-left">
+        <thead>
+          <tr>
+            {TABLE_HEAD.map((head) => (
+              <th key={head} className="p-4 pt-10">
+                <Typography
+                  variant="small"
+                  color="blue-gray"
+                  className="font-bold leading-none"
+                >
+                  {head}
+                </Typography>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {TABLE_ROWS.map(({ number, customer, amount, issued, date }) => {
+            return (
+              <tr key={number}>
+                <td className="p-4">
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-bold"
+                  >
+                    {number}
+                  </Typography>
+                </td>
+                <td className="p-4">
+                  <Typography
+                    variant="small"
+                    className="font-normal text-gray-600"
+                  >
+                    {customer}
+                  </Typography>
+                </td>
+                <td className="p-4">
+                  <Typography
+                    variant="small"
+                    className="font-normal text-gray-600"
+                  >
+                    {amount}
+                  </Typography>
+                </td>
+                <td className="p-4">
+                  <Typography
+                    variant="small"
+                    className="font-normal text-gray-600"
+                  >
+                    {issued}
+                  </Typography>
+                </td>
+                <td className="p-4">
+                  <Typography
+                    variant="small"
+                    className="font-normal text-gray-600"
+                  >
+                    {date}
+                  </Typography>
+                </td>
+                <td className="p-4">
+                  <div className="flex items-center gap-2">
+                    <IconButton variant="text" size="sm">
+                      <DocumentIcon className="h-4 w-4 text-gray-900" />
+                    </IconButton>
+                    <IconButton variant="text" size="sm">
+                      <ArrowDownTrayIcon
+                        strokeWidth={3}
+                        className="h-4 w-4 text-gray-900"
+                      />
+                    </IconButton>
+                  </div>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="table-with-hover-state">
+## Table With Hover State
+</DocsTitle>
+
+In this example, the hover effect highlights each row when the user hovers over it, improving interactivity while maintaining a simple design.
+
+<CodePreview component={<TableExamples.TableWithHoverState />}>
+```jsx
+import { Card, Typography } from "@material-tailwind/react";
+
+const TABLE_HEAD = ["Name", "Role", "Email", "Location"];
+
+const TABLE_ROWS = [
+  {
+    name: "Mary Smith",
+    role: "Project Manager",
+    email: "mary.smith@example.com",
+    location: "New York, USA",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Lead Developer",
+    email: "bob.johnson@example.com",
+    location: "London, UK",
+  },
+  {
+    name: "Carol White",
+    role: "UX Designer",
+    email: "carol.white@example.com",
+    location: "Berlin, Germany",
+  },
+  {
+    name: "David Brown",
+    role: "QA Engineer",
+    email: "david.brown@example.com",
+    location: "Sydney, Australia",
+  },
+];
+
+export function TableWithHoverState() {
+  return (
+    <Card className="h-full w-full overflow-scroll px-6">
+      <table className="w-full min-w-max table-auto text-left">
+        <thead>
+          <tr>
+            {TABLE_HEAD.map((head) => (
+              <th key={head} className="border-b border-gray-300 pb-4 pt-10">
+                <Typography
+                  variant="small"
+                  color="blue-gray"
+                  className="font-bold leading-none"
+                >
+                  {head}
+                </Typography>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {TABLE_ROWS.map(({ name, role, email, location }, index) => {
+            const isLast = index === TABLE_ROWS.length - 1;
+            const classes = isLast ? "py-4" : "py-4 border-b border-gray-300";
+
+            return (
+              <tr key={name} className="hover:bg-gray-50">
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-bold"
+                  >
+                    {name}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    className="font-normal text-gray-600"
+                  >
+                    {role}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    className="font-normal text-gray-600"
+                  >
+                    {email}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    className="font-normal text-gray-600"
+                  >
+                    {location}
+                  </Typography>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="table-with-title-and-description">
+## Table With Title & Description
+</DocsTitle>
+
+In this example, the title and description at the top give context to the table, making it easy for users to understand its purpose.
+
+<CodePreview component={<TableExamples.TableWithTitleAndDescription />}>
+```jsx
+import { Card, Typography } from "@material-tailwind/react";
+
+const TABLE_HEAD = ["Name", "Role", "Email", "Location"];
+
+const TABLE_ROWS = [
+  {
+    name: "Mary Smith",
+    role: "Project Manager",
+    email: "mary.smith@example.com",
+    location: "New York, USA",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Lead Developer",
+    email: "bob.johnson@example.com",
+    location: "London, UK",
+  },
+  {
+    name: "Carol White",
+    role: "UX Designer",
+    email: "carol.white@example.com",
+    location: "Berlin, Germany",
+  },
+  {
+    name: "David Brown",
+    role: "QA Engineer",
+    email: "david.brown@example.com",
+    location: "Sydney, Australia",
+  },
+];
+
+export function TableWithTitleAndDescription() {
+  return (
+    <section className="w-full bg-white">
+      <div className="p-6">
+        <Typography variant="lead" color="blue-gray" className="font-bold">
+          Team members and roles
+        </Typography>
+        <Typography className="mb-4 w-80 font-normal text-gray-600 md:w-full">
+          Overview of the key personnel involved in our project and their
+          geographical distribution.
+        </Typography>
+      </div>
+      <Card className="h-full w-full overflow-scroll border border-gray-300 px-6">
+        <table className="w-full min-w-max table-auto text-left">
+          <thead>
+            <tr>
+              {TABLE_HEAD.map((head) => (
+                <th key={head} className="border-b border-gray-300 pb-4 pt-10">
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-bold leading-none"
+                  >
+                    {head}
+                  </Typography>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {TABLE_ROWS.map(({ name, role, email, location }, index) => {
+              const isLast = index === TABLE_ROWS.length - 1;
+              const classes = isLast ? "py-4" : "py-4 border-b border-gray-300";
+
+              return (
+                <tr key={name} className="hover:bg-gray-50">
+                  <td className={classes}>
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-bold"
+                    >
+                      {name}
+                    </Typography>
+                  </td>
+                  <td className={classes}>
+                    <Typography
+                      variant="small"
+                      className="font-normal text-gray-600"
+                    >
+                      {role}
+                    </Typography>
+                  </td>
+                  <td className={classes}>
+                    <Typography
+                      variant="small"
+                      className="font-normal text-gray-600"
+                    >
+                      {email}
+                    </Typography>
+                  </td>
+                  <td className={classes}>
+                    <Typography
+                      variant="small"
+                      className="font-normal text-gray-600"
+                    >
+                      {location}
+                    </Typography>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </Card>
+    </section>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="table-with-search">
+## Table With Search
+</DocsTitle>
+
+This table with search functionality allows users to filter invoices by entering keywords.
+
+<CodePreview component={<TableExamples.TableWithSearch />}>
+```jsx
+import { DocumentIcon } from "@heroicons/react/24/solid";
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import {
+  Card,
+  Input,
+  Checkbox,
+  CardHeader,
+  IconButton,
+  Typography,
+} from "@material-tailwind/react";
+
+const TABLE_HEAD = [
+  {
+    head: "Number",
+    icon: <Checkbox />,
+  },
+  {
+    head: "Customer",
+  },
+  {
+    head: "Amount",
+  },
+  {
+    head: "Issued",
+  },
+  {
+    head: "Payment Date",
+  },
+  {
+    head: "",
+  },
+];
+
+const TABLE_ROWS = [
+  {
+    number: "#MS-415646",
+    customer: "Viking Burrito",
+    amount: "$14,000",
+    issued: "31 Jan 2024",
+    date: "31 Feb 2024",
+  },
+  {
+    number: "#RV-126749",
+    customer: "Stone Tech Zone",
+    amount: "$3,000",
+    issued: "24 Jan 2024",
+    date: "24 Feb 2024",
+  },
+  {
+    number: "#QW-103578",
+    customer: "Fiber Notion",
+    amount: "$20,000",
+    issued: "12 Jan 2024",
+    date: "12 Feb 2024",
+  },
+  {
+    number: "#MS-415688",
+    customer: "Blue Bird",
+    amount: "$5,600",
+    issued: "10 Jan 2024",
+    date: "10 Feb 2024",
+  },
+];
+
+export function TableWithSearch() {
+  return (
+    <Card className="h-full w-full overflow-scroll">
+      <CardHeader
+        floated={false}
+        shadow={false}
+        className="mb-2 rounded-none p-2"
+      >
+        <div className="w-full md:w-96">
+          <Input
+            label="Search Invoice"
+            icon={<MagnifyingGlassIcon className="h-5 w-5" />}
+          />
+        </div>
+      </CardHeader>
+      <table className="w-full min-w-max table-auto text-left">
+        <thead>
+          <tr>
+            {TABLE_HEAD.map(({ head, icon }) => (
+              <th key={head} className="border-b border-gray-300 p-4">
+                <div className="flex items-center gap-1">
+                  {icon}
+                  <Typography
+                    color="blue-gray"
+                    variant="small"
+                    className="!font-bold"
+                  >
+                    {head}
+                  </Typography>
+                </div>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {TABLE_ROWS.map(
+            ({ number, customer, amount, issued, date }, index) => {
+              const isLast = index === TABLE_ROWS.length - 1;
+              const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
+
+              return (
+                <tr key={number}>
+                  <td className={classes}>
+                    <div className="flex items-center gap-1">
+                      <Checkbox />
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-bold"
+                      >
+                        {number}
+                      </Typography>
+                    </div>
+                  </td>
+                  <td className={classes}>
+                    <Typography
+                      variant="small"
+                      className="font-normal text-gray-600"
+                    >
+                      {customer}
+                    </Typography>
+                  </td>
+                  <td className={classes}>
+                    <Typography
+                      variant="small"
+                      className="font-normal text-gray-600"
+                    >
+                      {amount}
+                    </Typography>
+                  </td>
+                  <td className={classes}>
+                    <Typography
+                      variant="small"
+                      className="font-normal text-gray-600"
+                    >
+                      {issued}
+                    </Typography>
+                  </td>
+                  <td className={classes}>
+                    <Typography
+                      variant="small"
+                      className="font-normal text-gray-600"
+                    >
+                      {date}
+                    </Typography>
+                  </td>
+                  <td className={classes}>
+                    <div className="flex items-center gap-2">
+                      <IconButton variant="text" size="sm">
+                        <DocumentIcon className="h-4 w-4 text-gray-900" />
+                      </IconButton>
+                      <IconButton variant="text" size="sm">
+                        <ArrowDownTrayIcon
+                          strokeWidth={3}
+                          className="h-4 w-4 text-gray-900"
+                        />
+                      </IconButton>
+                    </div>
+                  </td>
+                </tr>
+              );
+            },
+          )}
+        </tbody>
+      </table>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="table-with-footer">
+## Table With Footer
+</DocsTitle>
+
+In this example,  the footer row provides a total count for the quantity and the final price, offering a clear breakdown of the data and a final summary for easy reference.
+
+<CodePreview component={<TableExamples.TableWithFooter />}>
+```jsx
+import { Card, Typography } from "@material-tailwind/react";
+
+const TABLE_HEAD = ["Product Name", "Category", "Quantity", "Price"];
+
+const TABLE_ROWS = [
+  {
+    name: "Ultra HD TV6",
+    category: "Electronics",
+    quantity: "1",
+    price: "$999.99",
+  },
+  {
+    name: "Wireless Headphones",
+    category: "Audio",
+    quantity: "2",
+    price: "$199.99",
+  },
+  {
+    name: "Coffee Maker",
+    category: "Kitchen",
+    quantity: "1",
+    price: "$79.99",
+  },
+  {
+    name: "Running Shoes",
+    category: "Sportswear",
+    quantity: "1",
+    price: "$129.99",
+  },
+];
+
+export function TableWithFooter() {
+  return (
+    <Card className="h-full w-full overflow-scroll">
+      <table className="w-full min-w-max table-auto text-left">
+        <thead>
+          <tr>
+            {TABLE_HEAD.map((head) => (
+              <th key={head} className="p-4 pt-10">
+                <Typography
+                  variant="small"
+                  color="blue-gray"
+                  className="font-bold leading-none"
+                >
+                  {head}
+                </Typography>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {TABLE_ROWS.map(({ name, category, quantity, price }) => {
+            return (
+              <tr key={name}>
+                <td className="p-4">
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-bold"
+                  >
+                    {name}
+                  </Typography>
+                </td>
+                <td className="p-4">
+                  <Typography
+                    variant="small"
+                    className="font-normal text-gray-600"
+                  >
+                    {category}
+                  </Typography>
+                </td>
+                <td className="p-4">
+                  <Typography
+                    variant="small"
+                    className="font-normal text-gray-600"
+                  >
+                    {quantity}
+                  </Typography>
+                </td>
+                <td className="p-4">
+                  <Typography
+                    variant="small"
+                    className="font-normal text-gray-600"
+                  >
+                    {price}
+                  </Typography>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+        <tfoot className="border-t border-gray-300">
+          <tr>
+            <td className="p-4">
+              <Typography
+                color="blue-gray"
+                variant="small"
+                className="font-bold"
+              >
+                Total
+              </Typography>
+            </td>
+            <td className="p-4"></td>
+            <td className="p-4">
+              <Typography
+                color="blue-gray"
+                variant="small"
+                className="font-bold"
+              >
+                5
+              </Typography>
+            </td>
+            <td className="p-4">
+              <Typography
+                color="blue-gray"
+                variant="small"
+                className="font-bold"
+              >
+                $1609.95
+              </Typography>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more table examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
+
+• <a href="https://www.material-tailwind.com/blocks/tables" target="_blank">Table Blocks</a><br />
+• <a href="https://www.material-tailwind.com/blocks/tables-headers" target="_blank">Table Headers</a><br />
+• <a href="https://www.material-tailwind.com/blocks/tables-footers" target="_blank">Table Footers</a><br />
+

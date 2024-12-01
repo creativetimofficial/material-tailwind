@@ -23,6 +23,7 @@ import type {
   menuProps,
   className,
   disabled,
+  containerProps,
 } from "../../../types/components/select";
 import { propTypesVariant, propTypesSize, propTypesColor } from "../../../types/components/select";
 
@@ -112,6 +113,7 @@ export interface SelectStylesType {
     menuProps?: menuProps;
     className?: className;
     disabled?: disabled;
+    containerProps?: containerProps;
   };
   valid?: {
     variants?: string[];
@@ -145,7 +147,7 @@ export interface SelectStylesType {
 export const select: SelectStylesType = {
   defaultProps: {
     variant: "outlined",
-    color: "blue",
+    color: "gray",
     size: "md",
     label: "",
     error: false,
@@ -166,6 +168,7 @@ export const select: SelectStylesType = {
     menuProps: {},
     className: "",
     disabled: false,
+    containerProps: undefined,
   },
   valid: {
     variants: propTypesVariant,
@@ -189,7 +192,7 @@ export const select: SelectStylesType = {
         fontWeight: "font-normal",
         textAlign: "text-left",
         outline: "outline outline-0 focus:outline-0",
-        disabled: "disabled:bg-blue-gray-50 disabled:border-0",
+        disabled: "disabled:bg-blue-gray-50 disabled:border-0 disabled:cursor-not-allowed",
         transition: "transition-all",
       },
       arrow: {

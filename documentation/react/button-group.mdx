@@ -1,0 +1,531 @@
+---
+title: Tailwind CSS Button Group for React - Material Tailwind
+description: Customise your web projects with our easy-to-use button group component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "button-group",
+    "button-group-variants",
+    "button-group-sizes",
+    "button-group-colors",
+    "block-level-button-group",
+    "button-group-ripple-effect",
+    "button-group-custom-styles",
+    "button-group-props",
+    "types-variant",
+    "types-size",
+    "types-color",
+    "button-group-theme",
+    "button-group-theme-object-type",
+    "button-group-theme-customization",
+    "more-examples",
+  ]
+github: button
+prev: button
+next: card
+---
+
+<DocsTitle href="button-group">
+# Tailwind CSS Button Group - React
+</DocsTitle>
+
+Use our React Button Group styled with Tailwind CSS to group together a series of buttons in a single layout.
+
+The Button Group component is an essential element of web design. Basically, it is stack of buttons. They help users navigate our websites
+or apps and drive them to a particular action.
+
+See below our Button Group examples that you can use in your Tailwind CSS and React project. These example comes in different styles and colors, so you can adapt them easily to your needs.
+
+<br />
+
+## Button Group Examples
+
+## Default Button Group
+
+This React component example demonstrates a straightforward usage of the Button Group to create a cohesive set of actions.
+
+<CodePreview component={<ButtonGroupExamples.ButtonGroupDefault />}>
+```jsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function ButtonGroupDefault() {
+  return (
+    <ButtonGroup>
+      <Button>One</Button>
+      <Button>Two</Button>
+      <Button>Three</Button>
+    </ButtonGroup>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="button-group-variants">
+## Button Group Variants
+</DocsTitle>
+
+This Button Group component comes with 4 different variants that you can change using the <Code>variant</Code> prop.
+
+<CodePreview component={<ButtonGroupExamples.ButtonGroupVariants />}>
+```jsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function ButtonGroupVariants() {
+  return (
+    <div className="flex w-max flex-col gap-4">
+      <ButtonGroup>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup variant="gradient">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup variant="outlined">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup variant="text">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="button-group-sizes">
+## Button Group Sizes
+</DocsTitle>
+
+This Tailwind CSS Button Group component comes with 3 different sizes, small (<Code>sm</Code>), medium (<Code>md</Code>), and large (<Code>lg</Code>),  that you can change using the <Code>size</Code> prop.
+
+<CodePreview component={<ButtonGroupExamples.ButtonGroupSizes />}>
+```jsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function ButtonGroupSizes() {
+  return (
+    <div className="flex w-max flex-col gap-4">
+      <ButtonGroup size="sm">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup size="md">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup size="lg">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="button-group-colors">
+## Button Group Colors
+</DocsTitle>
+
+This Button Group component comes with 19 different colors (for example: blue, red, green, amber) that you can change using the <Code>color</Code> prop.
+
+<CodePreview component={<ButtonGroupExamples.ButtonGroupColors />}>
+```jsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function ButtonGroupColors() {
+  return (
+    <div className="flex w-max flex-col gap-4">
+      <ButtonGroup color="blue">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup color="red">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup color="green">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup color="amber">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="block-level-button-group">
+## Block Level Button Group
+</DocsTitle>
+
+Our React Button Group could be implemented as a block level component, as well, that gets all the available space in a row. You can render a <Code>ButtonGroup</Code> as a block level element using the <Code>fullWidth</Code> prop.
+
+<CodePreview component={<ButtonGroupExamples.BlockLevelButtonGroup />}>
+```jsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function BlockLevelButtonGroup() {
+  return (
+    <ButtonGroup fullWidth>
+      <Button>One</Button>
+      <Button>Two</Button>
+      <Button>Three</Button>
+    </ButtonGroup>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="button-group-ripple-effect">
+## Button Group Ripple Effect
+</DocsTitle>
+
+You can turn on/off the ripple effect for the <Code>ButtonGroup</Code> component using the <Code>ripple</Code> prop. The ripple effect is  used to provide an intuitive and visually pleasing indication of interaction for the user (like a subtle visual cue).
+
+<CodePreview component={<ButtonGroupExamples.ButtonGroupRippleEffect />}>
+```jsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function ButtonGroupRippleEffect() {
+  return (
+    <div className="flex w-max flex-col gap-4">
+      <ButtonGroup ripple={true}>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup ripple={false}>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="button-group-custom-styles">
+## Button Group Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>ButtonGroup</Code> component. Material Tailwind comes with the ability to blend pre-defined design principles with extensive styling flexibility.
+
+<CodePreview component={<ButtonGroupExamples.ButtonGroupCustomStyles />}>
+```jsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function ButtonGroupCustomStyles() {
+  return (
+    <ButtonGroup className="gap-1 bg-blue-500/25 p-1">
+      <Button className="rounded-none">One</Button>
+      <Button className="rounded-none">Two</Button>
+      <Button className="rounded-none">Three</Button>
+    </ButtonGroup>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="button-group-props">
+## Button Group Props
+</DocsTitle>
+
+The following props are available for button group component. These are the custom
+props that we've added for the button group component and you can use all the other
+native props as well.
+
+| Attribute   | Type                      | Description                              | Default                                |
+| ----------- | ------------------------- | ---------------------------------------- | -------------------------------------- |
+| `variant`   | [Variant](#types-variant) | Change buttons variant                   | <Code>filled</Code>                    |
+| `size`      | [Size](#types-size)       | Change buttons size                      | <Code>md</Code>                        |
+| `color`     | [Color](#types-color)     | Change buttons color                     | <Code>gray</Code>                      |
+| `fullWidth` | <Code>boolean</Code>      | Change buttons to a block level elements | <Code>false</Code>                     |
+| `ripple`    | <Code>boolean</Code>      | Add ripple effect for buttons            | <Code>true</Code>                      |
+| `className` | <Code>string</Code>       | Add custom className for button group    | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for button group             | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { ButtonGroupProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-variant">
+## Types - Variant
+</DocsTitle>
+
+```ts
+type variant = "filled" | "outlined" | "gradient" | "text";
+```
+
+---
+
+<DocsTitle href="types-size">
+## Types - Size
+</DocsTitle>
+
+Check out Material Tailwind’s set of predefined sizes available for the Button Group component.
+
+<span id="types-size" className="scroll-mt-48" />
+
+```ts
+type size = "sm" | "md" | "lg";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+Set of predefined colors available for our Button Group component. Choose from our extensive 20+ list of colors like: orange, brown, amber, yellow, blue, etc. Customize the component to fit your web project’s needs.
+
+```ts
+type color =
+  | "white"
+  | "black"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="button-group-theme">
+## Button Group Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for button group component, the theme object for button group component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of button group component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for button group component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of button group component.<br />
+
+You can customize the theme and styles of button group component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="button-group-theme-object-type">
+## Button Group Theme Object Type
+</DocsTitle>
+
+```ts
+interface ButtonStyleTypes {
+  defaultProps: {
+    variant: string;
+    size: string;
+    color: string;
+    fullWidth: boolean;
+    ripple: boolean;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    sizes: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      initial: object;
+      fullWidth: object;
+    };
+    dividerColor: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { ButtonGroupStyleTypes } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="button-group-theme-customization">
+## Button Group Theme Customization
+</DocsTitle>
+
+Whether you're looking to modify the color palette, adjust the border styles, or apply custom animations, the theme customization options are both robust and intuitive.
+
+The button group design can be further enhanced using Material Tailwind's utility classes for a more refined look.
+
+
+```ts
+const theme = {
+  buttonGroup: {
+    defaultProps: {
+      variant: "filled",
+      size: "md",
+      color: "blue",
+      fullWidth: false,
+      ripple: true,
+      className: "",
+    },
+    valid: {
+      variants: ["filled", "outlined", "gradient", "text"],
+      sizes: ["sm", "md", "lg"],
+      colors: [
+        "white",
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
+    styles: {
+      base: {
+        initial: {
+          display: "flex",
+          flexDirection: "row",
+        },
+        fullWidth: {
+          width: "w-full",
+        },
+      },
+      dividerColor: {
+        white: {
+          divideColor: "divide-blue-gray-50",
+        },
+        "blue-gray": {
+          divideColor: "divide-blue-gray-600",
+        },
+        gray: {
+          divideColor: "divide-gray-600",
+        },
+        brown: {
+          divideColor: "divide-brown-600",
+        },
+        "deep-orange": {
+          divideColor: "divide-deep-orange-600",
+        },
+        orange: {
+          divideColor: "divide-orange-600",
+        },
+        amber: {
+          divideColor: "divide-amber-600",
+        },
+        yellow: {
+          divideColor: "divide-yellow-600",
+        },
+        lime: {
+          divideColor: "divide-lime-600",
+        },
+        "light-green": {
+          divideColor: "divide-light-green-600",
+        },
+        green: {
+          divideColor: "divide-green-600",
+        },
+        teal: {
+          divideColor: "divide-teal-600",
+        },
+        cyan: {
+          divideColor: "divide-cyan-600",
+        },
+        "light-blue": {
+          divideColor: "divide-light-blue-600",
+        },
+        blue: {
+          divideColor: "divide-blue-600",
+        },
+        indigo: {
+          divideColor: "divide-indigo-600",
+        },
+        "deep-purple": {
+          divideColor: "divide-deep-purple-600",
+        },
+        purple: {
+          divideColor: "divide-purple-600",
+        },
+        pink: {
+          divideColor: "divide-pink-600",
+        },
+        red: {
+          divideColor: "divide-red-600",
+        },
+      },
+    },
+  },
+};
+```
+
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more button component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

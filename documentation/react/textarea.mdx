@@ -8,45 +8,39 @@ navigation:
     "textarea-sizes",
     "textarea-colors",
     "textarea-validations",
-    "disabled-textarea",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/textarea",
-      description: "Learn more about props definition and types of textarea component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/textarea",
-      description: "Learn how to customize the theme and styles for textarea component.",
-    },
+    "textarea-disabled",
+    "comment-box-textarea",
+    "twitter-chatbox-textarea",
+    "more-examples",
   ]
 github: textarea
 prev: tabs
-next: tooltip
+next: timeline
 ---
 
+<DocsTitle href="textarea">
 # Tailwind CSS Textarea - React
+</DocsTitle>
 
-Easily create <Code>Textarea</Code> with different styles using our component based on Tailwind CSS. It is useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+Easily create Textarea with different styles using our component based on React and styled with Tailwind CSS. It is useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
 
-See below our example that will help you create a simple <Code>Textarea</Code> for your project. It also comes in different colors and styles, so you can adapt it easily to your needs.
+See below our examples that will help you create a simple <Code>Textarea</Code> for your project. Choose from  different colors and styles, so you can adapt the component easily to your needs.
 
 <br />
 
-<CodePreview id="textarea" link="textarea#textarea" component={
-  <div className="w-96">
-    <Textarea label="Message" />
-  </div>
-}>
+## Textarea Examples
+
+<DocsTitle href="textarea-default">
+## Textarea Default
+</DocsTitle>
+
+This component example can be used in any React application where a text area input is needed. It provides an easy way to incorporate a styled textarea input field with minimal code.
+
+<CodePreview link="textarea#textarea" component={<TextareaExamples.TextareaDefault />}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
-export default function Example() {
+export function TextareaDefault() {
   return (
     <div className="w-96">
       <Textarea label="Message" />
@@ -58,23 +52,19 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="textarea-variants">
 ## Textarea Variants
+</DocsTitle>
 
-The <Code>Textarea</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Textarea</Code> component comes with three different variants that you can change using the <Code>variant</Code> prop. 
 
-<CodePreview id="textarea-variants" link="textarea#textarea-variants" component={
-  <div className="flex flex-col w-96 gap-6">
-    <Textarea variant="static" label="Static" placeholder="Static" />
-    <Textarea variant="standard" label="Standard" />
-    <Textarea variant="outlined" label="Outlined" />
-  </div>
-}>
+<CodePreview link="textarea#textarea-variants" component={<TextareaExamples.TextareaVariants />}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
-export default function Variants() {
+export function TextareaVariants() {
   return (
-    <div className="flex flex-col w-96 gap-6">
+    <div className="flex w-96 flex-col gap-6">
       <Textarea variant="static" label="Static" placeholder="Static" />
       <Textarea variant="standard" label="Standard" />
       <Textarea variant="outlined" label="Outlined" />
@@ -84,24 +74,29 @@ export default function Variants() {
 ```
 </CodePreview>
 
+<br />
+
+The static variant has minimal styling, the standard variant has a more traditional look, and the outlined variant has a border around it, following Material Design guidelines.
+
 ---
 
+<DocsTitle href="textarea-sizes">
 ## Textarea Sizes
+</DocsTitle>
 
-The <Code>Textarea</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
+The Textarea component comes with two different sizes that you can change using the size prop.
 
-<CodePreview id="textarea-sizes" link="textarea#textarea-sizes" component={
-  <div className="flex flex-col w-96 gap-6">
-    <Textarea size="md" label="Textarea Medium" />
-    <Textarea size="lg" label="Textarea Large" />
-  </div>
-}>
+• <Code>size="md"</Code>: This creates a medium-sized Textarea, labeled "Textarea Medium".<br />
+• <Code>size="lg"</Code>: This renders a large-sized Textarea, labeled "Textarea Large".<br />
+
+
+<CodePreview link="textarea#textarea-sizes" component={<TextareaExamples.TextareaSizes />}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
-export default function Sizes() {
+export function TextareaSizes() {
   return (
-    <div className="flex flex-col w-96 gap-6">
+    <div className="flex w-96 flex-col gap-6">
       <Textarea size="md" label="Textarea Medium" />
       <Textarea size="lg" label="Textarea Large" />
     </div>
@@ -110,54 +105,59 @@ export default function Sizes() {
 ```
 </CodePreview>
 
+<br/>
+This coded example is useful when different sized text areas are needed to accommodate varying amounts of content or to align with the overall design and layout of a web page or application.
+
 ---
 
+<DocsTitle href="textarea-colors">
 ## Textarea Colors
+</DocsTitle>
 
-The <Code>Textarea</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+The Textarea component comes with 19 different colors that you can change using the color prop. For example:
 
-<CodePreview id="textarea-colors" link="textarea#textarea-colors" component={
-  <div className="flex w-96 flex-col gap-6">
-    <Textarea color="blue" label="Textarea Blue" />
-    <Textarea color="purple" label="Textarea Purple" />
-    <Textarea color="indigo" label="Textarea Indigo" />
-    <Textarea color="teal" label="Textarea Teal" />
-  </div>
-}>
+• <Code>color="gray"</Code>: This creates a Textarea with gray styling, labeled "Textarea Gray".<br />
+• <Code>color="blue-gray"</Code>: This Textarea has a blue-gray color, labeled "Textarea Purple".<br />
+• <Code>color="red"</Code>: This renders a red Textarea, labeled "Textarea Red".<br />
+• <Code>color="green"</Code>: This creates a green Textarea, labeled "Textarea Green".<br />
+
+
+<CodePreview id="textarea-colors" link="textarea#textarea-colors" component={<TextareaExamples.TextareaColors />}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
-export default function Colors() {
+export function TextareaColors() {
   return (
     <div className="flex w-96 flex-col gap-6">
-      <Textarea color="blue" label="Textarea Blue" />
-      <Textarea color="purple" label="Textarea Purple" />
-      <Textarea color="indigo" label="Textarea Indigo" />
-      <Textarea color="teal" label="Textarea Teal" />
+      <Textarea color="gray" label="Textarea Gray" />
+      <Textarea color="blue-gray" label="Textarea Purple" />
+      <Textarea color="red" label="Textarea Red" />
+      <Textarea color="green" label="Textarea Green" />
     </div>
   );
 }
 ```
 </CodePreview>
 
+<br />
+
+Using different colors can make the user interface look better and clearer. It can also help show different meanings or importance levels. For example, using red for warnings or mistakes.
+
 ---
 
+<DocsTitle href="textarea-validations">
 ## Textarea Validations
+</DocsTitle>
 
 The <Code>Textarea</Code> component comes with error and success states for performing validations.
 
-<CodePreview id="textarea-validations" link="textarea#textarea-validations" component={
-  <div className="flex flex-col w-96 gap-6">
-    <Textarea label="Textarea Error" error />
-    <Textarea label="Textarea Success" success />
-  </div>
-}>
+<CodePreview link="textarea#textarea-validations" component={<TextareaExamples.TextareaValidations />}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
-export default function Validations() {
+export function TextareaValidations() {
   return (
-    <div className="flex flex-col w-96 gap-6">
+    <div className="flex w-96 flex-col gap-6">
       <Textarea label="Textarea Error" error />
       <Textarea label="Textarea Success" success />
     </div>
@@ -166,21 +166,28 @@ export default function Validations() {
 ```
 </CodePreview>
 
+<br />
+
+In this example:<br />
+• error: This Textarea is marked with an error prop and labeled "Textarea Error". This typically indicates a validation error state, which changes the appearance of the textarea to signal an error to the user.<br />
+• success: This Textarea is marked with a success prop and labeled "Textarea Success". This state usually signifies a successful validation, altering the appearance to a green color, indicating that the input is valid.<br />
+
+
 ---
 
-## Disabled Textarea
+<DocsTitle href="textarea-disabled">
+## Textarea Disabled
+</DocsTitle>
 
-A <Code>Textarea</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Textarea</Code> component.
+A Textarea can be disabled as well, helping you to prevent user interactions like click or focus over the Textarea component.  
 
-<CodePreview id="disabled-textarea" link="textarea#disabled-textarea" component={
-  <div className="w-96">
-    <Textarea label="Disabled" disabled />
-  </div>
-}>
+A disabled Textarea typically has a different visual style to clearly indicate that it is not active (example: a  grayed-out appearance). The label "Disabled" further clarifies the state of the Textarea for users.
+
+<CodePreview link="textarea#textarea-disabled" component={<TextareaExamples.TextareaDisabled />}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
-export default function Example() {
+export function TextareaDisabled() {
   return (
     <div className="w-96">
       <Textarea label="Disabled" disabled />
@@ -190,5 +197,147 @@ export default function Example() {
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="comment-box-textarea">
+## Comment Box Textarea
+</DocsTitle>
+
+Use the example below for a comment box that uses <Code>Textarea</Code> component.
+
+<CodePreview id="comment-box-textarea" component={<TextareaExamples.CommentBoxTextarea />}>
+```jsx
+import { Textarea, Button, IconButton } from "@material-tailwind/react";
+
+export function CommentBoxTextarea() {
+  return (
+    <div className="relative w-[32rem]">
+      <Textarea variant="static" placeholder="Your Comment" rows={8} />
+      <div className="flex w-full justify-between py-1.5">
+        <IconButton variant="text" color="blue-gray" size="sm">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+            className="h-4 w-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+            />
+          </svg>
+        </IconButton>
+        <div className="flex gap-2">
+          <Button size="sm" color="red" variant="text" className="rounded-md">
+            Cancel
+          </Button>
+          <Button size="sm" className="rounded-md">
+            Post Comment
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="twitter-chatbox-textarea">
+## Twitter Chatbox Textarea
+</DocsTitle>
+
+Use the example below for a chat input that uses Textarea component. This component can be used in applications where a chat or messaging feature is needed, particularly if aiming for a design similar to Twitter's interface.
+
+<CodePreview component={<TextareaExamples.TwitterChatboxTextarea />}>
+```jsx
+import { Textarea, Button, IconButton } from "@material-tailwind/react";
+import { LinkIcon } from "@heroicons/react/24/outline";
+
+export function TwitterChatboxTextarea() {
+  return (
+    <div className="flex w-full flex-row items-center gap-2 rounded-[99px] border border-gray-900/10 bg-gray-900/5 p-2">
+      <div className="flex">
+        <IconButton variant="text" className="rounded-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-5 w-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+            />
+          </svg>
+        </IconButton>
+        <IconButton variant="text" className="rounded-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+            className="h-5 w-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"
+            />
+          </svg>
+        </IconButton>
+      </div>
+      <Textarea
+        rows={1}
+        resize={true}
+        placeholder="Your Message"
+        className="min-h-full !border-0 focus:border-transparent"
+        containerProps={{
+          className: "grid h-full",
+        }}
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+      />
+      <div>
+        <IconButton variant="text" className="rounded-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+            className="h-5 w-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+            />
+          </svg>
+        </IconButton>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+<br />
+
+The component imports <Code>Textarea</Code>, <Code>Button</Code>, and <Code>IconButton</Code> from <Code>@material-tailwind/react</Code>, which offers Material Design styled React components with Tailwind CSS. It also imports <Code>LinkIcon</Code> from <Code>@heroicons/react</Code>, a library of SVG icons.
+
+---
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Looking for more textarea examples? Check out our **<a href="https://www.material-tailwind.com/blocks/contact-sections" target="_blank">Contact Sections</a>** from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

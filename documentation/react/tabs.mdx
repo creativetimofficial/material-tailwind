@@ -1,26 +1,44 @@
 ---
 title: Tailwind CSS Tabs for React - Material Tailwind
 description: Customise your web projects with our beautiful tabs component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["tabs", "custom-tabs-animation", "props", "theme"]
-related:
+navigation:
   [
-    {
-      title: "Props",
-      route: "props/tabs",
-      description: "Learn more about props definition and types of tabs components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/tabs",
-      description: "Learn how to customize the theme and styles for tabs components.",
-    },
+    "tabs",
+    "tabs-with-icon",
+    "tabs-custom-animation",
+    "transparent-tabs",
+    "vertical-tabs",
+    "vertical-tabs-with-icon",
+    "underline-tabs",
+    "tabs-props",
+    "tabs-header-props",
+    "tabs-body-props",
+    "tab-props",
+    "tab-panel-props",
+    "types-value",
+    "types-orientation",
+    "types-animate",
+    "tabs-theme",
+    "tabs-theme-object-type",
+    "tabs-theme-customization",
+    "tabs-header-theme-object-type",
+    "tabs-header-theme-customization",
+    "tabs-body-theme-object-type",
+    "tabs-body-theme-customization",
+    "tab-theme-object-type",
+    "tab-theme-customization",
+    "tab-panel-theme-object-type",
+    "tab-panel-theme-customization",
+    "more-examples",
   ]
 github: tabs
 prev: switch
 next: textarea
 ---
 
+<DocsTitle href="tabs">
 # Tailwind CSS Tabs - React
+</DocsTitle>
 
 Get started on your web project with our responsive Tailwind CSS <Code>Tabs</Code> that create a secondary navigational hierarchy for your website.
 
@@ -31,45 +49,16 @@ See below our example that will help you create a simple and easy-to-use <Code>T
 
 <br />
 
-<CodePreview id="tabs" link="tabs#tabs" component={
-  <Tabs value="html">
-    <TabsHeader>
-      <Tab value="html">HTML</Tab>
-      <Tab value="react">React</Tab>
-      <Tab value="vue">Vue</Tab>
-      <Tab value="angular">Angular</Tab>
-      <Tab value="svelte">Svelte</Tab>
-    </TabsHeader>
-    <TabsBody>
-      <TabPanel value="html">
-        {`It really matters and then like it really doesn't matter. What
-          matters is the people who are sparked by it. And the people who are
-          like offended by it, it doesn't matter.`}
-      </TabPanel>
-      <TabPanel value="react">
-        {`Because it's about motivating the doers. Because I'm here
-          to follow my dreams and inspire other people to follow their dreams, too.`}
-      </TabPanel>
-      <TabPanel value="vue">
-        {`We're not always in the position that we want to be at.
-          We're constantly growing. We're constantly making mistakes.
-          We're constantly trying to express ourselves and actualize our
-          dreams.`}
-      </TabPanel>
-      <TabPanel value="angular">
-        {`It really matters and then like it really doesn't matter. What
-          matters is the people who are sparked by it. And the people who are
-          like offended by it, it doesn't matter.`}
-      </TabPanel>
-      <TabPanel value="svelte">
-        {`We're not always in the position that we want to be at.
-          We're constantly growing. We're constantly making mistakes.
-          We're constantly trying to express ourselves and actualize our
-          dreams.`}
-      </TabPanel>
-    </TabsBody>
-  </Tabs>
-}>
+Examples on this page are using <Code><a href="https://heroicons.com/" target="_blank">@heroicons/react</a></Code> make sure you have installed it.
+
+```bash
+npm i @heroicons/react
+```
+
+<br />
+<br />
+
+<CodePreview link="tabs#tabs" component={<TabsExamples.TabsDefault />}>
 ```jsx
 import {
   Tabs,
@@ -79,7 +68,7 @@ import {
   TabPanel,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function TabsDefault() {
   const data = [
     {
       label: "HTML",
@@ -116,80 +105,112 @@ export default function Example() {
     },
   ];
 
-return (
-
-<Tabs value="html">
-  <TabsHeader>
-    {data.map(({ label, value }) => (
-      <Tab key={value} value={value}>
-        {label}
-      </Tab>
-    ))}
-  </TabsHeader>
-  <TabsBody>
-    {data.map(({ value, desc }) => (
-      <TabPanel key={value} value={value}>
-        {desc}
-      </TabPanel>
-    ))}
-  </TabsBody>
-</Tabs>
-); }
-
-````
+  return (
+    <Tabs value="html">
+      <TabsHeader>
+        {data.map(({ label, value }) => (
+          <Tab key={value} value={value}>
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+```
 </CodePreview>
 
 ---
 
+<DocsTitle href="tabs-with-icon">
+## Tabs with Icon
+</DocsTitle>
+
+Use tabs with icon to display the content in a more organized way.
+
+<CodePreview link="tabs#tabs-with-icon" component={<TabsExamples.TabsWithIcon />}>
+```jsx
+import React from "react";
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+import {
+  Square3Stack3DIcon,
+  UserCircleIcon,
+  Cog6ToothIcon,
+} from "@heroicons/react/24/solid";
+
+export function TabsWithIcon() {
+  const data = [
+    {
+      label: "Dashboard",
+      value: "dashboard",
+      icon: Square3Stack3DIcon,
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people
+      who are like offended by it, it doesn't matter.`,
+    },
+    {
+      label: "Profile",
+      value: "profile",
+      icon: UserCircleIcon,
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Settings",
+      value: "settings",
+      icon: Cog6ToothIcon,
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+  ];
+  return (
+    <Tabs value="dashboard">
+      <TabsHeader>
+        {data.map(({ label, value, icon }) => (
+          <Tab key={value} value={value}>
+            <div className="flex items-center gap-2">
+              {React.createElement(icon, { className: "w-5 h-5" })}
+              {label}
+            </div>
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="tabs-custom-animation">
 ## Custom Tabs Animation
+</DocsTitle>
 
 You can modify the open/close state animation for <Code>TabsBody</Code> component using the <Code>animate</Code> prop.
 
-<CodePreview id="custom-tabs-animation" component={
-  <Tabs id="custom-animation" value="html">
-    <TabsHeader>
-      <Tab value="html">HTML</Tab>
-      <Tab value="react">React</Tab>
-      <Tab value="vue">Vue</Tab>
-      <Tab value="angular">Angular</Tab>
-      <Tab value="svelte">Svelte</Tab>
-    </TabsHeader>
-    <TabsBody
-      animate={{
-        initial: { y: 250 },
-        mount: { y: 0 },
-        unmount: { y: 250 },
-      }}
-    >
-      <TabPanel value="html">
-        {`It really matters and then like it really doesn't matter. What
-          matters is the people who are sparked by it. And the people who are
-          like offended by it, it doesn't matter.`}
-      </TabPanel>
-      <TabPanel value="react">
-        {`Because it's about motivating the doers. Because I'm here
-          to follow my dreams and inspire other people to follow their dreams, too.`}
-      </TabPanel>
-      <TabPanel value="vue">
-        {`We're not always in the position that we want to be at.
-          We're constantly growing. We're constantly making mistakes.
-          We're constantly trying to express ourselves and actualize our
-          dreams.`}
-      </TabPanel>
-      <TabPanel value="angular">
-        {`It really matters and then like it really doesn't matter. What
-          matters is the people who are sparked by it. And the people who are
-          like offended by it, it doesn't matter.`}
-      </TabPanel>
-      <TabPanel value="svelte">
-        {`We're not always in the position that we want to be at.
-          We're constantly growing. We're constantly making mistakes.
-          We're constantly trying to express ourselves and actualize our
-          dreams.`}
-      </TabPanel>
-    </TabsBody>
-  </Tabs>
-}>
+<CodePreview component={<TabsExamples.TabsCustomAnimation />}>
 ```jsx
 import {
   Tabs,
@@ -199,7 +220,7 @@ import {
   TabPanel,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function TabsCustomAnimation() {
   const data = [
     {
       label: "HTML",
@@ -264,9 +285,839 @@ export default function Example() {
     </Tabs>
   );
 }
-````
-
+```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="transparent-tabs">
+## Transparent Tabs
+</DocsTitle>
+
+Use the example below to create <Code>Tabs</Code> component with a transparent header.
+
+<CodePreview component={<TabsExamples.TransparentTabs />}>
+```jsx
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+
+export function TransparentTabs() {
+  const data = [
+    {
+      label: "HTML",
+      value: "html",
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people 
+      who are like offended by it, it doesn't matter.`,
+    },
+    {
+      label: "React",
+      value: "react",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Vue",
+      value: "vue",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+    {
+      label: "Angular",
+      value: "angular",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Svelte",
+      value: "svelte",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+  ];
+
+  return (
+    <Tabs value="html" className="max-w-[40rem]">
+      <TabsHeader
+        className="bg-transparent"
+        indicatorProps={{
+          className: "bg-gray-900/10 shadow-none !text-gray-900",
+        }}
+      >
+        {data.map(({ label, value }) => (
+          <Tab key={value} value={value}>
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="vertical-tabs">
+## Vertical Tabs
+</DocsTitle>
+
+You can change the tabs orientation from horizontal to vertical using the <Code>orientation</Code> prop.
+
+<CodePreview component={<TabsExamples.VerticalTabs />}>
+```jsx
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+
+export function VerticalTabs() {
+  const data = [
+    {
+      label: "HTML",
+      value: "html",
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people
+      who are like offended by it, it doesn't matter.`,
+    },
+    {
+      label: "React",
+      value: "react",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Vue",
+      value: "vue",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+    {
+      label: "Angular",
+      value: "angular",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Svelte",
+      value: "svelte",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+  ];
+
+  return (
+    <Tabs value="html" orientation="vertical">
+      <TabsHeader className="w-32">
+        {data.map(({ label, value }) => (
+          <Tab key={value} value={value}>
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value} className="py-0">
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="vertical-tabs-with-icon">
+## Vertical Tabs with Icon
+</DocsTitle>
+
+You can change the tabs orientation from horizontal to vertical using the <Code>orientation</Code> prop.
+
+<CodePreview component={<TabsExamples.VerticalTabsWithIcon />}>
+```jsx
+import React from "react";
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+import {
+  Square3Stack3DIcon,
+  UserCircleIcon,
+  Cog6ToothIcon,
+} from "@heroicons/react/24/solid";
+
+export function VerticalTabsWithIcon() {
+  const data = [
+    {
+      label: "Dashboard",
+      value: "dashboard",
+      icon: Square3Stack3DIcon,
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people 
+      who are like offended by it, it doesn't matter.`,
+    },
+    {
+      label: "Profile",
+      value: "profile",
+      icon: UserCircleIcon,
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Settings",
+      value: "settings",
+      icon: Cog6ToothIcon,
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+  ];
+  return (
+    <Tabs value="dashboard" orientation="vertical">
+      <TabsHeader className="w-40">
+        {data.map(({ label, value, icon }) => (
+          <Tab key={value} value={value} className="place-items-start">
+            <div className="flex items-center gap-2">
+              {React.createElement(icon, { className: "w-5 h-5" })}
+              {label}
+            </div>
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value} className="py-0">
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="underline-tabs">
+## Underline Tabs
+</DocsTitle>
+
+You can use tailwind css classes for customizing the tabs components, see the example below for an underline tabs component.
+
+<CodePreview component={<TabsExamples.UnderlineTabs />}>
+```jsx
+import React from "react";
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+
+export function UnderlineTabs() {
+  const [activeTab, setActiveTab] = React.useState("html");
+  const data = [
+    {
+      label: "HTML",
+      value: "html",
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people 
+      who are like offended by it, it doesn't matter.`,
+    },
+    {
+      label: "React",
+      value: "react",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Vue",
+      value: "vue",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+    {
+      label: "Angular",
+      value: "angular",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Svelte",
+      value: "svelte",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+  ];
+  return (
+    <Tabs value={activeTab}>
+      <TabsHeader
+        className="rounded-none border-b border-blue-gray-50 bg-transparent p-0"
+        indicatorProps={{
+          className:
+            "bg-transparent border-b-2 border-gray-900 shadow-none rounded-none",
+        }}
+      >
+        {data.map(({ label, value }) => (
+          <Tab
+            key={value}
+            value={value}
+            onClick={() => setActiveTab(value)}
+            className={activeTab === value ? "text-gray-900" : ""}
+          >
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="tabs-props">
+## Tabs Props
+</DocsTitle>
+
+The following props are available for tabs component. These are the custom props
+that we've added for the tabs component and you can use all the other native props
+as well.
+
+| Attribute     | Type                              | Description                   | Default                                |
+| ------------- | --------------------------------- | ----------------------------- | -------------------------------------- |
+| `value`       | [Value](#types-value)             | Set's the default visible tab | No default value it's a required prop. |
+| `orientation` | [Orientation](#types-orientation) | Set's the tab orientation     | <Code>horizontal</Code>.               |
+| `className`   | <Code>string</Code>               | Add custom className for tabs | `''`                                   |
+| `children`    | <Code>node</Code>                 | Add content for tabs          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabsProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="tabs-header-props">
+## Tabs Header Props
+</DocsTitle>
+
+<span id="tabs-header-props" className="scroll-mt-48" />
+The following props are available for tabs header component. These are the custom
+props that we've added for the tabs header component and you can use all the other
+native props as well.
+
+| Attribute        | Type                | Description                                | Default                                |
+| ---------------- | ------------------- | ------------------------------------------ | -------------------------------------- |
+| `indicatorProps` | <Code>object</Code> | Add custom props for tabs header indicator | <Code>undefined</Code>                 |
+| `className`      | <Code>string</Code> | Add custom className for tabs header       | `''`                                   |
+| `children`       | <Code>node</Code>   | Add content for tabs header                | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabsHeaderProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="tabs-body-props">
+## Tabs Body Props
+</DocsTitle>
+
+<span id="tabs-body-props" className="scroll-mt-48" />
+The following props are available for tabs body component. These are the custom props
+that we've added for the tabs body component and you can use all the other native
+props as well.
+
+| Attribute   | Type                      | Description                        | Default                                |
+| ----------- | ------------------------- | ---------------------------------- | -------------------------------------- |
+| `animate`   | [Animate](#types-animate) | Change tabs body animation         | <Code>undefined</Code>                 |
+| `className` | <Code>string</Code>       | Add custom className for tabs body | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for tabs body          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabsBodyProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="tab-props">
+## Tab Props
+</DocsTitle>
+
+<span id="tab-props" className="scroll-mt-48" />
+The following props are available for tab component. These are the custom props that
+come with we've added for the tab component and you can use all the other native
+props as well.
+
+| Attribute   | Type                 | Description                                                         | Default                                |
+| ----------- | -------------------- | ------------------------------------------------------------------- | -------------------------------------- |
+| `value`     | [Value](#types)      | Set's the tab value, it should be the same value as tab panel value | No default value it's a required prop. |
+| `disabled`  | <Code>boolean</Code> | Disable tab                                                         | <Code>false</Code>                     |
+| `className` | <Code>string</Code>  | Add custom className for tab                                        | `''`                                   |
+| `children`  | <Code>node</Code>    | Add content for tab                                                 | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="tabs-panel-props">
+## Tab Panel Props
+</DocsTitle>
+
+<span id="tab-panel-props" className="scroll-mt-48" />
+The following props are available for tab panel component. These are the custom props
+that we've added for the tab panel component and you can use all the other native
+props as well.
+
+| Attribute   | Type                | Description                                                         | Default                                |
+| ----------- | ------------------- | ------------------------------------------------------------------- | -------------------------------------- |
+| `value`     | [Value](#types)     | Set's the tab panel value, it should be the same value as tab value | No default value it's a required prop. |
+| `className` | <Code>string</Code> | Add custom className for tab panel                                  | `''`                                   |
+| `children`  | <Code>node</Code>   | Add content for tab panel                                           | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabPanelProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-value">
+## Types - Value
+</DocsTitle>
+
+```ts
+type value = string | number;
+```
+
+---
+
+<DocsTitle href="types-orientation">
+## Types - Orientation
+</DocsTitle>
+
+```ts
+type value = "horizontal" | "vertical";
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+```ts
+type animate = {
+  initial?: object;
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="tabs-theme">
+## Tabs Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for tabs components, the theme object for tabs components has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of tabs component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of tabs component.<br />
+
+You can customize the theme and styles of tabs components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="tabs-theme-object-type">
+## Tabs Theme Object Type
+</DocsTitle>
+
+```ts
+interface TabsStylesType {
+  defaultProps: {
+    className: string;
+    orientation: "horizontal" | "vertical";
+  };
+  styles: {
+    base: object;
+    vertical: object;
+    horizontal: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabsStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="tabs-theme-customization">
+## Tabs Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  tabs: {
+    defaultProps: {
+      className: "",
+      orientation: "horizontal",
+    },
+    styles: {
+      base: {
+        overflow: "overflow-hidden",
+      },
+      horizontal: {
+        display: "block",
+      },
+      vertical: {
+        display: "flex",
+      },
+    },
+  },
+};
+```
+
+---
+
+<DocsTitle href="tabs-header-theme-object-type">
+## Tabs Header Theme Object Type
+</DocsTitle>
+
+```ts
+interface TabsHeaderStylesType {
+  defaultProps: {
+    className: string;
+  };
+  styles: {
+    base: object;
+    horizontal: object;
+    vertical: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabsHeaderStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="tabs-header-theme-customization">
+## Tabs Header Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  tabsHeader: {
+    defaultProps: {
+      className: "",
+    },
+    styles: {
+      base: {
+        display: "flex",
+        position: "relative",
+        bg: "bg-blue-gray-50",
+        bgOpacity: "bg-opacity-60",
+        borderRadius: "rounded-lg",
+        p: "p-1",
+      },
+      horizontal: {
+        flexDirection: "flex-row",
+      },
+      vertical: {
+        flexDirection: "flex-col",
+      },
+    },
+  },
+};
+```
+
+---
+
+<DocsTitle href="tabs-body-theme-object-type">
+## Tabs Body Theme Object Type
+</DocsTitle>
+
+```ts
+interface TabsBodyStylesType {
+  defaultProps: {
+    animate: {
+      initial: object;
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabsBodyStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="tabs-body-theme-customization">
+## Tabs Body Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  tabsBody: {
+    defaultProps: {
+      animate: {
+        unmount: {},
+        mount: {},
+      },
+      className: "",
+    },
+    styles: {
+      base: {
+        display: "block",
+        width: "w-full",
+        position: "relative",
+        bg: "bg-transparent",
+        overflow: "overflow-hidden",
+      },
+    },
+  },
+};
+```
+
+---
+
+<DocsTitle href="tab-theme-object-type">
+## Tab Theme Object Type
+</DocsTitle>
+
+```ts
+interface TabStylesType {
+  defaultProps: {
+    className: string;
+    disabled: boolean;
+  };
+  styles: {
+    base: {
+      tab: {
+        initial: object;
+        disabled: object;
+      };
+      indicator: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="tab-theme-customization">
+## Tab Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  tab: {
+    defaultProps: {
+      className: "",
+      activeClassName: "",
+      disabled: false,
+    },
+    styles: {
+      base: {
+        tab: {
+          initial: {
+            display: "flex",
+            alignItems: "items-center",
+            justifyContent: "justify-center",
+            textAlign: "text-center",
+            width: "w-full",
+            height: "h-full",
+            position: "relative",
+            bg: "bg-transparent",
+            py: "py-1",
+            px: "px-2",
+            color: "text-blue-gray-900",
+            fontSmoothing: "antialiased",
+            fontFamily: "font-sans",
+            fontSize: "text-base",
+            fontWeight: "font-normal",
+            lineHeight: "leading-relaxed",
+            userSelect: "select-none",
+            cursor: "cursor-pointer",
+          },
+          disabled: {
+            opacity: "opacity-50",
+            cursor: "cursor-not-allowed",
+            pointerEvents: "pointer-events-none",
+            userSelect: "select-none",
+          },
+        },
+        indicator: {
+          position: "absolute",
+          inset: "inset-0",
+          zIndex: "z-10",
+          height: "h-full",
+          bg: "bg-white",
+          borderRadius: "rounded-md",
+          boxShadow: "shadow",
+        },
+      },
+    },
+  },
+};
+```
+
+---
+
+<DocsTitle href="tab-panel-theme-object-type">
+## Tab Panel Theme Object Type
+</DocsTitle>
+
+```ts
+interface TabPanelStylesType {
+  defaultProps: {
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabPanelStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="tab-panel-theme-customization">
+## Tab Panel Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  tabPanel: {
+    defaultProps: {
+      className: "",
+    },
+    styles: {
+      base: {
+        width: "w-full",
+        height: "h-max",
+        color: "text-gray-700",
+        p: "p-4",
+        fontSmoothing: "antialiased",
+        fontFamily: "font-sans",
+        fontSize: "text-base",
+        fontWeight: "font-light",
+        lineHeight: "leading-relaxed",
+      },
+    },
+  },
+};
+```
+
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Looking for more tab examples? Check out our **<a href="https://www.material-tailwind.com/blocks/pricing-sections" target="_blank">Pricing Sections</a>** from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

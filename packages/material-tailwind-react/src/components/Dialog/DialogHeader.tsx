@@ -27,7 +27,7 @@ export const DialogHeader = React.forwardRef<HTMLDivElement, DialogHeaderProps>(
     } = dialogHeader;
 
     // 2. set default props
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const dialogHeaderClasses = twMerge(classnames(objectsToString(base)), className);

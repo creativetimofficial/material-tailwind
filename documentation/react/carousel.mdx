@@ -1,0 +1,595 @@
+---
+title: Tailwind CSS Carousel for React - Material Tailwind
+description: Customise your web projects with our easy-to-use carousel component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "carousel",
+    "carousel-with-content",
+    "carousel-transition",
+    "carousel-custom-arrows",
+    "carousel-custom-navigation",
+    "carousel-props",
+    "types-prev-arrow",
+    "types-next-arrow",
+    "types-navigation",
+    "types-slide-ref",
+    "carousel-theme",
+    "carousel-theme-object-type",
+    "carousel-theme-customization",
+    "more-examples"
+  ]
+github: carousel
+prev: collapse
+next: dialog
+---
+
+<DocsTitle href="carousel">
+# Tailwind CSS Carousel - React
+</DocsTitle>
+
+Use our Tailwind CSS carousel for your website for sliding through multiple elements or images.
+
+See below our simple <Code>Carousel</Code> example that you can use in your Tailwind CSS and React project.
+
+<br />
+
+<CodePreview id="carousel" component={<CarouselExamples.CarouselDefault />}>
+```jsx
+import { Carousel } from "@material-tailwind/react";
+
+export function CarouselDefault() {
+  return (
+    <Carousel className="rounded-xl">
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+    </Carousel>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="carousel-with-content">
+## Carousel With Content
+</DocsTitle>
+
+Use the example below for a complex carousel example with more content.
+
+<CodePreview component={<CarouselExamples.CarouselWithContent />}>
+```jsx
+import { Carousel, Typography, Button } from "@material-tailwind/react";
+
+export function CarouselWithContent() {
+  return (
+    <Carousel className="rounded-xl">
+      <div className="relative h-full w-full">
+        <img
+          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+          alt="image 1"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
+          <div className="w-3/4 text-center md:w-2/4">
+            <Typography
+              variant="h1"
+              color="white"
+              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+            >
+              The Beauty of Nature
+            </Typography>
+            <Typography
+              variant="lead"
+              color="white"
+              className="mb-12 opacity-80"
+            >
+              It is not so much for its beauty that the forest makes a claim
+              upon men&apos;s hearts, as for that subtle something, that quality
+              of air that emanation from old trees, that so wonderfully changes
+              and renews a weary spirit.
+            </Typography>
+            <div className="flex justify-center gap-2">
+              <Button size="lg" color="white">
+                Explore
+              </Button>
+              <Button size="lg" color="white" variant="text">
+                Gallery
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative h-full w-full">
+        <img
+          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+          alt="image 2"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
+          <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
+            <Typography
+              variant="h1"
+              color="white"
+              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+            >
+              The Beauty of Nature
+            </Typography>
+            <Typography
+              variant="lead"
+              color="white"
+              className="mb-12 opacity-80"
+            >
+              It is not so much for its beauty that the forest makes a claim
+              upon men&apos;s hearts, as for that subtle something, that quality
+              of air that emanation from old trees, that so wonderfully changes
+              and renews a weary spirit.
+            </Typography>
+            <div className="flex gap-2">
+              <Button size="lg" color="white">
+                Explore
+              </Button>
+              <Button size="lg" color="white" variant="text">
+                Gallery
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative h-full w-full">
+        <img
+          src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+          alt="image 3"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
+          <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
+            <Typography
+              variant="h1"
+              color="white"
+              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+            >
+              The Beauty of Nature
+            </Typography>
+            <Typography
+              variant="lead"
+              color="white"
+              className="mb-12 opacity-80"
+            >
+              It is not so much for its beauty that the forest makes a claim
+              upon men&apos;s hearts, as for that subtle something, that quality
+              of air that emanation from old trees, that so wonderfully changes
+              and renews a weary spirit.
+            </Typography>
+            <div className="flex gap-2">
+              <Button size="lg" color="white">
+                Explore
+              </Button>
+              <Button size="lg" color="white" variant="text">
+                Gallery
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Carousel>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="carousel-transition">
+## Carousel Transition
+</DocsTitle>
+
+You can change the carousel transition using the <Code>transition</Code> prop, you can pass the transition duration as seconds for <Code>transition</Code> prop.
+
+<CodePreview id="carousel-transition" component={<CarouselExamples.CarouselTransition />}>
+```jsx
+import { Carousel } from "@material-tailwind/react";
+
+export function CarouselTransition() {
+  return (
+    <Carousel transition={{ duration: 2 }} className="rounded-xl">
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+    </Carousel>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="carousel-custom-arrows">
+## Carousel Custom Arrows
+</DocsTitle>
+
+You can change the carousel arrows using the <Code>prevArrow</Code> and <Code>nextArrow</Code> props.
+
+<CodePreview component={<CarouselExamples.CarouselCustomArrows />}>
+```jsx
+import { Carousel, IconButton } from "@material-tailwind/react";
+
+export function CarouselCustomArrows() {
+  return (
+    <Carousel
+      className="rounded-xl"
+      prevArrow={({ handlePrev }) => (
+        <IconButton
+          variant="text"
+          color="white"
+          size="lg"
+          onClick={handlePrev}
+          className="!absolute top-2/4 left-4 -translate-y-2/4"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+            />
+          </svg>
+        </IconButton>
+      )}
+      nextArrow={({ handleNext }) => (
+        <IconButton
+          variant="text"
+          color="white"
+          size="lg"
+          onClick={handleNext}
+          className="!absolute top-2/4 !right-4 -translate-y-2/4"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+            />
+          </svg>
+        </IconButton>
+      )}
+    >
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+    </Carousel>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="carousel-custom-navigation">
+## Carousel Custom Navigation
+</DocsTitle>
+
+You can change the carousel bottom navigation using the <Code>navigation</Code> prop.
+
+<CodePreview component={<CarouselExamples.CarouselCustomNavigation />}>
+```jsx
+import { Carousel } from "@material-tailwind/react";
+
+export function CarouselCustomNavigation() {
+  return (
+    <Carousel
+      className="rounded-xl"
+      navigation={({ setActiveIndex, activeIndex, length }) => (
+        <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+          {new Array(length).fill("").map((_, i) => (
+            <span
+              key={i}
+              className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
+                activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
+              }`}
+              onClick={() => setActiveIndex(i)}
+            />
+          ))}
+        </div>
+      )}
+    >
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+    </Carousel>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="carousel-props">
+## Carousel Props
+</DocsTitle>
+
+The following props are available for carousel component. These are the custom props
+that we've added for the carousel component and you can use all the other native
+props as well.
+
+| Attribute       | Type                            | Description                                                 | Default                                                     |
+| --------------- | ------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `prevArrow`     | [Prev Arrow](#types-prev-arrow) | Change the previous arrow component for carousel            | <Code>Arrow</Code>                                          |
+| `nextArrow`     | [Next Arrow](#types-next-arrow) | Change the next arrow component for carousel                | <Code>Arrow</Code>                                          |
+| `navigation`    | [Navigation](#types-navigation) | Change the navigation component for carousel                | <Code>Dots</Code>                                           |
+| `slideRef`      | [Slide Ref](#types-slide-ref)   | Add reference for the carousel slide                        | <Code>undefined</Code>                                      |
+| `autoplay`      | <Code>boolean</Code>            | Sets the autoplay mode for carousel                         | <Code>false</Code>                                          |
+| `autoplayDelay` | <Code>number</Code>             | Sets the interval duration for autoplay mode in miliseconds | <Code>5000</Code>                                           |
+| `transition`    | Framer Motion                   | Sets the transition for carousel                            | <Code>`transition: { type: "tween", duration: 0.5 }`</Code> |
+| `loop`          | <Code>boolean</Code>            | Sets the looping mode for the carousel                      | <Code>false</Code>                                          |
+| `className`     | <Code>string</Code>             | Add custom className for card                               | `''`                                                        |
+| `children`      | <Code>node</Code>               | Add content for card                                        | No default value it's a required prop.                      |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CarouselProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-prev-arrow">
+## Types - Prev Arrow
+</DocsTitle>
+
+```ts
+type prevArrow = (args: {
+  loop: boolean;
+  handlePrev: () => void;
+  activeIndex: number;
+  firstIndex: boolean;
+}) => React.ReactNode | void;
+```
+
+---
+
+<DocsTitle href="types-next-arrow">
+## Types - Next Arrow
+</DocsTitle>
+
+```ts
+type nextArrow = (args: {
+  loop: boolean;
+  handleNext: () => void;
+  activeIndex: number;
+  lastIndex: boolean;
+}) => React.ReactNode | void;
+```
+
+---
+
+<DocsTitle href="types-navigation">
+## Types - Navigation
+</DocsTitle>
+
+```ts
+type navigation = (args: {
+  setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
+  activeIndex: number;
+  length: number;
+}) => React.ReactNode | void;
+```
+
+---
+
+<DocsTitle href="types-slide-ref">
+## Types - Slide Reference
+</DocsTitle>
+
+```ts
+export type slideRef = React.Ref<HTMLDivElement>;
+```
+
+---
+
+<DocsTitle href="carousel-theme">
+## Carousel Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for carousel component, the theme object for carousel component has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of carousel component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of carousel component.<br />
+
+You can customize the theme and styles of carousel component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="carousel-theme-object-type">
+## Carousel Theme Object Type
+</DocsTitle>
+
+```ts
+interface CarouselStylesType {
+  defaultProps: {
+    prevArrow: (args: {
+      loop: boolean;
+      handlePrev: () => void;
+      activeIndex: number;
+      firstIndex: boolean;
+    }) => React.ReactNode | void;
+    nextArrow: (args: {
+      loop: boolean;
+      handleNext: () => void;
+      activeIndex: number;
+      lastIndex: boolean;
+    }) => React.ReactNode | void;
+    navigation: (args: {
+      setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
+      activeIndex: number;
+      length: number;
+    }) => React.ReactNode | void;
+    transition: object;
+    autoplay: boolean;
+    autoplayDelay: number;
+    loop: boolean;
+    className: string;
+  };
+  styles: {
+    base: {
+      carousel: object;
+      slide: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import { CarouselStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="carousel-theme-customization">
+## Carousel Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  carousel: {
+    defaultProps: {
+      prevArrow: ({ loop, handlePrev, firstIndex }) => {
+        return (
+          <button
+            onClick={handlePrev}
+            disabled={!loop && firstIndex}
+            className="!absolute top-2/4 left-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center"
+          >
+            <ChevronLeftIcon strokeWidth={3} className="-ml-1 h-7 w-7" />
+          </button>
+        );
+      },
+      nextArrow: ({ loop, handleNext, lastIndex }) => (
+        <button
+          onClick={handleNext}
+          disabled={!loop && lastIndex}
+          className="!absolute top-2/4 right-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center"
+        >
+          <ChevronRightIcon strokeWidth={3} className="ml-1 h-7 w-7" />
+        </button>
+      ),
+      navigation: ({ setActiveIndex, activeIndex, length }) => (
+        <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+          {new Array(length).fill("").map((_, i) => (
+            <span
+              key={i}
+              className={`block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] ${
+                activeIndex === i ? "bg-white" : "bg-white/50"
+              }`}
+              onClick={() => setActiveIndex(i)}
+            />
+          ))}
+        </div>
+      ),
+      autoplay: false,
+      autoplayDelay: 5000,
+      transition: {
+        type: "tween",
+        duration: 0.5,
+      },
+      loop: false,
+      className: "",
+    },
+    styles: {
+      base: {
+        carousel: {
+          position: "relative",
+          width: "w-full",
+          height: "h-full",
+          overflowX: "overflow-x-hidden",
+          display: "flex",
+        },
+
+        slide: {
+          width: "w-full",
+          height: "h-full",
+          display: "inline-block",
+          flex: "flex-none",
+        },
+      },
+    },
+  },
+};
+```
+
+---
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more carousel component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>

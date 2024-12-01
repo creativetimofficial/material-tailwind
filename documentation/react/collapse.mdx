@@ -1,0 +1,180 @@
+---
+title: Tailwind CSS Collapse for React - Material Tailwind
+description: Customise your web projects with our easy-to-use collapse component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "collapse",
+    "collapse-props",
+    "types-animate",
+    "collapse-theme",
+    "collapse-theme-object-type",
+    "collapse-theme-customization",
+    "more-examples"
+  ]
+github: collapse
+prev: chip
+next: carousel
+---
+
+<DocsTitle href="collapse">
+# Tailwind CSS Collapse - React
+</DocsTitle>
+
+Use our Tailwind CSS collapse for your website. You can use it for accordion, collapsible items and much more.
+
+See below our simple <Code>Collapse</Code> example that you can use in your Tailwind CSS and React project.
+
+<br />
+
+<CodePreview component={<CollapseExamples.CollapseDefault />}>
+```jsx
+import React from "react";
+import {
+  Collapse,
+  Button,
+  Card,
+  Typography,
+  CardBody,
+} from "@material-tailwind/react";
+
+export default function CollapseDefault() {
+  const [open, setOpen] = React.useState(false);
+
+  const toggleOpen = () => setOpen((cur) => !cur);
+
+  return (
+    <>
+      <Button onClick={toggleOpen}>Open Collapse</Button>
+      <Collapse open={open}>
+        <Card className="my-4 mx-auto w-8/12">
+          <CardBody>
+            <Typography>
+              Use our Tailwind CSS collapse for your website. You can use if for
+              accordion, collapsible items and much more.
+            </Typography>
+          </CardBody>
+        </Card>
+      </Collapse>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="collapse-props">
+## Collapse Props
+</DocsTitle>
+
+The following props are available for collapse component. These are the custom props
+that we've added for the collapse component and you can use all the other
+native props as well.
+
+| Attribute   | Type                      | Description                                     | Default                                |
+| ----------- | ------------------------- | ----------------------------------------------- | -------------------------------------- |
+| `open`      | <Code>boolean</Code>      | If <Code>true</Code> the collapse will expand   | No default value it's a required prop. |
+| `animate`   | [Animate](#types-animate) | Change collapse animation                       | <Code>undefined</Code>                 |
+| `className` | <Code>string</Code>       | Add custom className for collapse               | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for collapse                        | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CollapseProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="collapse-theme">
+## Collapse Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for collapse component, the theme object for collapse component has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of collapse component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of collapse component.<br />
+
+You can customize the theme and styles of collapse component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="collapse-theme-object-type">
+## Collapse Theme Object Type
+</DocsTitle>
+
+```ts
+interface CollapseStylesType {
+  defaultProps: {
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CollapseStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="collapse-theme-customization">
+## Collapse Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  collapse: {
+    defaultProps: {
+      animate: {
+        unmount: {},
+        mount: {},
+      },
+      className: "",
+    },
+    styles: {
+      base: {
+        display: "block",
+        width: "w-full",
+        basis: "basis-full",
+        overflow: "overflow-hidden",
+      },
+    },
+  },
+};
+```
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more collapse component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

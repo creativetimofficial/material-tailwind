@@ -36,7 +36,7 @@ export const Breadcrumbs = forwardRef<HTMLOListElement, BreadcrumbsProps>(
     // 2. set default props
     separator = separator ?? defaultProps.separator;
     fullWidth = fullWidth ?? defaultProps.fullWidth;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const breadcrumbsRootClasses = classnames(objectsToString(base.root.initial), {
@@ -80,6 +80,6 @@ Breadcrumbs.propTypes = {
   children: propTypesChildren,
 };
 
-Breadcrumbs.displayName = "MaterialTailwind.Breacrumbs";
+Breadcrumbs.displayName = "MaterialTailwind.Breadcrumbs";
 
 export default Breadcrumbs;

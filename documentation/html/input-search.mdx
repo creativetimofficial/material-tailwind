@@ -1,0 +1,283 @@
+---
+title: Tailwind CSS Input Search - Material Tailwind
+description: Check out our Tailwind CSS search components that allow users to search for information within your website or application and display relevant information effectively.
+navigation:
+  [
+    "input-search-with-button",
+    "input-search-with-dropdown",
+    "input-search-with-button-outside",
+    "input-search-with-area",
+    "input-search-with-voice-enabled"
+  ]
+github: input-search
+prev: input-phone
+next: list
+---
+
+# Tailwind CSS Input Search
+
+Use our Tailwind CSS Search components that help users input their queries, refine results, and display relevant information easily.
+
+Ensure the search bar is clearly visible by placing it in a common, expected location—typically at the top of the page—and making it large enough for users to easily notice. Additionally, use a magnifying glass icon to represent the search feature, as it is the most widely recognized symbol.
+
+Check out our search examples below based on Tailwind CSS and HTML.
+
+<br />
+
+## Input Search with Button
+
+Use this example of a search input with the search button placed inside the input field. This compact design allows users to type their query and immediately click the search button within the same element, saving space.
+
+<CodePreview
+  id="input-search-with-button"
+  link="input#input-search-with-button"
+  component={<HTMLInputSearchExamples.InputSearchWithButton/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <div class="relative">
+    <input
+      class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-3 pr-28 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+      placeholder="UI Kits, Dashboards..." 
+    />
+    <button
+      class="absolute top-1 right-1 flex items-center rounded bg-slate-800 py-1 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-2">
+        <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+      </svg>
+
+      Search
+    </button> 
+  </div>
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Input Search with Dropdown
+
+This search input example includes a dropdown menu to filter search categories. Users can select from different categories, such as Dashboards, UI Kits, and Components, before entering their search query. This design helps refine searches and provides more accurate results.
+
+<CodePreview
+  id="input-search-with-dropdown"
+  link="input#input-search-with-dropdown"
+  component={<HTMLInputSearchExamples.InputSearchWithDropdown/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <div class="relative mt-2">
+    <div class="absolute top-1 left-1 flex items-center">
+      <button id="dropdownButton" class="rounded border border-transparent py-1 px-1.5 text-center flex items-center text-sm transition-all text-slate-600">
+        <span id="dropdownSpan" class="text-ellipsis overflow-hidden">Themes</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      <div class="h-6 border-l border-slate-200 ml-1"></div>
+      <div id="dropdownMenu" class="min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 hidden w-full bg-white border border-slate-200 rounded-md shadow-lg z-10">
+        <ul id="dropdownOptions">
+          <li class="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer" data-value="Themes">Themes</li>
+          <li class="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer" data-value="Plugins">Plugins</li>
+          <li class="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer" data-value="Snippets">Snippets</li>
+        </ul>
+      </div>
+    </div>
+    <input
+      type="text"
+      class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-28 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+      placeholder="Widgets..." />
+ 
+    <button
+      class="absolute top-1 right-1 flex items-center rounded bg-slate-800 py-1 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 mr-1.5">
+        <path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" />
+      </svg>
+
+      Search
+    </button> 
+  </div>   
+</div>
+ 
+<script>
+  document.getElementById('dropdownButton').addEventListener('click', function() {
+    var dropdownMenu = document.getElementById('dropdownMenu');
+    if (dropdownMenu.classList.contains('hidden')) {
+      dropdownMenu.classList.remove('hidden');
+    } else {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+ 
+  document.getElementById('dropdownOptions').addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI') {
+      const dataValue = event.target.getAttribute('data-value');
+      document.getElementById('dropdownSpan').textContent = dataValue;
+      document.getElementById('dropdownMenu').classList.add('hidden');
+    }
+  });
+ 
+  document.addEventListener('click', function(event) {
+    var isClickInside = document.getElementById('dropdownButton').contains(event.target) || document.getElementById('dropdownMenu').contains(event.target);
+    var dropdownMenu = document.getElementById('dropdownMenu');
+ 
+    if (!isClickInside) {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input Search with Button Outside
+
+Use this example where the search button is positioned outside the input field. This design provides a clear separation between the input area and the search action, making it visually distinct and easy to use.
+
+<CodePreview
+  id="input-search-with-button-outside"
+  link="input#input-search-with-button-outside"
+  component={<HTMLInputSearchExamples.InputSearchWithButtonOutside/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <div class="relative flex items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+      <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+    </svg>
+
+    <input
+    class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+    placeholder="UI Kits, Dashboards..." 
+    />
+    
+    <button
+      class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
+      type="button"
+    >
+      Search
+    </button> 
+  </div>
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Input Search with Area
+
+This example includes a dropdown menu to select different geographical areas before performing a search. Users can choose regions to narrow down their search results to a specific location, making the search process more relevant and targeted.
+
+<CodePreview
+  id="input-search-with-area"
+  link="input#input-search-with-area"
+  component={<HTMLInputSearchExamples.InputSearchWithArea/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <div class="relative mt-2">
+      <div class="absolute top-1 left-1 flex items-center">
+      <button id="dropdownButton" class="rounded border border-transparent py-1 px-1.5 text-center flex items-center text-sm transition-all text-slate-600">
+        <span id="dropdownSpan" class="text-ellipsis overflow-hidden">Europe</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      <div class="h-6 border-l border-slate-200 ml-1"></div>
+      <div id="dropdownMenu" class="min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 hidden w-full bg-white border border-slate-200 rounded-md shadow-lg z-10">
+        <ul id="dropdownOptions">
+          <li class="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer" data-value="Europe">Europe</li>
+          <li class="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer" data-value="Australia">Australia</li>
+          <li class="px-4 py-2 text-slate-600 hover:bg-slate-5- text-sm cursor-pointer" data-value="Africa">Africa</li>
+        </ul>
+      </div>
+    </div>
+    <input
+      type="text"
+      class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pr-12 pl-28 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+      placeholder="Germany..." />
+ 
+    <button class="absolute right-1 top-1 rounded bg-slate-800 p-1.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+        <path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd"></path>
+      </svg>
+    </button> 
+  </div>   
+</div>
+ 
+<script>
+  document.getElementById('dropdownButton').addEventListener('click', function() {
+    var dropdownMenu = document.getElementById('dropdownMenu');
+    if (dropdownMenu.classList.contains('hidden')) {
+      dropdownMenu.classList.remove('hidden');
+    } else {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+ 
+  document.getElementById('dropdownOptions').addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI') {
+      const dataValue = event.target.getAttribute('data-value');
+      document.getElementById('dropdownSpan').textContent = dataValue;
+      document.getElementById('dropdownMenu').classList.add('hidden');
+    }
+  });
+ 
+  document.addEventListener('click', function(event) {
+    var isClickInside = document.getElementById('dropdownButton').contains(event.target) || document.getElementById('dropdownMenu').contains(event.target);
+    var dropdownMenu = document.getElementById('dropdownMenu');
+ 
+    if (!isClickInside) {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input Search with Voice-Enabled
+
+Use this example of a search input with voice search capability. The input field includes a microphone icon, allowing users to perform searches by voice. This feature improves accessibility and convenience, especially for users who prefer voice commands over typing.
+
+<CodePreview
+  id="input-search-with-voice-enabled"
+  link="input#input-search-with-voice-enabled"
+  component={<HTMLInputSearchExamples.InputSearchWithVoiceEnabled/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <div class="relative flex items-center">
+    <div class="absolute flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 top-2.5 ml-3 text-slate-600">
+        <path d="M8.25 4.5a3.75 3.75 0 1 1 7.5 0v8.25a3.75 3.75 0 1 1-7.5 0V4.5Z" />
+        <path d="M6 10.5a.75.75 0 0 1 .75.75v1.5a5.25 5.25 0 1 0 10.5 0v-1.5a.75.75 0 0 1 1.5 0v1.5a6.751 6.751 0 0 1-6 6.709v2.291h3a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1 0-1.5h3v-2.291a6.751 6.751 0 0 1-6-6.709v-1.5A.75.75 0 0 1 6 10.5Z" />
+      </svg>
+
+      <div class="h-6 border-l border-slate-200 ml-2.5"></div>
+    </div>
+
+    <input
+      class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pr-3 pl-14 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+      placeholder="UI Kits, Dashboards..." 
+    />
+    
+    <button
+      class="rounded-md ml-2 bg-slate-800 p-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+        <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+      </svg>
+    </button> 
+  </div>
+</div>
+```
+</CodePreview>
+

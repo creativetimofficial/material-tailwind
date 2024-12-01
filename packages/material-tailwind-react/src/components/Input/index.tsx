@@ -36,6 +36,7 @@ import {
   propTypesShrink,
   propTypesClassName,
 } from "../../types/components/input";
+import { twMerge } from "tailwind-merge";
 
 export interface InputProps extends Omit<React.ComponentProps<"input">, "size"> {
   variant?: variant;
@@ -82,9 +83,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     color = color ?? defaultProps.color;
     label = label ?? defaultProps.label;
     labelProps = labelProps ?? defaultProps.labelProps;
-    className = className ?? defaultProps.className;
+    containerProps = containerProps ?? defaultProps.containerProps;
     shrink = shrink ?? defaultProps.shrink;
     icon = icon ?? defaultProps.icon;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const inputVariant = variants[findMatch(valid.variants, variant, "outlined")];
@@ -93,13 +95,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const inputSuccess = objectsToString(inputVariant.success.input);
     const inputShrink = objectsToString(inputVariant.shrink.input);
     const inputColor = objectsToString(
-      inputVariant.colors.input[findMatch(valid.colors, color, "blue")],
+      inputVariant.colors.input[findMatch(valid.colors, color, "gray")],
     );
     const labelError = objectsToString(inputVariant.error.label);
     const labelSuccess = objectsToString(inputVariant.success.label);
     const labelShrink = objectsToString(inputVariant.shrink.label);
     const labelColor = objectsToString(
-      inputVariant.colors.label[findMatch(valid.colors, color, "blue")],
+      inputVariant.colors.label[findMatch(valid.colors, color, "gray")],
     );
     const containerClasses = classnames(
       objectsToString(base.container),
