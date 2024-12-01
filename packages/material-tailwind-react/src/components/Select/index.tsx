@@ -290,9 +290,8 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     const labelSuccess = selectVariant.success.label;
     const labelColor = selectVariant.colors.label[findMatch(valid.colors, color, "gray")];
     const stateClasses = selectVariant.states[state];
-    const containerClasses = classnames(
-      objectsToString(base.container),
-      objectsToString(selectSize.container),
+    const containerClasses = twMerge(
+      classnames(objectsToString(base.container), objectsToString(selectSize.container)),
       containerProps?.className,
     );
     const selectClasses = twMerge(
