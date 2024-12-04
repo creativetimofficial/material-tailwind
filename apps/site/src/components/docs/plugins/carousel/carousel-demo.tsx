@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 import "swiper/css";
 import "swiper/css/navigation";

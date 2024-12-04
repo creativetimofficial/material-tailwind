@@ -20,14 +20,14 @@ Use the following examples to create a simple and easy-to-use switch component f
 
 Use this simple component example that changes the background color, border color, and shadow of the switch when it is in the "checked" state.
 
-<ComponentPreview demo={<HTMLSwitch.SwitchDemo />}>
+<OldComponentPreview demo={<HTMLSwitch.SwitchDemo />}>
 ```html
 <input
   class="relative inline-block h-6 w-10 appearance-none rounded-full before:absolute before:left-0 before:top-0 before:inline-block before:h-full before:w-full before:rounded-full before:bg-surface before:transition-colors before:duration-200 before:ease-in after:absolute after:left-0.5 after:top-2/4 after:h-5 after:w-5 after:-translate-y-2/4 after:rounded-full after:bg-background after:transition-transform after:duration-200 after:ease-in checked:before:bg-primary checked:after:translate-x-[calc(100%-4px)] dark:after:bg-white"
   type="checkbox"
 />
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -35,7 +35,7 @@ Use this simple component example that changes the background color, border colo
 
 In this example, you can see how to implement your switch to be checked by default.
 
-<ComponentPreview demo={<HTMLSwitch.SwitchChecked />}>
+<OldComponentPreview demo={<HTMLSwitch.SwitchChecked />}>
 ```html
 <input
   class="relative inline-block h-6 w-10 appearance-none rounded-full before:absolute before:left-0 before:top-0 before:inline-block before:h-full before:w-full before:rounded-full before:bg-surface before:transition-colors before:duration-200 before:ease-in after:absolute after:left-0.5 after:top-2/4 after:h-5 after:w-5 after:-translate-y-2/4 after:rounded-full after:bg-background after:transition-transform after:duration-200 after:ease-in checked:before:bg-primary checked:after:translate-x-[calc(100%-4px)] dark:after:bg-white"
@@ -43,7 +43,7 @@ In this example, you can see how to implement your switch to be checked by defau
   checked
 />
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -51,7 +51,7 @@ In this example, you can see how to implement your switch to be checked by defau
 
 Check out this example to see how you can create a colored diverse set of toggle switches that can be used for various settings or options in a web application.
 
-<ComponentPreview demo={<HTMLSwitch.SwitchColors />}>
+<OldComponentPreview demo={<HTMLSwitch.SwitchColors />}>
 ```html
 <div class="flex flex-wrap justify-center gap-4">
   <input
@@ -80,7 +80,7 @@ Check out this example to see how you can create a colored diverse set of toggle
   />
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -88,7 +88,7 @@ Check out this example to see how you can create a colored diverse set of toggle
 
 See below how to create a custom switch component with a clear, descriptive label, making it suitable for settings pages, forms, or anywhere else where users need to make a binary choice.
 
-<ComponentPreview demo={<HTMLSwitch.SwitchWithLabel />}>
+<OldComponentPreview demo={<HTMLSwitch.SwitchWithLabel />}>
 ```html
 <div class="flex items-center gap-2">
   <input
@@ -104,7 +104,7 @@ See below how to create a custom switch component with a clear, descriptive labe
   </label>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -112,7 +112,7 @@ See below how to create a custom switch component with a clear, descriptive labe
 
 This example illustrates a switch component designed to appear disabled and non-interactive. The key features indicating its disabled state include the use of the disabled attribute on the input element, as well as Tailwind CSS classes `opacity-50` and `pointer-events-none` applied to the `input` to visually and functionally disable the entire switch component.
 
-<ComponentPreview demo={<HTMLSwitch.DisabledSwitch />}>
+<OldComponentPreview demo={<HTMLSwitch.DisabledSwitch />}>
 ```html
 <input
   class="relative inline-block h-6 w-10 appearance-none rounded-full before:absolute before:left-0 before:top-0 before:inline-block before:h-full before:w-full before:rounded-full before:bg-surface before:transition-colors before:duration-200 before:ease-in after:absolute after:left-0.5 after:top-2/4 after:h-5 after:w-5 after:-translate-y-2/4 after:rounded-full after:bg-background after:transition-transform after:duration-200 after:ease-in checked:before:bg-primary checked:after:translate-x-[calc(100%-4px)] cursor-not-allowed opacity-50 dark:after:bg-white"
@@ -120,13 +120,13 @@ This example illustrates a switch component designed to appear disabled and non-
   disabled
 />
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
 ## Switch with Link
 
-<ComponentPreview demo={<HTMLSwitch.SwitchWithLink />}>
+<OldComponentPreview demo={<HTMLSwitch.SwitchWithLink />}>
 ```html
 <div class="flex items-center gap-2">
   <input
@@ -145,7 +145,7 @@ This example illustrates a switch component designed to appear disabled and non-
   </label>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -153,7 +153,7 @@ This example illustrates a switch component designed to appear disabled and non-
 
 A switch component like the "Remember Me" example below is typically used in login forms or authentication pages on websites and applications.
 
-<ComponentPreview demo={<HTMLSwitch.SwitchWithDescription />}>
+<OldComponentPreview demo={<HTMLSwitch.SwitchWithDescription />}>
 ```html
 <div class="flex gap-2">
   <input
@@ -171,7 +171,7 @@ A switch component like the "Remember Me" example below is typically used in log
   </label>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -179,11 +179,11 @@ A switch component like the "Remember Me" example below is typically used in log
 
 Check out this example to see how you can implement custom styles to your switch component.
 
-<ComponentPreview demo={<HTMLSwitch.CustomSwitch />}>
+<OldComponentPreview demo={<HTMLSwitch.CustomSwitch />}>
 ```html
 <input
   class="relative inline-block h-6 w-10 appearance-none rounded-full before:absolute before:left-0 before:top-0 before:inline-block before:h-full before:w-full before:rounded-full before:bg-surface before:transition-colors before:duration-200 before:ease-in after:absolute after:left-0.5 after:top-2/4 after:h-5 after:w-5 after:-translate-y-2/4 after:rounded-full after:bg-background after:shadow-sm after:shadow-black/10 after:transition-transform after:duration-200 after:ease-in checked:before:bg-[#2ec946] checked:after:translate-x-[calc(100%-4px)] dark:after:bg-white"
   type="checkbox"
 />
 ```
-</ComponentPreview>
+</OldComponentPreview>

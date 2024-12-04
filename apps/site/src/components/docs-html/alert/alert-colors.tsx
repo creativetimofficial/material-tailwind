@@ -1,54 +1,60 @@
-export function AlertColors() {
+export default function AlertColors() {
   return (
-    <div className="w-full space-y-2">
-      <div
-        role="alert"
-        className="relative flex w-full items-start rounded-md border border-primary bg-primary p-2 text-primary-foreground"
-      >
-        <div className="m-1.5 w-full font-sans text-base leading-none">
-          A simple alert for showing message, with color="primary"
-        </div>
-      </div>
-      <div
-        role="alert"
-        className="relative flex w-full items-start rounded-md border border-secondary bg-secondary p-2 text-secondary-foreground"
-      >
-        <div className="m-1.5 w-full font-sans text-base leading-none">
-          A simple alert for showing message, with color="secondary"
-        </div>
-      </div>
-      <div
-        role="alert"
-        className="relative flex w-full items-start rounded-md border border-info bg-info p-2 text-info-foreground"
-      >
-        <div className="m-1.5 w-full font-sans text-base leading-none">
-          A simple alert for showing message, with color="info"
-        </div>
-      </div>
-      <div
-        role="alert"
-        className="relative flex w-full items-start rounded-md border border-success bg-success p-2 text-success-foreground"
-      >
-        <div className="m-1.5 w-full font-sans text-base leading-none">
-          A simple alert for showing message, with color="success"
-        </div>
-      </div>
-      <div
-        role="alert"
-        className="relative flex w-full items-start rounded-md border border-warning bg-warning p-2 text-warning-foreground"
-      >
-        <div className="m-1.5 w-full font-sans text-base leading-none">
-          A simple alert for showing message, with color="warning"
-        </div>
-      </div>
-      <div
-        role="alert"
-        className="relative flex w-full items-start rounded-md border border-error bg-error p-2 text-error-foreground"
-      >
-        <div className="m-1.5 w-full font-sans text-base leading-none">
-          A simple alert for showing message, with color="error"
-        </div>
-      </div>
+    <div className="w-full"
+      dangerouslySetInnerHTML={{
+        __html: `
+<div class="w-full space-y-2">
+  <div
+    role="alert"
+    class="relative flex items-start w-full p-2 border rounded-md border-primary bg-primary text-primary-foreground"
+  >
+    <div class="m-1.5 w-full font-sans text-base leading-none">
+      A simple alert for showing message, with color="primary"
     </div>
+  </div>
+  <div
+    role="alert"
+    class="relative flex items-start w-full p-2 border rounded-md border-secondary bg-secondary text-secondary-foreground"
+  >
+    <div class="m-1.5 w-full font-sans text-base leading-none">
+      A simple alert for showing message, with color="secondary"
+    </div>
+  </div>
+  <div
+    role="alert"
+    class="relative flex items-start w-full p-2 border rounded-md border-info bg-info text-info-foreground"
+  >
+    <div class="m-1.5 w-full font-sans text-base leading-none">
+      A simple alert for showing message, with color="info"
+    </div>
+  </div>
+  <div
+    role="alert"
+    class="relative flex items-start w-full p-2 border rounded-md border-success bg-success text-success-foreground"
+  >
+    <div class="m-1.5 w-full font-sans text-base leading-none">
+      A simple alert for showing message, with color="success"
+    </div>
+  </div>
+  <div
+    role="alert"
+    class="relative flex items-start w-full p-2 border rounded-md border-warning bg-warning text-warning-foreground"
+  >
+    <div class="m-1.5 w-full font-sans text-base leading-none">
+      A simple alert for showing message, with color="warning"
+    </div>
+  </div>
+  <div
+    role="alert"
+    class="relative flex items-start w-full p-2 border rounded-md border-error bg-error text-error-foreground"
+  >
+    <div class="m-1.5 w-full font-sans text-base leading-none">
+      A simple alert for showing message, with color="error"
+    </div>
+  </div>
+</div>
+    `,
+      }}
+    />
   );
 }

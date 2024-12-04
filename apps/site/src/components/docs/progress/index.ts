@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./progress-demo";
 export * from "./progress-sizes";

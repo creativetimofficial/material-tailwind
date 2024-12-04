@@ -3,7 +3,7 @@ import {
   CodePreview,
   ColorPalette,
   FrameworkCard,
-  ComponentPreview,
+  OldComponentPreview,
 } from "@components";
 import Link from "next/link";
 import { Code } from "bright";
@@ -103,8 +103,14 @@ import * as HTMLVideo from "@components/docs-html/video";
 import * as HTMLCheckbox from "@components/docs-html/checkbox";
 import * as HTMLRadio from "@components/docs-html/radio";
 import * as HTMLSwitch from "@components/docs-html/switch";
-import * as HTMLBadge from "@components/docs-html/badge";
+// import * as HTMLBadge from "@components/docs-html/badge";
 import * as HTMLAccordion from "@components/docs-html/accordion";
+
+
+
+import CodeSnippet from '@components/CodeSnippet';
+import ComponentPreview from '@components/ComponentPreview';
+import PreviewWithCode from '@components/PreviewWithCode';
 
 async function readDocsContentFn(pathUrl: string) {
   const fullPath = `${path.join(
@@ -202,7 +208,10 @@ export default async function Docs({ params: { slug } }) {
           CodePreview,
           ColorPalette,
           FrameworkCard,
+          OldComponentPreview,
           ComponentPreview,
+          PreviewWithCode,
+          CodeSnippet,
 
           // default-components
           pre: Code,
@@ -361,7 +370,7 @@ export default async function Docs({ params: { slug } }) {
           HTMLCheckbox,
           HTMLRadio,
           HTMLSwitch,
-          HTMLBadge,
+          // HTMLBadge,
           HTMLAccordion,
         }}
       />

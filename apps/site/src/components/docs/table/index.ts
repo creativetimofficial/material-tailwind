@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./table-demo";
 export * from "./table-with-striped-row";

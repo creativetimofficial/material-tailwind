@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./sidebar-demo";
 export * from "./multi-level-sidebar";

@@ -1,3 +1,4 @@
+"use client";
 export function VideoAutoplay() {
   return (
     <video className="h-full w-full rounded-lg" controls autoPlay>

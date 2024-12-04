@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./avatar-demo";
 export * from "./avatar-variants";

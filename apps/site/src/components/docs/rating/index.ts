@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./rating-demo";
 export * from "./rating-colors";

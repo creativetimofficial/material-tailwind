@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./pagination-demo";
 export * from "./pagination-circular";

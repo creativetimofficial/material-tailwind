@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./video-demo";
 export * from "./video-autoplay";

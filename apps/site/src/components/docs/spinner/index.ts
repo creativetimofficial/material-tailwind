@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./spinner-demo";
 export * from "./spinner-sizes";

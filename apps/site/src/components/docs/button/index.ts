@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./button-demo";
 export * from "./button-sizes";

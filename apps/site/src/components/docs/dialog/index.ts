@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./dialog-demo";
 export * from "./dialog-sizes";

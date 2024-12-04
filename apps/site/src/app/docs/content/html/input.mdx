@@ -22,7 +22,7 @@ See below Material Tailwind's input component examples.
 
 Use our input example to get started easily. It is perfect for forms requiring text input, such as user registration, login forms, or any form where users need to input a username.
 
-<ComponentPreview demo={<HTMLInput.InputDemo />}>
+<OldComponentPreview demo={<HTMLInput.InputDemo />}>
 ```html
 <input
   placeholder="Input"
@@ -30,7 +30,7 @@ Use our input example to get started easily. It is perfect for forms requiring t
   type="text"
 />
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -38,7 +38,7 @@ Use our input example to get started easily. It is perfect for forms requiring t
 
 Check out this code snippet to see how you can implement inputs with different sizes. The first input has a height of 28 pixels, the second input has a height of 36 pixels, and the third input has a height of 46 pixels. 
 
-<ComponentPreview demo={<HTMLInput.InputSizes />}>
+<OldComponentPreview demo={<HTMLInput.InputSizes />}>
 ```html
  <div className="flex flex-col gap-4">
   <input
@@ -58,7 +58,7 @@ Check out this code snippet to see how you can implement inputs with different s
   />
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -66,7 +66,7 @@ Check out this code snippet to see how you can implement inputs with different s
 
 The 6 examples of input components showcased below are HTML snippets styled with Tailwind CSS, each designed to highlight a different focus color theme: Primary, Secondary, Info, Success, Warning and Error. They share a common structure and styling with slight variations in color to differentiate them.
 
-<ComponentPreview demo={<HTMLInput.InputColors />}>
+<OldComponentPreview demo={<HTMLInput.InputColors />}>
 ```html
 <div className="flex flex-col gap-4">
   <input
@@ -101,7 +101,7 @@ The 6 examples of input components showcased below are HTML snippets styled with
   />
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -109,7 +109,7 @@ The 6 examples of input components showcased below are HTML snippets styled with
 
 These input examples styled with Tailwind CSS are structured to visually communicate feedback to the user through color-coded cues. Each example represents different states or feedback contexts for user interaction: an error state (red-themed - `border-red-500`, `text-red-500`) and a success state (green-themed - `border-green-500`, `text-green-500`).
 
-<ComponentPreview demo={<HTMLInput.InputWithValidation />}>
+<OldComponentPreview demo={<HTMLInput.InputWithValidation />}>
 ```html
 <div class="space-y-6 w-72">
   <div class="relative w-full text-sm leading-none rounded-md">
@@ -134,7 +134,7 @@ These input examples styled with Tailwind CSS are structured to visually communi
   </div>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -142,7 +142,7 @@ These input examples styled with Tailwind CSS are structured to visually communi
 
 Use this example of input with icon element if you want to add a friendly touch and make it more interactive.
 
-<ComponentPreview demo={<HTMLInput.InputWithIcon />}>
+<OldComponentPreview demo={<HTMLInput.InputWithIcon />}>
 ```html
 <div class="space-y-4 w-72">
   <div class="relative w-full rounded-md text-sm leading-none aria-disabled:cursor-not-allowed data-[shape=pill]:rounded-full">
@@ -211,13 +211,13 @@ Use this example of input with icon element if you want to add a friendly touch 
   </div>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
 ## Input with Label
 
-<ComponentPreview demo={<HTMLInput.InputWithLabel />}>
+<OldComponentPreview demo={<HTMLInput.InputWithLabel />}>
 ```html
 <div class="relative space-y-1 text-sm leading-none rounded-md w-72">
   <label
@@ -234,7 +234,7 @@ Use this example of input with icon element if you want to add a friendly touch 
   />
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -242,7 +242,7 @@ Use this example of input with icon element if you want to add a friendly touch 
 
 Use this example of password input field designed with a focus on security and user guidance. It is styled using Tailwind CSS and includes an accompanying label and a hint message with an icon, aimed at enhancing user experience by providing clear instructions for creating a strong password.
 
-<ComponentPreview demo={<HTMLInput.InputWithHelperText />}>
+<OldComponentPreview demo={<HTMLInput.InputWithHelperText />}>
 ```html
 <div class="relative space-y-2 text-sm leading-none rounded-md w-72">
   <input
@@ -287,7 +287,7 @@ Use this example of password input field designed with a focus on security and u
   </div>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -295,7 +295,7 @@ Use this example of password input field designed with a focus on security and u
 
 Use the example below for an input containing a button inside. It is useful for forms where users can enter an email address and then take an action, such as inviting a user to a platform or sending a notification.
 
-<ComponentPreview demo={<HTMLInput.InputWithButton />}>
+<OldComponentPreview demo={<HTMLInput.InputWithButton />}>
 ```html
 <form
   action="#"
@@ -316,14 +316,14 @@ Use the example below for an input containing a button inside. It is useful for 
   </button>
 </form>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 
 ---
 
 ## Input with Dropdown
 
-<ComponentPreview demo={<HTMLInput.InputWithDropdown />}>
+<OldComponentPreview demo={<HTMLInput.InputWithDropdown />}>
 ```html
 <div class="relative flex w-full max-w-[24rem]">
   <button
@@ -346,7 +346,7 @@ Use the example below for an input containing a button inside. It is useful for 
   </div>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -354,7 +354,7 @@ Use the example below for an input containing a button inside. It is useful for 
 
 Use this example if you want to clearly indicate to users that the input field is currently not interactive, employing visual cues and styling to convey its disabled state.
 
-<ComponentPreview demo={<HTMLInput.InputDisabled />}>
+<OldComponentPreview demo={<HTMLInput.InputDisabled />}>
 ```html
 <div
   class="relative text-sm leading-none rounded-md w-72 aria-disabled:cursor-not-allowed"
@@ -368,7 +368,7 @@ Use this example if you want to clearly indicate to users that the input field i
   />
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 <p class="mt-4 antialiased text-foreground">
 The input is explicitly marked as disabled (`disabled attribute`), which prevents user interaction. The styling reflects this state by altering the border and background color (`disabled:border-0 disabled:bg-blue-gray-50`), making it visually distinct from active input fields. This design choice helps users recognize that the input is not currently available for interaction.
@@ -379,7 +379,7 @@ The input is explicitly marked as disabled (`disabled attribute`), which prevent
 
 Check out this example to learn how you can implement custom styles for your input components with Material Tailwind.
 
-<ComponentPreview demo={<HTMLInput.InputCustomStyles />}>
+<OldComponentPreview demo={<HTMLInput.InputCustomStyles />}>
 ```html
 <div class="relative text-sm leading-none rounded-md w-72">
   <input
@@ -420,4 +420,4 @@ Check out this example to learn how you can implement custom styles for your inp
   </span>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>

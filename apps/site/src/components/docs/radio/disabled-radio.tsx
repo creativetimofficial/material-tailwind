@@ -1,3 +1,4 @@
+"use client";
 import { Radio, Typography } from "@material-tailwind/react";
 
 export function DisabledRadio() {

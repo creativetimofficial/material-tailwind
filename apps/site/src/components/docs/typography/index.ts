@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./headings";
 export * from "./paragraph";

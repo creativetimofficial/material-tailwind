@@ -1,3 +1,4 @@
+"use client";
 export function ImageWithRoundedCorners() {
   return (
     <img

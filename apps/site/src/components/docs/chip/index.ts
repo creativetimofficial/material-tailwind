@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./chip-demo";
 export * from "./chip-variants";

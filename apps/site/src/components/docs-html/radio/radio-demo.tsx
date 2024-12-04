@@ -31,7 +31,7 @@ export function RadioDemo() {
           htmlFor="html"
           className="font-sans text-base antialiased text-foreground"
         >
-          HTML
+          test html
         </label>
       </div>
       <div className="flex items-center gap-2">

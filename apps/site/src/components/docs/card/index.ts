@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./card-demo";
 export * from "./simple-card";

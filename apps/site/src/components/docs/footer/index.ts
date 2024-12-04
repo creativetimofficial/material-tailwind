@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./footer-demo";
 export * from "./footer-with-logo";

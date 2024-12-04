@@ -1,3 +1,4 @@
+"use client";
 import { Radio, Typography } from "@material-tailwind/react";
 import { Check, Star, StarSolid } from "iconoir-react";
 
