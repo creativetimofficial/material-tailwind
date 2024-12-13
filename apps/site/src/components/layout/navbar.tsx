@@ -269,13 +269,13 @@ export function Navbar() {
                 <NavItem icon={SelectFace3d}>Blocks</NavItem>
               </Link>
               
-              {/* <Link href="/figma">
+              <Link href="/v3/figma">
                 <NavItem icon={Figma}>Figma</NavItem>
               </Link>
               <Link href="/roots-of-ui-ux-design">
                 <NavItem icon={Book}>Book</NavItem>
               </Link>
-              <Link href="/blog">
+              {/* <Link href="/blog">
                 <NavItem icon={Post}>Blog</NavItem>
               </Link> */}
             </div>
@@ -353,7 +353,7 @@ export function Navbar() {
                 href="/v3/preorder/#pricing"
                 className="ml-1 hidden sm:flex"
               >
-                Pre-Order & FAQ
+                Pricing & FAQ
               </Button>
               <Dialog>
                 <Dialog.Trigger
