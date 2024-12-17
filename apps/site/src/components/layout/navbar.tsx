@@ -265,7 +265,7 @@ export function Navbar() {
               <Link href="/v3/blocks">
                 <NavItem icon={SelectFace3d}>Blocks</NavItem>
               </Link>
-              <Link href="/" className="mx-2 h-12 w-12">
+              <Link href="/v3/" className="mx-2 h-12 w-12">
                 <Brand />
               </Link>
               
