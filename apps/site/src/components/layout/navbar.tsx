@@ -230,7 +230,7 @@ export function Navbar() {
                 </div>
               </div>
               <Link
-                href="/"
+                href="/v3/"
                 className="mr-2 grid h-12 w-12 shrink-0 lg:!hidden"
               >
                 <Brand />
