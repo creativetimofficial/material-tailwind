@@ -230,7 +230,7 @@ export function Navbar() {
                 </div>
               </div>
               <Link
-                href="/"
+                href="/v3/"
                 className="mr-2 grid h-12 w-12 shrink-0 lg:!hidden"
               >
                 <Brand />
@@ -262,12 +262,13 @@ export function Navbar() {
               {/* <Link href="/pro">
                 <NavItem icon={DollarCircle}>PRO</NavItem>
               </Link> */}
-              <Link href="/" className="mx-2 h-12 w-12">
-                <Brand />
-              </Link>
               <Link href="/v3/blocks">
                 <NavItem icon={SelectFace3d}>Blocks</NavItem>
               </Link>
+              <Link href="/v3/" className="mx-2 h-12 w-12">
+                <Brand />
+              </Link>
+              
               
               <Link href="/v3/figma">
                 <NavItem icon={Figma}>Figma</NavItem>
