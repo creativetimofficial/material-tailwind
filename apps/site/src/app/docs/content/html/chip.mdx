@@ -20,15 +20,7 @@ See below our responsive chip component examples styled with Tailwind CSS that y
 
 Use this simple chip with dark-grey background as a starting point for your application.
 
-<ComponentPreview demo={<HTMLChip.ChipDemo />}>
-```html
-<div class="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
-  <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-    Material Tailwind
-  </span>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="chip/chip-demo.tsx" language="html" />
 
 ---
 
@@ -36,27 +28,7 @@ Use this simple chip with dark-grey background as a starting point for your appl
 
 Check out this example to see how you can implement chips with different sizes. The differences in size are primarily achieved through varying the padding values (small - `px-2 py-1`; large - `px-4 py-2`).
 
-<ComponentPreview demo={<HTMLChip.ChipSizes />}>
-```html
-<div class="flex items-end gap-2">
-  <div class="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-0.5 font-sans text-xs font-medium leading-none text-primary-foreground">
-    <span class="font-inherit mx-1.5 my-0.5 leading-none text-inherit">
-      Small
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Medium
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-1 font-sans text-[15px] font-medium leading-none text-primary-foreground">
-    <span class="font-inherit mx-2.5 my-[4.5px] leading-none text-inherit">
-      Large
-    </span>
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="chip/chip-sizes.tsx" language="html" />
 
 <p class="mt-4 antialiased text-foreground">The varying sizes allow web designers to cater to different spatial and functional requirements within an interface.</p>
 
@@ -66,32 +38,7 @@ Check out this example to see how you can implement chips with different sizes. 
 
 This example presents 4 different styles of chip components styled with Tailwind CSS, showcasing the versatility of chip design for different UI use cases.
 
-<ComponentPreview demo={<HTMLChip.ChipVariants />}>
-```html
-<div class="flex items-center gap-2">
-  <div class="relative inline-flex select-none items-center rounded-full border border-transparent bg-primary/10 p-[3px] font-sans text-[13px] font-medium leading-none text-primary">
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Ghost
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-primary bg-transparent p-[3px] font-sans text-[13px] font-medium leading-none text-primary">
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Outline
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Solid
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-primary bg-gradient-to-tr from-primary-dark to-primary-light p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Gradient
-    </span>
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="chip/chip-variants.tsx" language="html" />
 
 <p class="mt-4 antialiased text-foreground">Each chip is contained within a `<div>` element and designed with a consistent structure but different visual styles: filled, gradient, outlined, and ghost.</p>
 
@@ -101,42 +48,7 @@ This example presents 4 different styles of chip components styled with Tailwind
 
 The Chip component comes with 19 different colors like blue, red, green, and amber that you can change using the color class. Check out below some of the available colors in action.
 
-<ComponentPreview demo={<HTMLChip.ChipColors />}>
-```html
-<div class="flex items-center gap-2">
-  <div class="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Primary
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-secondary bg-secondary p-[3px] font-sans text-[13px] font-medium leading-none text-secondary-foreground">
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Secondary
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-info bg-info p-[3px] font-sans text-[13px] font-medium leading-none text-info-foreground">
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Info
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-success bg-success p-[3px] font-sans text-[13px] font-medium leading-none text-success-foreground">
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Success
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-warning bg-warning p-[3px] font-sans text-[13px] font-medium leading-none text-warning-foreground">
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Warning
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-error bg-error p-[3px] font-sans text-[13px] font-medium leading-none text-error-foreground">
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Error
-    </span>
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="chip/chip-colors.tsx" language="html" />
 
 ---
 
@@ -144,230 +56,13 @@ The Chip component comes with 19 different colors like blue, red, green, and amb
 
 The icons, in this example, add a visual element that can improve user understanding or interaction with the chip, such as representing user accounts, settings, notifications, etc.
 
-<ComponentPreview demo={<HTMLChip.ChipIcon />}>
-```html
-<div class="flex items-center gap-2">
-  <div class="relative inline-flex select-none items-center rounded-full border border-transparent bg-primary/10 p-[3px] font-sans text-[13px] font-medium leading-none text-primary">
-    <span class="grid h-4 w-4 shrink-0 translate-x-0.5 place-items-center rounded-full">
-      <svg
-        width="1.5em"
-        height="1.5em"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        color="currentColor"
-        class="w-full h-full"
-      >
-        <path
-          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-        <path
-          d="M4.271 18.3457C4.271 18.3457 6.50002 15.5 12 15.5C17.5 15.5 19.7291 18.3457 19.7291 18.3457"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-        <path
-          d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Ghost
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-primary bg-transparent p-[3px] font-sans text-[13px] font-medium leading-none text-primary">
-    <span class="grid h-4 w-4 shrink-0 translate-x-0.5 place-items-center rounded-full">
-      <svg
-        width="1.5em"
-        height="1.5em"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        color="currentColor"
-        class="w-full h-full"
-      >
-        <path
-          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-        <path
-          d="M4.271 18.3457C4.271 18.3457 6.50002 15.5 12 15.5C17.5 15.5 19.7291 18.3457 19.7291 18.3457"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-        <path
-          d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Outline
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
-    <span class="grid h-4 w-4 shrink-0 translate-x-0.5 place-items-center rounded-full">
-      <svg
-        width="1.5em"
-        height="1.5em"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        color="currentColor"
-        class="w-full h-full"
-      >
-        <path
-          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-        <path
-          d="M4.271 18.3457C4.271 18.3457 6.50002 15.5 12 15.5C17.5 15.5 19.7291 18.3457 19.7291 18.3457"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-        <path
-          d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Solid
-    </span>
-  </div>
-  <div class="relative inline-flex select-none items-center rounded-full border border-primary bg-gradient-to-tr from-primary-dark to-primary-light p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
-    <span class="grid h-4 w-4 shrink-0 translate-x-0.5 place-items-center rounded-full">
-      <svg
-        width="1.5em"
-        height="1.5em"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        color="currentColor"
-        class="w-full h-full"
-      >
-        <path
-          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-        <path
-          d="M4.271 18.3457C4.271 18.3457 6.50002 15.5 12 15.5C17.5 15.5 19.7291 18.3457 19.7291 18.3457"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-        <path
-          d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-    <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-      Gradient
-    </span>
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="chip/chip-icon.tsx" language="html" />
 
 ---
 
 ## Chip Dismissible
 
-
-<ComponentPreview demo={<HTMLChip.ChipDismissible />}>
-```html
-<div id="chip" class="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
-  <span class="grid h-4 w-4 shrink-0 translate-x-0.5 place-items-center rounded-full">
-    <svg
-      width="1.5em"
-      height="1.5em"
-      stroke-width="1.5"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      class="w-full h-full"
-    >
-      <path
-        d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-      <path
-        d="M4.271 18.3457C4.271 18.3457 6.50002 15.5 12 15.5C17.5 15.5 19.7291 18.3457 19.7291 18.3457"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-      <path
-        d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </svg>
-  </span>
-  <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-    Material Tailwind
-  </span>
-  <button id="chip-dismiss-trigger" class="ms-1 grid h-[18px] w-[18px] shrink-0 -translate-x-0.5 place-items-center rounded-full stroke-2 p-px">
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      class="w-full h-full"
-    >
-      <path
-        d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </svg>
-  </button>
-</div>
-
-<!-- script that runs the chip dismiss functionality -->
-<script>
-  const chip = document.querySelector("#chip");
-  const chipDismissTrigger = document.querySelector("#chip-dismiss-trigger");
-
-  if (chip && chipDismissTrigger) {
-    chipDismissTrigger.addEventListener("click", () => {
-      chip.remove();
-    });
-  }
-</script>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="chip/chip-dismissible.tsx" language="html" />
 
 <p class="mt-4 antialiased text-foreground">The example offers users the ability to remove or dismiss the chip from the UI, typically used in scenarios where users can select and then opt to remove choices, such as tags, filters, or selections.</p>
 
@@ -377,22 +72,7 @@ The icons, in this example, add a visual element that can improve user understan
 
 Use the example below for a chip component containing an avatar. It incorporates visual identity alongside textual information, making it ideal for user interfaces where user recognition is key, such as in social media platforms, messaging apps, or user dashboards.
 
-<ComponentPreview demo={<HTMLChip.ChipWithAvatar />}>
-```html
-<div class="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
-  <span class="grid h-4 w-4 shrink-0 translate-x-0.5 place-items-center rounded-full">
-    <img
-      src="https://dub.sh/TdSBP0D"
-      alt="profile-picture"
-      class="inline-block object-cover object-center w-full h-full rounded-full"
-    />
-  </span>
-  <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-    Alex Andrew
-  </span>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="chip/chip-with-avatar.tsx" language="html" />
 
 ---
 
