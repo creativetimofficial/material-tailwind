@@ -1,4 +1,5 @@
-export * from "./pagination-demo";
+"use client";
 export * from "./pagination-circular";
-export * from "./simple-pagination";
+export * from "./pagination-demo";
 export * from "./pagination-group";
+export * from "./simple-pagination";

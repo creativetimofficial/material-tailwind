@@ -1,5 +1,6 @@
-export * from "./gallery-demo";
-export * from "./masonry-grid-gallery";
+"use client";
 export * from "./featured-image-gallery";
-export * from "./quad-gallery";
+export * from "./gallery-demo";
 export * from "./gallery-with-tab";
+export * from "./masonry-grid-gallery";
+export * from "./quad-gallery";

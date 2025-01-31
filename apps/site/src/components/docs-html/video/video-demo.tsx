@@ -1,8 +1,14 @@
-export function VideoDemo() {
+
+
+export default function VideoDemo() {
   return (
-    <video className="h-full w-full rounded-lg" controls>
-      <source src="https://dub.sh/H1glk5b" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `<video class="h-full w-full rounded-lg" controls="">
+  <source src="https://dub.sh/H1glk5b" type="video/mp4" />Your browser does not support the video tag.
+</video>
+`
+      }}
+    />
   );
 }

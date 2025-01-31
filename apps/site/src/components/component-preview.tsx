@@ -31,7 +31,7 @@ interface ComponentPreviewProps {
 
 const MIN_CODE_HEIGHT = 260;
 
-export function ComponentPreview({
+export function OldComponentPreview({
   demo,
   children,
   className,
@@ -150,4 +150,4 @@ export function ComponentPreview({
   );
 }
 
-export default ComponentPreview;
+export default OldComponentPreview;

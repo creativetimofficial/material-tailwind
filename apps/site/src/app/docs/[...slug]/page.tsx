@@ -3,7 +3,7 @@ import {
   CodePreview,
   ColorPalette,
   FrameworkCard,
-  ComponentPreview,
+  OldComponentPreview,
 } from "@components";
 import Link from "next/link";
 import { Code } from "bright";
@@ -19,7 +19,7 @@ import { cache } from "react";
 import matter from "gray-matter";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
-import { notFound } from "next/navigation";
+import { notFound, usePathname } from "next/navigation";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 // @types
@@ -103,8 +103,18 @@ import * as HTMLVideo from "@components/docs-html/video";
 import * as HTMLCheckbox from "@components/docs-html/checkbox";
 import * as HTMLRadio from "@components/docs-html/radio";
 import * as HTMLSwitch from "@components/docs-html/switch";
-import * as HTMLBadge from "@components/docs-html/badge";
+// import * as HTMLBadge from "@components/docs-html/badge";
 import * as HTMLAccordion from "@components/docs-html/accordion";
+
+
+
+import CodeSnippet from '@components/CodeSnippet';
+import ComponentPreview from '@components/ComponentPreview';
+import PreviewWithCode from '@components/PreviewWithCode';
+import CodePreviewTailwindClasses from '@components/CodePreviewTailwindClasses';
+
+import { Docs as DocsLayout } from "@components";
+import ScriptLoader from "@components/ScriptJsLoader";
 
 async function readDocsContentFn(pathUrl: string) {
   const fullPath = `${path.join(
@@ -138,7 +148,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = frontMatter.title;
   const description = frontMatter.description;
-  const pageUrl = `https://www.material-tailwind.com/v3/docs/${path}`;
+  const pageUrl = `https://www.creative-tim.com/david-ui/docs/${path}`;
 
   return {
     title,
@@ -180,6 +190,10 @@ Code.theme = {
   light: "github-light",
 };
 
+const CurrentYear = () => {
+  return new Date().getFullYear();
+}
+
 export const dynamic = "force-static";
 
 export default async function Docs({ params: { slug } }) {
@@ -187,62 +201,60 @@ export default async function Docs({ params: { slug } }) {
   const { frontMatter, source } = await readDocsContent(path);
 
   return (
-    <Content frontMatter={frontMatter}>
-      <MDXRemote
-        source={source}
-        options={{
-          mdxOptions: {
-            remarkPlugins: [remarkGfm as any],
-            rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
-          },
-        }}
-        components={{
-          // custom-components
-          Icons,
-          CodePreview,
-          ColorPalette,
-          FrameworkCard,
-          ComponentPreview,
+    <>
+      <ScriptLoader src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" />
+      <Content frontMatter={frontMatter}>
+        <MDXRemote
+          source={source}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [remarkGfm as any],
+              rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+            },
+          }}
+          components={{
+            // custom-components
+            Icons,
+            CodePreview,
+            ColorPalette,
+            FrameworkCard,
+            OldComponentPreview,
+            ComponentPreview,
+            PreviewWithCode,
+            CodePreviewTailwindClasses,
+            CurrentYear,
+            CodeSnippet,
+            ScriptLoader,
 
-          // default-components
-          pre: Code,
-          Link: (props: any) => <Link {...props} className="text-orange-500" />,
-          h1: (props: any) => (
-            <MTTypography as="h1" type="h4" className="mb-4" {...props} />
-          ),
-          h2: (props: any) => (
-            <MTTypography
-              as="h2"
-              type="h5"
-              className="group relative mb-2 cursor-pointer scroll-mt-40 transition-colors hover:text-orange-500"
-              {...props}
-            >
-              <Link
-                href={`#${props.children[1]
-                  .toLowerCase()
-                  .replaceAll(" ", "-")}`}
+            // default-components
+            pre: Code,
+            Link: (props: any) => <Link {...props} className="text-stone-800" />,
+            h1: (props: any) => (
+              <MTTypography as="h1" type="h4" className="mb-4 text-stone-800" {...props} />
+            ),
+            h2: (props: any) => (
+              <MTTypography
+                as="h2"
+                type="h5"
+                className="group relative mb-2 cursor-pointer scroll-mt-40 transition-colors text-stone-800 hover:text-stone-900"
+                {...props}
               >
-                <span
-                  aria-hidden
-                  className="absolute -left-5 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100"
-                >
-                  #
-                </span>
-                {props.children}
-              </Link>
-            </MTTypography>
-          ),
-          h3: (props: any) => (
-            <MTTypography
-              as="h3"
-              type="h6"
-              className="group relative mb-1 mt-8 cursor-pointer scroll-mt-40 transition-colors hover:text-orange-500"
-              {...props}
-            >
-              <Link
-                href={`#${props.children[1]
-                  .toLowerCase()
-                  .replaceAll(" ", "-")}`}
+                  <span
+                    aria-hidden
+                    className="absolute -left-5 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100"
+                  >
+                    #
+                  </span>
+                  {props.children}
+      
+              </MTTypography>
+            ),
+            h3: (props: any) => (
+              <MTTypography
+                as="h3"
+                type="h6"
+                className="group relative mb-1 mt-8 cursor-pointer scroll-mt-40 transition-colors hover:text-stone-800"
+                {...props}
               >
                 <span
                   aria-hidden
@@ -251,120 +263,120 @@ export default async function Docs({ params: { slug } }) {
                   #
                 </span>
                 {props.children}
-              </Link>
-            </MTTypography>
-          ),
-          h4: (props: any) => (
-            <MTTypography
-              as="h4"
-              type="lead"
-              className="mb-1 mt-6 font-semibold"
-              {...props}
-            />
-          ),
-          p: (props: any) => (
-            <MTTypography className="mb-2 text-foreground" {...props} />
-          ),
-          hr: () => <hr className="my-8 border-transparent" />,
-          code: (props: any) => (
-            <code
-              className="inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono text-sm leading-none text-foreground dark:bg-surface-dark"
-              {...props}
-            />
-          ),
-          a: (props: any) => <a {...props} className="text-orange-500" />,
-          ul: (props: any) => (
-            <ul className="my-4 ml-4 list-disc space-y-1" {...props} />
-          ),
-          li: (props: any) => (
-            <li
-              className="font-sans text-base font-normal text-foreground antialiased"
-              {...props}
-            />
-          ),
+              </MTTypography>
+            ),
+            h4: (props: any) => (
+              <MTTypography
+                as="h4"
+                type="lead"
+                className="mb-1 mt-6 font-semibold"
+                {...props}
+              />
+            ),
+            p: (props: any) => (
+              <MTTypography className="mb-2 text-stone-500" {...props} />
+            ),
+            hr: () => <hr className="my-8 border-transparent" />,
+            code: (props: any) => (
+              <code
+                className="inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono text-sm leading-none text-stone-500 dark:bg-surface-dark"
+                {...props}
+              />
+            ),
+            a: (props: any) => <a {...props} className="text-stone-800 underline" />,
+            ul: (props: any) => (
+              <ul className="my-4 ml-4 list-disc space-y-1" {...props} />
+            ),
+            li: (props: any) => (
+              <li
+                className="font-sans text-base font-normal text-stone-500 antialiased"
+                {...props}
+              />
+            ),
 
-          // docs-components-react
-          Accordion,
-          Alert,
-          Avatar,
-          Button,
-          ButtonGroup,
-          Checkbox,
-          Card,
-          Chip,
-          Collapse,
-          Dialog,
-          Footer,
-          IconButton,
-          Image,
-          Input,
-          List,
-          Menu,
-          Navbar,
-          Pagination,
-          Popover,
-          Progress,
-          Radio,
-          Rating,
-          Select,
-          Sidebar,
-          SpeedDial,
-          Spinner,
-          Switch,
-          Tabs,
-          Textarea,
-          Tooltip,
-          Typography,
-          Video,
-          Gallery,
-          Table,
-          Breadcrumb,
-          Drawer,
-          Stepper,
-          Slider,
-          Timeline,
-          AlgoliaSearch,
-          Carousel,
-          Apexcharts,
-          DatePicker,
-          Forms,
-          TextEditor,
-          DataTable,
-          Badge,
-          ReleaseNotes,
+            // docs-components-react
+            Accordion,
+            Alert,
+            Avatar,
+            Button,
+            ButtonGroup,
+            Checkbox,
+            Card,
+            Chip,
+            Collapse,
+            Dialog,
+            Footer,
+            IconButton,
+            Image,
+            Input,
+            List,
+            Menu,
+            Navbar,
+            Pagination,
+            Popover,
+            Progress,
+            Radio,
+            Rating,
+            Select,
+            Sidebar,
+            SpeedDial,
+            Spinner,
+            Switch,
+            Tabs,
+            Textarea,
+            Tooltip,
+            Typography,
+            Video,
+            Gallery,
+            Table,
+            Breadcrumb,
+            Drawer,
+            Stepper,
+            Slider,
+            Timeline,
+            AlgoliaSearch,
+            Carousel,
+            Apexcharts,
+            DatePicker,
+            Forms,
+            TextEditor,
+            DataTable,
+            Badge,
+            ReleaseNotes,
 
-          // docs-components-html
-          HTMLButton,
-          HTMLButtonGroup,
-          HTMLBreadcrumb,
-          HTMLAlert,
-          HTMLAvatar,
-          HTMLCard,
-          HTMLChip,
-          HTMLFooter,
-          HTMLGallery,
-          HTMLIconButton,
-          HTMLImage,
-          HTMLInput,
-          HTMLList,
-          HTMLNavbar,
-          HTMLPagination,
-          HTMLProgress,
-          HTMLRating,
-          HTMLSpinner,
-          HTMLStepper,
-          HTMLTable,
-          HTMLTextarea,
-          HTMLTimeline,
-          HTMLTypography,
-          HTMLVideo,
-          HTMLCheckbox,
-          HTMLRadio,
-          HTMLSwitch,
-          HTMLBadge,
-          HTMLAccordion,
-        }}
-      />
-    </Content>
+            // docs-components-html
+            HTMLButton,
+            HTMLButtonGroup,
+            HTMLBreadcrumb,
+            HTMLAlert,
+            HTMLAvatar,
+            HTMLCard,
+            HTMLChip,
+            HTMLFooter,
+            HTMLGallery,
+            HTMLIconButton,
+            HTMLImage,
+            HTMLInput,
+            HTMLList,
+            HTMLNavbar,
+            HTMLPagination,
+            HTMLProgress,
+            HTMLRating,
+            HTMLSpinner,
+            HTMLStepper,
+            HTMLTable,
+            HTMLTextarea,
+            HTMLTimeline,
+            HTMLTypography,
+            HTMLVideo,
+            HTMLCheckbox,
+            HTMLRadio,
+            HTMLSwitch,
+            // HTMLBadge,
+            HTMLAccordion,
+          }}
+        />
+      </Content>
+    </>
   );
 }

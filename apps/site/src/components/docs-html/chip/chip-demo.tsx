@@ -1,9 +1,12 @@
-export function ChipDemo() {
+
+
+export default function ChipDemo() {
   return (
-    <div className="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
-      <span className="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
-        Material Tailwind
-      </span>
-    </div>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `<div class="relative inline-flex select-none items-center rounded-full border border-slate-800 bg-slate-800 p-[3px] font-sans text-[13px] font-medium leading-none text-slate-50"><span class="font-sans mx-2 my-[3.5px] leading-none text-current">Material Tailwind</span></div>
+`
+      }}
+    />
   );
 }
