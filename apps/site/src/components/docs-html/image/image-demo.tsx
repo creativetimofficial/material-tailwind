@@ -1,9 +1,12 @@
-export function ImageDemo() {
+
+
+export default function ImageDemo() {
   return (
-    <img
-      src="https://dub.sh/Y0NxRWv"
-      alt="nature-image"
-      className="h-96 w-full object-cover object-center"
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `<img src="https://dub.sh/Y0NxRWv" alt="nature-image" class="h-96 w-full object-cover object-center" />
+`
+      }}
     />
   );
 }

@@ -1,14 +1,14 @@
-export function ProgressLabelInside() {
+
+
+export default function ProgressLabelInside() {
   return (
-    <div className="block h-6 w-full overflow-hidden rounded-full bg-surface">
-      <div
-        className="grid h-full place-items-center rounded-none bg-primary"
-        style={{ width: "50%" }}
-      >
-        <small className="font-sans text-sm text-secondary antialiased">
-          50% Completed
-        </small>
-      </div>
-    </div>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `<div class="block h-6 w-full overflow-hidden rounded-full bg-slate-200">
+  <div class="grid h-full place-items-center rounded-none bg-slate-800" style="width:50%"><small class="font-sans text-sm text-slate-200 antialiased">50% Completed</small></div>
+</div>
+`
+      }}
+    />
   );
 }

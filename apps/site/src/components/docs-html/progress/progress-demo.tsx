@@ -1,10 +1,14 @@
-export function ProgressDemo() {
+
+
+export default function ProgressDemo() {
   return (
-    <div className="block h-4 w-full overflow-hidden rounded-full bg-surface">
-      <div
-        className="h-full rounded-none bg-primary"
-        style={{ width: "50%" }}
-      ></div>
-    </div>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `<div class="block h-4 w-full overflow-hidden rounded-full bg-slate-200">
+  <div class="h-full rounded-none bg-slate-800" style="width:50%"></div>
+</div>
+`
+      }}
+    />
   );
 }

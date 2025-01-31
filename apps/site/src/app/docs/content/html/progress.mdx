@@ -18,13 +18,7 @@ Below we are presenting our examples of progress components that you can use in 
 
 Use this example of a versatile dark gray progress bar with a rounded design and responsive sizing to indicate progress.
 
-<ComponentPreview demo={<HTMLProgress.ProgressDemo />}>
-```html
-<div class="block w-full h-4 overflow-hidden rounded-full bg-surface">
-  <div class="h-full rounded-none bg-primary" style="width: 50%;"></div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="progress/progress-demo.tsx" language="html" />
 
 ---
 
@@ -32,30 +26,7 @@ Use this example of a versatile dark gray progress bar with a rounded design and
 
 The Progress component comes with 3 different sizes that you can change.
 
-<ComponentPreview demo={<HTMLProgress.ProgressSizes />}>
-```html
-<div class="w-full space-y-6">
-  <div class="block w-full h-2 overflow-hidden rounded-full bg-surface">
-    <div
-      class="h-full rounded-none bg-primary"
-      style="width: 50%;"
-    ></div>
-  </div>
-  <div class="block w-full h-4 overflow-hidden rounded-full bg-surface">
-    <div
-      class="h-full rounded-none bg-primary"
-      style="width: 50%;"
-    ></div>
-  </div>
-  <div class="block w-full h-6 overflow-hidden rounded-full bg-surface">
-    <div
-      class="h-full rounded-none bg-primary"
-      style="width: 50%;"
-    ></div>
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="progress/progress-sizes.tsx" language="html" />
 
 ---
 
@@ -63,30 +34,7 @@ The Progress component comes with 3 different sizes that you can change.
 
 See below how you can implement varying fill colors to represent different progress states or categories.
 
-<ComponentPreview demo={<HTMLProgress.ProgressColors />}>
-```html
-<div class="w-full space-y-4">
-  <div class="block w-full h-4 overflow-hidden rounded-full bg-surface">
-    <div class="h-full rounded-none bg-primary" style="width: 50%;"></div>
-  </div>
-  <div class="block w-full h-4 overflow-hidden rounded-full bg-surface">
-    <div class="h-full rounded-none bg-secondary" style="width: 50%;"></div>
-  </div>
-  <div class="block w-full h-4 overflow-hidden rounded-full bg-surface">
-    <div class="h-full rounded-none bg-info" style="width: 50%;"></div>
-  </div>
-  <div class="block w-full h-4 overflow-hidden rounded-full bg-surface">
-    <div class="h-full rounded-none bg-success" style="width: 50%;"></div>
-  </div>
-  <div class="block w-full h-4 overflow-hidden rounded-full bg-surface">
-    <div class="h-full rounded-none bg-warning" style="width: 50%;"></div>
-  </div>
-  <div class="block w-full h-4 overflow-hidden rounded-full bg-surface">
-    <div class="h-full rounded-none bg-error" style="width: 50%;"></div>
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="progress/progress-colors.tsx" language="html" />
 
 ---
 
@@ -94,20 +42,7 @@ See below how you can implement varying fill colors to represent different progr
 
 This progress bar example includes text within the filled portion, explicitly stating "50% Completed." This addition improves user accessibility and understanding by directly communicating the progress level.
 
-<ComponentPreview demo={<HTMLProgress.ProgressLabelInside />}>
-```html
-<div class="block w-full h-6 overflow-hidden rounded-full bg-surface">
-  <div
-    class="grid h-full rounded-none place-items-center bg-primary"
-    style="width: 50%;"
-  >
-    <small class="font-sans text-sm antialiased text-secondary">
-      50% Completed
-    </small>
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="progress/progress-label-inside.tsx" language="html" />
 
 ---
 
@@ -115,19 +50,7 @@ This progress bar example includes text within the filled portion, explicitly st
 
 Use the example below to add the label outside the progress bar.
 
-<ComponentPreview demo={<HTMLProgress.ProgressLabelOutside />}>
-```html
-<div class="w-full space-y-2">
-  <p class="flex items-center justify-between font-sans text-base antialiased font-semibold text-black dark:text-white">
-    <span>Completed</span>
-    <span>50%</span>
-  </p>
-  <div class="block w-full h-4 overflow-hidden rounded-full bg-surface">
-    <div class="h-full rounded-none bg-primary" style="width: 50%;"></div>
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="progress/progress-label-outside.tsx" language="html" />
 
 ---
 
@@ -135,10 +58,4 @@ Use the example below to add the label outside the progress bar.
 
 Use the example below to customize the progress bar.
 
-<ComponentPreview demo={<HTMLProgress.ProgressCustomStyles />}>
-```html
-<div class="block w-full h-4 p-1 overflow-hidden border rounded-full border-gray-900/10 bg-gray-900/5 dark:border-gray-800 dark:bg-gray-900">
-  <div class="h-full rounded-full bg-primary" style="width: 50%;"></div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="progress/progress-custom-styles.tsx" language="html" />

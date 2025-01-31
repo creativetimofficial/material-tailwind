@@ -9,8 +9,8 @@ export function Brand() {
       />
       <div className="relative z-10 rounded-lg bg-background p-1">
         <div className="grid h-9 w-9 scale-105 cursor-pointer place-items-center rounded-[5px] bg-black transition-transform duration-300 hover:scale-110">
-          <Image
-            src={`${process.env.NEXT_PUBLIC_SITE_URL}/logo-mt.png`}
+          <img
+            src={`http://localhost:3001/logo-mt.png`}
             alt="material tailwind"
             width={256}
             height={256}

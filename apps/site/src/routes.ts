@@ -1,5 +1,13 @@
 const isProd = process.env.NODE_ENV === "production";
-const routePrefix = isProd ? "/docs/v3/react" : "/docs/react";
+const getDocsTypeFromUrl = () => {
+  if (window.location.href.includes('html')) {
+    return 'html';
+  } else if (window.location.href.includes('react')) {
+    return 'react';
+  }
+};
+
+const routePrefix = isProd ? `/docs/v3/${getDocsTypeFromUrl()}` : `/docs/${getDocsTypeFromUrl()}`;
 
 export const routes = [
   {

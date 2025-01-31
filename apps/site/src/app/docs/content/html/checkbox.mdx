@@ -22,38 +22,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
 
 Use this simple and versatile checkbox example for your forms or other components. You can customize the styling and behavior of the checkbox further to fit the specific requirements.
 
-<ComponentPreview demo={<HTMLCheckbox.CheckboxDemo />}>
-```html
-<label class="relative inline-block w-5 h-5" for="checkbox">
-  <input
-    id="checkbox"
-    type="checkbox"
-    class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
-  />
-  <span
-    class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100"
-  >
-    <svg
-      fill="none"
-      width="18px"
-      height="18px"
-      stroke-width="2"
-      color="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M5 13L9 17L19 7"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </svg>
-  </span>
-</label>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="checkbox/checkbox-demo.tsx" language="html" />
 
 ---
 
@@ -61,174 +30,7 @@ Use this simple and versatile checkbox example for your forms or other component
 
 You can customize your Material Tailwind checkbox to fit your design with different colors like primary, secondary, info, success, warning, and error.
 
-<ComponentPreview demo={<HTMLCheckbox.CheckboxColors />}>
-```html
-<div class="flex flex-wrap justify-center gap-4">
-  <label class="relative inline-block w-5 h-5" for="checkbox">
-    <input
-      id="checkbox"
-      type="checkbox"
-      class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
-    />
-    <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
-      <svg
-        fill="none"
-        width="18px"
-        height="18px"
-        stroke-width="2"
-        color="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5 13L9 17L19 7"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-  </label>
-  <label class="relative inline-block w-5 h-5" for=":r1k:">
-    <input
-      id=":r1k:"
-      type="checkbox"
-      class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-secondary"
-    />
-    <span
-      class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-secondary-foreground peer-checked:scale-100 peer-checked:opacity-100"
-    >
-      <svg
-        fill="none"
-        width="18px"
-        height="18px"
-        stroke-width="2"
-        color="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5 13L9 17L19 7"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-  </label>
-  <label class="relative inline-block w-5 h-5" for=":r1l:">
-    <input
-      id=":r1l:"
-      type="checkbox"
-      class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-info"
-    />
-    <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-info-foreground peer-checked:scale-100 peer-checked:opacity-100">
-      <svg
-        fill="none"
-        width="18px"
-        height="18px"
-        stroke-width="2"
-        color="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5 13L9 17L19 7"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-  </label>
-  <label class="relative inline-block w-5 h-5" for=":r1m:">
-    <input
-      id=":r1m:"
-      type="checkbox"
-      class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-success"
-    />
-    <span
-      class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-success-foreground peer-checked:scale-100 peer-checked:opacity-100"
-    >
-      <svg
-        fill="none"
-        width="18px"
-        height="18px"
-        stroke-width="2"
-        color="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5 13L9 17L19 7"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-  </label>
-  <label class="relative inline-block w-5 h-5" for=":r1n:">
-    <input
-      id=":r1n:"
-      type="checkbox"
-      class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-warning"
-    />
-    <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-warning-foreground peer-checked:scale-100 peer-checked:opacity-100">
-      <svg
-        fill="none"
-        width="18px"
-        height="18px"
-        stroke-width="2"
-        color="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5 13L9 17L19 7"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-  </label>
-  <label class="relative inline-block w-5 h-5" for=":r1o:">
-    <input
-      id=":r1o:"
-      type="checkbox"
-      class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-error"
-    />
-    <span
-      class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-error-foreground peer-checked:scale-100 peer-checked:opacity-100"
-    >
-      <svg
-        fill="none"
-        width="18px"
-        height="18px"
-        stroke-width="2"
-        color="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5 13L9 17L19 7"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-  </label>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="checkbox/checkbox-colors.tsx" language="html" />
 
 ---
 
@@ -236,44 +38,7 @@ You can customize your Material Tailwind checkbox to fit your design with differ
 
 Use this example if you want to offer users the option to "Remember Me" when logging in. Or you can customize the text for the desired action.
 
-<ComponentPreview demo={<HTMLCheckbox.CheckboxWithLabel />}>
-```html
-<div class="flex items-center gap-2">
-  <label class="relative inline-block w-5 h-5" for="checkbox1">
-    <input
-      id="checkbox1"
-      type="checkbox"
-      class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
-    />
-    <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
-      <svg
-        fill="none"
-        width="18px"
-        height="18px"
-        stroke-width="2"
-        color="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5 13L9 17L19 7"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-  </label>
-  <label
-    for="checkbox1"
-    class="font-sans text-base antialiased text-foreground"
-  >
-    Remember Me
-  </label>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="checkbox/checkbox-with-label.tsx" language="html" />
 
 ---
 
@@ -281,54 +46,7 @@ Use this example if you want to offer users the option to "Remember Me" when log
 
 Check out this component example to see how you can implement a custom icon for your checkbox.
 
-<ComponentPreview demo={<HTMLCheckbox.CheckboxWithCustomIcon />}>
-```html
-<label
-  for="checkbox-with-custom-icon"
-  class="relative inline-block h-5 w-5"
->
-  <input
-    type="checkbox"
-    id="checkbox-with-custom-icon"
-    class="peer h-5 w-5 opacity-0"
-  />
-  <svg
-    width="1.5em"
-    height="1.5em"
-    stroke-width="1.5"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    color="currentColor"
-    class="icon-unchecked pointer-events-none absolute inset-0 left-2/4 top-2/4 h-5 w-5 -translate-x-2/4 -translate-y-2/4 text-current text-primary opacity-100 peer-checked:opacity-0"
-  >
-    <path
-      d="M8.58737 8.23597L11.1849 3.00376C11.5183 2.33208 12.4817 2.33208 12.8151 3.00376L15.4126 8.23597L21.2215 9.08017C21.9668 9.18848 22.2638 10.0994 21.7243 10.6219L17.5217 14.6918L18.5135 20.4414C18.6409 21.1798 17.8614 21.7428 17.1945 21.3941L12 18.678L6.80547 21.3941C6.1386 21.7428 5.35909 21.1798 5.48645 20.4414L6.47825 14.6918L2.27575 10.6219C1.73617 10.0994 2.03322 9.18848 2.77852 9.08017L8.58737 8.23597Z"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    ></path>
-  </svg>
-  <svg
-    width="1.5em"
-    height="1.5em"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    color="currentColor"
-    class="icon-checked pointer-events-none absolute inset-0 left-2/4 top-2/4 h-5 w-5 -translate-x-2/4 -translate-y-2/4 text-current text-primary opacity-0 peer-checked:opacity-100"
-  >
-    <path
-      d="M8.58737 8.23597L11.1849 3.00376C11.5183 2.33208 12.4817 2.33208 12.8151 3.00376L15.4126 8.23597L21.2215 9.08017C21.9668 9.18848 22.2638 10.0994 21.7243 10.6219L17.5217 14.6918L18.5135 20.4414C18.6409 21.1798 17.8614 21.7428 17.1945 21.3941L12 18.678L6.80547 21.3941C6.1386 21.7428 5.35909 21.1798 5.48645 20.4414L6.47825 14.6918L2.27575 10.6219C1.73617 10.0994 2.03322 9.18848 2.77852 9.08017L8.58737 8.23597Z"
-      fill="currentColor"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    ></path>
-  </svg>
-</label>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="checkbox/checkbox-with-custom-icon.tsx" language="html" />
 
 ---
 
@@ -336,39 +54,7 @@ Check out this component example to see how you can implement a custom icon for 
 
 Use this component example styled with Tailwind CSS if you want to display a checkbox that represents an option but don't want users to interact with it.
 
-<ComponentPreview demo={<HTMLCheckbox.DisabledCheckbox />}>
-```html
-<label
-  class="relative inline-block w-5 h-5 opacity-50 pointer-events-none"
-  for="checkbox"
->
-  <input
-    id="checkbox"
-    type="checkbox"
-    class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
-  />
-  <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
-    <svg
-      fill="none"
-      width="18px"
-      height="18px"
-      stroke-width="2"
-      color="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M5 13L9 17L19 7"
-        stroke="currentColor"
-        strok-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </svg>
-  </span>
-</label>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="checkbox/disabled-checkbox.tsx" language="html" />
 
 ---
 
@@ -376,47 +62,7 @@ Use this component example styled with Tailwind CSS if you want to display a che
 
 This example works perfectly if you want to make sure that users agree to your website's terms and conditions before signing up. Or you can just customize the text for your specific needs. It is designed for usability and clarity in consent-related scenarios.
 
-<ComponentPreview demo={<HTMLCheckbox.CheckboxWithLink />}>
-```html
-<div class="flex items-center gap-2">
-  <label class="relative inline-block w-5 h-5" for="checkbox-link">
-    <input
-      id="checkbox-link"
-      type="checkbox"
-      class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
-    />
-    <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
-      <svg
-        fill="none"
-        width="18px"
-        height="18px"
-        stroke-width="2"
-        color="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5 13L9 17L19 7"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-  </label>
-  <label
-    for="checkbox-link"
-    class="flex gap-1 font-sans text-base antialiased text-foreground"
-  >
-    I agree with the
-    <a href="#" class="font-sans text-base antialiased text-primary">
-      terms and conditions
-    </a>
-  </label>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="checkbox/checkbox-with-link.tsx" language="html" />
 
 ---
 
@@ -424,49 +70,7 @@ This example works perfectly if you want to make sure that users agree to your w
 
 Use the example below for a more complex usage of a checkbox with a label that contains some description. It helps clearly communicate the purpose of the checkbox.
 
-<ComponentPreview demo={<HTMLCheckbox.CheckboxWithDescription />}>
-```html
-<div class="flex gap-2">
-  <label
-    class="relative inline-block w-5 h-5"
-    for="checkbox-description"
-  >
-    <input
-      id="checkbox-description"
-      type="checkbox"
-      class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
-    />
-    <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
-      <svg
-        fill="none"
-        width="18px"
-        height="18px"
-        stroke-width="2"
-        color="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5 13L9 17L19 7"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-  </label>
-  <label for="checkbox-description" class="-translate-y-1">
-    <p class="font-sans text-base antialiased font-semibold text-black dark:text-white">
-      Remember Me
-    </p>
-    <small class="font-sans text-sm antialiased text-foreground">
-      You'll be able to login without password for 24 hours.
-    </small>
-  </label>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="checkbox/checkbox-with-description.tsx" language="html" />
 
 ---
 
@@ -474,33 +78,4 @@ Use the example below for a more complex usage of a checkbox with a label that c
 
 You can use the classes to add custom styles to the Checkbox component.
 
-<ComponentPreview demo={<HTMLCheckbox.CustomCheckbox />}>
-```html
-<label class="relative inline-block w-5 h-5" for="checkbox">
-  <input
-    id="checkbox"
-    type="checkbox"
-    class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
-  />
-  <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
-    <svg
-      fill="none"
-      width="18px"
-      height="18px"
-      stroke-width="2"
-      color="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M5 13L9 17L19 7"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </svg>
-  </span>
-</label>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="checkbox/custom-checkbox.tsx" language="html" />
