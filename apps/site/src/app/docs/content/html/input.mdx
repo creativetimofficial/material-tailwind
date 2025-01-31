@@ -22,15 +22,7 @@ See below Material Tailwind's input component examples.
 
 Use our input example to get started easily. It is perfect for forms requiring text input, such as user registration, login forms, or any form where users need to input a username.
 
-<ComponentPreview demo={<HTMLInput.InputDemo />}>
-```html
-<input
-  placeholder="Input"
-  className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-  type="text"
-/>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="input/input-demo.tsx" language="html" />
 
 ---
 
@@ -38,27 +30,7 @@ Use our input example to get started easily. It is perfect for forms requiring t
 
 Check out this code snippet to see how you can implement inputs with different sizes. The first input has a height of 28 pixels, the second input has a height of 36 pixels, and the third input has a height of 46 pixels. 
 
-<ComponentPreview demo={<HTMLInput.InputSizes />}>
-```html
- <div className="flex flex-col gap-4">
-  <input
-    placeholder="Input Small"
-    className="w-72 select-none rounded-md border border-surface bg-transparent px-1.5 py-[4.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-    type="text"
-  />
-  <input
-    placeholder="Input Medium"
-    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-    type="text"
-  />
-  <input
-    placeholder="Input Large"
-    className="w-72 select-none rounded-md border border-surface bg-transparent px-3.5 py-[12.25px] text-base leading-none text-black outline-none ring-4 ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-    type="text"
-  />
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="input/input-sizes.tsx" language="html" />
 
 ---
 
@@ -66,42 +38,7 @@ Check out this code snippet to see how you can implement inputs with different s
 
 The 6 examples of input components showcased below are HTML snippets styled with Tailwind CSS, each designed to highlight a different focus color theme: Primary, Secondary, Info, Success, Warning and Error. They share a common structure and styling with slight variations in color to differentiate them.
 
-<ComponentPreview demo={<HTMLInput.InputColors />}>
-```html
-<div className="flex flex-col gap-4">
-  <input
-    placeholder="Input Primary"
-    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-    type="text"
-  />
-  <input
-    placeholder="Input Secondary"
-    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-secondary hover:ring-secondary/10 focus:border-secondary focus:outline-none focus:ring-secondary/10 dark:text-white"
-    type="text"
-  />
-  <input
-    placeholder="Input Info"
-    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-info hover:ring-info/10 focus:border-info focus:outline-none focus:ring-info/10 dark:text-white"
-    type="text"
-  />
-  <input
-    placeholder="Input Success"
-    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-success hover:ring-success/10 focus:border-success focus:outline-none focus:ring-success/10 dark:text-white"
-    type="text"
-  />
-  <input
-    placeholder="Input Warning"
-    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-warning hover:ring-warning/10 focus:border-warning focus:outline-none focus:ring-warning/10 dark:text-white"
-    type="text"
-  />
-  <input
-    placeholder="Input Error"
-    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-error hover:ring-error/10 focus:border-error focus:outline-none focus:ring-error/10 dark:text-white"
-    type="text"
-  />
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="input/input-colors.tsx" language="html" />
 
 ---
 
@@ -109,32 +46,7 @@ The 6 examples of input components showcased below are HTML snippets styled with
 
 These input examples styled with Tailwind CSS are structured to visually communicate feedback to the user through color-coded cues. Each example represents different states or feedback contexts for user interaction: an error state (red-themed - `border-red-500`, `text-red-500`) and a success state (green-themed - `border-green-500`, `text-green-500`).
 
-<ComponentPreview demo={<HTMLInput.InputWithValidation />}>
-```html
-<div class="space-y-6 w-72">
-  <div class="relative w-full text-sm leading-none rounded-md">
-    <input
-      placeholder="Input Error"
-      class="peer h-full w-full select-none rounded-[inherit] border border-error bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-error hover:ring-error/10 focus:border-error focus:outline-none focus:ring-error/10 dark:text-white"
-      type="text"
-    />
-    <small class="block mt-1 font-sans text-sm antialiased text-error">
-      Something went wrong!
-    </small>
-  </div>
-  <div class="relative w-full text-sm leading-none rounded-md">
-    <input
-      placeholder="Input Success"
-      class="peer h-full w-full select-none rounded-[inherit] border border-success bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-success hover:ring-success/10 focus:border-success focus:outline-none focus:ring-success/10 dark:text-white"
-      type="text"
-    />
-    <small class="block mt-1 font-sans text-sm antialiased text-success">
-      Congratulations 🎉
-    </small>
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="input/input-with-validation.tsx" language="html" />
 
 ---
 
@@ -142,99 +54,13 @@ These input examples styled with Tailwind CSS are structured to visually communi
 
 Use this example of input with icon element if you want to add a friendly touch and make it more interactive.
 
-<ComponentPreview demo={<HTMLInput.InputWithIcon />}>
-```html
-<div class="space-y-4 w-72">
-  <div class="relative w-full rounded-md text-sm leading-none aria-disabled:cursor-not-allowed data-[shape=pill]:rounded-full">
-    <input
-      placeholder="Username"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] ps-8 leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-      type="text"
-    />
-    <span class="pointer-events-none absolute left-[7px] top-1/2 h-5 w-5 -translate-y-1/2 overflow-hidden text-foreground/70 transition-all duration-300 ease-in peer-hover:text-black peer-focus:text-black dark:peer-hover:text-white dark:peer-focus:text-white">
-      <svg
-        width="1.5em"
-        height="1.5em"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        color="currentColor"
-        class="w-full h-full"
-      >
-        <path
-          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-        <path
-          d="M4.271 18.3457C4.271 18.3457 6.50002 15.5 12 15.5C17.5 15.5 19.7291 18.3457 19.7291 18.3457"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-        <path
-          d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-  </div>
-  <div class="relative w-full rounded-md text-sm leading-none aria-disabled:cursor-not-allowed data-[shape=pill]:rounded-full">
-    <input
-      placeholder="Password"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] pe-8 leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-      type="password"
-    />
-    <span class="pointer-events-none absolute right-[7px] top-1/2 h-5 w-5 -translate-y-1/2 overflow-hidden text-foreground/70 transition-all duration-300 ease-in peer-hover:text-black peer-focus:text-black dark:peer-hover:text-white dark:peer-focus:text-white">
-      <svg
-        width="1.5em"
-        height="1.5em"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        color="currentColor"
-        class="w-full h-full"
-      >
-        <path
-          d="M16 12H17.4C17.7314 12 18 12.2686 18 12.6V19.4C18 19.7314 17.7314 20 17.4 20H6.6C6.26863 20 6 19.7314 6 19.4V12.6C6 12.2686 6.26863 12 6.6 12H8M16 12V8C16 6.66667 15.2 4 12 4C8.8 4 8 6.66667 8 8V12M16 12H8"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </span>
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="input/input-with-icon.tsx" language="html" />
 
 ---
 
 ## Input with Label
 
-<ComponentPreview demo={<HTMLInput.InputWithLabel />}>
-```html
-<div class="relative space-y-1 text-sm leading-none rounded-md w-72">
-  <label
-    for="email"
-    class="font-sans text-sm antialiased font-semibold text-black dark:text-white"
-  >
-    Email
-  </label>
-  <input
-    id="email"
-    placeholder="someone@example.com"
-    class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-    type="email"
-  />
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="input/input-with-label.tsx" language="html" />
 
 ---
 
@@ -242,52 +68,7 @@ Use this example of input with icon element if you want to add a friendly touch 
 
 Use this example of password input field designed with a focus on security and user guidance. It is styled using Tailwind CSS and includes an accompanying label and a hint message with an icon, aimed at enhancing user experience by providing clear instructions for creating a strong password.
 
-<ComponentPreview demo={<HTMLInput.InputWithHelperText />}>
-```html
-<div class="relative space-y-2 text-sm leading-none rounded-md w-72">
-  <input
-    placeholder="Password"
-    class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-    type="password"
-  />
-  <div class="flex gap-1.5 text-foreground">
-    <svg
-      width="1.5em"
-      height="1.5em"
-      stroke-width="1.5"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      class="h-3.5 w-3.5 shrink-0 translate-y-[3px] stroke-2"
-    >
-      <path
-        d="M12 11.5V16.5"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-      <path
-        d="M12 7.51L12.01 7.49889"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-      <path
-        d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </svg>
-    <small class="font-sans text-sm antialiased text-inherit">
-      Use at least 8 characters, one uppercase, one lowercase and one
-      number.
-    </small>
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="input/input-with-helper-text.tsx" language="html" />
 
 ---
 
@@ -295,58 +76,13 @@ Use this example of password input field designed with a focus on security and u
 
 Use the example below for an input containing a button inside. It is useful for forms where users can enter an email address and then take an action, such as inviting a user to a platform or sending a notification.
 
-<ComponentPreview demo={<HTMLInput.InputWithButton />}>
-```html
-<form
-  action="#"
-  class="flex items-center justify-center w-full max-w-sm gap-2"
->
-  <div class="relative w-full text-sm leading-none rounded-md">
-    <input
-      placeholder="someone@example.com"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-      type="email"
-    />
-  </div>
-  <button
-    type="submit"
-    class="inline-flex select-none items-center justify-center rounded-md border border-primary bg-primary px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:border-primary-light hover:bg-primary-light"
-  >
-    Subscribe
-  </button>
-</form>
-```
-</ComponentPreview>
-
+<PreviewWithCode relativePath="input/input-with-button.tsx" language="html" />
 
 ---
 
 ## Input with Dropdown
 
-<ComponentPreview demo={<HTMLInput.InputWithDropdown />}>
-```html
-<div class="relative flex w-full max-w-[24rem]">
-  <button
-    id=":rk:"
-    class="group flex h-10 select-none items-center justify-center gap-2 rounded-md rounded-r-none border border-r-0 border-surface bg-secondary px-3.5 py-2.5 pl-3 text-center align-middle font-sans text-sm font-medium leading-none text-secondary-foreground outline-none transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
-  >
-    <img
-      src="https://flagcdn.com/ke.svg"
-      alt="Kenya"
-      class="object-cover w-4 h-4 rounded-full"
-    />
-    +254
-  </button>
-  <div class="relative text-sm leading-none rounded-md w-72 aria-disabled:cursor-not-allowed">
-    <input
-      placeholder="Mobile Number"
-      class="peer h-full w-full select-none rounded-[inherit] rounded-l-none border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 disabled:pointer-events-none disabled:opacity-50 dark:text-white"
-      type="text"
-    />
-  </div>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="input/input-with-dropdown.tsx" language="html" />
 
 ---
 
@@ -354,21 +90,7 @@ Use the example below for an input containing a button inside. It is useful for 
 
 Use this example if you want to clearly indicate to users that the input field is currently not interactive, employing visual cues and styling to convey its disabled state.
 
-<ComponentPreview demo={<HTMLInput.InputDisabled />}>
-```html
-<div
-  class="relative text-sm leading-none rounded-md w-72 aria-disabled:cursor-not-allowed"
-  aria-disabled="true"
->
-  <input
-    placeholder="Input"
-    class="peer pointer-events-none h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black opacity-50 outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-    disabled=""
-    type="text"
-  />
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="input/input-disabled.tsx" language="html" />
 
 <p class="mt-4 antialiased text-foreground">
 The input is explicitly marked as disabled (`disabled attribute`), which prevents user interaction. The styling reflects this state by altering the border and background color (`disabled:border-0 disabled:bg-blue-gray-50`), making it visually distinct from active input fields. This design choice helps users recognize that the input is not currently available for interaction.
@@ -379,45 +101,4 @@ The input is explicitly marked as disabled (`disabled attribute`), which prevent
 
 Check out this example to learn how you can implement custom styles for your input components with Material Tailwind.
 
-<ComponentPreview demo={<HTMLInput.InputCustomStyles />}>
-```html
-<div class="relative text-sm leading-none rounded-md w-72">
-  <input
-    placeholder="Username"
-    class="peer h-full w-full select-none rounded-none border-0 border-b border-gray-400 bg-transparent px-2.5 py-[8.5px] pl-[26px] pr-0.5 ps-8 leading-[inherit] text-black outline-none ring-0 ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-gray-900 hover:ring-primary/10 focus:border-gray-900 focus:outline-none focus:ring-primary/10 dark:border-gray-600 dark:text-white dark:hover:border-gray-50 dark:focus:border-gray-50"
-    type="text"
-  />
-  <span class="absolute w-5 h-5 overflow-hidden transition-all duration-300 ease-in -translate-y-1/2 pointer-events-none left-px top-1/2 text-foreground/70 peer-hover:text-black peer-focus:text-black dark:peer-hover:text-white dark:peer-focus:text-white">
-    <svg
-      width="1.5em"
-      height="1.5em"
-      stroke-width="1.5"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      class="w-full h-full"
-    >
-      <path
-        d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-      <path
-        d="M4.271 18.3457C4.271 18.3457 6.50002 15.5 12 15.5C17.5 15.5 19.7291 18.3457 19.7291 18.3457"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-      <path
-        d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </svg>
-  </span>
-</div>
-```
-</ComponentPreview>
+<PreviewWithCode relativePath="input/input-custom-styles.tsx" language="html" />
