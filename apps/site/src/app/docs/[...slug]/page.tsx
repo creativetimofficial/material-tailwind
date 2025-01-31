@@ -148,7 +148,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = frontMatter.title;
   const description = frontMatter.description;
-  const pageUrl = `https://www.creative-tim.com/david-ui/docs/${path}`;
+  const pageUrl = `https://www.material-tailwind.com/v3/docs/${path}`;
 
   return {
     title,
@@ -199,7 +199,8 @@ export const dynamic = "force-static";
 export default async function Docs({ params: { slug } }) {
   const path = slug.join("/");
   const { frontMatter, source } = await readDocsContent(path);
-
+  
+  // TODO: replace stone with MT color
   return (
     <>
       <ScriptLoader src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" />
@@ -228,9 +229,9 @@ export default async function Docs({ params: { slug } }) {
 
             // default-components
             pre: Code,
-            Link: (props: any) => <Link {...props} className="text-stone-800" />,
+            Link: (props: any) => <Link {...props} />,
             h1: (props: any) => (
-              <MTTypography as="h1" type="h4" className="mb-4 text-stone-800" {...props} />
+              <MTTypography as="h1" type="h4" className="mb-4" {...props} />
             ),
             h2: (props: any) => (
               <MTTypography
@@ -279,7 +280,7 @@ export default async function Docs({ params: { slug } }) {
             hr: () => <hr className="my-8 border-transparent" />,
             code: (props: any) => (
               <code
-                className="inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono text-sm leading-none text-stone-500 dark:bg-surface-dark"
+                className="inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono text-sm leading-none dark:bg-surface-dark"
                 {...props}
               />
             ),
