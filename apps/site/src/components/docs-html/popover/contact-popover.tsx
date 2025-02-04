@@ -1,5 +1,5 @@
 
-export function ContactPopover() {
+export default function ContactPopover() {
   return (
     <div
       dangerouslySetInnerHTML={{
