@@ -1,10 +1,9 @@
 
-
 export default function ChipWithAvatar() {
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: `<div class="relative inline-flex select-none items-center rounded-full border border-slate-800 bg-slate-800 p-[3px] font-sans text-[13px] font-medium leading-none text-slate-50"><span class="grid h-4 w-4 shrink-0 translate-x-0.5 place-items-center rounded-full"><img src="https://dub.sh/TdSBP0D" alt="profile-picture" class="inline-block h-full w-full rounded-full object-cover object-center"/></span><span class="font-sans mx-2 my-[3.5px] leading-none text-current">Alex Andrew</span></div>
+        __html: `<div data-open="true" data-shape="pill" class="relative inline-flex w-max items-center border select-none font-sans font-medium rounded-md data-[shape=pill]:rounded-full text-sm p-0.5 shadow-sm bg-slate-800 border-slate-800 text-slate-50"><span class="grid place-items-center shrink-0 rounded-full translate-x-1 w-4 h-4"><img src="https://dub.sh/TdSBP0D" alt="profile-picture" class="inline-block object-cover object-center data-[shape=square]:rounded-none data-[shape=circular]:rounded-full data-[shape=rounded]:rounded-[current] rounded-sm h-full w-full" data-shape="circular"/></span><span class="font-sans text-current leading-none my-1 mx-2.5">Alex Andrew</span></div>
 `
       }}
     />
