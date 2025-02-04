@@ -1,5 +1,5 @@
 
-export function CollapseDemo() {
+export default function CollapseDemo() {
   return (
     <div
       dangerouslySetInnerHTML={{
