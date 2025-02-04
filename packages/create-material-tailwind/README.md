@@ -23,6 +23,12 @@ With PNPM:
 $ pnpm create material-tailwind
 ```
 
+With Bun:
+
+```bash
+$ bun create material-tailwind
+```
+
 Then follow the prompts!
 
 You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold a Material Tailwind project for Next.js, run:
