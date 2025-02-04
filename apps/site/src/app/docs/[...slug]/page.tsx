@@ -102,6 +102,7 @@ import * as HTMLTypography from "@components/docs-html/typography";
 import * as HTMLVideo from "@components/docs-html/video";
 import * as HTMLCheckbox from "@components/docs-html/checkbox";
 import * as HTMLRadio from "@components/docs-html/radio";
+import * as HTMLSlider from "@components/docs-html/slider";
 import * as HTMLSwitch from "@components/docs-html/switch";
 // import * as HTMLBadge from "@components/docs-html/badge";
 import * as HTMLAccordion from "@components/docs-html/accordion";
@@ -364,6 +365,7 @@ export default async function Docs({ params: { slug } }) {
             HTMLProgress,
             HTMLRating,
             HTMLSpinner,
+            HTMLSlider,
             HTMLStepper,
             HTMLTable,
             HTMLTextarea,
