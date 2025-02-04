@@ -1,50 +1,14 @@
-export default function TabsDemo() {
-            return (
-              <div
-                className="w-full place-items-center"
-                dangerouslySetInnerHTML={{
-                  __html: 
-`
-<div class="relative tab-group">
-  <div class="flex bg-stone-100 p-0.5 relative rounded-lg" role="tablist">
-    <div class="absolute top-1 left-0.5 h-8 bg-white rounded-md shadow-sm transition-all duration-300 transform scale-x-0 translate-x-0 tab-indicator z-0"></div>
 
-    <a href="#" class="tab-link text-sm active inline-block py-2 px-4 text-stone-800 transition-all duration-300 relative z-1 mr-1" data-dui-tab-target="tab1-group">
-      HTML
-    </a>
-    <a href="#" class="tab-link text-sm inline-block py-2 px-4 text-stone-800 transition-all duration-300 relative z-1 mr-1" data-dui-tab-target="tab2-group">
-      React
-    </a>
-    <a href="#" class="tab-link text-sm inline-block py-2 px-4 text-stone-800 transition-all duration-300 relative z-1 mr-1" data-dui-tab-target="tab3-group">
-      Vue
-    </a>
-    <a href="#" class="tab-link text-sm inline-block py-2 px-4 text-stone-800 transition-all duration-300 relative z-1 mr-1" data-dui-tab-target="tab4-group">
-      Angular
-    </a>
-    <a href="#" class="tab-link text-sm inline-block py-2 px-4 text-stone-800 transition-all duration-300 relative z-1 mr-1" data-dui-tab-target="tab5-group">
-      Svelte
-    </a>
-  </div>
-  <div class="mt-4 tab-content-container">
-    <div id="tab1-group" class="tab-content text-stone-500 text-sm block">
-      <p>Content for HTML.</p>
-    </div>
-    <div id="tab2-group" class="tab-content text-stone-500 text-sm hidden">
-      <p>Content for React.</p>
-    </div>
-    <div id="tab3-group" class="tab-content text-stone-500 text-sm hidden">
-      <p>Content for Vue.</p>
-    </div>
-      <div id="tab4-group" class="tab-content text-stone-500 text-sm hidden">
-      <p>Content for Angular.</p>
-    </div>
-      <div id="tab5-group" class="tab-content text-stone-500 text-sm hidden">
-      <p>Content for Svelte.</p>
-    </div>
-  </div>
+export default function TabsDemo() {
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `<div class="flex data-[orientation=horizontal]:flex-col data-[orientation=vertical]:flex-row gap-2" data-orientation="horizontal">
+  <div role="tablist" class="flex shrink-0 data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col rounded-md p-1 bg-slate-100 dark:bg-surface w-full" aria-orientation="horizontal" data-orientation="horizontal"><button role="tab" class="inline-flex relative z-[2] py-1.5 px-3 items-center justify-center align-middle text-slate-800 dark:text-white select-none font-sans font-medium text-center text-sm aria-disabled:opacity-50 aria-disabled:pointer-events-none w-full" data-active="true" aria-selected="true">HTML</button><button role="tab" class="inline-flex relative z-[2] py-1.5 px-3 items-center justify-center align-middle text-slate-800 dark:text-white select-none font-sans font-medium text-center text-sm aria-disabled:opacity-50 aria-disabled:pointer-events-none w-full" data-active="false" aria-selected="false">React</button><button role="tab" class="inline-flex relative z-[2] py-1.5 px-3 items-center justify-center align-middle text-slate-800 dark:text-white select-none font-sans font-medium text-center text-sm aria-disabled:opacity-50 aria-disabled:pointer-events-none w-full" data-active="false" aria-selected="false">Vue</button><button role="tab" class="inline-flex relative z-[2] py-1.5 px-3 items-center justify-center align-middle text-slate-800 dark:text-white select-none font-sans font-medium text-center text-sm aria-disabled:opacity-50 aria-disabled:pointer-events-none w-full" data-active="false" aria-selected="false">Angular</button><button role="tab" class="inline-flex relative z-[2] py-1.5 px-3 items-center justify-center align-middle text-slate-800 dark:text-white select-none font-sans font-medium text-center text-sm aria-disabled:opacity-50 aria-disabled:pointer-events-none w-full" data-active="false" aria-selected="false">Svelte</button><span style="width:0;height:0;left:0;top:0;position:absolute;z-index:1" class="bg-white rounded shadow-sm shadow-slate-800/10 transition-all duration-300 ease-in"></span></div>
+  <div role="tabpanel" class="p-1 w-full block" data-active="true" data-orientation="horizontal">It really matters and then like it really doesn&#x27;t matter. What matters is the people who are sparked by it. And the people who are like offended by it, it doesn&#x27;t matter.</div>
 </div>
 `
-                }}
-              />
-            );
-          }
+      }}
+    />
+  );
+}
