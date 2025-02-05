@@ -18,10 +18,10 @@ export default function BadgeOverlap() {
         </svg></button></div><span class="absolute right-[6%] top-[6%] grid min-h-[10px] min-w-[10px] -translate-y-1/2 translate-x-1/2 place-items-center rounded-full border border-slate-800 bg-slate-800 px-1 py-0.5 text-xs leading-none text-slate-50"></span>
   </div>
   <div class="relative inline-flex">
-    <div class=""><img src="https://dub.sh/TdSBP0D" alt="profile-picture" class="inline-block h-11 w-11 rounded-full object-cover object-center" /></div><span class="absolute bottom-[14%] right-[14%] grid min-h-[10px] min-w-[10px] translate-x-1/2 translate-y-1/2 place-items-center rounded-full border border-slate-800 bg-slate-800 px-1 py-0.5 text-xs leading-none text-slate-50">5</span>
+    <div class=""><img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" class="inline-block h-11 w-11 rounded-full object-cover object-center" /></div><span class="absolute bottom-[14%] right-[14%] grid min-h-[10px] min-w-[10px] translate-x-1/2 translate-y-1/2 place-items-center rounded-full border border-slate-800 bg-slate-800 px-1 py-0.5 text-xs leading-none text-slate-50">5</span>
   </div>
   <div class="relative inline-flex">
-    <div class=""><img src="https://dub.sh/TdSBP0D" alt="profile-picture" class="inline-block h-11 w-11 rounded-full object-cover object-center" /></div><span class="absolute bottom-[14%] right-[14%] grid min-h-[10px] min-w-[10px] translate-x-1/2 translate-y-1/2 place-items-center rounded-full border border-slate-800 bg-slate-800 px-1 py-0.5 text-xs leading-none text-slate-50"></span>
+    <div class=""><img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" class="inline-block h-11 w-11 rounded-full object-cover object-center" /></div><span class="absolute bottom-[14%] right-[14%] grid min-h-[10px] min-w-[10px] translate-x-1/2 translate-y-1/2 place-items-center rounded-full border border-slate-800 bg-slate-800 px-1 py-0.5 text-xs leading-none text-slate-50"></span>
   </div>
 </div>
 `
