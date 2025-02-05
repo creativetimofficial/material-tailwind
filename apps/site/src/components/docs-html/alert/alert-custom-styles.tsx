@@ -3,6 +3,7 @@
 export default function AlertCustomStyles() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div role="alert" class="relative flex w-full items-start rounded-none border border-b-0 border-l-4 border-r-0 border-t-0 border-green-500 bg-green-500/10 p-2 font-medium text-green-500">
     <span class="grid shrink-0 place-items-center p-1">

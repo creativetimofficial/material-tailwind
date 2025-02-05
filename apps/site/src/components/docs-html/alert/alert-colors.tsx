@@ -3,6 +3,7 @@
 export default function AlertColors() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="w-full space-y-2">
   <div role="alert" class="relative flex w-full items-start rounded-md border border-slate-800 bg-slate-800 p-2 text-slate-50">

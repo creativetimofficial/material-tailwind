@@ -3,6 +3,7 @@
 export default function AlertWithList() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="flex w-full flex-col gap-2">
   <div role="alert" class="relative flex w-full items-start rounded-md border border-transparent bg-slate-800/10 p-2 text-slate-800">
