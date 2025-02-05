@@ -4,7 +4,29 @@ export default function AvatarCustomStyles() {
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: `<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="avatar" class="inline-block h-14 w-14 rounded-full border border-green-500 object-cover object-center ring-4 ring-green-500/20" />
+        __html: `<div class="flex flex-col gap-6">
+    <div class="flex items-center gap-4">
+        <img class="inline-block h-11 w-11 rounded-full object-cover object-center" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="avatar" />
+        <div>
+            <p class="font-sans text-base text-current antialiased">Tania Andrew</p>
+            <small class="font-sans text-sm text-slate-600 antialiased">Web Developer</small>
+        </div> 
+    </div>
+    <div class="flex items-center gap-4">
+        <img class="inline-block h-11 w-11 rounded-md object-cover object-center" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="avatar" />
+        <div>
+            <p class="font-sans text-base text-current antialiased">Tania Andrew</p>
+            <small class="font-sans text-sm text-slate-600 antialiased">Web Developer</small>
+        </div>
+    </div>
+    <div class="flex items-center gap-4">
+        <img class="inline-block h-11 w-11 rounded-none object-cover object-center" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="avatar" />
+        <div>
+            <p class="font-sans text-base text-current antialiased">Tania Andrew</p>
+            <small class="font-sans text-sm text-slate-600 antialiased">Web Developer</small>
+        </div>
+    </div>
+</div>
 `
       }}
     />
