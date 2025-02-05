@@ -14,7 +14,7 @@ export default function AlertVariants() {
   <div role="alert" class="relative flex w-full items-start rounded-md border border-slate-800 bg-slate-800 p-2 text-slate-50">
     <div class="m-1.5 w-full font-sans text-base leading-none">A simple alert for showing message. with variant=&quot;solid&quot;</div>
   </div>
-  <div role="alert" class="relative flex w-full items-start rounded-md border border-slate-800 bg-gradient-to-tr from-slate-500 to-slate-900 p-2 text-slate-50">
+  <div role="alert" class="relative flex w-full items-start rounded-md border border-slate-800 bg-gradient-to-tr from-slate-900 to-slate-700 p-2 text-slate-50">
     <div class="m-1.5 w-full font-sans text-base leading-none">A simple alert for showing message. with variant gradient</div>
   </div>
 </div>
