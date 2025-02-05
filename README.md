@@ -1,4 +1,3 @@
-
 <a href="https://www.material-tailwind.com">
     <img width="100%" src="./public/img/material-tailwind-thumbnail.jpg" alt="material-tailwind" style="border-radius: 24px" />
     <h1 align="center">Material Tailwind</h1>
@@ -660,3 +659,91 @@ Please adhere to this project's `CODE_OF_CONDUCT.md`.
 ## License
 
 [MIT](https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE)
+
+## Color mappings
+
+| Custom Class                         | Tailwind Class                         |
+| ------------------------------------ | -------------------------------------- |
+| `text-inherit`                       | `text-current`                         |
+| `text-foreground`                    | `text-slate-600`                       |
+| `text-primary`                       | `text-slate-800`                       |
+| `text-black`                         | `text-slate-800`                       |
+| `text-foreground/60`                 | `text-slate-600/60`                    |
+| `text-primary-foreground`            | `text-slate-50`                        |
+| `text-secondary-foreground`          | `text-slate-800`                       |
+| `text-secondary`                     | `text-slate-200`                       |
+| `text-success`                       | `text-green-500`                       |
+| `text-error`                         | `text-red-500`                         |
+| `text-warning`                       | `text-amber-500`                       |
+| `text-warning-foreground`            | `text-amber-50`                        |
+| `text-success-foreground`            | `text-green-50`                        |
+| `text-error-foreground`              | `text-red-50`                          |
+| `text-info-foreground`               | `text-blue-50`                         |
+| `text-info`                          | `text-blue-500`                        |
+| `text-foreground/70`                 | `text-slate-600/70`                    |
+| `bg-primary/10`                      | `bg-slate-800/10`                      |
+| `bg-warning`                         | `bg-amber-500`                         |
+| `bg-info`                            | `bg-blue-500`                          |
+| `bg-success`                         | `bg-green-500`                         |
+| `bg-success/10`                      | `bg-green-500/10`                      |
+| `bg-error/10`                        | `bg-red-500/10`                        |
+| `bg-primary-light`                   | `bg-slate-700`                         |
+| `bg-primary`                         | `bg-slate-800`                         |
+| `bg-black`                           | `bg-slate-950`                         |
+| `bg-background`                      | `bg-white`                             |
+| `bg-secondary`                       | `bg-slate-200`                         |
+| `bg-secondary-light`                 | `bg-slate-100`                         |
+| `bg-surface-light`                   | `bg-slate-100`                         |
+| `bg-surface`                         | `bg-slate-200`                         |
+| `bg-surface/20`                      | `bg-slate-200/20`                      |
+| `bg-error`                           | `bg-red-500`                           |
+| `data-[checked=true]:border-primary` | `data-[checked=true]:border-slate-800` |
+| `data-[checked=true]:bg-primary`     | `data-[checked=true]:bg-slate-800`     |
+| `before:bg-surface`                  | `before:bg-slate-200`                  |
+| `after:border-surface`               | `after:border-slate-200`               |
+| `after:bg-background`                | `after:bg-white`                       |
+| `checked:before:bg-primary`          | `checked:before:bg-slate-800`          |
+| `checked:after:border-primary`       | `checked:after:border-slate-800`       |
+| `active:ring-primary/10`             | `active:ring-slate-800/10`             |
+| `shadow-black/5`                     | `shadow-slate-950/5`                   |
+| `shadow-primary-dark/25`             | `shadow-slate-950/25`                  |
+| `placeholder:text-foreground/60`     | `placeholder:text-slate-600/60`        |
+| `hover:bg-primary-light`             | `hover:bg-slate-700`                   |
+| `hover:border-primary-light`         | `hover:border-slate-700`               |
+| `hover:bg-secondary`                 | `hover:bg-slate-200`                   |
+| `hover:bg-secondary/10`              | `hover:bg-slate-200/10`                |
+| `hover:bg-secondary-light`           | `hover:bg-slate-100`                   |
+| `hover:border-secondary-light`       | `hover:bg-slate-100`                   |
+| `hover:border-secondary/10`          | `hover:border-slate-600/10`            |
+| `hover:border-secondary`             | `hover:border-slate-500`               |
+| `hover:bg-error/10`                  | `hover:bg-red-500/10`                  |
+| `hover:bg-primary/5`                 | `hover:bg-slate-800/5`                 |
+| `hover:border-primary/5`             | `hover:border-slate-800/5`             |
+| `hover:ring-primary/10`              | `hover:ring-slate-800/10`              |
+| `hover:border-primary`               | `hover:border-slate-800`               |
+| `hover:bg-error`                     | `hover:bg-red-500`                     |
+| `hover:text-error-foreground`        | `hover:text-red-50`                    |
+| `hover:text-black`                   | `hover:text-slate-800`                 |
+| `hover:bg-surface`                   | `hover:bg-slate-200`                   |
+| `focus:text-black`                   | `focus:text-slate-800`                 |
+| `focus:border-primary`               | `focus:border-slate-800`               |
+| `focus:ring-primary/10`              | `focus:ring-slate-800/10`              |
+| `focus:bg-surface`                   | `focus:bg-slate-200`                   |
+| `border-info`                        | `border-blue-500`                      |
+| `border-warning`                     | `border-amber-500`                     |
+| `border-primary`                     | `border-slate-800`                     |
+| `border-secondary-light`             | `border-slate-100`                     |
+| `border-primary-dark`                | `border-slate-950`                     |
+| `border-primary-light`               | `border-slate-700`                     |
+| `border-surface`                     | `border-slate-200`                     |
+| `border-secondary`                   | `border-slate-200`                     |
+| `border-success`                     | `border-green-500`                     |
+| `border-error`                       | `border-red-500`                       |
+| `border-error/10`                    | `border-red-500/10`                    |
+| `shadow-black/10`                    | `shadow-slate-800/10`                  |
+| `peer-focus:text-black`              | `peer-focus:text-slate-800`            |
+| `peer-hover:text-black`              | `peer-focus:text-slate-800`            |
+| `data-[icon-placement=start]`        | ``                                     |
+| `data-[icon-placement=end]`          | ``                                     |
+| `font-inherit`                       | `font-sans`                            |
+| `shadow-none`                        | `shadow-none`                          |
