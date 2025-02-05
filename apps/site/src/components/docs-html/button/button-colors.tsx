@@ -3,8 +3,7 @@ export default function ButtonColors() {
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: `
-<div class="flex gap-4">
+        __html: `<div class="flex gap-4">
   <button class="inline-flex border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md bg-slate-800 border-slate-800 text-slate-50 hover:bg-slate-700 hover:border-slate-700">
     Primary
   </button>
@@ -23,8 +22,7 @@ export default function ButtonColors() {
   <button class="inline-flex border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md bg-red-500 border-red-500 text-red-50 hover:bg-red-400 hover:border-red-400">
     Error
   </button>
-</div>
-`
+</div>`
       }}
     />
   );
