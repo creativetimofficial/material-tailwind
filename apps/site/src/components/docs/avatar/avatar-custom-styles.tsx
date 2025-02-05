@@ -5,7 +5,7 @@ export function AvatarCustomStyles() {
     <Avatar
       size="lg"
       alt="avatar"
-      src="https://dub.sh/TdSBP0D"
+      src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
       className="border border-green-500 ring-4 ring-green-500/20"
     />
   );
