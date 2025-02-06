@@ -65,6 +65,7 @@ import * as Breadcrumb from "@components/docs/breadcrumb";
 import * as Drawer from "@components/docs/drawer";
 import * as Stepper from "@components/docs/stepper";
 import * as Slider from "@components/docs/slider";
+import * as Skeleton from "@components/docs/skeleton";
 import * as Timeline from "@components/docs/timeline";
 import * as Badge from "@components/docs/badge";
 import * as AlgoliaSearch from "@components/docs/plugins/algolia-search";
@@ -95,6 +96,7 @@ import * as HTMLProgress from "@components/docs-html/progress";
 import * as HTMLRating from "@components/docs-html/rating";
 import * as HTMLSpinner from "@components/docs-html/spinner";
 import * as HTMLStepper from "@components/docs-html/stepper";
+import * as HTMLSkeleton from "@components/docs-html/skeleton";
 import * as HTMLTable from "@components/docs-html/table";
 import * as HTMLTextarea from "@components/docs-html/textarea";
 import * as HTMLTimeline from "@components/docs-html/timeline";
@@ -335,6 +337,7 @@ export default async function Docs({ params: { slug } }) {
             Drawer,
             Stepper,
             Slider,
+            Skeleton,
             Timeline,
             AlgoliaSearch,
             Carousel,
@@ -375,6 +378,7 @@ export default async function Docs({ params: { slug } }) {
             HTMLCheckbox,
             HTMLRadio,
             HTMLSwitch,
+            HTMLSkeleton,
             // HTMLBadge,
             HTMLAccordion,
           }}
