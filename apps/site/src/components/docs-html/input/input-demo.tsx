@@ -1,10 +1,12 @@
 
-
 export default function InputDemo() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
-        __html: `<input placeholder="Input" class="w-72 select-none rounded-md border border-slate-200 bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-slate-800 outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-slate-600/60 hover:border-slate-800 hover:ring-slate-800/10 focus:border-slate-800 focus:outline-none focus:ring-slate-800/10 dark:text-white" type="text" />
+        __html: `<div class="w-72">
+  <div class="relative w-full"><input placeholder="Input" type="text" class="w-full aria-disabled:cursor-not-allowed outline-none focus:outline-none text-slate-800 dark:text-white placeholder:text-slate-600/60 bg-transparent ring-transparent border border-slate-200 transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none data-[shape=pill]:rounded-full text-sm rounded-md py-2 px-2.5 ring shadow-sm data-[icon-placement=start]:ps-9 data-[icon-placement=end]:pe-9 hover:border-slate-800 hover:ring-slate-800/10 focus:border-slate-800 focus:ring-slate-800/10 peer" data-error="false" data-success="false" data-shape="default" data-icon-placement="" /></div>
+</div>
 `
       }}
     />
