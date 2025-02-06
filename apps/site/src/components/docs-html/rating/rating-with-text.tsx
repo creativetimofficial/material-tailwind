@@ -4,7 +4,7 @@ export default function RatingWithText() {
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: `<<div class="flex items-center gap-2">
+        __html: `<div class="flex items-center gap-2">
   <p class="font-sans text-base font-semibold text-slate-800 antialiased">4</p>
   <div class="inline-flex items-center text-slate-800">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 cursor-pointer text-current">
