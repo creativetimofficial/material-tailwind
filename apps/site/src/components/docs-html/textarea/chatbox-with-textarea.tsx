@@ -3,6 +3,7 @@
 export default function ChatboxWithTextarea() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<form action="#" class="flex w-full items-center gap-4">
   <div class="flex items-center gap-1"><button class="inline-grid min-h-[36px] min-w-[36px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-slate-800 transition-all duration-300 ease-in hover:border-slate-800/5 hover:bg-slate-800/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"><svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-5 w-5">
