@@ -134,6 +134,10 @@ export const routes = [
             title: "Switch",
             path: `${routePrefix}/switch`,
           },
+          {
+            title: "Skeleton",
+            path: `${routePrefix}/Skeleton`,
+          },
         ],
       },
       {
