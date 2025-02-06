@@ -122,11 +122,12 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
     
       <div className={codeBlockStyles}>
         <Tooltip>
-          <Tooltip.Trigger as="span" className="absolute right-1 top-1 z-2">
+          <Tooltip.Trigger as="span" className="absolute right-2 top-2 z-2">
             <IconButton
               size="sm"
-              variant="ghost"
+              variant="solid"
               color="secondary"
+              className="bg-white/90 hover:bg-white"
               ripple={false}
               onClick={copyCode}
               onMouseLeave={resetCopy}
