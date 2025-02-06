@@ -1,8 +1,8 @@
 
-
 export default function ProfileCard() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="w-full max-w-xs overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg shadow-slate-950/5">
   <img class="m-1.5 h-max w-[calc(100%-12px)] rounded-[5px]" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&fit=crop&w=800&q=80" alt="profile-picture" />
