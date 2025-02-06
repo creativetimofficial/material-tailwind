@@ -1,7 +1,8 @@
 
-export function PricingCard() {
+export default function PricingCard() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="w-full rounded-lg border shadow-sm overflow-hidden bg-slate-800 border-slate-950 shadow-slate-950/25 max-w-xs">
   <div class="w-[calc(100%-16px)] h-max rounded m-2 py-6 text-center">

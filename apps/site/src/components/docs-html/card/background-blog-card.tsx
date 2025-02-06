@@ -1,5 +1,5 @@
 
-export function BackgroundBlogCard() {
+export default function BackgroundBlogCard() {
   return (
     <div
       dangerouslySetInnerHTML={{

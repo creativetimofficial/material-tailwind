@@ -1,7 +1,8 @@
 
-export function BlogCard() {
+export default function BlogCard() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="w-full rounded-lg border shadow-sm bg-white border-slate-200 shadow-slate-950/5 max-w-[24rem] overflow-hidden"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80" alt="ui/ux review check" class="w-[calc(100%-16px)] h-max rounded m-2" />
   <div class="w-full h-max rounded px-3.5 py-2.5">

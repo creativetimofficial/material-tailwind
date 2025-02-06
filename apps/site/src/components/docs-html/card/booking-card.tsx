@@ -1,7 +1,8 @@
 
-export function BookingCard() {
+export default function BookingCard() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="rounded-lg border overflow-hidden bg-white border-slate-200 shadow-slate-950/5 w-full max-w-[26rem] shadow-lg">
   <div class="w-[calc(100%-16px)] h-max rounded m-2 relative overflow-hidden p-0"><img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" alt="ui/ux review check" />

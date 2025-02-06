@@ -1,7 +1,8 @@
 
-export function LoginCard() {
+export default function LoginCard() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="w-full rounded-lg border shadow-sm overflow-hidden bg-white border-slate-200 shadow-slate-950/5 max-w-xs">
   <div class="border overflow-hidden bg-slate-800 border-slate-950 shadow-slate-950/25 w-[calc(100%-16px)] rounded m-2 grid h-24 place-items-center shadow-none"><span class="font-sans antialiased font-bold text-xl md:text-2xl lg:text-3xl text-slate-50">Sign In</span></div>

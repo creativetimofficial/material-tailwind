@@ -1,7 +1,8 @@
 
-export function EcommerceCard() {
+export default function EcommerceCard() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="rounded-lg border shadow-sm overflow-hidden bg-white border-slate-200 shadow-slate-950/5 w-96"><img src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80" alt="card-image" class="w-[calc(100%-16px)] rounded m-2 h-96 object-cover" />
   <div class="w-full h-max rounded px-3.5 py-2.5">

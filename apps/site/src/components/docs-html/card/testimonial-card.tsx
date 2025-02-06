@@ -1,7 +1,8 @@
 
-export function TestimonialCard() {
+export default function TestimonialCard() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="rounded-lg border overflow-hidden bg-white border-slate-200 shadow-slate-950/5 w-full max-w-[26rem] border-none shadow-none">
   <div class="w-[calc(100%-16px)] h-max rounded m-2 mx-0 flex items-center gap-4 pb-4 pt-0"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80" alt="tania andrew" class="inline-block object-cover object-center data-[shape=square]:rounded-none data-[shape=circular]:rounded-full data-[shape=rounded]:rounded-[current] w-14 h-14 rounded-md" data-shape="rounded" />

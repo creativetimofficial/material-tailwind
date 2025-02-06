@@ -1,7 +1,8 @@
 
-export function ProfileCard() {
+export default function ProfileCard() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="w-full rounded-lg border shadow-sm overflow-hidden bg-white border-slate-200 shadow-slate-950/5 max-w-xs"><img src="https://dub.sh/TdSBP0D" alt="profile-picture" class="w-[calc(100%-16px)] h-max rounded m-2" />
   <div class="w-full h-max rounded px-3.5 py-2.5 text-center">
