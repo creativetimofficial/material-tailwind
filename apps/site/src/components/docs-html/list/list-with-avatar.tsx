@@ -1,23 +1,23 @@
 
-
 export default function ListWithAvatar() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
-        __html: `<ul class="flex min-w-[240px] flex-col gap-0.5">
-  <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-slate-600 transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white"><span class="me-2.5 grid shrink-0 place-items-center"><img src="https://dub.sh/TdSBP0D" alt="profile-picture" class="inline-block h-11 w-11 rounded-full object-cover object-center"/></span>
+        __html: `<ul class="flex flex-col gap-0.5 min-w-60">
+  <li class="flex items-center py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none bg-transparent text-slate-600 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 focus:bg-slate-200 focus:text-slate-800 dark:focus:text-white data-[selected=true]:bg-surface data-[selected=true]:text-black dark:data-[selected=true]:text-white dark:bg-opacity-70"><span class="grid place-items-center shrink-0 me-2.5"><img src="https://dub.sh/TdSBP0D" alt="profile-picture" class="inline-block object-cover object-center data-[shape=square]:rounded-none data-[shape=circular]:rounded-full data-[shape=rounded]:rounded-[current] w-11 h-11 rounded-md" data-shape="circular"/></span>
     <div>
-      <p class="font-sans text-base font-semibold text-slate-800 antialiased dark:text-white">Alex Andrew</p><small class="font-sans text-sm text-slate-600 antialiased">Software Engineer @ Material Tailwind</small>
+      <p class="font-sans antialiased text-base text-slate-800 dark:text-white font-semibold">Alex Andrew</p><small class="font-sans antialiased text-sm text-slate-600">Software Engineer @ Material Tailwind</small>
     </div>
   </li>
-  <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-slate-600 transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white"><span class="me-2.5 grid shrink-0 place-items-center"><img src="https://dub.sh/rNFOKKJ" alt="profile-picture" class="inline-block h-11 w-11 rounded-full object-cover object-center"/></span>
+  <li class="flex items-center py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none bg-transparent text-slate-600 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 focus:bg-slate-200 focus:text-slate-800 dark:focus:text-white data-[selected=true]:bg-surface data-[selected=true]:text-black dark:data-[selected=true]:text-white dark:bg-opacity-70"><span class="grid place-items-center shrink-0 me-2.5"><img src="https://dub.sh/rNFOKKJ" alt="profile-picture" class="inline-block object-cover object-center data-[shape=square]:rounded-none data-[shape=circular]:rounded-full data-[shape=rounded]:rounded-[current] w-11 h-11 rounded-md" data-shape="circular"/></span>
     <div>
-      <p class="font-sans text-base font-semibold text-slate-800 antialiased dark:text-white">Alexander</p><small class="font-sans text-sm text-slate-600 antialiased">Backend Developer @ Material Tailwind</small>
+      <p class="font-sans antialiased text-base text-slate-800 dark:text-white font-semibold">Alexander</p><small class="font-sans antialiased text-sm text-slate-600">Backend Developer @ Material Tailwind</small>
     </div>
   </li>
-  <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-slate-600 transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white"><span class="me-2.5 grid shrink-0 place-items-center"><img src="https://dub.sh/6i238JA" alt="profile-picture" class="inline-block h-11 w-11 rounded-full object-cover object-center"/></span>
+  <li class="flex items-center py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none bg-transparent text-slate-600 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 focus:bg-slate-200 focus:text-slate-800 dark:focus:text-white data-[selected=true]:bg-surface data-[selected=true]:text-black dark:data-[selected=true]:text-white dark:bg-opacity-70"><span class="grid place-items-center shrink-0 me-2.5"><img src="https://dub.sh/6i238JA" alt="profile-picture" class="inline-block object-cover object-center data-[shape=square]:rounded-none data-[shape=circular]:rounded-full data-[shape=rounded]:rounded-[current] w-11 h-11 rounded-md" data-shape="circular"/></span>
     <div>
-      <p class="font-sans text-base font-semibold text-slate-800 antialiased dark:text-white">Emma Willever</p><small class="font-sans text-sm text-slate-600 antialiased">UI/UX Designer @ Material Tailwind</small>
+      <p class="font-sans antialiased text-base text-slate-800 dark:text-white font-semibold">Emma Willever</p><small class="font-sans antialiased text-sm text-slate-600">UI/UX Designer @ Material Tailwind</small>
     </div>
   </li>
 </ul>
