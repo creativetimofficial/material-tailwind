@@ -5,17 +5,17 @@ export function AvatarVariants() {
     <div className="item-center flex gap-2">
       <Avatar
         shape="circular"
-        src="https://dub.sh/TdSBP0D"
+        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
         alt="profile-picture"
       />
       <Avatar
         shape="rounded"
-        src="https://dub.sh/TdSBP0D"
+        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
         alt="profile-picture"
       />
       <Avatar
         shape="square"
-        src="https://dub.sh/TdSBP0D"
+        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
         alt="profile-picture"
       />
     </div>
