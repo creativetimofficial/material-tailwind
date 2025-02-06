@@ -3,7 +3,7 @@ import { Card, Typography, Button } from "@material-tailwind/react";
 export function CardDemo() {
   return (
     <Card className="max-w-xs">
-      <Card.Header as="img" src="https://dub.sh/CLrLpxd" alt="image" />
+      <Card.Header as="img" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg" alt="image" />
       <Card.Body>
         <Typography type="h6">UI/UX Review Check</Typography>
         <Typography className="my-1 text-foreground">

@@ -2,7 +2,7 @@ export function CardDemo() {
   return (
     <div className="w-full max-w-xs overflow-hidden rounded-lg border border-surface bg-background shadow-lg shadow-black/5">
       <img
-        src="https://dub.sh/CLrLpxd"
+        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg"
         alt="image"
         className="m-1.5 h-max w-[calc(100%-12px)] rounded-[5px]"
       />

@@ -63,7 +63,7 @@ export function SidebarWithLogo() {
   return (
     <Card className="max-w-[280px]">
       <Card.Header className="mx-3 mb-0 mt-3 flex h-max items-center gap-2">
-        <Avatar size="xs" src="/logo.png" alt="brand" />
+        <Avatar size="xs" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/logo.png" alt="brand" />
         <Typography className="font-semibold">Material Tailwind</Typography>
       </Card.Header>
       <Card.Body className="p-3">

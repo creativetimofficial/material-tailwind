@@ -248,7 +248,7 @@ export function NavbarWithMegaMenu() {
         </button>
         <img
           id=":r7a:"
-          src="https://dub.sh/iu8bOfU"
+          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
           alt="profile-picture"
           className="group inline-block h-8 w-8 rounded-full border border-primary object-cover object-center p-0.5 outline-none lg:ml-auto"
         />

@@ -3,7 +3,7 @@ export function AvatarWithText() {
     <div className="flex flex-col gap-6">
       <div className="flex items-center gap-4">
         <img
-          src="https://dub.sh/TdSBP0D"
+          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
           alt="avatar"
           className="inline-block h-11 w-11 rounded-full object-cover object-center"
         />
@@ -18,7 +18,7 @@ export function AvatarWithText() {
       </div>
       <div className="flex items-center gap-4">
         <img
-          src="https://dub.sh/TdSBP0D"
+          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
           alt="avatar"
           className="inline-block h-11 w-11 rounded-md object-cover object-center"
         />
@@ -33,7 +33,7 @@ export function AvatarWithText() {
       </div>
       <div className="flex items-center gap-4">
         <img
-          src="https://dub.sh/TdSBP0D"
+          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
           alt="avatar"
           className="inline-block h-11 w-11 rounded-none object-cover object-center"
         />

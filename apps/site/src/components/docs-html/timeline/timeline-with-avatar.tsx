@@ -6,7 +6,7 @@ export function TimelineWithAvatar() {
           <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-secondary"></div>
           <span className="relative z-10 grid h-10 w-10 place-items-center rounded-full bg-secondary p-0.5 text-secondary-foreground">
             <img
-              src="https://dub.sh/TdSBP0D"
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
               alt="Avatar"
               className="inline-block h-full w-full rounded-full object-cover object-center"
             />
@@ -29,7 +29,7 @@ export function TimelineWithAvatar() {
           <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-secondary"></div>
           <span className="relative z-10 grid h-10 w-10 place-items-center rounded-full bg-secondary p-0.5 text-secondary-foreground">
             <img
-              src="https://dub.sh/TdSBP0D"
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
               alt="Avatar"
               className="inline-block h-full w-full rounded-full object-cover object-center"
             />
@@ -51,7 +51,7 @@ export function TimelineWithAvatar() {
         <div className="relative">
           <span className="relative z-10 grid h-10 w-10 place-items-center rounded-full bg-secondary p-0.5 text-secondary-foreground">
             <img
-              src="https://dub.sh/TdSBP0D"
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
               alt="Avatar"
               className="inline-block h-full w-full rounded-full object-cover object-center"
             />

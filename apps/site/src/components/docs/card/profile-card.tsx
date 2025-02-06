@@ -11,7 +11,7 @@ export function ProfileCard() {
     <Card className="max-w-xs">
       <Card.Header
         as="img"
-        src="https://dub.sh/TdSBP0D"
+        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
         alt="profile-picture"
       />
       <Card.Body className="text-center">

@@ -4,7 +4,7 @@ export function ListWithAvatar() {
       <li className="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
         <span className="me-2.5 grid shrink-0 place-items-center">
           <img
-            src="https://dub.sh/TdSBP0D"
+            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
             alt="profile-picture"
             className="inline-block h-11 w-11 rounded-full object-cover object-center"
           />
