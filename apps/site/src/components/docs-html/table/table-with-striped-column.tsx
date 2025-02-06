@@ -1,8 +1,8 @@
 
-
 export default function TableWithStripedColumn() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="w-full overflow-hidden rounded-lg border border-slate-200">
   <table class="w-full">
@@ -16,34 +16,34 @@ export default function TableWithStripedColumn() {
     </thead>
     <tbody class="group text-sm text-slate-800 dark:text-white">
       <tr>
-        <td class="border-b border-slate-200 p-3">John Michael</td>
-        <td class="border-b border-slate-200 bg-slate-100 p-3 dark:bg-surface-dark">Manager</td>
-        <td class="border-b border-slate-200 p-3">23/04/18</td>
-        <td class="border-b border-slate-200 bg-slate-100 p-3 dark:bg-surface-dark"><a href="#" class="font-sans text-sm font-medium text-current antialiased hover:text-primary">Edit</a></td>
+        <td class="p-3 border-b border-slate-200">John Michael</td>
+        <td class="p-3 border-b border-slate-200 bg-slate-100 dark:bg-surface-dark">Manager</td>
+        <td class="p-3 border-b border-slate-200">23/04/18</td>
+        <td class="p-3 border-b border-slate-200 bg-slate-100 dark:bg-surface-dark"><a href="#" class="font-sans antialiased text-sm text-current font-medium hover:text-primary">Edit</a></td>
       </tr>
       <tr>
-        <td class="border-b border-slate-200 p-3">Alexa Liras</td>
-        <td class="border-b border-slate-200 bg-slate-100 p-3 dark:bg-surface-dark">Developer</td>
-        <td class="border-b border-slate-200 p-3">23/04/18</td>
-        <td class="border-b border-slate-200 bg-slate-100 p-3 dark:bg-surface-dark"><a href="#" class="font-sans text-sm font-medium text-current antialiased hover:text-primary">Edit</a></td>
+        <td class="p-3 border-b border-slate-200">Alexa Liras</td>
+        <td class="p-3 border-b border-slate-200 bg-slate-100 dark:bg-surface-dark">Developer</td>
+        <td class="p-3 border-b border-slate-200">23/04/18</td>
+        <td class="p-3 border-b border-slate-200 bg-slate-100 dark:bg-surface-dark"><a href="#" class="font-sans antialiased text-sm text-current font-medium hover:text-primary">Edit</a></td>
       </tr>
       <tr>
-        <td class="border-b border-slate-200 p-3">Laurent Perrier</td>
-        <td class="border-b border-slate-200 bg-slate-100 p-3 dark:bg-surface-dark">Executive</td>
-        <td class="border-b border-slate-200 p-3">19/09/17</td>
-        <td class="border-b border-slate-200 bg-slate-100 p-3 dark:bg-surface-dark"><a href="#" class="font-sans text-sm font-medium text-current antialiased hover:text-primary">Edit</a></td>
+        <td class="p-3 border-b border-slate-200">Laurent Perrier</td>
+        <td class="p-3 border-b border-slate-200 bg-slate-100 dark:bg-surface-dark">Executive</td>
+        <td class="p-3 border-b border-slate-200">19/09/17</td>
+        <td class="p-3 border-b border-slate-200 bg-slate-100 dark:bg-surface-dark"><a href="#" class="font-sans antialiased text-sm text-current font-medium hover:text-primary">Edit</a></td>
       </tr>
       <tr>
-        <td class="border-b border-slate-200 p-3">Michael Levi</td>
-        <td class="border-b border-slate-200 bg-slate-100 p-3 dark:bg-surface-dark">Developer</td>
-        <td class="border-b border-slate-200 p-3">24/12/08</td>
-        <td class="border-b border-slate-200 bg-slate-100 p-3 dark:bg-surface-dark"><a href="#" class="font-sans text-sm font-medium text-current antialiased hover:text-primary">Edit</a></td>
+        <td class="p-3 border-b border-slate-200">Michael Levi</td>
+        <td class="p-3 border-b border-slate-200 bg-slate-100 dark:bg-surface-dark">Developer</td>
+        <td class="p-3 border-b border-slate-200">24/12/08</td>
+        <td class="p-3 border-b border-slate-200 bg-slate-100 dark:bg-surface-dark"><a href="#" class="font-sans antialiased text-sm text-current font-medium hover:text-primary">Edit</a></td>
       </tr>
       <tr>
         <td class="p-3">Richard Gran</td>
-        <td class="bg-slate-100 p-3 dark:bg-surface-dark">Manager</td>
+        <td class="p-3 bg-slate-100 dark:bg-surface-dark">Manager</td>
         <td class="p-3">04/10/21</td>
-        <td class="bg-slate-100 p-3 dark:bg-surface-dark"><a href="#" class="font-sans text-sm font-medium text-current antialiased hover:text-primary">Edit</a></td>
+        <td class="p-3 bg-slate-100 dark:bg-surface-dark"><a href="#" class="font-sans antialiased text-sm text-current font-medium hover:text-primary">Edit</a></td>
       </tr>
     </tbody>
   </table>
