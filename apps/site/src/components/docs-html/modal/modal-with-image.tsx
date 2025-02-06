@@ -13,7 +13,7 @@ export default function DialogWithImage() {
     <div class="bg-white p-4 max-h-[calc(100vh-5rem)] overflow-auto rounded-lg w-10/12 lg:w-8/12 scale-95 transition-transform duration-300 ease-out">
       <div class="pb-0 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <img src="https://dub.sh/TdSBP0D" alt="alex andrew" class="inline-block object-cover object-center w-11 h-11 rounded-md">
+          <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="alex andrew" class="inline-block object-cover object-center w-11 h-11 rounded-md">
           <div class="flex flex-col">
             <p class="font-sans  text-base text-stone-800 font-semibold">Alex Andrew</p>
             <small class="font-sans  text-sm text-stone-500">@alexandrew</small>

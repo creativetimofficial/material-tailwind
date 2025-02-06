@@ -21,7 +21,7 @@ export function ContactPopover() {
           <List>
             <List.Item>
               <List.ItemStart>
-                <Avatar src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+                <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" />
               </List.ItemStart>
               <div>
                 <Typography color="default" className="font-semibold">

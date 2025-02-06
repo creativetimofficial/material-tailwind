@@ -11,7 +11,7 @@ export default function ContactPopover() {
       <ul class="flex flex-col gap-0.5 min-w-60">
         <li class="flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none bg-transparent text-stone-600 hover:text-stone-800 dark:hover:text-white hover:bg-stone-100 focus:bg-stone-100 focus:text-stone-800 dark:focus:text-white dark:data-[selected=true]:text-white dark:bg-opacity-70">
           <span class="grid place-items-center shrink-0 me-2.5">
-            <img src="https://dub.sh/TdSBP0D" alt="profile-picture" class="inline-block object-cover object-center data-[shape=square]:rounded-none data-[shape=circular]:rounded-full data-[shape=rounded]:rounded-[current] w-11 h-11 rounded-md" data-shape="circular">
+            <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" class="inline-block object-cover object-center data-[shape=square]:rounded-none data-[shape=circular]:rounded-full data-[shape=rounded]:rounded-[current] w-11 h-11 rounded-md" data-shape="circular">
           </span>
           <div>
             <p class="font-sans antialiased text-base text-black dark:text-white font-semibold">Alex Andrew</p>

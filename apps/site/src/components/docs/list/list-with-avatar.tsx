@@ -30,7 +30,7 @@ export function ListWithAvatar() {
   return (
     <List>
       <ListItem
-        img="https://dub.sh/TdSBP0D"
+        img="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
         title="Alex Andrew"
         description="Software Engineer @ Material Tailwind"
       />

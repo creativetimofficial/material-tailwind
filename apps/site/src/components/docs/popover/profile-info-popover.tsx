@@ -13,7 +13,7 @@ export function ProfileInfoPopover() {
         </Popover.Trigger>
         <Popover.Content className="max-w-sm">
           <div className="mb-2 flex items-center justify-between gap-4">
-            <Avatar src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+            <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" />
             <Button size="sm" className="mr-2">
               Follow
             </Button>

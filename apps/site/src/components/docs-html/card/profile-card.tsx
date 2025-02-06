@@ -4,7 +4,7 @@ export default function ProfileCard() {
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: `<div class="w-full max-w-xs overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg shadow-slate-950/5"><img src="https://dub.sh/TdSBP0D" alt="profile-picture" class="m-1.5 h-max w-[calc(100%-12px)] rounded-[5px]" />
+        __html: `<div class="w-full max-w-xs overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg shadow-slate-950/5"><img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" class="m-1.5 h-max w-[calc(100%-12px)] rounded-[5px]" />
   <div class="h-max w-full rounded px-3 py-2 text-center">
     <h5 class="font-sans text-lg font-bold text-current antialiased md:text-xl lg:text-2xl">Alex Andrew</h5>
     <p class="my-1 font-sans text-base text-slate-600 antialiased">CEO &amp; Co-Founder</p>
