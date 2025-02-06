@@ -1,5 +1,5 @@
 
-export default function DrawerDemo() {
+export default function DrawerWithNavigation() {
   return (
     <div
       className="w-full place-items-center"
