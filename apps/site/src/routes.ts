@@ -1,10 +1,13 @@
 const isProd = process.env.NODE_ENV === "production";
 const getDocsTypeFromUrl = () => {
-  if (window.location.href.includes('html')) {
-    return 'html';
-  } else if (window.location.href.includes('react')) {
-    return 'react';
+  if (typeof window !== 'undefined') {
+    if (window.location.href.includes('html')) {
+      return 'html';
+    } else if (window.location.href.includes('react')) {
+      return 'react';
+    }
   }
+  return 'react'; // Default to react if window is not defined
 };
 
 const routePrefix = isProd ? `/docs/v3/${getDocsTypeFromUrl()}` : `/docs/${getDocsTypeFromUrl()}`;
