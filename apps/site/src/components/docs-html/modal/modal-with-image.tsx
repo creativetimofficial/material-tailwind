@@ -7,7 +7,7 @@ export default function DialogWithImage() {
 `
 <div class="flex items-center">
   <button data-dui-toggle="modal" data-dui-target="#exampleModalImage" class="outline-none" aria-expanded="false" aria-haspopup="dialog">
-    <img alt="nature" src="https://dub.sh/xxo2Jek" class="h-64 w-auto rounded-lg object-cover object-center" />
+    <img alt="nature" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg" class="h-64 w-auto rounded-lg object-cover object-center" />
   </button>
   <div class="fixed antialiased  inset-0 bg-stone-800 bg-opacity-75 flex justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300 ease-out z-[9999]" id="exampleModalImage" aria-hidden="true">
     <div class="bg-white p-4 max-h-[calc(100vh-5rem)] overflow-auto rounded-lg w-10/12 lg:w-8/12 scale-95 transition-transform duration-300 ease-out">
@@ -29,7 +29,7 @@ export default function DialogWithImage() {
         </div>
       </div>
       <div class="my-4">
-        <img alt="nature" src="https://dub.sh/xxo2Jek" class="h-[48rem] w-full rounded-lg object-cover object-center">
+        <img alt="nature" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg" class="h-[48rem] w-full rounded-lg object-cover object-center">
       </div>
       <div class="flex items-end justify-between">
         <div class="flex items-center gap-16">

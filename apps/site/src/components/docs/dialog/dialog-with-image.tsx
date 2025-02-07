@@ -13,7 +13,7 @@ export function DialogWithImage() {
       <Dialog.Trigger>
         <img
           alt="nature"
-          src="https://dub.sh/xxo2Jek"
+          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg"
           className="h-64 w-auto rounded-lg object-cover object-center"
         />
       </Dialog.Trigger>
@@ -43,7 +43,7 @@ export function DialogWithImage() {
           <div className="my-4">
             <img
               alt="nature"
-              src="https://dub.sh/xxo2Jek"
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg"
               className="h-[48rem] w-full rounded-lg object-cover object-center"
             />
           </div>
