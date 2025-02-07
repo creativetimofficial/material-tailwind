@@ -1,16 +1,27 @@
 const isProd = process.env.NODE_ENV === "production";
+
 const getDocsTypeFromUrl = () => {
-  if (typeof window !== 'undefined') {
-    if (window.location.href.includes('html')) {
-      return 'html';
-    } else if (window.location.href.includes('react')) {
-      return 'react';
-    }
+  if (typeof window === 'undefined') {
+    return 'react'; // Default value for SSR
   }
-  return 'react'; // Default to react if window is not defined
+  
+  const path = window.location.pathname;
+  if (path.includes('/html/')) {
+    return 'html';
+  } else if (path.includes('/react/')) {
+    return 'react';
+  }
+  return 'react'; // Default fallback
 };
 
-const routePrefix = isProd ? `/docs/v3/${getDocsTypeFromUrl()}` : `/docs/${getDocsTypeFromUrl()}`;
+// Move this into a useMemo or useEffect in a client component
+// const routePrefix = isProd ? `/docs/v3/${getDocsTypeFromUrl()}` : `/docs/${getDocsTypeFromUrl()}`;
+
+// For SSR safety, use a function instead of direct value
+const getRoutePrefix = () => {
+  const docsType = getDocsTypeFromUrl();
+  return isProd ? `/docs/v3/${docsType}` : `/docs/${docsType}`;
+};
 
 export const routes = [
   {
@@ -18,7 +29,7 @@ export const routes = [
     pages: [
       {
         title: "Installation",
-        path: `${routePrefix}/installation`,
+        get path() { return `${getRoutePrefix()}/installation` },
       },
       // {
       //   title: "Cli Usage",
@@ -26,11 +37,11 @@ export const routes = [
       // },
       {
         title: "License",
-        path: `${routePrefix}/license`,
+        path: `${getRoutePrefix()}/license`,
       },
       {
         title: "Release Notes",
-        path: `${routePrefix}/release-notes`,
+        path: `${getRoutePrefix()}/release-notes`,
       },
     ],
   },
@@ -39,11 +50,11 @@ export const routes = [
     pages: [
       {
         title: "v1 to v2",
-        path: `${routePrefix}/migration/v2`,
+        path: `${getRoutePrefix()}/migration/v2`,
       },
       {
         title: "v2 to v3",
-        path: `${routePrefix}/migration/v3`,
+        path: `${getRoutePrefix()}/migration/v3`,
       },
     ],
   },
@@ -52,27 +63,27 @@ export const routes = [
     pages: [
       {
         title: "Next.js",
-        path: `${routePrefix}/guide/next`,
+        path: `${getRoutePrefix()}/guide/next`,
       },
       {
         title: "Remix",
-        path: `${routePrefix}/guide/remix`,
+        path: `${getRoutePrefix()}/guide/remix`,
       },
       {
         title: "Astro",
-        path: `${routePrefix}/guide/astro`,
+        path: `${getRoutePrefix()}/guide/astro`,
       },
       {
         title: "Vite",
-        path: `${routePrefix}/guide/vite`,
+        path: `${getRoutePrefix()}/guide/vite`,
       },
       {
         title: "Gatsby",
-        path: `${routePrefix}/guide/gatsby`,
+        path: `${getRoutePrefix()}/guide/gatsby`,
       },
       {
         title: "Create React App",
-        path: `${routePrefix}/guide/cra`,
+        path: `${getRoutePrefix()}/guide/cra`,
       },
     ],
   },
@@ -81,19 +92,19 @@ export const routes = [
     pages: [
       {
         title: "Theming",
-        path: `${routePrefix}/theming`,
+        path: `${getRoutePrefix()}/theming`,
       },
       {
         title: "Colors",
-        path: `${routePrefix}/colors`,
+        path: `${getRoutePrefix()}/colors`,
       },
       {
         title: "Fonts",
-        path: `${routePrefix}/fonts`,
+        path: `${getRoutePrefix()}/fonts`,
       },
       {
         title: "Breakpoints",
-        path: `${routePrefix}/breakpoints`,
+        path: `${getRoutePrefix()}/breakpoints`,
       },
       // {
       //   title: "Dark Mode",
@@ -113,27 +124,27 @@ export const routes = [
         pages: [
           {
             title: "Button",
-            path: `${routePrefix}/button`,
+            path: `${getRoutePrefix()}/button`,
           },
           {
             title: "Button Group",
-            path: `${routePrefix}/button-group`,
+            path: `${getRoutePrefix()}/button-group`,
           },
           {
             title: "Icon Button",
-            path: `${routePrefix}/icon-button`,
+            path: `${getRoutePrefix()}/icon-button`,
           },
           {
             title: "Rating Bar",
-            path: `${routePrefix}/rating`,
+            path: `${getRoutePrefix()}/rating`,
           },
           {
             title: "Slider",
-            path: `${routePrefix}/slider`,
+            path: `${getRoutePrefix()}/slider`,
           },
           {
             title: "Switch",
-            path: `${routePrefix}/switch`,
+            path: `${getRoutePrefix()}/switch`,
           },
         ],
       },
@@ -142,24 +153,24 @@ export const routes = [
         pages: [
           {
             title: "Checkbox",
-            path: `${routePrefix}/checkbox`,
+            path: `${getRoutePrefix()}/checkbox`,
           },
           {
             title: "Input",
-            path: `${routePrefix}/input`,
+            path: `${getRoutePrefix()}/input`,
           },
           {
             title: "Radio",
-            path: `${routePrefix}/radio`,
+            path: `${getRoutePrefix()}/radio`,
           },
           {
             title: "Select",
-            path: `${routePrefix}/select`,
+            path: `${getRoutePrefix()}/select`,
           },
           
           {
             title: "Textarea",
-            path: `${routePrefix}/textarea`,
+            path: `${getRoutePrefix()}/textarea`,
           },
         ],
       },
@@ -168,83 +179,83 @@ export const routes = [
         pages: [
           {
             title: "Accordion",
-            path: `${routePrefix}/accordion`,
+            path: `${getRoutePrefix()}/accordion`,
           },
           {
             title: "Alert",
-            path: `${routePrefix}/alert`,
+            path: `${getRoutePrefix()}/alert`,
           },
           {
             title: "Avatar",
-            path: `${routePrefix}/avatar`,
+            path: `${getRoutePrefix()}/avatar`,
           },
           {
             title: "Badge",
-            path: `${routePrefix}/badge`,
+            path: `${getRoutePrefix()}/badge`,
           },
           {
             title: "Card",
-            path: `${routePrefix}/card`,
+            path: `${getRoutePrefix()}/card`,
           },
           {
             title: "Chip",
-            path: `${routePrefix}/chip`,
+            path: `${getRoutePrefix()}/chip`,
           },
           {
             title: "Collapse",
-            path: `${routePrefix}/collapse`,
+            path: `${getRoutePrefix()}/collapse`,
           },
           {
             title: "Dialog",
-            path: `${routePrefix}/dialog`,
+            path: `${getRoutePrefix()}/dialog`,
           },
           {
             title: "Dropdown",
-            path: `${routePrefix}/dropdown`,
+            path: `${getRoutePrefix()}/dropdown`,
           },
           {
             title: "Image",
-            path: `${routePrefix}/image`,
+            path: `${getRoutePrefix()}/image`,
           },
           {
             title: "List",
-            path: `${routePrefix}/list`,
+            path: `${getRoutePrefix()}/list`,
           },
           {
             title: "Modal",
-            path: `${routePrefix}/modal`,
+            path: `${getRoutePrefix()}/modal`,
           },
           {
             title: "Popover",
-            path: `${routePrefix}/popover`,
+            path: `${getRoutePrefix()}/popover`,
           },
           {
             title: "Progress Bar",
-            path: `${routePrefix}/progress`,
+            path: `${getRoutePrefix()}/progress`,
           },
           {
             title: "Spinner",
-            path: `${routePrefix}/spinner`,
+            path: `${getRoutePrefix()}/spinner`,
           },
           {
             title: "Table",
-            path: `${routePrefix}/table`,
+            path: `${getRoutePrefix()}/table`,
           },
           {
             title: "Timeline",
-            path: `${routePrefix}/timeline`,
+            path: `${getRoutePrefix()}/timeline`,
           },
           {
             title: "Tooltip",
-            path: `${routePrefix}/tooltip`,
+            path: `${getRoutePrefix()}/tooltip`,
           },
           {
             title: "Typography",
-            path: `${routePrefix}/typography`,
+            path: `${getRoutePrefix()}/typography`,
           },
           {
             title: "Video",
-            path: `${routePrefix}/video`,
+            path: `${getRoutePrefix()}/video`,
           },
         ],
       },
@@ -253,31 +264,31 @@ export const routes = [
         pages: [
           {
             title: "Breadcrumb",
-            path: `${routePrefix}/breadcrumb`,
+            path: `${getRoutePrefix()}/breadcrumb`,
           },
           {
             title: "Drawer",
-            path: `${routePrefix}/drawer`,
+            path: `${getRoutePrefix()}/drawer`,
           },
           {
             title: "Menu",
-            path: `${routePrefix}/menu`,
+            path: `${getRoutePrefix()}/menu`,
           },
           {
             title: "Pagination",
-            path: `${routePrefix}/pagination`,
+            path: `${getRoutePrefix()}/pagination`,
           },
           {
             title: "Speed Dial",
-            path: `${routePrefix}/speed-dial`,
+            path: `${getRoutePrefix()}/speed-dial`,
           },
           {
             title: "Stepper",
-            path: `${routePrefix}/stepper`,
+            path: `${getRoutePrefix()}/stepper`,
           },
           {
             title: "Tabs",
-            path: `${routePrefix}/tabs`,
+            path: `${getRoutePrefix()}/tabs`,
           },
         ],
       },
@@ -286,19 +297,19 @@ export const routes = [
         pages: [
           {
             title: "Footer",
-            path: `${routePrefix}/footer`,
+            path: `${getRoutePrefix()}/footer`,
           },
           {
             title: "Gallery",
-            path: `${routePrefix}/gallery`,
+            path: `${getRoutePrefix()}/gallery`,
           },
           {
             title: "Navbar",
-            path: `${routePrefix}/navbar`,
+            path: `${getRoutePrefix()}/navbar`,
           },
           {
             title: "Sidebar",
-            path: `${routePrefix}/sidebar`,
+            path: `${getRoutePrefix()}/sidebar`,
           },
           
         ],
@@ -311,31 +322,31 @@ export const routes = [
     pages: [
       {
         title: "Algolia Search",
-        path: `${routePrefix}/plugins/algolia-search`,
+        path: `${getRoutePrefix()}/plugins/algolia-search`,
       },
       {
         title: "Apexcharts",
-        path: `${routePrefix}/plugins/apexcharts`,
+        path: `${getRoutePrefix()}/plugins/apexcharts`,
       },
       {
         title: "Data Table",
-        path: `${routePrefix}/plugins/data-table`,
+        path: `${getRoutePrefix()}/plugins/data-table`,
       },
       {
         title: "Date Picker",
-        path: `${routePrefix}/plugins/date-picker`,
+        path: `${getRoutePrefix()}/plugins/date-picker`,
       },
       {
         title: "React Hook Form",
-        path: `${routePrefix}/plugins/forms`,
+        path: `${getRoutePrefix()}/plugins/forms`,
       },
       {
         title: "Carousel",
-        path: `${routePrefix}/plugins/carousel`,
+        path: `${getRoutePrefix()}/plugins/carousel`,
       },
       {
         title: "Text Editor",
-        path: `${routePrefix}/plugins/text-editor`,
+        path: `${getRoutePrefix()}/plugins/text-editor`,
       },
     ],
   },
