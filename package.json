@@ -38,6 +38,6 @@
   },
   "packageManager": "pnpm@8.3.1",
   "dependencies": {
-    "esbuild": "0.24.2"
+    "next": "14.1.1"
   }
 }
