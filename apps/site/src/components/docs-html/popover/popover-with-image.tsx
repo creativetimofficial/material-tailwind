@@ -18,7 +18,7 @@ export default function PopoverWithImage() {
         </svg>
       </a>
     </div>
-    <img src="https://dub.sh/i2Y9t7g" alt="image" class="h-auto max-h-[220px] w-full rounded-[5px] object-cover">
+    <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg" alt="image" class="h-auto max-h-[220px] w-full rounded-[5px] object-cover">
   </div>
 </div>
 `

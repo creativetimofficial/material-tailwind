@@ -15,7 +15,7 @@ export default function ComplexNavbar() {
         <path d="M3 5H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
         <path d="M3 12H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
         <path d="M3 19H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-      </svg></button><img id=":r3j:" src="https://dub.sh/iu8bOfU" alt="profile-picture" class="group inline-block h-8 w-8 rounded-full border border-slate-800 object-cover object-center p-0.5 outline-none lg:ml-auto" />
+      </svg></button><img id=":r3j:" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" class="group inline-block h-8 w-8 rounded-full border border-slate-800 object-cover object-center p-0.5 outline-none lg:ml-auto" />
   </div>
 </nav>
 `

@@ -5,7 +5,7 @@ export default function ProfileMenu() {
                 dangerouslySetInnerHTML={{
                   __html: 
 `
-<img aria-expanded="false" aria-haspopup="menu" id=":R0H2:" src="https://dub.sh/iu8bOfU" alt="profile-picture" class="inline-block object-cover object-center w-11 h-11 rounded-md outline-none group" />
+<img aria-expanded="false" aria-haspopup="menu" id=":R0H2:" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" class="inline-block object-cover object-center w-11 h-11 rounded-md outline-none group" />
 `
                 }}
               />

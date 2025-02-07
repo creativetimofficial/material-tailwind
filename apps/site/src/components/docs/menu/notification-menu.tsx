@@ -41,7 +41,7 @@ export function NotificationMenu() {
       </Menu.Trigger>
       <Menu.Content>
         <MenuItem
-          img="https://dub.sh/iu8bOfU"
+          img="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
           title="Tania send you a message"
           date="13 minutes ago"
         />

@@ -21,7 +21,7 @@ export default function DropdownNotification() {
   </button>
   <div data-dui-role="menu" class="hidden min-w-40 grid max-w-lg grid-cols-1 gap-3 mt-2 bg-white border border-stone-200 rounded-lg shadow-sm p-1 z-10">
     <div class="w-full text-start flex items-center p-1.5 rounded gap-3 hover:bg-stone-100 cursor-pointer">
-      <img src="https://dub.sh/iu8bOfU" alt="profile-picture" class="object-cover w-11 h-11 rounded-md">
+      <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" class="object-cover w-11 h-11 rounded-md">
       <div>
         <small class="text-sm text-stone-800 font-semibold">Tania sent you a message</small>
         <small class="flex items-center gap-1 text-xs text-stone-500">

@@ -6,7 +6,7 @@ export default function DropdownProfile() {
                   __html: 
 `
 <div class="dropdown" data-dui-placement="bottom-start">
-  <img data-dui-toggle="dropdown" aria-expanded="false" src="https://dub.sh/iu8bOfU" alt="profile-picture" class="object-cover w-11 h-11 rounded-md cursor-pointer">
+  <img data-dui-toggle="dropdown" aria-expanded="false" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" class="object-cover w-11 h-11 rounded-md cursor-pointer">
   <div data-dui-role="menu" class="hidden mt-2 bg-white border border-stone-200 rounded-lg shadow-sm p-1 z-10">
     <a href="#" class="block p-2 text-sm text-stone-800 hover:bg-stone-100 rounded-md flex items-center">
       <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="mr-2 h-5 w-5">
