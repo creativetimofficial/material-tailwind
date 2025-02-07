@@ -4,7 +4,7 @@ export default function ImageWithBlurredCaption() {
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: `<figure class="relative h-96 w-full"><img src="https://dub.sh/Y0NxRWv" alt="nature-image" class="h-full w-full rounded-xl object-cover object-center" />
+        __html: `<figure class="relative h-96 w-full"><img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg" alt="nature-image" class="h-full w-full rounded-xl object-cover object-center" />
   <figcaption class="absolute bottom-4 left-1/2 w-[calc(100%-2rem)] -translate-x-1/2 overflow-hidden rounded-lg border border-slate-200 bg-white bg-opacity-75 shadow-lg shadow-slate-950/5 saturate-200 backdrop-blur-md">
     <div class="flex h-max w-full justify-between rounded px-4 py-2">
       <div>

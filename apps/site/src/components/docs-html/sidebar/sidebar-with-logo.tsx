@@ -7,7 +7,7 @@ export default function SidebarWithLogo() {
 `
 <div class="w-full rounded-lg border shadow-sm overflow-hidden bg-white border-stone-200 shadow-stone-950/5 max-w-[280px]">
   <div class="w-[calc(100%-16px)] rounded m-2 mx-3 mb-0 mt-3 flex h-max items-center gap-2">
-    <img src="/logo.png" alt="brand" class="inline-block object-cover object-center w-6 h-6 rounded-sm" />
+    <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/logo.png" alt="brand" class="inline-block object-cover object-center w-6 h-6 rounded-sm" />
     <p class="font-sans antialiased text-base text-current font-semibold">Material Tailwind</p>
   </div>
   <div class="w-full h-max rounded p-3">

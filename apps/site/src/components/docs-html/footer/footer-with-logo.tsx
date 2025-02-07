@@ -5,7 +5,7 @@ export default function FooterWithLogo() {
     <div
       dangerouslySetInnerHTML={{
         __html: `<footer class="w-full">
-  <div class="flex w-full flex-row flex-wrap items-center justify-center gap-x-12 gap-y-3 text-center md:justify-between"><img src="/logo.png" alt="brand" class="w-8" />
+  <div class="flex w-full flex-row flex-wrap items-center justify-center gap-x-12 gap-y-3 text-center md:justify-between"><img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/logo.png" alt="brand" class="w-8" />
     <ul class="flex flex-wrap items-center gap-x-6 gap-y-2">
       <li><a href="#" class="font-sans text-base text-current antialiased hover:text-primary">About Us</a></li>
       <li><a href="#" class="font-sans text-base text-current antialiased hover:text-primary">License</a></li>
