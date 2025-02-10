@@ -2,6 +2,7 @@
 export default function PopoverPlacement() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="min-h-[400px] flex flex-col items-center justify-center gap-4">
   <div class="flex items-center gap-2">

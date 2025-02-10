@@ -1,10 +1,12 @@
 
-
 export default function InputDisabled() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
-        __html: `<div class="relative w-72 rounded-md text-sm leading-none aria-disabled:cursor-not-allowed" aria-disabled="true"><input placeholder="Input" class="peer pointer-events-none h-full w-full select-none rounded-[inherit] border border-slate-200 bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-slate-800 opacity-50 outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-slate-600/60 hover:border-slate-800 hover:ring-slate-800/10 focus:border-slate-800 focus:outline-none focus:ring-slate-800/10 dark:text-white" disabled="" type="text" /></div>
+        __html: `<div class="w-72">
+  <div class="relative w-full"><input placeholder="Input" type="text" class="w-full aria-disabled:cursor-not-allowed outline-none focus:outline-none text-slate-800 dark:text-white placeholder:text-slate-600/60 bg-transparent ring-transparent border border-slate-200 transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none data-[shape=pill]:rounded-full text-sm rounded-md py-2 px-2.5 ring shadow-sm data-[icon-placement=start]:ps-9 data-[icon-placement=end]:pe-9 hover:border-slate-800 hover:ring-slate-800/10 focus:border-slate-800 focus:ring-slate-800/10 peer" disabled="" data-error="false" data-success="false" data-shape="default" data-icon-placement="" /></div>
+</div>
 `
       }}
     />

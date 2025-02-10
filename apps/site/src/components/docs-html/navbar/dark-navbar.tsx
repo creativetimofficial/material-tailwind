@@ -1,8 +1,8 @@
 
-
 export default function DarkNavbar() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<nav class="rounded-lg border shadow-lg overflow-hidden p-2 border-slate-200 shadow-slate-950/5 mx-auto w-full max-w-screen-xl bg-slate-950">
   <div class="flex items-center text-white">
