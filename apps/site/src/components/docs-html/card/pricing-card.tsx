@@ -5,7 +5,7 @@ export default function PricingCard() {
       className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="w-full rounded-lg border shadow-sm overflow-hidden bg-slate-800 border-slate-950 shadow-slate-950/25 max-w-xs">
-  <div class="w-[calc(100%-16px)] h-max rounded m-2 py-6 text-center">
+  <div class="rounded m-2 py-6 text-center">
     <div data-open="true" data-shape="pill" class="relative inline-flex w-max items-center border font-sans font-medium rounded-md data-[shape=pill]:rounded-full text-sm p-1 shadow-sm bg-slate-800 border-slate-800 text-slate-50"><span class="font-sans text-current leading-none my-1.5 mx-3">Standard</span></div><span class="font-sans antialiased font-bold md:text-5xl lg:text-6xl mt-3 flex justify-center gap-1 text-7xl text-slate-50"><span class="mt-2 text-4xl">$</span>29<span class="self-end text-4xl">/mo</span></span>
   </div>
   <hr class="border-slate-950" />
