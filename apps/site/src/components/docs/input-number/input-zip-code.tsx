@@ -1,3 +1,5 @@
+"use client";
+
 import { Input, Typography } from "@material-tailwind/react";
  
 export default function InputZipCode() {
@@ -6,12 +8,12 @@ export default function InputZipCode() {
       <Input
         type="number"
         inputMode="numeric"
-        label="Enter Zip Code"
+        placeholder="Enter Zip Code"
         className="appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
       />
       <Typography
         variant="small"
-        color="gray"
+        color="primary"
         className="mt-2 flex items-center gap-1 font-normal"
       >
         <svg

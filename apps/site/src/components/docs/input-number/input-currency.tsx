@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Input, IconButton, Typography } from "@material-tailwind/react";
  
@@ -8,7 +9,7 @@ export default function InputCounterPlainButtons() {
     <div className="w-80">
       <Typography
         variant="small"
-        color="blue-gray"
+        color="primary"
         className="mb-1 font-medium"
       >
         Select Amount
@@ -18,7 +19,7 @@ export default function InputCounterPlainButtons() {
           type="number"
           value={value}
           onChange={(e) => setValue(Number(e.target.value))}
-          className="!border-t-blue-gray-200 placeholder:text-blue-gray-300 placeholder:opacity-100  focus:!border-t-gray-900 appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+          className="!border-t-primary placeholder:text-primary placeholder:opacity-100  focus:!border-t-gray-900 appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           labelProps={{
             className: "before:content-none after:content-none",
           }}
@@ -29,7 +30,7 @@ export default function InputCounterPlainButtons() {
         <div className="absolute right-1 top-1 flex gap-0.5">
           <IconButton
             size="sm"
-            variant="text"
+            variant="ghost"
             className="rounded"
             onClick={() => setValue((cur) => (cur === 0 ? 0 : cur - 1))}
           >
@@ -44,7 +45,7 @@ export default function InputCounterPlainButtons() {
           </IconButton>
           <IconButton
             size="sm"
-            variant="text"
+            variant="ghost"
             className="rounded"
             onClick={() => setValue((cur) => cur + 1)}
           >
@@ -59,7 +60,7 @@ export default function InputCounterPlainButtons() {
           </IconButton>
         </div>
       </div>
-      <Typography variant="small" color="gray" className="mt-2 font-normal">
+      <Typography variant="small" color="primary" className="mt-2 font-normal">
         Adjust the number using the + and - controls.
       </Typography>
     </div>

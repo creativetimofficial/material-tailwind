@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+
 import { Input, Typography, Button } from "@material-tailwind/react";
  
 export default function InputOneTimePassword() {
@@ -26,7 +29,7 @@ export default function InputOneTimePassword() {
     <div className="w-full max-w-sm">
       <Typography
         variant="small"
-        color="blue-gray"
+        color="primary"
         className="flex items-center justify-center gap-1 text-center font-medium"
       >
         Enter the 6-digit OTP sent to{" "}
@@ -39,26 +42,20 @@ export default function InputOneTimePassword() {
             <Input
               type="text"
               maxLength={1}
-              className="!w-10 appearance-none !border-t-blue-gray-200 text-center !text-lg placeholder:text-blue-gray-300 placeholder:opacity-100 focus:!border-t-gray-900"
-              labelProps={{
-                className: "before:content-none after:content-none",
-              }}
-              containerProps={{
-                className: "!min-w-0 !w-10 !shrink-0",
-              }}
+              className="w-10 appearance-none h-10 bg-transparent text-center placeholder:text-slate-400 text-slate-700 text-lg border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
               value={digit}
               onChange={(e) => handleChange(index, e.target.value)}
               onKeyDown={(e) => handleBackspace(e, index)}
               inputRef={(el) => (inputRefs.current[index] = el)}
             />
-            {index === 2 && <span className="text-2xl text-slate-700">-</span>}
+            {index === 2 && <span className="text-2xl mx-2 text-slate-700">-</span>}
           </React.Fragment>
         ))}
       </div>
  
       <Typography
         variant="small"
-        className="text-center font-normal text-blue-gray-500"
+        className="text-center font-normal text-primary-500"
       >
         Did not receive the code? <span className="font-bold">Resend</span>
       </Typography>

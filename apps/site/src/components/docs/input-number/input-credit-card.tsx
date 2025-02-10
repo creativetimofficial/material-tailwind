@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Input, Typography, Button } from "@material-tailwind/react";
  
@@ -11,14 +13,14 @@ export default function InputCreditCard() {
     <div className="w-full max-w-sm">
       <Typography
         variant="small"
-        color="blue-gray"
+        color="primary"
         className="mb-1 block font-medium"
       >
         Cardholder Name
       </Typography>
       <Input
         placeholder="e.g John Doe"
-        className="appearance-none !border-t-blue-gray-200 placeholder:text-blue-gray-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        className="appearance-none !border-t-primary placeholder:text-primary  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
         labelProps={{
           className: "before:content-none after:content-none",
         }}
@@ -31,7 +33,7 @@ export default function InputCreditCard() {
  
       <Typography
         variant="small"
-        color="blue-gray"
+        color="primary"
         className="mb-1 mt-4 block font-medium"
       >
         Card Number
@@ -39,7 +41,7 @@ export default function InputCreditCard() {
       <Input
         placeholder="1234 5678 9012 3456"
         maxLength={19}
-        className="appearance-none !border-t-blue-gray-200 placeholder:text-blue-gray-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        className="appearance-none !border-t-primary placeholder:text-primary-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
         labelProps={{
           className: "before:content-none after:content-none",
         }}
@@ -57,7 +59,7 @@ export default function InputCreditCard() {
         <div className="mr-4 w-full md:w-8/12">
           <Typography
             variant="small"
-            color="blue-gray"
+            color="primary"
             className="mb-1 block font-medium"
           >
             Expiration Date
@@ -66,7 +68,7 @@ export default function InputCreditCard() {
             placeholder="MM/YY"
             maxLength={5}
             pattern="\d{2}/\d{2}"
-            className="appearance-none !border-t-blue-gray-200 placeholder:text-blue-gray-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            className="appearance-none !border-t-primary placeholder:text-primary-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -83,7 +85,7 @@ export default function InputCreditCard() {
         <div className="w-full md:w-4/12">
           <Typography
             variant="small"
-            color="blue-gray"
+            color="primary"
             className="mb-1 block font-medium"
           >
             CVV
@@ -92,7 +94,7 @@ export default function InputCreditCard() {
             placeholder="123"
             maxLength={3}
             pattern="\d{3}"
-            className="appearance-none !border-t-blue-gray-200 placeholder:text-blue-gray-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            className="appearance-none !border-t-primary placeholder:text-primary-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             labelProps={{
               className: "before:content-none after:content-none",
             }}

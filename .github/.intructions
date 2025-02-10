@@ -1,0 +1,14 @@
+This is the check "indent this code by this rule: the class property should be on the same line with the element, and the content of the element should be on a new line. 
+
+- Remove the tailwind classes for the <button> tags: "select-none", "align-middle", "justify-center" 
+- Remove the class "items-center" on the <button> tags only if the element doesn't contain an icon or a svg otherwise keep the class. 
+- Change the "bg-primary" with "bg-slate-800"
+- Change "text-primary-foreground" with "text-slate-50"
+- Change "from-primary-dark" to "from-slate-800"
+- Change "to-primary-light" to "to-slate-700"
+- Change "text-surface" to "text-slate-200"
+- Change "text-foreground" with "text-slate-600"
+- Removed "data-shape" and "data-width" properties. 
+- Remove the "data-ripple-light" and "data-ripple-dark" properties.  If you find a button with this class "leading-none" remove it, if it has classes "px-3.5" and "py-2.5" change them to "px-4" and "py-2" 
+- if you find any combination of checkbox/radio inside a label structure that doesn't work fix it and make sure the element with the coresponding text for the checkbox/radio will have these classes "font-sans antialiased text-slate-600"
+- if you find a <img> tag has these classes "w-[calc(100%-16px)] m-2", remove them and incapsulate the img tag inside a div tag with these class "p-2"

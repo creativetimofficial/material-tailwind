@@ -5,10 +5,6 @@ export default function InputDemo() {
       className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="w-full max-w-sm min-w-[200px]">
-  <label class="block mb-1 text-sm text-slate-600">
-      Input Number 
-  </label>
-  
   <div class="relative">
     <select
         class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow cursor-pointer appearance-none">

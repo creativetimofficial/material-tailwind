@@ -1,8 +1,9 @@
+"use client";
+
 import React from "react";
 import {
   Input,
   Menu,
-  MenuHandler,
   MenuList,
   MenuItem,
   Button,
@@ -35,14 +36,14 @@ export default function InputCurrencyConversion() {
  
   return (
     <div className="mx-auto mt-4 w-full max-w-xl">
-      <Typography className="mb-4 font-normal text-blue-gray-500">
+      <Typography className="mb-4 font-normal text-primary-500">
         Enter the amount you wish to convert and select the desired currency.
       </Typography>
       <div className="flex flex-col items-center justify-between">
         <div className="mt-4 w-full max-w-sm">
           <Typography
             variant="small"
-            color="blue-gray"
+            color="primary"
             className="mb-1 font-medium"
           >
             From
@@ -51,7 +52,7 @@ export default function InputCurrencyConversion() {
             <Input
               type="number"
               placeholder="1,000"
-              className="appearance-none rounded-r-none !border-t-blue-gray-200 placeholder:text-blue-gray-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              className="appearance-none rounded-r-none !border-t-primary placeholder:text-primary  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -62,37 +63,34 @@ export default function InputCurrencyConversion() {
               onChange={(e) => setFromAmount(e.target.value)}
             />
             <Menu placement="bottom-start">
-              <MenuHandler>
+              <Menu.Trigger>
                 <Button
-                  ripple={false}
-                  variant="text"
-                  color="blue-gray"
-                  className="h-10 w-14 shrink-0 rounded-l-none border border-l-0 border-blue-gray-200 bg-transparent px-3"
+                  className="h-10 w-14 shrink-0 rounded-l-none border border-l-0 border-primary bg-transparent px-3"
                 >
                   {fromCurrency}
                 </Button>
-              </MenuHandler>
-              <MenuList className="max-h-[20rem] max-w-[18rem]">
+              </Menu.Trigger>
+              <Menu.Content className="max-h-[20rem] max-w-[18rem]">
                 {currencies.map((currency, index) => {
                   return (
-                    <MenuItem
+                    <Menu.Item
                       key={currency}
                       value={currency}
                       onClick={() => handleCurrencyChange("from", currency)}
                     >
                       {currency}
-                    </MenuItem>
+                    </Menu.Item>
                   );
                 })}
-              </MenuList>
+              </Menu.Content>
             </Menu>
           </div>
         </div>
  
         <div className="mb-4 mt-8 flex items-center justify-center">
           <IconButton
-            variant="outlined"
-            color="blue-gray"
+            variant="outline"
+            color="primary"
             onClick={handleSwap}
             className="rounded-full"
           >
@@ -114,7 +112,7 @@ export default function InputCurrencyConversion() {
         <div className="w-full max-w-sm">
           <Typography
             variant="small"
-            color="blue-gray"
+            color="primary"
             className="mb-1 font-medium"
           >
             To
@@ -123,7 +121,7 @@ export default function InputCurrencyConversion() {
             <Input
               type="number"
               placeholder="1,000"
-              className="appearance-none rounded-r-none !border-t-blue-gray-200 placeholder:text-blue-gray-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              className="appearance-none rounded-r-none !border-t-primary placeholder:text-primary  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -134,36 +132,33 @@ export default function InputCurrencyConversion() {
               onChange={(e) => setToAmount(e.target.value)}
             />
             <Menu placement="bottom-start">
-              <MenuHandler>
+              <Menu.Trigger>
                 <Button
-                  ripple={false}
-                  variant="text"
-                  color="blue-gray"
-                  className="h-10 w-14 shrink-0 rounded-l-none border border-l-0 border-blue-gray-200 bg-transparent px-3"
+                  className="h-10 w-14 shrink-0 rounded-l-none border border-l-0 border-primary bg-transparent px-3"
                 >
                   {fromCurrency}
                 </Button>
-              </MenuHandler>
-              <MenuList className="max-h-[20rem] max-w-[18rem]">
+              </Menu.Trigger>
+              <Menu.Content className="max-h-[20rem] max-w-[18rem]">
                 {currencies.map((currency, index) => {
                   return (
-                    <MenuItem
+                    <Menu.Item
                       key={currency}
                       value={currency}
                       onClick={() => handleCurrencyChange("from", currency)}
                     >
                       {currency}
-                    </MenuItem>
+                    </Menu.Item>
                   );
                 })}
-              </MenuList>
+              </Menu.Content>
             </Menu>
           </div>
         </div>
       </div>
  
-      <div className="mt-8 text-sm text-blue-gray-500">
-        <Typography variant="small" className="font-normal">
+      <div className="mt-8 text-sm text-primary-500">
+        <Typography  className="font-normal">
           Rates are updated every hour to provide the most accurate conversions.
         </Typography>
         <Typography variant="small" className="mt-1 font-normal">
