@@ -37,8 +37,7 @@ export default function PricingCard() {
     </li>
   </ul>
   <div class="w-full px-3.5 pt-2 pb-3.5 rounded"><button class="inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md border-white bg-white text-slate-800 hover:border-white hover:bg-white hover:text-slate-800" data-shape="default" data-width="full">Buy Now</button></div>
-</div>
-`
+</div>`
       }}
     />
   );
