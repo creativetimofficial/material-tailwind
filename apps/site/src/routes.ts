@@ -152,6 +152,10 @@ export const routes = [
             path: `${routePrefix}/input`,
           },
           {
+            title: "Input Number",
+            path: `${routePrefix}/input-number`,
+          },
+          {
             title: "Radio",
             path: `${routePrefix}/radio`,
           },
