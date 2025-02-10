@@ -41,6 +41,7 @@ import * as Footer from "@components/docs/footer";
 import * as IconButton from "@components/docs/icon-button";
 import * as Image from "@components/docs/image";
 import * as Input from "@components/docs/input";
+import * as InputNumber from "@components/docs/input-number";
 import * as List from "@components/docs/list";
 import * as Menu from "@components/docs/menu";
 import * as Navbar from "@components/docs/navbar";
@@ -89,6 +90,7 @@ import * as HTMLGallery from "@components/docs-html/gallery";
 import * as HTMLIconButton from "@components/docs-html/icon-button";
 import * as HTMLImage from "@components/docs-html/image";
 import * as HTMLInput from "@components/docs-html/input";
+import * as HTMLInputNumber from "@components/docs-html/input-number";
 import * as HTMLList from "@components/docs-html/list";
 import * as HTMLNavbar from "@components/docs-html/navbar";
 import * as HTMLPagination from "@components/docs-html/pagination";
@@ -313,6 +315,7 @@ export default async function Docs({ params: { slug } }) {
             IconButton,
             Image,
             Input,
+            InputNumber,
             List,
             Menu,
             Navbar,
@@ -362,6 +365,7 @@ export default async function Docs({ params: { slug } }) {
             HTMLIconButton,
             HTMLImage,
             HTMLInput,
+            HTMLInputNumber,
             HTMLList,
             HTMLNavbar,
             HTMLPagination,
