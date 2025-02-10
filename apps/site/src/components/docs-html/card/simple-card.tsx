@@ -3,6 +3,7 @@
 export default function SimpleCard() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="w-full max-w-xs overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg shadow-slate-950/5">
   <div class="h-max w-full rounded px-3 py-2">

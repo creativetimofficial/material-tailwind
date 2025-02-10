@@ -5,7 +5,7 @@ export default function PricingCard() {
       className="w-full place-items-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="w-full rounded-lg border shadow-sm overflow-hidden bg-slate-800 border-slate-950 shadow-slate-950/25 max-w-xs">
-  <div class="w-[calc(100%-16px)] h-max rounded m-2 py-6 text-center">
+  <div class="rounded m-2 py-6 text-center">
     <div data-open="true" data-shape="pill" class="relative inline-flex w-max items-center border font-sans font-medium rounded-md data-[shape=pill]:rounded-full text-sm p-1 shadow-sm bg-slate-800 border-slate-800 text-slate-50"><span class="font-sans text-current leading-none my-1.5 mx-3">Standard</span></div><span class="font-sans antialiased font-bold md:text-5xl lg:text-6xl mt-3 flex justify-center gap-1 text-7xl text-slate-50"><span class="mt-2 text-4xl">$</span>29<span class="self-end text-4xl">/mo</span></span>
   </div>
   <hr class="border-slate-950" />
@@ -37,8 +37,7 @@ export default function PricingCard() {
     </li>
   </ul>
   <div class="w-full px-3.5 pt-2 pb-3.5 rounded"><button class="inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md border-white bg-white text-slate-800 hover:border-white hover:bg-white hover:text-slate-800" data-shape="default" data-width="full">Buy Now</button></div>
-</div>
-`
+</div>`
       }}
     />
   );
