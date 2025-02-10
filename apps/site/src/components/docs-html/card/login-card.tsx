@@ -21,18 +21,26 @@ export default function LoginCard() {
         <input id="password" placeholder="************" type="password" class="w-full aria-disabled:cursor-not-allowed outline-none focus:outline-none text-slate-800 dark:text-white placeholder:text-slate-600/60 bg-transparent ring-transparent border border-slate-200 transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success text-sm rounded-md py-2 px-2.5 ring shadow-sm data-[icon-placement=start]:ps-9 data-[icon-placement=end]:pe-9 hover:border-slate-800 hover:ring-slate-800/10 focus:border-slate-800 focus:ring-slate-800/10 peer" data-error="false" data-success="false" data-icon-placement="" />
       </div>
     </div>
-    <label for="remember" class="mb-4 flex items-center gap-2">
-      <label class="group shadow-sm shadow-slate-950/5 inline-block relative h-5 w-5 cursor-pointer rounded bg-transparent border border-slate-200 transition-all duration-200 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none hover:shadow-md data-[checked=true]:bg-slate-800 data-[checked=true]:border-slate-800 text-slate-50" data-checked="false" for="remember">
-        <input id="remember" type="checkbox" style="display:none" />
-        <span data-checked="false" class="pointer-events-none absolute left-2/4 top-2/4 text-current -translate-x-2/4 -translate-y-2/4 scale-75 opacity-0 transition-all duration-200 ease-in data-[checked=true]:scale-100 data-[checked=true]:opacity-100">
-          <svg fill="none" width="18px" height="18px" stroke-width="2" color="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <div class="inline-flex items-center">
+      <label class="flex items-center cursor-pointer relative" for="check-2">
+        <input type="checkbox"
+          checked
+          class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800"
+          id="check-2" />
+        <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+            stroke="currentColor" stroke-width="1">
+            <path fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
           </svg>
         </span>
       </label>
-      <p class="font-sans antialiased text-base text-slate-600">Remember Me</p>
-    </label>
-    <button class="w-full border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed w-full focus:shadow-none text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md bg-slate-800 border-slate-800 text-slate-50 hover:bg-slate-700 hover:border-slate-700">Sign In</button>
+      <label class="cursor-pointer ml-2 text-slate-600 antialiased" for="check-2">
+        Remember Me
+      </label>
+    </div>
+    <button class="mt-4 w-full border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed w-full focus:shadow-none text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md bg-slate-800 border-slate-800 text-slate-50 hover:bg-slate-700 hover:border-slate-700">Sign In</button>
   </form>
   <div class="w-full px-3.5 pt-2 pb-3.5 rounded text-center">
     <small class="font-sans antialiased text-sm my-1 flex justify-center gap-1 text-slate-600">Don&#x27;t have an account?<a href="#" class="font-sans antialiased text-sm text-slate-800 font-bold">Sign up</a></small>
