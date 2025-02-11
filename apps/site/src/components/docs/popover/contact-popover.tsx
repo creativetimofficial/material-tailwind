@@ -21,11 +21,11 @@ export function ContactPopover() {
           <List>
             <List.Item>
               <List.ItemStart>
-                <Avatar src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+                <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
               </List.ItemStart>
               <div>
                 <Typography color="default" className="font-semibold">
-                  Alex Andrew
+                  Andrew Alexa
                 </Typography>
                 <Typography type="small" className="text-foreground">
                   General Manager

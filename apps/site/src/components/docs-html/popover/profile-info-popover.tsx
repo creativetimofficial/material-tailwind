@@ -12,7 +12,7 @@ export default function ProfileInfoPopover() {
       <button class="inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md bg-slate-800 border-slate-800 text-slate-50 hover:bg-slate-700 hover:border-slate-700 outline-none group">Follow</button>
     </div>
     <p class="font-sans antialiased text-base text-slate-800 dark:text-white mb-1 flex items-center gap-2 font-bold">
-      <span>Alex Andrew</span> • <a href="#profile-info-popover" class="font-sans antialiased text-base text-inherit" data-tabindex="" tabindex="-1">@alex</a>
+      <span>Andrew Alexa</span> • <a href="#profile-info-popover" class="font-sans antialiased text-base text-inherit" data-tabindex="" tabindex="-1">@alex</a>
     </p>
     <small class="font-sans antialiased text-sm text-slate-500">Frontend Developer • Major interest in Web Development: motivated to achieve measurable results, to deepen my knowledge and improve my skills.</small>
     <hr class="-mx-2.5 my-2.5 border-slate-200">

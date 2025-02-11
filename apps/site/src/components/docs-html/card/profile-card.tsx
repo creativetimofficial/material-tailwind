@@ -8,7 +8,7 @@ export default function ProfileCard() {
   <img class="m-1.5 h-max w-[calc(100%-12px)] rounded-[5px]" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&fit=crop&w=800&q=80" alt="profile-picture" />
   <div class="h-max w-full rounded px-3 py-2 text-center">
     <h5 class="font-sans text-lg font-bold text-current antialiased md:text-xl lg:text-2xl">
-      Alex Andrew
+      Andrew Alexa
     </h5>
     <p class="my-1 font-sans text-base text-slate-600 antialiased">
       CEO &amp; Co-Founder
