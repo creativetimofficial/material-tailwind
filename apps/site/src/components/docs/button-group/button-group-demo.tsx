@@ -1,6 +1,6 @@
 import { ButtonGroup, Button } from "@material-tailwind/react";
 
-export function ButtonGroupDemo() {
+export default function ButtonGroupDemo() {
   return (
     <ButtonGroup>
       <Button>React</Button>

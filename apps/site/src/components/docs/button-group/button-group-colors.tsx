@@ -1,6 +1,6 @@
 import { ButtonGroup, Button } from "@material-tailwind/react";
 
-export function ButtonGroupColors() {
+export default function ButtonGroupColors() {
   return (
     <div className="flex flex-col gap-4">
       <ButtonGroup color="primary">
