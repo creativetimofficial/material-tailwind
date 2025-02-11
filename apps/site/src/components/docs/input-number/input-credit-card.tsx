@@ -106,7 +106,7 @@ export default function InputCreditCard() {
           />
         </div>
       </div>
-      <Button className="mt-4" fullWidth>
+      <Button className="mt-4">
         Purchase Now
       </Button>
     </div>
