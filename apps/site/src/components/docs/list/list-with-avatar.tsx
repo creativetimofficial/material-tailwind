@@ -30,17 +30,17 @@ export function ListWithAvatar() {
   return (
     <List>
       <ListItem
-        img="https://dub.sh/TdSBP0D"
-        title="Alex Andrew"
+        img="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
+        title="Andrew Alexa"
         description="Software Engineer @ Material Tailwind"
       />
       <ListItem
-        img="https://dub.sh/rNFOKKJ"
+        img="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-3.jpg"
         title="Alexander"
         description="Backend Developer @ Material Tailwind"
       />
       <ListItem
-        img="https://dub.sh/6i238JA"
+        img="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-2.jpg"
         title="Emma Willever"
         description="UI/UX Designer @ Material Tailwind"
       />
