@@ -1,7 +1,7 @@
 import { Chip } from "@material-tailwind/react";
 import { ProfileCircle } from "iconoir-react";
 
-export function ChipIcon() {
+export default function ChipIcon() {
   return (
     <div className="flex items-center gap-2">
       <Chip variant="ghost">

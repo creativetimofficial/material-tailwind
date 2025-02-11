@@ -1,7 +1,7 @@
 import { Alert } from "@material-tailwind/react";
 import { WarningCircle } from "iconoir-react";
 
-export function AlertIcon() {
+export default function AlertIcon() {
   return (
     <Alert>
       <Alert.Icon>

@@ -20,22 +20,7 @@ Below we showcased examples of `IconButton` component that you can use for your 
 
 Here's how to implement a simple and responsive `IconButton` component. It can be used for the action of favoriting or liking content, given its star icon.
 
-<OldComponentPreview demo={<IconButton.IconButtonDemo />}>
-```tsx
-"use client";
-
-import { IconButton } from "@material-tailwind/react";
-import { BrightStar } from "iconoir-react";
-
-export function IconButtonDemo() {
-  return (
-    <IconButton>
-      <BrightStar className="h-4 w-4 stroke-2" />
-    </IconButton>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="icon-button/icon-button-demo.tsx" language="tsx" />
 
 ---
 
@@ -45,33 +30,7 @@ We provides different `IconButton` variants like `ghost`, `outline`, `solid`, an
 
 In the example below, we've showcased the different `IconButton` variants that you can use in your project.
 
-<OldComponentPreview demo={<IconButton.IconButtonVariants />}>
-```tsx
-"use client";
-
-import { IconButton } from "@material-tailwind/react";
-import { BrightStar } from "iconoir-react";
-
-export function IconButtonVariants() {
-  return (
-    <div className="flex gap-4">
-      <IconButton variant="ghost">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton variant="outline">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton variant="solid">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton variant="gradient">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="icon-button/icon-button-variants.tsx" language="tsx" />
 
 ---
 
@@ -81,36 +40,7 @@ We provide different `IconButton` sizes like `sm`, `md`, and `lg` so you can ada
 
 In the example below, we've showcased the different `IconButton` sizes that you can use in your project.
 
-<OldComponentPreview demo={<IconButton.IconButtonSizes />}>
-```tsx
-"use client";
-
-import { IconButton } from "@material-tailwind/react";
-import { BrightStar } from "iconoir-react";
-
-export function IconButtonSizes() {
-  return (
-    <div className="flex items-end gap-4">
-      <IconButton size="xs">
-        <BrightStar className="h-3.5 w-3.5 stroke-2" />
-      </IconButton>
-      <IconButton size="sm">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton size="md">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton size="lg">
-        <BrightStar className="h-5 w-5 stroke-2" />
-      </IconButton>
-      <IconButton size="xl">
-        <BrightStar className="h-6 w-6 stroke-2" />
-      </IconButton>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="icon-button/icon-button-sizes.tsx" language="tsx" />
 
 ---
 
@@ -120,39 +50,7 @@ We provide different `IconButton` colors like `primary`, `secondary`, `info`, `s
 
 In the example below, we've showcased the different `IconButton` colors that you can use in your project.
 
-<OldComponentPreview demo={<IconButton.IconButtonColors />}>
-```tsx
-"use client";
-
-import { IconButton } from "@material-tailwind/react";
-import { BrightStar } from "iconoir-react";
-
-export function IconButtonColors() {
-  return (
-    <div className="flex gap-4">
-      <IconButton color="primary">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton color="secondary">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton color="info">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton color="success">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton color="warning">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton color="error">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="icon-button/icon-button-colors.tsx" language="tsx" />
 
 ---
 
@@ -162,33 +60,7 @@ Use the `isCircular` prop to make the `IconButton` circular, this can be used to
 
 In the example below, we've showcased the circular `IconButton` in 4 different variants that you can use in your project.
 
-<OldComponentPreview demo={<IconButton.RoundedIconButton />}>
-```tsx
-"use client";
-
-import { IconButton } from "@material-tailwind/react";
-import { BrightStar } from "iconoir-react";
-
-export function RoundedIconButton() {
-  return (
-    <div className="flex gap-4">
-      <IconButton isCircular variant="ghost">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton isCircular variant="outline">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton isCircular variant="solid">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton isCircular variant="gradient">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="icon-button/rounded-icon-button.tsx" language="tsx" />
 
 ---
 
@@ -198,33 +70,7 @@ You can use the `IconButton` component as a link by using the `as` prop and pass
 
 In the example below, we've showcased the `IconButton` as a link in 4 different variants that you can use in your project.
 
-<OldComponentPreview demo={<IconButton.IconButtonAsLink />}>
-```tsx
-"use client";
-
-import { IconButton } from "@material-tailwind/react";
-import { BrightStar } from "iconoir-react";
-
-export function IconButtonAsLink() {
-  return (
-    <div className="flex gap-4">
-      <IconButton as="a" href="#" variant="ghost">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton as="a" href="#" variant="outline">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton as="a" href="#" variant="solid">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton as="a" href="#" variant="gradient">
-        <BrightStar className="h-4 w-4 stroke-2" />
-      </IconButton>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="icon-button/icon-button-as-link.tsx" language="tsx" />
 
 ---
 
@@ -234,27 +80,4 @@ You can use the `className` prop to customize the `IconButton` component style a
 
 In the example below, we've showcased how to create custom social media `IconButton` that you can use in your project.
 
-<OldComponentPreview demo={<IconButton.CustomIconButton />}>
-```tsx
-"use client";
-
-import { IconButton } from "@material-tailwind/react";
-import { Github, Dribbble, Facebook } from "iconoir-react";
-
-export function CustomIconButton() {
-  return (
-    <div className="flex gap-4">
-      <IconButton className="border-[#24292e] bg-[#24292e] text-white hover:border-[#24292e] hover:bg-[#24292e] hover:brightness-110">
-        <Github className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton className="border-[#ea4c89] bg-[#ea4c89] text-white hover:border-[#ea4c89] hover:bg-[#ea4c89] hover:brightness-110">
-        <Dribbble className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton className="border-[#1877F2] bg-[#1877F2] text-white hover:border-[#1877F2] hover:bg-[#1877F2] hover:brightness-110">
-        <Facebook className="h-4 w-4 stroke-2" />
-      </IconButton>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="icon-button/custom-icon-button.tsx" language="tsx" />

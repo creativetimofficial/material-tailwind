@@ -1,4 +1,4 @@
-export function VideoMuted() {
+export default function VideoMuted() {
   return (
     <video className="h-full w-full rounded-lg" controls muted>
       <source src="https://dub.sh/H1glk5b" type="video/mp4" />

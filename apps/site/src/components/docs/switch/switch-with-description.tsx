@@ -1,6 +1,6 @@
 import { Switch, Typography } from "@material-tailwind/react";
 
-export function SwitchWithDescription() {
+export default function SwitchWithDescription() {
   return (
     <div className="flex gap-4">
       <Switch id="switch-description" />

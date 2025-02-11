@@ -18,17 +18,7 @@ See below our beautiful `Rating` examples that you can use in your Tailwind CSS 
 
 Here's how to implement a simple `Rating` component. It can be used for providing rating to the product or app in your website.
 
-<OldComponentPreview demo={<Rating.RatingDemo />}>
-```tsx
-"use client";
-
-import { Rating } from "@material-tailwind/react";
-
-export function RatingDemo() {
-  return <Rating value={4} />;
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="rating/rating-demo.tsx" language="react" />
 
 ---
 
@@ -38,26 +28,7 @@ We provide different colors for `Rating` component like `primary`, `secondary`, 
 
 In the example below, we've showcased the different colors for `Rating` color that you can use in your project.
 
-<OldComponentPreview demo={<Rating.RatingColors />}>
-```tsx
-"use client";
-
-import { Rating } from "@material-tailwind/react";
-
-export function RatingColors() {
-  return (
-    <div className="flex flex-col gap-4">
-      <Rating value={4} color="primary" />
-      <Rating value={4} color="secondary" />
-      <Rating value={4} color="info" />
-      <Rating value={4} color="success" />
-      <Rating value={4} color="warning" />
-      <Rating value={4} color="error" />
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="rating/rating-colors.tsx" language="react" />
 
 ---
 
@@ -65,17 +36,7 @@ export function RatingColors() {
 
 You can use the `readonly` prop to make the `Rating` component readonly, it's useful for just showing rating and prevent the user from interacting with the `Rating` component.
 
-<OldComponentPreview demo={<Rating.ReadonlyRating />}>
-```tsx
-"use client";
-
-import { Rating } from "@material-tailwind/react";
-
-export function ReadonlyRating() {
-  return <Rating value={4} readonly />;
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="rating/readonly-rating.tsx" language="react" />
 
 ---
 
@@ -83,18 +44,7 @@ export function ReadonlyRating() {
 
 You can use the `ratedIcon` and `unratedIcon` props for customizing the icons for rated and unrated states of `Rating` component. In the example below, we've showcased custom icons used for `Rating` component that you can use in your project.
 
-<OldComponentPreview demo={<Rating.CustomRatingIcon />}>
-```tsx
-"use client";
-
-import { Rating } from "@material-tailwind/react";
-import { Heart, HeartSolid } from "iconoir-react";
-
-export function CustomRatingIcon() {
-  return <Rating value={4} unratedIcon={Heart} ratedIcon={HeartSolid} />;
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="rating/custom-rating-icon.tsx" language="react" />
 
 ---
 
@@ -102,30 +52,7 @@ export function CustomRatingIcon() {
 
 The `Rating` component can be used with a label to provide more context to the user. In the example below, we've added a label by using the `Rating` and `Typography` components together.
 
-<OldComponentPreview demo={<Rating.RatingWithText />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { Rating, Typography } from "@material-tailwind/react";
-
-export function RatingWithText() {
-  const [rated, setRated] = React.useState(4);
-
-  return (
-    <div className="flex items-center gap-2">
-      <Typography color="primary" className="font-semibold">
-        {rated}
-      </Typography>
-      <Rating value={4} onValueChange={(value) => setRated(value)} />
-      <Typography color="default" className="font-semibold">
-        Based on 134 Reviews
-      </Typography>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="rating/rating-with-text.tsx" language="react" />
 
 ---
 
@@ -133,31 +60,4 @@ export function RatingWithText() {
 
 Use the example below for providing testimonials and feedbacks in your website, the example used `Typography`, `Avatar` and `Rating` components to make a user feedback component.
 
-<OldComponentPreview demo={<Rating.RatingWithComment />}>
-```tsx
-"use client";
-
-import { Typography, Avatar, Rating } from "@material-tailwind/react";
-
-export function RatingWithComment() {
-  return (
-    <div className="px-8 text-center">
-      <Typography as="p" type="h5" className="mb-6">
-        &quot;This is an excellent product, the documentation is excellent and
-        helped me get things done more efficiently.&quot;
-      </Typography>
-      <Avatar
-        src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image"
-        size="lg"
-      />
-      <Typography className="mt-4 font-bold">Tania Andrew</Typography>
-      <Typography as="p" type="small" className="mb-4 text-foreground">
-        Lead Frontend Developer
-      </Typography>
-      <Rating value={4} color="warning" readonly />
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="rating/rating-with-comment.tsx" language="react" />

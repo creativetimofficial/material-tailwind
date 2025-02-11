@@ -1,6 +1,6 @@
 import { Avatar } from "@material-tailwind/react";
 
-export function AvatarSizes() {
+export default function AvatarSizes() {
   return (
     <div className="flex items-end gap-2">
       <Avatar size="xs" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" />

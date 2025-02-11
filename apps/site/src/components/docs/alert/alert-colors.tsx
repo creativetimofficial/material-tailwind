@@ -1,6 +1,6 @@
 import { Alert } from "@material-tailwind/react";
 
-export function AlertColors() {
+export default function AlertColors() {
   return (
     <div className="w-full space-y-2">
       <Alert color="primary">

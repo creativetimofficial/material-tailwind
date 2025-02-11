@@ -1,7 +1,7 @@
 import { Badge, IconButton } from "@material-tailwind/react";
 import { Bell } from "iconoir-react";
 
-export function BadgePlacement() {
+export default function BadgePlacement() {
   return (
     <div className="flex w-full justify-center gap-8">
       <Badge placement="top-start">

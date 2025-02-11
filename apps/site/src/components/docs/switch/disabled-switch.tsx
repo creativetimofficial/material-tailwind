@@ -1,5 +1,5 @@
 import { Switch } from "@material-tailwind/react";
 
-export function DisabledSwitch() {
+export default function DisabledSwitch() {
   return <Switch disabled />;
 }

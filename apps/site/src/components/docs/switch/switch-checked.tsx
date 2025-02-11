@@ -1,5 +1,5 @@
 import { Switch } from "@material-tailwind/react";
 
-export function SwitchChecked() {
+export default function SwitchChecked() {
   return <Switch defaultChecked />;
 }
