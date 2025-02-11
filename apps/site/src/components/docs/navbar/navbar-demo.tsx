@@ -58,7 +58,7 @@ function NavList() {
   );
 }
 
-export function NavbarDemo() {
+export default function NavbarDemo() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {

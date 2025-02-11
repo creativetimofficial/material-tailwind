@@ -1,6 +1,6 @@
 import { Button } from "@material-tailwind/react";
 
-export function ButtonColors() {
+export default function ButtonColors() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
       <Button color="primary">Primary</Button>

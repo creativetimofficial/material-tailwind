@@ -1,7 +1,7 @@
 import React from "react";
 import { Popover, Button, Typography, Input } from "@material-tailwind/react";
 
-export function SubscriptionPopover() {
+export default function SubscriptionPopover() {
   const [open, setOpen] = React.useState(true);
 
   return (

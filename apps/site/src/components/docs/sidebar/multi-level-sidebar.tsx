@@ -53,7 +53,7 @@ const Links = [
   },
 ];
 
-export function MultiLevelSidebar() {
+export default function MultiLevelSidebar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (

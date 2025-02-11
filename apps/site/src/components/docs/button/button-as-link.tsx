@@ -1,6 +1,6 @@
 import { Button } from "@material-tailwind/react";
 
-export function ButtonAsLink() {
+export default function ButtonAsLink() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
       <Button as="a" href="#" variant="ghost">

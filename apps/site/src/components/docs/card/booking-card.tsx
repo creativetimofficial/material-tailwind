@@ -16,7 +16,7 @@ import {
   FireFlame,
 } from "iconoir-react";
 
-export function BookingCard() {
+export default function BookingCard() {
   return (
     <Card className="w-full max-w-[26rem] shadow-lg">
       <Card.Header className="relative overflow-hidden p-0">

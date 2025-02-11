@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Timeline, Button } from "@material-tailwind/react";
 
-export function StepperDemo() {
+export default function StepperDemo() {
   const [step, setStep] = React.useState(0);
 
   return (
@@ -9,7 +9,7 @@ export function StepperDemo() {
       <Timeline
         mode="stepper"
         value={step}
-        onChange={(val) => setStep(Number(val))}
+        onChange={(val: number) => setStep(Number(val))}
       >
         <Timeline.Item disabled={step < 0} value={0} className="w-full">
           <Timeline.Header>

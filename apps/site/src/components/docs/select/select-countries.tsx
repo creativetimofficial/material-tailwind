@@ -1,7 +1,7 @@
 import { Select, Typography } from "@material-tailwind/react";
 import { useCountries } from "use-react-countries";
 
-export function SelectCountries() {
+export default function SelectCountries() {
   const { countries } = useCountries();
 
   return (

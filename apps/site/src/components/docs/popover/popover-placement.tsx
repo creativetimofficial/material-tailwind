@@ -1,6 +1,6 @@
 import { Popover, Button, Typography } from "@material-tailwind/react";
 
-export function PopoverPlacement() {
+export default function PopoverPlacement() {
   return (
     <>
       <div className="mb-3 flex gap-3">

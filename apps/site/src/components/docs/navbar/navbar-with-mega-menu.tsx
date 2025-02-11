@@ -172,7 +172,7 @@ const MenuItem = React.forwardRef<
   );
 });
 
-export function NavbarWithMegaMenu() {
+export default function NavbarWithMegaMenu() {
   const [openNav, setOpenNav] = React.useState(false);
 
   const renderItems = navListMenuItems.map(

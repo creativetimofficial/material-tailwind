@@ -56,7 +56,7 @@ const Links = [
   },
 ];
 
-export function SidebarWithCta() {
+export default function SidebarWithCta() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (

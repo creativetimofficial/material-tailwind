@@ -2,7 +2,7 @@ import React from "react";
 import { Popover, Button, Avatar, Typography } from "@material-tailwind/react";
 import { City, MapPin } from "iconoir-react";
 
-export function ProfileInfoPopover() {
+export default function ProfileInfoPopover() {
   const [open, setOpen] = React.useState(true);
 
   return (

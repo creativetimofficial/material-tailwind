@@ -1,6 +1,6 @@
 import { Input, Typography } from "@material-tailwind/react";
 
-export function InputWithLabel() {
+export default function InputWithLabel() {
   return (
     <div className="w-72 space-y-1">
       <Typography

@@ -6,7 +6,7 @@ import {
   Rating,
 } from "@material-tailwind/react";
 
-export function TestimonialCard() {
+export default function TestimonialCard() {
   return (
     <Card className="w-full max-w-[26rem] border-none shadow-none">
       <Card.Header className="mx-0 flex items-center gap-4 pb-4 pt-0">

@@ -1,6 +1,6 @@
 import { Slider } from "@material-tailwind/react";
 
-export function SliderColors() {
+export default function SliderColors() {
   return (
     <div className="flex w-64 flex-col gap-8">
       <Slider color="primary">

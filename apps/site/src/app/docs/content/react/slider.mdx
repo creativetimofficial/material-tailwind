@@ -18,24 +18,7 @@ See below our beautiful `Slider` example that you can use in your Tailwind CSS a
 
 Here's how to implement a simple and responsive `Slider` component. It is perfect for adjusting volume, brightness, or filters.
 
-<OldComponentPreview demo={<Slider.SliderDemo />}>
-```tsx
-"use client";
-
-import { Slider } from "@material-tailwind/react";
-
-export function SliderDemo() {
-  return (
-    <div className="w-64">
-      <Slider>
-        <Slider.Range />
-        <Slider.Thumb />
-      </Slider>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="slider/slider-demo.tsx" language="react" />
 
 ---
 
@@ -45,32 +28,7 @@ We provide different slider sizes like `sm`, `md`, and `lg` so you can adapt it 
 
 In the example below, we've showcased the different slider sizes that you can use in your project.
 
-<OldComponentPreview demo={<Slider.SliderSizes />}>
-```tsx
-"use client";
-
-import { Slider } from "@material-tailwind/react";
-
-export function SliderSizes() {
-  return (
-    <div className="flex w-64 flex-col gap-8">
-      <Slider size="sm">
-        <Slider.Range />
-        <Slider.Thumb />
-      </Slider>
-      <Slider size="md">
-        <Slider.Range />
-        <Slider.Thumb />
-      </Slider>
-      <Slider size="lg">
-        <Slider.Range />
-        <Slider.Thumb />
-      </Slider>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="slider/slider-sizes.tsx" language="react" />
 
 ---
 
@@ -80,44 +38,7 @@ We provide different slider colors like `primary`, `secondary`, `info`, `success
 
 In the example below, we've showcased the different slider colors that you can use in your project.
 
-<OldComponentPreview demo={<Slider.SliderColors />}>
-```tsx
-"use client";
-
-import { Slider } from "@material-tailwind/react";
-
-export function SliderColors() {
-  return (
-    <div className="flex w-64 flex-col gap-8">
-      <Slider color="primary">
-        <Slider.Range />
-        <Slider.Thumb />
-      </Slider>
-      <Slider color="secondary">
-        <Slider.Range />
-        <Slider.Thumb />
-      </Slider>
-      <Slider color="info">
-        <Slider.Range />
-        <Slider.Thumb />
-      </Slider>
-      <Slider color="success">
-        <Slider.Range />
-        <Slider.Thumb />
-      </Slider>
-      <Slider color="warning">
-        <Slider.Range />
-        <Slider.Thumb />
-      </Slider>
-      <Slider color="error">
-        <Slider.Range />
-        <Slider.Thumb />
-      </Slider>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="slider/slider-colors.tsx" language="react" />
 
 ---
 
@@ -125,26 +46,7 @@ export function SliderColors() {
 
 You can use tick or labels for slider using the `SliderTick` component. In the example below, we've showcased a slider with ticks that you can use in your project.
 
-
-<OldComponentPreview demo={<Slider.SliderWithTicks />}>
-```tsx
-"use client";
-
-import { Slider } from "@material-tailwind/react";
-
-export function SliderWithTicks() {
-  return (
-    <div className="w-80">
-      <Slider>
-        <Slider.Range />
-        <Slider.Thumb />
-        <Slider.Tick />
-      </Slider>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="slider/slider-with-ticks.tsx" language="react" />
 
 ---
 
@@ -154,25 +56,4 @@ You can make the `Slider` component to be a range slider by providing two values
 
 In the example below, we've showcased a range slider with two thumbs and ticks that you can use in your project.
 
-<OldComponentPreview demo={<Slider.RangeSliderWithTwoThumbs />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { Slider } from "@material-tailwind/react";
-
-export function RangeSliderWithTwoThumbs() {
-  const [value, setValue] = React.useState([20, 80]);
-
-  return (
-    <div className="w-80">
-      <Slider value={value} onValueChange={setValue}>
-        <Slider.Range />
-        <Slider.Thumb />
-        <Slider.Tick />
-      </Slider>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="slider/range-slider-with-two-thumbs.tsx" language="react" />
