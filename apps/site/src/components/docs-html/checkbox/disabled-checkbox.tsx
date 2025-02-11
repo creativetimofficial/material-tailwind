@@ -2,7 +2,7 @@
 export default function DisabledCheckbox() {
   return (
     <div
-      className="w-full place-items-center"
+      className="w-full place-items-center text-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="inline-flex items-center">
     <label class="flex items-center cursor-pointer relative opacity-50 pointer-events-none" for="checkboxDisabled-1">
