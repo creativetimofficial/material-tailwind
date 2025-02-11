@@ -60,7 +60,7 @@ export default function InputCurrencyConversion() {
                 className: "min-w-0",
               }}
               value={fromAmount}
-              onChange={(e) => setFromAmount(e.target.value)}
+              onChange={(e: any) => setFromAmount(e.target.value)}
             />
             <Menu placement="bottom-start">
               <Menu.Trigger>
