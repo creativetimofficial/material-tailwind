@@ -1,5 +1,5 @@
 import { Switch } from "@material-tailwind/react";
 
-export function SwitchDemo() {
+export default function SwitchDemo() {
   return <Switch />;
 }
