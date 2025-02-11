@@ -4,12 +4,32 @@ export default function CheckboxDemo() {
     <div
       className="w-full place-items-center"
       dangerouslySetInnerHTML={{
-        __html: `<div class="space-y-4">
-  <div class="flex items-center gap-2"><label class="group shadow-sm shadow-slate-950/5 inline-block relative h-5 w-5 cursor-pointer rounded bg-transparent border border-slate-200 transition-all duration-200 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none hover:shadow-md data-[checked=true]:bg-slate-800 data-[checked=true]:border-slate-800 text-slate-50" data-checked="false" for="default-checkbox"><input id="default-checkbox" type="checkbox" style="display:none" /><span data-checked="false" class="pointer-events-none absolute left-2/4 top-2/4 text-current -translate-x-2/4 -translate-y-2/4 scale-75 opacity-0 transition-all duration-200 ease-in data-[checked=true]:scale-100 data-[checked=true]:opacity-100"><svg fill="none" width="18px" height="18px" stroke-width="2" color="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></label><label for="default-checkbox" class="font-sans antialiased text-base cursor-pointer text-slate-600">Default Checkbox</label></div>
-  <div class="flex items-center gap-2"><label class="group shadow-sm shadow-slate-950/5 inline-block relative h-5 w-5 cursor-pointer rounded bg-transparent border border-slate-200 transition-all duration-200 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none hover:shadow-md data-[checked=true]:bg-slate-800 data-[checked=true]:border-slate-800 text-slate-50" data-checked="false" for="checked-checkbox"><input id="checked-checkbox" type="checkbox" style="display:none" checked="" /><span data-checked="false" class="pointer-events-none absolute left-2/4 top-2/4 text-current -translate-x-2/4 -translate-y-2/4 scale-75 opacity-0 transition-all duration-200 ease-in data-[checked=true]:scale-100 data-[checked=true]:opacity-100"><svg fill="none" width="18px" height="18px" stroke-width="2" color="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></label><label for="checked-checkbox" class="font-sans antialiased text-base cursor-pointer text-slate-600">Checked Checkbox</label></div>
+        __html: `<div class="space-y-4 flex flex-col">
+  <div class="inline-flex items-center">
+    <label class="flex items-center cursor-pointer relative" for="default-checkbox">
+      <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow-sm hover:shadow-md border border-slate-200 checked:bg-slate-800 checked:border-slate-800" id="default-checkbox" />
+      <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <svg fill="none" width="18px" height="18px" stroke-width="2" color="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </span>
+    </label>
+    <label class="cursor-pointer ml-2 text-slate-600 font-normal antialiased" for="default-checkbox">Default Checkbox</label>
+  </div>
+  <div class="inline-flex items-center">
+    <label class="flex items-center cursor-pointer relative" for="checked-checkbox">
+      <input type="checkbox" checked class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow-sm hover:shadow-md border border-slate-200 checked:bg-slate-800 checked:border-slate-800" id="checked-checkbox" />
+      <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <svg fill="none" width="18px" height="18px" stroke-width="2" color="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </span>
+    </label>
+    <label class="cursor-pointer ml-2 text-slate-600 font-normal antialiased" for="checked-checkbox">Checked Checkbox</label>
+  </div>
 </div>
 `
       }}
     />
   );
 }
+
+
+
+
