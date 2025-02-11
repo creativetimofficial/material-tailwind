@@ -1,5 +1,5 @@
 import { Rating } from "@material-tailwind/react";
 
-export function RatingDemo() {
+export default function RatingDemo() {
   return <Rating value={4} />;
 }
