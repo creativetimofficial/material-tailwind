@@ -20,26 +20,7 @@ See below our `Menu` component examples that you can use in your Tailwind CSS an
 
 Here's how to implement a simple and responsive `Menu` component. It can be used for selecting an option from a list of choices, navigating between pages, or any other action that requires user interaction in your website.
 
-<OldComponentPreview demo={<Menu.MenuDemo />}>
-```tsx
-"use client";
-
-import { Menu, Button } from "@material-tailwind/react";
-
-export function MenuDemo() {
-  return (
-    <Menu>
-      <Menu.Trigger as={Button}>Open</Menu.Trigger>
-      <Menu.Content>
-        <Menu.Item>Add Team</Menu.Item>
-        <Menu.Item>Add Project</Menu.Item>
-        <Menu.Item>My Profile</Menu.Item>
-      </Menu.Content>
-    </Menu>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="menu/menu-demo.tsx" language="react" />
 
 ---
 
@@ -47,39 +28,7 @@ export function MenuDemo() {
 
 Use this example to create a nested menu with a trigger that opens a submenu with more options. This is useful when you have a list of options that can be grouped together.
 
-<OldComponentPreview demo={<Menu.NestedMenu />}>
-```tsx
-"use client";
-
-import { Menu, Button } from "@material-tailwind/react";
-import { NavArrowRight } from "iconoir-react";
-
-export function NestedMenu() {
-  return (
-    <Menu>
-      <Menu.Trigger as={Button}>Open</Menu.Trigger>
-      <Menu.Content>
-        <Menu.Item>Add Team</Menu.Item>
-        <Menu.Item>Add Project</Menu.Item>
-        <Menu>
-          <Menu.Trigger
-            as={Menu.Item}
-            className="flex items-center justify-between"
-          >
-            My Profile <NavArrowRight className="h-4 w-4 translate-x-1" />
-          </Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Edit Profile</Menu.Item>
-            <Menu.Item>Change Password</Menu.Item>
-            <Menu.Item>Upgrade to PRO</Menu.Item>
-          </Menu.Content>
-        </Menu>
-      </Menu.Content>
-    </Menu>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="menu/nested-menu.tsx" language="react" />
 
 ---
 
@@ -87,124 +36,7 @@ export function NestedMenu() {
 
 Use this example to create a menu with different placements. You can choose between top, right, bottom, and left placements, and also between start and end positions.
 
-<OldComponentPreview demo={<Menu.MenuPlacement />}>
-```tsx
-"use client";
-
-import { Menu, Button } from "@material-tailwind/react";
-
-export function MenuPlacement() {
-  return (
-    <>
-      <div className="mb-3 flex gap-3">
-        <Menu placement="top">
-          <Menu.Trigger as={Button}>Top</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-        <Menu placement="top-start">
-          <Menu.Trigger as={Button}>Top Start</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-        <Menu placement="top-end">
-          <Menu.Trigger as={Button}>Top End</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-      </div>
-      <div className="mb-3 flex gap-3">
-        <Menu placement="right">
-          <Menu.Trigger as={Button}>Right</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-        <Menu placement="right-start">
-          <Menu.Trigger as={Button}>Right Start</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-        <Menu placement="right-end">
-          <Menu.Trigger as={Button}>Right End</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-      </div>
-      <div className="mb-3 flex gap-3">
-        <Menu placement="bottom">
-          <Menu.Trigger as={Button}>Bottom</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-        <Menu placement="bottom-start">
-          <Menu.Trigger as={Button}>Bottom Start</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-        <Menu placement="bottom-end">
-          <Menu.Trigger as={Button}>Bottom End</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-      </div>
-      <div className="flex gap-3">
-        <Menu placement="left">
-          <Menu.Trigger as={Button}>Left</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-        <Menu placement="left-start">
-          <Menu.Trigger as={Button}>Left Start</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-        <Menu placement="left-end">
-          <Menu.Trigger as={Button}>Left End</Menu.Trigger>
-          <Menu.Content>
-            <Menu.Item>Add Team</Menu.Item>
-            <Menu.Item>Add Project</Menu.Item>
-            <Menu.Item>My Profile</Menu.Item>
-          </Menu.Content>
-        </Menu>
-      </div>
-    </>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="menu/menu-placement.tsx" language="react" />
 
 ---
 
@@ -212,77 +44,7 @@ export function MenuPlacement() {
 
 Use this example to create a navigation menu with a trigger that opens a menu of options. This is useful for creating a navigation menu in navbar in your website.
 
-<OldComponentPreview demo={<Menu.NavMenu />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { Menu, Button, Card, Typography } from "@material-tailwind/react";
-import { NavArrowDown, Rocket } from "iconoir-react";
-
-const NavItem = React.forwardRef<
-  typeof Menu.Item,
-  {
-    title: string;
-    description: string;
-  }
->(({ title, description, ...rest }, ref) => {
-  return (
-    <Menu.Item ref={ref} {...rest} className="flex-col items-start">
-      <Typography color="default" className="font-semibold">
-        {title}
-      </Typography>
-      <Typography type="small" className="text-foreground">
-        {description}
-      </Typography>
-    </Menu.Item>
-  );
-});
-
-export function NavMenu() {
-  return (
-    <Menu>
-      <Menu.Trigger
-        as={Button}
-        size="sm"
-        variant="ghost"
-        className="flex items-center gap-1"
-      >
-        Versions{" "}
-        <NavArrowDown className="h-3.5 w-3.5 stroke-2 group-data-[open=true]:rotate-180" />
-      </Menu.Trigger>
-      <Menu.Content className="grid max-w-lg grid-cols-5 gap-1">
-        <Card
-          color="primary"
-          className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
-        >
-          <div>
-            <Rocket className="mx-auto h-12 w-12" />
-            <Typography type="h6" className="mt-5 text-center leading-snug">
-              Material Tailwind PRO
-            </Typography>
-          </div>
-        </Card>
-        <ul className="col-span-3 !m-0">
-          <NavItem
-            title="@material-tailwind/html"
-            description="Learn how to use @material-tailwind/html, packed with rich components and widgets."
-          />
-          <NavItem
-            title="@material-tailwind/react"
-            description="Learn how to use @material-tailwind/react, packed with rich components for React."
-          />
-          <NavItem
-            title="Material Tailwind PRO"
-            description="A complete set of UI Elements for building faster websites in less time."
-          />
-        </ul>
-      </Menu.Content>
-    </Menu>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="menu/nav-menu.tsx" language="react" />
 
 ---
 
@@ -290,30 +52,7 @@ export function NavMenu() {
 
 Use this example to create a menu with a divider that separates the menu items. This is useful when you want to group menu items into different sections.
 
-<OldComponentPreview demo={<Menu.MenuWithDivider />}>
-```tsx
-"use client";
-
-import { Menu, Button } from "@material-tailwind/react";
-
-export function MenuWithDivider() {
-  return (
-    <Menu>
-      <Menu.Trigger as={Button}>Open</Menu.Trigger>
-      <Menu.Content>
-        <Menu.Item>Add Team</Menu.Item>
-        <Menu.Item>Add Project</Menu.Item>
-        <Menu.Item>My Profile</Menu.Item>
-        <hr className="!my-1 -mx-1 border-surface" />
-        <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error dark:hover:text-error dark:focus:text-error">
-          Logout
-        </Menu.Item>
-      </Menu.Content>
-    </Menu>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="menu/menu-with-divider.tsx" language="react" />
 
 ---
 
@@ -321,56 +60,7 @@ export function MenuWithDivider() {
 
 Use this example to create a menu with checkboxes that allow users to select multiple options. This is useful when you want to allow users to select multiple options from a list of choices.
 
-<OldComponentPreview demo={<Menu.MenuWithCheckbox />}>
-```tsx
-"use client";
-
-import { Menu, Button, Checkbox } from "@material-tailwind/react";
-
-export function MenuWithCheckbox() {
-  return (
-    <Menu>
-      <Menu.Trigger as={Button}>Sort</Menu.Trigger>
-      <Menu.Content>
-        <Menu.Item
-          as="label"
-          htmlFor="task-name"
-          className="gap-2 pl-1.5"
-          closeOnClick={false}
-        >
-          <Checkbox id="task-name">
-            <Checkbox.Indicator />
-          </Checkbox>
-          Task Name
-        </Menu.Item>
-        <Menu.Item
-          as="label"
-          htmlFor="date-created"
-          className="gap-2 pl-1.5"
-          closeOnClick={false}
-        >
-          <Checkbox id="date-created">
-            <Checkbox.Indicator />
-          </Checkbox>
-          Date Created
-        </Menu.Item>
-        <Menu.Item
-          as="label"
-          htmlFor="completed"
-          className="gap-2 pl-1.5"
-          closeOnClick={false}
-        >
-          <Checkbox id="completed">
-            <Checkbox.Indicator />
-          </Checkbox>
-          Completed
-        </Menu.Item>
-      </Menu.Content>
-    </Menu>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="menu/menu-with-checkbox.tsx" language="react" />
 
 ---
 
@@ -378,27 +68,7 @@ export function MenuWithCheckbox() {
 
 Use this example to create a menu with a search input that allows users to search for specific options. This is useful when you have a long list of options and you want to help users find what they are looking for.
 
-<OldComponentPreview demo={<Menu.MenuWithSearch />}>
-```tsx
-"use client";
-
-import { Menu, Button, Input } from "@material-tailwind/react";
-
-export function MenuWithSearch() {
-  return (
-    <Menu>
-      <Menu.Trigger as={Button}>Open</Menu.Trigger>
-      <Menu.Content>
-        <Input placeholder="Search..." className="mb-1" />
-        <Menu.Item>Add Team</Menu.Item>
-        <Menu.Item>Add Project</Menu.Item>
-        <Menu.Item>My Profile</Menu.Item>
-      </Menu.Content>
-    </Menu>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="menu/menu-with-search.tsx" language="react" />
 
 ---
 
@@ -406,43 +76,7 @@ export function MenuWithSearch() {
 
 Use this example to create a menu with scrolling content that allows users to scroll through a long list of options. This is useful when you have a long list of options and you want to display them in a limited space.
 
-<OldComponentPreview demo={<Menu.MenuWithScrollingContent />}>
-```tsx
-"use client";
-
-import { Menu, Button } from "@material-tailwind/react";
-
-export function MenuWithScrollingContent() {
-  return (
-    <Menu>
-      <Menu.Trigger as={Button}>Open</Menu.Trigger>
-      <Menu.Content className="max-h-72 overflow-y-scroll">
-        <Menu.Item>Menu Item 1</Menu.Item>
-        <Menu.Item>Menu Item 2</Menu.Item>
-        <Menu.Item>Menu Item 3</Menu.Item>
-        <Menu.Item>Menu Item 4</Menu.Item>
-        <Menu.Item>Menu Item 5</Menu.Item>
-        <Menu.Item>Menu Item 6</Menu.Item>
-        <Menu.Item>Menu Item 7</Menu.Item>
-        <Menu.Item>Menu Item 8</Menu.Item>
-        <Menu.Item>Menu Item 9</Menu.Item>
-        <Menu.Item>Menu Item 10</Menu.Item>
-        <Menu.Item>Menu Item 11</Menu.Item>
-        <Menu.Item>Menu Item 12</Menu.Item>
-        <Menu.Item>Menu Item 13</Menu.Item>
-        <Menu.Item>Menu Item 14</Menu.Item>
-        <Menu.Item>Menu Item 15</Menu.Item>
-        <Menu.Item>Menu Item 16</Menu.Item>
-        <Menu.Item>Menu Item 17</Menu.Item>
-        <Menu.Item>Menu Item 18</Menu.Item>
-        <Menu.Item>Menu Item 19</Menu.Item>
-        <Menu.Item>Menu Item 20</Menu.Item>
-      </Menu.Content>
-    </Menu>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="menu/menu-with-scrolling-content.tsx" language="react" />
 
 ---
 
@@ -450,73 +84,7 @@ export function MenuWithScrollingContent() {
 
 Use this example to create a notification menu with a trigger that opens a menu of notifications. This is useful when you want to display notifications to users in dashboard layout or admin panels.
 
-<OldComponentPreview demo={<Menu.NotificationMenu />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { Menu, IconButton, Typography, Avatar } from "@material-tailwind/react";
-import { Bell, Clock } from "iconoir-react";
-
-const MenuItem = React.forwardRef<
-  typeof Menu.Item,
-  {
-    img: string;
-    title: string;
-    date: string;
-  }
->(({ img, title, date, ...rest }, ref) => {
-  return (
-    <Menu.Item ref={ref} {...rest} className="gap-3">
-      <Avatar src={img} alt="profile-picture" />
-      <div>
-        <Typography
-          type="small"
-          color="default"
-          className="mb-1 block font-semibold"
-        >
-          {title}
-        </Typography>
-        <Typography
-          type="small"
-          className="flex items-center gap-1 text-xs text-foreground"
-        >
-          <Clock className="h-3 w-3" />
-          {date}
-        </Typography>
-      </div>
-    </Menu.Item>
-  );
-});
-
-export function NotificationMenu() {
-  return (
-    <Menu>
-      <Menu.Trigger as={IconButton} variant="ghost" size="sm">
-        <Bell className="h-4 w-4 stroke-2" />
-      </Menu.Trigger>
-      <Menu.Content>
-        <MenuItem
-          img="https://dub.sh/iu8bOfU"
-          title="Tania send you a message"
-          date="13 minutes ago"
-        />
-        <MenuItem
-          img="https://dub.sh/6i238JA"
-          title="Natali replied to your email."
-          date="1 hour ago"
-        />
-        <MenuItem
-          img="https://dub.sh/iuFsnmW"
-          title="You've received a payment."
-          date="5 hours ago"
-        />
-      </Menu.Content>
-    </Menu>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="menu/notification-menu.tsx" language="react" />
 
 ---
 
@@ -524,39 +92,4 @@ export function NotificationMenu() {
 
 Use this example to create a profile menu with a trigger that opens a menu of profile options. This is useful when you want to display profile options to users when they're logged in.
 
-<OldComponentPreview demo={<Menu.ProfileMenu />}>
-```tsx
-"use client";
-
-import { Menu, Avatar } from "@material-tailwind/react";
-import { UserCircle, Settings, HeadsetHelp, LogOut } from "iconoir-react";
-
-export function ProfileMenu() {
-  return (
-    <Menu>
-      <Menu.Trigger
-        as={Avatar}
-        alt="profile-picture"
-        src="https://dub.sh/iu8bOfU"
-      />
-      <Menu.Content>
-        <Menu.Item>
-          <UserCircle className="mr-2 h-[18px] w-[18px]" /> My Profile
-        </Menu.Item>
-        <Menu.Item>
-          <Settings className="mr-2 h-[18px] w-[18px]" /> Edit Profile
-        </Menu.Item>
-        <Menu.Item>
-          <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
-        </Menu.Item>
-        <hr className="!my-1 -mx-1 border-surface" />
-        <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error dark:hover:text-error dark:focus:text-error">
-          <LogOut className="mr-2 h-[18px] w-[18px]" />
-          Logout
-        </Menu.Item>
-      </Menu.Content>
-    </Menu>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="menu/profile-menu.tsx" language="react" />
