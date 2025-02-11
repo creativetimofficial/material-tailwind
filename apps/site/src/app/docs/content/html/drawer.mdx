@@ -1,42 +1,67 @@
 ---
-title: Tailwind CSS Modal/Dialog - Components Library @David UI
-description: Create beautiful modals with Tailwind CSS using David UI. It is ideal for creating engaging web or mobile interfaces, try now for free!
-github: modal
+title: Tailwind CSS Drawer - Material Tailwind
+description: Create sliding panels and navigation menus with our Tailwind CSS Drawer component. Perfect for mobile-friendly interfaces and responsive designs.
+github: drawer
+prev: docs/html/datepicker
+next: docs/html/dropdown
 ---
 
+# Tailwind CSS Drawer
 
-{/* TODO: replace david UI */}
-{/* <InfoBadge /> */}
-
-# Tailwind CSS Modal/Dialog 
-
-David UI's Modal component offers a sleek and accessible way to display overlays for alerts, forms, or additional content. Styled with Tailwind CSS, it supports customizable headers and footers for a polished user experience.
-
-Explore our responsive Modal component examples, styled with Tailwind CSS, ideal for creating engaging web or mobile interfaces.
-
+Build elegant sliding panels and navigation drawers using Tailwind CSS transitions and transforms. Perfect for creating responsive mobile menus, side panels, and off-canvas navigation that enhance user experience.
 
 ---
 
 ## Basic Drawer
 
-This example showcases how to create a Tailwind CSS modal with a structured layout, including a header, dismiss button, and action buttons. 
-
+Create smooth sliding panels using Tailwind CSS transform and transition utilities. This example shows how to build a basic drawer with header, content area, and close button for clean navigation.
 
 <PreviewWithCode relativePath="drawer/drawer-demo.tsx" language="html" />
 
 ---
 
-## Modal Sizes
+## Drawer Placement
 
-David UI's dialog component is versatile and it is coming with multiple size options (`xs`, `sm`, `md`, `lg`, `xl`, `screen`). Each size adapts seamlessly to fit diverse content requirements, ensuring responsiveness and consistent styling across applications.
+Position your drawers using Tailwind CSS placement utilities. Choose from left, right, top, or bottom placements to create sliding panels that match your design needs and enhance mobile navigation.
 
 <PreviewWithCode relativePath="drawer/drawer-placement.tsx" language="html" />
 
+---
+
+## Drawer Sizes
+
+Scale your drawers appropriately using Tailwind CSS width and height utilities. Available in multiple sizes (`xs`, `sm`, `md`, `lg`, `xl`, `full`) to accommodate different content needs while maintaining responsive behavior.
+
+ - - -- - - - -     to be added    - -- - - - - -- 
 
 ---
+
+## Navigation Drawer
+
+Build responsive navigation menus using Tailwind CSS flex and spacing utilities. Perfect for mobile-first designs, featuring links, icons, and nested navigation items.
+
+<PreviewWithCode relativePath="drawer/drawer-with-navigation.tsx" language="html" />
+
+---
+
+## Drawer with Form
+
+Create interactive forms within drawers using Tailwind CSS form utilities. Ideal for quick edits, filters, or data entry without leaving the current page.
+
+<PreviewWithCode relativePath="drawer/drawer-with-form.tsx" language="html" />
+
+---
+
+## Custom Drawer
+
+Design unique drawer experiences by combining Tailwind CSS utilities. Add beautiful backgrounds, shadows, and transitions while maintaining accessibility and mobile responsiveness.
+
+--- - - -- - - -- - to be added -- - - -- - - ---
+
+---
+
 ## Required Script
-The modal component needs a required script file for the modal functionality to work. Add the script below to the bottom of your HTML file.
 
-The script handles opening/closing modals, backdrop interactions, keyboard events, and animations. Without this script, the modal components will not function properly.
+The drawer component requires a script for handling open/close states, transitions, and keyboard interactions. Add this script to your HTML file for proper functionality.
 
-<CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" defer></script>`}/>
+<CodePreviewTailwindClasses />
