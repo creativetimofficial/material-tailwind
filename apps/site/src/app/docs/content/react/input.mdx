@@ -20,21 +20,7 @@ See below our `Input` component examples. It comes in different styles and color
 
 Here's how to implement a simple and responsive `Input` component. It is perfect for forms requiring text input, such as user registration, login forms, or any form where users need to input a username.
 
-<OldComponentPreview demo={<Input.InputDemo />}>
-```tsx
-"use client";
-
-import { Input } from "@material-tailwind/react";
-
-export function InputDemo() {
-  return (
-    <div className="w-72">
-      <Input placeholder="Input" />
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="input/input-demo.tsx" language="react" />
 
 ---
 
@@ -44,23 +30,7 @@ We provide different input sizes like `sm`, `md`, and `lg` so you can adapt it e
 
 In the example below, we've showcased the different input sizes that you can use in your project.
 
-<OldComponentPreview demo={<Input.InputSizes />}>
-```tsx
-"use client";
-
-import { Input } from "@material-tailwind/react";
-
-export function InputSizes() {
-  return (
-    <div className="w-72 space-y-4">
-      <Input size="sm" placeholder="Input Small" />
-      <Input size="md" placeholder="Input Medium" />
-      <Input size="lg" placeholder="Input Large" />
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="input/input-sizes.tsx" language="react" />
 
 ---
 
@@ -70,26 +40,7 @@ We provide different input colors like `primary`, `secondary`, `info`, `success`
 
 In the example below, we've showcased the different input colors that you can use in your project.
 
-<OldComponentPreview demo={<Input.InputColors />}>
-```tsx
-"use client";
-
-import { Input } from "@material-tailwind/react";
-
-export function InputColors() {
-  return (
-    <div className="w-72 space-y-4">
-      <Input color="primary" placeholder="Input Primary" />
-      <Input color="secondary" placeholder="Input Secondary" />
-      <Input color="info" placeholder="Input Info" />
-      <Input color="success" placeholder="Input Success" />
-      <Input color="warning" placeholder="Input Warning" />
-      <Input color="error" placeholder="Input Error" />
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="input/input-colors.tsx" language="react" />
 
 ---
 
@@ -97,42 +48,7 @@ export function InputColors() {
 
 We provide helpful props like `isError` and `isSuccess` for showing error and success states of an input. In the example below, we've showcased the `Input` component with error and success states that you can use in your project.
 
-<OldComponentPreview demo={<Input.InputWithValidation />}>
-```tsx
-"use client";
-
-import { Input, Typography } from "@material-tailwind/react";
-
-export function InputWithValidation() {
-  return (
-    <div className="w-72 space-y-6">
-      <div>
-        <Input
-          isError
-          color="error"
-          placeholder="Input Error"
-          className="w-full"
-        />
-        <Typography type="small" color="error" className="mt-1 block">
-          Something went wrong!
-        </Typography>
-      </div>
-      <div>
-        <Input
-          isSuccess
-          color="success"
-          placeholder="Input Success"
-          className="w-full"
-        />
-        <Typography type="small" color="success" className="mt-1 block">
-          Congratulations 🎉
-        </Typography>
-      </div>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="input/input-with-validation.tsx" language="react" />
 
 ---
 
@@ -142,31 +58,7 @@ You can add an icon to the start or end of the input to make it more visually ap
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Input.InputWithIcon />}>
-```tsx
-"use client";
-
-import { Input } from "@material-tailwind/react";
-import { ProfileCircle, Lock } from "iconoir-react";
-
-export function InputWithIcon() {
-  return (
-    <div className="w-72 space-y-4">
-      <Input placeholder="Username">
-        <Input.Icon>
-          <ProfileCircle className="h-full w-full" />
-        </Input.Icon>
-      </Input>
-      <Input placeholder="Password">
-        <Input.Icon placement="end">
-          <Lock className="h-full w-full" />
-        </Input.Icon>
-      </Input>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="input/input-with-icon.tsx" language="react" />
 
 ---
 
@@ -174,30 +66,7 @@ export function InputWithIcon() {
 
 The `Input` component can be used with a label to provide more context to the user. In the example below, we've added a label to the input by using the `Input` and `Typography` components together.
 
-<OldComponentPreview demo={<Input.InputWithLabel />}>
-```tsx
-"use client";
-
-import { Input, Typography } from "@material-tailwind/react";
-
-export function InputWithLabel() {
-  return (
-    <div className="w-72 space-y-1">
-      <Typography
-        as="label"
-        htmlFor="email"
-        type="small"
-        color="default"
-        className="font-semibold"
-      >
-        Email
-      </Typography>
-      <Input id="email" type="email" placeholder="someone@example.com" />
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="input/input-with-label.tsx" language="react" />
 
 ---
 
@@ -205,29 +74,7 @@ export function InputWithLabel() {
 
 You can use `Input` and `Typography` components together to provide more details for the input. In the example below, we've added a hint text with an icon below the input field to provide more context to the user.
 
-<OldComponentPreview demo={<Input.InputWithHelperText />}>
-```tsx
-"use client";
-
-import { Input, Typography } from "@material-tailwind/react";
-import { InfoCircle } from "iconoir-react";
-
-export function InputWithHelperText() {
-  return (
-    <div className="w-72 space-y-2">
-      <Input type="password" placeholder="Password" />
-      <div className="flex gap-1.5 text-foreground">
-        <InfoCircle className="h-3.5 w-3.5 shrink-0 translate-y-[3px] stroke-2" />
-        <Typography type="small">
-          Use at least 8 characters, one uppercase, one lowercase and one
-          number.
-        </Typography>
-      </div>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="input/input-with-helper-text.tsx" language="react" />
 
 ---
 
@@ -235,26 +82,7 @@ export function InputWithHelperText() {
 
 You can use `Input` and `Button` components together for submitting the input data. In the example below, we've created a subscription form using `Input` and `Button` components.
 
-<OldComponentPreview demo={<Input.InputWithButton />}>
-```tsx
-"use client";
-
-import { Button, Input } from "@material-tailwind/react";
-
-export function InputWithButton() {
-  return (
-    <form
-      action="#"
-      className="flex w-full max-w-sm items-center justify-center gap-2"
-    >
-      <Input type="email" placeholder="someone@example.com" />
-      <Button type="submit">Subscribe</Button>
-    </form>
-  );
-}
-```
-</OldComponentPreview>
-
+<PreviewWithCode relativePath="input/input-with-button.tsx" language="react" />
 
 ---
 
@@ -264,60 +92,7 @@ You can use `Input` and `Menu` components together for creating more complex inp
 
 In the example below we've used the [use-react-countries](https://www.npmjs.com/package/use-react-countries) library, for getting the countries `name`, `flag` and `country-code`.
 
-<OldComponentPreview demo={<Input.InputWithDropdown />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { Input, Menu, Button } from "@material-tailwind/react";
-import { useCountries } from "use-react-countries";
-
-export function InputWithDropdown() {
-  const { countries } = useCountries();
-  const [country, setCountry] = React.useState(0);
-  const { name, flags, countryCallingCode } = countries[country];
-
-  return (
-    <div className="relative flex w-full max-w-[24rem]">
-      <Menu placement="bottom-start">
-        <Menu.Trigger
-          as={Button}
-          color="secondary"
-          className="flex items-center gap-2 rounded-r-none border border-r-0 border-surface bg-secondary pl-3"
-        >
-          <img
-            src={flags.svg}
-            alt={name}
-            className="h-4 w-4 rounded-full object-cover"
-          />
-          {countryCallingCode}
-        </Menu.Trigger>
-        <Menu.Content className="h-72 max-w-[18rem] overflow-y-auto">
-          {countries.map(({ name, flags, countryCallingCode }, index) => {
-            return (
-              <Menu.Item
-                key={name}
-                value={name}
-                className="flex items-center gap-2"
-                onClick={() => setCountry(index)}
-              >
-                <img
-                  src={flags.svg}
-                  alt={name}
-                  className="h-5 w-5 rounded-full object-cover"
-                />
-                {name} <span className="ml-auto">{countryCallingCode}</span>
-              </Menu.Item>
-            );
-          })}
-        </Menu.Content>
-      </Menu>
-      <Input placeholder="Mobile Number" className="rounded-l-none" />
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="input/input-with-dropdown.tsx" language="react" />
 
 ---
 
@@ -325,21 +100,7 @@ export function InputWithDropdown() {
 
 You can disable the input by adding the `disabled` prop. This will prevent the user from interacting with the input field.
 
-<OldComponentPreview demo={<Input.InputDisabled />}>
-```tsx
-"use client";
-
-import { Input } from "@material-tailwind/react";
-
-export function InputDisabled() {
-  return (
-    <div className="w-72">
-      <Input disabled placeholder="Input" />
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="input/input-disabled.tsx" language="react" />
 
 ---
 
@@ -347,26 +108,4 @@ export function InputDisabled() {
 
 You can use `className` prop to customize the `Input` component style. In the example below, we make a simple input field with an icon and a border to it's bottom.
 
-<OldComponentPreview demo={<Input.InputCustomStyles />}>
-```tsx
-"use client";
-
-import { Input } from "@material-tailwind/react";
-import { ProfileCircle } from "iconoir-react";
-
-export function InputCustomStyles() {
-  return (
-    <div className="w-72">
-      <Input
-        placeholder="Username"
-        className="rounded-none border-0 border-b border-gray-400 pr-0.5 shadow-none ring-0 hover:border-gray-900 focus:border-gray-900 data-[icon-placement=start]:!pl-[26px] dark:border-gray-600 dark:hover:border-gray-50 dark:focus:border-gray-50"
-      >
-        <Input.Icon className="data-[placement=start]:left-px">
-          <ProfileCircle className="h-full w-full" />
-        </Input.Icon>
-      </Input>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="input/input-custom-styles.tsx" language="react" />
