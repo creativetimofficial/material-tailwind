@@ -1,6 +1,6 @@
 import { Button } from "@material-tailwind/react";
 
-export function ButtonSizes() {
+export default function ButtonSizes() {
   return (
     <div className="flex flex-wrap items-end justify-center gap-4">
       <Button size="xs">X Small</Button>

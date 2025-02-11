@@ -1,6 +1,6 @@
 import { Card, Typography, Button } from "@material-tailwind/react";
 
-export function SimpleCard() {
+export default function SimpleCard() {
   return (
     <Card className="max-w-xs">
       <Card.Body>

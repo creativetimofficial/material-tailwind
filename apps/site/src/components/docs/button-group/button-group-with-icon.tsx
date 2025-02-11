@@ -1,7 +1,7 @@
 import { ButtonGroup, Button } from "@material-tailwind/react";
 import { Bold, Italic, Underline } from "iconoir-react";
 
-export function ButtonGroupWithIcon() {
+export default function ButtonGroupWithIcon() {
   return (
     <div className="flex flex-col gap-4">
       <ButtonGroup variant="ghost">

@@ -1,6 +1,6 @@
 import { Button } from "@material-tailwind/react";
 
-export function ButtonVariants() {
+export default function ButtonVariants() {
   return (
     <div className="item flex flex-wrap justify-center gap-4">
       <Button variant="ghost">Ghost</Button>

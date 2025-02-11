@@ -1,6 +1,6 @@
 import { Menu, Button, Checkbox } from "@material-tailwind/react";
 
-export function MenuWithCheckbox() {
+export default function MenuWithCheckbox() {
   return (
     <Menu>
       <Menu.Trigger as={Button}>Sort</Menu.Trigger>

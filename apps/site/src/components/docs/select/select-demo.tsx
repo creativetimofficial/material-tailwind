@@ -1,6 +1,6 @@
 import { Select } from "@material-tailwind/react";
 
-export function SelectDemo() {
+export default function SelectDemo() {
   return (
     <Select>
       <Select.Trigger className="w-72" placeholder="Select Version" />

@@ -1,5 +1,5 @@
 import { Button } from "@material-tailwind/react";
 
-export function ButtonDemo() {
+export default function ButtonDemo() {
   return <Button>Button</Button>;
 }

@@ -1,6 +1,6 @@
 import { ButtonGroup, Button } from "@material-tailwind/react";
 
-export function ButtonGroupSizes() {
+export default function ButtonGroupSizes() {
   return (
     <div className="flex flex-col gap-4">
       <ButtonGroup size="sm">
