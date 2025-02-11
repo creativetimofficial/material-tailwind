@@ -1,7 +1,7 @@
 import { Tooltip, IconButton } from "@material-tailwind/react";
 import { HomeSimple, Plus, SelectFace3d, Settings } from "iconoir-react";
 
-export function SpeedDialPlacement() {
+export default function SpeedDialPlacement() {
   return (
     <div className="relative h-80 w-full">
       <div className="absolute left-0 top-0">

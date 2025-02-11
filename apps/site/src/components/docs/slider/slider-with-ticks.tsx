@@ -1,6 +1,6 @@
 import { Slider } from "@material-tailwind/react";
 
-export function SliderWithTicks() {
+export default function SliderWithTicks() {
   return (
     <div className="w-80">
       <Slider>

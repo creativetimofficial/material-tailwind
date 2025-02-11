@@ -1,7 +1,7 @@
 import { Tooltip, IconButton } from "@material-tailwind/react";
 import { HomeSimple, Plus, SelectFace3d, Settings } from "iconoir-react";
 
-export function SpeedDialWithLabel() {
+export default function SpeedDialWithLabel() {
   return (
     <Tooltip interactive offset={4}>
       <Tooltip.Trigger as={IconButton} isCircular>

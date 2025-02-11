@@ -59,7 +59,7 @@ function NavList() {
   );
 }
 
-export function NavbarWithSearch() {
+export default function NavbarWithSearch() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {

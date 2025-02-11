@@ -2,7 +2,7 @@ import * as React from "react";
 import { Timeline, Button } from "@material-tailwind/react";
 import { HomeSimple, UserCircle, Settings } from "iconoir-react";
 
-export function StepperWithIcon() {
+export default function StepperWithIcon() {
   const [step, setStep] = React.useState(0);
 
   return (
@@ -10,7 +10,7 @@ export function StepperWithIcon() {
       <Timeline
         mode="stepper"
         value={step}
-        onChange={(val) => setStep(Number(val))}
+        onChange={(val: any) => setStep(Number(val))}
       >
         <Timeline.Item disabled={step < 0} value={0} className="w-full">
           <Timeline.Header>

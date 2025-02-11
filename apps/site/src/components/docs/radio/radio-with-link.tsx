@@ -1,6 +1,6 @@
 import { Radio, Typography } from "@material-tailwind/react";
 
-export function RadioWithLink() {
+export default function RadioWithLink() {
   return (
     <Radio>
       <div className="flex items-center gap-2">
