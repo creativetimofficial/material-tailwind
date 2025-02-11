@@ -1,7 +1,7 @@
 import { Card, Typography, Button, Chip } from "@material-tailwind/react";
 import { CheckCircleSolid } from "iconoir-react";
 
-export function PricingCard() {
+export default function PricingCard() {
   return (
     <Card color="primary" className="max-w-xs">
       <Card.Header className="py-6 text-center">
