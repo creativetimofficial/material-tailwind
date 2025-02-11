@@ -1,6 +1,6 @@
 import { Rating } from "@material-tailwind/react";
 
-export function RatingColors() {
+export default function RatingColors() {
   return (
     <div className="flex flex-col gap-4">
       <Rating value={4} color="primary" />
