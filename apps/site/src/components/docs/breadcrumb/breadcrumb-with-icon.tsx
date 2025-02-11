@@ -1,7 +1,7 @@
 import { Breadcrumb } from "@material-tailwind/react";
 import { HomeSimple } from "iconoir-react";
 
-export function BreadcrumbWithIcon() {
+export default function BreadcrumbWithIcon() {
   return (
     <Breadcrumb>
       <Breadcrumb.Link href="/">

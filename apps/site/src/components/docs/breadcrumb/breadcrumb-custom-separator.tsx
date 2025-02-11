@@ -1,6 +1,6 @@
 import { Breadcrumb } from "@material-tailwind/react";
 
-export function BreadcrumbCustomSeparator() {
+export default function BreadcrumbCustomSeparator() {
   return (
     <Breadcrumb>
       <Breadcrumb.Link href="/docs">Docs</Breadcrumb.Link>
