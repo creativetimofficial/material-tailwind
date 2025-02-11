@@ -1,6 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 
-export function ImageWithCaption() {
+export default function ImageWithCaption() {
   return (
     <figure>
       <img
