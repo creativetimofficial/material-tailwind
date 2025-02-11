@@ -18,169 +18,15 @@ See below our `Popover` component examples that you can use in your web project.
 
 Here's how to implement a simple `Popover` component. It can be used to display secondary information of any component when a user clicks it.
 
-<OldComponentPreview demo={<Popover.PopoverDemo />}>
-```tsx
-"use client";
-
-import { Popover, Button, Typography } from "@material-tailwind/react";
-
-export function PopoverDemo() {
-  return (
-    <Popover>
-      <Popover.Trigger as={Button}>Open</Popover.Trigger>
-      <Popover.Content className="max-w-sm">
-        <Typography
-          type="small"
-          className="text-foreground"
-        >
-          This is a very beautiful popover, show some love.
-        </Typography>
-        <Popover.Arrow />
-      </Popover.Content>
-    </Popover>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="popover/popover-demo.tsx" language="react" />
 
 ---
-
 
 ## Popover Placement
 
 You can change the placement of the `Popover` component by using the `placement` prop. The `placement` prop like `top`, `top-start`, `top-end`, `right`, `right-start`, `right-end`, `bottom`, `bottom-start`, `bottom-end`, `left`, `left-start`, and `left-end`. This will help you to position the `Popover` component in the desired location.
 
-<OldComponentPreview demo={<Popover.PopoverPlacement />}>
-```tsx
-"use client";
-
-import { Popover, Button, Typography } from "@material-tailwind/react";
-
-export function PopoverPlacement() {
-  return (
-    <>
-      <div className="mb-3 flex gap-3">
-        <Popover placement="top">
-          <Popover.Trigger as={Button}>Top</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-        <Popover placement="top-start">
-          <Popover.Trigger as={Button}>Top Start</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-        <Popover placement="top-end">
-          <Popover.Trigger as={Button}>Top End</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-      </div>
-
-      <div className="mb-3 flex gap-3">
-        <Popover placement="right">
-          <Popover.Trigger as={Button}>Right</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-        <Popover placement="right-start">
-          <Popover.Trigger as={Button}>Right Start</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-        <Popover placement="right-end">
-          <Popover.Trigger as={Button}>Right End</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-      </div>
-      <div className="mb-3 flex gap-3">
-        <Popover placement="bottom">
-          <Popover.Trigger as={Button}>Bottom</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-        <Popover placement="bottom-start">
-          <Popover.Trigger as={Button}>Bottom Start</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-        <Popover placement="bottom-end">
-          <Popover.Trigger as={Button}>Bottom End</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-      </div>
-      <div className="mb-3 flex gap-3">
-        <Popover placement="left">
-          <Popover.Trigger as={Button}>Left</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-        <Popover placement="left-start">
-          <Popover.Trigger as={Button}>Left Start</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-        <Popover placement="left-end">
-          <Popover.Trigger as={Button}>Left End</Popover.Trigger>
-          <Popover.Content className="max-w-sm">
-            <Typography type="small" className="text-foreground">
-              This is a very beautiful popover, show some love.
-            </Typography>
-            <Popover.Arrow />
-          </Popover.Content>
-        </Popover>
-      </div>
-    </>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="popover/popover-placement.tsx" language="react" />
 
 ---
 
@@ -188,34 +34,7 @@ export function PopoverPlacement() {
 
 Here's how to implement a subscription popover using the `Popover` component. It can be used to display a subscription form when a user clicks the `Subscribe` button.
 
-<OldComponentPreview demo={<Popover.SubscriptionPopover />}>
-```tsx
-"use client";
-
-import { Popover, Button, Typography, Input } from "@material-tailwind/react";
-
-export function SubscriptionPopover() {
-  return (
-    <Popover>
-      <Popover.Trigger as={Button}>Subscribe</Popover.Trigger>
-      <Popover.Content className="w-96">
-        <Typography color="default" className="font-bold">
-          Newsletter Subscription
-        </Typography>
-        <form
-          action="#"
-          className="mt-3 flex w-full items-center justify-center gap-2"
-        >
-          <Input type="email" placeholder="someone@example.com" />
-          <Button type="submit">Subscribe</Button>
-        </form>
-        <Popover.Arrow />
-      </Popover.Content>
-    </Popover>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="popover/subscription-popover.tsx" language="react" />
 
 ---
 
@@ -225,65 +44,7 @@ Here's how to implement a contact popover using the `Popover` component. It can 
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Popover.ContactPopover />}>
-```tsx
-"use client";
-
-import {
-  Popover,
-  Button,
-  Typography,
-  Avatar,
-  List,
-} from "@material-tailwind/react";
-import { City, Mail, Phone } from "iconoir-react";
-
-export function ContactPopover() {
-  return (
-    <Popover>
-      <Popover.Trigger as={Button}>Contact Info</Popover.Trigger>
-      <Popover.Content className="max-w-sm p-1">
-        <List>
-          <List.Item>
-            <List.ItemStart>
-              <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
-            </List.ItemStart>
-            <div>
-              <Typography color="default" className="font-semibold">
-                Andrew Alexa
-              </Typography>
-              <Typography type="small" className="text-foreground">
-                General Manager
-              </Typography>
-            </div>
-          </List.Item>
-          <hr className="-mx-1 my-1 border-secondary" />
-          <List.Item>
-            <List.ItemStart>
-              <City className="h-[18px] w-[18px]" />
-            </List.ItemStart>
-            ABC Construction
-          </List.Item>
-          <List.Item>
-            <List.ItemStart>
-              <Phone className="h-[18px] w-[18px]" />
-            </List.ItemStart>
-            00 123 456 789
-          </List.Item>
-          <List.Item>
-            <List.ItemStart>
-              <Mail className="h-[18px] w-[18px]" />
-            </List.ItemStart>
-            someone@example.com
-          </List.Item>
-        </List>
-        <Popover.Arrow />
-      </Popover.Content>
-    </Popover>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="popover/contact-popover.tsx" language="react" />
 
 ---
 
@@ -293,45 +54,7 @@ Here's how to implement a popover with an image using the `Popover` component. I
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Popover.PopoverWithImage />}>
-```tsx
-"use client";
-
-import { Popover, Button, Typography } from "@material-tailwind/react";
-import { NavArrowRight } from "iconoir-react";
-
-export function PopoverWithImage() {
-  return (
-    <Popover>
-      <Popover.Trigger as={Button}>More Info</Popover.Trigger>
-      <Popover.Content className="grid w-[30rem] grid-cols-2 gap-4">
-        <div className="pl-1">
-          <Typography color="default" className="mb-1 font-semibold">
-            Material Tailwind
-          </Typography>
-          <Typography type="small" className="mb-4 block text-foreground">
-            Material Tailwind is an easy to use components library for Tailwind
-            CSS and Material Design. It features multiple React and HTML
-            components, all written with Tailwind CSS classes and Material
-            Design guidelines.
-          </Typography>
-          <Button as="a" href="#popover-with-image" size="sm">
-            Read More
-            <NavArrowRight className="ml-1.5 h-4 w-4 stroke-2" />
-          </Button>
-        </div>
-        <img
-          src="https://dub.sh/i2Y9t7g"
-          alt="image"
-          className="h-auto max-h-[220px] w-full rounded-[5px] object-cover"
-        />
-        <Popover.Arrow />
-      </Popover.Content>
-    </Popover>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="popover/popover-with-image.tsx" language="react" />
 
 ---
 
@@ -341,64 +64,7 @@ Here's how to implement a profile info popover using the `Popover` component. It
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Popover.ProfileInfoPopover />}>
-```tsx
-"use client";
-
-import { Popover, Button, Avatar, Typography } from "@material-tailwind/react";
-import { City, MapPin } from "iconoir-react";
-
-export function ProfileInfoPopover() {
-  return (
-    <Popover>
-      <Popover.Trigger as={Button}>Profile Info</Popover.Trigger>
-      <Popover.Content className="max-w-sm">
-        <div className="mb-2 flex items-center justify-between gap-4">
-          <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
-          <Button size="sm" className="mr-2">
-            Follow
-          </Button>
-        </div>
-        <Typography
-          color="default"
-          className="mb-1 flex items-center gap-2 font-bold"
-        >
-          <span>Andrew Alexa</span> •{" "}
-          <Typography as="a" href="#profile-info-popover">
-            @alex
-          </Typography>
-        </Typography>
-        <Typography type="small" className="text-foreground">
-          Frontend Developer • Major interest in Web Development: motivated to
-          achieve measurable results, to deepen my knowledge and improve my
-          skills.
-        </Typography>
-        <hr className="-mx-2.5 my-2.5 border-surface" />
-        <div className="flex items-center gap-8">
-          <Typography
-            type="small"
-            color="default"
-            className="flex items-center gap-1.5"
-          >
-            <MapPin className="h-4 w-4" />
-            United Kingdom
-          </Typography>
-          <Typography
-            type="small"
-            color="default"
-            className="flex items-center gap-1.5"
-          >
-            <City className="h-4 w-4" />
-            Material Tailwind
-          </Typography>
-        </div>
-        <Popover.Arrow />
-      </Popover.Content>
-    </Popover>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="popover/profile-info-popover.tsx" language="react" />
 
 ---
 
@@ -408,59 +74,6 @@ Here's how to implement a popover with a description using the `Popover` compone
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Popover.PopoverWithDescription />}>
-```tsx
-"use client";
+<PreviewWithCode relativePath="popover/popover-with-description.tsx" language="react" />
 
-import { Popover, Button, Typography, Chip } from "@material-tailwind/react";
-import { CheckCircleSolid, StarSolid } from "iconoir-react";
-
-export function PopoverWithDescription() {
-  return (
-    <Popover>
-      <Popover.Trigger as={Button}>Repository Info</Popover.Trigger>
-      <Popover.Content className="max-w-sm">
-        <div className="mb-1 flex items-center gap-2">
-          <Typography
-            as="a"
-            href="#"
-            color="default"
-            className="font-bold hover:text-primary"
-          >
-            @material-tailwind
-          </Typography>
-          <Chip size="sm" color="primary">
-            <Chip.Label>Public</Chip.Label>
-          </Chip>
-        </div>
-        <Typography type="small" className="text-foreground">
-          @material-tailwind is an easy-to-use components library for Tailwind
-          CSS and Material Design.
-        </Typography>
-        <div className="mt-4 flex items-center gap-4">
-          <div className="flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-info" />
-            <Typography type="small" color="default">
-              TypeScript
-            </Typography>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <StarSolid className="h-4 w-4 text-warning" />
-            <Typography type="small" color="default">
-              1,480
-            </Typography>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <CheckCircleSolid className="h-4 w-4 text-success" />
-            <Typography type="small" color="default">
-              Veritied
-            </Typography>
-          </div>
-        </div>
-        <Popover.Arrow />
-      </Popover.Content>
-    </Popover>
-  );
-}
-```
-</OldComponentPreview>
+---
