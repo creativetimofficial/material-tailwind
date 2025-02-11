@@ -13,7 +13,7 @@ export default function ContactPopover() {
             <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" class="inline-block object-cover object-center data-[shape=square]:rounded-none data-[shape=circular]:rounded-full data-[shape=rounded]:rounded-[current] w-11 h-11 rounded-md" data-shape="circular">
           </span>
           <div>
-            <p class="font-sans antialiased text-base text-black dark:text-white font-semibold">Alex Andrew</p>
+            <p class="font-sans antialiased text-base text-black dark:text-white font-semibold">Andrew Alexa</p>
             <small class="font-sans antialiased text-sm text-foreground">General Manager</small>
           </div>
         </li>

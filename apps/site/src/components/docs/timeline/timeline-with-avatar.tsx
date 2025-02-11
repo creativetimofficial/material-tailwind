@@ -9,7 +9,7 @@ export function TimelineWithAvatar() {
           <Timeline.Icon className="p-0.5">
             <Avatar
               alt="Avatar"
-              src="https://dub.sh/TdSBP0D"
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
               className="h-full w-full"
             />
           </Timeline.Icon>
@@ -32,7 +32,7 @@ export function TimelineWithAvatar() {
           <Timeline.Icon className="p-0.5">
             <Avatar
               alt="Avatar"
-              src="https://dub.sh/TdSBP0D"
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
               className="h-full w-full"
             />
           </Timeline.Icon>
@@ -54,7 +54,7 @@ export function TimelineWithAvatar() {
           <Timeline.Icon className="p-0.5">
             <Avatar
               alt="Avatar"
-              src="https://dub.sh/TdSBP0D"
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
               className="h-full w-full"
             />
           </Timeline.Icon>
