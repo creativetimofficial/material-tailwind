@@ -6,7 +6,7 @@ import {
 } from "@material-tailwind/react";
 import { X, Facebook, Instagram } from "iconoir-react";
 
-export function ProfileCard() {
+export default function ProfileCard() {
   return (
     <Card className="max-w-xs">
       <Card.Header

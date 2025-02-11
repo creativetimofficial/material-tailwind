@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Typography, Avatar, Tooltip } from "@material-tailwind/react";
 
-export function BlogCard() {
+export default function BlogCard() {
   return (
     <Card className="max-w-[24rem] overflow-hidden">
       <Card.Header

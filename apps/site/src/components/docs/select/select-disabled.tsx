@@ -1,6 +1,6 @@
 import { Select } from "@material-tailwind/react";
 
-export function SelectDisabled() {
+export default function SelectDisabled() {
   return (
     <Select disabled>
       <Select.Trigger className="w-72" placeholder="Select Version" />

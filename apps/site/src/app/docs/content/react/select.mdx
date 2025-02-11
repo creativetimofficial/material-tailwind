@@ -20,27 +20,7 @@ See below our `Select` component example that you can use in your Tailwind CSS a
 
 Here's how to implement a simple and responsive `Select` component. It is perfect for forms requiring select field, like selecting nationality.
 
-<OldComponentPreview demo={<Select.SelectDemo />}>
-```tsx
-"use client";
-
-import { Select } from "@material-tailwind/react";
-
-export function SelectDemo() {
-  return (
-    <Select>
-      <Select.Trigger className="w-72" placeholder="Select Version" />
-      <Select.List>
-        <Select.Option>Material Tailwind React</Select.Option>
-        <Select.Option>Material Tailwind HTML</Select.Option>
-        <Select.Option>Material Tailwind Vue</Select.Option>
-        <Select.Option>Material Tailwind Svelte</Select.Option>
-      </Select.List>
-    </Select>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="select/select-demo.tsx" language="react" />
 
 ---
 
@@ -50,44 +30,7 @@ We provide different select sizes like `sm`, `md`, and `lg` so you can adapt it 
 
 In the example below, we've showcased the different select sizes that you can use in your project.
 
-<OldComponentPreview demo={<Select.SelectSizes />}>
-```tsx
-"use client";
-
-import { Select } from "@material-tailwind/react";
-
-export function SelectSizes() {
-  return (
-    <div className="flex w-72 flex-col items-center gap-4">
-      <Select size="sm">
-        <Select.Trigger placeholder="Size. e.g. small" />
-        <Select.List>
-          <Select.Option>Size Small</Select.Option>
-          <Select.Option>Size Medium</Select.Option>
-          <Select.Option>Size Large</Select.Option>
-        </Select.List>
-      </Select>
-      <Select size="md">
-        <Select.Trigger placeholder="Size. e.g. medium" />
-        <Select.List>
-          <Select.Option>Size Small</Select.Option>
-          <Select.Option>Size Medium</Select.Option>
-          <Select.Option>Size Large</Select.Option>
-        </Select.List>
-      </Select>
-      <Select size="lg">
-        <Select.Trigger placeholder="Size. e.g. large" />
-        <Select.List>
-          <Select.Option>Size Small</Select.Option>
-          <Select.Option>Size Medium</Select.Option>
-          <Select.Option>Size Large</Select.Option>
-        </Select.List>
-      </Select>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="select/select-sizes.tsx" language="react" />
 
 ---
 
@@ -97,86 +40,7 @@ We provide different select colors like `primary`, `secondary`, `info`, `success
 
 In the example below, we've showcased the different select colors that you can use in your project.
 
-<OldComponentPreview demo={<Select.SelectColors />}>
-```tsx
-"use client";
-
-import { Select } from "@material-tailwind/react";
-
-export function SelectColors() {
-  return (
-    <div className="flex w-72 flex-col items-center gap-4">
-      <Select color="primary">
-        <Select.Trigger placeholder="Color. e.g. primary" />
-        <Select.List>
-          <Select.Option>Color Primary</Select.Option>
-          <Select.Option>Color Secondary</Select.Option>
-          <Select.Option>Color Info</Select.Option>
-          <Select.Option>Color Success</Select.Option>
-          <Select.Option>Color Warning</Select.Option>
-          <Select.Option>Color Error</Select.Option>
-        </Select.List>
-      </Select>
-      <Select color="secondary">
-        <Select.Trigger placeholder="Color. e.g. secondary" />
-        <Select.List>
-          <Select.Option>Color Primary</Select.Option>
-          <Select.Option>Color Secondary</Select.Option>
-          <Select.Option>Color Info</Select.Option>
-          <Select.Option>Color Success</Select.Option>
-          <Select.Option>Color Warning</Select.Option>
-          <Select.Option>Color Error</Select.Option>
-        </Select.List>
-      </Select>
-      <Select color="info">
-        <Select.Trigger placeholder="Color. e.g. info" />
-        <Select.List>
-          <Select.Option>Color Primary</Select.Option>
-          <Select.Option>Color Secondary</Select.Option>
-          <Select.Option>Color Info</Select.Option>
-          <Select.Option>Color Success</Select.Option>
-          <Select.Option>Color Warning</Select.Option>
-          <Select.Option>Color Error</Select.Option>
-        </Select.List>
-      </Select>
-      <Select color="success">
-        <Select.Trigger placeholder="Color. e.g. success" />
-        <Select.List>
-          <Select.Option>Color Primary</Select.Option>
-          <Select.Option>Color Secondary</Select.Option>
-          <Select.Option>Color Info</Select.Option>
-          <Select.Option>Color Success</Select.Option>
-          <Select.Option>Color Warning</Select.Option>
-          <Select.Option>Color Error</Select.Option>
-        </Select.List>
-      </Select>
-      <Select color="warning">
-        <Select.Trigger placeholder="Color. e.g. warning" />
-        <Select.List>
-          <Select.Option>Color Primary</Select.Option>
-          <Select.Option>Color Secondary</Select.Option>
-          <Select.Option>Color Info</Select.Option>
-          <Select.Option>Color Success</Select.Option>
-          <Select.Option>Color Warning</Select.Option>
-          <Select.Option>Color Error</Select.Option>
-        </Select.List>
-      </Select>
-      <Select color="error">
-        <Select.Trigger placeholder="Color. e.g. error" />
-        <Select.List>
-          <Select.Option>Color Primary</Select.Option>
-          <Select.Option>Color Secondary</Select.Option>
-          <Select.Option>Color Info</Select.Option>
-          <Select.Option>Color Success</Select.Option>
-          <Select.Option>Color Warning</Select.Option>
-          <Select.Option>Color Error</Select.Option>
-        </Select.List>
-      </Select>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="select/select-colors.tsx" language="react" />
 
 ---
 
@@ -184,51 +48,9 @@ export function SelectColors() {
 
 We provide helpful props like `isError` and `isSuccess` for showing error and success states of a select. In the example below, we've showcased the `Select` component with error and success states that you can use in your project.
 
-<OldComponentPreview demo={<Select.SelectWithValidation />}>
-```tsx
-"use client";
-
-import { Select, Typography } from "@material-tailwind/react";
-
-export function SelectWithValidation() {
-  return (
-    <div className="flex w-72 flex-col items-center gap-4">
-      <div className="w-full">
-        <Select isError color="error">
-          <Select.Trigger placeholder="Select Version" />
-          <Select.List>
-            <Select.Option>Material Tailwind React</Select.Option>
-            <Select.Option>Material Tailwind HTML</Select.Option>
-            <Select.Option>Material Tailwind Vue</Select.Option>
-            <Select.Option>Material Tailwind Svelte</Select.Option>
-          </Select.List>
-        </Select>
-        <Typography type="small" color="error" className="mt-1 block">
-          Something went wrong!
-        </Typography>
-      </div>
-      <div className="w-full">
-        <Select isSuccess color="success">
-          <Select.Trigger placeholder="Select Version" />
-          <Select.List>
-            <Select.Option>Material Tailwind React</Select.Option>
-            <Select.Option>Material Tailwind HTML</Select.Option>
-            <Select.Option>Material Tailwind Vue</Select.Option>
-            <Select.Option>Material Tailwind Svelte</Select.Option>
-          </Select.List>
-        </Select>
-        <Typography type="small" color="success" className="mt-1 block">
-          Congratulations 🎉
-        </Typography>
-      </div>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="select/select-with-validation.tsx" language="react" />
 
 ---
-
 
 ## Select Controlled
 
@@ -236,38 +58,7 @@ The `Select` component could be either a controlled or uncontrolled component by
 
 In the example below, we've showcased a controlled `Select` component that you can use in your project.
 
-<OldComponentPreview demo={<Select.SelectControlled />}>
-```tsx
-"use client";
-
-import React from "react";
-import { Select } from "@material-tailwind/react";
-
-export function SelectControlled() {
-  const [value, setValue] = React.useState();
-
-  return (
-    <Select value={value} onValueChange={(val) => setValue(val)}>
-      <Select.Trigger className="w-72" placeholder="Select Version" />
-      <Select.List>
-        <Select.Option value="Material Tailwind React">
-          Material Tailwind React
-        </Select.Option>
-        <Select.Option value="Material Tailwind HTML">
-          Material Tailwind HTML
-        </Select.Option>
-        <Select.Option value="Material Tailwind Vue">
-          Material Tailwind Vue
-        </Select.Option>
-        <Select.Option value="Material Tailwind Svelte">
-          Material Tailwind Svelte
-        </Select.Option>
-      </Select.List>
-    </Select>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="select/select-controlled.tsx" language="react" />
 
 ---
 
@@ -275,27 +66,7 @@ export function SelectControlled() {
 
 You can disable the `Select` component by adding the `disabled` prop. This will prevent the user from interacting with the `Select` component.
 
-<OldComponentPreview demo={<Select.SelectDisabled />}>
-```tsx
-"use client";
-
-import { Select } from "@material-tailwind/react";
-
-export function SelectDisabled() {
-  return (
-    <Select disabled>
-      <Select.Trigger className="w-72" placeholder="Select Version" />
-      <Select.List>
-        <Select.Option>Material Tailwind React</Select.Option>
-        <Select.Option>Material Tailwind HTML</Select.Option>
-        <Select.Option>Material Tailwind Vue</Select.Option>
-        <Select.Option>Material Tailwind Svelte</Select.Option>
-      </Select.List>
-    </Select>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="select/select-disabled.tsx" language="react" />
 
 ---
 
@@ -305,37 +76,4 @@ In the example below, we've showcased a `Select` component where user can select
 
 In the example below we've used the [use-react-countries](https://www.npmjs.com/package/use-react-countries) library, for getting the countries data.
 
-<OldComponentPreview demo={<Select.SelectCountries />}>
-```tsx
-"use client";
-
-import { Select, Typography } from "@material-tailwind/react";
-import { useCountries } from "use-react-countries";
-
-export function SelectCountries() {
-  const { countries } = useCountries();
-
-  return (
-    <div className="w-72">
-      <Select>
-        <Select.Trigger placeholder="Select Country" />
-        <Select.List className="h-72 w-72 overflow-y-scroll">
-          {countries.map(({ name, flags }) => (
-            <Select.Option key={name} value={name}>
-              <div className="flex items-start gap-2 text-start">
-                <img
-                  src={flags.svg}
-                  alt={name}
-                  className="h-5 w-5 rounded-full object-cover"
-                />
-                <Typography type="small">{name}</Typography>
-              </div>
-            </Select.Option>
-          ))}
-        </Select.List>
-      </Select>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="select/select-countries.tsx" language="react" />

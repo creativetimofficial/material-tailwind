@@ -1,7 +1,7 @@
 import { Button } from "@material-tailwind/react";
 import { BitcoinCircle, GoogleCircle, Facebook } from "iconoir-react";
 
-export function CustomAuthButton() {
+export default function CustomAuthButton() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
       <Button className="border-[#F7931A] bg-[#F7931A] text-white hover:border-[#F7931A] hover:bg-[#F7931A] hover:brightness-110">

@@ -1,6 +1,6 @@
 import { Button } from "@material-tailwind/react";
 
-export function BlockLevelButton() {
+export default function BlockLevelButton() {
   return (
     <div className="flex w-full flex-col gap-4">
       <Button isFullWidth variant="ghost">
