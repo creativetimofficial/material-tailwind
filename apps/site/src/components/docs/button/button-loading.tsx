@@ -1,6 +1,6 @@
 import { Button, Spinner } from "@material-tailwind/react";
 
-export function ButtonLoading() {
+export default function ButtonLoading() {
   return (
     <div className="item flex flex-wrap justify-center gap-4">
       <Button variant="ghost" className="gap-2">

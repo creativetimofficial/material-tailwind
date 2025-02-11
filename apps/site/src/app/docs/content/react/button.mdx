@@ -20,17 +20,7 @@ See below our `Button` component examples that you can use in your Tailwind CSS 
 
 Here's how to implement a simple and responsive `Button` component. It can be used for the action of submitting a form, navigating between pages, or any other action that requires user interaction in your website.
 
-<OldComponentPreview demo={<Button.ButtonDemo />}>
-```tsx
-"use client";
-
-import { Button } from "@material-tailwind/react";
-
-export function ButtonDemo() {
-  return <Button>Button</Button>;
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="button/button-demo.tsx" language="react" />
 
 ---
 
@@ -40,24 +30,7 @@ We provides different button variants like `ghost`, `outline`, `solid`, and `gra
 
 In the example below, we've showcased the different button variants that you can use in your project.
 
-<OldComponentPreview demo={<Button.ButtonVariants />}>
-```tsx
-"use client";
-
-import { Button } from "@material-tailwind/react";
-
-export function ButtonVariants() {
-  return (
-    <div className="item flex flex-wrap justify-center gap-4">
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="solid">Solid</Button>
-      <Button variant="gradient">Gradient</Button>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="button/button-variants.tsx" language="react" />
 
 ---
 
@@ -67,25 +40,7 @@ We provide different button sizes like `sm`, `md`, and `lg` so you can adapt it 
 
 In the example below, we've showcased the different button sizes that you can use in your project.
 
-<OldComponentPreview demo={<Button.ButtonSizes />}>
-```tsx
-"use client";
-
-import { Button } from "@material-tailwind/react";
-
-export function ButtonSizes() {
-  return (
-    <div className="flex flex-wrap items-end justify-center gap-4">
-      <Button size="xs">X Small</Button>
-      <Button size="sm">Small</Button>
-      <Button size="md">Medium</Button>
-      <Button size="lg">Large</Button>
-      <Button size="xl">X Large</Button>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="button/button-sizes.tsx" language="react" />
 
 ---
 
@@ -95,26 +50,7 @@ We provide different button colors like `primary`, `secondary`, `info`, `success
 
 In the example below, we've showcased the different button colors that you can use in your project.
 
-<OldComponentPreview demo={<Button.ButtonColors />}>
-```tsx
-"use client";
-
-import { Button } from "@material-tailwind/react";
-
-export function ButtonColors() {
-  return (
-    <div className="flex flex-wrap justify-center gap-4">
-      <Button color="primary">Primary</Button>
-      <Button color="secondary">Secondary</Button>
-      <Button color="info">Info</Button>
-      <Button color="success">Success</Button>
-      <Button color="warning">Warning</Button>
-      <Button color="error">Error</Button>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="button/button-colors.tsx" language="react" />
 
 ---
 
@@ -124,42 +60,7 @@ You can add an icon to the start or end of the button text to make it more visua
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Button.ButtonWithIcon />}>
-```tsx
-"use client";
-
-import { Button } from "@material-tailwind/react";
-import {
-  NavArrowRight,
-  RefreshDouble,
-  CloudUpload,
-  BrightStar,
-} from "iconoir-react";
-
-export function ButtonWithIcon() {
-  return (
-    <div className="flex flex-wrap justify-center gap-4">
-      <Button variant="ghost">
-        Read More
-        <NavArrowRight className="ml-1 h-4 w-4 stroke-2" />
-      </Button>
-      <Button variant="outline">
-        Refresh
-        <RefreshDouble className="ml-2 h-4 w-4 stroke-2" />
-      </Button>
-      <Button variant="solid">
-        <CloudUpload className="mr-2 h-4 w-4 stroke-2" />
-        Upload Assets
-      </Button>
-      <Button variant="gradient">
-        Give Us Star
-        <BrightStar className="ml-2 h-4 w-4 stroke-2" />
-      </Button>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="button/button-with-icon.tsx" language="react" />
 
 ---
 
@@ -169,32 +70,7 @@ A button could be a block-level component as well that gets all the available sp
 
 In the example below, we've showcased the block-level button in 4 different variants that you can use in your project.
 
-<OldComponentPreview demo={<Button.BlockLevelButton />}>
-```tsx
-"use client";
-
-import { Button } from "@material-tailwind/react";
-
-export function BlockLevelButton() {
-  return (
-    <div className="flex w-full flex-col gap-4">
-      <Button isFullWidth variant="ghost">
-        Ghost Block Level Button
-      </Button>
-      <Button isFullWidth variant="outline">
-        Outline Block Level Button
-      </Button>
-      <Button isFullWidth variant="solid">
-        Solid Block Level Button
-      </Button>
-      <Button isFullWidth variant="gradient">
-        Gradient Block Level Button
-      </Button>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="button/block-level-button.tsx" language="react" />
 
 ---
 
@@ -204,32 +80,7 @@ A pill button is a button with rounded corners that make it look like a pill. Yo
 
 In the example below, we've showcased the pill button in 4 different variants that you can use in your project.
 
-<OldComponentPreview demo={<Button.PillButton />}>
-```tsx
-"use client";
-
-import { Button } from "@material-tailwind/react";
-
-export function PillButton() {
-  return (
-    <div className="flex flex-wrap justify-center gap-4">
-      <Button isPill variant="ghost">
-        Ghost
-      </Button>
-      <Button isPill variant="outline">
-        Outline
-      </Button>
-      <Button isPill variant="solid">
-        Solid
-      </Button>
-      <Button isPill variant="gradient">
-        Gradient
-      </Button>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="button/pill-button.tsx" language="react" />
 
 ---
 
@@ -239,32 +90,7 @@ You can use the `Button` component as a link by using the `as` prop and passing 
 
 In the example below, we've showcased the button as a link in 4 different variants that you can use in your project.
 
-<OldComponentPreview demo={<Button.ButtonAsLink />}>
-```tsx
-"use client";
-
-import { Button } from "@material-tailwind/react";
-
-export function ButtonAsLink() {
-  return (
-    <div className="flex flex-wrap justify-center gap-4">
-      <Button as="a" href="#" variant="ghost">
-        Ghost
-      </Button>
-      <Button as="a" href="#" variant="outline">
-        Outline
-      </Button>
-      <Button as="a" href="#" variant="solid">
-        Solid
-      </Button>
-      <Button as="a" href="#" variant="gradient">
-        Gradient
-      </Button>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="button/button-as-link.tsx" language="react" />
 
 ---
 
@@ -274,36 +100,7 @@ You can use the `Button` component with a loading state to show the user that th
 
 In the example below, we've showcased the button with a loading state in 4 different variants that you can use in your project.
 
-<OldComponentPreview demo={<Button.ButtonLoading />}>
-```tsx
-"use client";
-
-import { Button, Spinner } from "@material-tailwind/react";
-
-export function ButtonLoading() {
-  return (
-    <div className="item flex flex-wrap justify-center gap-4">
-      <Button variant="ghost" className="gap-2">
-        <Spinner size="sm" />
-        Loading
-      </Button>
-      <Button variant="outline" className="gap-2">
-        <Spinner size="sm" />
-        Loading
-      </Button>
-      <Button variant="solid" className="gap-2">
-        <Spinner size="sm" />
-        Loading
-      </Button>
-      <Button variant="gradient" className="gap-2">
-        <Spinner size="sm" />
-        Loading
-      </Button>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="button/button-loading.tsx" language="react" />
 
 ---
 
@@ -314,27 +111,4 @@ You can use the `className` prop to customize the `Button` component style and m
 In the example below, we've showcased how to create custom authentication buttons that you can use in your project. 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Button.CustomAuthButton />}>
-```tsx
-"use client";
-
-import { Button } from "@material-tailwind/react";
-import { BitcoinCircle, GoogleCircle, Facebook } from "iconoir-react";
-
-export function CustomAuthButton() {
-  return (
-    <div className="flex flex-wrap justify-center gap-4">
-      <Button className="border-[#F7931A] bg-[#F7931A] text-white hover:border-[#F7931A] hover:bg-[#F7931A] hover:brightness-110">
-        <BitcoinCircle className="mr-2 h-4 w-4 stroke-2" /> Connect Wallet
-      </Button>
-      <Button className="border-white bg-white text-black shadow-md shadow-black/10 hover:border-white hover:bg-white hover:brightness-110">
-        <GoogleCircle className="mr-2 h-4 w-4 stroke-2" /> Continue with Google
-      </Button>
-      <Button className="border-[#1877F2] bg-[#1877F2] text-white hover:border-[#1877F2] hover:bg-[#1877F2] hover:brightness-110">
-        <Facebook className="mr-2 h-4 w-4 stroke-2" /> Continue with Facebook
-      </Button>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="button/custom-auth-button.tsx" language="react" />
