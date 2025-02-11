@@ -21,7 +21,7 @@ const LINKS = [
   },
 ];
 
-export function FooterDemo() {
+export default function FooterDemo() {
   return (
     <footer className="flex w-full flex-row flex-wrap items-center justify-center gap-x-12 gap-y-3 border-t border-surface py-4 text-center md:justify-between">
       <Typography>&copy; {YEAR} Material Tailwind</Typography>

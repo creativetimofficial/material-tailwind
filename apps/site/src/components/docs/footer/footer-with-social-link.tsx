@@ -69,7 +69,7 @@ const LINKS = [
 
 const YEAR = new Date().getFullYear();
 
-export function FooterWithSocialLinks() {
+export default function FooterWithSocialLinks() {
   return (
     <footer className="relative w-full">
       <div className="mx-auto w-full max-w-7xl px-8">
