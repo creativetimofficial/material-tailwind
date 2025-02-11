@@ -18,59 +18,7 @@ See below our beautiful stepper component examples that you can use in your Tail
 
 Here's how to implement a simple and responsive stepper component. It can be used for multi-step forms.
 
-<OldComponentPreview demo={<Stepper.StepperDemo />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { Timeline, Button } from "@material-tailwind/react";
-
-export function StepperDemo() {
-  const [step, setStep] = React.useState(0);
-
-  return (
-    <div className="w-full">
-      <Timeline
-        mode="stepper"
-        value={step}
-        onChange={(val) => setStep(Number(val))}
-      >
-        <Timeline.Item disabled={step < 0} value={0} className="w-full">
-          <Timeline.Header>
-            <Timeline.Separator />
-            <Timeline.Icon>1</Timeline.Icon>
-          </Timeline.Header>
-        </Timeline.Item>
-        <Timeline.Item disabled={step < 1} value={1} className="w-full">
-          <Timeline.Header>
-            <Timeline.Separator />
-            <Timeline.Icon>2</Timeline.Icon>
-          </Timeline.Header>
-        </Timeline.Item>
-        <Timeline.Item disabled={step < 2} value={2}>
-          <Timeline.Header>
-            <Timeline.Icon>3</Timeline.Icon>
-          </Timeline.Header>
-        </Timeline.Item>
-      </Timeline>
-
-      <div className="mt-14 flex w-full justify-between gap-4">
-        <Button disabled={step === 0} onClick={() => setStep(step - 1)}>
-          Previous
-        </Button>
-        <Button
-          variant="solid"
-          disabled={step === 2}
-          onClick={() => setStep(step + 1)}
-        >
-          Next
-        </Button>
-      </div>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="stepper/stepper-demo.tsx" language="react" />
 
 ---
 
@@ -80,66 +28,7 @@ You can use icons in your stepper by adding icon to the `Timeline.Icon` componen
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Stepper.StepperWithIcon />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { Timeline, Button } from "@material-tailwind/react";
-import { HomeSimple, UserCircle, Settings } from "iconoir-react";
-
-export function StepperWithIcon() {
-  const [step, setStep] = React.useState(0);
-
-  return (
-    <div className="w-full">
-      <Timeline
-        mode="stepper"
-        value={step}
-        onChange={(val) => setStep(Number(val))}
-      >
-        <Timeline.Item disabled={step < 0} value={0} className="w-full">
-          <Timeline.Header>
-            <Timeline.Separator />
-            <Timeline.Icon>
-              <HomeSimple className="h-6 w-6" />
-            </Timeline.Icon>
-          </Timeline.Header>
-        </Timeline.Item>
-        <Timeline.Item disabled={step < 1} value={1} className="w-full">
-          <Timeline.Header>
-            <Timeline.Separator />
-            <Timeline.Icon>
-              <UserCircle className="h-6 w-6" />
-            </Timeline.Icon>
-          </Timeline.Header>
-        </Timeline.Item>
-        <Timeline.Item disabled={step < 2} value={2}>
-          <Timeline.Header>
-            <Timeline.Icon>
-              <Settings className="h-6 w-6" />
-            </Timeline.Icon>
-          </Timeline.Header>
-        </Timeline.Item>
-      </Timeline>
-
-      <div className="mt-14 flex w-full justify-between gap-4">
-        <Button disabled={step === 0} onClick={() => setStep(step - 1)}>
-          Previous
-        </Button>
-        <Button
-          variant="solid"
-          disabled={step === 2}
-          onClick={() => setStep(step + 1)}
-        >
-          Next
-        </Button>
-      </div>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="stepper/stepper-with-icon.tsx" language="react" />
 
 ---
 
@@ -147,59 +36,7 @@ export function StepperWithIcon() {
 
 You can use dots in your stepper by not adding any content to the `Timeline.Icon` component, this will create a stepper with dots instead of numbers or icons.
 
-<OldComponentPreview demo={<Stepper.StepperWithDots />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { Timeline, Button } from "@material-tailwind/react";
-
-export function StepperWithDots() {
-  const [step, setStep] = React.useState(0);
-
-  return (
-    <div className="w-full">
-      <Timeline
-        mode="stepper"
-        value={step}
-        onChange={(val) => setStep(Number(val))}
-      >
-        <Timeline.Item disabled={step < 0} value={0} className="w-full">
-          <Timeline.Header>
-            <Timeline.Separator />
-            <Timeline.Icon className="h-4 w-4" />
-          </Timeline.Header>
-        </Timeline.Item>
-        <Timeline.Item disabled={step < 1} value={1} className="w-full">
-          <Timeline.Header>
-            <Timeline.Separator />
-            <Timeline.Icon className="h-4 w-4" />
-          </Timeline.Header>
-        </Timeline.Item>
-        <Timeline.Item disabled={step < 2} value={2}>
-          <Timeline.Header>
-            <Timeline.Icon className="h-4 w-4" />
-          </Timeline.Header>
-        </Timeline.Item>
-      </Timeline>
-
-      <div className="mt-14 flex w-full justify-between gap-4">
-        <Button disabled={step === 0} onClick={() => setStep(step - 1)}>
-          Previous
-        </Button>
-        <Button
-          variant="solid"
-          disabled={step === 2}
-          onClick={() => setStep(step + 1)}
-        >
-          Next
-        </Button>
-      </div>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="stepper/stepper-with-dots.tsx" language="react" />
 
 ---
 
@@ -209,85 +46,7 @@ You can add extra content for each step of the stepper. Use the example below to
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Stepper.StepperWithContent />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { Timeline, Button, Typography } from "@material-tailwind/react";
-import { HomeSimple, UserCircle, Settings } from "iconoir-react";
-
-export function StepperWithContent() {
-  const [step, setStep] = React.useState(0);
-
-  return (
-    <div className="w-full">
-      <Timeline
-        mode="stepper"
-        value={step}
-        className="relative"
-        onChange={(val) => setStep(Number(val))}
-      >
-        <Timeline.Item disabled={step < 0} value={0} className="w-full">
-          <Timeline.Header>
-            <Timeline.Separator className="translate-x-1/2" />
-            <Timeline.Icon className="mx-auto">
-              <HomeSimple className="h-6 w-6" />
-            </Timeline.Icon>
-          </Timeline.Header>
-          <Timeline.Body className="text-center">
-            <Typography type="h6" color={step >= 0 ? "primary" : "inherit"}>
-              Step 1
-            </Typography>
-            <Typography type="small">Details about yout account.</Typography>
-          </Timeline.Body>
-        </Timeline.Item>
-        <Timeline.Item value={1} disabled={step < 1} className="w-full">
-          <Timeline.Header>
-            <Timeline.Separator className="translate-x-1/2" />
-            <Timeline.Icon className="mx-auto">
-              <UserCircle className="h-6 w-6" />
-            </Timeline.Icon>
-          </Timeline.Header>
-          <Timeline.Body className="text-center">
-            <Typography type="h6" color={step >= 1 ? "primary" : "inherit"}>
-              Step 2
-            </Typography>
-            <Typography type="small">Details about yout account.</Typography>
-          </Timeline.Body>
-        </Timeline.Item>
-        <Timeline.Item disabled={step < 2} value={2} className="w-full">
-          <Timeline.Header>
-            <Timeline.Icon className="mx-auto">
-              <Settings className="h-6 w-6" />
-            </Timeline.Icon>
-          </Timeline.Header>
-          <Timeline.Body className="text-center">
-            <Typography type="h6" color={step >= 2 ? "primary" : "inherit"}>
-              Step 3
-            </Typography>
-            <Typography type="small">Details about yout account.</Typography>
-          </Timeline.Body>
-        </Timeline.Item>
-      </Timeline>
-
-      <div className="mt-14 flex w-full justify-between gap-4">
-        <Button disabled={step === 0} onClick={() => setStep(step - 1)}>
-          Previous
-        </Button>
-        <Button
-          variant="solid"
-          disabled={step === 2}
-          onClick={() => setStep(step + 1)}
-        >
-          Next
-        </Button>
-      </div>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="stepper/stepper-with-content.tsx" language="react" />
 
 ---
 
@@ -295,49 +54,4 @@ export function StepperWithContent() {
 
 You can use the `className` prop to customize the `Timeline` component style and make your own custom stepper. In the example below, we've showcased a custom stepper with a purple background color and rounded corners.
 
-<OldComponentPreview demo={<Stepper.StepperCustomStyles />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { Timeline, Card } from "@material-tailwind/react";
-
-export function StepperCustomStyles() {
-  const [step, setStep] = React.useState(0);
-
-  return (
-    <Card color="primary" className="mx-auto w-full rounded-full p-6">
-      <Timeline
-        mode="stepper"
-        value={step}
-        onValueChange={(val) => setStep(Number(val))}
-      >
-        <Timeline.Item value={0} className="w-full">
-          <Timeline.Header>
-            <Timeline.Separator className="bg-gray-300 group-data-[completed=true]:bg-white" />
-            <Timeline.Icon className="h-4 w-4 bg-gray-300 group-data-[active=true]:bg-white group-data-[completed=true]:bg-white" />
-          </Timeline.Header>
-        </Timeline.Item>
-        <Timeline.Item value={1} className="w-full">
-          <Timeline.Header>
-            <Timeline.Separator className="bg-gray-300 group-data-[completed=true]:bg-white" />
-            <Timeline.Icon className="h-4 w-4 bg-gray-300 group-data-[active=true]:bg-white group-data-[completed=true]:bg-white" />
-          </Timeline.Header>
-        </Timeline.Item>
-        <Timeline.Item value={2} className="w-full">
-          <Timeline.Header>
-            <Timeline.Separator className="bg-gray-300 group-data-[completed=true]:bg-white" />
-            <Timeline.Icon className="h-4 w-4 bg-gray-300 group-data-[active=true]:bg-white group-data-[completed=true]:bg-white" />
-          </Timeline.Header>
-        </Timeline.Item>
-        <Timeline.Item value={3}>
-          <Timeline.Header>
-            <Timeline.Icon className="h-4 w-4 bg-gray-300 group-data-[active=true]:bg-white group-data-[completed=true]:bg-white" />
-          </Timeline.Header>
-        </Timeline.Item>
-      </Timeline>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="stepper/stepper-custom-styles.tsx" language="react" />
