@@ -10,7 +10,7 @@ export default function AccordionAllOpen() {
     data-accordion-toggle
     data-accordion-target="#allOpenAccordion1"
     aria-expanded="true">
-    Material Tailwind React?
+    What is Material Tailwind React?
     <svg data-accordion-icon width="1.5em" height="1.5em" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-4 w-4 rotate-180">
       <path d="M6 9L12 15L18 9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
     </svg>
@@ -24,7 +24,7 @@ export default function AccordionAllOpen() {
     data-accordion-toggle
     data-accordion-target="#allOpenAccordion2"
     aria-expanded="true">
-    Material Tailwind HTML?
+    What is Material Tailwind HTML?
     <svg data-accordion-icon width="1.5em" height="1.5em" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-4 w-4">
       <path d="M6 9L12 15L18 9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
     </svg>
@@ -38,7 +38,7 @@ export default function AccordionAllOpen() {
     data-accordion-toggle
     data-accordion-target="#allOpenAccordion3"
     aria-expanded="true">
-    Material Tailwind Vue?
+    What is Material Tailwind Vue?
     <svg data-accordion-icon width="1.5em" height="1.5em" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-4 w-4">
       <path d="M6 9L12 15L18 9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
     </svg>
