@@ -1,6 +1,6 @@
 import { Radio, Typography } from "@material-tailwind/react";
 
-export function RadioWithDescription() {
+export default function RadioWithDescription() {
   return (
     <Radio className="gap-4">
       <div className="flex gap-2">

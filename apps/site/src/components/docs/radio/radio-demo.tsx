@@ -1,6 +1,6 @@
 import { Radio, Typography } from "@material-tailwind/react";
 
-export function RadioDemo() {
+export default function RadioDemo() {
   return (
     <Radio>
       <div className="flex items-center gap-2">
