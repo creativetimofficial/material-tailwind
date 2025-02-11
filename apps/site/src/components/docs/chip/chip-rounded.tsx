@@ -1,6 +1,6 @@
 import { Chip } from "@material-tailwind/react";
 
-export function ChipRounded() {
+export default function ChipRounded() {
   return (
     <div className="flex items-center gap-2">
       <Chip isPill={false} variant="ghost">

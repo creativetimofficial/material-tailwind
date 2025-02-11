@@ -1,7 +1,7 @@
 import { Badge, IconButton } from "@material-tailwind/react";
 import { Bell } from "iconoir-react";
 
-export function BadgeDot() {
+export default function BadgeDot() {
   return (
     <Badge>
       <Badge.Content>

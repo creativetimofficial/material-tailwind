@@ -20,27 +20,7 @@ For the examples below we used [Iconoir](https://iconoir.com/) icons but you can
 
 Here's how to implement a simple `Badge` component. It can be used for showing notifications count in your website.
 
-<OldComponentPreview demo={<Badge.BadgeDemo />}>
-```tsx
-"use client";
-
-import { Badge, IconButton } from "@material-tailwind/react";
-import { Bell } from "iconoir-react";
-
-export function BadgeDemo() {
-  return (
-    <Badge>
-      <Badge.Content>
-        <IconButton color="secondary">
-          <Bell className="h-4 w-4 stroke-2" />
-        </IconButton>
-      </Badge.Content>
-      <Badge.Indicator>5</Badge.Indicator>
-    </Badge>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="badge/badge-demo.tsx" language="react" />
 
 ---
 
@@ -50,69 +30,7 @@ We provide different badge colors like `primary`, `secondary`, `info`, `success`
 
 In the example below, we've showcased the different badge colors that you can use in your project.
 
-<OldComponentPreview demo={<Badge.BadgeColors />}>
-```tsx
-"use client";
-
-import { Badge, IconButton } from "@material-tailwind/react";
-import { Bell } from "iconoir-react";
-
-export function BadgeColors() {
-  return (
-    <div className="flex w-full justify-center gap-8">
-      <Badge color="primary">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-      <Badge color="secondary">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-      <Badge color="info">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-      <Badge color="success">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-      <Badge color="warning">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-      <Badge color="error">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="badge/badge-colors.tsx" language="react" />
 
 ---
 
@@ -120,53 +38,7 @@ export function BadgeColors() {
 
 You can use the `placement` prop to change the position of the badge. In the example below, we've showcased the different placement for the `Badge` component that you can use in your project.
 
-<OldComponentPreview demo={<Badge.BadgePlacement />}>
-```tsx
-"use client";
-
-import { Badge, IconButton } from "@material-tailwind/react";
-import { Bell } from "iconoir-react";
-
-export function BadgePlacement() {
-  return (
-    <div className="flex w-full justify-center gap-8">
-      <Badge placement="top-start">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-      <Badge placement="top-end">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-      <Badge placement="bottom-start">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-      <Badge placement="bottom-end">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="badge/badge-placement.tsx" language="react" />
 
 ---
 
@@ -174,27 +46,7 @@ export function BadgePlacement() {
 
 You can make the `Badge` component as a dot by removing the `Badge.Indicator` content. In the example below, we've showcased the `Badge` component as a dot that you can use in your project.
 
-<OldComponentPreview demo={<Badge.BadgeDot />}>
-```tsx
-"use client";
-
-import { Badge, IconButton } from "@material-tailwind/react";
-import { Bell } from "iconoir-react";
-
-export function BadgeDot() {
-  return (
-    <Badge>
-      <Badge.Content>
-        <IconButton color="secondary">
-          <Bell className="h-4 w-4 stroke-2" />
-        </IconButton>
-      </Badge.Content>
-      <Badge.Indicator />
-    </Badge>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="badge/badge-dot.tsx" language="react" />
 
 ---
 
@@ -202,49 +54,7 @@ export function BadgeDot() {
 
 You can change the overlap of the `Badge` component using the `overlap` prop. This can help to place the `Badge` component on it's right place when using it with circular or square elements.
 
-<OldComponentPreview demo={<Badge.BadgeOverlap />}>
-```tsx
-"use client";
-
-import { Badge, IconButton, Avatar } from "@material-tailwind/react";
-import { Bell } from "iconoir-react";
-
-export function BadgeOverlap() {
-  return (
-    <div className="flex w-full items-center justify-center gap-8">
-      <Badge placement="top-end" overlap="square">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-      <Badge placement="top-end" overlap="square">
-        <Badge.Content>
-          <IconButton color="secondary">
-            <Bell className="h-4 w-4 stroke-2" />
-          </IconButton>
-        </Badge.Content>
-        <Badge.Indicator />
-      </Badge>
-      <Badge placement="bottom-end" overlap="circular">
-        <Badge.Content>
-          <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
-        </Badge.Content>
-        <Badge.Indicator>5</Badge.Indicator>
-      </Badge>
-      <Badge placement="bottom-end" overlap="circular">
-        <Badge.Content>
-          <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
-        </Badge.Content>
-        <Badge.Indicator />
-      </Badge>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="badge/badge-overlap.tsx" language="react" />
 
 ---
 
@@ -252,27 +62,7 @@ export function BadgeOverlap() {
 
 You can add a border to the `Badge` component using the `className` prop for the `Badge.Indicator`. In the example below, we've showcased the `Badge` component with a border that you can use in your project.
 
-<OldComponentPreview demo={<Badge.BadgeWithBorder />}>
-```tsx
-"use client";
-
-import { Badge, IconButton } from "@material-tailwind/react";
-import { Bell } from "iconoir-react";
-
-export function BadgeWithBorder() {
-  return (
-    <Badge>
-      <Badge.Content>
-        <IconButton color="secondary">
-          <Bell className="h-4 w-4 stroke-2" />
-        </IconButton>
-      </Badge.Content>
-      <Badge.Indicator className="border-background">5</Badge.Indicator>
-    </Badge>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="badge/badge-with-border.tsx" language="react" />
 
 ---
 
@@ -280,26 +70,4 @@ export function BadgeWithBorder() {
 
 You can customize the `Badge` component using the `className` prop. In the example below, we've showcased the `Badge` component with custom styles that you can use in your project.
 
-<OldComponentPreview demo={<Badge.BadgeCustomStyles />}>
-```tsx
-"use client";
-
-import { Badge, IconButton } from "@material-tailwind/react";
-import { Bell, Check } from "iconoir-react";
-
-export function BadgeCustomStyles() {
-  return (
-    <Badge>
-      <Badge.Content>
-        <IconButton color="secondary">
-          <Bell className="h-4 w-4 stroke-2" />
-        </IconButton>
-      </Badge.Content>
-      <Badge.Indicator className="border-white bg-black px-1 py-1 shadow-lg shadow-black/25">
-        <Check className="h-3 w-3 stroke-2" />
-      </Badge.Indicator>
-    </Badge>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="badge/badge-custom-styles.tsx" language="react" />
