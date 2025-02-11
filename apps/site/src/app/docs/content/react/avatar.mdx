@@ -18,17 +18,7 @@ To jumpstart your development process, we offer a range of pre-designed `Avatar`
 
 Get started with this simple avatar example that comes with a pre-set image, ensuring that your avatars look great from the start. You can easily replace the default `src` with any image URL to display user-specific avatars.
 
-<OldComponentPreview demo={<Avatar.AvatarDemo />}>
-```tsx
-"use client";
-
-import { Avatar } from "@material-tailwind/react";
-
-export function AvatarDemo() {
-  return <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />;
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="avatar/avatar-demo.tsx" language="react" />
 
 <br />
 
@@ -42,35 +32,7 @@ We provides different avatar variants like `circular`, `rounded`, and `square` s
 
 In the example below, we've showcased the different avatar variants that you can use in your project.
 
-<OldComponentPreview demo={<Avatar.AvatarVariants />}>
-```tsx
-"use client";
-
-import { Avatar } from "@material-tailwind/react";
-
-export function AvatarVariants() {
-  return (
-    <div className="item-center flex gap-2">
-      <Avatar
-        shape="circular"
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
-        alt="profile-picture"
-      />
-      <Avatar
-        shape="rounded"
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
-        alt="profile-picture"
-      />
-      <Avatar
-        shape="square"
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
-        alt="profile-picture"
-      />
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="avatar/avatar-variants.tsx" language="react" />
 
 <br />
 
@@ -88,26 +50,7 @@ We provide different avatar sizes like `xs`, `sm`, `md`, `lg`, `xl` and `xxl` so
 
 In the example below, we've showcased the different avatar sizes that you can use in your project.
 
-<OldComponentPreview demo={<Avatar.AvatarSizes />}>
-```tsx
-"use client";
-
-import { Avatar } from "@material-tailwind/react";
-
-export function AvatarSizes() {
-  return (
-    <div className="flex items-end gap-2">
-      <Avatar size="xs" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
-      <Avatar size="sm" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
-      <Avatar size="md" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
-      <Avatar size="lg" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
-      <Avatar size="xl" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
-      <Avatar size="xxl" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="avatar/avatar-sizes.tsx" language="react" />
 
 ---
 
@@ -115,47 +58,7 @@ export function AvatarSizes() {
 
 You can use avatar with other components as well, see the example below. This component showcases a combination of `Avatar` and `Typography` components to create a complete user profile presentation.
 
-<OldComponentPreview demo={<Avatar.AvatarWithText />}>
-```tsx
-"use client";
-
-import { Avatar, Typography } from "@material-tailwind/react";
-
-export function AvatarWithText() {
-  return (
-    <div className="flex flex-col gap-6">
-      <div className="flex items-center gap-4">
-        <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="avatar" />
-        <div>
-          <Typography>Tania Andrew</Typography>
-          <Typography type="small" className="text-foreground">
-            Web Developer
-          </Typography>
-        </div>
-      </div>
-      <div className="flex items-center gap-4">
-        <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="avatar" shape="rounded" />
-        <div>
-          <Typography>Tania Andrew</Typography>
-          <Typography type="small" className="text-foreground">
-            Web Developer
-          </Typography>
-        </div>
-      </div>
-      <div className="flex items-center gap-4">
-        <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="avatar" shape="square" />
-        <div>
-          <Typography>Tania Andrew</Typography>
-          <Typography type="small" className="text-foreground">
-            Web Developer
-          </Typography>
-        </div>
-      </div>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="avatar/avatar-with-text.tsx" language="react" />
 
 ---
 
@@ -163,66 +66,11 @@ export function AvatarWithText() {
 
 Use this example of overlapped avatars to represent a group of users in a friendly and compact way. For example, showing multiple people involved in a team.
 
-<OldComponentPreview demo={<Avatar.AvatarStack />}>
-```tsx
-"use client";
-
-import { Avatar } from "@material-tailwind/react";
-
-export function AvatarStack() {
-  return (
-    <div className="flex items-center -space-x-4">
-      <Avatar
-        alt="user 1"
-        className="border-2 border-secondary hover:z-10 focus:z-10"
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
-      />
-      <Avatar
-        alt="user 2"
-        className="border-2 border-secondary hover:z-10 focus:z-10"
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
-      />
-      <Avatar
-        alt="user 3"
-        className="border-2 border-secondary hover:z-10 focus:z-10"
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
-      />
-      <Avatar
-        alt="user 4"
-        className="border-2 border-secondary hover:z-10 focus:z-10"
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
-      />
-      <Avatar
-        alt="user 5"
-        className="border-2 border-secondary hover:z-10 focus:z-10"
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
-      />
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="avatar/avatar-stack.tsx" language="react" />
 ---
 
 ## Avatar Custom Styles
 
 You can use the `className` prop to customize the `Avatar` component style and make your own custom avatar. In the example below, we've showcased how to create custom avatar with green border and ring around it.
 
-<OldComponentPreview demo={<Avatar.AvatarCustomStyles />}>
-```tsx
-"use client";
-
-import { Avatar } from "@material-tailwind/react";
-
-export function AvatarCustomStyles() {
-  return (
-    <Avatar
-      size="lg"
-      alt="avatar"
-      src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
-      className="border border-green-500 ring-4 ring-green-500/20"
-    />
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="avatar/avatar-custom-styles.tsx" language="react" />

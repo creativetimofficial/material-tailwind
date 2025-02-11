@@ -1,6 +1,6 @@
 import { Avatar } from "@material-tailwind/react";
 
-export function AvatarCustomStyles() {
+export default function AvatarCustomStyles() {
   return (
     <Avatar
       size="lg"
