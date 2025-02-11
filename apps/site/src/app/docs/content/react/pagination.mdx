@@ -20,34 +20,7 @@ Here's how to implement a simple and responsive pagination using `Button` and `I
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Pagination.PaginationDemo />}>
-```tsx
-"use client";
-
-import { Button, IconButton } from "@material-tailwind/react";
-import { NavArrowRight, NavArrowLeft } from "iconoir-react";
-
-export function PaginationDemo() {
-  return (
-    <div className="flex items-center gap-1">
-      <Button variant="ghost">
-        <NavArrowLeft className="mr-1.5 h-4 w-4 stroke-2" />
-        Previous
-      </Button>
-      <IconButton variant="ghost">1</IconButton>
-      <IconButton>2</IconButton>
-      <IconButton variant="ghost">3</IconButton>
-      <IconButton variant="ghost">4</IconButton>
-      <IconButton variant="ghost">5</IconButton>
-      <Button variant="ghost">
-        Next
-        <NavArrowRight className="ml-1.5 h-4 w-4 stroke-2" />
-      </Button>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="pagination/pagination-demo.tsx" language="react" />
 
 ---
 
@@ -57,42 +30,7 @@ Use this example for a circular pagination using `Button` and `IconButton` compo
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Pagination.PaginationCircular />}>
-```tsx
-"use client";
-
-import { Button, IconButton } from "@material-tailwind/react";
-import { NavArrowRight, NavArrowLeft } from "iconoir-react";
-
-export function PaginationCircular() {
-  return (
-    <div className="flex items-center gap-1">
-      <Button isPill variant="ghost">
-        <NavArrowLeft className="mr-1.5 h-4 w-4 stroke-2" />
-        Previous
-      </Button>
-      <IconButton isCircular variant="ghost">
-        1
-      </IconButton>
-      <IconButton isCircular>2</IconButton>
-      <IconButton isCircular variant="ghost">
-        3
-      </IconButton>
-      <IconButton isCircular variant="ghost">
-        4
-      </IconButton>
-      <IconButton isCircular variant="ghost">
-        5
-      </IconButton>
-      <Button isPill variant="ghost">
-        Next
-        <NavArrowRight className="ml-1.5 h-4 w-4 stroke-2" />
-      </Button>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="pagination/pagination-circular.tsx" language="react" />
 
 ---
 
@@ -102,37 +40,7 @@ Use this example for a simple pagination using `IconButton` and `Typography` com
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Pagination.SimplePagination />}>
-```tsx
-"use client";
-
-import { IconButton, Typography } from "@material-tailwind/react";
-import { NavArrowRight, NavArrowLeft } from "iconoir-react";
-
-export function SimplePagination() {
-  return (
-    <div className="flex items-center gap-2">
-      <IconButton size="sm" color="secondary" variant="ghost">
-        <NavArrowLeft className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <Typography className="flex items-center gap-1 text-foreground">
-        Page
-        <Typography as="span" color="default" className="font-semibold">
-          2
-        </Typography>
-        of
-        <Typography as="span" color="default" className="font-semibold">
-          10
-        </Typography>
-      </Typography>
-      <IconButton size="sm" color="secondary" variant="ghost">
-        <NavArrowRight className="h-4 w-4 stroke-2" />
-      </IconButton>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="pagination/simple-pagination.tsx" language="react" />
 
 ---
 
@@ -142,29 +50,4 @@ Use this example for a pagination group using `IconButton` and `ButtonGroup` com
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Pagination.PaginationGroup />}>
-```tsx
-"use client";
-
-import { IconButton, ButtonGroup } from "@material-tailwind/react";
-import { NavArrowRight, NavArrowLeft } from "iconoir-react";
-
-export function PaginationGroup() {
-  return (
-    <ButtonGroup>
-      <IconButton variant="outline">
-        <NavArrowLeft className="h-4 w-4 stroke-2" />
-      </IconButton>
-      <IconButton variant="outline">1</IconButton>
-      <IconButton>2</IconButton>
-      <IconButton variant="outline">3</IconButton>
-      <IconButton variant="outline">4</IconButton>
-      <IconButton variant="outline">5</IconButton>
-      <IconButton variant="outline">
-        <NavArrowRight className="h-4 w-4 stroke-2" />
-      </IconButton>
-    </ButtonGroup>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="pagination/pagination-group.tsx" language="react" />
