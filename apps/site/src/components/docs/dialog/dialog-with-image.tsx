@@ -23,11 +23,11 @@ export function DialogWithImage() {
             <div className="flex items-center gap-3">
               <Avatar
                 size="md"
-                alt="alex andrew"
+                alt="Andrew Alexa"
                 src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
               />
               <div className="flex flex-col">
-                <Typography className="font-semibold">Alex Andrew</Typography>
+                <Typography className="font-semibold">Andrew Alexa</Typography>
                 <Typography type="small" className="text-foreground">
                   @alexandrew
                 </Typography>

@@ -31,7 +31,7 @@ export function ListWithAvatar() {
     <List>
       <ListItem
         img="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
-        title="Alex Andrew"
+        title="Andrew Alexa"
         description="Software Engineer @ Material Tailwind"
       />
       <ListItem

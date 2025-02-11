@@ -25,7 +25,7 @@ export function ContactPopover() {
               </List.ItemStart>
               <div>
                 <Typography color="default" className="font-semibold">
-                  Alex Andrew
+                  Andrew Alexa
                 </Typography>
                 <Typography type="small" className="text-foreground">
                   General Manager

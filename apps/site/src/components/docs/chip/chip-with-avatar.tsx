@@ -11,7 +11,7 @@ export function ChipWithAvatar() {
           className="h-full w-full"
         />
       </Chip.Icon>
-      <Chip.Label>Alex Andrew</Chip.Label>
+      <Chip.Label>Andrew Alexa</Chip.Label>
     </Chip>
   );
 }

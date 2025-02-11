@@ -22,7 +22,7 @@ export function ProfileInfoPopover() {
             color="default"
             className="mb-1 flex items-center gap-2 font-bold"
           >
-            <span>Alex Andrew</span> •{" "}
+            <span>Andrew Alexa</span> •{" "}
             <Typography as="a" href="#profile-info-popover">
               @alex
             </Typography>

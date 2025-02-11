@@ -15,7 +15,7 @@ export function ProfileCard() {
         alt="profile-picture"
       />
       <Card.Body className="text-center">
-        <Typography type="h5">Alex Andrew</Typography>
+        <Typography type="h5">Andrew Alexa</Typography>
         <Typography className="my-1 text-foreground">
           CEO & Co-Founder
         </Typography>
