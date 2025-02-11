@@ -18,20 +18,7 @@ See below our beautiful `video` examples that you can use in your Tailwind CSS a
 
 Here's how to implement a simple and responsive video. It can be used to display video content on your website.
 
-<OldComponentPreview demo={<Video.VideoDemo />}>
-```tsx
-"use client";
-
-export function VideoDemo() {
-  return (
-    <video className="h-full w-full rounded-lg" controls>
-      <source src="https://dub.sh/H1glk5b" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="video/video-demo.tsx" language="react" />
 
 ---
 
@@ -39,20 +26,7 @@ export function VideoDemo() {
 
 You can use the `autoPlay` attribute to make the video play automatically when the page loads.
 
-<OldComponentPreview demo={<Video.VideoAutoplay />}>
-```tsx
-"use client";
-
-export function VideoAutoplay() {
-  return (
-    <video className="h-full w-full rounded-lg" controls autoPlay>
-      <source src="https://dub.sh/H1glk5b" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="video/video-autoplay.tsx" language="react" />
 
 ---
 
@@ -60,17 +34,4 @@ export function VideoAutoplay() {
 
 You can use the `muted` attribute to mute the video.
 
-<OldComponentPreview demo={<Video.VideoMuted />}>
-```tsx
-"use client";
-
-export function VideoMuted() {
-  return (
-    <video className="h-full w-full rounded-lg" controls muted>
-      <source src="https://dub.sh/H1glk5b" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="video/video-muted.tsx" language="react" />
