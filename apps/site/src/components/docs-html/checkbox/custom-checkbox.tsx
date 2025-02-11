@@ -2,7 +2,7 @@
 export default function CustomCheckbox() {
   return (
     <div
-      className="w-full place-items-center"
+      className="w-full place-items-center text-center"
       dangerouslySetInnerHTML={{
         __html: `<div class="inline-flex items-center">
     <label class="flex items-center cursor-pointer relative" for="checkbox-1">
