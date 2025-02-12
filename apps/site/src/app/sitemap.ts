@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const docsSitemap = folders.flatMap(folder => 
     routes.flatMap(route => 
       (route.pages || route.categories.flatMap(category => category.pages)).map(page => ({
-        url: `${routePrefix}/${folder}/${page.path}`,
+        url: `${routePrefix}/${folder}${page.path.replace('/docs/v3/','').replace('/docs/', '').replace('/react/', '')}`,
         lastModified: '2025-02-12T14:50:08.275Z',
         changeFrequency: 'monthly',
         priority: 1,
