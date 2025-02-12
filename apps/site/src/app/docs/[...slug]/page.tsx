@@ -232,7 +232,7 @@ export default async function Docs({ params: { slug } }) {
               <MTTypography
                 as="h2"
                 type="h5"
-                className="group relative mb-2 cursor-pointer scroll-mt-40 transition-colors text-slate-800 hover:text-slate-900"
+                className="group relative mb-2 cursor-pointer scroll-mt-40 transition-colors text-slate-800 dark:text-slate-200 hover:text-slate-900"
                 {...props}
               >
                   <span
