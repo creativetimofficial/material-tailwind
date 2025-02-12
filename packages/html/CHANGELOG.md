@@ -1,5 +1,9 @@
 # Change Log
 
+## [3.0.0-beta.4] 2025-02-12
+
+- Now Dropdown component support the value "menu" for initial state
+
 ## [3.0.0-beta.3] 2025-02-12
 
 - Accordion component renamed props to match the new TypeScript implementation
