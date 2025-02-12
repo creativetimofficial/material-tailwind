@@ -92,7 +92,7 @@ export default function SidebarWithBurgerMenu() {
               <div>
                 <Card.Header className="mx-3 mb-0 mt-3 flex h-max items-center gap-2">
                   <img
-                    src="/logo.png"
+                    src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/logo.png"
                     alt="brand"
                     className="h-7 w-7 rounded-full"
                   />
