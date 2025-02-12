@@ -62,7 +62,7 @@ const Links = [
     href: "#",
   },
 ];
-export function DrawerWithNavigation() {
+export default function DrawerWithNavigation() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
