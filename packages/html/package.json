@@ -1,5 +1,5 @@
 {
-  "name": "material-tailwind",
+  "name": "@material-tailwind/html",
   "version": "3.0.0-beta.2",
   "description": "Material Tailwind is an open-source library that uses the power of Tailwind CSS and React to help you build unique web projects faster and easier. The stunning design inspired by Material Design is a bonus!",
   "main": "dist/material-tailwind.js",
