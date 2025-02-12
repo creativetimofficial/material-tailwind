@@ -28,7 +28,7 @@ export default function InputControlWithIcon() {
           type="number"
           value={value}
           onChange={(e: any) => setValue(Number(e.target.value))}
-          className=" pl-10 placeholder:text-primary placeholder:opacity-100  focus:!border-t-gray-900 appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+          className=" pl-10 placeholder:text-primary placeholder:opacity-100 appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           labelProps={{
             className: "before:content-none after:content-none",
           }}

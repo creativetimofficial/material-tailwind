@@ -118,7 +118,7 @@ function ProfileMenu() {
     <Menu>
       <Menu.Trigger
         as={Avatar}
-        src="https://dub.sh/iu8bOfU"
+        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
         alt="profile-picture"
         size="sm"
         className="border border-primary p-0.5 lg:ml-auto"

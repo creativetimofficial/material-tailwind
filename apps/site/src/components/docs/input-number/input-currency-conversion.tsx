@@ -52,7 +52,7 @@ export default function InputCurrencyConversion() {
             <Input
               type="number"
               placeholder="1,000"
-              className="appearance-none rounded-r-none !border-t-primary placeholder:text-primary  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              className="appearance-none rounded-r-none placeholder:text-primary  placeholder:opacity-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -121,7 +121,7 @@ export default function InputCurrencyConversion() {
             <Input
               type="number"
               placeholder="1,000"
-              className="appearance-none rounded-r-none !border-t-primary placeholder:text-primary  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              className="appearance-none rounded-r-none placeholder:text-primary  placeholder:opacity-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
