@@ -1,0 +1,355 @@
+---
+title: Get Started with Material Tailwind - Tailwind CSS Components Library
+description: Learn how to use Material Tailwind components from this documentation to easily create elegant and flexible pages using Tailwind CSS.
+github: installation
+prev: 
+next: docs/html/license
+---
+
+# Material Tailwind Installation & Usage Guide - Comprehensive Setup Tutorial
+
+Material Tailwind offers a powerful suite of TailwindCSS components enhanced with JavaScript functionality. This comprehensive guide walks you through integrating Material Tailwind into your web development projects, from basic setup to advanced usage patterns.
+
+---
+
+## 1. Install TailwindCSS - Essential Foundation
+
+TailwindCSS is a core requirement for Material Tailwind. Follow our step-by-step installation process:
+
+### Complete TailwindCSS Setup Guide
+
+**Step 1**: Begin with TailwindCSS installation via npm:
+
+<CodePreviewTailwindClasses codeSnippet={
+`npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init`
+}/>
+
+<br></br>
+**Step 2**: Set up your Tailwind configuration in `tailwind.config.js`:
+
+<CodePreviewTailwindClasses codeSnippet={
+`module.exports = {
+  content: ['./src/**/*.{html,js}', './node_modules/@material-tailwind/html/**/*.{js,jsx,ts,tsx}'], // Add Material Tailwind paths
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};`
+}/>
+
+<br></br>
+**Step 3**: Configure your CSS foundation:
+
+Create a new `globals.css` file with these essential Tailwind directives:
+
+<CodePreviewTailwindClasses codeSnippet={
+`@tailwind base;
+@tailwind components;
+@tailwind utilities;`
+}/>
+
+<br></br>
+**Step 4**: Link your CSS configuration (Next.js example):
+
+<CodePreviewTailwindClasses codeSnippet={`import './globals.css';`}/>
+
+---
+
+## 2. Material Tailwind Installation - Core Setup
+
+Install the complete Material Tailwind package to access our full suite of features:
+
+<CodePreviewTailwindClasses codeSnippet={`npm install @material-tailwind/html`}/>
+<br></br>
+Access our comprehensive JavaScript toolkit including initialization methods, cleanup utilities, and component-specific functionality.
+
+---
+
+## Component Initialization Guide
+
+Learn how to properly initialize Material Tailwind components in your application.
+
+### Global Initialization Example:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { initMaterialTailwind } from '@material-tailwind/html';
+
+// Initialize all components in your app
+initMaterialTailwind();`
+}/>
+
+### Component-Specific Initialization
+
+For optimized performance, initialize only the components you need:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { initAlert, initTabs } from '@material-tailwind/html';
+
+// Initialize specific components
+initAlert();
+initTabs();`
+}/>
+
+---
+
+## Essential Cleanup Functions
+
+Optimize your application's performance with our cleanup utilities, perfect for single-page applications:
+
+### Complete Cleanup Function Reference:
+
+<br></br>
+| Component | Cleanup Function |
+|-----------|--------------|
+| Alert | - |
+| Collapse | - |
+| Accordion | `cleanupAccordions()` |
+| Dropdown | `cleanupDropdowns()` |
+| Gallery | `cleanupGallery()` |
+| Modal | `cleanupModals()` |
+| Popover | `cleanupPopovers()` |
+| Stepper | `cleanupSteppers()` |
+| Tabs | `cleanupTabs()` |
+| Tooltip | `cleanupTooltips()` |
+
+### Implementation Example:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { cleanupPopovers, cleanupDropdowns } from '@material-tailwind/html';
+
+// Cleanup specific components
+cleanupPopovers();
+cleanupDropdowns();`
+}/>
+
+---
+
+## Framework Integration Guides
+
+### React Integration
+
+Seamlessly integrate Material Tailwind with React applications:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import React, { useEffect } from 'react';
+import { initMaterialTailwind } from '@material-tailwind/html';
+
+function App() {
+    useEffect(() => {
+      initMaterialTailwind(); // Initialize Material Tailwind when the app mounts
+    }, []);
+
+    return <div>Welcome to Material Tailwind!</div>;
+}
+
+export default App;`
+}/>
+
+---
+
+### Vue Integration
+
+Implement Material Tailwind in Vue applications with these configuration patterns:
+
+<br></br>
+**main.js** Configuration:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { createApp } from 'vue';
+import App from './App.vue';
+import { initMaterialTailwind } from '@material-tailwind/html';
+
+const app = createApp(App);
+
+// Initialize Material Tailwind globally
+initMaterialTailwind();
+
+app.mount('#app');`
+}/>
+
+<br></br>
+**Component.vue** Implementation:
+
+<CodePreviewTailwindClasses codeSnippet={
+`<template>
+    <div>Welcome to Material Tailwind in Vue!</div>
+</template>
+
+<script>
+import { initTabs } from '@material-tailwind/html';
+
+export default {
+    mounted() {
+      initTabs(); // Initialize specific components
+    },
+};
+</script>`
+}/>
+
+---
+
+### Angular Integration
+
+Integrate Material Tailwind with Angular applications:
+
+**app.component.ts** Configuration:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { Component, AfterViewInit } from '@angular/core';
+import { initMaterialTailwind } from '@material-tailwind/html';
+
+@Component({
+    selector: 'app-root',
+    template: '<div>Welcome to Material Tailwind in Angular!</div>',
+})
+
+export class AppComponent implements AfterViewInit {
+    ngAfterViewInit() {
+      initMaterialTailwind(); // Initialize all Material Tailwind components
+    }
+}`
+}/>
+
+---
+
+### Svelte Integration
+
+Implement Material Tailwind in Svelte applications:
+
+**App.svelte** Setup:
+
+<CodePreviewTailwindClasses codeSnippet={
+`<script>
+  import { onMount } from 'svelte';
+  import { initMaterialTailwind } from '@material-tailwind/html';
+
+  onMount(() => {
+    initMaterialTailwind(); // Initialize all components
+  });
+</script>
+
+<div>Welcome to Material Tailwind in Svelte!</div>`
+}/>
+
+---
+
+### CDN Implementation Guide
+
+Quick start with Material Tailwind using CDN integration:
+
+**Complete HTML Implementation**:
+
+<CodePreviewTailwindClasses codeSnippet={
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Tailwind Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.13/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/creativetimofficial/material-tailwind@3.0.0-beta.3/packages/dist/material-tailwind.min.js"></script>
+</head>
+<body>
+    <div role="alert" class="relative flex items-start w-full border rounded-md p-2 bg-slate-800 border-slate-800 text-slate-50">
+      <span class="grid place-items-center shrink-0 p-1">
+        <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-5 w-5">
+          <path d="M12 7L12 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M12 17.01L12.01 16.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </span>
+      <div class="w-full text-sm font-sans leading-none m-1.5">A simple alert for showing message</div>
+      <button data-dismiss="alert" class="outline-none">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="m-1 h-5 w-5 stroke-2">
+          <path d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div>
+</body>
+</html>`
+}/>
+
+---
+
+## TypeScript
+
+Material Tailwind components can be used in two ways - through simple ESM imports or programmatically with TypeScript support. Here's how to use both approaches:
+
+### Simple ESM Import
+
+The quickest way to use components is through direct ESM imports:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { initAccordion } from '@material-tailwind/html';
+
+// Initialize accordion functionality
+initAccordion();`
+}/>
+
+### Programmatic Usage with TypeScript
+
+For more control and type safety, you can use the programmatic approach with full TypeScript support:
+
+This programmatic approach provides:
+- Full TypeScript support
+- Fine-grained control over component behavior
+- Access to component instance methods
+- Proper cleanup on unmount
+
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { Accordion } from "@material-tailwind/html";
+import type { AccordionConfig, IAccordion } from "@material-tailwind/html";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById('accordion-container');
+
+  if (container) {
+    const config: AccordionConfig = {
+      exclusive: true,
+      allOpen: false,
+    };
+
+    const accordion: IAccordion = new Accordion(container, config);
+
+    // Handle external button controls
+    const showAllButton = document.getElementById('show-all');
+    const hideAllButton = document.getElementById('hide-all');
+    const toggleFirstButton = document.getElementById('toggle-first');
+
+    showAllButton?.addEventListener('click', () => {
+      accordion.showAll();
+    });
+
+    hideAllButton?.addEventListener('click', () => {
+      accordion.hideAll(); 
+    });
+
+    toggleFirstButton?.addEventListener('click', () => {
+      const firstButton = document.getElementById('button-1') as HTMLElement;
+      if (firstButton) {
+        accordion.toggle(firstButton);
+      }
+    });
+  }
+});
+`
+}/>
+
+--- 
+
+## Other Components 
+
+For detailed usage of each component, check out their respective documentation:
+
+- [Accordion](https://www.material-tailwind.com/docs/v3/html/accordion) (ESM & Programmatic)
+- [Alert](https://www.material-tailwind.com/docs/v3/html/alert) (ESM)
+- [Collapse](https://www.material-tailwind.com/docs/v3/html/collapse) (ESM & Programmatic)
+- [Dropdown](https://www.material-tailwind.com/docs/v3/html/dropdown) (ESM & Programmatic)
+- [Gallery](https://www.material-tailwind.com/docs/v3/html/gallery) (ESM)
+- [Modal](https://www.material-tailwind.com/docs/v3/html/modal) (ESM & Programmatic)
+- [Popover](https://www.material-tailwind.com/docs/v3/html/popover) (ESM & Programmatic)
+- [Stepper](https://www.material-tailwind.com/docs/v3/html/stepper) (ESM & Programmatic)
+- [Tabs](https://www.material-tailwind.com/docs/v3/html/tabs) (ESM & Programmatic)
+- [Tooltip](https://www.material-tailwind.com/docs/v3/html/tooltip) (ESM & Programmatic)
