@@ -1,6 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 
-export function TypographyColors() {
+export default function TypographyColors() {
   return (
     <div className="flex flex-col gap-4">
       <Typography type="h1" color="primary">
