@@ -114,7 +114,8 @@ import PreviewWithCode from "@components/PreviewWithCode";
 import CodePreviewTailwindClasses from "@components/CodePreviewTailwindClasses";
 import CodeSnippet from "@components/CodeSnippet";
 import ScriptLoader from "@components/ScriptJsLoader";
-
+import TsPropsTable from "@components/TsPropsTable";
+import InfoBadge from '@components/InfoBadge';
 async function readDocsContentFn(pathUrl: string) {
   const fullPath = `${path.join(
     process.cwd(),
@@ -197,7 +198,7 @@ export default async function Docs({ params: { slug } }) {
   
   return (
     <>
-      <ScriptLoader src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" />
+      <ScriptLoader />
       <Content frontMatter={frontMatter}>
         <MDXRemote
           source={source}
@@ -218,6 +219,8 @@ export default async function Docs({ params: { slug } }) {
             CodePreviewTailwindClasses, 
             CodeSnippet,
             ScriptLoader,
+            TsPropsTable,
+            InfoBadge,
 
             // default-components
             pre: Code,

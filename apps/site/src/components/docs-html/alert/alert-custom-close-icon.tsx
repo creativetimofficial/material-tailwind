@@ -12,7 +12,7 @@ export default function AlertCustomCloseIcon() {
     <div class="m-1.5 w-full font-sans text-base leading-none">
         Sorry, something went wrong please try again.
     </div>
-    <button class="inline-flex select-none items-center justify-center rounded-md border border-slate-800 bg-slate-800 px-2.5 py-1.5 text-center align-middle font-sans text-sm font-medium leading-none text-slate-50 transition-all duration-300 ease-in hover:border-slate-700 hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+    <button data-dismiss="alert" class="inline-flex select-none items-center justify-center rounded-md border border-slate-800 bg-slate-800 px-2.5 py-1.5 text-center align-middle font-sans text-sm font-medium leading-none text-slate-50 transition-all duration-300 ease-in hover:border-slate-700 hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
         Close
     </button>
 </div>

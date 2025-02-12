@@ -13,7 +13,7 @@ export class Dropdown {
 
   constructor(dropdownElement: HTMLElement) {
     this.dropdown = dropdownElement;
-    this.button = this.dropdown.querySelector('[data-toggle="dropdown"]') as HTMLElement;
+    this.button = this.dropdown.querySelector('[data-toggle="dropdown"],[data-toggle="menu"]') as HTMLElement;
     this.menu = this.dropdown.querySelector('[data-role="menu"]') as HTMLElement;
     this.placement = this.dropdown.getAttribute("data-placement") || "bottom-start";
 
@@ -68,7 +68,7 @@ export class Dropdown {
 }
 
 export function initDropdowns(): void {
-  document.querySelectorAll<HTMLElement>(".dropdown").forEach((dropdownElement) => {
+  document.querySelectorAll<HTMLElement>(".dropdown, .menu").forEach((dropdownElement) => {
     if (!initializedDropdowns.has(dropdownElement)) {
       new Dropdown(dropdownElement);
       initializedDropdowns.add(dropdownElement);

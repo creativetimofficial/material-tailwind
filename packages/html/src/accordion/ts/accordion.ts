@@ -3,16 +3,16 @@ const initializedAccordionElements = new WeakSet<HTMLElement>();
 
 type AccordionButton = HTMLElement & {
   dataset: {
-    duiAccordionIconOpen?: string;
-    duiAccordionIconClose?: string;
-    duiAccordionIcon?: string;
-    duiAccordionTarget?: string;
+    accordionIconOpen?: string;
+    accordionIconClose?: string;
+    accordionIcon?: string;
+    accordionTarget?: string;
   };
 };
 
 type AccordionContainer = HTMLElement & {
   dataset: {
-    duiAccordionMode?: "exclusive" | "all-open";
+    accordionMode?: "exclusive" | "all-open";
   };
 };
 
@@ -47,9 +47,9 @@ export function toggleAccordion(event: Event): void {
   const button = event.currentTarget as AccordionButton;
   if (button.getAttribute("aria-disabled") === "true") return;
 
-  const targetID = button.dataset.duiAccordionTarget;
+  const targetID = button.dataset.accordionTarget;
   const parentElement = button.closest<AccordionContainer>("[data-accordion-container]");
-  const mode = parentElement?.dataset.duiAccordionMode;
+  const mode = parentElement?.dataset.accordionMode;
 
   if (targetID?.startsWith("#")) {
     const targetElement = document.querySelector<HTMLElement>(targetID);
@@ -57,7 +57,7 @@ export function toggleAccordion(event: Event): void {
 
     if (mode === "exclusive" && parentElement) {
       parentElement.querySelectorAll<AccordionButton>("[data-accordion-toggle]").forEach(otherButton => {
-        const otherTargetID = otherButton.dataset.duiAccordionTarget;
+        const otherTargetID = otherButton.dataset.accordionTarget;
         if (otherTargetID && otherTargetID !== targetID) {
           const otherElement = document.querySelector<HTMLElement>(otherTargetID);
           if (otherElement instanceof HTMLElement) {
@@ -91,11 +91,11 @@ export function toggleAccordionById(targetId: string): void {
 
   const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
   const parentElement = toggleButton.closest<AccordionContainer>("[data-accordion-container]");
-  const mode = parentElement?.dataset.duiAccordionMode;
+  const mode = parentElement?.dataset.accordionMode;
 
   if (mode === "exclusive" && parentElement) {
     parentElement.querySelectorAll<AccordionButton>("[data-accordion-toggle]").forEach((otherButton) => {
-      const otherTargetID = otherButton.dataset.duiAccordionTarget;
+      const otherTargetID = otherButton.dataset.accordionTarget;
 
       // Ensure otherTargetID is a string
       if (typeof otherTargetID === "string" && otherTargetID !== targetId) {
@@ -120,7 +120,7 @@ export function initAccordion(): void {
       button.addEventListener("click", toggleAccordion);
       initializedAccordionElements.add(button);
 
-      const targetID = button.dataset.duiAccordionTarget;
+      const targetID = button.dataset.accordionTarget;
 
       // Ensure targetID is a valid string
       if (typeof targetID === "string") {
