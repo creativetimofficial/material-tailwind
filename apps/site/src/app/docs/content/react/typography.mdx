@@ -18,30 +18,7 @@ Below we are presenting `Typography` component examples. It comes in different s
 
 Headings are used to define the structure of the content. They are used to create a hierarchy of information on the page. The `Typography` component provides six different heading sizes, from `h1` to `h6` that you can use in your project.
 
-<OldComponentPreview demo={<Typography.Headings />}>
-```tsx
-"use client";
-
-import { Typography } from "@material-tailwind/react";
-
-export function Headings() {
-  return (
-    <div className="flex flex-col gap-4">
-      <Typography type="h1">Material Tailwind (H1)</Typography>
-      <Typography as="div" type="h2">
-        Material Tailwind (H2)
-      </Typography>
-      <Typography as="div" type="h3">
-        Material Tailwind (H3)
-      </Typography>
-      <Typography type="h4">Material Tailwind (H4)</Typography>
-      <Typography type="h5">Material Tailwind (H5)</Typography>
-      <Typography type="h6">Material Tailwind (H6)</Typography>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="typography/headings.tsx" language="react" />
 
 ---
 
@@ -49,24 +26,7 @@ export function Headings() {
 
 The paragraph is used to display text content. It is the most common component used to display text content on a web page. The `Typography` component by default is a paragraph, so you can use it to display text content.
 
-<OldComponentPreview demo={<Typography.Paragraph />}>
-```tsx
-"use client";
-
-import { Typography } from "@material-tailwind/react";
-
-export function Paragraph() {
-  return (
-    <Typography>
-      Material Tailwind is an easy to use components library for Tailwind CSS
-      and Material Design. It provides a simple way to customize your
-      components, you can change the colors, fonts, breakpoints and everything
-      you need.
-    </Typography>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="typography/paragraph.tsx" language="react" />
 
 ---
 
@@ -74,24 +34,7 @@ export function Paragraph() {
 
 The lead paragraph is used to highlight the most important information on the page. It is used to grab the user's attention and make them read the rest of the content. The `Typography` component provides a `lead` type that you can use to display the lead paragraph.
 
-<OldComponentPreview demo={<Typography.LeadParagraph />}>
-```tsx
-"use client";
-
-import { Typography } from "@material-tailwind/react";
-
-export function LeadParagraph() {
-  return (
-    <Typography type="lead">
-      Material Tailwind is an easy to use components library for Tailwind CSS
-      and Material Design. It provides a simple way to customize your
-      components, you can change the colors, fonts, breakpoints and everything
-      you need.
-    </Typography>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="typography/lead-paragraph.tsx" language="react" />
 
 ---
 
@@ -99,24 +42,7 @@ export function LeadParagraph() {
 
 The small text is used to display small text content on the page. It is used to display additional information or to provide context to the user. The `Typography` component provides a `small` type that you can use to display small text content.
 
-<OldComponentPreview demo={<Typography.SmallText />}>
-```tsx
-"use client";
-
-import { Typography } from "@material-tailwind/react";
-
-export function SmallText() {
-  return (
-    <Typography type="small">
-      Material Tailwind is an easy to use components library for Tailwind CSS
-      and Material Design. It provides a simple way to customize your
-      components, you can change the colors, fonts, breakpoints and everything
-      you need.
-    </Typography>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="typography/small-text.tsx" language="react" />
 
 ---
 
@@ -126,35 +52,4 @@ We provide different colors for `Typography` component like `primary`, `secondar
 
 In the example below, we've showcased the different colors that you can use for `Typography` component in your project.
 
-<OldComponentPreview demo={<Typography.TypographyColors />}>
-```tsx
-"use client";
-
-import { Typography } from "@material-tailwind/react";
-
-export function TypographyColors() {
-  return (
-    <div className="flex flex-col gap-4">
-      <Typography type="h1" color="primary">
-        Material Tailwind
-      </Typography>
-      <Typography type="h1" color="secondary">
-        Material Tailwind
-      </Typography>
-      <Typography type="h1" color="info">
-        Material Tailwind
-      </Typography>
-      <Typography type="h1" color="success">
-        Material Tailwind
-      </Typography>
-      <Typography type="h1" color="warning">
-        Material Tailwind
-      </Typography>
-      <Typography type="h1" color="error">
-        Material Tailwind
-      </Typography>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="typography/typography-colors.tsx" language="react" />

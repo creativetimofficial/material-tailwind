@@ -6,7 +6,7 @@ const APP_ID = "37KXIBLNGX";
 const INDEX_NAME = "material-tailwind";
 const API_KEY = "8cc5688018e14bad2a2528eea41fbb35";
 
-export function AlgoliaSearchDemo() {
+export default function AlgoliaSearchDemo() {
   return (
     <div className="group w-72">
       <Input

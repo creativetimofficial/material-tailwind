@@ -1,6 +1,6 @@
 import { Timeline, Typography } from "@material-tailwind/react";
 
-export function TimelineDemo() {
+export default function TimelineDemo() {
   return (
     <Timeline color="secondary" orientation="vertical">
       <Timeline.Item>

@@ -90,7 +90,7 @@ function makeData(...lens: number[]) {
   return makeDataLevel();
 }
 
-export function DataTableDemo() {
+export default function DataTableDemo() {
   const columns = React.useMemo<ColumnDef<Person>[]>(
     () => [
       {
