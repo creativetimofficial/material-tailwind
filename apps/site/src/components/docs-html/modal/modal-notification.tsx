@@ -25,7 +25,7 @@ export default function DialogNotification() {
         <p class="text-base mt-2 text-center text-slate-600">Many people limit themselves by their own self-doubt, slowing their progress. Fortunately, I was raised with the belief that I could achieve anything.</p>
       </div>
       <div class="p-4 flex items-center justify-center gap-1">
-        <button class="inline-grid place-items-center py-2 px-4 border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[38px] min-h-[38px] rounded-md bg-transparent border-transparent text-red-500 hover:bg-red-500/5 hover:border-red-500/5 shadow-none hover:shadow-none">Cancel</button>
+        <button data-dismiss="modal" class="inline-grid place-items-center py-2 px-4 border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[38px] min-h-[38px] rounded-md bg-transparent border-transparent text-red-500 hover:bg-red-500/5 hover:border-red-500/5 shadow-none hover:shadow-none">Cancel</button>
         <button type="button" class="inline-flex border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md bg-slate-800 border-slate-800 text-slate-50 hover:bg-slate-700 hover:border-slate-700">Got it</button>
       </div>
     </div>
