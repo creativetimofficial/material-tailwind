@@ -184,7 +184,7 @@ export function Navbar() {
       {typeof window !== "undefined" &&
         getCookie("show_notification_bar") !== "false" && (
           <div
-            className="relative z-[99] border-b border-warning bg-warning-light px-4 py-3 text-center"
+            className="relative z-[99] border-b border-slate-200 bg-slate-100 px-4 py-3 text-center"
             id="notification_bar"
           >
             <Typography
@@ -192,9 +192,9 @@ export function Navbar() {
               type="small"
               className="font-semibold text-black"
             >
-              Material Tailwind v3 is currently on beta, for stable version use{" "}
-              <Link href="/docs/react/installation" className="text-blue-600">
-                Material Tailwind v2
+               We just released 290+ PRO Blocks for React and Tailwind CSS. {" "}
+              <Link href="/v3/blocks" className="text-blue-600 ml-2" target="_blank">
+                Check them out
               </Link>
             </Typography>
             <button
@@ -209,7 +209,7 @@ export function Navbar() {
         )}
       <nav className="sticky top-0 z-10 w-full border-b border-surface bg-background">
         <div className="px-4 pt-3">
-          <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2 pb-0 lg:pb-3">
+          <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2 pb-0">
             <div className="flex items-center gap-0">
               <ThemeToggleDesktop as={NavIcon} />
               <Link
@@ -332,7 +332,7 @@ export function Navbar() {
                         <MenuItem
                           title="Updivision"
                           description="Custom Development: Our partners take ideas and turn them into software that users love." 
-                          link="https://updivision.com"
+                          link="https://www.creative-tim.com/services/updivision/"
                         />
                         <MenuItem
                           title="PubNub"
@@ -351,7 +351,7 @@ export function Navbar() {
               <Button
                 as={Link}
                 size="sm"
-                href="/v3/preorder/#pricing"
+                href="/v3/pro#pricing"
                 className="ml-1 hidden sm:flex"
               >
                 Pricing & FAQ
@@ -472,12 +472,12 @@ export function Navbar() {
             </Tabs>
 
             <div className="pb-2">
-                <div className="flex bg-slate-100 p-1 rounded-md">
+                <div className="flex bg-slate-100 p-0.5 rounded-md">
                 <a
                   href={pathname.replace(/\/(react|html)\//, "/react/")}
-                  className={`flex text-sm items-center px-4 py-1 rounded  text-slate-800 ${
+                  className={`flex text-sm items-center px-4 py-1.5 rounded-md  text-slate-800 ${
                   pathname.includes("/react/")
-                    ? "border border-slate-200 bg-slate-50"
+                    ? "bg-white shadow"
                     : ""
                   }`}
                 >
@@ -502,9 +502,9 @@ export function Navbar() {
                 </a>
                 <a
                   href={pathname.replace(/\/(react|html)\//, "/html/")}
-                  className={`flex text-sm items-center px-4 py-1 rounded  text-slate-800 ${
+                  className={`flex text-sm items-center px-4 py-1.5 rounded-md  text-slate-800 ${
                   pathname.includes("/html/")
-                    ? "border border-slate-200 bg-slate-50"
+                    ? "bg-white shadow"
                     : ""
                   }`}
                 >

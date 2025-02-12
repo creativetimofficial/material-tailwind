@@ -9,7 +9,7 @@ async function PreviewWithCode({relativePath, language, className}: {relativePat
 
   const { resolvedTheme } = useTheme();
   const containerStyles = twMerge(
-    "border-stone-200 rounded-lg border mt-4 lg:max-w-[calc(80rem-480px-2rem-52px)] max-w-full",
+    "border-slate-200 dark:border-slate-700 rounded-lg border mt-4 lg:max-w-[calc(80rem-480px-2rem-52px)] max-w-full",
     className,
   );
   

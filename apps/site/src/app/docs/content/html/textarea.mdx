@@ -8,19 +8,19 @@ next: docs/react/data-display
 
 # Tailwind CSS Textarea
 
-Use our Tailwind CSS textarea if you want to allow users to enter a sizeable amount of free-form text, for example, a comment on a review or feedback form.
+Our Tailwind CSS textarea component provides a seamless way for users to input larger text content. Perfect for collecting detailed feedback, comments, or any long-form text input in your web applications.
 
-The textarea UI components usually look like a rectangular box where users can type or paste text. The component often includes vertical or horizontal scrollbars when the content exceeds the visible area, labels, buttons, character counters, validation messages, and icons.
+The textarea component features a clean, rectangular design with built-in scrolling capabilities when content overflows. Enhanced with Tailwind CSS utilities, it includes essential features like labels, validation states, character limits, and icon integration.
 
-Developers use this component for content management systems, web forms, messaging apps, and more.
+Whether you're building a content management system, contact form, or messaging platform, this component delivers both functionality and style through Tailwind CSS classes.
 
-See below Material Tailwind’s examples of textareas that come in different styles and use Tailwind CSS classes.
+See our collection of beautifully designed textarea examples below, each crafted with Tailwind CSS utilities for maximum flexibility and customization.
 
 ---
 
 ## Textarea Demo
 
-Get started with a simple textarea that comes with rounded corners, border styles, and a label. The label is intelligently styled to transition smoothly when the textarea is focused, and it uses Tailwind CSS classes to achieve these effects.
+Experience a modern textarea component featuring smooth interactions and clean aesthetics. Built with Tailwind CSS classes, it includes rounded corners and an animated floating label that responds elegantly to user focus.
 
 <PreviewWithCode relativePath="textarea/textarea-demo.tsx" language="html" />
 
@@ -28,7 +28,7 @@ Get started with a simple textarea that comes with rounded corners, border style
 
 ## Textarea Sizes
 
-Check this coded example to see how you can implement textarea components for different text input sizes.
+Explore our responsive textarea components in various dimensions. Each size is carefully crafted using Tailwind CSS sizing utilities to maintain perfect proportions and spacing across different viewport sizes.
 
 <PreviewWithCode relativePath="textarea/textarea-sizes.tsx" language="html" />
 
@@ -36,10 +36,10 @@ Check this coded example to see how you can implement textarea components for di
 
 ## Textarea Color
 
-Our component comes with various color styling options. The examples below include four textarea components, each with a different color scheme and associated label.
+Customize your textarea with our pre-built color variants using Tailwind CSS color utilities. Each example showcases different styling possibilities with smooth hover and focus states.
 
-- To change the border color, use the `focus:border-{color}` class.
-- To change the text color, use the `focus:text-{color}` class.
+- Apply `focus:border-{color}` to modify border colors on focus
+- Use `focus:text-{color}` to change text color on focus
 
 <PreviewWithCode relativePath="textarea/textarea-colors.tsx" language="html" />
 
@@ -47,7 +47,7 @@ Our component comes with various color styling options. The examples below inclu
 
 ## Textarea with Validation
 
-Use this textareas with error and success themes, contrasting border colors (red for error and green for success), and matching text colors.
+Implement form validation states with our textarea components. Features distinct styles for success (`bg-green-500`) and error (`bg-red-500`) states, providing clear visual feedback to users.
 
 <PreviewWithCode relativePath="textarea/textarea-with-validation.tsx" language="html" />
 
@@ -55,11 +55,15 @@ Use this textareas with error and success themes, contrasting border colors (red
 
 ## Textarea with Label
 
+Add clear context to your textarea fields with floating labels that animate smoothly on focus. The label provides users with persistent context while maintaining a clean design aesthetic.
+
 <PreviewWithCode relativePath="textarea/textarea-with-label.tsx" language="html" />
 
 ---
 
 ## Textarea with Helper Text
+
+Guide users with supplementary text below the textarea field. Perfect for providing character limits, formatting requirements, or additional context about the expected input.
 
 <PreviewWithCode relativePath="textarea/textarea-with-helper-text.tsx" language="html" />
 
@@ -67,7 +71,12 @@ Use this textareas with error and success themes, contrasting border colors (red
 
 ## Textarea Disabled
 
-Use this example if you want to display information to users without allowing them to make changes to the content.
+Create inactive textarea states that maintain visual consistency while preventing user interaction. Perfect for form sections that require conditional editing permissions.
+
+- Use `disabled` attribute to prevent user interaction
+- Apply `opacity-50` for visual feedback
+- Add `cursor-not-allowed` to indicate disabled state
+- Maintain consistent styling with `bg-gray-50` background
 
 <PreviewWithCode relativePath="textarea/textarea-disabled.tsx" language="html" />
 
@@ -75,19 +84,17 @@ Use this example if you want to display information to users without allowing th
 
 ## Comment Box with Textarea
 
-Use this component that contains a textarea with submitting and canceling button controls for your blog or application if you want to let users leave comments.
+Implement a complete comment system with this textarea component featuring `bg-slate-800` action buttons. Perfect for blogs, social platforms, or any application requiring user-generated content.
 
 <PreviewWithCode relativePath="textarea/comment-box-with-textarea.tsx" language="html" />
 
-This comment box maintains a consistent primary color scheme throughout and uses transitions to enhance the user experience during interactions.
+This component features smooth transitions and hover effects, creating an engaging user experience while maintaining a professional appearance.
 
 ---
 
 ## Chatbox with Textarea
 
-This code snippet represents a stylish and functional textarea component with accompanying buttons, designed for a modern web interface using Tailwind CSS.
-
-The component is flexible and responsive, with attention to details like hover states and focus effects.
+Transform your messaging interface with this modern textarea component. Built with Tailwind CSS, it combines functionality with elegant design through carefully crafted hover states and focus effects.
 
 <PreviewWithCode relativePath="textarea/chatbox-with-textarea.tsx" language="html" />
 

@@ -24,7 +24,7 @@ export default function CodePreviewWithCopy({
   };
 
   return (
-    <div className="relative overflow-scroll border border-stone-200 rounded-lg text-stone-800 bg-white lg:max-w-[calc(80rem-480px-2rem-52px)] max-w-full mt-5">
+    <div className="relative overflow-scroll border border-slate-200 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-200 bg-white lg:max-w-[calc(80rem-480px-2rem-52px)] max-w-full mt-5">
       {/* Tooltip with Copy Button */}
       <Tooltip>
         <Tooltip.Trigger as="span" className="absolute right-2 top-2 z-10">
