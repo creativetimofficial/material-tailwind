@@ -1,26 +1,17 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "tsconfig/base.json",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "lib": ["esnext"],
     "declaration": true,
-    "sourceMap": true,
-    "moduleResolution": "node",
-    "skipLibCheck": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": false,
+    "outDir": "dist",
+    "module": "ESNext",
+    "target": "ES6",
     "strict": true,
-    "isolatedModules": false,
-    "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
-    "baseUrl": ".",
-    "paths": {
-      "@plugins": ["./src/plugins/index.ts"]
-    }
+    "moduleResolution": "node",
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "lib": ["DOM", "ESNext"],
   },
-  "include": ["src"],
+  "include": ["src/**/*.ts", "types/**/*.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
