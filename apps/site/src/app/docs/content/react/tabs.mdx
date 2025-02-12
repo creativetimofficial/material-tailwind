@@ -20,61 +20,7 @@ See below our examples that will help you create a simple and easy-to-use `Tabs`
 
 Here's how to implement a simple and responsive `Tabs` component. It can be used for showing different content in a single section of your website.
 
-<OldComponentPreview demo={<Tabs.TabsDemo />}>
-```tsx
-"use client";
-
-import { Tabs } from "@material-tailwind/react";
-
-export function TabsDemo() {
-  return (
-    <Tabs defaultValue="html">
-      <Tabs.List className="w-full">
-        <Tabs.Trigger className="w-full" value="html">
-          HTML
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="react">
-          React
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="vue">
-          Vue
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="angular">
-          Angular
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="svelte">
-          Svelte
-        </Tabs.Trigger>
-        <Tabs.TriggerIndicator />
-      </Tabs.List>
-      <Tabs.Panel value="html">
-        It really matters and then like it really doesn&apos;t matter. What
-        matters is the people who are sparked by it. And the people who are like
-        offended by it, it doesn&apos;t matter.
-      </Tabs.Panel>
-      <Tabs.Panel value="react">
-        Because it&apos;s about motivating the doers. Because I&apos;m here to
-        follow my dreams and inspire other people to follow their dreams, too.
-      </Tabs.Panel>
-      <Tabs.Panel value="vue">
-        We&apos;re not always in the position that we want to be at. We&apos;re
-        constantly growing. We&apos;re constantly making mistakes. We&apos;re
-        constantly trying to express ourselves and actualize our dreams.
-      </Tabs.Panel>
-      <Tabs.Panel value="angular">
-        Because it&apos;s about motivating the doers. Because I&apos;m here to
-        follow my dreams and inspire other people to follow their dreams, too.
-      </Tabs.Panel>
-      <Tabs.Panel value="svelte">
-        We&apos;re not always in the position that we want to be at. We&apos;re
-        constantly growing. We&apos;re constantly making mistakes. We&apos;re
-        constantly trying to express ourselves and actualize our dreams.
-      </Tabs.Panel>
-    </Tabs>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="tabs/tabs-demo.tsx" language="react" />
 
 ---
 
@@ -84,50 +30,7 @@ Use this example to add icons to your `Tabs.Trigger` component to make them more
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Tabs.TabsWithIcon />}>
-```tsx
-"use client";
-
-import { Tabs } from "@material-tailwind/react";
-import { SelectFace3d, ProfileCircle, Settings } from "iconoir-react";
-
-export function TabsWithIcon() {
-  return (
-    <Tabs defaultValue="dashboard">
-      <Tabs.List className="w-full">
-        <Tabs.Trigger className="w-full" value="dashboard">
-          <SelectFace3d className="mr-2 h-4 w-4" />
-          Dashboard
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="profile">
-          <ProfileCircle className="mr-2 h-4 w-4" />
-          User Profile
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="settings">
-          <Settings className="mr-2 h-4 w-4" />
-          Settings
-        </Tabs.Trigger>
-        <Tabs.TriggerIndicator />
-      </Tabs.List>
-      <Tabs.Panel value="dashboard">
-        It really matters and then like it really doesn&apos;t matter. What
-        matters is the people who are sparked by it. And the people who are like
-        offended by it, it doesn&apos;t matter.
-      </Tabs.Panel>
-      <Tabs.Panel value="profile">
-        Because it&apos;s about motivating the doers. Because I&apos;m here to
-        follow my dreams and inspire other people to follow their dreams, too.
-      </Tabs.Panel>
-      <Tabs.Panel value="settings">
-        We&apos;re not always in the position that we want to be at. We&apos;re
-        constantly growing. We&apos;re constantly making mistakes. We&apos;re
-        constantly trying to express ourselves and actualize our dreams.
-      </Tabs.Panel>
-    </Tabs>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="tabs/tabs-with-icon.tsx" language="react" />
 
 ---
 
@@ -135,51 +38,7 @@ export function TabsWithIcon() {
 
 You can use the `orientation` prop to change the `Tabs` component to a vertical layout. This is useful when you have the tabs on the side of the content.
 
-<OldComponentPreview demo={<Tabs.VerticalTabs />}>
-```tsx
-"use client";
-
-import { Tabs } from "@material-tailwind/react";
-
-export function VerticalTabs() {
-  return (
-    <Tabs defaultValue="html" orientation="vertical">
-      <Tabs.List>
-        <Tabs.Trigger value="html">HTML</Tabs.Trigger>
-        <Tabs.Trigger value="react">React</Tabs.Trigger>
-        <Tabs.Trigger value="vue">Vue</Tabs.Trigger>
-        <Tabs.Trigger value="angular">Angular</Tabs.Trigger>
-        <Tabs.Trigger value="svelte">Svelte</Tabs.Trigger>
-        <Tabs.TriggerIndicator />
-      </Tabs.List>
-      <Tabs.Panel value="html">
-        It really matters and then like it really doesn&apos;t matter. What
-        matters is the people who are sparked by it. And the people who are like
-        offended by it, it doesn&apos;t matter.
-      </Tabs.Panel>
-      <Tabs.Panel value="react">
-        Because it&apos;s about motivating the doers. Because I&apos;m here to
-        follow my dreams and inspire other people to follow their dreams, too.
-      </Tabs.Panel>
-      <Tabs.Panel value="vue">
-        We&apos;re not always in the position that we want to be at. We&apos;re
-        constantly growing. We&apos;re constantly making mistakes. We&apos;re
-        constantly trying to express ourselves and actualize our dreams.
-      </Tabs.Panel>
-      <Tabs.Panel value="angular">
-        Because it&apos;s about motivating the doers. Because I&apos;m here to
-        follow my dreams and inspire other people to follow their dreams, too.
-      </Tabs.Panel>
-      <Tabs.Panel value="svelte">
-        We&apos;re not always in the position that we want to be at. We&apos;re
-        constantly growing. We&apos;re constantly making mistakes. We&apos;re
-        constantly trying to express ourselves and actualize our dreams.
-      </Tabs.Panel>
-    </Tabs>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="tabs/vertical-tabs.tsx" language="react" />
 
 ---
 
@@ -189,50 +48,7 @@ Use this example to add icons to your `Tabs.Trigger` component to make them more
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Tabs.VerticalTabsWithIcon />}>
-```tsx
-"use client";
-
-import { Tabs } from "@material-tailwind/react";
-import { SelectFace3d, ProfileCircle, Settings } from "iconoir-react";
-
-export function VerticalTabsWithIcon() {
-  return (
-    <Tabs defaultValue="dashboard" orientation="vertical">
-      <Tabs.List>
-        <Tabs.Trigger value="dashboard">
-          <SelectFace3d className="mr-2 h-4 w-4" />
-          Dashboard
-        </Tabs.Trigger>
-        <Tabs.Trigger value="profile">
-          <ProfileCircle className="mr-2 h-4 w-4" />
-          User Profile
-        </Tabs.Trigger>
-        <Tabs.Trigger value="settings">
-          <Settings className="mr-2 h-4 w-4" />
-          Settings
-        </Tabs.Trigger>
-        <Tabs.TriggerIndicator />
-      </Tabs.List>
-      <Tabs.Panel value="dashboard">
-        It really matters and then like it really doesn&apos;t matter. What
-        matters is the people who are sparked by it. And the people who are like
-        offended by it, it doesn&apos;t matter.
-      </Tabs.Panel>
-      <Tabs.Panel value="profile">
-        Because it&apos;s about motivating the doers. Because I&apos;m here to
-        follow my dreams and inspire other people to follow their dreams, too.
-      </Tabs.Panel>
-      <Tabs.Panel value="settings">
-        We&apos;re not always in the position that we want to be at. We&apos;re
-        constantly growing. We&apos;re constantly making mistakes. We&apos;re
-        constantly trying to express ourselves and actualize our dreams.
-      </Tabs.Panel>
-    </Tabs>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="tabs/vertical-tabs-with-icon.tsx" language="react" />
 
 ---
 
@@ -240,61 +56,7 @@ export function VerticalTabsWithIcon() {
 
 Use this example to create a `Tabs` component with transparent triggers and a faded idicator. This is useful when you want to show the tabs on top of an image or a colored background.
 
-<OldComponentPreview demo={<Tabs.TransparentTabs />}>
-```tsx
-"use client";
-
-import { Tabs } from "@material-tailwind/react";
-
-export function TransparentTabs() {
-  return (
-    <Tabs defaultValue="html">
-      <Tabs.List className="w-full bg-transparent">
-        <Tabs.Trigger className="w-full" value="html">
-          HTML
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="react">
-          React
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="vue">
-          Vue
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="angular">
-          Angular
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="svelte">
-          Svelte
-        </Tabs.Trigger>
-        <Tabs.TriggerIndicator className="bg-primary/10 shadow-none" />
-      </Tabs.List>
-      <Tabs.Panel value="html">
-        It really matters and then like it really doesn&apos;t matter. What
-        matters is the people who are sparked by it. And the people who are like
-        offended by it, it doesn&apos;t matter.
-      </Tabs.Panel>
-      <Tabs.Panel value="react">
-        Because it&apos;s about motivating the doers. Because I&apos;m here to
-        follow my dreams and inspire other people to follow their dreams, too.
-      </Tabs.Panel>
-      <Tabs.Panel value="vue">
-        We&apos;re not always in the position that we want to be at. We&apos;re
-        constantly growing. We&apos;re constantly making mistakes. We&apos;re
-        constantly trying to express ourselves and actualize our dreams.
-      </Tabs.Panel>
-      <Tabs.Panel value="angular">
-        Because it&apos;s about motivating the doers. Because I&apos;m here to
-        follow my dreams and inspire other people to follow their dreams, too.
-      </Tabs.Panel>
-      <Tabs.Panel value="svelte">
-        We&apos;re not always in the position that we want to be at. We&apos;re
-        constantly growing. We&apos;re constantly making mistakes. We&apos;re
-        constantly trying to express ourselves and actualize our dreams.
-      </Tabs.Panel>
-    </Tabs>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="tabs/transparent-tabs.tsx" language="react" />
 
 ---
 
@@ -302,58 +64,4 @@ export function TransparentTabs() {
 
 Use this example to create a `Tabs` component with underline triggers and a simple colored indicator. This is useful when you want to show the tabs on top of a white or light-colored background.
 
-<OldComponentPreview demo={<Tabs.UnderlineTabs />}>
-```tsx
-"use client";
-
-import { Tabs } from "@material-tailwind/react";
-
-export function UnderlineTabs() {
-  return (
-    <Tabs defaultValue="html">
-      <Tabs.List className="w-full rounded-none border-b border-secondary-dark bg-transparent py-0">
-        <Tabs.Trigger className="w-full" value="html">
-          HTML
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="react">
-          React
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="vue">
-          Vue
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="angular">
-          Angular
-        </Tabs.Trigger>
-        <Tabs.Trigger className="w-full" value="svelte">
-          Svelte
-        </Tabs.Trigger>
-        <Tabs.TriggerIndicator className="rounded-none border-b-2 border-primary bg-transparent shadow-none" />
-      </Tabs.List>
-      <Tabs.Panel value="html">
-        It really matters and then like it really doesn&apos;t matter. What
-        matters is the people who are sparked by it. And the people who are like
-        offended by it, it doesn&apos;t matter.
-      </Tabs.Panel>
-      <Tabs.Panel value="react">
-        Because it&apos;s about motivating the doers. Because I&apos;m here to
-        follow my dreams and inspire other people to follow their dreams, too.
-      </Tabs.Panel>
-      <Tabs.Panel value="vue">
-        We&apos;re not always in the position that we want to be at. We&apos;re
-        constantly growing. We&apos;re constantly making mistakes. We&apos;re
-        constantly trying to express ourselves and actualize our dreams.
-      </Tabs.Panel>
-      <Tabs.Panel value="angular">
-        Because it&apos;s about motivating the doers. Because I&apos;m here to
-        follow my dreams and inspire other people to follow their dreams, too.
-      </Tabs.Panel>
-      <Tabs.Panel value="svelte">
-        We&apos;re not always in the position that we want to be at. We&apos;re
-        constantly growing. We&apos;re constantly making mistakes. We&apos;re
-        constantly trying to express ourselves and actualize our dreams.
-      </Tabs.Panel>
-    </Tabs>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="tabs/underline-tabs.tsx" language="react" />

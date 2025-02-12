@@ -1,7 +1,7 @@
 import { Tabs } from "@material-tailwind/react";
 import { SelectFace3d, ProfileCircle, Settings } from "iconoir-react";
 
-export function TabsWithIcon() {
+export default function TabsWithIcon() {
   return (
     <Tabs defaultValue="dashboard">
       <Tabs.List className="w-full">

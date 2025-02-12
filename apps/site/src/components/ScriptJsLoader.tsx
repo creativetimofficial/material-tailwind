@@ -42,6 +42,7 @@ const ScriptLoader = () => {
      "/docs/html/sidebar": [initCollapse],
      "/docs/html/navbar": [initCollapse, initDropdowns],
      "/docs/html/input": [initDropdowns],
+     "/docs/html/dialog": [initModal],
   };
 
   const cleanupFunctions: Record<string, Function[]> = {
@@ -56,6 +57,7 @@ const ScriptLoader = () => {
      "/docs/html/stepper": [cleanupSteppers],
      "/docs/html/navbar": [cleanupDropdowns],
      "/docs/html/input": [cleanupDropdowns],
+     "/docs/html/dialog": [cleanupModals],
   };
 
   useEffect(() => {

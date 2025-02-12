@@ -1,6 +1,6 @@
 import { List } from "@material-tailwind/react";
 
-export function ListWithLink() {
+export default function ListWithLink() {
   return (
     <List>
       <List.Item as="a" href="#list-with-link">

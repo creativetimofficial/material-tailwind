@@ -6,7 +6,7 @@ import {
 } from "@material-tailwind/react";
 import { Xmark } from "iconoir-react";
 
-export function DrawerPlacement() {
+export default function DrawerPlacement() {
   return (
     <div className="flex gap-4">
       <Drawer>
