@@ -32,6 +32,7 @@ const ScriptLoader = () => {
     "/docs/html/accordion": [initAccordion],
      "/docs/html/collapse": [initCollapse],
      "/docs/html/dropdown": [initDropdowns],
+     "/docs/html/menu": [initDropdowns],
      "/docs/html/modal": [initModal],
      "/docs/html/popover": [initPopovers],
      "/docs/html/tooltip": [initTooltips],
@@ -45,6 +46,7 @@ const ScriptLoader = () => {
 
   const cleanupFunctions: Record<string, Function[]> = {
      "/docs/html/dropdown": [cleanupDropdowns],
+     "/docs/html/menu": [cleanupDropdowns],
      "/docs/html/tooltip": [cleanupTooltips],
      "/docs/html/modal": [cleanupModals],
      "/docs/html/tabs": [cleanupTabs],
