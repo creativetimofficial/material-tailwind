@@ -12,7 +12,7 @@ export default function AlertDismissible() {
     <div class="m-1.5 w-full font-sans text-base leading-none">
       A simple alert for showing message.
     </div>
-    <button id="alert-dismiss-trigger" class="outline-none">
+    <button data-dismiss="alert" class="outline-none">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="m-1 h-5 w-5 stroke-2">
             <path d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
