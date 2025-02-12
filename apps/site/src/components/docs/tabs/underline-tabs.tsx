@@ -1,6 +1,6 @@
 import { Tabs } from "@material-tailwind/react";
 
-export function UnderlineTabs() {
+export default function UnderlineTabs() {
   return (
     <Tabs defaultValue="html">
       <Tabs.List className="w-full rounded-none border-b border-secondary-dark bg-transparent py-0">

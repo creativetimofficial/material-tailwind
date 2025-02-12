@@ -1,7 +1,7 @@
 import { List, Chip } from "@material-tailwind/react";
 import { Mail, Settings, Bin } from "iconoir-react";
 
-export function ListCustomStyles() {
+export default function ListCustomStyles() {
   return (
     <List>
       <List.Item className="group hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary">
