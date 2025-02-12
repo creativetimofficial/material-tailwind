@@ -474,7 +474,7 @@ const editorConfig = {
   ],
 };
 
-export function TextEditorDemo() {
+export default function TextEditorDemo() {
   return (
     <LexicalComposer initialConfig={editorConfig}>
       <Card

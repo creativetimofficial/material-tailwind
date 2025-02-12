@@ -63,7 +63,7 @@ const TextField = React.forwardRef<typeof Input.Field, TextFieldProps>(
   },
 );
 
-export function FormDemo() {
+export default function FormDemo() {
   const {
     register,
     handleSubmit,

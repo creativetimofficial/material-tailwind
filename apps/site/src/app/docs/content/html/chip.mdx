@@ -1,9 +1,9 @@
 ---
 title: Tailwind CSS Chip - Material Tailwind
-description: Use our chip component examples styled with Tailwind CSS to represent inputs, attributes, or actions. Customize them to fit your project's needs.
-github: Chip
-prev: docs/react/inputs
-next: docs/react/Chip-group
+description: Create beautiful and interactive chip components with Tailwind CSS. Perfect for tags, filters, and selections in your web applications.
+github: chip
+prev: docs/html/card
+next: docs/html/collapse
 ---
 
 # Tailwind CSS Chip
@@ -18,7 +18,7 @@ See below our responsive chip component examples styled with Tailwind CSS that y
 
 ## Chip Demo
 
-Use this simple chip with dark-grey background as a starting point for your application.
+Create clean and minimal chips using Tailwind CSS rounded and padding utilities. This example shows how to build simple chips with proper spacing and hover states.
 
 <PreviewWithCode relativePath="chip/chip-demo.tsx" language="html" />
 
@@ -26,7 +26,7 @@ Use this simple chip with dark-grey background as a starting point for your appl
 
 ## Chip Sizes
 
-Check out this example to see how you can implement chips with different sizes. The differences in size are primarily achieved through varying the padding values (small - `px-2 py-1`; large - `px-4 py-2`).
+Scale your chips appropriately using Tailwind CSS sizing utilities. Create consistent small, medium, and large chips that maintain proper proportions across all devices.
 
 <PreviewWithCode relativePath="chip/chip-sizes.tsx" language="html" />
 
@@ -36,7 +36,7 @@ Check out this example to see how you can implement chips with different sizes. 
 
 ## Chip Variants
 
-This example presents 4 different styles of chip components styled with Tailwind CSS, showcasing the versatility of chip design for different UI use cases.
+Style your chips with different visual treatments using Tailwind CSS utilities. Choose between filled, outlined, or ghost styles to match your design needs.
 
 <PreviewWithCode relativePath="chip/chip-variants.tsx" language="html" />
 
@@ -46,21 +46,23 @@ This example presents 4 different styles of chip components styled with Tailwind
 
 ## Chip Colors
 
-The Chip component comes with 19 different colors like blue, red, green, and amber that you can change using the color class. Check out below some of the available colors in action.
+Customize your chips with Tailwind CSS color utilities. Use `bg-slate-800`, `bg-slate-200`, `bg-blue-500`, `bg-green-500`, `bg-red-500`, and `bg-amber-500` to represent different states or categories.
 
 <PreviewWithCode relativePath="chip/chip-colors.tsx" language="html" />
 
 ---
 
-## Chip Icon
+## Chip with Icon
 
-The icons, in this example, add a visual element that can improve user understanding or interaction with the chip, such as representing user accounts, settings, notifications, etc.
+Add visual context to your chips using Tailwind CSS flex and spacing utilities. Combine icons with text to create more informative and engaging chips.
 
 <PreviewWithCode relativePath="chip/chip-icon.tsx" language="html" />
 
 ---
 
-## Chip Dismissible
+## Dismissible Chip
+
+Create interactive chips using Tailwind CSS transition utilities. Add smooth remove animations and click handlers for better user interaction.
 
 <PreviewWithCode relativePath="chip/chip-dismissible.tsx" language="html" />
 
@@ -70,26 +72,25 @@ The icons, in this example, add a visual element that can improve user understan
 
 ## Chip with Avatar
 
-Use the example below for a chip component containing an avatar. It incorporates visual identity alongside textual information, making it ideal for user interfaces where user recognition is key, such as in social media platforms, messaging apps, or user dashboards.
+Build user-focused chips using Tailwind CSS flex and image utilities. Perfect for displaying user selections or assignments with profile pictures.
 
 <PreviewWithCode relativePath="chip/chip-with-avatar.tsx" language="html" />
 
 ---
 
-## Chip Rounded
+## Rounded Chip
 
-This example showcases a chip with rounded corners, which can be used to create a softer, more approachable look and feel for your interface.
+Design pill-shaped chips using Tailwind CSS rounded utilities. Create fully rounded chips that work great for tags or status indicators.
 
 <PreviewWithCode relativePath="chip/chip-rounded.tsx" language="html" />
 
 ---
 
-## Chip Components Best Practices for Developers
+## Chip Best Practices
 
-<ul className="space-y-2 list-disc list-outside text-foreground mt-4 ml-4">
-<li>Chips should have concise and descriptive labels that clearly convey their purpose or the information they represent.</li>
-<li>Keep a consistent look and feel for chips across your application to maintain a cohesive user interface.</li>
-<li>For chips that perform actions (e.g., deletable or selectable chips), make it clear that they are interactive.</li>
-<li>Ensure that chips are large enough to be easily tapped on touch devices, following recommended touch target sizes.</li>
-<li>Avoid overwhelming users with too many chips at once.</li>
-</ul>
+- Keep chip text concise and clear
+- Ensure proper touch targets for mobile
+- Maintain consistent spacing between chips
+- Add clear hover and active states
+- Include proper ARIA labels for accessibility
+- Use appropriate colors for different states

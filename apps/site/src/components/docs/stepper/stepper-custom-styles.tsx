@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Timeline, Card } from "@material-tailwind/react";
 
-export function StepperCustomStyles() {
+export default function StepperCustomStyles() {
   const [step, setStep] = React.useState(0);
 
   return (
@@ -9,7 +9,7 @@ export function StepperCustomStyles() {
       <Timeline
         mode="stepper"
         value={step}
-        onValueChange={(val) => setStep(Number(val))}
+        onValueChange={(val: number) => setStep(Number(val))}
       >
         <Timeline.Item value={0} className="w-full">
           <Timeline.Header>

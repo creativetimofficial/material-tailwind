@@ -1,77 +1,67 @@
 ---
-title: Tailwind CSS Modal/Dialog - Components Library @David UI
-description: Create beautiful modals with Tailwind CSS using David UI. It is ideal for creating engaging web or mobile interfaces, try now for free!
-github: modal
+title: Tailwind CSS Dialog/Modal - Material Tailwind
+description: Create beautiful and accessible modal dialogs with our Tailwind CSS components. Perfect for alerts, forms, and overlaid content.
+github: dialog
+prev: docs/html/collapse
+next: docs/html/drawer
 ---
 
+# Tailwind CSS Dialog/Modal
 
-{/* TODO: replace david UI */}
-{/* <InfoBadge /> */}
-
-# Tailwind CSS Modal/Dialog 
-
-David UI's Modal component offers a sleek and accessible way to display overlays for alerts, forms, or additional content. Styled with Tailwind CSS, it supports customizable headers and footers for a polished user experience.
-
-Explore our responsive Modal component examples, styled with Tailwind CSS, ideal for creating engaging web or mobile interfaces.
-
+Build elegant modal dialogs using Tailwind CSS for overlaid content and interactions. Perfect for creating accessible popups, forms, and alerts that enhance user experience without disrupting the main content flow.
 
 ---
 
-## Basic Modal
+## Basic Dialog
 
-This example showcases how to create a Tailwind CSS modal with a structured layout, including a header, dismiss button, and action buttons. 
-
+Create clean and accessible modals using Tailwind CSS flexbox and backdrop utilities. This example shows how to build a dialog with header, content area, and action buttons.
 
 <PreviewWithCode relativePath="dialog/dialog-demo.tsx" language="html" />
 
 ---
 
-## Modal Sizes
+## Dialog Sizes
 
-David UI's dialog component is versatile and it is coming with multiple size options (`xs`, `sm`, `md`, `lg`, `xl`, `screen`). Each size adapts seamlessly to fit diverse content requirements, ensuring responsiveness and consistent styling across applications.
+Scale your dialogs appropriately using Tailwind CSS sizing utilities. Choose from multiple sizes (`xs`, `sm`, `md`, `lg`, `xl`, `screen`) to fit your content needs while maintaining responsive behavior.
 
 <PreviewWithCode relativePath="dialog/dialog-sizes.tsx" language="html" />
 
-
 ---
 
-## Modal with Image
+## Dialog with Image
 
-A visually rich example of a Dialog component integrated with images. Includes features like a user profile section, image display, action buttons for downloading or sharing, and metrics for views and downloads. Ideal for image galleries or media-rich applications.
-
+Build media-rich dialogs using Tailwind CSS grid and image utilities. Perfect for image galleries or detailed media displays with download and sharing options.
 
 <PreviewWithCode relativePath="dialog/dialog-with-image.tsx" language="html" />
 
 ---
 
-## Web 3 Modal
+## Web3 Dialog
 
-Here is an example of how to create a wallet connection dialog for Web3 applications. It features popular wallet options like MetaMask, Coinbase, and Trust Wallet, presented with clear actions and helpful contextual information for users new to Ethereum wallets.
+Design cryptocurrency wallet connection dialogs using Tailwind CSS flex and hover utilities. Create beautiful interfaces for Web3 applications with clear wallet options and helpful guidance.
 
 <PreviewWithCode relativePath="dialog/dialog-web3.tsx" language="html" />
 
 ---
 
-## Long Modal
+## Long Dialog
 
-This example showcases a Dialog component designed for handling large amounts of text content. Ideal for lengthy messages, agreements, or detailed information. Includes a scrollable area for improved usability, along with dismiss and confirmation buttons.
+Create scrollable content dialogs using Tailwind CSS overflow utilities. Perfect for terms of service, detailed information, or any content that exceeds the viewport height.
 
 <PreviewWithCode relativePath="dialog/dialog-long.tsx" language="html" />
 
-
 ---
 
-## Modal Notification
+## Dialog Notification
 
-A focused example of a notification-style Dialog component. Designed to grab the user's attention, it combines an icon, concise messaging, and actionable buttons to deliver critical information or alerts effectively.
+Build attention-grabbing notification dialogs using Tailwind CSS color utilities. Combine icons with `bg-slate-800`, `bg-blue-500`, `bg-green-500`, `bg-red-500` backgrounds for different alert types.
 
 <PreviewWithCode relativePath="dialog/dialog-notification.tsx" language="html" />
 
 ---
 
 ## Required Script
-The modal component needs a required script file for the modal functionality to work. Add the script below to the bottom of your HTML file.
 
-The script handles opening/closing modals, backdrop interactions, keyboard events, and animations. Without this script, the modal components will not function properly.
+The dialog component requires a script for handling open/close states, backdrop clicks, and keyboard interactions. Add this script to your HTML file for proper functionality.
 
 <CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" defer></script>`}/>

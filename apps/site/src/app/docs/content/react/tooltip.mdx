@@ -20,25 +20,7 @@ See below our examples that will help you create a simple `Tooltip` for your Rea
 
 Here's how to implement a simple `Tooltip` component. It can be used to display some extra information when the user hovers over the button.
 
-<OldComponentPreview demo={<Tooltip.TooltipDemo />}>
-```tsx
-"use client";
-
-import { Tooltip, Button } from "@material-tailwind/react";
-
-export function TooltipDemo() {
-  return (
-    <Tooltip>
-      <Tooltip.Trigger as={Button}>Hover</Tooltip.Trigger>
-      <Tooltip.Content>
-        Material Tailwind
-        <Tooltip.Arrow />
-      </Tooltip.Content>
-    </Tooltip>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="tooltip/tooltip-demo.tsx" language="react" />
 
 ---
 
@@ -46,112 +28,7 @@ export function TooltipDemo() {
 
 You can change the placement of the `Tooltip` component by using the `placement` prop. The `placement` prop like `top`, `top-start`, `top-end`, `right`, `right-start`, `right-end`, `bottom`, `bottom-start`, `bottom-end`, `left`, `left-start`, and `left-end`. This will help you to position the `Tooltip` component in the desired location.
 
-<OldComponentPreview demo={<Tooltip.TooltipPlacement />}>
-```tsx
-"use client";
-
-import { Tooltip, Button } from "@material-tailwind/react";
-
-export function TooltipPlacement() {
-  return (
-    <>
-      <div className="mb-3 flex gap-3">
-        <Tooltip placement="top">
-          <Tooltip.Trigger as={Button}>Top</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-        <Tooltip placement="top-start">
-          <Tooltip.Trigger as={Button}>Top Start</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-        <Tooltip placement="top-end">
-          <Tooltip.Trigger as={Button}>Top End</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-      </div>
-      <div className="mb-3 flex gap-3">
-        <Tooltip placement="right">
-          <Tooltip.Trigger as={Button}>Right</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-        <Tooltip placement="right-start">
-          <Tooltip.Trigger as={Button}>Right Start</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-        <Tooltip placement="right-end">
-          <Tooltip.Trigger as={Button}>Right End</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-      </div>
-      <div className="mb-3 flex gap-3">
-        <Tooltip placement="bottom">
-          <Tooltip.Trigger as={Button}>Bottom</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-        <Tooltip placement="bottom-start">
-          <Tooltip.Trigger as={Button}>Bottom Start</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-        <Tooltip placement="bottom-end">
-          <Tooltip.Trigger as={Button}>Bottom End</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-      </div>
-      <div className="mb-3 flex gap-3">
-        <Tooltip placement="left">
-          <Tooltip.Trigger as={Button}>Left</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-        <Tooltip placement="left-start">
-          <Tooltip.Trigger as={Button}>Left Start</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-        <Tooltip placement="left-end">
-          <Tooltip.Trigger as={Button}>Left End</Tooltip.Trigger>
-          <Tooltip.Content>
-            Material Tailwind
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-      </div>
-    </>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="tooltip/tooltip-placement.tsx" language="react" />
 
 ---
 
@@ -161,32 +38,7 @@ Use the example below to create a `Tooltip` component with a helper icon as it's
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Tooltip.TooltipWithHelperIcon />}>
-```tsx
-"use client";
-
-import { Tooltip, IconButton, Typography } from "@material-tailwind/react";
-import { InfoCircle } from "iconoir-react";
-
-export function TooltipWithHelperIcon() {
-  return (
-    <Tooltip>
-      <Tooltip.Trigger as={IconButton} variant="ghost">
-        <InfoCircle className="h-5 w-5" />
-      </Tooltip.Trigger>
-      <Tooltip.Content className="w-80 px-2.5 py-1.5 text-primary-foreground">
-        <Typography className="font-semibold">Material Tailwind</Typography>
-        <Typography type="small" className="opacity-90">
-          Material Tailwind is an easy to use components library for Tailwind
-          CSS and Material Design.
-        </Typography>
-        <Tooltip.Arrow />
-      </Tooltip.Content>
-    </Tooltip>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="tooltip/tooltip-with-helper-icon.tsx" language="react" />
 
 ---
 
@@ -194,28 +46,4 @@ export function TooltipWithHelperIcon() {
 
 You can use the `className` prop to customize the `Tooltip` component style and make your own custom `Tooltip` component.
 
-<OldComponentPreview demo={<Tooltip.TooltipCustomStyles />}>
-```tsx
-"use client";
-
-import { Tooltip, Button, Typography } from "@material-tailwind/react";
-
-export function TooltipCustomStyles() {
-  return (
-    <Tooltip placement="bottom">
-      <Tooltip.Trigger as={Button}>Hover</Tooltip.Trigger>
-      <Tooltip.Content className="w-80 border border-surface bg-background px-3 py-2.5 text-foreground">
-        <Typography className="font-semibold text-black">
-          Material Tailwind
-        </Typography>
-        <Typography type="small" className="text-black/80">
-          Material Tailwind is an easy to use components library for Tailwind
-          CSS and Material Design.
-        </Typography>
-        <Tooltip.Arrow />
-      </Tooltip.Content>
-    </Tooltip>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="tooltip/tooltip-custom-styles.tsx" language="react" />

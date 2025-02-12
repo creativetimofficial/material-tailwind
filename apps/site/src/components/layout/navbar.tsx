@@ -471,8 +471,19 @@ export function Navbar() {
               </Tabs.List>
             </Tabs>
 
-            <div className="pb-2 hidden">
-              <Tabs defaultValue="react">
+            <div className="pb-2">
+              <Tabs
+              defaultValue={pathname.includes("/react/") ? "react" : "html"}
+              onValueChange={(value: string) => {
+                const newPath = pathname.replace(
+                  /\/(react|html)\//,
+                  `/${value}/`
+                );
+                if (newPath !== pathname && window) {
+                  window.location.href = newPath;
+                }
+              }}
+              >
                 <Tabs.List className="p-0.5">
                   <Tabs.Trigger value="react">
                     <svg

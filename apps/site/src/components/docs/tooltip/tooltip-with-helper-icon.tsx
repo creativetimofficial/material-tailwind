@@ -1,7 +1,7 @@
 import { Tooltip, IconButton, Typography } from "@material-tailwind/react";
 import { InfoCircle } from "iconoir-react";
 
-export function TooltipWithHelperIcon() {
+export default function TooltipWithHelperIcon() {
   return (
     <Tooltip>
       <Tooltip.Trigger as={IconButton} variant="ghost">

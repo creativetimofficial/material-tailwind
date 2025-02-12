@@ -30,7 +30,7 @@ const TABLE_ROWS = [
   },
 ];
 
-export function TableDemo() {
+export default function TableDemo() {
   return (
     <div className="w-full overflow-hidden rounded-lg border border-surface">
       <table className="w-full">
