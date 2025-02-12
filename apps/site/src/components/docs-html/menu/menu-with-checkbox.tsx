@@ -4,8 +4,44 @@ export default function MenuWithCheckbox() {
     <div
       className="w-full place-items-center"
       dangerouslySetInnerHTML={{
-        __html: `<button data-open="false" data-nested="false" aria-expanded="false" aria-haspopup="menu" id=":R0H2:" class="inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md bg-slate-800 border-slate-800 text-slate-50 hover:bg-slate-700 hover:border-slate-700 outline-none group" data-shape="default" data-width="default">Sort</button>
-`
+        __html: `<div class="menu" data-placement="bottom-start">
+  <button data-toggle="menu" aria-expanded="false" class="inline-flex select-none items-center justify-center rounded-md border border-slate-800 bg-slate-800 px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-slate-50 transition-all duration-300 ease-in hover:border-slate-700 hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"> Sort </button>
+  <div data-role="menu" class="hidden mt-2 bg-white border border-slate-200 rounded-lg shadow-xl shadow-slate-950/[0.025] p-1 z-10">
+    <div class="block px-2 py-2 text-sm text-slate-600 hover:text-slate-800 hover:bg-slate-200 rounded-md flex items-center">
+      <div class="inline-flex items-center">
+        <label class="flex items-center cursor-pointer relative" for="check-2">
+          <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow-sm  border border-slate-200 checked:bg-slate-800 checked:border-slate-800" id="check-2" />
+          <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <svg fill="none" width="18px" height="18px" stroke-width="2" color="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </span>
+        </label>
+        <label class="cursor-pointer ml-2 text-slate-800 text-sm" for="check-2"> Task Name </label>
+      </div>
+    </div>
+    <div class="block px-2 py-2 text-sm text-slate-600 hover:text-slate-800 hover:bg-slate-200 rounded-md flex items-center">
+      <div class="inline-flex items-center">
+        <label class="flex items-center cursor-pointer relative" for="check-3">
+          <input type="checkbox" checked class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow-sm  border border-slate-200 checked:bg-slate-800 checked:border-slate-800" id="check-3" />
+          <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <svg fill="none" width="18px" height="18px" stroke-width="2" color="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </span>
+        </label>
+        <label class="cursor-pointer ml-2 text-slate-800 text-sm" for="check-3"> Data Created </label>
+      </div>
+    </div>
+    <div class="block px-2 py-2 text-sm text-slate-600 hover:text-slate-800 hover:bg-slate-200 rounded-md flex items-center">
+      <div class="inline-flex items-center">
+        <label class="flex items-center cursor-pointer relative" for="check-4">
+          <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow-sm  border border-slate-200 checked:bg-slate-800 checked:border-slate-800" id="check-4" />
+          <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <svg fill="none" width="18px" height="18px" stroke-width="2" color="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </span>
+        </label>
+        <label class="cursor-pointer ml-2 text-slate-800 text-sm" for="check-4"> Completed </label>
+      </div>
+    </div>
+  </div>
+</div>`
       }}
     />
   );

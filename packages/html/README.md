@@ -2,7 +2,7 @@
 
 [Material Tailwind](https://www.material-tailwind.com/docs/v3/html/overview) is a free and open-source collection of customizable, production-ready UI components built with **Tailwind CSS**. Designed to be developer-friendly and performance-focused, Material Tailwind streamlines the creation of modern, visually appealing interfaces, helping you deliver high-quality user experiences faster.
 
-[![Material Tailwind Thumb](https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind-pro/v3/preview-1.png)](https://www.material-tailwind.com/docs/v3/html/overview)
+[![Material Tailwind Thumb](https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind-pro/v3/material-tailwind-v3-readme.jpg)](https://www.material-tailwind.com/docs/v3/html/overview)
 
 <div align="center">
   
@@ -449,7 +449,7 @@ Material Tailwind is distributed under the **[MIT License](https://creative-tim.
 
 ## Contribute & Feedback
 
-We welcome contributions and feedback! If you have suggestions, encounter issues, or want to propose new components, feel free to open an issue or submit a pull request on our repository. Your input helps make David UI better for everyone.
+We welcome contributions and feedback! If you have suggestions, encounter issues, or want to propose new components, feel free to open an issue or submit a pull request on our repository. Your input helps make Material Tailwind better for everyone.
 
 ---
 
