@@ -20,7 +20,7 @@ function rgbToHex(rgb) {
   );
 }
 
-export function LineChart() {
+export default function LineChart() {
   const { theme } = useTheme();
   const [vars, setVars] = React.useState<CSSStyleDeclaration | null>(null);
 
