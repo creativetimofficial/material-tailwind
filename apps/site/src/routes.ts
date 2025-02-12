@@ -1,4 +1,5 @@
 const isProd = process.env.NODE_ENV === "production";
+
 const getDocsTypeFromUrl = (url: string) => {
   if (url.includes('html')) {
     return 'html';
