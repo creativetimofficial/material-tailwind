@@ -117,10 +117,10 @@ import CodeSnippet from '@components/CodeSnippet';
 import ComponentPreview from '@components/ComponentPreview';
 import PreviewWithCode from '@components/PreviewWithCode';
 import CodePreviewTailwindClasses from '@components/CodePreviewTailwindClasses';
-
+import InfoBadge from '@components/InfoBadge';
 import { Docs as DocsLayout } from "@components";
 import ScriptLoader from "@components/ScriptJsLoader";
-
+import TsPropsTable from "@components/TsPropsTable";
 async function readDocsContentFn(pathUrl: string) {
   const fullPath = `${path.join(
     process.cwd(),
@@ -208,7 +208,7 @@ export default async function Docs({ params: { slug } }) {
   // TODO: replace stone with MT color
   return (
     <>
-      <ScriptLoader src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" />
+      <ScriptLoader />
       <Content frontMatter={frontMatter}>
         <MDXRemote
           source={source}
@@ -231,6 +231,8 @@ export default async function Docs({ params: { slug } }) {
             CurrentYear,
             CodeSnippet,
             ScriptLoader,
+            TsPropsTable,
+            InfoBadge,
 
             // default-components
             pre: Code,
