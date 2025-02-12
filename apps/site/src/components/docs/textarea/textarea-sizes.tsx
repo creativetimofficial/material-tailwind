@@ -1,6 +1,6 @@
 import { Textarea } from "@material-tailwind/react";
 
-export function TextareaSizes() {
+export default function TextareaSizes() {
   return (
     <div className="w-full space-y-4">
       <Textarea size="sm" placeholder="Textarea Small" />
