@@ -20,27 +20,7 @@ See below our versatile `Breadcrumb` component examples that you can use in your
 
 Here's how to implement a simple and responsive `Breadcrumb` component. It can be used to show the user where they are on a website and how far they are from the homepage.
 
-<OldComponentPreview demo={<Breadcrumb.BreadcrumbDemo />}>
-```tsx
-"use client";
-
-import { Breadcrumb } from "@material-tailwind/react";
-
-export function BreadcrumbDemo() {
-  return (
-    <Breadcrumb>
-      <Breadcrumb.Link href="/docs">Docs</Breadcrumb.Link>
-      <Breadcrumb.Separator />
-      <Breadcrumb.Link href="/docs/components">Components</Breadcrumb.Link>
-      <Breadcrumb.Separator />
-      <Breadcrumb.Link href="/docs/components/breadcrumb">
-        Breadcrumb
-      </Breadcrumb.Link>
-    </Breadcrumb>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="breadcrumb/breadcrumb-demo.tsx" language="react" />
 
 ---
 
@@ -50,28 +30,7 @@ You can add icons to your `Breadcrumb` links to make them more visually appealin
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Breadcrumb.BreadcrumbWithIcon />}>
-```tsx
-"use client";
-
-import { Breadcrumb } from "@material-tailwind/react";
-import { HomeSimple } from "iconoir-react";
-
-export function BreadcrumbWithIcon() {
-  return (
-    <Breadcrumb>
-      <Breadcrumb.Link href="/">
-        <HomeSimple className="h-[18px] w-[18px]" />
-      </Breadcrumb.Link>
-      <Breadcrumb.Separator />
-      <Breadcrumb.Link href="#">Components</Breadcrumb.Link>
-      <Breadcrumb.Separator />
-      <Breadcrumb.Link href="#">Breadcrumb</Breadcrumb.Link>
-    </Breadcrumb>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="breadcrumb/breadcrumb-with-icon.tsx" language="react" />
 
 ---
 
@@ -79,27 +38,7 @@ export function BreadcrumbWithIcon() {
 
 You can customize the breadcrumb separator by adding any text or icon to the `Breadcrumb.Separator` component.
 
-<OldComponentPreview demo={<Breadcrumb.BreadcrumbCustomSeparator />}>
-```tsx
-"use client";
-
-import { Breadcrumb } from "@material-tailwind/react";
-
-export function BreadcrumbCustomSeparator() {
-  return (
-    <Breadcrumb>
-      <Breadcrumb.Link href="/docs">Docs</Breadcrumb.Link>
-      <Breadcrumb.Separator>-</Breadcrumb.Separator>
-      <Breadcrumb.Link href="/docs/components">Components</Breadcrumb.Link>
-      <Breadcrumb.Separator>-</Breadcrumb.Separator>
-      <Breadcrumb.Link href="/docs/components/breadcrumb">
-        Breadcrumb
-      </Breadcrumb.Link>
-    </Breadcrumb>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="breadcrumb/breadcrumb-custom-separator.tsx" language="react" />
 
 ---
 
@@ -109,51 +48,4 @@ You can use the `className` prop to customize the `Breadcrumb` component style a
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Breadcrumb.BreadcrumbCustomStyles />}>
-```tsx
-"use client";
-
-import { Breadcrumb } from "@material-tailwind/react";
-import {
-  Cube,
-  CursorPointer,
-  MultiplePages,
-  NavArrowRight,
-} from "iconoir-react";
-
-export function BreadcrumbCustomStyles() {
-  return (
-    <Breadcrumb className="gap-0.5">
-      <Breadcrumb.Link
-        href="#"
-        className="rounded bg-secondary px-2 py-1 text-secondary-foreground hover:bg-primary hover:text-primary-foreground"
-      >
-        <MultiplePages className="h-4 w-4" />
-        Docs
-      </Breadcrumb.Link>
-      <Breadcrumb.Separator>
-        <NavArrowRight className="h-4 w-4 stroke-2" />
-      </Breadcrumb.Separator>
-      <Breadcrumb.Link
-        href="#"
-        className="rounded bg-secondary px-2 py-1 text-secondary-foreground hover:bg-primary hover:text-primary-foreground"
-      >
-        <Cube className="h-4 w-4" />
-        Components
-      </Breadcrumb.Link>
-      <Breadcrumb.Separator>
-        <NavArrowRight className="h-4 w-4 stroke-2" />
-      </Breadcrumb.Separator>
-      <Breadcrumb.Link
-        href="#"
-        className="rounded bg-primary px-2 py-1 text-primary-foreground hover:bg-primary hover:text-primary-foreground"
-      >
-        <CursorPointer className="h-4 w-4 rotate-90" />
-        Breadcrumb
-      </Breadcrumb.Link>
-    </Breadcrumb>
-  );
-}
-```
-</OldComponentPreview>
-
+<PreviewWithCode relativePath="breadcrumb/breadcrumb-custom-styles.tsx" language="react" />

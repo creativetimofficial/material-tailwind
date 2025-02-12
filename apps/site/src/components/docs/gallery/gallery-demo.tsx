@@ -1,4 +1,4 @@
-export function GalleryDemo() {
+export default function GalleryDemo() {
   const data = [
     {
       imageLink:

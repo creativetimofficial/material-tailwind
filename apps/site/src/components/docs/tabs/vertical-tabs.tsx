@@ -1,6 +1,6 @@
 import { Tabs } from "@material-tailwind/react";
 
-export function VerticalTabs() {
+export default function VerticalTabs() {
   return (
     <Tabs defaultValue="html" orientation="vertical">
       <Tabs.List>

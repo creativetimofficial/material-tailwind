@@ -80,7 +80,7 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
 
   const codeBlockStyles = twMerge(
     firaCode.className,
-    "code-preview relative overflow-hidden border-t border-stone-200",
+    "code-preview relative overflow-hidden border-t border-slate-200 dark:border-slate-700",
     showCode && "pb-12",
   );
 
@@ -122,11 +122,11 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
     
       <div className={codeBlockStyles}>
         <Tooltip>
-          <Tooltip.Trigger as="span" className="absolute right-1 top-1 z-2">
+          <Tooltip.Trigger as="span" className="absolute right-2 top-2 z-2">
             <IconButton
               size="sm"
-              variant="ghost"
-              color="secondary"
+              variant="solid"
+              className="bg-slate-50 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border-slate-300 hover:border-slate-300 dark:border-slate-700"
               ripple={false}
               onClick={copyCode}
               onMouseLeave={resetCopy}
@@ -141,17 +141,10 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
         </Tooltip>
         <div
           ref={codeRef}
-          style={{
-            height: showCode
-              ? "auto"
-              : codeHeight <= MIN_CODE_HEIGHT
-                ? "unset"
-                : `${MIN_CODE_HEIGHT}px`,
-          }}
+          className={`transition-all duration-300 ${showCode ? 'max-h-auto' : 'max-h-[400px]'} overflow-hidden`}
         >
-          
           <SyntaxHighlighter
-            language={language}
+            language={'jsx'}
             style={resolvedTheme === 'dark' ? atomOneDark : atomOneLight}
             showLineNumbers
             lineNumberStyle={{ color: "#9CA3AF" }}
@@ -161,17 +154,16 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
               : codeBlock}
           </SyntaxHighlighter>
         </div>
-        {codeHeight > MIN_CODE_HEIGHT && (
           <div className="absolute bottom-0 left-1/2 grid h-16 w-full -translate-x-1/2 items-end justify-center rounded-b-lg bg-gradient-to-t from-background via-background/75 to-transparent pb-2">
             <Button
               size="xs"
-              color="secondary"
+              color="white"
+              className="bg-white py-1.5 px-2.5 text-slate-800 dark:bg-slate-800 dark:text-slate-200 border-slate-300 dark:border-slate-700"
               onClick={() => setShowCode((cur) => !cur)}
-            >
+                >
               {showCode ? "Hide Code" : "Show Code"}
-            </Button>
-          </div>
-        )}
+          </Button>
+        </div>
       </div>
   );
 }

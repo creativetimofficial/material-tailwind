@@ -1,6 +1,6 @@
 import { Timeline, Typography, Avatar } from "@material-tailwind/react";
 
-export function TimelineWithAvatar() {
+export default function TimelineWithAvatar() {
   return (
     <Timeline color="secondary" orientation="vertical">
       <Timeline.Item>
@@ -9,7 +9,7 @@ export function TimelineWithAvatar() {
           <Timeline.Icon className="p-0.5">
             <Avatar
               alt="Avatar"
-              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
               className="h-full w-full"
             />
           </Timeline.Icon>
@@ -32,7 +32,7 @@ export function TimelineWithAvatar() {
           <Timeline.Icon className="p-0.5">
             <Avatar
               alt="Avatar"
-              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
               className="h-full w-full"
             />
           </Timeline.Icon>
@@ -54,7 +54,7 @@ export function TimelineWithAvatar() {
           <Timeline.Icon className="p-0.5">
             <Avatar
               alt="Avatar"
-              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg"
               className="h-full w-full"
             />
           </Timeline.Icon>

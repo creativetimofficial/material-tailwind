@@ -1,7 +1,7 @@
 import { Tabs } from "@material-tailwind/react";
 import { SelectFace3d, ProfileCircle, Settings } from "iconoir-react";
 
-export function VerticalTabsWithIcon() {
+export default function VerticalTabsWithIcon() {
   return (
     <Tabs defaultValue="dashboard" orientation="vertical">
       <Tabs.List>

@@ -20,7 +20,7 @@ function rgbToHex(rgb) {
   );
 }
 
-export function BarChart() {
+export default function BarChart() {
   const { theme } = useTheme();
   const [vars, setVars] = React.useState<CSSStyleDeclaration | null>(null);
 

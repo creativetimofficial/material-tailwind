@@ -1,6 +1,6 @@
 import { Progress, Typography } from "@material-tailwind/react";
 
-export function ProgressLabelOutside() {
+export default function ProgressLabelOutside() {
   return (
     <div className="w-full space-y-2">
       <Typography

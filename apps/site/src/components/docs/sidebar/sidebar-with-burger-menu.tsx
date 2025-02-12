@@ -62,7 +62,7 @@ const Links = [
   },
 ];
 
-export function SidebarWithBurgerMenu() {
+export default function SidebarWithBurgerMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (

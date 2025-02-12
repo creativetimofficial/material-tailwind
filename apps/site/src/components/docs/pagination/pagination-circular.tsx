@@ -1,7 +1,7 @@
 import { Button, IconButton } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
-export function PaginationCircular() {
+export default function PaginationCircular() {
   return (
     <div className="flex items-center gap-1">
       <Button isPill variant="ghost">

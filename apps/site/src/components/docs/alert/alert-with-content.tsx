@@ -1,7 +1,7 @@
 import { Alert, Typography } from "@material-tailwind/react";
 import { CheckCircleSolid } from "iconoir-react";
 
-export function AlertWithContent() {
+export default function AlertWithContent() {
   return (
     <Alert>
       <Alert.Icon>

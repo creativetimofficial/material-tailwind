@@ -18,21 +18,7 @@ See below our beautiful `img` examples that you can use in your Tailwind CSS and
 
 Here's how to implement a simple and responsive img. It can be used to display media content on your website.
 
-<OldComponentPreview demo={<Image.ImageDemo />}>
-```tsx
-"use client";
-
-export function ImageDemo() {
-  return (
-    <img
-      src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg"
-      alt="nature-image"
-      className="h-96 w-full object-cover object-center"
-    />
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="image/image-demo.tsx" language="tsx" />
 
 ---
 
@@ -40,21 +26,7 @@ export function ImageDemo() {
 
 Here's how to implement an img with rounded corners using the `rounded-lg` classname.
 
-<OldComponentPreview demo={<Image.ImageWithRoundedCorners />}>
-```tsx
-"use client";
-
-export function ImageWithRoundedCorners() {
-  return (
-    <img
-      src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg"
-      alt="nature-image"
-      className="h-96 w-full rounded-lg object-cover object-center"
-    />
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="image/image-with-rounded-corners.tsx" language="tsx" />
 
 ---
 
@@ -62,21 +34,7 @@ export function ImageWithRoundedCorners() {
 
 Here's how to implement a circular img using the `rounded-full` classname.
 
-<OldComponentPreview demo={<Image.CircularImage />}>
-```tsx
-"use client";
-
-export function CircularImage() {
-  return (
-    <img
-      src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg"
-      alt="nature-image"
-      className="h-96 w-96 rounded-full object-cover object-center"
-    />
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="image/circular-image.tsx" language="tsx" />
 
 ---
 
@@ -84,21 +42,7 @@ export function CircularImage() {
 
 Here's how to implement an img with a shadow using the `shadow-lg` and `shadow-black/25` classnames.
 
-<OldComponentPreview demo={<Image.ImageWithShadow />}>
-```tsx
-"use client";
-
-export function ImageWithShadow() {
-  return (
-    <img
-      src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg"
-      alt="nature-image"
-      className="h-96 w-full rounded-lg object-cover object-center shadow-lg shadow-black/25"
-    />
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="image/image-with-shadow.tsx" language="tsx" />
 
 ---
 
@@ -106,28 +50,7 @@ export function ImageWithShadow() {
 
 Here's how to implement an img with a caption using the `figure` HTML elements.
 
-<OldComponentPreview demo={<Image.ImageWithCaption />}>
-```tsx
-"use client";
-
-import { Typography } from "@material-tailwind/react";
-
-export function ImageWithCaption() {
-  return (
-    <figure>
-      <img
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg"
-        alt="nature-image"
-        className="h-96 w-full rounded-lg object-cover object-center"
-      />
-      <Typography as="caption" type="small" className="mt-2 block text-center">
-        Image Caption
-      </Typography>
-    </figure>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="image/image-with-caption.tsx" language="tsx" />
 
 ---
 
@@ -135,36 +58,4 @@ export function ImageWithCaption() {
 
 Here's how to implement an img with a blurred caption using the `Card` and `Typography` components.
 
-<OldComponentPreview demo={<Image.ImageWithBlurredCaption />}>
-```tsx
-"use client";
-
-import { Card, Typography } from "@material-tailwind/react";
-
-export function ImageWithBlurredCaption() {
-  return (
-    <figure className="relative h-96 w-full">
-      <img
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg"
-        alt="nature-image"
-        className="h-full w-full rounded-xl object-cover object-center"
-      />
-      <Card
-        as="figcaption"
-        className="absolute bottom-4 left-1/2 w-[calc(100%-2rem)] -translate-x-1/2 bg-opacity-75 saturate-200 backdrop-blur-md"
-      >
-        <Card.Body className="flex justify-between px-4">
-          <div>
-            <Typography type="h6">Sara Lamalo</Typography>
-            <Typography className="mt-1 text-foreground">
-              20 July 2022
-            </Typography>
-          </div>
-          <Typography className="font-bold">Growth</Typography>
-        </Card.Body>
-      </Card>
-    </figure>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="image/image-with-blurred-caption.tsx" language="tsx" />

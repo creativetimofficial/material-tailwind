@@ -1,7 +1,7 @@
 import { Radio, Typography } from "@material-tailwind/react";
 import { Check } from "iconoir-react";
 
-export function CustomRadio() {
+export default function CustomRadio() {
   return (
     <Radio>
       <div className="flex items-center gap-2">

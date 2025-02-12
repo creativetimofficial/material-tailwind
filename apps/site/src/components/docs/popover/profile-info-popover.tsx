@@ -2,7 +2,7 @@ import React from "react";
 import { Popover, Button, Avatar, Typography } from "@material-tailwind/react";
 import { City, MapPin } from "iconoir-react";
 
-export function ProfileInfoPopover() {
+export default function ProfileInfoPopover() {
   const [open, setOpen] = React.useState(true);
 
   return (
@@ -13,7 +13,7 @@ export function ProfileInfoPopover() {
         </Popover.Trigger>
         <Popover.Content className="max-w-sm">
           <div className="mb-2 flex items-center justify-between gap-4">
-            <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" />
+            <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
             <Button size="sm" className="mr-2">
               Follow
             </Button>
@@ -22,7 +22,7 @@ export function ProfileInfoPopover() {
             color="default"
             className="mb-1 flex items-center gap-2 font-bold"
           >
-            <span>Alex Andrew</span> •{" "}
+            <span>Andrew Alexa</span> •{" "}
             <Typography as="a" href="#profile-info-popover">
               @alex
             </Typography>

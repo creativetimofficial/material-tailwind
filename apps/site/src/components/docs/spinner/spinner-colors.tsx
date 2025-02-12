@@ -1,6 +1,6 @@
 import { Spinner } from "@material-tailwind/react";
 
-export function SpinnerColors() {
+export default function SpinnerColors() {
   return (
     <div className="flex items-center gap-4">
       <Spinner color="primary" />

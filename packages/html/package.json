@@ -1,34 +1,63 @@
 {
   "name": "@material-tailwind/html",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.4",
+  "description": "Material Tailwind is an open-source library that uses the power of Tailwind CSS and React to help you build unique web projects faster and easier. The stunning design inspired by Material Design is a bonus!",
+  "main": "dist/material-tailwind.js",
+  "module": "dist/material-tailwind.esm.js",
+  "browser": "dist/material-tailwind.js",
+  "unpkg": "dist/material-tailwind.min.js",
+  "types": "dist/index.d.ts",
   "type": "module",
-  "main": "dist/index.js",
+  "exports": {
+    "import": "./dist/material-tailwind.esm.js",
+    "require": "./dist/material-tailwind.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE.md",
+    "package.json",
+    "CHANGELOG.md",
+    "rollup.config.mjs"
+  ],
   "scripts": {
-    "lint": "tsc",
-    "build": "tsup src --dts",
-    "dev": "tsup src --watch"
+    "build": "rollup -c",
+    "build:watch": "rollup -c --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativetimofficial/material-tailwind.git"
   },
-  "author": {
-    "name": "sajadevo",
-    "url": "https://twitter.com/sajadevo_"
-  },
+  "keywords": [
+    "ui",
+    "material",
+    "tailwind",
+    "components",
+    "tailwindcss",
+    "javascript"
+  ],
+  "author": "Creative Tim",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/creativetimofficial/material-tailwind/issues"
   },
-  "homepage": "https://github.com/creativetimofficial/material-tailwind/packages/html#readme",
+  "homepage": "https://www.material-tailwind.com/docs/v3/html/button",
   "devDependencies": {
-    "tailwindcss": "3.3.3",
-    "tsconfig": "workspace:*",
-    "tsup": "7.2.0",
-    "typescript": "5.2.2"
+    "@babel/core": "^7.26.8",
+    "@babel/preset-env": "^7.26.8",
+    "@babel/preset-typescript": "^7.26.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.34.6",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.7.3"
   },
   "dependencies": {
-    "deepmerge": "4.3.1",
-    "hex-rgb": "5.0.0"
+    "@popperjs/core": "^2.11.8",
+    "tslib": "^2.8.1"
   }
 }

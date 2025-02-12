@@ -1,19 +1,16 @@
+
 export default function TooltipCustomStyles() {
-            return (
-              <div
-                className="w-full place-items-center"
-                dangerouslySetInnerHTML={{
-                  __html: 
-`
-<div class="flex items-center justify-center">
-  <button type="button" data-dui-toggle="tooltip" data-dui-placement="right" data-dui-tooltip-class="bg-white w-4/12 border border-stone-200 text-stone-800 text-xs rounded-md py-1 px-2 shadow-sm z-50" class="inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed focus:shadow-none text-sm py-2 px-4 shadow-sm hover:shadow-md bg-stone-800 hover:bg-stone-700 relative bg-gradient-to-b from-stone-700 to-stone-800 border-stone-900 text-stone-50 rounded-lg hover:bg-gradient-to-b hover:from-stone-800 hover:to-stone-800 hover:border-stone-900 after:absolute after:inset-0 after:rounded-[inherit] after:box-shadow after:shadow-[inset_0_1px_0px_rgba(255,255,255,0.25),inset_0_-2px_0px_rgba(0,0,0,0.35)] after:pointer-events-none transition antialiased"> Custom HTML Tooltip </button>
-  <div data-dui-tooltip-content class="hidden">
-    <h3 class="font-semibold text-sm">David UI</h3>
-    <p class="text-xs mt-1 text-stone-500">David UI is an easy to use components library for TailwindCSS</p>
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `<div class="flex items-center justify-center">
+  <button type="button" data-toggle="tooltip" data-placement="bottom" data-tooltip-class="bg-white w-4/12 md:w-2/12 border border-slate-200 text-slate-800 text-xs rounded-md py-1 px-2 shadow-sm z-50" class="inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md bg-slate-800 border-slate-800 text-slate-50 hover:bg-slate-700 hover:border-slate-700 outline-none group"> Custom HTML Tooltip </button>
+  <div data-tooltip-content class="hidden">
+    <h3 class="font-semibold text-sm">Material Tailwind</h3>
+    <p class="text-xs mt-1 text-slate-500">Material Tailwind is an easy to use components library for TailwindCSS</p>
   </div>                
-</div>
-`
-                }}
-              />
-            );
-          }
+</div>`
+      }}
+    />
+  );
+}

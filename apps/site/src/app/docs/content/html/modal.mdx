@@ -4,23 +4,17 @@ description: Create beautiful modals with Tailwind CSS using David UI. It is ide
 github: modal
 ---
 
+<InfoBadge />
 
-{/* TODO: replace david UI */}
-{/* <InfoBadge /> */}
+# Tailwind CSS Modal/Dialog
 
-# Tailwind CSS Modal/Dialog 
-
-David UI's Modal component offers a sleek and accessible way to display overlays for alerts, forms, or additional content. Styled with Tailwind CSS, it supports customizable headers and footers for a polished user experience.
-
-Explore our responsive Modal component examples, styled with Tailwind CSS, ideal for creating engaging web or mobile interfaces.
-
+Get started with our modal components styled with Tailwind CSS. Perfect for creating overlays, popups, and dialogs that enhance user interaction with smooth transitions and accessible design.
 
 ---
 
 ## Basic Modal
 
-This example showcases how to create a Tailwind CSS modal with a structured layout, including a header, dismiss button, and action buttons. 
-
+Looking for a simple modal? This example shows how to create clean overlays using Tailwind CSS flex and backdrop utilities, complete with header, content area, and action buttons.
 
 <PreviewWithCode relativePath="modal/modal-demo.tsx" language="html" />
 
@@ -28,7 +22,7 @@ This example showcases how to create a Tailwind CSS modal with a structured layo
 
 ## Modal Sizes
 
-David UI's dialog component is versatile and it is coming with multiple size options (`xs`, `sm`, `md`, `lg`, `xl`, `screen`). Each size adapts seamlessly to fit diverse content requirements, ensuring responsiveness and consistent styling across applications.
+Transform your modals with multiple size options using Tailwind CSS sizing utilities. Choose from `xs`, `sm`, `md`, `lg`, `xl`, and `screen` sizes that adapt perfectly to your content needs.
 
 <PreviewWithCode relativePath="modal/modal-sizes.tsx" language="html" />
 
@@ -36,7 +30,7 @@ David UI's dialog component is versatile and it is coming with multiple size opt
 
 ## Modal with Form
 
-Try this example of the Dialog component for creating a sign-in form. Includes input fields for email and password, a "Remember Me" checkbox, and actionable buttons.
+Need a sign-in popup? This example combines Tailwind CSS form utilities with modal functionality. Features email and password fields, remember me option, and clear call-to-action buttons.
 
 <PreviewWithCode relativePath="modal/modal-with-form.tsx" language="html" />
 
@@ -44,8 +38,7 @@ Try this example of the Dialog component for creating a sign-in form. Includes i
 
 ## Modal with Image
 
-A visually rich example of a Dialog component integrated with images. Includes features like a user profile section, image display, action buttons for downloading or sharing, and metrics for views and downloads. Ideal for image galleries or media-rich applications.
-
+Use this example to create media-rich modals using Tailwind CSS grid and aspect utilities. Perfect for image galleries or user profiles with download and sharing capabilities.
 
 <PreviewWithCode relativePath="modal/modal-with-image.tsx" language="html" />
 
@@ -53,7 +46,7 @@ A visually rich example of a Dialog component integrated with images. Includes f
 
 ## Web 3 Modal
 
-Here is an example of how to create a wallet connection dialog for Web3 applications. It features popular wallet options like MetaMask, Coinbase, and Trust Wallet, presented with clear actions and helpful contextual information for users new to Ethereum wallets.
+Check out this wallet connection modal built with Tailwind CSS flex utilities. Showcases popular wallet options with clear visual hierarchy and helpful guidance for Web3 users.
 
 <PreviewWithCode relativePath="modal/modal-web3.tsx" language="html" />
 
@@ -61,7 +54,7 @@ Here is an example of how to create a wallet connection dialog for Web3 applicat
 
 ## Long Modal
 
-This example showcases a Dialog component designed for handling large amounts of text content. Ideal for lengthy messages, agreements, or detailed information. Includes a scrollable area for improved usability, along with dismiss and confirmation buttons.
+Design scrollable content modals using Tailwind CSS overflow utilities. Ideal for terms of service, detailed information, or any content that exceeds the viewport height.
 
 <PreviewWithCode relativePath="modal/modal-long.tsx" language="html" />
 
@@ -69,7 +62,7 @@ This example showcases a Dialog component designed for handling large amounts of
 
 ## Message Modal
 
-A Dialog component tailored for sending messages. Includes input fields for username and message, providing a clean interface for direct communication. Perfect for chat or messaging functionalities.
+Transform your messaging interface with this sleek modal design. Built using Tailwind CSS form utilities for a clean message composition experience.
 
 <PreviewWithCode relativePath="modal/modal-message.tsx" language="html" />
 
@@ -77,15 +70,14 @@ A Dialog component tailored for sending messages. Includes input fields for user
 
 ## Modal Notification
 
-A focused example of a notification-style Dialog component. Designed to grab the user's attention, it combines an icon, concise messaging, and actionable buttons to deliver critical information or alerts effectively.
+Create attention-grabbing alerts using Tailwind CSS color utilities. Choose from `bg-slate-800`, `bg-blue-500`, `bg-green-500`, `bg-red-500`, or `bg-amber-500` to match your notification type.
 
 <PreviewWithCode relativePath="modal/modal-notification.tsx" language="html" />
 
 ---
 
 ## Required Script
-The modal component needs a required script file for the modal functionality to work. Add the script below to the bottom of your HTML file.
 
-The script handles opening/closing modals, backdrop interactions, keyboard events, and animations. Without this script, the modal components will not function properly.
+The modal component needs a script for handling open/close states and keyboard interactions. Add this script to the bottom of your HTML file for proper functionality.
 
-<CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" defer></script>`}/>
+<CodePreviewTailwindClasses codeSnippet={`<script src="<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/material-tailwind@3.0.0-beta.4/packages/dist/material-tailwind.min.js" defer></script>" defer></script>`}/>

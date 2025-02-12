@@ -1,6 +1,6 @@
 import { Progress } from "@material-tailwind/react";
 
-export function ProgressCustomStyles() {
+export default function ProgressCustomStyles() {
   return (
     <Progress
       value={50}

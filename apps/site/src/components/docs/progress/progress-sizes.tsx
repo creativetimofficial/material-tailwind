@@ -1,6 +1,6 @@
 import { Progress } from "@material-tailwind/react";
 
-export function ProgressSizes() {
+export default function ProgressSizes() {
   return (
     <div className="w-full space-y-6">
       <Progress size="sm" value={50}>

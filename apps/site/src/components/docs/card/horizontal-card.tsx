@@ -1,6 +1,6 @@
 import { Card, Typography, Button } from "@material-tailwind/react";
 
-export function HorizontalCard() {
+export default function HorizontalCard() {
   return (
     <Card className="flex h-full w-full max-w-[48rem] flex-row">
       <Card.Header className="m-0 h-full w-2/5 shrink-0 rounded-r-none">

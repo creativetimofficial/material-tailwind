@@ -1,7 +1,7 @@
 import { Alert, Button } from "@material-tailwind/react";
 import { WarningCircleSolid } from "iconoir-react";
 
-export function AlertCustomCloseIcon() {
+export default function AlertCustomCloseIcon() {
   return (
     <Alert className="items-center">
       <Alert.Icon>

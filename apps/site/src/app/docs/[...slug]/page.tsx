@@ -3,7 +3,6 @@ import {
   CodePreview,
   ColorPalette,
   FrameworkCard,
-  OldComponentPreview,
 } from "@components";
 import Link from "next/link";
 import { Code } from "bright";
@@ -41,6 +40,7 @@ import * as Footer from "@components/docs/footer";
 import * as IconButton from "@components/docs/icon-button";
 import * as Image from "@components/docs/image";
 import * as Input from "@components/docs/input";
+import * as InputNumber from "@components/docs/input-number";
 import * as List from "@components/docs/list";
 import * as Menu from "@components/docs/menu";
 import * as Navbar from "@components/docs/navbar";
@@ -65,6 +65,7 @@ import * as Breadcrumb from "@components/docs/breadcrumb";
 import * as Drawer from "@components/docs/drawer";
 import * as Stepper from "@components/docs/stepper";
 import * as Slider from "@components/docs/slider";
+import * as Skeleton from "@components/docs/skeleton";
 import * as Timeline from "@components/docs/timeline";
 import * as Badge from "@components/docs/badge";
 import * as AlgoliaSearch from "@components/docs/plugins/algolia-search";
@@ -88,6 +89,7 @@ import * as HTMLGallery from "@components/docs-html/gallery";
 import * as HTMLIconButton from "@components/docs-html/icon-button";
 import * as HTMLImage from "@components/docs-html/image";
 import * as HTMLInput from "@components/docs-html/input";
+import * as HTMLInputNumber from "@components/docs-html/input-number";
 import * as HTMLList from "@components/docs-html/list";
 import * as HTMLNavbar from "@components/docs-html/navbar";
 import * as HTMLPagination from "@components/docs-html/pagination";
@@ -95,6 +97,7 @@ import * as HTMLProgress from "@components/docs-html/progress";
 import * as HTMLRating from "@components/docs-html/rating";
 import * as HTMLSpinner from "@components/docs-html/spinner";
 import * as HTMLStepper from "@components/docs-html/stepper";
+import * as HTMLSkeleton from "@components/docs-html/skeleton";
 import * as HTMLTable from "@components/docs-html/table";
 import * as HTMLTextarea from "@components/docs-html/textarea";
 import * as HTMLTimeline from "@components/docs-html/timeline";
@@ -102,10 +105,17 @@ import * as HTMLTypography from "@components/docs-html/typography";
 import * as HTMLVideo from "@components/docs-html/video";
 import * as HTMLCheckbox from "@components/docs-html/checkbox";
 import * as HTMLRadio from "@components/docs-html/radio";
+import * as HTMLSlider from "@components/docs-html/slider";
 import * as HTMLSwitch from "@components/docs-html/switch";
 import * as HTMLBadge from "@components/docs-html/badge";
 import * as HTMLAccordion from "@components/docs-html/accordion";
-
+import ComponentPreview from "@components/ComponentPreview";
+import PreviewWithCode from "@components/PreviewWithCode";
+import CodePreviewTailwindClasses from "@components/CodePreviewTailwindClasses";
+import CodeSnippet from "@components/CodeSnippet";
+import ScriptLoader from "@components/ScriptJsLoader";
+import TsPropsTable from "@components/TsPropsTable";
+import InfoBadge from '@components/InfoBadge';
 async function readDocsContentFn(pathUrl: string) {
   const fullPath = `${path.join(
     process.cwd(),
@@ -185,64 +195,62 @@ export const dynamic = "force-static";
 export default async function Docs({ params: { slug } }) {
   const path = slug.join("/");
   const { frontMatter, source } = await readDocsContent(path);
-
+  
   return (
-    <Content frontMatter={frontMatter}>
-      <MDXRemote
-        source={source}
-        options={{
-          mdxOptions: {
-            remarkPlugins: [remarkGfm as any],
-            rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
-          },
-        }}
-        components={{
-          // custom-components
-          Icons,
-          CodePreview,
-          ColorPalette,
-          FrameworkCard,
-          OldComponentPreview,
+    <>
+      <ScriptLoader />
+      <Content frontMatter={frontMatter}>
+        <MDXRemote
+          source={source}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [remarkGfm as any],
+              rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+            },
+          }}
+          components={{
+            // custom-components
+            Icons,
+            CodePreview,
+            ColorPalette,
+            FrameworkCard,
+            ComponentPreview,
+            PreviewWithCode,
+            CodePreviewTailwindClasses, 
+            CodeSnippet,
+            ScriptLoader,
+            TsPropsTable,
+            InfoBadge,
 
-          // default-components
-          pre: Code,
-          Link: (props: any) => <Link {...props} className="text-orange-500" />,
-          h1: (props: any) => (
-            <MTTypography as="h1" type="h4" className="mb-4" {...props} />
-          ),
-          h2: (props: any) => (
-            <MTTypography
-              as="h2"
-              type="h5"
-              className="group relative mb-2 cursor-pointer scroll-mt-40 transition-colors hover:text-orange-500"
-              {...props}
-            >
-              <Link
-                href={`#${props.children[1]
-                  .toLowerCase()
-                  .replaceAll(" ", "-")}`}
+            // default-components
+            pre: Code,
+            Link: (props: any) => <Link {...props} />,
+            h1: (props: any) => (
+              <MTTypography as="h1" type="h4" className="mb-4" {...props} />
+            ),
+            h2: (props: any) => (
+              <MTTypography
+                as="h2"
+                type="h5"
+                className="group relative mb-2 cursor-pointer scroll-mt-40 transition-colors text-slate-800 dark:text-slate-200 hover:text-slate-900"
+                {...props}
               >
-                <span
-                  aria-hidden
-                  className="absolute -left-5 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100"
-                >
-                  #
-                </span>
-                {props.children}
-              </Link>
-            </MTTypography>
-          ),
-          h3: (props: any) => (
-            <MTTypography
-              as="h3"
-              type="h6"
-              className="group relative mb-1 mt-8 cursor-pointer scroll-mt-40 transition-colors hover:text-orange-500"
-              {...props}
-            >
-              <Link
-                href={`#${props.children[1]
-                  .toLowerCase()
-                  .replaceAll(" ", "-")}`}
+                  <span
+                    aria-hidden
+                    className="absolute -left-5 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100"
+                  >
+                    #
+                  </span>
+                  {props.children}
+      
+              </MTTypography>
+            ),
+            h3: (props: any) => (
+              <MTTypography
+                as="h3"
+                type="h6"
+                className="group relative mb-1 mt-8 cursor-pointer scroll-mt-40 transition-colors hover:text-slate-800"
+                {...props}
               >
                 <span
                   aria-hidden
@@ -251,120 +259,126 @@ export default async function Docs({ params: { slug } }) {
                   #
                 </span>
                 {props.children}
-              </Link>
-            </MTTypography>
-          ),
-          h4: (props: any) => (
-            <MTTypography
-              as="h4"
-              type="lead"
-              className="mb-1 mt-6 font-semibold"
-              {...props}
-            />
-          ),
-          p: (props: any) => (
-            <MTTypography className="mb-2 text-foreground" {...props} />
-          ),
-          hr: () => <hr className="my-8 border-transparent" />,
-          code: (props: any) => (
-            <code
-              className="inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono text-sm leading-none text-foreground dark:bg-surface-dark"
-              {...props}
-            />
-          ),
-          a: (props: any) => <a {...props} className="text-orange-500" />,
-          ul: (props: any) => (
-            <ul className="my-4 ml-4 list-disc space-y-1" {...props} />
-          ),
-          li: (props: any) => (
-            <li
-              className="font-sans text-base font-normal text-foreground antialiased"
-              {...props}
-            />
-          ),
+              </MTTypography>
+            ),
+            h4: (props: any) => (
+              <MTTypography
+                as="h4"
+                type="lead"
+                className="mb-1 mt-6 font-semibold"
+                {...props}
+              />
+            ),
+            p: (props: any) => (
+              <MTTypography className="mb-2 text-slate-500" {...props} />
+            ),
+            hr: () => <hr className="my-8 border-transparent" />,
+            code: (props: any) => (
+              <code
+                className="inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono text-sm leading-none dark:bg-surface-dark"
+                {...props}
+              />
+            ),
+            a: (props: any) => <a {...props} className="text-slate-800 underline" />,
+            ul: (props: any) => (
+              <ul className="my-4 ml-4 list-disc space-y-1" {...props} />
+            ),
+            li: (props: any) => (
+              <li
+                className="font-sans text-base font-normal text-slate-500 antialiased"
+                {...props}
+              />
+            ),
 
-          // docs-components-react
-          Accordion,
-          Alert,
-          Avatar,
-          Button,
-          ButtonGroup,
-          Checkbox,
-          Card,
-          Chip,
-          Collapse,
-          Dialog,
-          Footer,
-          IconButton,
-          Image,
-          Input,
-          List,
-          Menu,
-          Navbar,
-          Pagination,
-          Popover,
-          Progress,
-          Radio,
-          Rating,
-          Select,
-          Sidebar,
-          SpeedDial,
-          Spinner,
-          Switch,
-          Tabs,
-          Textarea,
-          Tooltip,
-          Typography,
-          Video,
-          Gallery,
-          Table,
-          Breadcrumb,
-          Drawer,
-          Stepper,
-          Slider,
-          Timeline,
-          AlgoliaSearch,
-          Carousel,
-          Apexcharts,
-          DatePicker,
-          Forms,
-          TextEditor,
-          DataTable,
-          Badge,
-          ReleaseNotes,
+            // docs-components-react
+            Accordion,
+            Alert,
+            Avatar,
+            Button,
+            ButtonGroup,
+            Checkbox,
+            Card,
+            Chip,
+            Collapse,
+            Dialog,
+            Footer,
+            IconButton,
+            Image,
+            Input,
+            InputNumber,
+            List,
+            Menu,
+            Navbar,
+            Pagination,
+            Popover,
+            Progress,
+            Radio,
+            Rating,
+            Select,
+            Sidebar,
+            SpeedDial,
+            Spinner,
+            Switch,
+            Tabs,
+            Textarea,
+            Tooltip,
+            Typography,
+            Video,
+            Gallery,
+            Table,
+            Breadcrumb,
+            Drawer,
+            Stepper,
+            Slider,
+            Skeleton,
+            Timeline,
+            AlgoliaSearch,
+            Carousel,
+            Apexcharts,
+            DatePicker,
+            Forms,
+            TextEditor,
+            DataTable,
+            Badge,
+            ReleaseNotes,
 
-          // docs-components-html
-          HTMLButton,
-          HTMLButtonGroup,
-          HTMLBreadcrumb,
-          HTMLAlert,
-          HTMLAvatar,
-          HTMLCard,
-          HTMLChip,
-          HTMLFooter,
-          HTMLGallery,
-          HTMLIconButton,
-          HTMLImage,
-          HTMLInput,
-          HTMLList,
-          HTMLNavbar,
-          HTMLPagination,
-          HTMLProgress,
-          HTMLRating,
-          HTMLSpinner,
-          HTMLStepper,
-          HTMLTable,
-          HTMLTextarea,
-          HTMLTimeline,
-          HTMLTypography,
-          HTMLVideo,
-          HTMLCheckbox,
-          HTMLRadio,
-          HTMLSwitch,
-          HTMLBadge,
-          HTMLAccordion,
-        }}
-      />
-    </Content>
+            // docs-components-html
+            HTMLButton,
+            HTMLBadge,
+            HTMLButtonGroup,
+            HTMLBreadcrumb,
+            HTMLAlert,
+            HTMLAvatar,
+            HTMLCard,
+            HTMLChip,
+            HTMLFooter,
+            HTMLGallery,
+            HTMLIconButton,
+            HTMLImage,
+            HTMLInput,
+            HTMLInputNumber,
+            HTMLList,
+            HTMLNavbar,
+            HTMLPagination,
+            HTMLProgress,
+            HTMLRating,
+            HTMLSpinner,
+            HTMLSlider,
+            HTMLStepper,
+            HTMLTable,
+            HTMLTextarea,
+            HTMLTimeline,
+            HTMLTypography,
+            HTMLVideo,
+            HTMLCheckbox,
+            HTMLRadio,
+            HTMLSwitch,
+            HTMLSkeleton,
+            // HTMLBadge,
+            HTMLAccordion,
+          }}
+        />
+      </Content>
+    </>
   );
 }

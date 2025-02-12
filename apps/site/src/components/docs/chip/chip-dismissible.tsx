@@ -1,7 +1,7 @@
 import { Chip } from "@material-tailwind/react";
 import { ProfileCircle } from "iconoir-react";
 
-export function ChipDismissible() {
+export default function ChipDismissible() {
   return (
     <Chip>
       <Chip.Icon>

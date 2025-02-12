@@ -33,7 +33,7 @@ const MenuItem = React.forwardRef<
   );
 });
 
-export function NotificationMenu() {
+export default function NotificationMenu() {
   return (
     <Menu>
       <Menu.Trigger as={IconButton} variant="ghost" size="sm">
@@ -46,7 +46,7 @@ export function NotificationMenu() {
           date="13 minutes ago"
         />
         <MenuItem
-          img="https://dub.sh/6i238JA"
+          img="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-2.jpg"
           title="Natali replied to your email."
           date="1 hour ago"
         />

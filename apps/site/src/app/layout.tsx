@@ -35,7 +35,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 })(window,document,'script','dataLayer',"GTM-KB2WKJS")`,
         }}
       />
-      <body className="h-screen w-screen bg-background">
+      <body className="h-screen w-screen bg-background font-sans">
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KB2WKJS"

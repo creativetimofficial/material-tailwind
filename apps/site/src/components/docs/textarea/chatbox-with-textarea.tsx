@@ -1,7 +1,7 @@
 import { IconButton, Textarea } from "@material-tailwind/react";
 import { Emoji, GifFormat, MediaImage, Send } from "iconoir-react";
 
-export function ChatboxWithTextarea() {
+export default function ChatboxWithTextarea() {
   return (
     <form action="#" className="flex w-full items-center gap-4">
       <div className="flex items-center gap-1">

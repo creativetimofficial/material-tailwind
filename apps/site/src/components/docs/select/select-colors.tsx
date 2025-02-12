@@ -1,6 +1,6 @@
 import { Select } from "@material-tailwind/react";
 
-export function SelectColors() {
+export default function SelectColors() {
   return (
     <div className="flex w-72 flex-col items-center gap-4">
       <Select color="primary">

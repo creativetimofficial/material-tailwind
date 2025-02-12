@@ -21,23 +21,7 @@ See below our `List` component examples that you can use in your Tailwind CSS an
 
 Here's how to implement a simple `List` component. It can be used to display a list of items on your website like a navigation menu.
 
-<OldComponentPreview demo={<List.ListDemo />}>
-```tsx
-"use client";
-
-import { List } from "@material-tailwind/react";
-
-export function ListDemo() {
-  return (
-    <List>
-      <List.Item>Inbox</List.Item>
-      <List.Item>Trash</List.Item>
-      <List.Item>Settings</List.Item>
-    </List>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="list/list-demo.tsx" language="react" />
 
 ---
 
@@ -47,39 +31,7 @@ You can add icons to your `List` items using the `List.ItemStart` component. In 
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<List.ListWithIcon />}>
-```tsx
-"use client";
-
-import { List } from "@material-tailwind/react";
-import { Bin, Mail, Settings } from "iconoir-react";
-
-export function ListWithIcon() {
-  return (
-    <List>
-      <List.Item>
-        <List.ItemStart>
-          <Mail className="h-5 w-5" />
-        </List.ItemStart>
-        Inbox
-      </List.Item>
-      <List.Item>
-        <List.ItemStart>
-          <Bin className="h-5 w-5" />
-        </List.ItemStart>
-        Trash
-      </List.Item>
-      <List.Item>
-        <List.ItemStart>
-          <Settings className="h-5 w-5" />
-        </List.ItemStart>
-        Settings
-      </List.Item>
-    </List>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="list/list-with-icon.tsx" language="react" />
 
 ---
 
@@ -87,61 +39,7 @@ export function ListWithIcon() {
 
 You can add avatars to your `List` items using the `Avatar` and `List.ItemStart` components. In the example below, we've showcased a list of users with their profile picture, name, and job title.
 
-<OldComponentPreview demo={<List.ListWithAvatar />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { List, Avatar, Typography } from "@material-tailwind/react";
-
-const ListItem = React.forwardRef<
-  typeof List.Item,
-  {
-    img: string;
-    title: string;
-    description: string;
-  }
->(({ img, title, description, ...rest }, ref) => {
-  return (
-    <List.Item ref={ref as any} {...rest}>
-      <List.ItemStart>
-        <Avatar src={img} alt="profile-picture" />
-      </List.ItemStart>
-      <div>
-        <Typography color="default" className="font-semibold">
-          {title}
-        </Typography>
-        <Typography type="small" className="text-foreground">
-          {description}
-        </Typography>
-      </div>
-    </List.Item>
-  );
-});
-
-export function ListWithAvatar() {
-  return (
-    <List>
-      <ListItem
-        img="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
-        title="Alex Andrew"
-        description="Software Engineer @ Material Tailwind"
-      />
-      <ListItem
-        img="https://dub.sh/rNFOKKJ"
-        title="Alexander"
-        description="Backend Developer @ Material Tailwind"
-      />
-      <ListItem
-        img="https://dub.sh/6i238JA"
-        title="Emma Willever"
-        description="UI/UX Designer @ Material Tailwind"
-      />
-    </List>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="list/list-with-avatar.tsx" language="react" />
 
 ---
 
@@ -149,49 +47,7 @@ export function ListWithAvatar() {
 
 You can add badges to your `List` items using the `Chip` and `List.ItemStart` components. In the example below, we've showcased a list of items with a badge that represents the number of items in each category.
 
-<OldComponentPreview demo={<List.ListWithBadge />}>
-```tsx
-"use client";
-
-import { List, Chip } from "@material-tailwind/react";
-import { Mail, Settings, Bin } from "iconoir-react";
-
-export function ListWithBadge() {
-  return (
-    <List>
-      <List.Item>
-        <List.ItemStart>
-          <Mail className="h-5 w-5" />
-        </List.ItemStart>
-        Inbox
-        <List.ItemEnd>
-          <Chip size="sm" variant="ghost">
-            <Chip.Label>14</Chip.Label>
-          </Chip>
-        </List.ItemEnd>
-      </List.Item>
-      <List.Item>
-        <List.ItemStart>
-          <Bin className="h-5 w-5" />
-        </List.ItemStart>
-        Trash
-        <List.ItemEnd>
-          <Chip size="sm" variant="ghost">
-            <Chip.Label>40</Chip.Label>
-          </Chip>
-        </List.ItemEnd>
-      </List.Item>
-      <List.Item>
-        <List.ItemStart>
-          <Settings className="h-5 w-5" />
-        </List.ItemStart>
-        Settings
-      </List.Item>
-    </List>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="list/list-with-badge.tsx" language="react" />
 
 ---
 
@@ -199,41 +55,7 @@ export function ListWithBadge() {
 
 You can add a selected state to your `List` items using the `selected` prop. In the example below, we've showcased a list of items with a selected state that represents the active item.
 
-<OldComponentPreview demo={<List.ListWithSelectedItem />}>
-```tsx
-"use client";
-
-import * as React from "react";
-import { List } from "@material-tailwind/react";
-
-export function ListWithSelectedItem() {
-  const [selected, setSelected] = React.useState("inbox");
-
-  return (
-    <List>
-      <List.Item
-        selected={selected === "inbox"}
-        onClick={() => setSelected("inbox")}
-      >
-        Inbox
-      </List.Item>
-      <List.Item
-        selected={selected === "trash"}
-        onClick={() => setSelected("trash")}
-      >
-        Trash
-      </List.Item>
-      <List.Item
-        selected={selected === "settings"}
-        onClick={() => setSelected("settings")}
-      >
-        Settings
-      </List.Item>
-    </List>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="list/list-with-selected-item.tsx" language="react" />
 
 ---
 
@@ -241,23 +63,7 @@ export function ListWithSelectedItem() {
 
 You can add a disabled state to your `List` items using the `disabled` prop. This way you can disable the list item and prevent the user from interacting with it.
 
-<OldComponentPreview demo={<List.ListWithDisabledItem />}>
-```tsx
-"use client";
-
-import { List } from "@material-tailwind/react";
-
-export function ListWithDisabledItem() {
-  return (
-    <List>
-      <List.Item disabled>Inbox</List.Item>
-      <List.Item>Trash</List.Item>
-      <List.Item>Settings</List.Item>
-    </List>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="list/list-with-disabled-item.tsx" language="react" />
 
 ---
 
@@ -265,29 +71,7 @@ export function ListWithDisabledItem() {
 
 You can use the `List.Item` component as a link by using the `as` prop. This way you can use the `List.Item` component as a link to navigate to another page or website.
 
-<OldComponentPreview demo={<List.ListWithLink />}>
-```tsx
-"use client";
-
-import { List } from "@material-tailwind/react";
-
-export function ListWithLink() {
-  return (
-    <List>
-      <List.Item as="a" href="#list-with-link">
-        Inbox
-      </List.Item>
-      <List.Item as="a" href="#list-with-link">
-        Trash
-      </List.Item>
-      <List.Item as="a" href="#list-with-link">
-        Settings
-      </List.Item>
-    </List>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="list/list-with-link.tsx" language="react" />
 
 ---
 
@@ -295,56 +79,4 @@ export function ListWithLink() {
 
 You can customize the `List` component using the `className` prop. This way you can create your own styles for the `List` component.
 
-<OldComponentPreview demo={<List.ListCustomStyles />}>
-```tsx
-"use client";
-
-import { List, Chip } from "@material-tailwind/react";
-import { Mail, Settings, Bin } from "iconoir-react";
-
-export function ListCustomStyles() {
-  return (
-    <List>
-      <List.Item className="group hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary">
-        <List.ItemStart>
-          <Mail className="h-5 w-5" />
-        </List.ItemStart>
-        Inbox
-        <List.ItemEnd>
-          <Chip
-            size="sm"
-            variant="ghost"
-            color="info"
-            className="transition-colors duration-300 group-hover:bg-white"
-          >
-            <Chip.Label>14</Chip.Label>
-          </Chip>
-        </List.ItemEnd>
-      </List.Item>
-      <List.Item className="group hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary">
-        <List.ItemStart>
-          <Bin className="h-5 w-5" />
-        </List.ItemStart>
-        Trash
-        <List.ItemEnd>
-          <Chip
-            size="sm"
-            variant="ghost"
-            color="info"
-            className="transition-colors duration-300 group-hover:bg-white"
-          >
-            <Chip.Label>40</Chip.Label>
-          </Chip>
-        </List.ItemEnd>
-      </List.Item>
-      <List.Item className="group hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary">
-        <List.ItemStart>
-          <Settings className="h-5 w-5" />
-        </List.ItemStart>
-        Settings
-      </List.Item>
-    </List>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="list/list-custom-styles.tsx" language="react" />

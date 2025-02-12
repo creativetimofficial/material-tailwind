@@ -1,9 +1,9 @@
 import { Card, Typography, Button } from "@material-tailwind/react";
 
-export function CardDemo() {
+export default function CardDemo() {
   return (
     <Card className="max-w-xs">
-      <Card.Header as="img" src="https://dub.sh/CLrLpxd" alt="image" />
+      <Card.Header as="img" src="https://images.unsplash.com/photo-1581337204873-ef36aa186caa?q=80&w=800&auto=format&fit=crop" alt="image" />
       <Card.Body>
         <Typography type="h6">UI/UX Review Check</Typography>
         <Typography className="my-1 text-foreground">

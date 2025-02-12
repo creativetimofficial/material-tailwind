@@ -21,32 +21,7 @@ See below our beautiful `Card` examples that you can use in your React and Tailw
 
 Here's how to implement a simple and responsive `Card` component. It can be used for displaying information about a product, a blog post, or any other content that requires a visual representation in your website.
 
-<OldComponentPreview demo={<Card.CardDemo />}>
-```tsx
-"use client";
-
-import { Card, Typography, Button } from "@material-tailwind/react";
-
-export function CardDemo() {
-  return (
-    <Card className="max-w-xs">
-      <Card.Header as="img" src="https://dub.sh/CLrLpxd" alt="image" />
-      <Card.Body>
-        <Typography type="h6">UI/UX Review Check</Typography>
-        <Typography className="my-1 text-foreground">
-          The place is close to Barceloneta Beach and bus stop just 2 min by
-          walk and near to "Naviglio" where you can enjoy the main night life in
-          Barcelona.
-        </Typography>
-      </Card.Body>
-      <Card.Footer>
-        <Button>Read More</Button>
-      </Card.Footer>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/card-demo.tsx" language="react" />
 
 ---
 
@@ -54,31 +29,7 @@ export function CardDemo() {
 
 Use this example if you want to showcase your information in a simple and straightforward way. A basic card comes with a headline, a description, and a CTA button.
 
-<OldComponentPreview demo={<Card.SimpleCard />}>
-```tsx
-"use client";
-
-import { Card, Typography, Button } from "@material-tailwind/react";
-
-export function SimpleCard() {
-  return (
-    <Card className="max-w-xs">
-      <Card.Body>
-        <Typography type="h6">UI/UX Review Check</Typography>
-        <Typography className="my-1 text-foreground">
-          The place is close to Barceloneta Beach and bus stop just 2 min by
-          walk and near to "Naviglio" where you can enjoy the main night life in
-          Barcelona.
-        </Typography>
-      </Card.Body>
-      <Card.Footer>
-        <Button isFullWidth>Read More</Button>
-      </Card.Footer>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/simple-card.tsx" language="react" />
 
 ---
 
@@ -86,37 +37,7 @@ export function SimpleCard() {
 
 Use this card example if you are looking to use a link instead a button. This card comes with a headline, a description, and a link to a specific page.
 
-<OldComponentPreview demo={<Card.CardWithLink />}>
-```tsx
-"use client";
-
-import { Card, Typography, Button } from "@material-tailwind/react";
-import { FrameSelect } from "iconoir-react";
-
-export function CardWithLink() {
-  return (
-    <Card className="max-w-xs">
-      <Card.Header className="mx-3 mt-3">
-        <FrameSelect className="h-16 w-16" />
-      </Card.Header>
-      <Card.Body>
-        <Typography type="h6">UI/UX Review Check</Typography>
-        <Typography className="my-1 text-foreground">
-          The place is close to Barceloneta Beach and bus stop just 2 min by
-          walk and near to "Naviglio" where you can enjoy the main night life in
-          Barcelona.
-        </Typography>
-      </Card.Body>
-      <Card.Footer>
-        <Button isFullWidth size="sm" as="a" href="#">
-          Read More
-        </Button>
-      </Card.Footer>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/card-with-link.tsx" language="react" />
 
 ---
 
@@ -124,66 +45,7 @@ export function CardWithLink() {
 
 Showcase user information in a concise way by using this card example. Use high-quality images for a better effect. This type of card is usually used for team member pages, author bio, and user profiles.
 
-<OldComponentPreview demo={<Card.ProfileCard />}>
-```tsx
-"use client";
-
-import {
-  Card,
-  Typography,
-  IconButton,
-  Tooltip,
-} from "@material-tailwind/react";
-import { X, Facebook, Instagram } from "iconoir-react";
-
-export function ProfileCard() {
-  return (
-    <Card className="max-w-xs">
-      <Card.Header
-        as="img"
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
-        alt="profile-picture"
-      />
-      <Card.Body className="text-center">
-        <Typography type="h5">Alex Andrew</Typography>
-        <Typography className="my-1 text-foreground">
-          CEO & Co-Founder
-        </Typography>
-      </Card.Body>
-      <Card.Footer className="flex items-center justify-center gap-1">
-        <Tooltip>
-          <Tooltip.Trigger as={IconButton} size="sm" variant="ghost">
-            <X className="h-3.5 w-3.5" />
-          </Tooltip.Trigger>
-          <Tooltip.Content>
-            Follow
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-        <Tooltip>
-          <Tooltip.Trigger as={IconButton} size="sm" variant="ghost">
-            <Facebook className="h-4 w-4" />
-          </Tooltip.Trigger>
-          <Tooltip.Content>
-            Like
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-        <Tooltip>
-          <Tooltip.Trigger as={IconButton} size="sm" variant="ghost">
-            <Instagram className="h-4 w-4" />
-          </Tooltip.Trigger>
-          <Tooltip.Content>
-            Follow
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip>
-      </Card.Footer>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/profile-card.tsx" language="react" />
 
 ---
 
@@ -191,85 +53,7 @@ export function ProfileCard() {
 
 This login card is perfect for sections that require user authentication. It contains the usual information for a smooth authentication process.
 
-<OldComponentPreview demo={<Card.LoginCard />}>
-```tsx
-"use client";
-
-import {
-  Card,
-  Typography,
-  Button,
-  Input,
-  Checkbox,
-} from "@material-tailwind/react";
-
-export function LoginCard() {
-  return (
-    <Card className="max-w-xs">
-      <Card.Header
-        as={Card}
-        color="primary"
-        className="grid h-24 place-items-center shadow-none"
-      >
-        <Typography as="span" type="h4" className="text-primary-foreground">
-          Sign In
-        </Typography>
-      </Card.Header>
-      <Card.Body as="form">
-        <div className="mb-4 mt-2 space-y-1.5">
-          <Typography
-            as="label"
-            htmlFor="email"
-            type="small"
-            color="default"
-            className="font-semibold"
-          >
-            Email
-          </Typography>
-          <Input id="email" type="email" placeholder="someone@example.com" />
-        </div>
-        <div className="mb-4 space-y-1.5">
-          <Typography
-            as="label"
-            htmlFor="password"
-            type="small"
-            color="default"
-            className="font-semibold"
-          >
-            Password
-          </Typography>
-          <Input id="password" type="password" placeholder="************" />
-        </div>
-        <label htmlFor="remember" className="mb-4 flex items-center gap-2">
-          <Checkbox id="remember">
-            <Checkbox.Indicator />
-          </Checkbox>
-          <Typography className="text-foreground">Remember Me</Typography>
-        </label>
-        <Button isFullWidth>Sign In</Button>
-      </Card.Body>
-      <Card.Footer className="text-center">
-        <Typography
-          type="small"
-          className="my-1 flex items-center justify-center gap-1 text-foreground"
-        >
-          Don't have an account?
-          <Typography
-            type="small"
-            as="a"
-            href="#"
-            color="primary"
-            className="font-bold"
-          >
-            Sign up
-          </Typography>
-        </Typography>
-      </Card.Footer>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/login-card.tsx" language="react" />
 
 ---
 
@@ -277,65 +61,7 @@ export function LoginCard() {
 
 This beautiful pricing card will present the pricing plans for the products. It is perfect if you want the highlight the product's features.
 
-<OldComponentPreview demo={<Card.PricingCard />}>
-```tsx
-"use client";
-
-import { Card, Typography, Button, Chip } from "@material-tailwind/react";
-import { CheckCircleSolid } from "iconoir-react";
-
-export function PricingCard() {
-  return (
-    <Card color="primary" className="max-w-xs">
-      <Card.Header className="py-6 text-center">
-        <Chip size="lg">
-          <Chip.Label>Standard</Chip.Label>
-        </Chip>
-        <Typography
-          as="span"
-          type="h1"
-          className="mt-3 flex justify-center gap-1 text-7xl text-primary-foreground"
-        >
-          <span className="mt-2 text-4xl">$</span>29
-          <span className="self-end text-4xl">/mo</span>
-        </Typography>
-      </Card.Header>
-      <hr className="border-primary-dark" />
-      <Card.Body as="ul" className="space-y-3 px-8 pb-6 pt-8">
-        <li className="flex items-center gap-4 text-white">
-          <CheckCircleSolid className="h-5 w-5" />
-          <Typography>5 team members</Typography>
-        </li>
-        <li className="flex items-center gap-4 text-white">
-          <CheckCircleSolid className="h-5 w-5" />
-          <Typography>200+ components</Typography>
-        </li>
-        <li className="flex items-center gap-4 text-white">
-          <CheckCircleSolid className="h-5 w-5" />
-          <Typography>40+ built-in pages</Typography>
-        </li>
-        <li className="flex items-center gap-4 text-white">
-          <CheckCircleSolid className="h-5 w-5" />
-          <Typography>1 year free updates</Typography>
-        </li>
-        <li className="flex items-center gap-4 text-white">
-          <CheckCircleSolid className="h-5 w-5" />
-          <Typography>Life time technical support</Typography>
-        </li>
-      </Card.Body>
-      <Card.Footer>
-        <Button
-          isFullWidth
-          className="border-white bg-white text-black hover:border-white hover:bg-white hover:text-black"
-        >
-          Buy Now
-        </Button>
-      </Card.Footer>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/pricing-card.tsx" language="react" />
 
 ---
 
@@ -343,66 +69,7 @@ export function PricingCard() {
 
 Showcase blog posts in a visually appealing way with our example of blog card. It contains the basic elements that you will need: a headline, an image, a description, authors, and a date.
 
-<OldComponentPreview demo={<Card.BlogCard />}>
-```tsx
-"use client";
-
-import React from "react";
-import { Card, Typography, Avatar, Tooltip } from "@material-tailwind/react";
-
-export function BlogCard() {
-  return (
-    <Card className="max-w-[24rem] overflow-hidden">
-      <Card.Header
-        as="img"
-        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-        alt="ui/ux review check"
-      />
-      <Card.Body>
-        <Typography type="h6">UI/UX Review Check</Typography>
-        <Typography className="mt-1 text-foreground">
-          Because it&apos;s about motivating the doers. Because I&apos;m here to
-          follow my dreams and inspire others.
-        </Typography>
-      </Card.Body>
-      <Card.Footer className="mt-4 flex items-center justify-between">
-        <div className="flex items-center -space-x-3">
-          <Tooltip>
-            <Tooltip.Trigger>
-              <Avatar
-                size="sm"
-                alt="natali craig"
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1061&q=80"
-                className="border-2 border-secondary hover:z-10"
-              />
-            </Tooltip.Trigger>
-            <Tooltip.Content>
-              Natali Craig
-              <Tooltip.Arrow />
-            </Tooltip.Content>
-          </Tooltip>
-          <Tooltip>
-            <Tooltip.Trigger>
-              <Avatar
-                size="sm"
-                alt="tania andrew"
-                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-                className="border-2 border-secondary hover:z-10"
-              />
-            </Tooltip.Trigger>
-            <Tooltip.Content>
-              Tania Andrew
-              <Tooltip.Arrow />
-            </Tooltip.Content>
-          </Tooltip>
-        </div>
-        <Typography type="small">January 10</Typography>
-      </Card.Footer>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/blog-card.tsx" language="react" />
 
 ---
 
@@ -410,41 +77,7 @@ export function BlogCard() {
 
 If you are looking for a more sophisticated blog card, use this example which uses an image as a background. Blog cards are usually used on blog pages and home pages.
 
-<OldComponentPreview demo={<Card.BackgroundBlogCard />}>
-```tsx
-"use client";
-
-import React from "react";
-import { Card, Typography, Avatar } from "@material-tailwind/react";
-
-export function BackgroundBlogCard() {
-  return (
-    <Card className="relative flex h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden text-center">
-      <Card.Header>
-        <div className="absolute inset-0 m-0 h-full w-full rounded-none bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-center">
-          <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50 to-black/10 dark:from-black/90 dark:via-black/60 dark:to-black/20" />
-        </div>
-      </Card.Header>
-      <Card.Body className="relative bottom-0 flex h-full flex-col items-center justify-end px-6 py-14 md:px-12">
-        <Typography type="h4" className="text-white">
-          How we design and code open-source projects?
-        </Typography>
-        <Typography type="h6" className="my-6 text-white/80">
-          Tania Andrew
-        </Typography>
-        <Avatar
-          size="xl"
-          shape="circular"
-          alt="tania andrew"
-          className="border-2 border-white"
-          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-        />
-      </Card.Body>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/background-blog-card.tsx" language="react" />
 
 ---
 
@@ -452,163 +85,7 @@ export function BackgroundBlogCard() {
 
 If you have a service booking section on your website, this card if what you will need! The tooltips are used to show the most important features in a user friendly way.
 
-<OldComponentPreview demo={<Card.BookingCard />}>
-```tsx
-"use client";
-
-import React from "react";
-import {
-  Card,
-  Typography,
-  Button,
-  IconButton,
-  Tooltip,
-} from "@material-tailwind/react";
-import {
-  HeartSolid,
-  StarSolid,
-  Cash,
-  Wifi,
-  HomeSimple,
-  ModernTv,
-  FireFlame,
-} from "iconoir-react";
-
-export function BookingCard() {
-  return (
-    <Card className="w-full max-w-[26rem] shadow-lg">
-      <Card.Header className="relative overflow-hidden p-0">
-        <img
-          src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-          alt="ui/ux review check"
-        />
-        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
-        <IconButton
-          size="sm"
-          color="error"
-          variant="ghost"
-          className="!absolute right-2 top-2 rounded-full"
-        >
-          <HeartSolid className="h-5 w-5" />
-        </IconButton>
-      </Card.Header>
-      <Card.Body>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography type="h6">Wooden House, Florida</Typography>
-          <Typography className="flex items-center gap-1.5 ">
-            <StarSolid className="h-[18px] w-[18px] text-warning" />
-            5.0
-          </Typography>
-        </div>
-        <Typography className="text-foreground">
-          Enter a freshly updated and thoughtfully furnished peaceful home
-          surrounded by ancient trees, stone walls, and open meadows.
-        </Typography>
-        <div className="group mt-6 inline-flex flex-wrap items-center gap-3">
-          <Tooltip>
-            <Tooltip.Trigger>
-              <IconButton
-                isCircular
-                size="lg"
-                color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
-              >
-                <Cash className="h-5 w-5" />
-              </IconButton>
-            </Tooltip.Trigger>
-            <Tooltip.Content>
-              $129 per night
-              <Tooltip.Arrow />
-            </Tooltip.Content>
-          </Tooltip>
-          <Tooltip>
-            <Tooltip.Trigger>
-              <IconButton
-                isCircular
-                size="lg"
-                color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
-              >
-                <Wifi className="h-5 w-5" />
-              </IconButton>
-            </Tooltip.Trigger>
-            <Tooltip.Content>
-              Free wifi
-              <Tooltip.Arrow />
-            </Tooltip.Content>
-          </Tooltip>
-          <Tooltip>
-            <Tooltip.Trigger>
-              <IconButton
-                isCircular
-                size="lg"
-                color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
-              >
-                <HomeSimple className="h-5 w-5" />
-              </IconButton>
-            </Tooltip.Trigger>
-            <Tooltip.Content>
-              2 bedrooms <Tooltip.Arrow />
-            </Tooltip.Content>
-          </Tooltip>
-          <Tooltip>
-            <Tooltip.Trigger>
-              <IconButton
-                isCircular
-                size="lg"
-                color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
-              >
-                <ModernTv className="h-5 w-5" />
-              </IconButton>
-            </Tooltip.Trigger>
-            <Tooltip.Content>
-              65" HDTV
-              <Tooltip.Arrow />
-            </Tooltip.Content>
-          </Tooltip>
-          <Tooltip>
-            <Tooltip.Trigger>
-              <IconButton
-                isCircular
-                size="lg"
-                color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
-              >
-                <FireFlame className="h-5 w-5" />
-              </IconButton>
-            </Tooltip.Trigger>
-            <Tooltip.Content>
-              Fire alert <Tooltip.Arrow />
-            </Tooltip.Content>
-          </Tooltip>
-          <Tooltip>
-            <Tooltip.Trigger>
-              <IconButton
-                isCircular
-                size="lg"
-                color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
-              >
-                +20
-              </IconButton>
-            </Tooltip.Trigger>
-            <Tooltip.Content>
-              And +20 more
-              <Tooltip.Arrow />
-            </Tooltip.Content>
-          </Tooltip>
-        </div>
-      </Card.Body>
-      <Card.Footer className="pt-3">
-        <Button isFullWidth>Reserve</Button>
-      </Card.Footer>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/booking-card.tsx" language="react" />
 
 ---
 
@@ -616,48 +93,7 @@ export function BookingCard() {
 
 The testimonial section is a necessary component of any website. Use our card example to create a beautiful testimonial section.
 
-<OldComponentPreview demo={<Card.TestimonialCard />}>
-```tsx
-"use client";
-
-import {
-  Card,
-  CardBody,
-  Typography,
-  Avatar,
-  Rating,
-} from "@material-tailwind/react";
-
-export function TestimonialCard() {
-  return (
-    <Card className="w-full max-w-[26rem] border-none shadow-none">
-      <Card.Header className="mx-0 flex items-center gap-4 pb-4 pt-0">
-        <Avatar
-          size="lg"
-          shape="rounded"
-          alt="tania andrew"
-          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-        />
-        <div className="flex w-full flex-col gap-0.5">
-          <div className="flex items-center justify-between">
-            <Typography type="h6">Tania Andrew</Typography>
-            <Rating color="warning" value={5} readonly />
-          </div>
-          <Typography>Frontend Lead @ Google</Typography>
-        </div>
-      </Card.Header>
-      <CardBody className="p-0">
-        <Typography className="text-foreground">
-          &quot;I found solution to all my design needs from Creative Tim. I use
-          them as a freelancer in my hobby projects for fun! And its really
-          affordable, very humble guys !!!&quot;
-        </Typography>
-      </CardBody>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/testimonial-card.tsx" language="react" />
 
 ---
 
@@ -665,61 +101,7 @@ export function TestimonialCard() {
 
 Here is an example of a simple horizontal card that you can use to showcase the information. This card is perfect for blog posts, news, and articles.
 
-<OldComponentPreview demo={<Card.HorizontalCard />}>
-```tsx
-"use client";
-
-import { Card, Typography, Button } from "@material-tailwind/react";
-
-export function HorizontalCard() {
-  return (
-    <Card className="flex h-full w-full max-w-[48rem] flex-row">
-      <Card.Header className="m-0 h-full w-2/5 shrink-0 rounded-r-none">
-        <img
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-          alt="card-image"
-          className="h-full w-full object-cover"
-        />
-      </Card.Header>
-      <Card.Body className="p-4">
-        <Typography
-          type="small"
-          className="mb-4 font-bold uppercase text-foreground"
-        >
-          startups
-        </Typography>
-        <Typography type="h5" className="mb-2">
-          Lyft launching cross-platform service this week
-        </Typography>
-        <Typography className="mb-8 text-foreground">
-          Like so many organizations these days, Autodesk is a company in
-          transition. It was until recently a traditional boxed software company
-          selling licenses. Yet its own business model disruption is only part
-          of the story
-        </Typography>
-        <Button as="a" href="#" className="mb-2 flex w-fit items-center gap-2">
-          Learn More
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-            className="h-4 w-4"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-            />
-          </svg>
-        </Button>
-      </Card.Body>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/horizontal-card.tsx" language="react" />
 
 ---
 
@@ -727,38 +109,4 @@ export function HorizontalCard() {
 
 Use this card example to showcase your products in an ecommerce website. This card comes with an image, a headline, a price, a description, and a CTA button.
 
-<OldComponentPreview demo={<Card.EcommerceCard />}>
-```tsx
-"use client";
-
-import { Card, Typography, Button } from "@material-tailwind/react";
-
-export function EcommerceCard() {
-  return (
-    <Card className="w-96">
-      <Card.Header
-        as="img"
-        src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
-        alt="card-image"
-        className="h-96 object-cover"
-      />
-      <Card.Body>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography type="h6">Apple AirPods</Typography>
-          <Typography type="h6">$95.00</Typography>
-        </div>
-        <Typography className="text-foreground">
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
-        </Typography>
-      </Card.Body>
-      <Card.Footer>
-        <Button isFullWidth color="secondary">
-          Add to Cart
-        </Button>
-      </Card.Footer>
-    </Card>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="card/ecommerce-card.tsx" language="react" />

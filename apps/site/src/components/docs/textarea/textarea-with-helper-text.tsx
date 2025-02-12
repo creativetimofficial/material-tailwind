@@ -1,7 +1,7 @@
 import { Textarea, Typography } from "@material-tailwind/react";
 import { InfoCircle } from "iconoir-react";
 
-export function TextareaWithHelperText() {
+export default function TextareaWithHelperText() {
   return (
     <div className="w-full space-y-2">
       <Textarea placeholder="Your message..." />

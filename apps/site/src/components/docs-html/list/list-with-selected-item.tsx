@@ -1,13 +1,13 @@
 
-
 export default function ListWithSelectedItem() {
   return (
     <div
+      className="w-full place-items-center"
       dangerouslySetInnerHTML={{
-        __html: `<ul class="flex min-w-[240px] flex-col gap-0.5">
-  <li class="flex select-none items-center rounded-md bg-slate-200 px-2.5 py-1.5 align-middle font-sans text-slate-800 transition-all duration-300 ease-in focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:text-white dark:focus:text-white">Inbox</li>
-  <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-slate-600 transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">Trash</li>
-  <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-slate-600 transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">Settings</li>
+        __html: `<ul class="flex flex-col gap-0.5 min-w-60">
+  <li class="flex items-center py-1.5 px-2.5 rounded-md align-middle cursor-pointer transition-all duration-300 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none bg-transparent text-slate-600 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 focus:bg-slate-200 focus:text-slate-800 dark:focus:text-white data-[selected=true]:bg-slate-200 data-[selected=true]:text-black dark:data-[selected=true]:text-white dark:bg-opacity-70" data-selected="true">Inbox</li>
+  <li class="flex items-center py-1.5 px-2.5 rounded-md align-middle cursor-pointer transition-all duration-300 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none bg-transparent text-slate-600 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 focus:bg-slate-200 focus:text-slate-800 dark:focus:text-white data-[selected=true]:bg-slate-200 data-[selected=true]:text-black dark:data-[selected=true]:text-white dark:bg-opacity-70" data-selected="false">Trash</li>
+  <li class="flex items-center py-1.5 px-2.5 rounded-md align-middle cursor-pointer transition-all duration-300 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none bg-transparent text-slate-600 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 focus:bg-slate-200 focus:text-slate-800 dark:focus:text-white data-[selected=true]:bg-slate-200 data-[selected=true]:text-black dark:data-[selected=true]:text-white dark:bg-opacity-70" data-selected="false">Settings</li>
 </ul>
 `
       }}

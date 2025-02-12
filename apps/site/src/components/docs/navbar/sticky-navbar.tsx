@@ -59,7 +59,7 @@ function NavList() {
   );
 }
 
-export function StickyNavbar() {
+export default function StickyNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {

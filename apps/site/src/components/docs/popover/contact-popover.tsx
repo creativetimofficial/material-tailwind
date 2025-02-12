@@ -8,7 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { City, Mail, Phone } from "iconoir-react";
 
-export function ContactPopover() {
+export default function ContactPopover() {
   const [open, setOpen] = React.useState(true);
 
   return (
@@ -21,11 +21,11 @@ export function ContactPopover() {
           <List>
             <List.Item>
               <List.ItemStart>
-                <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg" alt="profile-picture" />
+                <Avatar src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/team-1.jpg" alt="profile-picture" />
               </List.ItemStart>
               <div>
                 <Typography color="default" className="font-semibold">
-                  Alex Andrew
+                  Andrew Alexa
                 </Typography>
                 <Typography type="small" className="text-foreground">
                   General Manager

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Tooltip, IconButton } from "@material-tailwind/react";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 interface CodePreviewWithCopyProps {
   codeSnippet: string;
@@ -23,7 +24,7 @@ export default function CodePreviewWithCopy({
   };
 
   return (
-    <div className="relative overflow-scroll border border-stone-200 rounded-lg text-stone-800 lg:max-w-[calc(80rem-480px-2rem-52px)] max-w-full mt-5">
+    <div className="relative overflow-scroll border border-slate-200 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-200 bg-white lg:max-w-[calc(80rem-480px-2rem-52px)] max-w-full mt-5">
       {/* Tooltip with Copy Button */}
       <Tooltip>
         <Tooltip.Trigger as="span" className="absolute right-2 top-2 z-10">
@@ -84,9 +85,19 @@ export default function CodePreviewWithCopy({
       </Tooltip>
 
       {/* Code Block */}
-      <pre className="overflow-x-auto p-4 text-sm leading-relaxed font-mono">
-        <code className="text-stone-800">{codeSnippet}</code>
-      </pre>
+      <div className="overflow-x-auto p-4">
+        <SyntaxHighlighter
+          language="typescript"
+          customStyle={{
+            margin: 0,
+            background: 'white',
+            padding: 0,
+            color: '#000000'
+          }}
+        >
+          {codeSnippet}
+        </SyntaxHighlighter>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { Alert, Typography } from "@material-tailwind/react";
 import { WarningCircle } from "iconoir-react";
 
-export function AlertWithList() {
+export default function AlertWithList() {
   return (
     <div className="flex w-full flex-col gap-2">
       <Alert variant="ghost">

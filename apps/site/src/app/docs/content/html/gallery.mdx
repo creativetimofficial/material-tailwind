@@ -6,9 +6,11 @@ prev: docs/react/inputs
 next: docs/react/Gallery-group
 ---
 
+<InfoBadge />
+
 # Tailwind CSS Image Gallery
 
-Get started with our image gallery component if you want to allow users to browse, view, or interact with a collection of images.
+Build beautiful and responsive image galleries using Tailwind CSS grid and flex utilities. Perfect for showcasing photos, products, or portfolios with elegant layouts and smooth interactions.
 
 Image galleries can be implemented in various ways, including grid layouts, carousels, or slideshows, depending on the design and user experience goals.
 
@@ -19,7 +21,7 @@ See below our simple `Gallery` examples styled with Tailwind CSS that you can us
 
 ## Gallery Demo
 
-Use this example if you are looking for a clean, straightforward presentation of images in a grid format that adapts from a single column on smaller screens to multiple columns on larger screens.
+Create clean and responsive image grids using Tailwind CSS grid utilities. This example shows how to build a beautiful gallery that adapts from single to multiple columns while maintaining perfect image proportions with `object-cover`.
 
 All images are styled to have the same width and height, creating a uniform look across the gallery. The `object-cover` CSS class ensures that images fill their designated space without distorting their aspect ratios, cropping as necessary.
 
@@ -30,7 +32,7 @@ All images are styled to have the same width and height, creating a uniform look
 
 ## Masonry Grid Gallery
 
-Use this example of responsive image gallery component if you want to add an additional layer of complexity by embedding grids within grids.
+Build dynamic masonry layouts using Tailwind CSS grid utilities. Create visually interesting galleries with varied image sizes and nested grids that maintain proper spacing and alignment.
 
 <PreviewWithCode relativePath="gallery/masonry-grid-gallery.tsx" language="html" />
 
@@ -42,7 +44,7 @@ The nested grid approach adds a layer of visual hierarchy, making the gallery mo
 
 ## Featured Image Gallery
 
-This example showcases one large featured image followed by a row of smaller thumbnail images. This design structure is common in product galleries, portfolios, and anywhere a featured image alongside selectable alternatives is wanted.
+Design product galleries using Tailwind CSS flex and aspect utilities. Combine a large featured image with smaller thumbnails for an engaging product showcase or portfolio display.
 
 <PreviewWithCode relativePath="gallery/featured-image-gallery.tsx" language="html" />
 
@@ -50,7 +52,7 @@ This example showcases one large featured image followed by a row of smaller thu
 
 ## Quad Gallery
 
-Use this example of image gallery component styled with Tailwind CSS to display images in a horizontal scrollable format on smaller screens, and in a more expanded layout on larger screens.
+Create responsive quad layouts using Tailwind CSS grid and overflow utilities. Build horizontal scrollable galleries on mobile that expand into beautiful grid layouts on larger screens, using `object-cover` and `rounded-lg` for consistent image display.
 
 <PreviewWithCode relativePath="gallery/quad-gallery.tsx" language="html" />
 
@@ -66,6 +68,13 @@ Each image is wrapped in its own `div` and styled with classes to ensure they ar
 
 ## Gallery With Tab
 
-Use this example of gallery component if you want to allow users to switch between different sets of images by clicking on tabs labeled "App", "Messages", and "Settings". The tabbed interface is perfect for applications where categorizing images into groups is necessary.
+Build categorized galleries using Tailwind CSS tab utilities. Organize images into tabbed sections for easy navigation and content organization, perfect for showcasing different image collections.
 
 <PreviewWithCode relativePath="gallery/gallery-with-tab.tsx" language="html" />
+
+---
+
+## Required Script
+Add these scripts to the bottom of your HTML:
+
+<CodePreviewTailwindClasses codeSnippet={`<script src="<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/material-tailwind@3.0.0-beta.4/packages/dist/material-tailwind.min.js" defer></script>" defer></script>`}/>

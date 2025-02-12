@@ -6,7 +6,7 @@ import {
   NavArrowRight,
 } from "iconoir-react";
 
-export function BreadcrumbCustomStyles() {
+export default function BreadcrumbCustomStyles() {
   return (
     <Breadcrumb className="gap-0.5">
       <Breadcrumb.Link

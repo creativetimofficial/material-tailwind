@@ -6,16 +6,16 @@ import {
 } from "@material-tailwind/react";
 import { X, Facebook, Instagram } from "iconoir-react";
 
-export function ProfileCard() {
+export default function ProfileCard() {
   return (
     <Card className="max-w-xs">
       <Card.Header
         as="img"
-        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
+        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&fit=crop&w=800&q=80"
         alt="profile-picture"
       />
       <Card.Body className="text-center">
-        <Typography type="h5">Alex Andrew</Typography>
+        <Typography type="h5">Andrew Alexa</Typography>
         <Typography className="my-1 text-foreground">
           CEO & Co-Founder
         </Typography>

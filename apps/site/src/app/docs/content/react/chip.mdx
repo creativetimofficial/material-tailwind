@@ -23,21 +23,7 @@ See below our `Chip` example that you can use in your Tailwind CSS and React pro
 
 Here's how to implement a simple `Chip` component. It can be used for actions in forms, dialogues, and more.
 
-<OldComponentPreview demo={<Chip.ChipDemo />}>
-```tsx
-"use client";
-
-import { Chip } from "@material-tailwind/react";
-
-export function ChipDemo() {
-  return (
-    <Chip>
-      <Chip.Label>Material Tailwind</Chip.Label>
-    </Chip>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="chip/chip-demo.tsx" language="react" />
 
 ---
 
@@ -47,29 +33,7 @@ We provide different chip sizes like `sm`, `md`, and `lg` so you can adapt it ea
 
 In the example below, we've showcased the different chip sizes that you can use in your project.
 
-<OldComponentPreview demo={<Chip.ChipSizes />}>
-```tsx
-"use client";
-
-import { Chip } from "@material-tailwind/react";
-
-export function ChipSizes() {
-  return (
-    <div className="flex items-end gap-2">
-      <Chip size="sm">
-        <Chip.Label>Small</Chip.Label>
-      </Chip>
-      <Chip size="md">
-        <Chip.Label>Medium</Chip.Label>
-      </Chip>
-      <Chip size="lg">
-        <Chip.Label>Large</Chip.Label>
-      </Chip>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="chip/chip-sizes.tsx" language="react" />
 
 ---
 
@@ -79,32 +43,7 @@ We provides different chip variants like `ghost`, `outline`, `solid`, and `gradi
 
 In the example below, we've showcased the different chip variants that you can use in your project.
 
-<OldComponentPreview demo={<Chip.ChipVariants />}>
-```tsx
-"use client";
-
-import { Chip } from "@material-tailwind/react";
-
-export function ChipVariants() {
-  return (
-    <div className="flex items-center gap-2">
-      <Chip variant="ghost">
-        <Chip.Label>Ghost</Chip.Label>
-      </Chip>
-      <Chip variant="outline">
-        <Chip.Label>Outline</Chip.Label>
-      </Chip>
-      <Chip variant="solid">
-        <Chip.Label>Solid</Chip.Label>
-      </Chip>
-      <Chip variant="gradient">
-        <Chip.Label>Gradient</Chip.Label>
-      </Chip>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="chip/chip-variants.tsx" language="react" />
 
 ---
 
@@ -114,38 +53,7 @@ We provide different chip colors like `primary`, `secondary`, `info`, `success`,
 
 In the example below, we've showcased the different chip colors that you can use in your project.
 
-<OldComponentPreview demo={<Chip.ChipColors />}>
-```tsx
-"use client";
-
-import { Chip } from "@material-tailwind/react";
-
-export function ChipColors() {
-  return (
-    <div className="flex items-center gap-2">
-      <Chip color="primary">
-        <Chip.Label>Primary</Chip.Label>
-      </Chip>
-      <Chip color="secondary">
-        <Chip.Label>Secondary</Chip.Label>
-      </Chip>
-      <Chip color="info">
-        <Chip.Label>Info</Chip.Label>
-      </Chip>
-      <Chip color="success">
-        <Chip.Label>Success</Chip.Label>
-      </Chip>
-      <Chip color="warning">
-        <Chip.Label>Warning</Chip.Label>
-      </Chip>
-      <Chip color="error">
-        <Chip.Label>Error</Chip.Label>
-      </Chip>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="chip/chip-colors.tsx" language="react" />
 
 ---
 
@@ -155,45 +63,7 @@ You can add an icon for the `Chip` component to make it more visually appealing 
 
 In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
-<OldComponentPreview demo={<Chip.ChipIcon />}>
-```tsx
-"use client";
-
-import { Chip } from "@material-tailwind/react";
-import { ProfileCircle } from "iconoir-react";
-
-export function ChipIcon() {
-  return (
-    <div className="flex items-center gap-2">
-      <Chip variant="ghost">
-        <Chip.Icon>
-          <ProfileCircle className="h-full w-full" />
-        </Chip.Icon>
-        <Chip.Label>Ghost</Chip.Label>
-      </Chip>
-      <Chip variant="outline">
-        <Chip.Icon>
-          <ProfileCircle className="h-full w-full" />
-        </Chip.Icon>
-        <Chip.Label>Outline</Chip.Label>
-      </Chip>
-      <Chip variant="solid">
-        <Chip.Icon>
-          <ProfileCircle className="h-full w-full" />
-        </Chip.Icon>
-        <Chip.Label>Solid</Chip.Label>
-      </Chip>
-      <Chip variant="gradient">
-        <Chip.Icon>
-          <ProfileCircle className="h-full w-full" />
-        </Chip.Icon>
-        <Chip.Label>Gradient</Chip.Label>
-      </Chip>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="chip/chip-icon.tsx" language="react" />
 
 ---
 
@@ -201,26 +71,7 @@ export function ChipIcon() {
 
 You can use `Chip.DismissTrigger` component to add a close button to your chip for better user experience. Use the example below to create a dismissible chip.
 
-<OldComponentPreview demo={<Chip.ChipDismissible />}>
-```tsx
-"use client";
-
-import { Chip } from "@material-tailwind/react";
-import { ProfileCircle } from "iconoir-react";
-
-export function ChipDismissible() {
-  return (
-    <Chip>
-      <Chip.Icon>
-        <ProfileCircle className="h-full w-full" />
-      </Chip.Icon>
-      <Chip.Label>Material Tailwind</Chip.Label>
-      <Chip.DismissTrigger />
-    </Chip>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="chip/chip-dismissible.tsx" language="react" />
 
 ---
 
@@ -228,29 +79,7 @@ export function ChipDismissible() {
 
 You can add an avatar for the `Chip` component to make it more visually appealing and informative. Use the example below to create `Chip` with `Avatar` component.
 
-<OldComponentPreview demo={<Chip.ChipWithAvatar />}>
-```tsx
-"use client";
-
-import { Chip, Avatar } from "@material-tailwind/react";
-
-export function ChipWithAvatar() {
-  return (
-    <Chip>
-      <Chip.Icon>
-        <Avatar
-          size="xs"
-          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
-          alt="profile-picture"
-          className="h-full w-full"
-        />
-      </Chip.Icon>
-      <Chip.Label>Alex Andrew</Chip.Label>
-    </Chip>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="chip/chip-with-avatar.tsx" language="react" />
 
 ---
 
@@ -258,29 +87,4 @@ export function ChipWithAvatar() {
 
 By default `Chip` comes with a pill shape. If you prefer a rounded shape, you can set the `isPill` prop to `false`. Use the example below to create a rounded `Chip` component.
 
-<OldComponentPreview demo={<Chip.ChipRounded />}>
-```tsx
-"use client";
-
-import { Chip } from "@material-tailwind/react";
-
-export function ChipRounded() {
-  return (
-    <div className="flex items-center gap-2">
-      <Chip isPill={false} variant="ghost">
-        <Chip.Label>Ghost</Chip.Label>
-      </Chip>
-      <Chip isPill={false} variant="outline">
-        <Chip.Label>Outline</Chip.Label>
-      </Chip>
-      <Chip isPill={false} variant="solid">
-        <Chip.Label>Solid</Chip.Label>
-      </Chip>
-      <Chip isPill={false} variant="gradient">
-        <Chip.Label>Gradient</Chip.Label>
-      </Chip>
-    </div>
-  );
-}
-```
-</OldComponentPreview>
+<PreviewWithCode relativePath="chip/chip-rounded.tsx" language="react" />
