@@ -89,7 +89,7 @@ function formatExpires(value: string) {
     .replace(/^([0-1]{1}[0-9]{1})([0-9]{1,2}).*/g, "$1/$2");
 }
 
-export function CheckoutForm() {
+export default function CheckoutForm() {
   const cardForm = useForm<CardFormInputs>({
     resolver: zodResolver(cardFormSchema),
     defaultValues: {
