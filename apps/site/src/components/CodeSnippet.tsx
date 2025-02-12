@@ -145,7 +145,7 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
           className={`transition-all duration-300 ${showCode ? 'max-h-auto' : 'max-h-[400px]'} overflow-hidden`}
         >
           <SyntaxHighlighter
-            language={language}
+            language={'jsx'}
             style={resolvedTheme === 'dark' ? atomOneDark : atomOneLight}
             showLineNumbers
             lineNumberStyle={{ color: "#9CA3AF" }}
