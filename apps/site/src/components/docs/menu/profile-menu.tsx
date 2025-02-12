@@ -7,7 +7,7 @@ export default function ProfileMenu() {
       <Menu.Trigger
         as={Avatar}
         alt="profile-picture"
-        src="https://dub.sh/iu8bOfU"
+        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
       />
       <Menu.Content>
         <Menu.Item>

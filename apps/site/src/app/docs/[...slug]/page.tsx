@@ -3,7 +3,6 @@ import {
   CodePreview,
   ColorPalette,
   FrameworkCard,
-  OldComponentPreview,
 } from "@components";
 import Link from "next/link";
 import { Code } from "bright";
@@ -19,7 +18,7 @@ import { cache } from "react";
 import matter from "gray-matter";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
-import { notFound, usePathname } from "next/navigation";
+import { notFound } from "next/navigation";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 // @types
@@ -108,17 +107,12 @@ import * as HTMLCheckbox from "@components/docs-html/checkbox";
 import * as HTMLRadio from "@components/docs-html/radio";
 import * as HTMLSlider from "@components/docs-html/slider";
 import * as HTMLSwitch from "@components/docs-html/switch";
-// import * as HTMLBadge from "@components/docs-html/badge";
+import * as HTMLBadge from "@components/docs-html/badge";
 import * as HTMLAccordion from "@components/docs-html/accordion";
-
-
-
-import CodeSnippet from '@components/CodeSnippet';
-import ComponentPreview from '@components/ComponentPreview';
-import PreviewWithCode from '@components/PreviewWithCode';
-import CodePreviewTailwindClasses from '@components/CodePreviewTailwindClasses';
-
-import { Docs as DocsLayout } from "@components";
+import ComponentPreview from "@components/ComponentPreview";
+import PreviewWithCode from "@components/PreviewWithCode";
+import CodePreviewTailwindClasses from "@components/CodePreviewTailwindClasses";
+import CodeSnippet from "@components/CodeSnippet";
 import ScriptLoader from "@components/ScriptJsLoader";
 
 async function readDocsContentFn(pathUrl: string) {
@@ -195,10 +189,6 @@ Code.theme = {
   light: "github-light",
 };
 
-const CurrentYear = () => {
-  return new Date().getFullYear();
-}
-
 export const dynamic = "force-static";
 
 export default async function Docs({ params: { slug } }) {
@@ -223,11 +213,9 @@ export default async function Docs({ params: { slug } }) {
             CodePreview,
             ColorPalette,
             FrameworkCard,
-            OldComponentPreview,
             ComponentPreview,
             PreviewWithCode,
-            CodePreviewTailwindClasses,
-            CurrentYear,
+            CodePreviewTailwindClasses, 
             CodeSnippet,
             ScriptLoader,
 
@@ -353,6 +341,7 @@ export default async function Docs({ params: { slug } }) {
 
             // docs-components-html
             HTMLButton,
+            HTMLBadge,
             HTMLButtonGroup,
             HTMLBreadcrumb,
             HTMLAlert,

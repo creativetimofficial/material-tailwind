@@ -20,7 +20,7 @@ export default function InputCreditCard() {
       </Typography>
       <Input
         placeholder="e.g John Doe"
-        className="appearance-none !border-t-primary placeholder:text-primary  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        className="appearance-none placeholder:text-primary  placeholder:opacity-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
         labelProps={{
           className: "before:content-none after:content-none",
         }}
@@ -41,7 +41,7 @@ export default function InputCreditCard() {
       <Input
         placeholder="1234 5678 9012 3456"
         maxLength={19}
-        className="appearance-none !border-t-primary placeholder:text-primary-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        className="appearance-none placeholder:text-primary-300  placeholder:opacity-100  [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
         labelProps={{
           className: "before:content-none after:content-none",
         }}
@@ -68,7 +68,7 @@ export default function InputCreditCard() {
             placeholder="MM/YY"
             maxLength={5}
             pattern="\d{2}/\d{2}"
-            className="appearance-none !border-t-primary placeholder:text-primary-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            className="appearance-none placeholder:text-primary-300  placeholder:opacity-100  [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -94,7 +94,7 @@ export default function InputCreditCard() {
             placeholder="123"
             maxLength={3}
             pattern="\d{3}"
-            className="appearance-none !border-t-primary placeholder:text-primary-300  placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            className="appearance-none placeholder:text-primary-300  placeholder:opacity-100  [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             labelProps={{
               className: "before:content-none after:content-none",
             }}

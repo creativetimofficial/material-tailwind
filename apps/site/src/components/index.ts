@@ -19,5 +19,5 @@ export * from "./theme-toggle";
 export * from "./color-palette";
 export * from "./framework-card";
 export * from "./component-preview"; // old component
-export * from "./ComponentPreview"; 
+// export * from "./ComponentPreview"; 
 export * from "./CodePreviewTailwindClasses";

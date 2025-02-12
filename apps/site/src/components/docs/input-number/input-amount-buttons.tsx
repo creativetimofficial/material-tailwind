@@ -18,7 +18,7 @@ export default function InputAmountButtons() {
           type="number"
           value={value}
           onChange={(e) => setValue(Number(e.target.value))}
-          className="!border-t-primary placeholder:text-primary placeholder:opacity-100  focus:!border-t-gray-900 appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+          className="placeholder:text-primary placeholder:opacity-100  appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           labelProps={{
             className: "before:content-none after:content-none",
           }}

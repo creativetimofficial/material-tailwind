@@ -28,7 +28,7 @@ export default function PopoverWithImage() {
             </Button>
           </div>
           <img
-            src="https://dub.sh/i2Y9t7g"
+            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/mt-demo.jpg"
             alt="image"
             className="h-auto max-h-[220px] w-full rounded-[5px] object-cover"
           />
