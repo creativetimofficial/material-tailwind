@@ -1,6 +1,6 @@
 import { Checkbox, Typography } from "@material-tailwind/react";
 
-export function CheckboxDemo() {
+export default function CheckboxDemo() {
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-2">

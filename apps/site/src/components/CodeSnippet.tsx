@@ -142,17 +142,10 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
         </Tooltip>
         <div
           ref={codeRef}
-          style={{
-            height: showCode
-              ? "auto"
-              : codeHeight <= MIN_CODE_HEIGHT
-                ? "unset"
-                : `${MIN_CODE_HEIGHT}px`,
-          }}
+          className={`transition-all duration-300 ${showCode ? 'max-h-auto' : 'max-h-[400px]'} overflow-hidden`}
         >
-          
           <SyntaxHighlighter
-            language={language}
+            language={'jsx'}
             style={resolvedTheme === 'dark' ? atomOneDark : atomOneLight}
             showLineNumbers
             lineNumberStyle={{ color: "#9CA3AF" }}
@@ -162,17 +155,15 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
               : codeBlock}
           </SyntaxHighlighter>
         </div>
-        {codeHeight > MIN_CODE_HEIGHT && (
           <div className="absolute bottom-0 left-1/2 grid h-16 w-full -translate-x-1/2 items-end justify-center rounded-b-lg bg-gradient-to-t from-background via-background/75 to-transparent pb-2">
             <Button
               size="xs"
               color="secondary"
               onClick={() => setShowCode((cur) => !cur)}
-            >
+                >
               {showCode ? "Hide Code" : "Show Code"}
-            </Button>
-          </div>
-        )}
+          </Button>
+        </div>
       </div>
   );
 }

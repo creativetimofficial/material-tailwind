@@ -8,7 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { Xmark } from "iconoir-react";
 
-export function DialogMessage() {
+export default function DialogMessage() {
   return (
     <Dialog size="sm">
       <Dialog.Trigger as={Button}>Open Message</Dialog.Trigger>
