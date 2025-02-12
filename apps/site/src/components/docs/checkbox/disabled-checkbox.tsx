@@ -1,6 +1,6 @@
 import { Checkbox } from "@material-tailwind/react";
 
-export function DisabledCheckbox() {
+export default function DisabledCheckbox() {
   return (
     <Checkbox disabled>
       <Checkbox.Indicator />

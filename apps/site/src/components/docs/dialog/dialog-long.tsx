@@ -6,7 +6,7 @@ import {
 } from "@material-tailwind/react";
 import { Xmark } from "iconoir-react";
 
-export function DialogLong() {
+export default function DialogLong() {
   return (
     <Dialog>
       <Dialog.Trigger as={Button}>Long Dialog</Dialog.Trigger>

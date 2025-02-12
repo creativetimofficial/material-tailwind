@@ -1,6 +1,6 @@
 import { Checkbox, Typography } from "@material-tailwind/react";
 
-export function CheckboxWithDescription() {
+export default function CheckboxWithDescription() {
   return (
     <div className="flex gap-2">
       <Checkbox id="checkbox-description">

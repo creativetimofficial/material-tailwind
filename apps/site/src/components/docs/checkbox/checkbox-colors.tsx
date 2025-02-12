@@ -1,6 +1,6 @@
 import { Checkbox } from "@material-tailwind/react";
 
-export function CheckboxColors() {
+export default function CheckboxColors() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
       <Checkbox color="primary">

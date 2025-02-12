@@ -205,7 +205,6 @@ export default async function Docs({ params: { slug } }) {
   const path = slug.join("/");
   const { frontMatter, source } = await readDocsContent(path);
   
-  // TODO: replace stone with MT color
   return (
     <>
       <ScriptLoader src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" />
@@ -242,7 +241,7 @@ export default async function Docs({ params: { slug } }) {
               <MTTypography
                 as="h2"
                 type="h5"
-                className="group relative mb-2 cursor-pointer scroll-mt-40 transition-colors text-stone-800 hover:text-stone-900"
+                className="group relative mb-2 cursor-pointer scroll-mt-40 transition-colors text-slate-800 hover:text-slate-900"
                 {...props}
               >
                   <span
@@ -259,7 +258,7 @@ export default async function Docs({ params: { slug } }) {
               <MTTypography
                 as="h3"
                 type="h6"
-                className="group relative mb-1 mt-8 cursor-pointer scroll-mt-40 transition-colors hover:text-stone-800"
+                className="group relative mb-1 mt-8 cursor-pointer scroll-mt-40 transition-colors hover:text-slate-800"
                 {...props}
               >
                 <span
@@ -280,7 +279,7 @@ export default async function Docs({ params: { slug } }) {
               />
             ),
             p: (props: any) => (
-              <MTTypography className="mb-2 text-stone-500" {...props} />
+              <MTTypography className="mb-2 text-slate-500" {...props} />
             ),
             hr: () => <hr className="my-8 border-transparent" />,
             code: (props: any) => (
@@ -289,13 +288,13 @@ export default async function Docs({ params: { slug } }) {
                 {...props}
               />
             ),
-            a: (props: any) => <a {...props} className="text-stone-800 underline" />,
+            a: (props: any) => <a {...props} className="text-slate-800 underline" />,
             ul: (props: any) => (
               <ul className="my-4 ml-4 list-disc space-y-1" {...props} />
             ),
             li: (props: any) => (
               <li
-                className="font-sans text-base font-normal text-stone-500 antialiased"
+                className="font-sans text-base font-normal text-slate-500 antialiased"
                 {...props}
               />
             ),
