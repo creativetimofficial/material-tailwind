@@ -35,6 +35,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 })(window,document,'script','dataLayer',"GTM-KB2WKJS")`,
         }}
       />
+      
       <body className="h-screen w-screen bg-background font-sans">
         <noscript>
           <iframe
@@ -49,6 +50,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Docs>{children}</Docs>
           </React.Suspense>
         </Providers>
+        <script
+          id="material-tailwind-script"
+          src="https://unpkg.com/@material-tailwind/html@3.0.0-beta.4/dist/material-tailwind.min.js"
+          defer
+        ></script>
       </body>
     </html>
   );
