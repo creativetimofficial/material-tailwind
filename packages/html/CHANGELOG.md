@@ -1,5 +1,10 @@
 # Change Log
 
+## [3.0.0-beta.5] 2025-02-13
+
+- Fix type definitions on import from NPM in NextJS
+- Fix name for the global object MaterialTailwind
+
 ## [3.0.0-beta.4] 2025-02-12
 
 - Now Dropdown component support the value "menu" for initial state
