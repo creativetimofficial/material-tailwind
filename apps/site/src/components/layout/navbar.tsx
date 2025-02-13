@@ -79,13 +79,15 @@ function NavIconComponent({ icon: Icon, ...rest }: NavIconProps, ref: any) {
   );
 }
 
+
+
 const MenuItem = React.forwardRef<
   typeof Menu.Item,
   {
     title: string;
     description: string;
     link: string;
-  } & MenuItemProps
+  } & unknown
 >(({ title, description, link, ...rest }, ref) => {
   return (
     <Menu.Item ref={ref} {...rest} className="flex-col items-start">
@@ -167,6 +169,44 @@ function NavItem({
 
 const fetcher = (url: string) => fetch(url).then((response) => response.json());
 
+function NotificationBar() {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted || getCookie("show_notification_bar") === "false") {
+    return null;
+  }
+
+  return (
+    <div
+      className="relative z-[99] border-b border-slate-200 bg-slate-100 px-4 py-3 text-center"
+      id="notification_bar"
+    >
+      <Typography
+        as="p"
+        type="small"
+        className="font-semibold text-black"
+      >
+        We just released 290+ PRO Blocks for React and Tailwind CSS.{" "}
+        <Link href="/v3/blocks" className="text-blue-600 ml-2" target="_blank">
+          Check them out
+        </Link>
+      </Typography>
+      <button
+        onClick={() =>
+          setCookie("show_notification_bar", "false", "notification_bar")
+        }
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-black hover:text-gray-600"
+      >
+        ✕
+      </button>
+    </div>
+  );
+}
+
 export function Navbar() {
   const pathname = usePathname();
   const pathParts = pathname.split("/");
@@ -181,32 +221,7 @@ export function Navbar() {
 
   return (
     <ThemeProvider>
-      {typeof window !== "undefined" &&
-        getCookie("show_notification_bar") !== "false" && (
-          <div
-            className="relative z-[99] border-b border-slate-200 bg-slate-100 px-4 py-3 text-center"
-            id="notification_bar"
-          >
-            <Typography
-              as="p"
-              type="small"
-              className="font-semibold text-black"
-            >
-               We just released 290+ PRO Blocks for React and Tailwind CSS. {" "}
-              <Link href="/v3/blocks" className="text-blue-600 ml-2" target="_blank">
-                Check them out
-              </Link>
-            </Typography>
-            <button
-              onClick={() =>
-                setCookie("show_notification_bar", "false", "notification_bar")
-              }
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-black hover:text-gray-600"
-            >
-              ✕
-            </button>
-          </div>
-        )}
+      <NotificationBar/>
       <nav className="sticky top-0 z-10 w-full border-b border-surface bg-background">
         <div className="px-4 pt-3">
           <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2 pb-0">
