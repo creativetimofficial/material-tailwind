@@ -3377,7 +3377,7 @@ class Stepper {
 
 // Utilities
 // Aggregate all exports into a single object for UMD consumers
-const DavidAI = {
+const MaterialTailwind = {
     initAlert,
     initCollapse,
     initDropdowns,
@@ -3399,7 +3399,7 @@ const DavidAI = {
     cleanupGallery,
 };
 // Global initialization function
-function initDavidAI() {
+function initMaterialTailwind() {
     // Initialize non-Popper components
     initAlert();
     initCollapse();
@@ -3423,7 +3423,7 @@ function initDavidAI() {
 if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
         // Initialize all components
-        initDavidAI();
+        initMaterialTailwind();
         // Observe DOM changes for dynamically added elements
         const observer = new MutationObserver(() => {
             initAlert();
@@ -3438,12 +3438,12 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
             initTooltips();
         });
         observer.observe(document.body, { childList: true, subtree: true });
-        // Expose DavidAI globally for UMD usage
-        window.DavidAI = Object.assign(Object.assign({}, DavidAI), { initDavidAI });
+        // Expose MaterialTailwind globally for UMD usage
+        window.MaterialTailwind = Object.assign(Object.assign({}, MaterialTailwind), { initMaterialTailwind });
     });
 }
 // Default export for ES modules
-var index = Object.assign(Object.assign({}, DavidAI), { initDavidAI });
+var index = Object.assign(Object.assign({}, MaterialTailwind), { initMaterialTailwind });
 
-export { Accordion, Collapse, DavidAI, Dropdown, Modal, Popover, Stepper, Tabs, Tooltip, cleanupAccordions, cleanupDropdowns, cleanupGallery, cleanupModals, cleanupPopovers, cleanupSteppers, cleanupTabs, cleanupTooltips, index as default, initAccordion, initAlert, initCollapse, initDavidAI, initDropdowns, initGallery, initModal, initPopovers, initStepper, initTabs, initTooltips, toggleAccordionById };
+export { Accordion, Collapse, Dropdown, MaterialTailwind, Modal, Popover, Stepper, Tabs, Tooltip, cleanupAccordions, cleanupDropdowns, cleanupGallery, cleanupModals, cleanupPopovers, cleanupSteppers, cleanupTabs, cleanupTooltips, index as default, initAccordion, initAlert, initCollapse, initDropdowns, initGallery, initMaterialTailwind, initModal, initPopovers, initStepper, initTabs, initTooltips, toggleAccordionById };
 //# sourceMappingURL=material-tailwind.esm.js.map
