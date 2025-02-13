@@ -210,9 +210,10 @@ function NotificationBar() {
 export function Navbar() {
   const pathname = usePathname();
   const pathParts = pathname.split("/");
+  const frameworkFolder = pathname.includes("/react/") ? "react" : "html";
 
   const isProd = process.env.NODE_ENV === "production";
-  const routePrefix = isProd ? "/docs/v3/react" : "/docs/react";
+  const routePrefix = (isProd ? "/docs/v3/" : "/docs/") + frameworkFolder;
 
   const { data } = useSWR(
     "https://api.github.com/repos/creativetimofficial/material-tailwind",
