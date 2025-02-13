@@ -66,7 +66,7 @@ const ScriptLoader = () => {
       if (initFunctions[pathname]) {
         initFunctions[pathname].forEach((initFunc) => initFunc());
       }
-    }, 1000);
+    }, 500);
 
     // Cleanup functions for the previous pathname
     return () => {
