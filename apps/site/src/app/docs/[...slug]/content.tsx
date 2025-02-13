@@ -24,6 +24,8 @@ export function Content({ children, frontMatter }: MdxContentProps) {
   const pathname = usePathname();
   const pathParts = pathname.split("/");
   const contentRef = React.useRef<HTMLDivElement>(null);
+  const frameworkFolder = pathname.includes('/react/') ? 'react' : 'html';
+  const rootPath = pathname.includes('/v3/') ? '/docs/v3' : '/docs';
 
   return (
     <div className="flex w-full gap-0 lg:gap-[52px]">
@@ -32,6 +34,7 @@ export function Content({ children, frontMatter }: MdxContentProps) {
           {pathParts.map((part, index) => (
             <React.Fragment key={index}>
               <MTBreadcrumb.Link
+                href={index !== pathParts.length - 1 && `${rootPath}/${frameworkFolder}/installation`}
                 className={twMerge(
                   "capitalize text-orange-500",
                   index !== pathParts.length - 1 && "text-foreground",
