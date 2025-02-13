@@ -52,7 +52,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </Providers>
         <script
           id="material-tailwind-script"
-          src="https://unpkg.com/@material-tailwind/html@3.0.0-beta.4/dist/material-tailwind.min.js"
+          src="https://unpkg.com/@material-tailwind/html@3.0.0-beta.5/dist/material-tailwind.umd.min.js"
           defer
         ></script>
       </body>
