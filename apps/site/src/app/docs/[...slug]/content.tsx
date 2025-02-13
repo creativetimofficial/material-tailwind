@@ -30,27 +30,31 @@ export function Content({ children, frontMatter }: MdxContentProps) {
   return (
     <div className="flex w-full gap-0 lg:gap-[52px]">
       <div ref={contentRef} className="mt-10 w-full px-4 lg:px-0">
-        <MTBreadcrumb className="mb-12 hidden p-0 lg:flex">
-          {pathParts.map((part, index) => (
-            <React.Fragment key={index}>
-              <MTBreadcrumb.Link
-                href={index !== pathParts.length - 1 && `${rootPath}/${frameworkFolder}/installation`}
-                className={twMerge(
-                  "capitalize text-orange-500",
-                  index !== pathParts.length - 1 && "text-foreground",
-                )}
-              >
-                {part}
-              </MTBreadcrumb.Link>
-              {index !== pathParts.length - 1
-                ? index !== 0 && (
-                    <MTBreadcrumb.Separator>
-                      <NavArrowRight className="h-3 w-3 stroke-2" />
-                    </MTBreadcrumb.Separator>
-                  )
-                : null}
-            </React.Fragment>
-          ))}
+      <MTBreadcrumb className="mb-12 hidden p-0 lg:flex">
+          {pathParts.map((part, index) => {
+            const href = index !== pathParts.length - 1 ? `${rootPath}/${frameworkFolder}/installation` : undefined;
+            
+            return (
+              <React.Fragment key={index}>
+                <MTBreadcrumb.Link
+                  href={href}
+                  className={twMerge(
+                    "capitalize text-orange-500",
+                    index !== pathParts.length - 1 && "text-foreground",
+                  )}
+                >
+                  {part}
+                </MTBreadcrumb.Link>
+                {index !== pathParts.length - 1
+                  ? index !== 0 && (
+                      <MTBreadcrumb.Separator>
+                        <NavArrowRight className="h-3 w-3 stroke-2" />
+                      </MTBreadcrumb.Separator>
+                    )
+                  : null}
+              </React.Fragment>
+            );
+          })}
         </MTBreadcrumb>
         {children}
       </div>
