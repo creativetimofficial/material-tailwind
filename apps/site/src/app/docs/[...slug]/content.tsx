@@ -34,7 +34,7 @@ export function Content({ children, frontMatter }: MdxContentProps) {
           {pathParts.map((part, index) => (
             <React.Fragment key={index}>
               <MTBreadcrumb.Link
-                href={index !== pathParts.length - 1 && `${rootPath}/${frameworkFolder}/installation`}
+                href={index !== pathParts.length - 1 && `${rootPath}/${frameworkFolder}/installation` || undefined}
                 className={twMerge(
                   "capitalize text-orange-500",
                   index !== pathParts.length - 1 && "text-foreground",
