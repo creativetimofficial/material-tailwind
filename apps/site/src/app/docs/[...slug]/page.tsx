@@ -198,7 +198,6 @@ export default async function Docs({ params: { slug } }) {
   
   return (
     <>
-      <ScriptLoader />
       <Content frontMatter={frontMatter}>
         <MDXRemote
           source={source}
@@ -218,6 +217,7 @@ export default async function Docs({ params: { slug } }) {
             PreviewWithCode,
             CodePreviewTailwindClasses, 
             CodeSnippet,
+            ScriptLoader,
             TsPropsTable,
             InfoBadge,
 
