@@ -1,10 +1,11 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
-import terser from '@rollup/plugin-terser';
+import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
-import { resolve as resolveTslib } from 'path'; // Used to resolve tslib paths
 import { readFileSync } from 'fs';
+import dts from 'rollup-plugin-dts';
+
 const pkg = JSON.parse(readFileSync('./package.json'));
 
 const copyrightBanner = `
@@ -16,41 +17,42 @@ const copyrightBanner = `
  */
 `;
 
-const tslibPath = resolveTslib('node_modules/tslib/tslib.es6.js');
-
 const inputFile = 'src/index.ts'; // Entry file
 const outputDir = 'dist'; // Output directory
 
 export default [
-  // UMD Build (Non-minified)
+  // First config - generates JavaScript and initial declarations
   {
-    input: inputFile,
-    output: {
-      file: `${outputDir}/material-tailwind.js`,
-      format: 'umd', // Universal Module Definition
-      name: 'MaterialTailwind', // Global variable for browsers
-      exports: 'named', // Ensure named exports
-      sourcemap: true,
-      banner: copyrightBanner,
-    },
+    input: 'src/index.ts',
+    output: [
+      {
+        file: `${outputDir}/material-tailwind.umd.js`,
+        format: 'umd',
+        name: 'MaterialTailwind',
+        exports: 'named',
+        sourcemap: true,
+        banner: copyrightBanner,
+      }
+    ],
     plugins: [
-      resolve(),
-      commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
-        tslib: tslibPath,
+        declaration: true,  // Generate declarations
+        declarationDir: './dist'  // Put them in dist
       }),
+      resolve(),
+      commonjs(),
       babel({
         babelHelpers: 'bundled',
         presets: ['@babel/preset-env', '@babel/preset-typescript'],
       }),
-    ],
+    ]
   },
   // UMD Build (Minified)
   {
     input: inputFile,
     output: {
-      file: `${outputDir}/material-tailwind.min.js`,
+      file: `${outputDir}/material-tailwind.umd.min.js`,
       format: 'umd',
       name: 'MaterialTailwind',
       exports: 'named',
@@ -62,7 +64,7 @@ export default [
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
-        tslib: tslibPath,
+        declarationDir: './dist/dts'
       }),
       babel({
         babelHelpers: 'bundled',
@@ -77,6 +79,7 @@ export default [
     output: {
       file: `${outputDir}/material-tailwind.esm.js`,
       format: 'esm', // ES module format
+      exports: 'named',
       sourcemap: true,
       banner: copyrightBanner,
     },
@@ -85,7 +88,6 @@ export default [
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
-        tslib: tslibPath,
         useTsconfigDeclarationDir: true,
       }),
       babel({
@@ -94,4 +96,35 @@ export default [
       }),
     ],
   },
+  // CommonJS Build
+  {
+    input: inputFile,
+    output: {
+      file: `${outputDir}/material-tailwind.cjs.js`,
+      format: 'cjs', // CommonJS format
+      exports: 'named',
+      sourcemap: true,
+      banner: copyrightBanner,
+    },
+    plugins: [
+      resolve(),
+      commonjs(),
+      typescript({
+        tsconfig: './tsconfig.json',
+      }),
+      babel({
+        babelHelpers: 'bundled',
+        presets: ['@babel/preset-env', '@babel/preset-typescript'],
+      }),
+    ],
+  },
+  // Last config - bundles declarations
+  {
+    input: './src/index.ts',  // Use source file instead
+    output: {
+      file: 'dist/index.d.ts',
+      format: 'es'
+    },
+    plugins: [dts()]
+  }
 ];
