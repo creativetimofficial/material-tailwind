@@ -137,7 +137,7 @@ export const routes = [
           },
           {
             title: "Skeleton",
-            path: `${routePrefix}/Skeleton`,
+            path: `${routePrefix}/skeleton`,
           },
         ],
       },
