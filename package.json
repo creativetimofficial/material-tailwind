@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "next": "14.1.1",
-    "@material-tailwind/html": "3.0.0-beta.5"
+    "@material-tailwind/html": "3.0.0-beta.4"
   },
   "packageManager": "pnpm@8.3.1"
 }
