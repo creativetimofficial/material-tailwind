@@ -218,7 +218,6 @@ export default async function Docs({ params: { slug } }) {
             PreviewWithCode,
             CodePreviewTailwindClasses, 
             CodeSnippet,
-            ScriptLoader,
             TsPropsTable,
             InfoBadge,
 
