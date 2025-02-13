@@ -113,7 +113,6 @@ import ComponentPreview from "@components/ComponentPreview";
 import PreviewWithCode from "@components/PreviewWithCode";
 import CodePreviewTailwindClasses from "@components/CodePreviewTailwindClasses";
 import CodeSnippet from "@components/CodeSnippet";
-import ScriptLoader from "@components/ScriptJsLoader";
 import TsPropsTable from "@components/TsPropsTable";
 import InfoBadge from '@components/InfoBadge';
 async function readDocsContentFn(pathUrl: string) {
@@ -217,7 +216,6 @@ export default async function Docs({ params: { slug } }) {
             PreviewWithCode,
             CodePreviewTailwindClasses, 
             CodeSnippet,
-            ScriptLoader,
             TsPropsTable,
             InfoBadge,
 
