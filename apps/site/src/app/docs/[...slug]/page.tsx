@@ -198,7 +198,6 @@ export default async function Docs({ params: { slug } }) {
   
   return (
     <>
-      <ScriptLoader />
       <Content frontMatter={frontMatter}>
         <MDXRemote
           source={source}
