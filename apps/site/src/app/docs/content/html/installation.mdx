@@ -343,9 +343,9 @@ document.addEventListener("DOMContentLoaded", () => {
 If you're using TypeScript and encounter type resolution issues, ensure your `tsconfig.json` has the correct module resolution strategy:
 
 <CodePreviewTailwindClasses codeSnippet={`{
-  "compilerOptions": {
-    "moduleResolution": "node"
-  }
+    "compilerOptions": {
+      "moduleResolution": "node"
+    }
 }`}/>
 
 > **Note**: This is particularly important for Next.js projects or when using modern module resolution strategies. The library's type definitions require Node.js resolution mode to work properly.
