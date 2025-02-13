@@ -1,6 +1,6 @@
 
 /*!
- * Material Tailwind JavaScript/TypeScript Library v3.0.0-beta.6
+ * Material Tailwind JavaScript/TypeScript Library v3.0.0-beta.7
  * (c) 2025 Material Tailwind - Creative Tim
  * Released under the MIT License.
  * Written in TypeScript, usable in both JavaScript and TypeScript projects.
