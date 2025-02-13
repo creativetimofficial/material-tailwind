@@ -15,12 +15,9 @@
   "browser": "dist/material-tailwind.umd.js",
   "files": [
     "dist",
-    "src",
     "README.md",
     "LICENSE.md",
-    "package.json",
-    "CHANGELOG.md",
-    "rollup.config.mjs"
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "rollup -c",
