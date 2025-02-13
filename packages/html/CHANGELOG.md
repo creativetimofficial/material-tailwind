@@ -1,5 +1,9 @@
 # Change Log
 
+## [3.0.0-beta.6] 2025-02-13
+
+- Fix exports issue
+
 ## [3.0.0-beta.5] 2025-02-13
 
 - Fix type definitions on import from NPM in NextJS
