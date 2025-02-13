@@ -82,7 +82,7 @@ export {
 export type { ModalConfig, IModal, DropdownConfig, IDropdown, CollapseConfig, ICollapse, PopoverConfig, IPopover, TabsConfig, ITabs, TooltipConfig, ITooltip, AccordionConfig, IAccordion, StepperConfig, IStepper };
 
 // Aggregate all exports into a single object for UMD consumers
-export const DavidAI = {
+export const MaterialTailwind = {
   initAlert,
   initCollapse,
   initDropdowns,
@@ -105,7 +105,7 @@ export const DavidAI = {
 };
 
 // Global initialization function
-export function initDavidAI(): void {
+export function initMaterialTailwind(): void {
   // Initialize non-Popper components
   initAlert();
   initCollapse();
@@ -130,7 +130,7 @@ export function initDavidAI(): void {
 if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
-    initDavidAI();
+    initMaterialTailwind();
 
     // Observe DOM changes for dynamically added elements
     const observer = new MutationObserver(() => {
@@ -148,10 +148,10 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
 
     observer.observe(document.body, { childList: true, subtree: true });
 
-    // Expose DavidAI globally for UMD usage
-    (window as any).DavidAI = { ...DavidAI, initDavidAI };
+    // Expose MaterialTailwind globally for UMD usage
+    (window as any).MaterialTailwind = { ...MaterialTailwind, initMaterialTailwind };
   });
 }
 
 // Default export for ES modules
-export default { ...DavidAI, initDavidAI };
+export default { ...MaterialTailwind, initMaterialTailwind };
