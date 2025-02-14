@@ -50,18 +50,42 @@ Add Tailwind directives in `src/styles/global.css`:
 
 <br></br>
 
-Modify `tailwind.config.cjs` or `tailwind.config.ts`:
+Configure your `tailwind.config.cjs` or `tailwind.config.ts`:
 
-<CodePreviewTailwindClasses codeSnippet={`/** @type {import('tailwindcss').Config} */
+<CodePreviewTailwindClasses codeSnippet={`// For JavaScript (tailwind.config.js)
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{astro,js,jsx,ts,tsx,vue,svelte}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+ 
+    // Or if using \`src\` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-};`}/>
+}
+
+// For TypeScript (tailwind.config.ts)
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+ 
+    // Or if using \`src\` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+} satisfies Config`}/>
 
 <br></br><br></br>
 
@@ -149,3 +173,20 @@ export default TypeScriptExample;`}/>
 <br></br>
 
 > **Note**: This TypeScript example demonstrates full type safety and programmatic control of the accordion component.
+
+## TypeScript Configuration
+
+For TypeScript projects, ensure your `tsconfig.json` includes:
+
+<CodePreviewTailwindClasses codeSnippet={`{
+  "compilerOptions": {
+    "moduleResolution": "node",
+  }
+}`}/>
+
+<br></br>
+
+> **Note**: The TypeScript configuration above includes Astro-specific settings to ensure proper type checking and module resolution when using Material Tailwind components.
+
+<br></br><br></br>
+
