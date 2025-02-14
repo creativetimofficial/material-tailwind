@@ -115,6 +115,8 @@ import CodePreviewTailwindClasses from "@components/CodePreviewTailwindClasses";
 import CodeSnippet from "@components/CodeSnippet";
 import TsPropsTable from "@components/TsPropsTable";
 import InfoBadge from '@components/InfoBadge';
+import CodePreviewWithCopy from "@components/CodePreviewTailwindClasses";
+
 async function readDocsContentFn(pathUrl: string) {
   const fullPath = `${path.join(
     process.cwd(),
@@ -210,6 +212,7 @@ export default async function Docs({ params: { slug } }) {
             // custom-components
             Icons,
             CodePreview,
+            CodePreviewWithCopy,
             ColorPalette,
             FrameworkCard,
             ComponentPreview,
