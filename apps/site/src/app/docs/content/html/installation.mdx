@@ -248,7 +248,7 @@ Quick start with Material Tailwind using CDN integration:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Material Tailwind Example</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.13/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/@material-tailwind/html@3.0.0-beta.6/dist/material-tailwind.umd.min.js"></script>
+    <script src="https://unpkg.com/@material-tailwind/html@3.0.0-beta.7/dist/material-tailwind.umd.min.js"></script>
 </head>
 <body>
     <div role="alert" class="relative flex items-start w-full border rounded-md p-2 bg-slate-800 border-slate-800 text-slate-50">
@@ -272,13 +272,9 @@ Quick start with Material Tailwind using CDN integration:
 
 ---
 
-## TypeScript
+## Simple ESM & CJS Import
 
-Material Tailwind components can be used in two ways - through simple ESM imports or programmatically with TypeScript support. Here's how to use both approaches:
-
-### Simple ESM Import
-
-The quickest way to use components is through direct ESM imports:
+The quickest way to use components is through direct ESM & CJS imports:
 
 <CodePreviewTailwindClasses codeSnippet={
 `import { initAccordion } from '@material-tailwind/html';
@@ -286,6 +282,12 @@ The quickest way to use components is through direct ESM imports:
 // Initialize accordion functionality
 initAccordion();`
 }/>
+
+---
+
+## TypeScript
+
+Material Tailwind components can be used in two ways - through simple ESM imports or programmatically with TypeScript support. Here's how to use both approaches:
 
 ### Programmatic Usage with TypeScript
 
@@ -336,6 +338,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 `
 }/>
+
+### TypeScript Configuration
+If you're using TypeScript and encounter type resolution issues, ensure your `tsconfig.json` has the correct module resolution strategy:
+
+<CodePreviewTailwindClasses codeSnippet={`{
+    "compilerOptions": {
+      "moduleResolution": "node"
+    }
+}`}/>
+
+> **Note**: This is particularly important for Next.js projects or when using modern module resolution strategies. The library's type definitions require Node.js resolution mode to work properly.
+
+### Troubleshooting
+
+### Types Not Found
+If you see the error make sure your `tsconfig.json` has `"moduleResolution": "node"`. Other resolution strategies like "bundler" or "nodeNext" might not resolve the types correctly.
 
 --- 
 

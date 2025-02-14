@@ -1,6 +1,6 @@
 {
   "name": "@material-tailwind/html",
-  "version": "3.0.0-beta.6",
+  "version": "3.0.0-beta.7",
   "description": "Material Tailwind is an open-source library that uses the power of Tailwind CSS and React to help you build unique web projects faster and easier. The stunning design inspired by Material Design is a bonus!",
   "type": "module",
   "exports": {
@@ -15,12 +15,9 @@
   "browser": "dist/material-tailwind.umd.js",
   "files": [
     "dist",
-    "src",
     "README.md",
     "LICENSE.md",
-    "package.json",
-    "CHANGELOG.md",
-    "rollup.config.mjs"
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -55,7 +52,6 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup": "^4.34.6",
     "rollup-plugin-typescript2": "^0.36.0",
-    "rollup-plugin-dts": "^5.0.0",
     "typescript": "^5.7.3"
   },
   "dependencies": {
