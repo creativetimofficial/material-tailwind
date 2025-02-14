@@ -1,4 +1,3 @@
-
 export default function InputDemo() {
   return (
     <div
@@ -7,7 +6,7 @@ export default function InputDemo() {
         __html: `<div class="w-full max-w-sm min-w-[200px]">
   <div class="relative">
     <select
-        class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow cursor-pointer appearance-none">
+        class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 ring ring-transparent hover:ring-slate-800/10 focus:ring-slate-800/10 hover:border-slate-800 shadow-sm focus:shadow cursor-pointer appearance-none">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

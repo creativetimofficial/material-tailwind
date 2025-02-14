@@ -2,17 +2,17 @@
   "name": "@material-tailwind/html",
   "version": "3.0.0-beta.5",
   "description": "Material Tailwind is an open-source library that uses the power of Tailwind CSS and React to help you build unique web projects faster and easier. The stunning design inspired by Material Design is a bonus!",
-  "main": "dist/material-tailwind.cjs.js",
-  "module": "dist/material-tailwind.esm.js",
-  "browser": "dist/material-tailwind.umd.js",
-  "unpkg": "dist/material-tailwind.umd.js",
-  "types": "dist/index.d.ts",
   "type": "module",
   "exports": {
     "import": "./dist/material-tailwind.esm.js",
     "require": "./dist/material-tailwind.cjs.js",
     "default": "./dist/material-tailwind.umd.js"
   },
+  "main": "./dist/material-tailwind.cjs.js",
+  "module": "./dist/material-tailwind.esm.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/material-tailwind.umd.min.js",
+  "browser": "dist/material-tailwind.umd.js",
   "files": [
     "dist",
     "src",
