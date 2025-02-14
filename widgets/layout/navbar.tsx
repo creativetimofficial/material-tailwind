@@ -98,20 +98,39 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
         <Menu allowHover>
           <MenuHandler>
             <Link passHref href="/docs/react/installation" className="flex items-center gap-1 cursor-pointer rounded-lg py-2.5 px-4 text-sm text-blue-gray-800 hover:text-primary hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80 hover:text-primary focus:text-primary active:text-primary transition-all leading-none">
-              Docs
+              Docs <ChevronDownIcon className="h-3.5 w-3.5" />
             </Link>
           </MenuHandler>
-          <MenuList>
+          <MenuList className="p-2">
+            <p className="text-sm text-blue-gray-700 font-semibold antialiased select-none ml-2 mt-2">Docs v2</p>
             <Link href="/docs/html/installation" className="focus:!outline-none">
               <MenuItem className="flex items-center">
                 <img alt="tailwind" src="/svg/tailwind.svg" className="w-5 h-5 mr-2"/>
                 Tailwind CSS
               </MenuItem>
             </Link>
+
             <Link href="/docs/react/installation" className=" focus:!outline-none">
               <MenuItem className="flex items-center">
                 <img alt="react" src="/svg/react.svg" className="w-5 h-5 mr-2"/>
                 React
+              </MenuItem>
+            </Link>
+
+            <hr className="mt-1 mb-3" />
+            <p className="text-sm text-blue-gray-700 font-semibold antialiased select-none ml-2 mt-2">Docs v3 (New)</p>
+
+            <Link href="/docs/v3/html/installation" className=" focus:!outline-none" target="_blank">
+              <MenuItem className="flex items-center">
+                <img alt="tailwind" src="/svg/tailwind.svg" className="w-5 h-5 mr-2"/>
+                Tailwind CSS
+              </MenuItem>
+            </Link>
+           
+            <Link href="/docs/v3/react/installation" className=" focus:!outline-none" target="_blank">
+              <MenuItem className="flex items-center">
+                <img alt="react" src="/svg/react.svg" className="w-5 h-5 mr-2"/>
+               React
               </MenuItem>
             </Link>
           </MenuList>
@@ -146,11 +165,11 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
           <Input
             type="email"
             placeholder="Search"
-            className="!h-9 w-full border-[1.5px] !border-blue-gray-100 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-blue-gray-600 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
+            className="!h-9 w-full border-[1.5px] !border-blue-gray-100 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
             labelProps={{
               className: "hidden",
             }}
-            containerProps={{ className: "min-w-[100px]" }}
+            containerProps={{ className: "min-w-[100px] !max-w-[180px]" }}
           />
           <div className="absolute right-3.5 top-1.5 ">
             <kbd className="rounded border border-blue-gray-100 bg-white px-1 pb-0 pt-px text-xs font-medium text-gray-900 shadow shadow-black/5">
@@ -206,7 +225,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
         <Link href="/blocks#pricing">
           <Button
             size="sm"
-            className="flex items-center justify-between bg-gray-900 py-2.5"
+            className="flex items-center justify-between bg-gray-900 py-2.5 normal-case"
           >
             Pricing & FAQ
           </Button>

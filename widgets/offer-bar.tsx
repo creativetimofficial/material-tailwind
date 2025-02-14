@@ -51,19 +51,22 @@ export function OfferBar() {
       {isVisible && (
         <Alert
           variant="ghost"
-          className="w-full justify-center rounded-none bg-blue-gray-50"
+          className="w-full justify-center rounded-none bg-white"
         >
-          <div className="flex flex-wrap items-center justify-center !text-blue-gray-900">
-            <Link href="/v3/pro">
-              🔥 The Wait Is Over! Order Now <span className="font-bold mx-1">Material Tailwind v3 PRO</span>
-            </Link>
-            <button
-              className="font-bold ml-10 mb-0 !text-grey-900"
+          <div className="relative flex flex-wrap items-center justify-center gap-2 !text-blue-gray-900">
+            <div className="flex items-center gap-2">
+              <Link href="/v3/pro" className="hover:text-primary transition-colors" target="_blank">
+              🔥 Get <span className="font-bold">290+ PRO Blocks for v3</span> and receive complimentary access to v2 PRO Blocks.
+              </Link>
+             
+            </div>
+          </div>
+          <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 font-bold !text-grey-900 hover:text-primary transition-colors"
               onClick={() => handleClose()}
             >
               <Icon />
             </button>
-          </div>
         </Alert>
       )}
     </>
