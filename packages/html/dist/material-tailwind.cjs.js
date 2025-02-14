@@ -6,6 +6,10 @@
  * Written in TypeScript, usable in both JavaScript and TypeScript projects.
  */
 
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 let popperLoaded = false; // Singleton flag to track loading state
 let popperReady = null; // Promise to handle loading Popper.js once
 function loadPopperJs() {
@@ -3445,5 +3449,34 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
 // Default export for ES modules
 var index = Object.assign(Object.assign({}, MaterialTailwind), { initMaterialTailwind });
 
-export { Accordion, Collapse, Dropdown, MaterialTailwind, Modal, Popover, Stepper, Tabs, Tooltip, cleanupAccordions, cleanupDropdowns, cleanupGallery, cleanupModals, cleanupPopovers, cleanupSteppers, cleanupTabs, cleanupTooltips, index as default, initAccordion, initAlert, initCollapse, initDropdowns, initGallery, initMaterialTailwind, initModal, initPopovers, initStepper, initTabs, initTooltips, toggleAccordionById };
-//# sourceMappingURL=material-tailwind.esm.js.map
+exports.Accordion = Accordion;
+exports.Collapse = Collapse;
+exports.Dropdown = Dropdown;
+exports.MaterialTailwind = MaterialTailwind;
+exports.Modal = Modal;
+exports.Popover = Popover;
+exports.Stepper = Stepper;
+exports.Tabs = Tabs;
+exports.Tooltip = Tooltip;
+exports.cleanupAccordions = cleanupAccordions;
+exports.cleanupDropdowns = cleanupDropdowns;
+exports.cleanupGallery = cleanupGallery;
+exports.cleanupModals = cleanupModals;
+exports.cleanupPopovers = cleanupPopovers;
+exports.cleanupSteppers = cleanupSteppers;
+exports.cleanupTabs = cleanupTabs;
+exports.cleanupTooltips = cleanupTooltips;
+exports.default = index;
+exports.initAccordion = initAccordion;
+exports.initAlert = initAlert;
+exports.initCollapse = initCollapse;
+exports.initDropdowns = initDropdowns;
+exports.initGallery = initGallery;
+exports.initMaterialTailwind = initMaterialTailwind;
+exports.initModal = initModal;
+exports.initPopovers = initPopovers;
+exports.initStepper = initStepper;
+exports.initTabs = initTabs;
+exports.initTooltips = initTooltips;
+exports.toggleAccordionById = toggleAccordionById;
+//# sourceMappingURL=material-tailwind.cjs.js.map
