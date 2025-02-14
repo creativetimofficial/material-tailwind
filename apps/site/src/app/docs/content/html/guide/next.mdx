@@ -77,7 +77,8 @@ export default MyApp;`}/>
 
 Configure your `tailwind.config.js` or `tailwind.config.ts`:
 
-<CodePreviewTailwindClasses codeSnippet={`/** @type {import('tailwindcss').Config} */
+<CodePreviewTailwindClasses codeSnippet={`// For JavaScript (tailwind.config.js)
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -91,7 +92,25 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}`}/>
+}
+
+// For TypeScript (tailwind.config.ts)
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+ 
+    // Or if using \`src\` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+} satisfies Config`}/>
 
 <br></br><br></br>
 
