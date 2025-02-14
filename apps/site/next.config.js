@@ -17,6 +17,19 @@ const nextConfig = {
   },
   transpilePackages: ["next-mdx-remote"],
   assetPrefix: process.env.NEXT_PUBLIC_SITE_URL,
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "index, follow",
+          },
+        ],
+      },
+    ];
+  },
   // async redirects() {
   //   return [
   //     {
