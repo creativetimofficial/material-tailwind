@@ -21,7 +21,7 @@ export default function InputWithValidation() {
         data-success="false"
         data-icon-placement=""
       />
-      <small class="block font-sans antialiased text-sm text-red-500 ml-1 mt-1">
+      <small class="block font-sans antialiased text-sm text-red-500 ml-0.5 mt-1">
         Invalid phone number format
       </small>
     </div>
@@ -42,7 +42,7 @@ export default function InputWithValidation() {
         data-success="true"
         data-icon-placement=""
       />
-      <small class="block font-sans antialiased text-sm text-green-500 ml-1 mt-1">
+      <small class="block font-sans antialiased text-sm text-green-500 ml-0.5 mt-1">
         Valid phone number format
       </small>
     </div>
