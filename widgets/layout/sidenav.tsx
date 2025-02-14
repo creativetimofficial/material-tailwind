@@ -123,31 +123,9 @@ export function Sidenav({
               </ul>
             </div>
           ))}
-          <Card color="gray">
-            <CardBody className="px-4 py-2.5">
-              <Typography variant="h6" className="mb-1">
-                Material Tailwind v3
-              </Typography>
-              <Typography variant="small" color="white" className="font-normal">
-                We&apos;ve just released the new version of Material Tailwind
-                with a lot of new features and improvements. It&apos;s currently
-                on <span className="font-semibold text-yellow-600">beta</span>{" "}
-                and we need your feedback to make it better.
-              </Typography>
-              <Link href="/docs/v3/react/installation">
-                <Button
-                  size="sm"
-                  color="white"
-                  className="mb-1.5 mt-4 normal-case"
-                  fullWidth
-                >
-                  Go to v3 Docs
-                </Button>
-              </Link>
-            </CardBody>
-          </Card>
         </div>
       </div>
+
     </aside>
   );
 }

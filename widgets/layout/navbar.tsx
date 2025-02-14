@@ -146,11 +146,11 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
           <Input
             type="email"
             placeholder="Search"
-            className="!h-9 w-full border-[1.5px] !border-blue-gray-100 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-blue-gray-600 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
+            className="!h-9 w-full border-[1.5px] !border-blue-gray-100 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
             labelProps={{
               className: "hidden",
             }}
-            containerProps={{ className: "min-w-[100px]" }}
+            containerProps={{ className: "min-w-[100px] !max-w-[180px]" }}
           />
           <div className="absolute right-3.5 top-1.5 ">
             <kbd className="rounded border border-blue-gray-100 bg-white px-1 pb-0 pt-px text-xs font-medium text-gray-900 shadow shadow-black/5">
@@ -206,7 +206,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
         <Link href="/blocks#pricing">
           <Button
             size="sm"
-            className="flex items-center justify-between bg-gray-900 py-2.5"
+            className="flex items-center justify-between bg-gray-900 py-2.5 normal-case"
           >
             Pricing & FAQ
           </Button>
