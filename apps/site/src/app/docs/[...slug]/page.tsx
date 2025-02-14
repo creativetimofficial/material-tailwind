@@ -149,7 +149,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = frontMatter.title;
   const description = frontMatter.description;
-  const pageUrl = `https://www.material-tailwind.com/v3/docs/${path}`;
+  const pageUrl = `https://www.material-tailwind.com/docs/v3/${path}`;
 
   return {
     title,
