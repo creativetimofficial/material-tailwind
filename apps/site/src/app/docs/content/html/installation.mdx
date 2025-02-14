@@ -339,7 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
 `
 }/>
 
-### TypeScript Configuration
+## TypeScript Configuration
 If you're using TypeScript and encounter type resolution issues, ensure your `tsconfig.json` has the correct module resolution strategy:
 
 <CodePreviewTailwindClasses codeSnippet={`{
@@ -348,12 +348,9 @@ If you're using TypeScript and encounter type resolution issues, ensure your `ts
     }
 }`}/>
 
+<br></br> 
+
 > **Note**: This is particularly important for Next.js projects or when using modern module resolution strategies. The library's type definitions require Node.js resolution mode to work properly.
-
-### Troubleshooting
-
-### Types Not Found
-If you see the error make sure your `tsconfig.json` has `"moduleResolution": "node"`. Other resolution strategies like "bundler" or "nodeNext" might not resolve the types correctly.
 
 --- 
 
