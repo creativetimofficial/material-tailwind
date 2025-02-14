@@ -1,5 +1,12 @@
 # Change Log
 
+## [3.0.0-beta.7] 2025-02-14
+
+- Fix index.d.ts file not being generated correctly
+- Removed rollup.config.mjs file from the package
+- Removed package.json file from the package
+- Removed src folder from the package
+
 ## [3.0.0-beta.6] 2025-02-13
 
 - Fix exports issue

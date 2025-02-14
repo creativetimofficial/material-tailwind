@@ -4,7 +4,6 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 import { readFileSync } from 'fs';
-import dts from 'rollup-plugin-dts';
 
 const pkg = JSON.parse(readFileSync('./package.json'));
 
@@ -118,13 +117,4 @@ export default [
       }),
     ],
   },
-  // Last config - bundles declarations
-  {
-    input: './src/index.ts',  // Use source file instead
-    output: {
-      file: 'dist/index.d.ts',
-      format: 'es'
-    },
-    plugins: [dts()]
-  }
 ];
