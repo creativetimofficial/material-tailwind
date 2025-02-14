@@ -108,7 +108,7 @@ Here's how to use Material Tailwind components in your Remix routes:
 <CodePreviewTailwindClasses codeSnippet={`// app/routes/_index.tsx
 import { useEffect } from "react";
 import { useHydrated } from "@remix-run/react";
-import { initAccordion } from "@material-tailwind/html";
+import { initAccordion } from "@material-tailwind/html"; // ESM & CJS
 
 export default function Index() {
   const isHydrated = useHydrated();
