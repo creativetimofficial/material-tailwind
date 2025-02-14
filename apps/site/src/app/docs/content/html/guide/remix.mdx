@@ -8,4 +8,242 @@ next: docs/react/guide/astro
 
 # Material Tailwind with Remix
 
-- coming soon
+Learn how to set up Material Tailwind with Remix. This guide will walk you through installation, configuration, and basic usage.
+
+<br />
+
+## Setting up Remix with Tailwind CSS
+
+Start by creating a new Remix project and installing the required dependencies:
+
+<CodePreviewTailwindClasses codeSnippet={`npx create-remix@latest
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p`} />
+
+<br />
+
+## Configure your template paths
+
+Update the content paths in your `tailwind.config.js` or `tailwind.config.ts`:
+
+<CodePreviewTailwindClasses codeSnippet={`// For JavaScript (tailwind.config.js)
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+// For TypeScript (tailwind.config.ts)
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+} satisfies Config`} />
+
+<br />
+
+## Add the Tailwind directives
+
+Create a new CSS file in `app/styles/tailwind.css` and add the Tailwind directives:
+
+<CodePreviewTailwindClasses codeSnippet={`@tailwind base;
+@tailwind components;
+@tailwind utilities;`} />
+
+<br />
+
+## Import the styles
+
+Import the styles in your `app/root.tsx`:
+
+<CodePreviewTailwindClasses codeSnippet={`import type { LinksFunction } from "@remix-run/node";
+import styles from "~/styles/tailwind.css";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles }
+];
+
+export default function App() {
+  return (
+    <html lang="en">
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
+  );
+}`} />
+
+<br />
+
+## Install Material Tailwind
+
+Install @material-tailwind/html:
+
+<CodePreviewTailwindClasses codeSnippet={`npm i @material-tailwind/html`} />
+
+<br />
+
+## Example Usage
+
+Here's how to use Material Tailwind components in your Remix routes:
+
+<CodePreviewTailwindClasses codeSnippet={`// app/routes/_index.tsx
+import { useEffect } from "react";
+import { useHydrated } from "@remix-run/react";
+import { initAccordion } from "@material-tailwind/html";
+
+export default function Index() {
+  const isHydrated = useHydrated();
+
+  useEffect(() => {
+    if (isHydrated) {
+      initAccordion();
+    }
+  }, [isHydrated]);
+
+  return (
+    <div className="w-full">
+      <div className="group block w-full" data-accordion-container data-accordion-mode="exclusive">
+        <button
+          data-accordion-toggle
+          data-accordion-target="#accordion-1"
+          aria-expanded="false"
+          className="flex w-full items-center justify-between p-4 text-left"
+        >
+          <span>What is Material Tailwind?</span>
+          <svg
+            data-accordion-icon
+            className="h-5 w-5 rotate-0 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div
+          id="accordion-1"
+          className="overflow-hidden transition-all duration-300"
+        >
+          <div className="p-4">
+            <p>
+              Material Tailwind is an easy to use components library for Tailwind CSS.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}`} />
+
+<br />
+
+## TypeScript Support
+
+For TypeScript projects, you can use the typed interfaces and configurations:
+
+<CodePreviewTailwindClasses codeSnippet={`// app/components/Accordion.tsx
+import { useEffect } from "react";
+import { useHydrated } from "@remix-run/react";
+import { Accordion } from "@material-tailwind/html";
+import type { AccordionConfig } from "@material-tailwind/html";
+
+export default function AccordionExample() {
+  const isHydrated = useHydrated();
+
+  useEffect(() => {
+    if (isHydrated) {
+      const container = document.getElementById("accordion-container");
+      
+      if (container) {
+        const config: AccordionConfig = {
+          exclusive: true,
+          allOpen: false,
+        };
+        
+        new Accordion(container, config);
+      }
+    }
+  }, [isHydrated]);
+
+  return (
+    <div id="accordion-container" className="group block w-full">
+      <div 
+        className="flex items-center justify-between w-full py-5 text-left font-medium dark:text-white text-slate-800 cursor-pointer"
+        aria-expanded="false"
+        id="button-1">
+        Material Tailwind React
+        <svg data-accordion-icon width="1.5em" height="1.5em" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" className="h-4 w-4 transition-transform duration-300 rotate-180">
+          <path d="M6 9L12 15L18 9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+        </svg>
+      </div>
+      <div id="button-1" className="overflow-hidden transition-all duration-300 border-b border-slate-200 dark:border-slate-700">
+        <p className="mb-5 text-sm text-slate-600 dark:text-slate-400">Material Tailwind is an open-source library crafted with Tailwind CSS. Get Material Tailwind and take advantage of its free components and features.</p>
+      </div>
+
+      <div 
+        className="flex items-center justify-between w-full py-5 text-left font-medium dark:text-white text-slate-800 cursor-pointer"
+        aria-expanded="false"
+        id="button-2">
+        Material Tailwind HTML
+        <svg data-accordion-icon width="1.5em" height="1.5em" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" className="h-4 w-4 transition-transform duration-300 rotate-180">
+          <path d="M6 9L12 15L18 9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+        </svg>
+      </div>
+      <div id="button-2" className="overflow-hidden transition-all duration-300 border-b border-slate-200 dark:border-slate-700">
+        <p className="mb-5 text-sm text-slate-600 dark:text-slate-400">Material Tailwind is an open-source library crafted with Tailwind CSS. Get Material Tailwind and take advantage of its free components and features.</p>
+      </div>
+    </div>
+  );
+}`} />
+
+<br />
+
+## Server-Side Rendering
+
+Since Remix uses server-side rendering, make sure to initialize components after hydration:
+
+<CodePreviewTailwindClasses codeSnippet={`import { useHydrated } from "@remix-run/react";
+import { initAccordion } from "@material-tailwind/html";
+
+export default function Component() {
+  const isHydrated = useHydrated();
+
+  useEffect(() => {
+    if (isHydrated) {
+      initAccordion();
+    }
+  }, [isHydrated]);
+
+  return (
+    // Component content
+  );
+}`} />
+
+<br />
+
+> **Note**: For more examples and detailed documentation of each component, check out the [Accordion](/docs/html/accordion) component.
