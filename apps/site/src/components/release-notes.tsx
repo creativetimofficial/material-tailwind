@@ -2,16 +2,19 @@
 
 import { Timeline, Typography } from "@material-tailwind/react";
 import { Rocket } from "iconoir-react";
-import releases from "./releases";
+import reactReleases from "./releases";
+import htmlReleases from "./releases-html";
 
-export default function ReleaseNotes() {
+export default function ReleaseNotes({ html }: { html?: boolean }) {
+  const releases = html ? htmlReleases : reactReleases;
+
   return (
     <Timeline color="secondary" orientation="vertical">
       {releases.map((release, key) => (
         <Timeline.Item key={key} id={`v${release.version}`}>
           <Timeline.Header>
             {key !== releases.length - 1 && <Timeline.Separator />}
-            <Timeline.Icon className="h-9 w-9">
+            <Timeline.Icon className="h-9 w-9 z-1">
               <Rocket className="h-5 w-5 rotate-45" />
             </Timeline.Icon>
           </Timeline.Header>

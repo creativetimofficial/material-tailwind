@@ -1,11 +1,243 @@
 ---
 title: Material Tailwind with Next.js - Installation Guide
-description: Learn how to use Material Tailwind components with Next.js and Tailwind CSS to easily create elegant and flexible pages.
+description: Step-by-step instructions to seamlessly integrate @material-tailwind/html with Next.js, including installation, configuration, and usage.
 github: guide/next
 prev: docs/react/migration/v3
 next: docs/react/guide/remix
 ---
 
-# Material Tailwind with Next.js
+# Integrating @material-tailwind/html with Next.js: A Comprehensive Guide
 
-- coming soon
+In this guide, we'll walk you through the process of integrating the `@material-tailwind/html` library into a Next.js project. This integration allows you to harness the power of Material Design components within your Next.js applications, ensuring a sleek and responsive user interface.
+
+<br></br><br></br>
+
+## Prerequisites
+
+Before we begin, ensure you have the following installed:
+
+- **Node.js**: Version 12 or later.
+- **npm**: Version 6 or later.
+
+If you haven't installed these yet, download them from the [official Node.js website](https://nodejs.org/).
+
+<br></br><br></br>
+
+## Step 1: Setting Up a New Next.js Project
+
+Start by creating a new Next.js project. Open your terminal and run:
+
+<CodePreviewTailwindClasses codeSnippet={`npx create-next-app@latest my-material-tailwind-app
+cd my-material-tailwind-app`}/>
+
+<br></br><br></br>
+
+## Step 2: Installing Tailwind CSS
+
+<CodePreviewTailwindClasses codeSnippet={`npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p`}/>
+
+<br></br>
+
+Add Tailwind directives in `styles/globals.css`:
+
+<CodePreviewTailwindClasses codeSnippet={`@tailwind base;
+@tailwind components;
+@tailwind utilities;`}/>
+
+<br></br>
+
+Import styles in `app/layout.tsx` (for Next.js 13+) or `pages/_app.js` (for older versions):
+
+<CodePreviewTailwindClasses codeSnippet={`// For Next.js 13+ (app/layout.tsx)
+import './globals.css'
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
+}
+
+// For older versions (pages/_app.js)
+import '../styles/globals.css';
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;`}/>
+
+<br></br>
+
+Configure your `tailwind.config.js` or `tailwind.config.ts`:
+
+<CodePreviewTailwindClasses codeSnippet={`// For JavaScript (tailwind.config.js)
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+ 
+    // Or if using \`src\` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+// For TypeScript (tailwind.config.ts)
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+ 
+    // Or if using \`src\` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+} satisfies Config`}/>
+
+<br></br><br></br>
+
+
+## Step 3: Installing @material-tailwind/html
+
+<CodePreviewTailwindClasses codeSnippet={`npm install @material-tailwind/html`}/>
+
+<br></br><br></br>
+
+## Step 4: Using Material Tailwind Components
+
+Example usage in a Next.js component:
+
+<CodePreviewTailwindClasses codeSnippet={`import React, { useEffect } from 'react';
+  import { initAlert } from '@material-tailwind/html'; // ESM & CJS
+
+  function ExampleComponent() {
+    useEffect(() => {
+      initAlert();
+    }, []);
+
+    return (
+      <div role="alert" class="relative flex w-full items-start rounded-md border border-slate-800 bg-slate-800 p-2 text-slate-50">
+          <span class="grid shrink-0 place-items-center p-1">
+              <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-5 w-5"><path d="M12 7L12 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17.01L12.01 16.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </span>
+          <div class="m-1.5 w-full font-sans text-base leading-none">
+            A simple alert for showing message.
+          </div>
+          <button data-dismiss="alert" class="outline-none">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="m-1 h-5 w-5 stroke-2">
+                  <path d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+          </button>
+      </div>
+
+    );
+  }
+
+export default ExampleComponent;`}/>
+
+<br></br>
+
+> **Note**: For more details about the Accordion component, including examples of different styles, custom icons, and controlled behavior, check out the [Accordion documentation](/docs/html/accordion).
+
+<br></br><br></br> 
+
+## TypeScript Example
+
+For more control and type safety, you can use the programmatic approach with full TypeScript support in your Next.js application:
+
+<CodePreviewTailwindClasses codeSnippet={`import { useEffect } from 'react';
+import { Accordion } from "@material-tailwind/html";
+import type { AccordionConfig, IAccordion } from "@material-tailwind/html";
+
+function TypeScriptExample() {
+  useEffect(() => {
+    const container = document.getElementById('accordion-container');
+
+    if (container) {
+      const config: AccordionConfig = {
+        exclusive: true,
+        allOpen: false,
+      };
+
+      const accordion: IAccordion = new Accordion(container, config);
+    }
+  }, []);
+
+  return (
+    <div id="accordion-container" className="group block w-full">
+      <div 
+        className="flex items-center justify-between w-full py-5 text-left font-medium dark:text-white text-slate-800 cursor-pointer"
+        aria-expanded="false"
+        id="button-1">
+        Material Tailwind React
+        <svg data-accordion-icon width="1.5em" height="1.5em" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" className="h-4 w-4 transition-transform duration-300 rotate-180">
+          <path d="M6 9L12 15L18 9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+        </svg>
+      </div>
+      <div id="button-1" className="overflow-hidden transition-all duration-300 border-b border-slate-200 dark:border-slate-700">
+        <p className="mb-5 text-sm text-slate-600 dark:text-slate-400">Material Tailwind is an open-source library crafted with Tailwind CSS. Get Material Tailwind and take advantage of its free components and features.</p>
+      </div>
+
+      <div 
+        className="flex items-center justify-between w-full py-5 text-left font-medium dark:text-white text-slate-800 cursor-pointer"
+        aria-expanded="false"
+        id="button-2">
+        Material Tailwind HTML
+        <svg data-accordion-icon width="1.5em" height="1.5em" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" className="h-4 w-4 transition-transform duration-300 rotate-180">
+          <path d="M6 9L12 15L18 9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+        </svg>
+      </div>
+      <div id="button-2" className="overflow-hidden transition-all duration-300 border-b border-slate-200 dark:border-slate-700">
+        <p className="mb-5 text-sm text-slate-600 dark:text-slate-400">Material Tailwind is an open-source library crafted with Tailwind CSS. Get Material Tailwind and take advantage of its free components and features.</p>
+      </div>
+    </div>
+  );
+}
+
+export default TypeScriptExample;`}/>
+
+<br></br> 
+
+> **Note**: For more details about the Accordion component, including examples of different styles, custom icons, and controlled behavior, check out the [Accordion documentation](/docs/html/accordion).
+
+
+<br></br> 
+
+This TypeScript example demonstrates:
+- Full type safety with proper interfaces
+- Component lifecycle management
+- Event listener cleanup
+- Programmatic control of the accordion
+
+<br></br><br></br> 
+
+## TypeScript Configuration
+If you're using TypeScript and encounter type resolution issues, ensure your `tsconfig.json` has the correct module resolution strategy:
+
+<CodePreviewTailwindClasses codeSnippet={`{
+    "compilerOptions": {
+      "moduleResolution": "node"
+    }
+}`}/>
+
+<br></br> 
+
+> **Note**: This is particularly important for Next.js projects or when using modern module resolution strategies. The library's type definitions require Node.js resolution mode to work properly.
