@@ -102,7 +102,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
             </Link>
           </MenuHandler>
           <MenuList className="p-2">
-            <p className="text-sm text-blue-gray-700 font-semibold antialiased select-none ml-2 mt-2">Docs v2</p>
+            <span className="text-sm text-blue-gray-700 font-semibold antialiased select-none ml-2 mt-2">Docs v2</span>
             <Link href="/docs/html/installation" className="focus:!outline-none">
               <MenuItem className="flex items-center">
                 <img alt="tailwind" src="/svg/tailwind.svg" className="w-5 h-5 mr-2"/>
@@ -118,7 +118,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
             </Link>
 
             <hr className="mt-1 mb-3" />
-            <p className="text-sm text-blue-gray-700 font-semibold antialiased select-none ml-2 mt-2">Docs v3 (New)</p>
+            <span className="text-sm text-blue-gray-700 font-semibold antialiased select-none ml-2 mt-2">Docs v3 (New)</span>
 
             <Link href="/docs/v3/html/installation" className=" focus:!outline-none" target="_blank">
               <MenuItem className="flex items-center">
