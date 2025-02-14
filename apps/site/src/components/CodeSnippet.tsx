@@ -64,6 +64,8 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
   const [codeHeight, setCodeHeight] = React.useState(0);
   const [hydrated, setHydrated] = React.useState(false);
 
+  const theme = resolvedTheme === "dark" ? atomOneDark : atomOneLight;
+
   async function copyCode() {
     setIsCopied(true);
 
@@ -145,7 +147,7 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
         >
           <SyntaxHighlighter
             language={'jsx'}
-            style={resolvedTheme === 'dark' ? atomOneDark : atomOneLight}
+            style={theme}
             showLineNumbers
             lineNumberStyle={{ color: "#9CA3AF" }}
           >

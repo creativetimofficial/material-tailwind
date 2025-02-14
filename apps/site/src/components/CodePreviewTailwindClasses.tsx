@@ -2,7 +2,22 @@
 
 import { useState } from "react";
 import { Tooltip, IconButton } from "@material-tailwind/react";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+
+import { useTheme } from "next-themes";
+
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+
+// Import the styles
+import { atomOneLight, atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+// Import the languages
+import typescript from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
+import html from 'react-syntax-highlighter/dist/esm/languages/hljs/xml';
+
+
+// Register the languages
+SyntaxHighlighter.registerLanguage('react', typescript);
+SyntaxHighlighter.registerLanguage('html', html);
 
 interface CodePreviewWithCopyProps {
   codeSnippet: string;
@@ -12,6 +27,7 @@ export default function CodePreviewWithCopy({
   codeSnippet,
 }: CodePreviewWithCopyProps) {
   const [isCopied, setIsCopied] = useState(false);
+  // const { resolvedTheme } = useTheme();
 
   const copyCode = () => {
     navigator.clipboard.writeText(codeSnippet);
@@ -27,15 +43,15 @@ export default function CodePreviewWithCopy({
     <div className="relative overflow-scroll border border-slate-200 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-200 bg-white lg:max-w-[calc(80rem-480px-2rem-52px)] max-w-full mt-5">
       {/* Tooltip with Copy Button */}
       <Tooltip>
-        <Tooltip.Trigger as="span" className="absolute right-2 top-2 z-10">
+        <Tooltip.Trigger as="span" className="absolute right-2 top-2 z-3">
           <IconButton
             size="sm"
-            variant="ghost"
-            color="secondary"
+            variant="solid"
+            className="bg-slate-50 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border-slate-300 hover:border-slate-300 dark:border-slate-700"
             ripple={false}
             onClick={copyCode}
             onMouseLeave={resetCopy}
-          >
+        >
             {!isCopied ? (
               <svg
                 className="w-5 h-5"
@@ -87,13 +103,10 @@ export default function CodePreviewWithCopy({
       {/* Code Block */}
       <div className="overflow-x-auto p-4">
         <SyntaxHighlighter
-          language="typescript"
-          customStyle={{
-            margin: 0,
-            background: 'white',
-            padding: 0,
-            color: '#000000'
-          }}
+          language={'jsx'}
+          style={atomOneLight}
+          showLineNumbers
+          lineNumberStyle={{ color: "#9CA3AF" }}
         >
           {codeSnippet}
         </SyntaxHighlighter>

@@ -2,3 +2,4 @@ node_modules
 .pnp
 package-lock.json
 .env
+.cursorrules
