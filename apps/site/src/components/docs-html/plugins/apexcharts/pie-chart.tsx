@@ -5,34 +5,38 @@ import ApexCharts from "apexcharts";
 
 export default function PieChart() {
   useEffect(() => {
-    const options = {
-      series: [44, 55, 13, 43, 22],
-      chart: {
-        type: "pie",
-        width: 280,
-        height: 280,
-        toolbar: {
-          show: false,
-        },
-      },
-      title: {
-        show: "",
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      colors: ["#0062ff", "#00bf6b", "#fca327", "#ef4444", "#030712"],
-      legend: {
-        show: false,
-      },
-    };
+    if (typeof window !== "undefined") {
+      import("apexcharts").then((ApexCharts) => {
+        const options = {
+          series: [44, 55, 13, 43, 22],
+          chart: {
+            type: "pie",
+            width: 280,
+            height: 280,
+            toolbar: {
+              show: false,
+            },
+          },
+          title: {
+            show: "",
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          colors: ["#0062ff", "#00bf6b", "#fca327", "#ef4444", "#030712"],
+          legend: {
+            show: false,
+          },
+        };
 
-    const chart = new ApexCharts(document.querySelector("#pie-chart"), options);
-    chart.render();
+        const chart = new ApexCharts.default(document.querySelector("#pie-chart"), options);
+        chart.render();
 
-    return () => {
-      chart.destroy();
-    };
+        return () => {
+          chart.destroy();
+        };
+      })
+    }
   }, []);
 
   // const chartHTML = ;
