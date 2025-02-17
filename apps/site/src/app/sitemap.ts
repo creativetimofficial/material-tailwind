@@ -16,8 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     )
   )
 
-  console.log(docsSitemap)
-
   return docsSitemap as MetadataRoute.Sitemap
   
 }
