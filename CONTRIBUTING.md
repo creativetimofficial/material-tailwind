@@ -26,6 +26,10 @@ yarn dev
 #or
 
 npm run dev
+
+#or
+
+bun run dev
 ```
 
 ## Material Tailwind Structure
