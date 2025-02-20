@@ -1,0 +1,72 @@
+---
+title: Speedy Boilerplate - Payments
+description: Learn how to setup and use Speedy Boilerplate payment with Stripe.
+navigation:
+  ["setup-stripe", "create-products"]
+github: payments
+next: customers-support
+---
+
+# Speedy Boilerplate - Payments
+
+We used Stripe for processing payments, in this section we will guide you on how to setup the Stripe, create products and start accepting payments. 
+
+<br />
+<br />
+
+<DocsTitle href="setup-stripe">
+## Setup Stripe
+</DocsTitle>
+
+Setting up Stripe is an easy and straightforward process, follow the steps below to setup the Stripe:
+
+1: If you already have a Stripe account and it's active then you can skip this step, otherwise go to the [Stripe](https://dashboard.stripe.com/register) and create a new account and complete your business profile in order to activate your account and accept live payments. 
+
+2: Once you have created your account make sure that you turn on the <Code>Test Mode</Code> on the top right corner of Stripe dashboard, this will allow you to test the payments without any real transactions.
+
+3:. Then go to the <Code>Developers</Code> on the top right corner, then click on the <Code>API Keys</Code> and copy/paste the <Code>Publishable Key</Code> and <Code>Secret Key</Code> to the <Code>.env</Code> file.
+
+```env
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<your-stripe-publishable-key>
+STRIPE_SECRET_KEY=<your-stripe-secret-key>
+```
+
+<br />
+<br />
+
+4: Then go to the <Code>Webhooks</Code> and click on the <Code>Test in a local environment</Code>, there you will see three steps to setup the Stripe webhook locally, you only need to follow the first step and two other steps are already done in the boilerplate. Once you're logged in with Stripe CLI go back to the Stripe dashboard and on the right side you can see some code from there copy the <Code>endpoint_secret</Code> and paste it to the <Code>.env</Code> file and click on the <Code>Done</Code> button.
+
+```env
+STRIPE_WEBHOOK_SECRET=<your-stripe-secret-key>
+```
+
+<br />
+<br />
+
+5: Then go to the <Code>Settings</Code>, there you will see many categories and options click on the <Code>Billing</Code> and then click on the <Code>Customer Portal</Code> and activate it by clicking on the <Code>Activate test link</Code> button, once activated click on the <Code>Save changes</Code> button, this will allow your users to manage their subscriptions base on Stripe customers portal. 
+
+6: Now you can run the <Code>npm run stripe:listen</Code> in your terminal to listen for Stripe webhooks locally, make sure to run the command in a new terminal window beside the <Code>npm run dev</Code> command.
+
+<br />
+
+**Great you have successfully setup the Stripe, now lets create a product and start accepting payments.**
+
+---
+
+<DocsTitle href="create-products">
+## Create Products
+</DocsTitle>
+
+The Boilerplate comes with two types of pricing plans, <Code>Monthly</Code> and <Code>Yearly</Code>, by default we use both options but you can customize it according to your needs. You can always switch between only Monthly, Yearly or both options. 
+
+To create a new product follow the steps below:
+
+1: Go to the <Code>Product catalog</Code> on the left side of the Stripe dashboard, then click on the <Code>+ Add product</Code> button, fill the fields based on your product details and click on the <Code>Add product</Code> button. You can create as many products as you want.
+
+2: Once the product is created, click on it and this will open the product details page, there you can create different prices for the product, if you want to add a new price click on the little <Code>+</Code> button and fill the fields based on your pricing details and click on the <Code>Create price</Code> button.
+
+3: Once the price is created, click on it and this will open the price details page, there you can see the <Code>Price ID</Code> on the top right corner starting with <Code>price_</Code>, copy this ID and paste it to <Code>stripePriceId</Code> on the <Code>components/pricing.tsx</Code> file.
+
+<br />
+
+**Great you have successfully created a product, now you can start accepting payments.**

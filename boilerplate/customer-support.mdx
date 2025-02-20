@@ -1,0 +1,53 @@
+---
+title: Speedy Boilerplate - Customers Support
+description: Learn how to setup and use Speedy Boilerplate customers support with GaliChat.
+navigation:
+  ["setup-galichat"]
+github: customer-support
+next: seo
+---
+
+# Speedy Boilerplate - Customers Support
+
+We used GaliChat for the customers support in the boilerplate, GaliChat is a AI support assistant that you can use to provide support to your customers.
+
+<br />
+<br />
+
+<DocsTitle href="setup-galichat">
+## Setup GaliChat
+</DocsTitle>
+
+To setup and configure GaliChat, follow the steps below:
+
+1: Sigup for GaliChat at <Link href="https://galichat.com/signup" target="_blank" className="text-blue-500 underline">{`www.galichat.com/signup`}</Link>, you can use the login with Google button or enter your email and password to create an account.
+
+2: After logging in, you will be redirected to the My Chatbots page where you can create a new chatbot or manage existing ones. Press on the <Code>Create Chatbot</Code> button to create a new chatbot.
+
+You can give the chatbot one of the options:
+
+<ul className="ml-8 list-disc">
+  <li>
+    The link of your website and the chatbot will crawl it to get the information OR you can add links manually.
+  </li>
+  <li>
+    You can upload multiple files like PDFs, Docs, Txts, etc. and the chatbot will read them.
+  </li>
+  <li>
+    You can write the information manually as simple text.
+  </li>
+</ul>
+
+3: Once you have created the chatbot, you can use the <Code>View Chatbot</Code> on the left side to see how chatbot will look on your website.
+
+4: Once you are satisfied with the chatbot, you can use the <Code>Embeded on site</Code> on the left side to add the chatbot to your website. From there you can copy the <Code>chat-hash</Code> and paste it to <Code>NEXT_PUBLIC_GALICHAT_HASH</Code> on the <Code>.env</Code> file.
+
+```env
+NEXT_PUBLIC_GALICHAT_HASH=<your-galichat-hash>
+```
+
+<br />
+
+**Now you can see the chatbot live on your website and start testing it to see how it works and response to your questions**.
+
+For more information about GaliChat use the link [GaliChat Guide](https://www.galichat.com/getting-started).

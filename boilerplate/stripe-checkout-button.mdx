@@ -1,0 +1,23 @@
+---
+title: Speedy Boilerplate - Stripe Checkout Button
+description: Learn how to use Speedy Boilerplate Stripe Checkout Button Component.
+navigation: []
+github: stripe-checkout-button
+next: footer
+---
+
+# Speedy Boilerplate - Stripe Checkout Button
+
+The stripe checkout button component is used to provide the user with the option to subscribe or pay for the product using Stripe and manage or cancel their subscription. The stripe checkout button component is located in the <Code>components/stripe-checkout-button.tsx</Code> file and below is the code snippet of how to use the stripe checkout button component.
+
+<br />
+
+<CodePreview noPadding component={<Image src="/boilerplate/stripe-checkout-button.png" alt="stripe-checkout-button" width={1024} height={1024} className="w-full" />}>
+```tsx
+import { StripeCheckoutButton } from "@/components";
+
+export default function Page() {
+  return <StripeCheckoutButton />
+}
+```
+</CodePreview>
