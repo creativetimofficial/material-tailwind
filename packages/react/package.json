@@ -13,8 +13,8 @@
     "access": "public"
   },
   "author": {
-    "name": "sajadevo",
-    "url": "https://twitter.com/sajadevo_"
+    "name": "creativetim",
+    "url": "https://x.com/creativetim"
   },
   "license": "MIT",
   "bugs": {
@@ -29,7 +29,7 @@
     "@types/react-dom": "18.2.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "3.4.13",
+    "tailwindcss": "4.1.11",
     "tailwindcss-animate": "1.0.7",
     "tsconfig": "workspace:*",
     "tsup": "7.2.0",

@@ -43,16 +43,16 @@ export const alertTheme = {
     },
     gradient: {
       primary:
-        "bg-gradient-to-tr from-primary-dark to-primary-light border-primary text-primary-foreground",
+        "bg-linear-to-tr from-primary-dark to-primary-light border-primary text-primary-foreground",
       secondary:
-        "bg-gradient-to-tr from-secondary-dark to-secondary-light border-secondary text-secondary-foreground",
-      info: "bg-gradient-to-tr from-info-dark to-info-light border-info text-info-foreground",
+        "bg-linear-to-tr from-secondary-dark to-secondary-light border-secondary text-secondary-foreground",
+      info: "bg-linear-to-tr from-info-dark to-info-light border-info text-info-foreground",
       success:
-        "bg-gradient-to-tr from-success-dark to-success-light border-success text-success-foreground",
+        "bg-linear-to-tr from-success-dark to-success-light border-success text-success-foreground",
       warning:
-        "bg-gradient-to-tr from-warning-dark to-warning-light border-warning text-warning-foreground",
+        "bg-linear-to-tr from-warning-dark to-warning-light border-warning text-warning-foreground",
       error:
-        "bg-gradient-to-tr from-error-dark to-error-light border-error text-error-foreground",
+        "bg-linear-to-tr from-error-dark to-error-light border-error text-error-foreground",
     },
   },
 };
@@ -66,5 +66,5 @@ export const alertIconTheme = {
 };
 
 export const alertDismissTriggerTheme = {
-  baseStyle: "outline-none",
+  baseStyle: "outline-hidden",
 };

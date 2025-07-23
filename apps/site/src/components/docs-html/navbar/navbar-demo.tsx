@@ -1,6 +1,6 @@
 export function NavbarDemo() {
   return (
-    <nav className="mx-auto w-full max-w-screen-xl overflow-hidden rounded-lg border border-surface bg-background p-2 shadow-lg shadow-black/5">
+    <nav className="mx-auto w-full max-w-(--breakpoint-xl) overflow-hidden rounded-lg border border-surface bg-background p-2 shadow-lg shadow-black/5">
       <div className="flex items-center">
         <a
           href="#"

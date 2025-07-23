@@ -16,7 +16,7 @@ export function ChipVariants() {
           Solid
         </span>
       </div>
-      <div className="relative inline-flex select-none items-center rounded-full border border-primary bg-gradient-to-tr from-primary-dark to-primary-light p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
+      <div className="relative inline-flex select-none items-center rounded-full border border-primary bg-linear-to-tr from-primary-dark to-primary-light p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
         <span className="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
           Gradient
         </span>

@@ -56,7 +56,7 @@ export function AlertDismissible() {
       <div className="m-1.5 w-full font-sans text-base leading-none">
         A simple alert for showing message.
       </div>
-      <button id="alert-dismiss-trigger" className="outline-none">
+      <button id="alert-dismiss-trigger" className="outline-hidden">
         <svg
           viewBox="0 0 24 24"
           fill="none"

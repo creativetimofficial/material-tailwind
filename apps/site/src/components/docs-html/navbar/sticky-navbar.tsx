@@ -1,7 +1,7 @@
 export function StickyNavbar() {
   return (
     <div className="h-96 w-full overflow-scroll">
-      <nav className="sticky top-0 mx-auto w-full max-w-screen-xl overflow-hidden rounded-lg border border-surface bg-background p-2 shadow-lg shadow-black/5">
+      <nav className="sticky top-0 mx-auto w-full max-w-(--breakpoint-xl) overflow-hidden rounded-lg border border-surface bg-background p-2 shadow-lg shadow-black/5">
         <div className="flex items-center">
           <a
             href="#"

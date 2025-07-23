@@ -43,11 +43,11 @@ export const selectTriggerTheme = {
     ),
   },
   baseStyle:
-    "flex items-center gap-4 justify-between h-max w-full outline-none focus:outline-none text-foreground bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none text-start data-[shape=pill]:rounded-full [&_data-slot=placeholder]:text-foreground/60",
+    "flex items-center gap-4 justify-between h-max w-full outline-hidden focus:outline-hidden text-foreground bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none text-start data-[shape=pill]:rounded-full [&_data-slot=placeholder]:text-foreground/60",
   size: {
-    sm: "text-sm rounded-md py-1.5 px-2 ring shadow-sm",
-    md: "text-sm rounded-md py-2 px-2.5 ring shadow-sm",
-    lg: "text-base rounded-lg py-2.5 px-3 ring-4 shadow-sm",
+    sm: "text-sm rounded-md py-1.5 px-2 ring-3 shadow-xs",
+    md: "text-sm rounded-md py-2 px-2.5 ring-3 shadow-xs",
+    lg: "text-base rounded-lg py-2.5 px-3 ring-4 shadow-xs",
   },
   color: {
     primary:
@@ -76,7 +76,7 @@ export const selectListTheme = {
     order: ["content"],
   },
   baseStyle:
-    "flex flex-col gap-0.5 bg-background p-1 rounded-lg shadow-xl shadow-black/[0.025] border border-surface outline-none",
+    "flex flex-col gap-0.5 bg-background p-1 rounded-lg shadow-xl shadow-black/2.5 border border-surface outline-hidden",
 };
 
 export const selectOptionTheme = {
@@ -100,5 +100,5 @@ export const selectOptionTheme = {
     ),
   },
   baseStyle:
-    "outline-none flex items-center justify-between gap-4 py-1.5 px-2.5 rounded align-middle select-none text-sm font-sans transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-foreground hover:text-black dark:hover:text-white hover:bg-surface focus:bg-surface focus:text-black dark:focus:text-white data-[selected=true]:bg-surface data-[selected=true]:text-black dark:data-[selected=true]:text-white dark:bg-opacity-70",
+    "outline-hidden flex items-center justify-between gap-4 py-1.5 px-2.5 rounded align-middle select-none text-sm font-sans transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-foreground hover:text-black dark:hover:text-white hover:bg-surface focus:bg-surface focus:text-black dark:focus:text-white data-[selected=true]:bg-surface data-[selected=true]:text-black dark:data-[selected=true]:text-white dark:bg-opacity-70",
 };

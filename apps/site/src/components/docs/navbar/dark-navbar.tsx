@@ -69,7 +69,7 @@ export function DarkNavbar() {
   }, []);
 
   return (
-    <Navbar className="mx-auto w-full max-w-screen-xl bg-black dark:bg-surface-dark">
+    <Navbar className="mx-auto w-full max-w-(--breakpoint-xl) bg-black dark:bg-surface-dark">
       <div className="flex items-center text-white">
         <Typography
           as="a"

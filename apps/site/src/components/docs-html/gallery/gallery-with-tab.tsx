@@ -7,35 +7,35 @@ export function GalleryWithTab() {
       >
         <button
           role="tab"
-          className="relative z-[2] inline-flex w-full select-none items-center justify-center px-4 py-1.5 text-center align-middle font-sans font-medium text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-white"
+          className="relative z-2 inline-flex w-full select-none items-center justify-center px-4 py-1.5 text-center align-middle font-sans font-medium text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-white"
         >
           HTML
         </button>
         <button
           role="tab"
-          className="relative z-[2] inline-flex w-full select-none items-center justify-center px-4 py-1.5 text-center align-middle font-sans font-medium text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-white"
+          className="relative z-2 inline-flex w-full select-none items-center justify-center px-4 py-1.5 text-center align-middle font-sans font-medium text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-white"
         >
           React
         </button>
         <button
           role="tab"
-          className="relative z-[2] inline-flex w-full select-none items-center justify-center px-4 py-1.5 text-center align-middle font-sans font-medium text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-white"
+          className="relative z-2 inline-flex w-full select-none items-center justify-center px-4 py-1.5 text-center align-middle font-sans font-medium text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-white"
         >
           Vue
         </button>
         <button
           role="tab"
-          className="relative z-[2] inline-flex w-full select-none items-center justify-center px-4 py-1.5 text-center align-middle font-sans font-medium text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-white"
+          className="relative z-2 inline-flex w-full select-none items-center justify-center px-4 py-1.5 text-center align-middle font-sans font-medium text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-white"
         >
           Angular
         </button>
         <button
           role="tab"
-          className="relative z-[2] inline-flex w-full select-none items-center justify-center px-4 py-1.5 text-center align-middle font-sans font-medium text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-white"
+          className="relative z-2 inline-flex w-full select-none items-center justify-center px-4 py-1.5 text-center align-middle font-sans font-medium text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-white"
         >
           Svelte
         </button>
-        <span className="rounded bg-background shadow-sm shadow-black/10 transition-all duration-300 ease-in"></span>
+        <span className="rounded bg-background shadow-xs shadow-black/10 transition-all duration-300 ease-in"></span>
       </div>
       <div
         role="tabpanel"

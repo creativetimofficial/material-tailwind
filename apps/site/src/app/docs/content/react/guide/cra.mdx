@@ -28,6 +28,42 @@ npx create-react-app my-project
 
 ## Install Tailwind CSS
 
+### Option 1: Tailwind CSS v4 (Recommended)
+
+Install and configure the latest Tailwind CSS v4:
+
+<CodePreview>
+```bash
+npm install -D tailwindcss@next @tailwindcss/postcss@next && npx tailwindcss init
+```
+</CodePreview>
+
+#### Configure PostCSS for v4
+
+Create a `postcss.config.js` file in your project root:
+
+<CodePreview>
+```js
+module.exports = {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+}
+```
+</CodePreview>
+
+#### Add Tailwind CSS to your CSS
+
+Replace the content of your `./src/index.css` file with:
+
+<CodePreview>
+```css
+@import 'tailwindcss';
+```
+</CodePreview>
+
+### Option 2: Tailwind CSS v3 (Legacy)
+
 Once you have created your Create React App project, you need to install and configure Tailwind CSS by running the following command:
 
 <CodePreview>
@@ -36,11 +72,23 @@ npm install -D tailwindcss && npx tailwindcss init
 ```
 </CodePreview>
 
+#### Add Tailwind CSS Directives to CSS (v3 only)
+
+Create a `./src/index.css` file and add the `@tailwind` directives for each of Tailwind's layers:
+
+<CodePreview>
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+</CodePreview>
+
 ---
 
-### Configure Your Template Paths
+## Configure Your Template Paths
 
-Once you have installed Tailwind CSS, you need to configure your template paths in your `tailwind.config.js` file.
+Once you have installed Tailwind CSS, you need to configure your template paths in your `tailwind.config.js` file:
 
 <CodePreview>
 ```ts
@@ -53,18 +101,6 @@ module.exports = {
   },
   plugins: [],
 }
-```
-</CodePreview>
-
-### Add Tailwind CSS Directives to CSS
-
-Next, you need to add the Tailwind CSS directives to your CSS file. Create a `./src/index.css` file and add the `@tailwind` directives for each of Tailwind's layers.
-
-<CodePreview>
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 ```
 </CodePreview>
 

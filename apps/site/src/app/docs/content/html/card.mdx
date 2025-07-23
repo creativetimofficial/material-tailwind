@@ -216,7 +216,7 @@ This card example is ideal for introducing individuals, such as team members, em
     </p>
   </div>
   <div class="flex w-full items-center justify-center gap-1 rounded px-3 pb-3 pt-1.5">
-    <button class="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-none transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+    <button class="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-hidden transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
       <svg
         width="1.5em"
         height="1.5em"
@@ -238,7 +238,7 @@ This card example is ideal for introducing individuals, such as team members, em
         ></path>
       </svg>
     </button>
-    <button class="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-none transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+    <button class="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-hidden transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
       <svg
         width="1.5em"
         height="1.5em"
@@ -257,7 +257,7 @@ This card example is ideal for introducing individuals, such as team members, em
         ></path>
       </svg>
     </button>
-    <button class="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-none transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+    <button class="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-hidden transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
       <svg
         width="1.5em"
         height="1.5em"
@@ -320,7 +320,7 @@ Use this card example for building login pages where users need to enter their c
       <input
         id="email"
         placeholder="someone@example.com"
-        class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 disabled:pointer-events-none disabled:opacity-50 dark:text-white"
+        class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-hidden ring-3 ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-hidden focus:ring-primary/10 disabled:pointer-events-none disabled:opacity-50 dark:text-white"
         type="email"
       />
     </div>
@@ -334,7 +334,7 @@ Use this card example for building login pages where users need to enter their c
       <input
         id="password"
         placeholder="************"
-        class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 disabled:pointer-events-none disabled:opacity-50 dark:text-white"
+        class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-hidden ring-3 ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-hidden focus:ring-primary/10 disabled:pointer-events-none disabled:opacity-50 dark:text-white"
         type="password"
       />
     </div>
@@ -563,14 +563,14 @@ This card example is ideal for highlighting recent or featured posts on a blog. 
   </div>
   <div class="mt-4 flex w-full items-center justify-between rounded px-3 pb-3 pt-1.5">
     <div class="flex items-center -space-x-3">
-      <button class="outline-none group">
+      <button class="outline-hidden group">
         <img
           src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1061&amp;q=80"
           alt="natali craig"
           class="inline-block object-cover object-center w-8 h-8 border-2 rounded-full border-secondary hover:z-10"
         />
       </button>
-      <button class="outline-none group">
+      <button class="outline-hidden group">
         <img
           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
           alt="tania andrew"
@@ -594,10 +594,10 @@ This card example works perfectly for showcasing featured articles, editor's pic
 
 <ComponentPreview demo={<HTMLCard.BackgroundBlogCard />}>
 ```html
-<div class="relative flex h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-lg border border-surface bg-background text-center shadow-lg shadow-black/5">
+<div class="relative flex h-160 w-full max-w-md flex-col items-end justify-center overflow-hidden rounded-lg border border-surface bg-background text-center shadow-lg shadow-black/5">
   <div class="m-1.5 h-max w-[calc(100%-12px)] rounded-[5px]">
     <div class="absolute inset-0 m-0 h-full w-full rounded-none bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-center">
-      <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50 to-black/10 dark:from-black/90 dark:via-black/60 dark:to-black/20"></div>
+      <div class="absolute inset-0 h-full w-full bg-linear-to-t from-black/80 via-black/50 to-black/10 dark:from-black/90 dark:via-black/60 dark:to-black/20"></div>
     </div>
   </div>
   <div class="relative bottom-0 flex h-full w-full flex-col items-center justify-end rounded px-6 py-14 md:px-12">
@@ -630,14 +630,14 @@ Use this card example if you want to showcase properties or accommodations, such
 
 <ComponentPreview demo={<HTMLCard.BookingCard />}>
 ```html
-<div class="w-full max-w-[26rem] overflow-hidden rounded-lg border border-surface bg-background shadow-lg shadow-black/5">
+<div class="w-full max-w-104 overflow-hidden rounded-lg border border-surface bg-background shadow-lg shadow-black/5">
   <div class="relative m-1.5 h-max w-[calc(100%-12px)] overflow-hidden rounded-[5px] p-0">
     <img
       src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
       alt="ui/ux review check"
     />
-    <div class="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60 "></div>
-    <button class="!absolute right-2 top-2 inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-full border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-error transition-all duration-300 ease-in hover:border-error/10 hover:bg-error/10 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+    <div class="absolute inset-0 w-full h-full to-bg-black-10 bg-linear-to-tr from-transparent via-transparent to-black/60 "></div>
+    <button class="absolute! right-2 top-2 inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-full border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-error transition-all duration-300 ease-in hover:border-error/10 hover:bg-error/10 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
       <svg
         width="1.5em"
         height="1.5em"
@@ -687,8 +687,8 @@ Use this card example if you want to showcase properties or accommodations, such
       surrounded by ancient trees, stone walls, and open meadows.
     </p>
     <div class="inline-flex flex-wrap items-center gap-3 mt-6 group">
-      <button class="outline-none group">
-        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+      <button class="outline-hidden group">
+        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
           <svg
             width="1.5em"
             height="1.5em"
@@ -726,8 +726,8 @@ Use this card example if you want to showcase properties or accommodations, such
           </svg>
         </button>
       </button>
-      <button class="outline-none group">
-        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+      <button class="outline-hidden group">
+        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
           <svg
             width="1.5em"
             height="1.5em"
@@ -765,8 +765,8 @@ Use this card example if you want to showcase properties or accommodations, such
           </svg>
         </button>
       </button>
-      <button class="outline-none group">
-        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+      <button class="outline-hidden group">
+        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
           <svg
             width="1.5em"
             height="1.5em"
@@ -792,8 +792,8 @@ Use this card example if you want to showcase properties or accommodations, such
           </svg>
         </button>
       </button>
-      <button class="outline-none group">
-        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+      <button class="outline-hidden group">
+        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
           <svg
             width="1.5em"
             height="1.5em"
@@ -817,8 +817,8 @@ Use this card example if you want to showcase properties or accommodations, such
           </svg>
         </button>
       </button>
-      <button class="outline-none group">
-        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+      <button class="outline-hidden group">
+        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
           <svg
             width="1.5em"
             stroke-width="1.5"
@@ -844,8 +844,8 @@ Use this card example if you want to showcase properties or accommodations, such
           </svg>
         </button>
       </button>
-      <button class="outline-none group">
-        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+      <button class="outline-hidden group">
+        <button class="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
           +20
         </button>
       </button>
@@ -873,7 +873,7 @@ Use this example if you want to display client testimonials or customer feedback
 
 <ComponentPreview demo={<HTMLCard.TestimonialCard />}>
 ```html
-<div class="w-full max-w-[26rem] overflow-hidden rounded-lg border border-none border-surface bg-background shadow-none shadow-black/5">
+<div class="w-full max-w-104 overflow-hidden rounded-lg border border-none border-surface bg-background shadow-none shadow-black/5">
   <div class="m-1.5 mx-0 flex h-max w-[calc(100%-12px)] items-center gap-4 rounded-[5px] pb-4 pt-0">
     <img
       src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
@@ -982,7 +982,7 @@ This example contains a modern, wide-format card UI component designed for featu
 
 <ComponentPreview demo={<HTMLCard.HorizontalCard />}>
 ```html
-<div class="flex h-full w-full max-w-[48rem] flex-row overflow-hidden rounded-lg border border-surface bg-background shadow-lg shadow-black/5">
+<div class="flex h-full w-full max-w-3xl flex-row overflow-hidden rounded-lg border border-surface bg-background shadow-lg shadow-black/5">
   <div class="m-0 h-full w-2/5 shrink-0 rounded-[5px] rounded-r-none">
     <img
       src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"

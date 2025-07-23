@@ -15,7 +15,7 @@ export function ProfileCard() {
         </p>
       </div>
       <div className="flex w-full items-center justify-center gap-1 rounded px-3 pb-3 pt-1.5">
-        <button className="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-none transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+        <button className="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-hidden transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
           <svg
             width="1.5em"
             height="1.5em"
@@ -37,7 +37,7 @@ export function ProfileCard() {
             ></path>
           </svg>
         </button>
-        <button className="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-none transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+        <button className="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-hidden transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
           <svg
             width="1.5em"
             height="1.5em"
@@ -56,7 +56,7 @@ export function ProfileCard() {
             ></path>
           </svg>
         </button>
-        <button className="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-none transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+        <button className="group inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-md border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-primary outline-hidden transition-all duration-300 ease-in hover:border-primary/5 hover:bg-primary/5 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
           <svg
             width="1.5em"
             height="1.5em"

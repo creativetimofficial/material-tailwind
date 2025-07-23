@@ -35,7 +35,7 @@ export function ThemeToggleDesktop({ as }: { as: React.ElementType }) {
         }
         className="hidden lg:grid"
       />
-      <Menu.Content className="z-[99999] w-max min-w-max">
+      <Menu.Content className="z-99999 w-max min-w-max">
         <Menu.Item onClick={() => setTheme("light")}>
           <SunLight className="mr-2 h-4 w-4" />
           Light
@@ -77,7 +77,7 @@ export function ThemeToggleMobile({ as }: { as: React.ElementType }) {
         )}
         <span className="mr-0.5 capitalize">{theme}</span>
       </Menu.Trigger>
-      <Menu.Content className="z-[99999] w-max min-w-max">
+      <Menu.Content className="z-99999 w-max min-w-max">
         <Menu.Item onClick={() => setTheme("light")}>
           <SunLight className="mr-2 h-4 w-4" />
           Light

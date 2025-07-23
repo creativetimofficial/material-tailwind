@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.js';
 
 html {
   scrollbar-width: thin;
@@ -147,5 +148,5 @@ html {
 }
 
 .code-preview div[data-bright-theme] {
-  @apply !my-0 !max-h-[32rem] !overflow-scroll;
+  @apply !my-0 !max-h-128 !overflow-scroll;
 }

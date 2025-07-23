@@ -17,14 +17,14 @@ export function BlogCard() {
       </div>
       <div className="mt-4 flex w-full items-center justify-between rounded px-3 pb-3 pt-1.5">
         <div className="flex items-center -space-x-3">
-          <button className="group outline-none">
+          <button className="group outline-hidden">
             <img
               src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1061&amp;q=80"
               alt="natali craig"
               className="inline-block h-8 w-8 rounded-full border-2 border-secondary object-cover object-center hover:z-10"
             />
           </button>
-          <button className="group outline-none">
+          <button className="group outline-hidden">
             <img
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
               alt="tania andrew"
