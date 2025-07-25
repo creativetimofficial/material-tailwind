@@ -1,10 +1,5 @@
 {
   "buildCommand": "turbo run build",
   "installCommand": "pnpm install --frozen-lockfile",
-  "outputDirectory": "apps/site/.next",
-  "functions": {
-    "apps/site/**": {
-      "runtime": "nodejs22.x"
-    }
-  }
+  "outputDirectory": "apps/site/.next"
 }
