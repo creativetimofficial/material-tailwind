@@ -15,7 +15,8 @@
     <img src="https://img.shields.io/badge/version-2.1.1-blue.svg" alt="Version" />
   </a>
 </p>
-<p align="center">
+<p align="center"> 
+
   <a href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE">
     <img src="https://img.shields.io/npm/l/@material-tailwind/html?label=%40material-taiwlind%2Fhtml" alt="License" />
   </a>
