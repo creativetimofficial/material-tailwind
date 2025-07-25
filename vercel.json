@@ -1,5 +1,5 @@
 {
   "buildCommand": "turbo run build",
-  "installCommand": "pnpm install --frozen-lockfile",
+  "installCommand": "pnpm install",
   "outputDirectory": "apps/site/.next"
 }
