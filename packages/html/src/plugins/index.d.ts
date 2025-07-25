@@ -1,3 +1,4 @@
+import plugin from "tailwindcss/plugin";
 export interface Color {
     default?: `#${string}`;
     dark?: `#${string}`;
@@ -23,6 +24,6 @@ export interface Options {
     colors?: Colors;
     darkColors?: Colors;
 }
-export declare const mtConfig: any;
+export declare const mtConfig: ReturnType<typeof plugin.withOptions<Options>>;
 export default mtConfig;
 //# sourceMappingURL=index.d.ts.map
