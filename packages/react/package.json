@@ -27,6 +27,7 @@
   "devDependencies": {
     "@types/react": "18.2.61",
     "@types/react-dom": "18.2.19",
+    "@types/material-ripple-effects": "2.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "4.1.11",
