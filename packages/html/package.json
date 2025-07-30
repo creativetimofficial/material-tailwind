@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "lint": "tsc",
-    "build": "tsup src --dts",
+    "build": "tsup --config tsup.config.ts",
     "dev": "tsup src --watch"
   },
   "private": false,
