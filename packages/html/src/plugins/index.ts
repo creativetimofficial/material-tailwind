@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import hexRgb from "hex-rgb";
 import plugin from "tailwindcss/plugin";
 
@@ -6,7 +8,7 @@ interface PluginAPI {
   addBase(base: Record<string, any>): void;
   addVariant(name: string, variant: string | string[] | Record<string, any>): void;
   addUtilities(utilities: Record<string, any>, options?: any): void;
-  addComponents(utilities: Record<string, any>, options?: any): void;
+  addComponents(utilities: Record<string, any>, options?: any): void; 
   theme(path: string, defaultValue?: any): any;
   config(path?: string, defaultValue?: any): any;
   prefix(className: string): string;
@@ -283,7 +285,7 @@ export const mtConfig: ReturnType<typeof plugin.withOptions<Options>> = plugin.w
       });
     };
   },
-  function (options?: Options) {
+  function () {
     return {
       darkMode: "class",
       content: [
