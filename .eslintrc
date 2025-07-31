@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["custom", "turbo"],
+  "extends": ["eslint:recommended", "turbo"],
   "settings": {
     "next": {
       "rootDir": ["./*/"]
