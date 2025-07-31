@@ -1,7 +1,5 @@
 {
-  "framework": "nextjs",
-  "rootDirectory": "apps/site",
   "buildCommand": "turbo run build --filter=docs",
   "installCommand": "pnpm install",
-  "outputDirectory": ".next"
+  "outputDirectory": "apps/site/.next"
 }
