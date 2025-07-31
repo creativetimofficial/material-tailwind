@@ -213,7 +213,7 @@ export function IconButtonAsLink() {
       </a>
       <a
         href="#"
-        className="inline-grid min-h-[36px] min-w-[36px] select-none place-items-center rounded-md border border-primary bg-gradient-to-tr from-primary-dark to-primary-light text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        className="inline-grid min-h-[36px] min-w-[36px] select-none place-items-center rounded-md border border-primary bg-linear-to-tr from-primary-dark to-primary-light text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       >
         <svg
           width="1.5em"

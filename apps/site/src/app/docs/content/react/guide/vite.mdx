@@ -28,7 +28,48 @@ npm create vite@latest my-project -- --template react
 
 ## Install Tailwind CSS
 
-Once you have created your Vite project, you need to install and configure Tailwind CSS by running the following command:
+### Option 1: Tailwind CSS v4 with Vite Plugin (Recommended)
+
+Install Tailwind CSS v4 using the official Vite plugin for the most seamless integration:
+
+<CodePreview>
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+</CodePreview>
+
+#### Configure the Vite Plugin
+
+Add the `@tailwindcss/vite` plugin to your `vite.config.ts` or `vite.config.js` file:
+
+<CodePreview>
+```ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
+})
+```
+</CodePreview>
+
+#### Add Tailwind CSS to your CSS
+
+Replace the content of your `./src/index.css` file with:
+
+<CodePreview>
+```css
+@import 'tailwindcss';
+```
+</CodePreview>
+
+### Option 2: Tailwind CSS v3 (Legacy)
+
+For projects that need to use Tailwind CSS v3:
 
 <CodePreview>
 ```bash
@@ -36,13 +77,12 @@ npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p
 ```
 </CodePreview>
 
-### Configure Your Template Paths
+#### Configure Your Template Paths (v3 only)
 
-Once you have installed Tailwind CSS, you need to configure your template paths in your `tailwind.config.js` file.
+Configure your template paths in your `tailwind.config.js` file:
 
 <CodePreview>
-```ts
-// highlight(3,4,5,6)
+```js
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -57,9 +97,9 @@ export default {
 ```
 </CodePreview>
 
-### Add Tailwind CSS Directives to CSS
+#### Add Tailwind CSS Directives to CSS (v3 only)
 
-Next, you need to add the Tailwind CSS directives to your CSS file. Add the `@tailwind` directives for each of Tailwind's layers to your `./src/index.css` file.
+Add the `@tailwind` directives for each of Tailwind's layers to your `./src/index.css` file:
 
 <CodePreview>
 ```css
@@ -83,9 +123,15 @@ npm i @material-tailwind/react@beta
 
 ---
 
-## Add Plugin and Template Path
+## Configure Material Tailwind
 
-Once you installed `@material-tailwind/react` you need to add `mtConfig` and the template path to your `tailwind.config.js` file.
+### For Tailwind CSS v4 (Vite Plugin)
+
+With the Vite plugin approach, Material Tailwind works out of the box! No additional configuration is needed since Tailwind CSS v4 automatically detects and includes the component styles.
+
+### For Tailwind CSS v3 (Legacy)
+
+If you're using Tailwind CSS v3, you need to add `mtConfig` and the template path to your `tailwind.config.js` file:
 
 <CodePreview>
 ```ts

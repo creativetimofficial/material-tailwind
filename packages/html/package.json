@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "lint": "tsc",
-    "build": "tsup src --dts",
+    "build": "tsup --config tsup.config.ts",
     "dev": "tsup src --watch"
   },
   "private": false,
@@ -13,8 +13,8 @@
     "access": "public"
   },
   "author": {
-    "name": "sajadevo",
-    "url": "https://twitter.com/sajadevo_"
+    "name": "creativetim",
+    "url": "https://x.com/creativetim"
   },
   "license": "MIT",
   "bugs": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/creativetimofficial/material-tailwind/packages/html#readme",
   "devDependencies": {
-    "tailwindcss": "3.3.3",
+    "tailwindcss": "4.1.11",
     "tsconfig": "workspace:*",
     "tsup": "7.2.0",
     "typescript": "5.2.2"

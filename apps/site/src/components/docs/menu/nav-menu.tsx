@@ -45,7 +45,7 @@ export function NavMenu() {
             </Typography>
           </div>
         </Card>
-        <ul className="col-span-3 !m-0">
+        <ul className="col-span-3 m-0!">
           <NavItem
             title="@material-tailwind/html"
             description="Learn how to use @material-tailwind/html, packed with rich components and widgets."

@@ -184,7 +184,7 @@ export function Navbar() {
       {typeof window !== "undefined" &&
         getCookie("show_notification_bar") !== "false" && (
           <div
-            className="relative z-[99] border-b border-warning bg-warning-light px-4 py-3 text-center"
+            className="relative z-99 border-b border-warning bg-warning-light px-4 py-3 text-center"
             id="notification_bar"
           >
             <Typography
@@ -231,7 +231,7 @@ export function Navbar() {
               </div>
               <Link
                 href="/v3/"
-                className="mr-2 grid h-12 w-12 shrink-0 lg:!hidden"
+                className="mr-2 grid h-12 w-12 shrink-0 lg:hidden!"
               >
                 <Brand />
               </Link>
@@ -328,7 +328,7 @@ export function Navbar() {
                           </Typography>
                         </div>
                       </Card>
-                      <ul className="col-span-3 !m-0">
+                      <ul className="col-span-3 m-0!">
                         <MenuItem
                           title="Updivision"
                           description="Custom Development: Our partners take ideas and turn them into software that users love." 
@@ -364,8 +364,8 @@ export function Navbar() {
                 >
                   <MoreVert className="h-5 w-5 stroke-[1.5]" />
                 </Dialog.Trigger>
-                <Dialog.Overlay className="backdrop-blur">
-                  <Dialog.Content className="fixed left-[unset] right-3.5 top-3.5 w-full max-w-[280px] translate-x-0 translate-y-0 !animate-none rounded-lg p-1">
+                <Dialog.Overlay className="backdrop-blur-sm">
+                  <Dialog.Content className="fixed left-[unset] right-3.5 top-3.5 w-full max-w-[280px] translate-x-0 translate-y-0 animate-none! rounded-lg p-1">
                     <Dialog.DismissTrigger
                       as={IconButton}
                       size="sm"
@@ -536,7 +536,7 @@ export function Navbar() {
               <Drawer.Trigger as={IconButton} variant="ghost" color="secondary">
                 <MenuIcon className="h-5 w-5" />
               </Drawer.Trigger>
-              <Drawer.Overlay className="backdrop-blur">
+              <Drawer.Overlay className="backdrop-blur-sm">
                 <Drawer.Panel placement="left" className="p-0">
                   <div className="flex items-center justify-between gap-4">
                     <Drawer.DismissTrigger

@@ -35,8 +35,8 @@ function getRgbChannels(hex: `#${string}`) {
   return `${red} ${green} ${blue}`;
 }
 
-export const mtConfig = plugin.withOptions(
-  function (options: Options) {
+export const mtConfig: ReturnType<typeof plugin.withOptions<Options>> = plugin.withOptions(
+  function (options?: Options) {
     return function ({ addBase }) {
       addBase({
         ":root": {
@@ -273,7 +273,7 @@ export const mtConfig = plugin.withOptions(
       });
     };
   },
-  function (options) {
+  function () {
     return {
       darkMode: "class",
       content: [

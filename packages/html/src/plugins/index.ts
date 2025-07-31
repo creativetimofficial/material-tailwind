@@ -1,5 +1,18 @@
+/* eslint-disable no-unused-vars */
+
 import hexRgb from "hex-rgb";
 import plugin from "tailwindcss/plugin";
+
+// Define the PluginAPI type locally based on what tailwindcss expects
+interface PluginAPI {
+  addBase(base: Record<string, any>): void;
+  addVariant(name: string, variant: string | string[] | Record<string, any>): void;
+  addUtilities(utilities: Record<string, any>, options?: any): void;
+  addComponents(utilities: Record<string, any>, options?: any): void; 
+  theme(path: string, defaultValue?: any): any;
+  config(path?: string, defaultValue?: any): any;
+  prefix(className: string): string;
+}
 
 export interface Color {
   default?: `#${string}`;
@@ -34,9 +47,9 @@ function getRgbChannels(hex: `#${string}`) {
   return `${red} ${green} ${blue}`;
 }
 
-export const mtConfig = plugin.withOptions(
-  function (options: Options) {
-    return function ({ addBase }) {
+export const mtConfig: ReturnType<typeof plugin.withOptions<Options>> = plugin.withOptions(
+  function (options?: Options) {
+    return function ({ addBase }: PluginAPI) {
       addBase({
         ":root": {
           /* border radius */
@@ -272,7 +285,7 @@ export const mtConfig = plugin.withOptions(
       });
     };
   },
-  function (options) {
+  function () {
     return {
       darkMode: "class",
       content: [

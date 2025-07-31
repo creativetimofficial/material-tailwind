@@ -44,7 +44,7 @@ export function DialogWithImage() {
             <img
               alt="nature"
               src="https://dub.sh/xxo2Jek"
-              className="h-[48rem] w-full rounded-lg object-cover object-center"
+              className="h-192 w-full rounded-lg object-cover object-center"
             />
           </div>
           <div className="flex items-end justify-between">

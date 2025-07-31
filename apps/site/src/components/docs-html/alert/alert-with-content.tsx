@@ -50,7 +50,7 @@ export function AlertWithContent() {
           inner peace. That's a good day for me.
         </p>
       </div>
-      <button id="content-close-trigger" className="outline-none">
+      <button id="content-close-trigger" className="outline-hidden">
         <svg
           viewBox="0 0 24 24"
           fill="none"

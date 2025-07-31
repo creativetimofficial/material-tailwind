@@ -1,12 +1,12 @@
 export function BookingCard() {
   return (
-    <div className="w-full max-w-[26rem] overflow-hidden rounded-lg border border-surface bg-background shadow-lg shadow-black/5">
+    <div className="w-full max-w-104 overflow-hidden rounded-lg border border-surface bg-background shadow-lg shadow-black/5">
       <div className="relative m-1.5 h-max w-[calc(100%-12px)] overflow-hidden rounded-[5px] p-0">
         <img
           src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
           alt="ui/ux review check"
         />
-        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 "></div>
+        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-linear-to-tr from-transparent via-transparent to-black/60 "></div>
         <button className="!absolute right-2 top-2 inline-grid min-h-[28px] min-w-[28px] select-none place-items-center rounded-full border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-error transition-all duration-300 ease-in hover:border-error/10 hover:bg-error/10 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
           <svg
             width="1.5em"
@@ -57,8 +57,8 @@ export function BookingCard() {
           surrounded by ancient trees, stone walls, and open meadows.
         </p>
         <div className="group mt-6 inline-flex flex-wrap items-center gap-3">
-          <button className="group outline-none">
-            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+          <button className="group outline-hidden">
+            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
               <svg
                 width="1.5em"
                 height="1.5em"
@@ -96,8 +96,8 @@ export function BookingCard() {
               </svg>
             </button>
           </button>
-          <button className="group outline-none">
-            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+          <button className="group outline-hidden">
+            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
               <svg
                 width="1.5em"
                 height="1.5em"
@@ -135,8 +135,8 @@ export function BookingCard() {
               </svg>
             </button>
           </button>
-          <button className="group outline-none">
-            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+          <button className="group outline-hidden">
+            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
               <svg
                 width="1.5em"
                 height="1.5em"
@@ -162,8 +162,8 @@ export function BookingCard() {
               </svg>
             </button>
           </button>
-          <button className="group outline-none">
-            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+          <button className="group outline-hidden">
+            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
               <svg
                 width="1.5em"
                 height="1.5em"
@@ -187,8 +187,8 @@ export function BookingCard() {
               </svg>
             </button>
           </button>
-          <button className="group outline-none">
-            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+          <button className="group outline-hidden">
+            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
               <svg
                 width="1.5em"
                 stroke-width="1.5"
@@ -214,8 +214,8 @@ export function BookingCard() {
               </svg>
             </button>
           </button>
-          <button className="group outline-none">
-            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:!opacity-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
+          <button className="group outline-hidden">
+            <button className="inline-grid min-h-[46px] min-w-[46px] cursor-pointer select-none place-items-center rounded-full border border-surface bg-surface-light text-center align-middle font-sans text-base font-medium leading-none text-secondary-foreground transition-all duration-300 ease-in hover:border-secondary-light hover:bg-secondary-light hover:opacity-100! disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none group-hover:opacity-70">
               +20
             </button>
           </button>

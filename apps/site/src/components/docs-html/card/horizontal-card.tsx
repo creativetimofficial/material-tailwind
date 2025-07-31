@@ -1,6 +1,6 @@
 export function HorizontalCard() {
   return (
-    <div className="flex h-full w-full max-w-[48rem] flex-row overflow-hidden rounded-lg border border-surface bg-background shadow-lg shadow-black/5">
+    <div className="flex h-full w-full max-w-3xl flex-row overflow-hidden rounded-lg border border-surface bg-background shadow-lg shadow-black/5">
       <div className="m-0 h-full w-2/5 shrink-0 rounded-[5px] rounded-r-none">
         <img
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"

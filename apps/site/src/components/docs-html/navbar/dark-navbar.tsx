@@ -1,6 +1,6 @@
 export function DarkNavbar() {
   return (
-    <nav className="mx-auto w-full max-w-screen-xl overflow-hidden rounded-lg border border-surface bg-black p-2 shadow-lg shadow-black/5 dark:bg-surface-dark">
+    <nav className="mx-auto w-full max-w-(--breakpoint-xl) overflow-hidden rounded-lg border border-surface bg-black p-2 shadow-lg shadow-black/5 dark:bg-surface-dark">
       <div className="flex items-center text-white">
         <a
           href="#"

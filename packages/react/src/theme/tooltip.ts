@@ -14,15 +14,15 @@ export const tooltipTheme = {
 };
 
 export const tooltipTriggerTheme = {
-  baseStyle: "outline-none group",
+  baseStyle: "outline-hidden group",
 };
 
 export const tooltipContentTheme = {
   baseStyle:
-    "rounded-md bg-black dark:bg-white border-black dark:border-white px-1.5 py-1 text-xs text-white dark:text-black shadow-lg shadow-black/5 outline-none",
+    "rounded-md bg-black dark:bg-white border-black dark:border-white px-1.5 py-1 text-xs text-white dark:text-black shadow-lg shadow-black/5 outline-hidden",
 };
 
 export const tooltipArrowTheme = {
   baseStyle:
-    "h-2 w-2 rounded-bl border border-[inherit] bg-inherit [clip-path:polygon(0_0,_100%_100%,_0_100%)] data-[placement^=bottom]:rotate-[135deg] data-[placement^=left]:rotate-[225deg] data-[placement^=right]:rotate-45 data-[placement^=top]:-rotate-45",
+    "h-2 w-2 rounded-bl border border-inherit bg-inherit [clip-path:polygon(0_0,100%_100%,0_100%)] data-[placement^=bottom]:rotate-135 data-[placement^=left]:rotate-225 data-[placement^=right]:rotate-45 data-[placement^=top]:-rotate-45",
 };

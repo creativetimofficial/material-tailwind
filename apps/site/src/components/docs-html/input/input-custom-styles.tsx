@@ -3,7 +3,7 @@ export function InputCustomStyles() {
     <div className="relative w-72 rounded-md text-sm leading-none">
       <input
         placeholder="Username"
-        className="peer h-full w-full select-none rounded-none border-0 border-b border-gray-400 bg-transparent px-2.5 py-[8.5px] pl-[26px] pr-0.5 ps-8 leading-[inherit] text-black outline-none ring-0 ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-gray-900 hover:ring-primary/10 focus:border-gray-900 focus:outline-none focus:ring-primary/10 dark:border-gray-600 dark:text-white dark:hover:border-gray-50 dark:focus:border-gray-50"
+        className="peer h-full w-full select-none rounded-none border-0 border-b border-gray-400 bg-transparent px-2.5 py-[8.5px] pl-[26px] pr-0.5 ps-8 leading-[inherit] text-black outline-hidden ring-0 ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-gray-900 hover:ring-primary/10 focus:border-gray-900 focus:outline-hidden focus:ring-primary/10 dark:border-gray-600 dark:text-white dark:hover:border-gray-50 dark:focus:border-gray-50"
         type="text"
       />
       <span className="pointer-events-none absolute left-px top-1/2 h-5 w-5 -translate-y-1/2 overflow-hidden text-foreground/70 transition-all duration-300 ease-in peer-hover:text-black peer-focus:text-black dark:peer-hover:text-white dark:peer-focus:text-white">

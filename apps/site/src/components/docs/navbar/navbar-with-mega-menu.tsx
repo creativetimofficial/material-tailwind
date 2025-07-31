@@ -133,7 +133,7 @@ function ProfileMenu() {
         <Menu.Item>
           <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
-        <hr className="!my-1 -mx-1 border-secondary-dark" />
+        <hr className="my-1! -mx-1 border-secondary-dark" />
         <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error dark:hover:text-error dark:focus:text-error">
           <LogOut className="mr-2 h-[18px] w-[18px]" />
           Logout
@@ -189,7 +189,7 @@ export function NavbarWithMegaMenu() {
   }, []);
 
   return (
-    <Navbar className="mx-auto w-full max-w-screen-xl">
+    <Navbar className="mx-auto w-full max-w-(--breakpoint-xl)">
       <div className="flex items-center">
         <Typography
           as="a"
@@ -214,7 +214,7 @@ export function NavbarWithMegaMenu() {
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="z-[100000] grid max-w-screen-xl rounded-lg border border-surface bg-background p-2 shadow-xl shadow-surface/10 dark:border-surface dark:bg-background">
+              <Tooltip.Content className="z-100000 grid max-w-(--breakpoint-xl) rounded-lg border border-surface bg-background p-2 shadow-xl shadow-surface/10 dark:border-surface dark:bg-background">
                 <ul className="grid grid-cols-3 gap-y-2">{renderItems}</ul>
                 <Tooltip.Arrow />
               </Tooltip.Content>

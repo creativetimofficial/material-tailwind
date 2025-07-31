@@ -39,16 +39,16 @@ export const navbarTheme = {
     gradient: {
       default: "bg-background border-surface shadow-black/5",
       primary:
-        "bg-gradient-to-t from-primary-dark to-primary-light shadow-primary/25 border-primary",
+        "bg-linear-to-t from-primary-dark to-primary-light shadow-primary/25 border-primary",
       secondary:
-        "bg-gradient-to-t from-secondary-dark to-secondary-light shadow-secondary/25 border-secondary",
-      info: "bg-gradient-to-t from-info-dark to-info-light shadow-info/25 border-info",
+        "bg-linear-to-t from-secondary-dark to-secondary-light shadow-secondary/25 border-secondary",
+      info: "bg-linear-to-t from-info-dark to-info-light shadow-info/25 border-info",
       success:
-        "bg-gradient-to-t from-success-dark to-success-light shadow-success/25 border-success",
+        "bg-linear-to-t from-success-dark to-success-light shadow-success/25 border-success",
       warning:
-        "bg-gradient-to-t from-warning-dark to-warning-light shadow-warning/25 border-warning",
+        "bg-linear-to-t from-warning-dark to-warning-light shadow-warning/25 border-warning",
       error:
-        "bg-gradient-to-t from-error-dark to-error-light shadow-error/25 border-error",
+        "bg-linear-to-t from-error-dark to-error-light shadow-error/25 border-error",
     },
   },
 };

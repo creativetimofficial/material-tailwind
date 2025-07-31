@@ -8,7 +8,7 @@ import {
 
 export function TestimonialCard() {
   return (
-    <Card className="w-full max-w-[26rem] border-none shadow-none">
+    <Card className="w-full max-w-104 border-none shadow-none">
       <Card.Header className="mx-0 flex items-center gap-4 pb-4 pt-0">
         <Avatar
           size="lg"

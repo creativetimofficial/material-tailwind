@@ -11,7 +11,7 @@ export const textareaTheme = {
     isSuccess: false,
   },
   baseStyle:
-    "peer block w-full resize-none outline-none focus:outline-none text-black dark:text-white placeholder:text-foreground/60 bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success data-[resize=true]:resize-y",
+    "peer block w-full resize-none outline-hidden focus:outline-hidden text-black dark:text-white placeholder:text-foreground/60 bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success data-[resize=true]:resize-y",
   color: {
     primary:
       "hover:border-primary hover:ring-primary/10 focus:border-primary focus:ring-primary/10",
@@ -26,8 +26,8 @@ export const textareaTheme = {
       "hover:border-error hover:ring-error/10 focus:border-error focus:ring-error/10",
   },
   size: {
-    sm: "text-sm shadow-sm p-2 rounded-md ring",
-    md: "text-sm shadow-sm p-2.5 rounded-md ring",
-    lg: "text-base shadow-sm p-3 rounded-lg ring-4",
+    sm: "text-sm shadow-xs p-2 rounded-md ring-3",
+    md: "text-sm shadow-xs p-2.5 rounded-md ring-3",
+    lg: "text-base shadow-xs p-3 rounded-lg ring-4",
   },
 };

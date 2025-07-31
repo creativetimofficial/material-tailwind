@@ -15,7 +15,7 @@ export const radioTheme = {
 
 export const radioItemTheme = {
   baseStyle:
-    "group block cursor-pointer shadow-sm shadow-black/5 relative h-5 w-5 shrink-0 rounded-full bg-transparent border border-surface transition-all duration-200 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none hover:shadow-md",
+    "group block cursor-pointer shadow-xs shadow-black/5 relative h-5 w-5 shrink-0 rounded-full bg-transparent border border-surface transition-all duration-200 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none hover:shadow-md",
   color: {
     primary:
       "data-[checked=true]:bg-primary data-[checked=true]:border-primary text-primary-foreground",

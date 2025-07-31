@@ -159,7 +159,7 @@ export function AlertWithList() {
       </div>
       <div
         role="alert"
-        className="relative flex w-full items-start rounded-md border border-primary bg-gradient-to-tr from-primary-dark to-primary-light p-2 text-primary-foreground"
+        className="relative flex w-full items-start rounded-md border border-primary bg-linear-to-tr from-primary-dark to-primary-light p-2 text-primary-foreground"
       >
         <span className="grid shrink-0 place-items-center p-1">
           <svg

@@ -38,9 +38,66 @@ npx astro add react
 
 ---
 
-## Add Tailwind CSS to Astro
+## Install Tailwind CSS
 
-Next, you need to install and configure Tailwind CSS by running the following command:
+### Option 1: Tailwind CSS v4 with Vite Plugin (Recommended)
+
+Install Tailwind CSS v4 using the official Vite plugin for seamless integration with Astro:
+
+<CodePreview>
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+</CodePreview>
+
+#### Configure the Vite Plugin
+
+Add the `@tailwindcss/vite` plugin to your `astro.config.mjs` file:
+
+<CodePreview>
+```js
+// @ts-check
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+
+// https://astro.build/config
+export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
+});
+```
+</CodePreview>
+
+#### Create CSS File
+
+Create a `./src/styles/global.css` file and add the Tailwind import:
+
+<CodePreview>
+```css
+@import "tailwindcss";
+```
+</CodePreview>
+
+#### Import CSS in your layout
+
+Import the CSS file in your Astro layout or pages:
+
+<CodePreview>
+```astro
+---
+import "../styles/global.css";
+---
+
+<h1 class="text-3xl font-bold underline">
+  Hello world!
+</h1>
+```
+</CodePreview>
+
+### Option 2: Tailwind CSS v3 (Legacy)
+
+For projects that need to use Tailwind CSS v3, you can use the Astro integration:
 
 <CodePreview>
 ```bash
@@ -62,9 +119,15 @@ npm i @material-tailwind/react@beta
 
 ---
 
-## Add Plugin and Template Path
+## Configure Material Tailwind
 
-Once you installed `@material-tailwind/react` you need to add `mtConfig` and the template path to your `tailwind.config.mjs` file.
+### For Tailwind CSS v4 (Vite Plugin)
+
+With the Vite plugin approach, Material Tailwind works automatically! No additional configuration is needed since Tailwind CSS v4 automatically detects and includes the component styles.
+
+### For Tailwind CSS v3 (Legacy)
+
+If you're using Tailwind CSS v3 with the Astro integration, you need to add `mtConfig` and the template path to your `tailwind.config.mjs` file:
 
 <CodePreview>
 ```ts

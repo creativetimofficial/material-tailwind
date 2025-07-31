@@ -4,30 +4,29 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "lib": ["dom", "esnext"],
+    "moduleResolution": "bundler",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "preserve",
     "declaration": true,
-    "sourceMap": true,
-    "moduleResolution": "node",
+    "sourceMap": false,
     "skipLibCheck": true,
     "strict": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "noFallthroughCasesInSwitch": true,
-    "jsx": "react-jsx",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
-      "@theme": ["./src/theme/index.ts"],
-      "@utils": ["./src/utils/index.ts"],
-      "@hooks": ["./src/hooks/index.ts"],
-      "@types": ["./src/types/index.ts"],
-      "@plugins": ["./src/plugins/index.ts"],
-      "@context": ["./src/context/index.tsx"],
-      "@components": ["./src/components/index.ts"]
+      "@context": ["./src/context"],
+      "@plugins": ["./src/plugins"],
+      "@theme": ["./src/theme"],
+      "@types": ["./src/types"],
+      "@utils": ["./src/utils"],
+      "@components": ["./src/components"]
     }
   },
-  "include": ["src", "index.d.ts"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }

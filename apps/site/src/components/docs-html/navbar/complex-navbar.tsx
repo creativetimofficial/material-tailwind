@@ -1,6 +1,6 @@
 export function ComplexNavbar() {
   return (
-    <nav className="mx-auto w-full max-w-screen-xl overflow-hidden rounded-lg border border-surface bg-background p-2 shadow-lg shadow-black/5">
+    <nav className="mx-auto w-full max-w-(--breakpoint-xl) overflow-hidden rounded-lg border border-surface bg-background p-2 shadow-lg shadow-black/5">
       <div className="flex items-center">
         <a
           href="#"
@@ -11,7 +11,7 @@ export function ComplexNavbar() {
         <hr className="mx-1 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" />
         <div className="hidden lg:block">
           <ul className="mt-4 flex min-w-[240px] flex-col gap-1 lg:mt-0 lg:flex-row lg:items-center">
-            <button data-open="false" className="group outline-none">
+            <button data-open="false" className="group outline-hidden">
               <li className="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
                 <span className="me-2.5 grid shrink-0 place-items-center">
                   <svg
@@ -250,7 +250,7 @@ export function ComplexNavbar() {
           id=":r3j:"
           src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
           alt="profile-picture"
-          className="group inline-block h-8 w-8 rounded-full border border-primary object-cover object-center p-0.5 outline-none lg:ml-auto"
+          className="group inline-block h-8 w-8 rounded-full border border-primary object-cover object-center p-0.5 outline-hidden lg:ml-auto"
         />
       </div>
     </nav>

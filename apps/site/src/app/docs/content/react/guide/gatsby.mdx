@@ -28,11 +28,59 @@ npx gatsby new my-new-project
 
 ## Install Tailwind CSS
 
+### Option 1: Tailwind CSS v4 (Recommended)
+
+Install and configure the latest Tailwind CSS v4:
+
+<CodePreview>
+```bash
+npm install -D tailwindcss@next @tailwindcss/postcss@next gatsby-plugin-postcss && npx tailwindcss init
+```
+</CodePreview>
+
+#### Configure PostCSS for v4
+
+Create a `postcss.config.js` file:
+
+<CodePreview>
+```js
+module.exports = {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+}
+```
+</CodePreview>
+
+#### Add Tailwind CSS to your CSS
+
+Create a `./src/styles/global.css` file with:
+
+<CodePreview>
+```css
+@import 'tailwindcss';
+```
+</CodePreview>
+
+### Option 2: Tailwind CSS v3 (Legacy)
+
 Once you have created your Gatsby project, you need to install and configure Tailwind CSS by running the following command:
 
 <CodePreview>
 ```bash
 npm install -D tailwindcss postcss autoprefixer gatsby-plugin-postcss && npx tailwindcss init -p
+```
+</CodePreview>
+
+#### Add Tailwind CSS Directives to CSS (v3 only)
+
+Create a `./src/styles/global.css` file and add the `@tailwind` directives for each of Tailwind's layers:
+
+<CodePreview>
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 </CodePreview>
 
