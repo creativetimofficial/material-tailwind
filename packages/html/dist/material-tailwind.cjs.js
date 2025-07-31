@@ -260,8 +260,6 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
-/* global Reflect, Promise, SuppressedError, Symbol, Iterator */
-
 
 function __awaiter(thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -1165,6 +1163,7 @@ function detectOverflow(state, options) {
   var popperOffsets = computeOffsets({
     reference: referenceClientRect,
     element: popperRect,
+    strategy: 'absolute',
     placement: placement
   });
   var popperClientRect = rectToClientRect(Object.assign({}, popperRect, popperOffsets));
@@ -1457,6 +1456,7 @@ function popperOffsets(_ref) {
   state.modifiersData[name] = computeOffsets({
     reference: state.rects.reference,
     element: state.rects.popper,
+    strategy: 'absolute',
     placement: state.placement
   });
 } // eslint-disable-next-line import/no-unused-modules
@@ -1895,7 +1895,7 @@ var createPopper = /*#__PURE__*/popperGenerator({
 
 const initializedDropdowns = new WeakSet(); // Prevent duplicate initialization
 let activeDropdowns = []; // Track active dropdowns for cleanup
-let Dropdown$1 = class Dropdown {
+class Dropdown$1 {
     constructor(dropdownElement) {
         this.popperInstance = null;
         this.dropdown = dropdownElement;
@@ -1944,7 +1944,7 @@ let Dropdown$1 = class Dropdown {
         this.menu.hidden = true;
         this.menu.classList.add("hidden");
     }
-};
+}
 function initDropdowns() {
     document.querySelectorAll(".dropdown, .menu").forEach((dropdownElement) => {
         if (!initializedDropdowns.has(dropdownElement)) {
@@ -3466,7 +3466,7 @@ exports.cleanupPopovers = cleanupPopovers;
 exports.cleanupSteppers = cleanupSteppers;
 exports.cleanupTabs = cleanupTabs;
 exports.cleanupTooltips = cleanupTooltips;
-exports.default = index;
+exports["default"] = index;
 exports.initAccordion = initAccordion;
 exports.initAlert = initAlert;
 exports.initCollapse = initCollapse;

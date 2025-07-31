@@ -262,8 +262,6 @@
   OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
   PERFORMANCE OF THIS SOFTWARE.
   ***************************************************************************** */
-  /* global Reflect, Promise, SuppressedError, Symbol, Iterator */
-
 
   function __awaiter(thisArg, _arguments, P, generator) {
       function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -1167,6 +1165,7 @@
     var popperOffsets = computeOffsets({
       reference: referenceClientRect,
       element: popperRect,
+      strategy: 'absolute',
       placement: placement
     });
     var popperClientRect = rectToClientRect(Object.assign({}, popperRect, popperOffsets));
@@ -1459,6 +1458,7 @@
     state.modifiersData[name] = computeOffsets({
       reference: state.rects.reference,
       element: state.rects.popper,
+      strategy: 'absolute',
       placement: state.placement
     });
   } // eslint-disable-next-line import/no-unused-modules
@@ -1897,7 +1897,7 @@
 
   const initializedDropdowns = new WeakSet(); // Prevent duplicate initialization
   let activeDropdowns = []; // Track active dropdowns for cleanup
-  let Dropdown$1 = class Dropdown {
+  class Dropdown$1 {
       constructor(dropdownElement) {
           this.popperInstance = null;
           this.dropdown = dropdownElement;
@@ -1946,7 +1946,7 @@
           this.menu.hidden = true;
           this.menu.classList.add("hidden");
       }
-  };
+  }
   function initDropdowns() {
       document.querySelectorAll(".dropdown, .menu").forEach((dropdownElement) => {
           if (!initializedDropdowns.has(dropdownElement)) {
@@ -3468,7 +3468,7 @@
   exports.cleanupSteppers = cleanupSteppers;
   exports.cleanupTabs = cleanupTabs;
   exports.cleanupTooltips = cleanupTooltips;
-  exports.default = index;
+  exports["default"] = index;
   exports.initAccordion = initAccordion;
   exports.initAlert = initAlert;
   exports.initCollapse = initCollapse;
