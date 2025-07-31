@@ -26,7 +26,7 @@
     <img src="https://img.shields.io/badge/version-2.0.0-blue.svg" alt="Version" />
   </a>
 </p>
-
+check node 22x
 <p align="center">
   <a href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss" target="_blank" rel="noopener noreferrer">
      <img width="30%" src="./public/img/vercel-logo.png" alt="Vercel" />
