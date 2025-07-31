@@ -1,6 +1,5 @@
 {
-  "buildCommand": "cd ../.. && pnpm install && turbo run build --filter=docs",
-  "installCommand": "cd ../.. && pnpm install",
-  "outputDirectory": ".next"
+  "buildCommand": "turbo run build",
+  "installCommand": "pnpm install",
+  "outputDirectory": "apps/site/.next"
 }
- 
