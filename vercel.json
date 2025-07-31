@@ -1,5 +1,0 @@
-{
-  "buildCommand": "turbo run build --filter=docs",
-  "installCommand": "pnpm install",
-  "outputDirectory": "apps/site/.next"
-}
