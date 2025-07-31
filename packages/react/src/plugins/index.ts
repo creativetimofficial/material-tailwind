@@ -1,4 +1,5 @@
 import hexRgb from "hex-rgb";
+// @ts-expect-error - tailwindcss/plugin doesn't have TypeScript definitions
 import plugin from "tailwindcss/plugin";
 import tailwindcssAnimation from "tailwindcss-animate";
 
@@ -37,7 +38,7 @@ function getRgbChannels(hex: `#${string}`) {
 
 export const mtConfig = plugin.withOptions(
   function (options: Options) {
-    return function ({ addBase }) {
+    return function ({ addBase }: { addBase: any }) {
       addBase({
         ":root": {
           /* border radius */
@@ -273,7 +274,7 @@ export const mtConfig = plugin.withOptions(
       });
     };
   },
-  function (options) {
+  function (options: Options) {
     return {
       darkMode: "class",
       content: [
