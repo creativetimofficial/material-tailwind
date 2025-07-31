@@ -29,8 +29,8 @@
     "eslint": "^8.57.1",
     "prettier": "3.1.1",
     "prettier-plugin-tailwindcss": "0.6.8",
-    "turbo": "2.1.3",
-    "rollup": "^3.29.5"
+    "rollup": "^3.29.5",
+    "turbo": "^2.5.5"
   },
   "engines": {
     "node": "20.x"
