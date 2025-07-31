@@ -1,5 +1,7 @@
 {
   "buildCommand": "turbo run build",
   "installCommand": "pnpm install",
-  "outputDirectory": "apps/site/.next"
+  "outputDirectory": "apps/site/.next",
+  "framework": "nextjs",
+  "nodeVersion": "20.x"
 }
