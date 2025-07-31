@@ -1,5 +1,7 @@
 {
-  "buildCommand": "turbo run build",
-  "installCommand": "pnpm install --no-cache",
-  "outputDirectory": "apps/site/.next"
+  "framework": "nextjs",
+  "rootDirectory": "apps/site",
+  "buildCommand": "turbo run build --filter=docs",
+  "installCommand": "pnpm install",
+  "outputDirectory": ".next"
 }

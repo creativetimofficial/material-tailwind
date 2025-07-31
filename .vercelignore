@@ -1,0 +1,4 @@
+node_modules
+pnpm-lock.yaml
+packages/react/dist
+packages/html/dist

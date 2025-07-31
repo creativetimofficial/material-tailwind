@@ -1,26 +1,14 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["NEXT_PUBLIC_SITE_URL"],
-  "tasks": {
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
-    },
-    "test": {
-      "dependsOn": ["^build"],
-      "outputs": []
-    },
-    "lint": {
-      "outputs": []
+      "outputs": [".next/**", "dist/**"]
     },
     "dev": {
       "cache": false
     },
-    "start": {
-      "cache": false
-    },
-    "clean": {
-      "cache": false
-    }
+    "lint": {},
+    "start": {}
   }
 }
