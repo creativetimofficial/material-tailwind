@@ -209,11 +209,9 @@ export function Toc({
           href="https://www.material-tailwind.com/roots-of-ui-ux-design?ref=material-tailwind"
         >
           <Card.Header>
-            <Image
-              src="https://material-tailwind-v3.vercel.app/book.webp"
+            <img
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/ui-ux-book.jpeg"
               alt="book"
-              width={512}
-              height={512}
               className="h-full w-full object-cover"
             />
           </Card.Header>
