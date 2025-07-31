@@ -1,6 +1,6 @@
 export function NavbarWithSearch() {
   return (
-    <nav className="mx-auto w-full max-w-screen-xl overflow-hidden rounded-lg border border-surface bg-background p-2 shadow-lg shadow-black/5">
+    <nav className="mx-auto w-full max-w-(--breakpoint-xl) overflow-hidden rounded-lg border border-surface bg-background p-2 shadow-lg shadow-black/5">
       <div className="flex items-center">
         <a
           href="#"
@@ -217,7 +217,7 @@ export function NavbarWithSearch() {
           </span>
           <input
             placeholder="Search here..."
-            className="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-1.5 py-[4.5px] ps-6 leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
+            className="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-1.5 py-[4.5px] ps-6 leading-[inherit] text-black outline-hidden ring-3 ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-hidden focus:ring-primary/10 dark:text-white"
             type="search"
           />
         </div>

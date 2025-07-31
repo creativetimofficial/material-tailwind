@@ -11,7 +11,7 @@ export function ActivitiesTimeline() {
               <Bell className="h-4 w-4" />
             </Timeline.Icon>
           </Timeline.Header>
-          <Timeline.Body className="!pb-0">
+          <Timeline.Body className="pb-0!">
             <Typography color="default" className="font-bold">
               $2400, Design changes
             </Typography>
@@ -28,7 +28,7 @@ export function ActivitiesTimeline() {
               <CreditCard className="h-4 w-4" />
             </Timeline.Icon>
           </Timeline.Header>
-          <Timeline.Body className="!pb-0">
+          <Timeline.Body className="pb-0!">
             <Typography color="default" className="font-bold">
               New order #1832412
             </Typography>
@@ -45,7 +45,7 @@ export function ActivitiesTimeline() {
               <DollarCircle className="h-4 w-4" />
             </Timeline.Icon>
           </Timeline.Header>
-          <Timeline.Body className="!pb-0">
+          <Timeline.Body className="pb-0!">
             <Typography color="default" className="font-bold">
               Payment completed for order #4395133
             </Typography>

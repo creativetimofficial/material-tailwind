@@ -11,7 +11,7 @@ export function PopoverWithImage() {
         <Popover.Trigger as={Button} onClick={() => setOpen((cur) => !cur)}>
           More Info
         </Popover.Trigger>
-        <Popover.Content className="grid w-[30rem] grid-cols-2 gap-4">
+        <Popover.Content className="grid w-120 grid-cols-2 gap-4">
           <div className="pl-1">
             <Typography color="default" className="mb-1 font-semibold">
               Material Tailwind

@@ -135,7 +135,7 @@ export function ComponentPreview({
           {children}
         </div>
         {codeHeight > MIN_CODE_HEIGHT && (
-          <div className="absolute bottom-0 left-1/2 grid h-16 w-full -translate-x-1/2 items-end justify-center rounded-b-lg bg-gradient-to-t from-background via-background/75 to-transparent pb-2">
+          <div className="absolute bottom-0 left-1/2 grid h-16 w-full -translate-x-1/2 items-end justify-center rounded-b-lg bg-linear-to-t from-background via-background/75 to-transparent pb-2">
             <Button
               size="sm"
               color="secondary"

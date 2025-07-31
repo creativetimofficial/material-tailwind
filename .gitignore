@@ -38,7 +38,20 @@ yarn-error.log*
 # dist
 dist/
 
+# TypeScript generated files
+*.d.ts.map
+*.js.map
+*.tsbuildinfo
+
+# Generated files in src directories (compiled from TypeScript)
+packages/html/src/**/*.d.ts
+packages/html/src/**/*.js
+packages/react/src/**/*.d.ts
+packages/react/src/**/*.js
+
 # lock files
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+
+.replit

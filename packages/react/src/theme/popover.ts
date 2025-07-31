@@ -13,7 +13,7 @@ export const popoverTheme = {
 };
 
 export const popoverTriggerTheme = {
-  baseStyle: "outline-none group",
+  baseStyle: "outline-hidden group",
 };
 
 export const popoverContentTheme = {
@@ -28,10 +28,10 @@ export const popoverContentTheme = {
     order: ["content"],
   },
   baseStyle:
-    "rounded-lg border border-surface bg-background p-2.5 text-sm text-foreground shadow-xl shadow-black/[0.025] outline-none",
+    "rounded-lg border border-surface bg-background p-2.5 text-sm text-foreground shadow-xl shadow-black/2.5 outline-hidden",
 };
 
 export const popoverArrowTheme = {
   baseStyle:
-    "h-3 w-3 rounded-bl-sm border border-[inherit] bg-inherit [clip-path:polygon(0_0,_100%_100%,_0_100%)] data-[placement^=bottom]:rotate-[135deg] data-[placement^=left]:rotate-[225deg] data-[placement^=right]:rotate-45 data-[placement^=top]:-rotate-45",
+    "h-3 w-3 rounded-bl-sm border border-inherit bg-inherit [clip-path:polygon(0_0,100%_100%,0_100%)] data-[placement^=bottom]:rotate-135 data-[placement^=left]:rotate-225 data-[placement^=right]:rotate-45 data-[placement^=top]:-rotate-45",
 };

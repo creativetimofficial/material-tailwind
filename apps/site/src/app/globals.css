@@ -1,8 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 html {
   scrollbar-width: thin;
@@ -143,9 +162,9 @@ html {
 
 /* bright */
 .code-preview pre {
-  @apply !bg-transparent;
+  @apply bg-transparent!;
 }
 
 .code-preview div[data-bright-theme] {
-  @apply !my-0 !max-h-[32rem] !overflow-scroll;
+  @apply my-0! max-h-128! overflow-scroll!;
 }

@@ -419,10 +419,10 @@ import { Card, Typography, Avatar } from "@material-tailwind/react";
 
 export function BackgroundBlogCard() {
   return (
-    <Card className="relative flex h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden text-center">
+    <Card className="relative flex h-160 w-full max-w-md flex-col items-end justify-center overflow-hidden text-center">
       <Card.Header>
         <div className="absolute inset-0 m-0 h-full w-full rounded-none bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-center">
-          <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50 to-black/10 dark:from-black/90 dark:via-black/60 dark:to-black/20" />
+          <div className="absolute inset-0 h-full w-full bg-linear-to-t from-black/80 via-black/50 to-black/10 dark:from-black/90 dark:via-black/60 dark:to-black/20" />
         </div>
       </Card.Header>
       <Card.Body className="relative bottom-0 flex h-full flex-col items-center justify-end px-6 py-14 md:px-12">
@@ -476,13 +476,13 @@ import {
 
 export function BookingCard() {
   return (
-    <Card className="w-full max-w-[26rem] shadow-lg">
+    <Card className="w-full max-w-104 shadow-lg">
       <Card.Header className="relative overflow-hidden p-0">
         <img
           src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
           alt="ui/ux review check"
         />
-        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
+        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-linear-to-tr from-transparent via-transparent to-black/60 " />
         <IconButton
           size="sm"
           color="error"
@@ -511,7 +511,7 @@ export function BookingCard() {
                 isCircular
                 size="lg"
                 color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
+                className="cursor-pointer border border-surface bg-surface-light transition-all hover:opacity-100! group-hover:opacity-70"
               >
                 <Cash className="h-5 w-5" />
               </IconButton>
@@ -527,7 +527,7 @@ export function BookingCard() {
                 isCircular
                 size="lg"
                 color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
+                className="cursor-pointer border border-surface bg-surface-light transition-all hover:opacity-100! group-hover:opacity-70"
               >
                 <Wifi className="h-5 w-5" />
               </IconButton>
@@ -543,7 +543,7 @@ export function BookingCard() {
                 isCircular
                 size="lg"
                 color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
+                className="cursor-pointer border border-surface bg-surface-light transition-all hover:opacity-100! group-hover:opacity-70"
               >
                 <HomeSimple className="h-5 w-5" />
               </IconButton>
@@ -558,7 +558,7 @@ export function BookingCard() {
                 isCircular
                 size="lg"
                 color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
+                className="cursor-pointer border border-surface bg-surface-light transition-all hover:opacity-100! group-hover:opacity-70"
               >
                 <ModernTv className="h-5 w-5" />
               </IconButton>
@@ -574,7 +574,7 @@ export function BookingCard() {
                 isCircular
                 size="lg"
                 color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
+                className="cursor-pointer border border-surface bg-surface-light transition-all hover:opacity-100! group-hover:opacity-70"
               >
                 <FireFlame className="h-5 w-5" />
               </IconButton>
@@ -589,7 +589,7 @@ export function BookingCard() {
                 isCircular
                 size="lg"
                 color="secondary"
-                className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
+                className="cursor-pointer border border-surface bg-surface-light transition-all hover:opacity-100! group-hover:opacity-70"
               >
                 +20
               </IconButton>
@@ -630,7 +630,7 @@ import {
 
 export function TestimonialCard() {
   return (
-    <Card className="w-full max-w-[26rem] border-none shadow-none">
+    <Card className="w-full max-w-104 border-none shadow-none">
       <Card.Header className="mx-0 flex items-center gap-4 pb-4 pt-0">
         <Avatar
           size="lg"
@@ -673,7 +673,7 @@ import { Card, Typography, Button } from "@material-tailwind/react";
 
 export function HorizontalCard() {
   return (
-    <Card className="flex h-full w-full max-w-[48rem] flex-row">
+    <Card className="flex h-full w-full max-w-3xl flex-row">
       <Card.Header className="m-0 h-full w-2/5 shrink-0 rounded-r-none">
         <img
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"

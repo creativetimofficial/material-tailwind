@@ -119,19 +119,19 @@ Get inspired by this series of button groups, each with different styling, arran
   <div className="inline-flex flex-row">
     <button
       data-ripple-light="true"
-      className="inline-flex select-none items-center justify-center rounded-md rounded-r-none border border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      className="inline-flex select-none items-center justify-center rounded-md rounded-r-none border border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       React
     </button>
     <button
       data-ripple-light="true"
-      className="inline-flex select-none items-center justify-center rounded-none border border-l-0 border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      className="inline-flex select-none items-center justify-center rounded-none border border-l-0 border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       Vue
     </button>
     <button
       data-ripple-light="true"
-      className="inline-flex select-none items-center justify-center rounded-md rounded-l-none border border-l-0 border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      className="inline-flex select-none items-center justify-center rounded-md rounded-l-none border border-l-0 border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       Svelte
     </button>
@@ -149,7 +149,7 @@ This button group component example shows you how to create responsive and scala
 <ComponentPreview demo={<HTMLButtonGroup.ButtonGroupSizes />}>
 ```html
 <div class="flex flex-col gap-4">
-  <div class="inline-flex flex-row [&:first-child:not([data-variant=ghost])]:[&_*]:rounded-r-none [&:last-child:not([data-variant=ghost])]:[&_*]:rounded-l-none [&:last-child:not([data-variant=ghost])]:[&_*]:border-l-0 [&:not(:first-child):not(:last-child):not([data-variant=ghost])]:[&_*]:rounded-none [&:not(:first-child):not(:last-child):not([data-variant=ghost])]:[&_*]:border-l-0">
+  <div class="inline-flex flex-row **:[&:first-child:not([data-variant=ghost])]:rounded-r-none **:[&:last-child:not([data-variant=ghost])]:rounded-l-none **:[&:last-child:not([data-variant=ghost])]:border-l-0 **:[&:not(:first-child):not(:last-child):not([data-variant=ghost])]:rounded-none **:[&:not(:first-child):not(:last-child):not([data-variant=ghost])]:border-l-0">
     <button
       data-ripple-light="true"
       class="inline-flex select-none items-center justify-center rounded-md border border-primary bg-primary px-2.5 py-1.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:border-primary-light hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
@@ -169,7 +169,7 @@ This button group component example shows you how to create responsive and scala
       Svelte
     </button>
   </div>
-  <div class="inline-flex flex-row [&:first-child:not([data-variant=ghost])]:[&_*]:rounded-r-none [&:last-child:not([data-variant=ghost])]:[&_*]:rounded-l-none [&:last-child:not([data-variant=ghost])]:[&_*]:border-l-0 [&:not(:first-child):not(:last-child):not([data-variant=ghost])]:[&_*]:rounded-none [&:not(:first-child):not(:last-child):not([data-variant=ghost])]:[&_*]:border-l-0">
+  <div class="inline-flex flex-row **:[&:first-child:not([data-variant=ghost])]:rounded-r-none **:[&:last-child:not([data-variant=ghost])]:rounded-l-none **:[&:last-child:not([data-variant=ghost])]:border-l-0 **:[&:not(:first-child):not(:last-child):not([data-variant=ghost])]:rounded-none **:[&:not(:first-child):not(:last-child):not([data-variant=ghost])]:border-l-0">
     <button
       data-ripple-light="true"
       class="inline-flex select-none items-center justify-center rounded-md border border-primary bg-primary px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:border-primary-light hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
@@ -189,7 +189,7 @@ This button group component example shows you how to create responsive and scala
       Svelte
     </button>
   </div>
-  <div class="inline-flex flex-row [&:first-child:not([data-variant=ghost])]:[&_*]:rounded-r-none [&:last-child:not([data-variant=ghost])]:[&_*]:rounded-l-none [&:last-child:not([data-variant=ghost])]:[&_*]:border-l-0 [&:not(:first-child):not(:last-child):not([data-variant=ghost])]:[&_*]:rounded-none [&:not(:first-child):not(:last-child):not([data-variant=ghost])]:[&_*]:border-l-0 ">
+  <div class="inline-flex flex-row **:[&:first-child:not([data-variant=ghost])]:rounded-r-none **:[&:last-child:not([data-variant=ghost])]:rounded-l-none **:[&:last-child:not([data-variant=ghost])]:border-l-0 **:[&:not(:first-child):not(:last-child):not([data-variant=ghost])]:rounded-none **:[&:not(:first-child):not(:last-child):not([data-variant=ghost])]:border-l-0 ">
     <button
       data-ripple-light="true"
       class="inline-flex select-none items-center justify-center rounded-lg border border-primary bg-primary px-5 py-3.5 text-center align-middle font-sans text-base font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:border-primary-light hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
@@ -583,7 +583,7 @@ Use this example to create button groups with icons, you can use any type of ico
   <div className="inline-flex flex-row">
     <button
       data-ripple-light="true"
-      className="inline-flex select-none items-center justify-center rounded-md rounded-r-none border border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      className="inline-flex select-none items-center justify-center rounded-md rounded-r-none border border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       <svg
         width="1.5em"
@@ -604,7 +604,7 @@ Use this example to create button groups with icons, you can use any type of ico
     </button>
     <button
       data-ripple-light="true"
-      className="inline-flex select-none items-center justify-center rounded-none border border-l-0 border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      className="inline-flex select-none items-center justify-center rounded-none border border-l-0 border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       <svg
         width="1.5em"
@@ -627,7 +627,7 @@ Use this example to create button groups with icons, you can use any type of ico
     </button>
     <button
       data-ripple-light="true"
-      className="inline-flex select-none items-center justify-center rounded-md rounded-l-none border border-l-0 border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      className="inline-flex select-none items-center justify-center rounded-md rounded-l-none border border-l-0 border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       <svg
         width="1.5em"
@@ -731,19 +731,19 @@ This example illustrates a single row of three buttons optimized for a full-widt
   <div className="inline-flex w-full flex-row">
     <button
       data-ripple-light="true"
-      className="inline-flex w-full select-none items-center justify-center rounded-md rounded-r-none border border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      className="inline-flex w-full select-none items-center justify-center rounded-md rounded-r-none border border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       React
     </button>
     <button
       data-ripple-light="true"
-      className="inline-flex w-full select-none items-center justify-center rounded-none border border-l-0 border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      className="inline-flex w-full select-none items-center justify-center rounded-none border border-l-0 border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       Vue
     </button>
     <button
       data-ripple-light="true"
-      className="inline-flex w-full select-none items-center justify-center rounded-md rounded-l-none border border-l-0 border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      className="inline-flex w-full select-none items-center justify-center rounded-md rounded-l-none border border-l-0 border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       Svelte
     </button>
@@ -824,19 +824,19 @@ This example illustrates pill button groups in different styles like ghost, outl
   <div class="inline-flex flex-row">
     <button
       data-ripple-light="true"
-      class="inline-flex select-none items-center justify-center rounded-full rounded-r-none border border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      class="inline-flex select-none items-center justify-center rounded-full rounded-r-none border border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       React
     </button>
     <button
       data-ripple-light="true"
-      class="inline-flex select-none items-center justify-center rounded-none border border-l-0 border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      class="inline-flex select-none items-center justify-center rounded-none border border-l-0 border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       Vue
     </button>
     <button
       data-ripple-light="true"
-      class="inline-flex select-none items-center justify-center rounded-full rounded-l-none border border-l-0 border-primary bg-gradient-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+      class="inline-flex select-none items-center justify-center rounded-full rounded-l-none border border-l-0 border-primary bg-linear-to-tr from-primary-dark to-primary-light px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
     >
       Svelte
     </button>

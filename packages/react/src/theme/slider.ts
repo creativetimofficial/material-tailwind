@@ -32,7 +32,7 @@ export const sliderRangeTheme = {
 
 export const sliderThumbTheme = {
   baseStyle:
-    "rounded-full shadow shadow-black/10 outline-none ring ring-transparent",
+    "rounded-full shadow-sm shadow-black/10 outline-hidden ring-3 ring-transparent",
   size: {
     sm: "w-3 h-3",
     md: "w-3.5 h-3.5",

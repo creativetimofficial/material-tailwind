@@ -70,7 +70,7 @@ export function NavbarWithSearch() {
   }, []);
 
   return (
-    <Navbar className="mx-auto w-full max-w-screen-xl">
+    <Navbar className="mx-auto w-full max-w-(--breakpoint-xl)">
       <div className="flex items-center">
         <Typography
           as="a"

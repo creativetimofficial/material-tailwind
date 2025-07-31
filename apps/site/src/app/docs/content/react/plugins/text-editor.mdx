@@ -244,7 +244,7 @@ function FloatingLinkEditor({ editor }) {
   return (
     <Card
       ref={editorRef}
-      className="absolute -left-[10000px] -top-[10000px] z-[100] -mt-1.5 w-full max-w-xs rounded-[10px] p-1 opacity-0 transition-opacity duration-300"
+      className="absolute -left-[10000px] -top-[10000px] z-100 -mt-1.5 w-full max-w-xs rounded-[10px] p-1 opacity-0 transition-opacity duration-300"
     >
       {isEditMode ? (
         <Input
@@ -517,7 +517,7 @@ export function TextEditorDemo() {
         <div className="relative rounded-b-lg border-t border-surface">
           <RichTextPlugin
             contentEditable={
-              <ContentEditable className="lexical min-h-[280px] resize-none px-3 py-2 text-base caret-primary outline-none" />
+              <ContentEditable className="lexical min-h-[280px] resize-none px-3 py-2 text-base caret-primary outline-hidden" />
             }
             placeholder={<Placeholder />}
             ErrorBoundary={null as any}

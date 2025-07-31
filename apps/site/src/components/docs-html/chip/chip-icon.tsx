@@ -109,7 +109,7 @@ export function ChipIcon() {
           Solid
         </span>
       </div>
-      <div className="relative inline-flex select-none items-center rounded-full border border-primary bg-gradient-to-tr from-primary-dark to-primary-light p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
+      <div className="relative inline-flex select-none items-center rounded-full border border-primary bg-linear-to-tr from-primary-dark to-primary-light p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
         <span className="grid h-4 w-4 shrink-0 translate-x-0.5 place-items-center rounded-full">
           <svg
             width="1.5em"

@@ -79,7 +79,7 @@ function ProfileMenu() {
         <Menu.Item>
           <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
-        <hr className="!my-1 -mx-1 border-surface" />
+        <hr className="my-1! -mx-1 border-surface" />
         <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error">
           <LogOut className="mr-2 h-[18px] w-[18px]" />
           Logout
@@ -119,7 +119,7 @@ export function ComplexNavbar() {
   }, []);
 
   return (
-    <Navbar className="mx-auto w-full max-w-screen-xl">
+    <Navbar className="mx-auto w-full max-w-(--breakpoint-xl)">
       <div className="flex items-center">
         <Typography
           as="a"
@@ -159,7 +159,7 @@ export function ComplexNavbar() {
                     </Typography>
                   </div>
                 </Card>
-                <ul className="col-span-3 !m-0">
+                <ul className="col-span-3 m-0!">
                   <MenuItem
                     title="@material-tailwind/html"
                     description="Learn how to use @material-tailwind/html, packed with rich components and widgets."

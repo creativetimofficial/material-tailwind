@@ -71,7 +71,7 @@ export function StickyNavbar() {
 
   return (
     <div className="h-96 w-full overflow-scroll">
-      <Navbar className="sticky top-0 mx-auto w-full max-w-screen-xl">
+      <Navbar className="sticky top-0 mx-auto w-full max-w-(--breakpoint-xl)">
         <div className="flex items-center">
           <Typography
             as="a"

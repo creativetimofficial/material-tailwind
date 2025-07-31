@@ -14,11 +14,11 @@ export const buttonTheme = {
   baseStyle:
     "inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none",
   size: {
-    xs: "text-sm rounded-md py-1 px-2 shadow-sm hover:shadow",
-    sm: "text-sm rounded-md py-1.5 px-3 shadow-sm hover:shadow",
-    md: "text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md",
-    lg: "text-base rounded-md py-2.5 px-5 shadow-sm hover:shadow-lg",
-    xl: "text-base rounded-lg py-3 px-6 shadow-sm hover:shadow-lg",
+    xs: "text-sm rounded-md py-1 px-2 shadow-xs hover:shadow-sm",
+    sm: "text-sm rounded-md py-1.5 px-3 shadow-xs hover:shadow-sm",
+    md: "text-sm rounded-md py-2 px-4 shadow-xs hover:shadow-md",
+    lg: "text-base rounded-md py-2.5 px-5 shadow-xs hover:shadow-lg",
+    xl: "text-base rounded-lg py-3 px-6 shadow-xs hover:shadow-lg",
   },
   variant: {
     ghost: {
@@ -62,16 +62,16 @@ export const buttonTheme = {
     },
     gradient: {
       primary:
-        "bg-gradient-to-tr from-primary-dark to-primary-light border-primary text-primary-foreground hover:brightness-105",
+        "bg-linear-to-tr from-primary-dark to-primary-light border-primary text-primary-foreground hover:brightness-105",
       secondary:
-        "bg-gradient-to-tr from-secondary-dark to-secondary-light border-secondary text-secondary-foreground hover:brightness-105",
-      info: "bg-gradient-to-tr from-info-dark to-info-light border-info text-info-foreground hover:brightness-105",
+        "bg-linear-to-tr from-secondary-dark to-secondary-light border-secondary text-secondary-foreground hover:brightness-105",
+      info: "bg-linear-to-tr from-info-dark to-info-light border-info text-info-foreground hover:brightness-105",
       success:
-        "bg-gradient-to-tr from-success-dark to-success-light border-success text-success-foreground hover:brightness-105",
+        "bg-linear-to-tr from-success-dark to-success-light border-success text-success-foreground hover:brightness-105",
       warning:
-        "bg-gradient-to-tr from-warning-dark to-warning-light border-warning text-warning-foreground hover:brightness-105",
+        "bg-linear-to-tr from-warning-dark to-warning-light border-warning text-warning-foreground hover:brightness-105",
       error:
-        "bg-gradient-to-tr from-error-dark to-error-light border-error text-error-foreground hover:brightness-105",
+        "bg-linear-to-tr from-error-dark to-error-light border-error text-error-foreground hover:brightness-105",
     },
   },
 };

@@ -19,7 +19,7 @@ export function ProfileMenu() {
         <Menu.Item>
           <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
-        <hr className="!my-1 -mx-1 border-surface" />
+        <hr className="my-1! -mx-1 border-surface" />
         <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error dark:hover:text-error dark:focus:text-error">
           <LogOut className="mr-2 h-[18px] w-[18px]" />
           Logout

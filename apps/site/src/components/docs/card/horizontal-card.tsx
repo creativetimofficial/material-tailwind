@@ -2,7 +2,7 @@ import { Card, Typography, Button } from "@material-tailwind/react";
 
 export function HorizontalCard() {
   return (
-    <Card className="flex h-full w-full max-w-[48rem] flex-row">
+    <Card className="flex h-full w-full max-w-3xl flex-row">
       <Card.Header className="m-0 h-full w-2/5 shrink-0 rounded-r-none">
         <img
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
