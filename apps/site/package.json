@@ -20,7 +20,7 @@
     "@lexical/rich-text": "0.14.2",
     "@lexical/selection": "0.14.2",
     "@lexical/utils": "0.14.2",
-    "@material-tailwind/react": "file:../../packages/react",
+    "@material-tailwind/react": "v3.0.0-beta.24",
     "@tanstack/match-sorter-utils": "8.15.1",
     "@tanstack/react-table": "8.15.3",
     "apexcharts": "3.48.0",
