@@ -1,0 +1,5 @@
+{
+    "buildCommand": "turbo run build --filter=docs",
+    "installCommand": "npm install",
+    "outputDirectory": ".next"
+}
