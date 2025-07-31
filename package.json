@@ -40,5 +40,5 @@
     "next": "14.1.1",
     "@material-tailwind/html": "3.0.0-beta.4"
   },
-  "packageManager": "pnpm@9.1.0"
+  "packageManager": "pnpm@8.15.5"
 }
