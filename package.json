@@ -30,7 +30,8 @@
     "prettier": "3.1.1",
     "prettier-plugin-tailwindcss": "0.6.8",
     "rollup": "^3.29.5",
-    "turbo": "^2.5.5"
+    "turbo": "^2.5.5",
+     "tsup": "^7.3.0"
   },
   "engines": {
     "node": "20.x"
