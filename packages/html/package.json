@@ -36,7 +36,10 @@
     "tailwindcss",
     "javascript"
   ],
-  "author": "Creative Tim",
+  "author": {
+    "name": "creativetim",
+    "url": "https://x.com/creativetim"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/creativetimofficial/material-tailwind/issues"
