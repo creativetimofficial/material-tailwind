@@ -69,7 +69,7 @@ export function OfferBar() {
             </button> */}
             <div className="relative flex flex-wrap items-center justify-center gap-2">
             <div className="flex items-center gap-2">
-              <Link href="https://www.creative-tim.com/ui/black-friday?utm_source=offer_bar&utm_medium=material-tailwind&utm_campaign=black_friday_2025" className="hover:text-primary transition-colors" target="_blank">
+              <Link href="https://www.creative-tim.com/ui/black-friday?utm_source=offer_bar&utm_medium=material-tailwind&utm_campaign=black_friday_2025" className="hover:text-white transition-colors" target="_blank">
               🔥🔥🔥  <span className="font-bold">Black Friday Offer 80% OFF</span> shadcn/ui Blocks, n8n Templates, Material Tailwind v2 + v3, UI/UX Book and more...
               </Link>
              
