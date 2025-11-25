@@ -144,6 +144,12 @@ export function Footer() {
   return (
     <footer className="relative z-50 bg-white px-8 pb-6 pt-12">
 
+        {/* 
+        
+        
+        Hide card for black friday offer
+
+
         {isVisibleCardNotification && (
         <Card color="gray" className="fixed bottom-2 left-1/2 -translate-x-[calc(50%+40px)] max-w-[880px]">
           <CardBody className="px-4 py-2.5">
@@ -187,7 +193,7 @@ export function Footer() {
 
           </CardBody>
         </Card>
-        )}
+        )} */}
       <div className="container mx-auto">
         <div className="flex flex-wrap">
           <div className="w-full md:w-4/12">
