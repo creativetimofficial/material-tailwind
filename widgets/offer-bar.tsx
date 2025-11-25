@@ -51,12 +51,26 @@ export function OfferBar() {
       {isVisible && (
         <Alert
           variant="ghost"
-          className="w-full justify-center rounded-none bg-white"
+          className="w-full justify-center rounded-none bg-gray-900 text-white"
         >
-          <div className="relative flex flex-wrap items-center justify-center gap-2 !text-blue-gray-900">
+          {/* <div className="relative flex flex-wrap items-center justify-center gap-2 !text-blue-gray-900">
             <div className="flex items-center gap-2">
               <Link href="/v3/pro" className="hover:text-primary transition-colors" target="_blank">
               🔥 Get <span className="font-bold">290+ PRO Blocks for v3</span> and receive complimentary access to v2 PRO Blocks.
+              </Link>
+             
+            </div>
+          </div>
+          <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 font-bold !text-grey-900 hover:text-primary transition-colors"
+              onClick={() => handleClose()}
+            >
+              <Icon />
+            </button> */}
+            <div className="relative flex flex-wrap items-center justify-center gap-2">
+            <div className="flex items-center gap-2">
+              <Link href="https://www.creative-tim.com/ui/black-friday?utm_source=offer_bar&utm_medium=material-tailwind&utm_campaign=black_friday_2025" className="hover:text-primary transition-colors" target="_blank">
+              🔥🔥🔥  <span className="font-bold">Black Friday Offer 80% OFF</span> shadcn/ui Blocks, n8n Templates, Material Tailwind v2 + v3, UI/UX Book and more...
               </Link>
              
             </div>
