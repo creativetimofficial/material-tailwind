@@ -1,0 +1,102 @@
+---
+title: Speedy Boilerplate - Analytics
+description: Learn how to setup Speedy Boilerplate Analytics with Google Analytics.
+navigation:
+  ["setting-up-google-analytics", "setting-up-google-tag-manager", "summary"]
+github: analytics
+next: header
+
+---
+
+# Analytics - Speedy Boilerplate
+
+The Speedy Boilerplate includes a built-in analytics feature, allowing you to effortlessly track your website traffic and user behavior using Google Analytics. Here's how you can set it up:
+
+<br />
+<br />
+
+<DocsTitle href="setting-up-google-analytics">
+## Setting Up Google Analytics
+</DocsTitle>
+
+1: **Get Your Google Analytics ID**:
+
+<ul className="ml-8 list-disc">
+  <li>
+    If you don't have a Google Analytics account, you can create one for free at [analytics.google.com](https://analytics.google.com).
+  </li>
+  <li>
+    After setting up your account and creating a property for your website, you'll be provided with a Google Analytics ID (typically in the format <Code>UA-XXXXXXXXX-X</Code>).
+  </li>
+</ul>
+
+<br />
+
+
+2: **Add Your Google Analytics ID**:
+
+<ul className="ml-8 list-disc">
+  <li>
+    Open the <Code>.env</Code> file in the root directory of your project.
+  </li>
+  <li>
+    Add your Google Analytics ID by setting the <Code>NEXT_PUBLIC_GOOGLE_ANALYTICS_ID</Code> environment variable:
+  </li>
+</ul>
+
+```env
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=<your-google-analytics-id>
+```
+
+<br/>
+
+That's it! Google Analytics is now set up and will start tracking your website's traffic and user behavior.
+
+---
+
+<DocsTitle href="setting-up-google-tag-manager">
+## Setting Up Google Tag Manager (Optional)
+</DocsTitle>
+
+If you prefer using Google Tag Manager, you can also integrate it into the Speedy Boilerplate. Here's how:
+
+1: **Get Your Google Tag Manager ID**:
+
+<ul className="ml-8 list-disc">
+  <li>
+    If you don't have a Google Tag Manager account, you can create one for free at <Link href="https://tagmanager.google.com" target="_blank">tagmanager.google.com</Link>.
+  </li>
+  <li>
+    After setting up your account and creating a container for your website, you'll be provided with a Google Tag Manager ID (typically in the format <Code>GTM-XXXXXXX</Code>).
+  </li>
+</ul>
+
+<br/>
+
+2: **Add Your Google Tag Manager ID**:
+
+<ul className="ml-8 list-disc">
+  <li>
+    Open the <Code>.env</Code> file in the root directory of your project.
+  </li>
+  <li>
+    Add your Google Tag Manager ID by setting the <Code>NEXT_PUBLIC_GOOGLE_TAG_ID</Code> environment variable:
+  </li>
+</ul>
+
+```env
+NEXT_PUBLIC_GOOGLE_TAG_ID=<your-google-tag-manage-id>
+```
+
+<br/>
+
+By following these simple steps, you'll have Google Tag Manager set up and ready to manage tags on your website.
+
+---
+
+<DocsTitle href="summary">
+## Summary
+</DocsTitle>
+
+With the Speedy Boilerplate, integrating Google Analytics and Google Tag Manager is straightforward. Just add the respective IDs to your <Code>.env</Code> file, and you'll gain valuable insights into your website's traffic and user behavior.
+If you need further assistance, feel free to consult the official documentation for [Google Analytics](https://support.google.com/analytics/answer/1008015) and [Google Tag Manager](https://support.google.com/tagmanager/answer/6102821). Happy tracking!

@@ -1,0 +1,67 @@
+---
+title: Speedy Boilerplate - Authentication
+description: Learn how to setup and use Speedy Boilerplate authentication with Supabase Auth.
+navigation:
+  ["google-auth", "magic-link"]
+github: authentication
+next: payments
+---
+
+# Speedy Boilerplate - Authentication
+
+We used Supabase auth as authentication method for the boilerplate, in this section we will guide you on how to setup the Google Auth and Magic Link based on Supabase, Google OAuth and Resend.
+
+<br />
+<br />
+
+<DocsTitle href="google-auth">
+## Google Auth
+</DocsTitle>
+
+Google Auth is a popular authentication method, it allows users to sign in with their Google account to your application simply connecting their Google account to your application, this is a great way to increase the user experience and make it easier for users to sign in.
+
+To setup authentication with Google + Supabase follow the steps below:
+
+1: Go to the [Google Developers Console](https://console.cloud.google.com). If you don't have an account, you can create a new account and setup a new project.
+
+2: Then go to the <Code>APIs & Services</Code> to setup the OAuth Consent Screen and OAuth Client ID.
+
+3: Then go to the <Code>OAuth Consent Screen</Code> and fill in the required fields.
+
+4: Once you've setup the OAuth Consent Screen, go to the <Code>Credentials</Code> click on <Code>Create Credentials</Code> and select <Code>OAuth client ID</Code>.
+
+5: Then select the application type to <Code>Web Application</Code>.
+<ul className="ml-8 list-disc">
+  <li>
+    Add a name for the OAuth client ID.
+  </li>
+  <li>
+    Click on the <Code>Add URI</Code> button on the <Code>Authorized JavaScript Origins</Code> and add the <Code>{`http://localhost:3000`}</Code> and your Supabase Project URL.
+  </li>
+  <li>
+    Then go to the Supabase Dashboard -> Authentication -> Providers and click on the <Code>Google</Code>. There you will find the <Code>Callback URL (for OAuth)</Code> copy that URL and go back to the Google Developer Console and paste it to the <Code>Authorized Redirect URIs</Code> in the Google Developers Console.
+  </li>
+  <li>
+    Then click on the **Create** button.
+  </li>
+</ul>
+
+6: Then go to back to the Supabase Dashboard -> Authentication -> Providers and click on the **Google**, enable it and Copy/Paste the **Client ID** and **Client Secret** from the Google Developers Console to the Supabase Google Auth and save it.
+
+<br />
+
+Great job! You have successfully setup the Google Auth with Supabase, now let's move to the next step to setup the Magic Link based on Supabase and Resend.
+
+---
+
+<DocsTitle href="magic-link">
+## Magic Link
+</DocsTitle>
+
+Magic Link is a great way to authenticate users without the need of a password, it allows users to sign in with their email address and receive a magic link on their inbox to sign in to your application effortlessly. This is a great way to increase the user experience and make it easier for users to sign in.
+
+To setup authentication with Magic Link you need to have a Supabase account that is already setup and a Resend account, in this part we will guide you on how to create a Resend account and integrate it with Supabase for sending Magic Link Authentication.
+
+1: Go to the [Resend Sign Up](https://resend.com/signup) page and create a new account. You can use Email and Password, Google or GitHub to sign up.
+
+2: Once your account is created, sign in and go to the Resend Dashboard to integrate it with Supabase. For integrating Resend with Supabase you can follow the [Resend + Supabase](https://resend.com/blog/how-to-configure-supabase-to-send-emails-from-your-domain) guide writted by Resend team. The guide also contains a video tutorial on how to setup Resend with Supabase which is very helpful.

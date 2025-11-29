@@ -1,0 +1,48 @@
+---
+title: Speedy Boilerplate - Hero
+description: Learn how to use Speedy Boilerplate Hero Component.
+navigation: ["hero-1", "hero-2"]
+github: hero
+next: stats
+---
+
+# Speedy Boilerplate - Hero
+
+The hero component is the first thing that the user sees when they visit the website. It contains the title, description, and the call to action button. 
+
+<br />
+<br />
+
+<DocsTitle href="hero-1">
+## Hero 1
+</DocsTitle>
+
+The component is located in the <Code>components/hero/hero-1.tsx</Code> file and below is the code snippet of how to use the hero component.
+
+<CodePreview noPadding component={<Image src="/boilerplate/hero.png" alt="hero" width={1024} height={1024} className="w-full" />}>
+```tsx
+import { Hero1 } from "@/components";
+
+export default function Page() {
+  return <Hero1 />
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="hero-2">
+## Hero 2
+</DocsTitle>
+
+The component is located in the <Code>components/hero/hero-2.tsx</Code> file and below is the code snippet of how to use the hero component.
+
+<CodePreview noPadding component={<Image src="/boilerplate/hero-2.png" alt="hero" width={1024} height={1024} className="w-full" />}>
+```tsx
+import { Hero2 } from "@/components";
+
+export default function Page() {
+  return <Hero2 />
+}
+```
+</CodePreview>

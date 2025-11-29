@@ -1,0 +1,94 @@
+---
+title: Speedy Boilerplate - Database
+description: Learn how to setup and use Speedy Boilerplate database with Supabase.
+navigation:
+  ["setting-up-supabase", "setup-subscriptions-table", "add-rls-policy"]
+github: database
+next: authentication
+---
+
+# Speedy Boilerplate - Database
+
+We used [Supabase](https://supabase.com) as database for the Speedy Boilerplate, Supabase is an open-source database based on Postgres, it's free, secure and easy to use.
+
+In this guide we will show you how to setup the database for the Speedy Boilerplate, we will create a table called <Code>subscriptions</Code> and add a row level security policy to the table.
+
+<br />
+<br />
+
+<DocsTitle href="setting-up-supabase">
+## Setting Up Supabase
+</DocsTitle>
+
+If you already have a Supabase account and you're familiar with the Supabase dashboard, you can skip this step and go to the next step, otherwise you can follow the steps below to setup a new Supabase account.
+
+1: Go to the [Supabase Sign Up](https://supabase.com/dashboard/sign-up) page and create a new account by entering your email and password or simply sign up with your GitHub account.
+
+2: Once you sign up you will be redirected to the Supabase dashboard, click on the "New Project" button to create a new project.
+
+3: Great job! You have successfully setup a new Supabase account and created a new project, now let's navigate to the project settings on left sidebar and go to the <Code>API</Code> under the Configuration section. You will find the project URL, project anon key and project secret key, copy these keys and paste them in the <Code>.env</Code> of the boilerplate.
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=<your-supabase-url>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-supabase-anon-key>
+SUPABASE_SERVICE_ROLE_KEY=<your-supabase-service-role-key>
+```
+
+<br />
+
+After you setup the Supabase account and copied the keys to the <Code>.env</Code> file, you can move to the next step to create the table and add the row level security policy to the table.
+
+---
+
+<DocsTitle href="setup-subscriptions-table">
+## Setup Subscriptions Table
+</DocsTitle>
+
+There is only one table that you need to create in the Supabase database, the table is called <Code>subscriptions</Code>. The table is used to store the user subscription info from stripe and to manage the user subscription status.
+
+To create the table you need to navigate to the SQL editor in the Supabase dashboard and run the schema below.
+
+```sql
+create table public.subscriptions (
+  email text not null,
+  created_at timestamptz not null default now(),
+  customer_id text,
+  subscription_id text,
+  ended_at timestamptz,
+  is_canceled boolean default false,
+  primary key (email)
+);
+
+alter table public.subscriptions enable row level security;
+```
+
+<br />
+
+After you run the schema above you will have a new table called <Code>subscriptions</Code> in the Supabase table editor.
+
+---
+
+<DocsTitle href="add-rls-policy">
+## Add RLS Policy
+</DocsTitle>
+
+After you create the table you need to add a row level security policy to the table, the will help you to control the access to the table and allow only the authenticated users to read the data from the table. It's important to add the policy to the table to secure the data and prevent unauthorized access.
+
+Use the schema below in the Supabase SQL editor to add the policy the table.
+
+```sql
+create policy "Enable read access for all users" on public.demo for
+select
+  using (true);
+```
+
+<br />
+<br />
+
+That's it! You have successfully setup the database for the Speedy Boilerplate, now you can smoothly run the project and see the boilerplate on the browser.
+
+Run the command below in the terminal to start the project.
+
+```bash
+npm run dev
+```

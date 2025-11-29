@@ -1,0 +1,23 @@
+---
+title: Speedy Boilerplate - Profile Dropdown
+description: Learn how to use Speedy Boilerplate Profile Dropdown Component.
+navigation: []
+github: profile-dropdown
+next: stripe-checkout-button
+---
+
+# Speedy Boilerplate - Profile Dropdown
+
+The profile dropdown component is used to display the user avatar, billing link and sign out option. The profile dropdown component is located in the <Code>components/profile-dropdown.tsx</Code> file and below is the code snippet of how to use the profile dropdown component.
+
+<br />
+
+<CodePreview noPadding component={<Image src="/boilerplate/profile-dropdown.png" alt="profile-dropdown" width={1024} height={1024} className="w-full" />}>
+```tsx
+import { ProfileDropdown } from "@/components";
+
+export default function Page() {
+  return <ProfileDropdown />
+}
+```
+</CodePreview>
