@@ -20,7 +20,7 @@ import {
   propTypesWithBorder,
 } from "../../types/components/avatar";
 
-export interface AvatarProps extends React.ComponentProps<"img"> {
+export interface AvatarProps extends Omit<React.ComponentProps<"img">, "ref"> {
   variant?: variant;
   size?: size;
   className?: className;
