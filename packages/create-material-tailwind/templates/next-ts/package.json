@@ -11,7 +11,7 @@
   "dependencies": {
     "@material-tailwind/react": "2.1.8",
     "@types/node": "20.10.5",
-    "@types/react": "18.2.45",
+    "@types/react": "18.2.66",
     "@types/react-dom": "18.2.18",
     "autoprefixer": "10.4.16",
     "eslint": "8.56.0",
