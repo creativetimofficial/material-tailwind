@@ -38,7 +38,6 @@ yarn-error.log*
 # dist
 dist/
 
-# lock files
+# lock files (keep pnpm-lock.yaml for reproducible builds)
 package-lock.json
 yarn.lock
-pnpm-lock.yaml
