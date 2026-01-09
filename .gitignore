@@ -38,3 +38,6 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+.next/
+apps/site/node_modules/
+packages/
