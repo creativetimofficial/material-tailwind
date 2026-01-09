@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     routes.flatMap(route => 
       (route.pages || route.categories.flatMap(category => category.pages)).map(page => ({
         url: `${routePrefix}/${folder}${page.path.replace('/docs/v3/','').replace('/docs/', '').replace('/react/', '')}`,
-        lastModified: '2025-02-17T14:50:08.275Z',
+        lastModified: '2026-01-01T14:50:08.275Z',
         changeFrequency: 'monthly',
         priority: 1,
       }))
