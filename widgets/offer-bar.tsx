@@ -32,9 +32,9 @@ export function OfferBar() {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
-        viewBox="0 0 24 24"
+        viewBox="0 0 20 20"
         stroke="currentColor"
-        className="h-6 w-6"
+        className="h-5 w-5"
         stroke-width="2"
       >
         <path
@@ -53,11 +53,11 @@ export function OfferBar() {
           variant="ghost"
           className="w-full justify-center rounded-none bg-gray-900 text-white"
         >
-          {/* <div className="relative flex flex-wrap items-center justify-center gap-2 !text-blue-gray-900">
+          <div className="relative flex flex-wrap items-center justify-center gap-2 !text-blue-gray-900">
             <div className="flex items-center gap-2">
-              <Link href="/v3/pro" className="hover:text-primary transition-colors" target="_blank">
-              🔥 Get <span className="font-bold">290+ PRO Blocks for v3</span> and receive complimentary access to v2 PRO Blocks.
-              </Link>
+              <a href="https://www.creative-tim.com/ui?ref=material-tailwind-offer-bar" className="hover:text-white transition-colors" target="_blank">
+              🔥🔥🔥 Material Tailwind is joining <span className="font-bold">Creative Tim UI</span> - 300+ shadcn/ui Blocks ready for v0, Lovable, Replit, Registry & MCPs. Get details here.
+              </a>
              
             </div>
           </div>
@@ -66,8 +66,8 @@ export function OfferBar() {
               onClick={() => handleClose()}
             >
               <Icon />
-            </button> */}
-            <div className="relative flex flex-wrap items-center justify-center gap-2">
+            </button>
+            {/* <div className="relative flex flex-wrap items-center justify-center gap-2">
             <div className="flex items-center gap-2">
               <Link href="https://www.creative-tim.com/ui/black-friday?utm_source=offer_bar&utm_medium=material-tailwind&utm_campaign=black_friday_2025" className="hover:text-white transition-colors" target="_blank">
               🔥🔥🔥  <span className="font-bold">Black Friday Offer 80% OFF</span> shadcn/ui Blocks, n8n Templates, Material Tailwind v2 + v3, UI/UX Book and more...
@@ -80,7 +80,7 @@ export function OfferBar() {
               onClick={() => handleClose()}
             >
               <Icon />
-            </button>
+            </button> */}
         </Alert>
       )}
     </>
