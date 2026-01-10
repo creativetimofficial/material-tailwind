@@ -25,11 +25,11 @@ export type animate = animation;
 export type className = string;
 
 // javascript prop-types
-export const propTypesOpen: any = PropTypes.bool;
-export const propTypesHanlder: any = PropTypes.func;
-export const propTypesPlacement: any = PropTypes.oneOf(propTypesPlacements);
-export const propTypesOffset: any = propTypesOffsetType;
-export const propTypesDismiss: any = propTypesDismissType;
-export const propTypesChildren: any = PropTypes.node.isRequired;
-export const propTypesAnimate: any = propTypesAnimation;
-export const propTypesClassName: any = PropTypes.string;
+export const propTypesOpen = PropTypes.bool;
+export const propTypesHanlder = PropTypes.func;
+export const propTypesPlacement = PropTypes.oneOf(propTypesPlacements);
+export const propTypesOffset = propTypesOffsetType;
+export const propTypesDismiss = propTypesDismissType;
+export const propTypesChildren = PropTypes.node.isRequired;
+export const propTypesAnimate = propTypesAnimation;
+export const propTypesClassName = PropTypes.string;

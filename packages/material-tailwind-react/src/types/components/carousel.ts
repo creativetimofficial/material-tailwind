@@ -32,16 +32,16 @@ export type className = string;
 export type slideRef = React.Ref<HTMLDivElement>;
 
 // javascript prop-types
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesPrevArrow: any = PropTypes.func;
-export const propTypesNextArrow: any = PropTypes.func;
-export const propTypesNavigation: any = PropTypes.func;
-export const propTypesAutoplay: any = PropTypes.bool;
-export const propTypesAutoplayDelay: any = PropTypes.number;
-export const propTypesTransition: any = PropTypes.object;
-export const propTypesLoop: any = PropTypes.bool;
-export const propTypesChildren: any = PropTypes.node.isRequired;
-export const propTypesSlideRef: any = PropTypes.oneOfType([
+export const propTypesClassName = PropTypes.string;
+export const propTypesPrevArrow = PropTypes.func;
+export const propTypesNextArrow = PropTypes.func;
+export const propTypesNavigation = PropTypes.func;
+export const propTypesAutoplay = PropTypes.bool;
+export const propTypesAutoplayDelay = PropTypes.number;
+export const propTypesTransition = PropTypes.object;
+export const propTypesLoop = PropTypes.bool;
+export const propTypesChildren = PropTypes.node.isRequired;
+export const propTypesSlideRef = PropTypes.oneOfType([
   PropTypes.func,
   PropTypes.shape({ current: PropTypes.any }),
 ]);

@@ -1,7 +1,7 @@
+import type { ComponentProps } from "react";
 import PropTypes from "prop-types";
 
 // generic types
-import type { colors } from "../generic";
 import { propTypesColors } from "../generic";
 
 /**
@@ -9,21 +9,19 @@ import { propTypesColors } from "../generic";
  */
 
 // typescript types
-export type variant = "filled" | "gradient";
-export type color = colors;
-export type size = "sm" | "md" | "lg";
+export type variant = typeof propTypesVariant[number];
+export type color = typeof propTypesColor[number];
+export type size = typeof propTypesSize[number];
 export type value = number;
 export type label = string | boolean;
-export type barProps = {
-  [key: string]: any;
-};
+export type barProps = Omit<ComponentProps<"div">, "ref" | "children">;
 export type className = string;
 
 // javascript prop-types
-export const propTypesVariant: any = ["filled", "gradient"];
-export const propTypesColor: any = propTypesColors;
-export const propTypesSize: any = ["sm", "md", "lg"];
-export const propTypesValue: any = PropTypes.number;
-export const propTypesLabel: any = PropTypes.oneOfType([PropTypes.string, PropTypes.bool]);
-export const propTypesBarProps: any = PropTypes.instanceOf(Object);
-export const propTypesClassName: any = PropTypes.string;
+export const propTypesVariant = ["filled", "gradient"] as const;
+export const propTypesColor = propTypesColors;
+export const propTypesSize = ["sm", "md", "lg"] as const;
+export const propTypesValue = PropTypes.number;
+export const propTypesLabel = PropTypes.oneOfType([PropTypes.string, PropTypes.bool]);
+export const propTypesBarProps = PropTypes.instanceOf(Object);
+export const propTypesClassName = PropTypes.string;

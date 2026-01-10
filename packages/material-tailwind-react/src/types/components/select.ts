@@ -1,11 +1,11 @@
-import type { ReactElement, ReactNode } from "react";
+import type { ComponentProps, ReactElement, ReactNode } from "react";
 import PropTypes from "prop-types";
 
 // @floating-ui types
 import type { ContextData } from "@floating-ui/react";
 
 // generic types
-import type { colors, dismissType, animation, offsetType } from "../generic";
+import type { dismissType, animation, offsetType } from "../generic";
 import {
   propTypesColors,
   propTypesOffsetType,
@@ -19,9 +19,9 @@ import type React from "react";
  */
 
 // typescript types
-export type variant = "standard" | "outlined" | "static";
-export type size = "md" | "lg";
-export type color = colors;
+export type variant = typeof propTypesVariant[number];
+export type size = typeof propTypesSize[number];
+export type color = typeof propTypesColor[number];
 export type label = string;
 export type error = boolean;
 export type success = boolean;
@@ -34,9 +34,7 @@ export type dismiss = dismissType;
 export type animate = animation;
 export type autoHeight = boolean;
 export type lockScroll = boolean;
-export type labelProps = {
-  [key: string]: any;
-};
+export type labelProps = Omit<ComponentProps<"label">, "ref" | "children">;
 export type menuProps = {
   [key: string]: any;
 };
@@ -59,30 +57,30 @@ export type contextValue = {
 };
 
 // javascript prop-types
-export const propTypesVariant: any = ["standard", "outlined", "static"];
-export const propTypesSize: any = ["md", "lg"];
-export const propTypesColor: any = propTypesColors;
-export const propTypesLabel: any = PropTypes.string;
-export const propTypesError: any = PropTypes.bool;
-export const propTypesSuccess: any = PropTypes.bool;
-export const propTypesArrow: any = PropTypes.node;
-export const propTypesValue: any = PropTypes.string;
-export const propTypesOnChange: any = PropTypes.func;
-export const propTypesSelected: any = PropTypes.func;
-export const propTypesOffset: any = propTypesOffsetType;
-export const propTypesDismiss: any = propTypesDismissType;
-export const propTypesAnimate: any = propTypesAnimation;
-export const propTypesAutoHeight: any = PropTypes.bool;
-export const propTypesLockScroll: any = PropTypes.bool;
-export const propTypesLabelProps: any = PropTypes.instanceOf(Object);
-export const propTypesMenuProps: any = PropTypes.instanceOf(Object);
-export const propTypesIndex: any = PropTypes.number;
-export const propTypesDisabled: any = PropTypes.bool;
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesName: any = PropTypes.string;
-export const propTypesChildren: any = PropTypes.node.isRequired;
-export const propTypesContainerProps: any = PropTypes.instanceOf(Object);
-export const propTypesContextValue: any = PropTypes.shape({
+export const propTypesVariant = ["standard", "outlined", "static"] as const;
+export const propTypesSize = ["md", "lg"] as const;
+export const propTypesColor = propTypesColors;
+export const propTypesLabel = PropTypes.string;
+export const propTypesError = PropTypes.bool;
+export const propTypesSuccess = PropTypes.bool;
+export const propTypesArrow = PropTypes.node;
+export const propTypesValue = PropTypes.string;
+export const propTypesOnChange = PropTypes.func;
+export const propTypesSelected = PropTypes.func;
+export const propTypesOffset = propTypesOffsetType;
+export const propTypesDismiss = propTypesDismissType;
+export const propTypesAnimate = propTypesAnimation;
+export const propTypesAutoHeight = PropTypes.bool;
+export const propTypesLockScroll = PropTypes.bool;
+export const propTypesLabelProps = PropTypes.instanceOf(Object);
+export const propTypesMenuProps = PropTypes.instanceOf(Object);
+export const propTypesIndex = PropTypes.number;
+export const propTypesDisabled = PropTypes.bool;
+export const propTypesClassName = PropTypes.string;
+export const propTypesName = PropTypes.string;
+export const propTypesChildren = PropTypes.node.isRequired;
+export const propTypesContainerProps = PropTypes.instanceOf(Object);
+export const propTypesContextValue = PropTypes.shape({
   selectedIndex: PropTypes.number.isRequired,
   setSelectedIndex: PropTypes.func.isRequired,
   activeIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.instanceOf(null)]),

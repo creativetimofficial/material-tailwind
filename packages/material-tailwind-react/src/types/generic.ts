@@ -1,33 +1,14 @@
 import PropTypes from "prop-types";
-import type { AnimatePresenceProps } from "framer-motion";
+import type { AnimatePresenceProps, Variant } from "framer-motion";
 import type { UseDismissProps } from "@floating-ui/react";
 
 // typescript types
-export type colors =
-  | "blue-gray"
-  | "gray"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
+export type colors = typeof propTypesColors[number];
 
 export type animation = {
-  initial?: object;
-  mount?: object;
-  unmount?: object;
+  initial?: Variant;
+  mount?: Variant;
+  unmount?: Variant;
 };
 
 export interface dismissType extends UseDismissProps {}
@@ -45,7 +26,7 @@ export interface NewAnimatePresenceProps extends Omit<AnimatePresenceProps, "chi
 }
 
 // javascript prop-types
-export const propTypesColors: string[] = [
+export const propTypesColors = [
   "blue-gray",
   "gray",
   "brown",
@@ -65,7 +46,7 @@ export const propTypesColors: string[] = [
   "purple",
   "pink",
   "red",
-];
+] as const;
 
 export const propTypesAnimation = PropTypes.shape({
   mount: PropTypes.instanceOf(Object),
@@ -98,7 +79,7 @@ export const propTypesOffsetType = PropTypes.oneOfType([
   }),
 ]);
 
-export const propTypesPlacements: string[] = [
+export const propTypesPlacements = [
   "top-start",
   "top",
   "top-end",
@@ -111,4 +92,4 @@ export const propTypesPlacements: string[] = [
   "left-start",
   "left",
   "left-end",
-];
+] as const;

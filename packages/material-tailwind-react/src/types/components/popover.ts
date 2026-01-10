@@ -44,19 +44,19 @@ export type className = string;
 export type children = ReactNode;
 
 // javascript prop-types
-export const propTypesOpen: any = PropTypes.bool;
-export const propTypesHandler: any = PropTypes.func;
-export const propTypesPlacement: any = propTypesPlacements;
-export const propTypesOffset: any = propTypesOffsetType;
-export const propTypesDismiss: any = propTypesDismissType;
-export const propTypesAnimate: any = propTypesAnimation;
-export const propTypesContent: any = PropTypes.node;
-export const propTypesInteractive: any = PropTypes.bool;
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesChildren: any = PropTypes.node.isRequired;
-export const propTypesContextValue: any = PropTypes.shape({
+export const propTypesOpen = PropTypes.bool;
+export const propTypesHandler = PropTypes.func;
+export const propTypesPlacement = propTypesPlacements;
+export const propTypesOffset = propTypesOffsetType;
+export const propTypesDismiss = propTypesDismissType;
+export const propTypesAnimate = propTypesAnimation;
+export const propTypesContent = PropTypes.node;
+export const propTypesInteractive = PropTypes.bool;
+export const propTypesClassName = PropTypes.string;
+export const propTypesChildren = PropTypes.node.isRequired;
+export const propTypesContextValue = PropTypes.shape({
   open: PropTypes.bool.isRequired,
-  strategy: PropTypes.oneOf(["fixed", "absolute"]).isRequired,
+  strategy: PropTypes.oneOf(["fixed", "absolute"] satisfies Strategy[]).isRequired,
   x: PropTypes.number,
   y: PropTypes.number,
   context: PropTypes.instanceOf(Object).isRequired,

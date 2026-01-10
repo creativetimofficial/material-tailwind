@@ -14,7 +14,6 @@ import type {
 import type { dismissType, animation, offsetType } from "../generic";
 import {
   propTypesOffsetType,
-  propTypesDismissType,
   propTypesAnimation,
   propTypesPlacements,
 } from "../generic";
@@ -61,18 +60,26 @@ export type contextValue = {
 };
 
 // javascript prop-types
-export const propTypesOpen: any = PropTypes.bool;
-export const propTypesHandler: any = PropTypes.func;
-export const propTypesPlacement: any = propTypesPlacements;
-export const propTypesOffset: any = propTypesOffsetType;
-export const propTypesDismiss: any = PropTypes.shape({
+export const propTypesOpen = PropTypes.bool;
+export const propTypesHandler = PropTypes.func;
+export const propTypesPlacement = propTypesPlacements;
+export const propTypesOffset = propTypesOffsetType;
+export const propTypesDismiss = PropTypes.shape({
   itemPress: PropTypes.bool,
   enabled: PropTypes.bool,
   escapeKey: PropTypes.bool,
   referencePress: PropTypes.bool,
-  referencePressEvent: PropTypes.oneOf(["pointerdown", "mousedown", "click"]),
+  referencePressEvent: PropTypes.oneOf([
+    "pointerdown",
+    "mousedown",
+    "click",
+  ] satisfies dismiss["referencePressEvent"][]),
   outsidePress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
-  outsidePressEvent: PropTypes.oneOf(["pointerdown", "mousedown", "click"]),
+  outsidePressEvent: PropTypes.oneOf([
+    "pointerdown",
+    "mousedown",
+    "click",
+  ] satisfies dismiss["outsidePressEvent"][]),
   ancestorScroll: PropTypes.bool,
   bubbles: PropTypes.oneOfType([
     PropTypes.bool,
@@ -82,16 +89,16 @@ export const propTypesDismiss: any = PropTypes.shape({
     }),
   ]),
 });
-export const propTypesAnimate: any = propTypesAnimation;
-export const propTypesLockScroll: any = PropTypes.bool;
-export const propTypesDisabled: any = PropTypes.bool;
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesChildren: any = PropTypes.node.isRequired;
-export const propTypesContextValue: any = PropTypes.shape({
+export const propTypesAnimate = propTypesAnimation;
+export const propTypesLockScroll = PropTypes.bool;
+export const propTypesDisabled = PropTypes.bool;
+export const propTypesClassName = PropTypes.string;
+export const propTypesChildren = PropTypes.node.isRequired;
+export const propTypesContextValue = PropTypes.shape({
   open: PropTypes.bool.isRequired,
   handler: PropTypes.func.isRequired,
   setInternalOpen: PropTypes.func.isRequired,
-  strategy: PropTypes.oneOf(["fixed", "absolute"]).isRequired,
+  strategy: PropTypes.oneOf(["fixed", "absolute"] satisfies contextValue["strategy"][]).isRequired,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired,
   reference: PropTypes.func.isRequired,
