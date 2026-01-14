@@ -137,7 +137,7 @@ export const input: InputStylesType = {
         color: "peer-placeholder-shown:text-blue-gray-500",
         lineHeight: "leading-tight peer-focus:leading-tight",
         disabled:
-          "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500",
+          "peer-disabled:peer-placeholder-shown:text-blue-gray-500",
         transition: "transition-all",
       },
       icon: {
