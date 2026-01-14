@@ -46,7 +46,7 @@ export const dialog: DialogStylesType = {
       backdrop: {
         display: "grid",
         placeItems: "place-items-center",
-        position: "fixed",
+        position: "relative",
         top: 0,
         left: 0,
         width: "w-screen",
