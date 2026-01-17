@@ -647,10 +647,810 @@ Use this dialog component for connecting a Web 3.0 wallet in a web application. 
   </div>
 </div>
 ```
+</CodePreview>
 
+
+---
+
+<CodePreview
+  id="add-product-dialog"
+  link="dialog#add-product-dialog"
+  component={<HTMLDialogExamples.AddProductDialog/>}
+>
+```html
+      <button
+        data-ripple-light="true"
+        data-dialog-target="add-product-dialog"
+        className="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      >
+        Add Product
+      </button>
+      <div
+        data-dialog-backdrop="add-product-dialog"
+        data-dialog-backdrop-close="true"
+        className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+      >
+        <div
+          data-dialog="add-product-dialog"
+          className="relative m-4 w-full md:max-w-[33rem] rounded-lg bg-white p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+        >
+          <div className="relative m-0 block shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+            <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+              Manage Item
+            </h4>
+            <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+              Keep your records up-to-date and organized.
+            </p>
+            <button
+              className="!absolute right-3.5 top-3.5 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-ripple-dark="true"
+              data-dialog-close="true"
+            >
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                  className="h-4 w-4 stroke-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div className="relative space-y-4 p-4 pb-6 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+            <div>
+              <p className="mb-2 block text-left font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased">
+                Name
+              </p>
+              <div className="w-full">
+                <div className="relative h-10 w-full min-w-[200px]">
+                  <input
+                    className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                    placeholder=" "
+                  />
+                  <label className="before:content[' '] after:content[' '] pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:border-blue-gray-200 before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-gray-900 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                    eg. White Shoes
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p className="mb-2 block text-left font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased">
+                Category
+              </p>
+              <div className="relative h-10 w-full min-w-[200px]">
+                <select className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-gray-900 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+                  <option value="clothing">Clothing</option>
+                  <option value="fashion">Fashion</option>
+                  <option value="watches">Watches</option>
+                </select>
+                <label className="before:content[' '] after:content[' '] pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:border-blue-gray-200 before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:border-gray-900 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                  Select a City
+                </label>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <div className="w-full">
+                <p className="mb-2 block text-left font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased">
+                  Weight
+                </p>
+                <div className="relative h-10 w-full min-w-[200px]">
+                  <input
+                    className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                    placeholder=" "
+                  />
+                  <label className="before:content[' '] after:content[' '] pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:border-blue-gray-200 before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-gray-900 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                    eg. 8.8oz | 250g
+                  </label>
+                </div>
+              </div>
+              <div className="w-full">
+                <p className="mb-2 block text-left font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased">
+                  Size
+                </p>
+                <div className="relative h-10 w-full min-w-[200px]">
+                  <input
+                    className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                    placeholder=" "
+                  />
+                  <label className="before:content[' '] after:content[' '] pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:border-blue-gray-200 before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-gray-900 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                    eg. US 8
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p className="mb-2 block text-left font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased">
+                Description (Optional)
+              </p>
+              <div className="w-full">
+                <div className="relative w-full min-w-[200px]">
+                  <textarea
+                    className="peer h-full min-h-[100px] w-full resize-none rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:resize-none disabled:border-0 disabled:bg-blue-gray-50"
+                    placeholder=""
+                    rows="7"
+                  ></textarea>
+                  <label className="before:content[' '] after:content[' '] pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:border-blue-gray-200 before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:border-gray-900 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                    More details about product.
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+            <button
+              className="ml-auto select-none rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-ripple-light="true"
+              data-dialog-close="true"
+            >
+              Add product
+            </button>
+          </div>
+        </div>
+      </div>
+```
 </CodePreview>
 
 ---
+
+<CodePreview
+  id="delivery-method-dialog"
+  link="dialog#delivery-method-dialog"
+  component={<HTMLDialogExamples.DeliveryMethodDialog/>}
+>
+```html
+  <button
+        data-ripple-light="true"
+        data-dialog-target="delivery-method-dialog"
+        className="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      >
+        Delivery Method Dialog
+      </button>
+      <div
+        data-dialog-backdrop="delivery-method-dialog"
+        data-dialog-backdrop-close="true"
+        className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+      >
+        <div
+          data-dialog="delivery-method-dialog"
+          className="relative m-4 mx-auto flex w-full max-w-[33.2rem] flex-col rounded-lg bg-white p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+        >
+          <div className="relative m-0 block shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+            <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+              Delivery Method
+            </h4>
+            <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+              Please select your preferred delivery method for your order.
+            </p>
+            <button
+              className="!absolute right-3.5 top-3.5 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-ripple-dark="true"
+              data-dialog-close="true"
+            >
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                  className="h-4 w-4 stroke-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div className="relative p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+            <div className="space-y-4">
+              <div>
+                <input
+                  type="radio"
+                  id="standard"
+                  name="hosting"
+                  className="peer hidden"
+                  value="standard"
+                />
+                <label
+                  htmlFor="standard"
+                  className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 ring-1 ring-transparent peer-checked:border-gray-900 peer-checked:ring-gray-900"
+                >
+                  <div className="block">
+                    <p className="block font-sans text-base font-semibold leading-relaxed text-inherit antialiased">
+                      Standard Delivery
+                    </p>
+                    <p className="block font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+                      5-7 business days.{" "}
+                      <strong className="text-gray-900">Free</strong>
+                    </p>
+                  </div>
+                </label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="express"
+                  name="hosting"
+                  className="peer hidden"
+                  value="express"
+                  defaultChecked
+                />
+                <label
+                  htmlFor="express"
+                  className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 ring-1 ring-transparent peer-checked:border-gray-900 peer-checked:ring-gray-900"
+                >
+                  <div className="block">
+                    <p className="block font-sans text-base font-semibold leading-relaxed text-inherit antialiased">
+                      Express Delivery
+                    </p>
+                    <p className="block font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+                      2-3 business days.{" "}
+                      <strong className="text-gray-900">$10.00</strong>
+                    </p>
+                  </div>
+                </label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="store"
+                  name="hosting"
+                  className="peer hidden"
+                  value="store"
+                />
+                <label
+                  htmlFor="store"
+                  className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 ring-1 ring-transparent peer-checked:border-gray-900 peer-checked:ring-gray-900"
+                >
+                  <div className="block">
+                    <p className="block font-sans text-base font-semibold leading-relaxed text-inherit antialiased">
+                      Pickup In-Store
+                    </p>
+                    <p className="block font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+                      Available for pickup within 24 hours.{" "}
+                      <strong className="text-gray-900">Free</strong>
+                    </p>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+            <button
+              className="ml-auto select-none rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-ripple-light="true"
+              data-dialog-close="true"
+            >
+              confirm delivery method
+            </button>
+          </div>
+        </div>
+      </div>
+```
+</CodePreview>
+
+---
+
+<CodePreview
+  id="select-categories-dialog"
+  link="dialog#select-categories-dialog"
+  component={<HTMLDialogExamples.SelectCategoriesDialog/>}
+>
+```html
+      <button
+        data-ripple-light="true"
+        data-dialog-target="select-categories-dialog"
+        className="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      >
+        Select Categories Dialog
+      </button>
+      <div
+        data-dialog-backdrop="select-categories-dialog"
+        data-dialog-backdrop-close="true"
+        className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+      >
+        <div
+          data-dialog="select-categories-dialog"
+          className="relative m-4 mx-auto flex w-full max-w-[33.2rem] flex-col rounded-lg bg-white p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+        >
+          <div className="relative m-0 block shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+            <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+              Select Categories
+            </h4>
+            <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+              Categories help you organize your contacts based on their
+              interests and interactions.
+            </p>
+            <button
+              className="!absolute right-3.5 top-3.5 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-ripple-dark="true"
+              data-dialog-close="true"
+            >
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                  className="h-4 w-4 stroke-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div className="relative space-y-4 p-4 px-2 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+            <div className="inline-flex items-center">
+              <label
+                className="relative -mt-5 flex cursor-pointer items-center rounded-full p-3"
+                htmlFor="ripple-on"
+                data-ripple-dark="true"
+              >
+                <input
+                  type="checkbox"
+                  className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                  id="ripple-on"
+                />
+                <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-3.5 w-3.5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="1"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </span>
+              </label>
+              <label
+                className="mt-px cursor-pointer select-none font-light text-gray-700"
+                htmlFor=":r6:"
+              >
+                <div>
+                  <p className="block font-sans text-base font-medium text-blue-gray-900 antialiased">
+                    Updates
+                  </p>
+                  <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+                    Receive the latest news and updates.
+                  </p>
+                </div>
+              </label>
+            </div>
+            <div className="inline-flex items-center">
+              <label
+                className="relative -mt-5 flex cursor-pointer items-center rounded-full p-3"
+                htmlFor="ripple-on2"
+                data-ripple-dark="true"
+              >
+                <input
+                  type="checkbox"
+                  className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                  id="ripple-on2"
+                />
+                <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-3.5 w-3.5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="1"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </span>
+              </label>
+              <label
+                className="mt-px cursor-pointer select-none font-light text-gray-700"
+                htmlFor=":r7:"
+              >
+                <div>
+                  <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+                    Leads
+                  </p>
+                  <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+                    Potential clients and interested parties.
+                  </p>
+                </div>
+              </label>
+            </div>
+            <div className="inline-flex items-center">
+              <label
+                className="relative -mt-5 flex cursor-pointer items-center rounded-full p-3"
+                htmlFor="ripple-on3"
+                data-ripple-dark="true"
+              >
+                <input
+                  type="checkbox"
+                  className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                  id="ripple-on3"
+                />
+                <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-3.5 w-3.5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="1"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </span>
+              </label>
+              <label
+                className="mt-px cursor-pointer select-none font-light text-gray-700"
+                htmlFor=":r8:"
+              >
+                <div>
+                  <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+                    Webinars
+                  </p>
+                  <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+                    Interested in attending webinars and online events.
+                  </p>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+            <button
+              className="ml-auto select-none rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-ripple-light="true"
+              data-dialog-close="true"
+            >
+              save categories
+            </button>
+          </div>
+        </div>
+      </div>
+```
+</CodePreview>
+
+---
+
+
+<CodePreview
+  id="order-details-dialog"
+  link="dialog#order-details-dialog"
+  component={<HTMLDialogExamples.OrderDetailsDialog/>}
+>
+```html
+     <button
+        data-ripple-light="true"
+        data-dialog-target="order-details-dialog"
+        className="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      >
+        Order Details Dialog
+      </button>
+      <div
+        data-dialog-backdrop="order-details-dialog"
+        data-dialog-backdrop-close="true"
+        className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+      >
+        <div
+          data-dialog="order-details-dialog"
+          className="relative m-4 mx-auto flex w-full max-w-[33.2rem] flex-col rounded-lg bg-white p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+        >
+          <div className="relative m-0 block shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+            <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+              Order Details
+            </h4>
+            <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+              Please select your preferred delivery method for your order.
+            </p>
+            <button
+              className="!absolute right-3.5 top-3.5 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-ripple-dark="true"
+              data-dialog-close="true"
+            >
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                  className="h-4 w-4 stroke-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div className="relative mx-2 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+            <ul className="flex w-full flex-col">
+              <li className="relative flex flex-col gap-2">
+                <span className="absolute left-0 grid justify-center bg-transparent transition-opacity duration-200">
+                  <span className="h-full w-0.5 bg-blue-gray-100"></span>
+                </span>
+                <div className="flex items-center gap-4">
+                  <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-2 text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      data-slot="icon"
+                      className="h-4 w-4"
+                    >
+                      <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"></path>
+                      <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z"></path>
+                    </svg>
+                  </span>
+                  <p className="block font-sans text-base font-semibold leading-relaxed text-blue-gray-900 antialiased">
+                    $2,400, Design Changes
+                  </p>
+                </div>
+                <div className="-mt-2 flex gap-4 pb-8">
+                  <span className="pointer-events-none invisible h-full flex-shrink-0"></span>
+                  <div>
+                    <p className="block pl-8 font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+                      22 Dec 6:20 PM
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li className="relative flex flex-col gap-2">
+                <span className="absolute left-0 grid justify-center bg-transparent transition-opacity duration-200">
+                  <span className="h-full w-0.5 bg-blue-gray-100"></span>
+                </span>
+                <div className="flex items-center gap-4">
+                  <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-2 text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      data-slot="icon"
+                      className="h-4 w-4"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.25 9a6.75 6.75 0 0 1 13.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 0 1-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 1 1-7.48 0 24.585 24.585 0 0 1-4.831-1.244.75.75 0 0 1-.298-1.205A8.217 8.217 0 0 0 5.25 9.75V9Zm4.502 8.9a2.25 2.25 0 1 0 4.496 0 25.057 25.057 0 0 1-4.496 0Z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p className="block font-sans text-base font-semibold leading-relaxed text-blue-gray-900 antialiased">
+                    New order #1832412
+                  </p>
+                </div>
+                <div className="-mt-2 flex gap-4 pb-8">
+                  <span className="pointer-events-none invisible h-full flex-shrink-0"></span>
+                  <div>
+                    <p className="block pl-8 font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+                      21 Dec 8:20 PM
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li className="relative flex flex-col gap-2">
+                <span className="absolute left-0 grid justify-center bg-transparent transition-opacity duration-200">
+                  <span className="h-full w-0.5 bg-blue-gray-100"></span>
+                </span>
+                <div className="flex items-center gap-4">
+                  <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-2 text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      data-slot="icon"
+                      className="h-4 w-4"
+                    >
+                      <path d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 0 1-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.323.152-.691.546-1.004ZM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 0 1-.921.42Z"></path>
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v.816a3.836 3.836 0 0 0-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 0 1-.921-.421l-.879-.66a.75.75 0 0 0-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 0 0 1.5 0v-.81a4.124 4.124 0 0 0 1.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 0 0-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 0 0 .933-1.175l-.415-.33a3.836 3.836 0 0 0-1.719-.755V6Z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p className="block font-sans text-base font-semibold leading-relaxed text-blue-gray-900 antialiased">
+                    Payment Completed
+                  </p>
+                </div>
+                <div className="-mt-2 flex gap-4">
+                  <span className="pointer-events-none invisible h-full flex-shrink-0"></span>
+                  <div>
+                    <p className="block pl-8 font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+                      17 Dec 4:20 PM
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center justify-end text-blue-gray-500">
+            <button
+              className="mr-auto select-none rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-ripple-light="true"
+              data-dialog-close="true"
+            >
+              more details
+            </button>
+          </div>
+        </div>
+      </div>
+```
+</CodePreview>
+
+---
+
+<CodePreview
+  id="upload-progress-dialog"
+  link="dialog#upload-progress-dialog"
+  component={<HTMLDialogExamples.UploadProgressDialog/>}
+>
+```html
+      <button
+        data-ripple-light="true"
+        data-dialog-target="upload-progress-dialog"
+        className="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      >
+        Upload Progress Dialog
+      </button>
+      <div
+        data-dialog-backdrop="upload-progress-dialog"
+        data-dialog-backdrop-close="true"
+        className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+      >
+        <div
+          data-dialog="upload-progress-dialog"
+          className="relative m-4 w-full min-w-[33.3%] rounded-lg bg-white p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl md:max-w-[39.8rem]"
+        >
+          <div className="relative m-0 block shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+            <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+              Upload Progress
+            </h4>
+            <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+              Please wait while we process your request. You can track the
+              upload progress below.
+            </p>
+            <button
+              className="!absolute right-3.5 top-3.5 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-ripple-dark="true"
+              data-dialog-close="true"
+            >
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                  className="h-4 w-4 stroke-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div className="relative p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+            <div className="w-full">
+              <div className="mb-2 flex items-center justify-between gap-4">
+                <p className="block font-sans text-sm font-semibold leading-relaxed tracking-normal text-blue-gray-900 antialiased">
+                  Uploading...
+                </p>
+                <p className="block font-sans text-sm font-semibold leading-relaxed tracking-normal text-blue-gray-900 antialiased">
+                  50%
+                </p>
+              </div>
+              <div className="flex-start flex h-2.5 w-full overflow-hidden rounded-full bg-blue-gray-50 font-sans text-xs font-medium">
+                <div className="flex h-full w-1/2 items-center justify-center overflow-hidden break-all rounded-full bg-gray-900 text-white"></div>
+              </div>
+            </div>
+            <div className="mt-6 flex gap-16">
+              <div>
+                <p className="block font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+                  File Name
+                </p>
+                <p className="block font-sans text-base font-semibold leading-relaxed text-blue-gray-900 antialiased">
+                  project_proposal.pdf
+                </p>
+              </div>
+              <div>
+                <p className="block font-sans text-base font-normal leading-relaxed text-gray-600 antialiased">
+                  File Size
+                </p>
+                <p className="block font-sans text-base font-semibold leading-relaxed text-blue-gray-900 antialiased">
+                  10 MB
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center justify-between gap-4 p-4 text-blue-gray-500">
+            <p className="flex gap-2 font-sans text-sm font-normal leading-normal text-gray-600 antialiased md:items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+                className="h-5 w-5 text-gray-900"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Closing this window may interrupt the upload process.
+            </p>
+            <button
+              className="w-full select-none rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:max-w-fit"
+              type="button"
+              data-ripple-light="true"
+              data-dialog-close="true"
+            >
+              cancel upload
+            </button>
+          </div>
+        </div>
+      </div>
+```
+</CodePreview>
+
+---
+
 
 ## Dialog Trigger Data Attributes
 
