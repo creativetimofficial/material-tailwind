@@ -26,6 +26,11 @@ const nextConfig = {
         destination: "/docs/react/installation",
         permanent: true,
       },
+      {
+        source: "/docs/react/guide/genezio",
+        destination: "/docs/react/installation",
+        permanent: true,
+      },
     ];
   },
   // async rewrites() {

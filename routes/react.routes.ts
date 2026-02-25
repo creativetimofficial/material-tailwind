@@ -60,10 +60,6 @@ export const routes = [
         name: "Gatsby",
         route: "guide/gatsby",
       },
-      {
-        name: "Genezio",
-        route: "guide/genezio",
-      },
     ],
   },
   {
