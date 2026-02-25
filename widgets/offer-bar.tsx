@@ -53,7 +53,7 @@ export function OfferBar() {
           variant="ghost"
           className="w-full justify-center rounded-none bg-gray-900 text-white"
         >
-          <div className="relative flex flex-wrap items-center justify-center gap-2 !text-blue-gray-900">
+          <div className="relative flex flex-wrap items-center justify-center gap-2 !text-white">
             <div className="flex items-center gap-2">
               <a href="https://www.creative-tim.com/ui?ref=material-tailwind-offer-bar" className="hover:text-white transition-colors" target="_blank">
               🔥🔥🔥 Material Tailwind is joining <span className="font-bold">Creative Tim UI</span> - 300+ shadcn/ui Blocks ready for v0, Lovable, Replit, Registry & MCPs. Get details here.
