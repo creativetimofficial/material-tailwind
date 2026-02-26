@@ -536,6 +536,8 @@ export const getStaticProps = async ({ params: { slug } }) => {
       remarkPlugins: [remarkGfm],
       development: false,
     },
+    blockJS: false,
+    blockDangerousJS: false,
   });
 
   return {
