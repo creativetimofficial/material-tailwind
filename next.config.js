@@ -2,7 +2,7 @@
 
 const isProd = process.env.NODE_ENV === "production";
 const nextConfig = {
-  transpilePackages: ["next-mdx-remote"],
+  transpilePackages: ["next-mdx-remote-client"],
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
 
