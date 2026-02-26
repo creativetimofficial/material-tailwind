@@ -1,12 +1,11 @@
 interface Props {
   name: string;
-  colors: {
-    name: number;
-    hex: string;
-  };
+  colors?: Record<string, string>;
 }
 
 export function ColorPalette({ name, colors }: Props) {
+  const colorEntries = colors ? Object.entries(colors) : [];
+
   return (
     <div className="flex flex-col space-y-1.5 text-xs">
       <div className="flex h-10 flex-col justify-center">
@@ -15,7 +14,7 @@ export function ColorPalette({ name, colors }: Props) {
         </div>
       </div>
       <div className="grid min-w-0 flex-1 grid-cols-5 gap-x-4 gap-y-3 2xl:grid-cols-10 2xl:gap-x-2">
-        {Object.entries(colors).map((color, key) => {
+        {colorEntries.map((color, key) => {
           const level = color[0];
           const hex = color[1] as string;
 
