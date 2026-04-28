@@ -46,7 +46,7 @@ export function PageMap({ type, frontMatter }) {
     <aside className="sticky top-14 ml-auto hidden h-screen w-64 pb-4 pt-6 lg:block">
       <div className="h-screen w-64 overflow-y-scroll pb-40">
         <Link
-          href="https://www.creative-tim.com/ui/openclaw"
+          href="https://www.creative-tim.com/ui/openclaw?ref=material-tailwind.com"
           target="_blank"
           className="mb-8 block"
         >
