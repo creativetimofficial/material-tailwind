@@ -137,7 +137,15 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
         </Menu>
         <NavItem href="/pro">Pro</NavItem>
         <NavItem href="/blocks">Blocks</NavItem>
-        <NavItem href="/roots-of-ui-ux-design">Book</NavItem>
+        <a
+          href="https://www.creative-tim.com/ui/openclaw"
+          target="_blank"
+          className="focus:!outline-none"
+        >
+          <ListItem className="px-4 py-2.5 text-sm text-blue-gray-800 hover:text-primary">
+            AI Agents
+          </ListItem>
+        </a>
         <Menu>
           <MenuHandler>
             <div className="flex cursor-pointer items-center gap-1 rounded-lg px-4 py-2.5 text-sm leading-none text-blue-gray-800 transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-primary focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-primary active:bg-blue-gray-50 active:bg-opacity-80 active:text-primary">
@@ -145,6 +153,9 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
             </div>
           </MenuHandler>
           <MenuList>
+            <Link href="/roots-of-ui-ux-design" className=" focus:!outline-none">
+              <MenuItem>Book</MenuItem>
+            </Link>
             <Link href="/affiliate" className=" focus:!outline-none">
               <MenuItem>Affiliate Program</MenuItem>
             </Link>
@@ -226,7 +237,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
             size="sm"
             className="flex items-center justify-between bg-gray-900 py-2.5 normal-case"
           >
-            Pricing & FAQ
+            Pricing
           </Button>
         </Link>
       </div>
