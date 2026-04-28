@@ -45,6 +45,43 @@ export function PageMap({ type, frontMatter }) {
   return (
     <aside className="sticky top-14 ml-auto hidden h-screen w-64 pb-4 pt-6 lg:block">
       <div className="h-screen w-64 overflow-y-scroll pb-40">
+        <Link
+          href="https://www.creative-tim.com/ui/openclaw?ref=material-tailwind.com"
+          target="_blank"
+          className="mb-8 block"
+        >
+          <Card
+            color="transparent"
+            shadow={false}
+            className="border border-blue-gray-50 transition-shadow duration-300 hover:shadow-lg"
+          >
+            <CardHeader
+              floated={false}
+              shadow={false}
+              color="transparent"
+              className="mx-2 mb-0 mt-2"
+            >
+              <img
+                src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/creative-tim/agents-dashboard-thumb.jpg"
+                alt="AI Agents by Creative Tim"
+                className="h-full w-full object-cover"
+              />
+            </CardHeader>
+            <CardBody className="p-3">
+              <Typography variant="h6" color="blue-gray">
+                AI Agents by Creative Tim
+              </Typography>
+              <Typography
+                variant="small"
+                className="font-normal !text-gray-600"
+              >
+                Deploy autonomous AI agents that run 24/7 on secured servers.
+                Web chat, Telegram, skills system, and full Control UI. Powered
+                by OpenClaw.
+              </Typography>
+            </CardBody>
+          </Card>
+        </Link>
         <Typography
           variant="small"
           className="font-bold capitalize text-primary"
@@ -219,46 +256,6 @@ export function PageMap({ type, frontMatter }) {
             </Link>
           </li>
         </ul>
-        <Link
-          href="https://www.material-tailwind.com/roots-of-ui-ux-design?ref=material-tailwind"
-          target="_blank"
-        >
-          <Card
-            color="transparent"
-            shadow={false}
-            className="border border-blue-gray-50"
-          >
-            <CardHeader
-              floated={false}
-              shadow={false}
-              color="transparent"
-              className="mx-4 mb-0 mt-4"
-            >
-              <img
-                src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/ui-ux-book.jpeg"
-                alt="book ui ux by Creative Tim"
-                className="h-full w-full object-cover"
-              />
-            </CardHeader>
-            <CardBody className="p-4">
-              <Typography variant="h6" color="blue-gray">
-                Roots of UI/UX Design
-              </Typography>
-              <Typography
-                variant="small"
-                className="mb-2 block font-normal !text-gray-600"
-              >
-                By Creative Tim
-              </Typography>
-              <Typography
-                variant="small"
-                className="font-normal !text-gray-600"
-              >
-                Learn to Develop Intuitive Web Experiences
-              </Typography>
-            </CardBody>
-          </Card>
-        </Link>
       </div>
       <Dialog
         size="sm"
