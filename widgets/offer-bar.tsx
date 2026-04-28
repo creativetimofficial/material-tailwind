@@ -55,7 +55,7 @@ export function OfferBar() {
         >
           <div className="relative flex flex-wrap items-center justify-center gap-2 !text-white">
             <div className="flex items-center gap-2">
-              <a href="https://www.creative-tim.com/ui?ref=material-tailwind-offer-bar" className="hover:text-white transition-colors" target="_blank">
+              <a href="https://www.creative-tim.com/ui?ref=material-tailwind-offer-bar" className="text-white transition-colors" target="_blank">
               🔥🔥🔥 Material Tailwind is joining <span className="font-bold">Creative Tim UI</span> - 300+ shadcn/ui Blocks ready for v0, Lovable, Replit, Registry & MCPs. Get details here.
               </a>
              

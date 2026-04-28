@@ -234,11 +234,9 @@ export function PageMap({ type, frontMatter }) {
               color="transparent"
               className="mx-4 mb-0 mt-4"
             >
-              <Image
-                src="https://docs.material-tailwind.com/image/ui-ux-book.jpg"
-                alt="book"
-                width={768}
-                height={768}
+              <img
+                src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/material-tailwind/ui-ux-book.jpeg"
+                alt="book ui ux by Creative Tim"
                 className="h-full w-full object-cover"
               />
             </CardHeader>

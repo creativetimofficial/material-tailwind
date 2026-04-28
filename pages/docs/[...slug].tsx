@@ -8,9 +8,9 @@ import { useRouter } from "next/router";
 import fs from "fs";
 import matter from "gray-matter";
 import remarkGfm from "remark-gfm";
-import { MDXRemote } from "next-mdx-remote";
+import { MDXClient } from "next-mdx-remote-client";
 import rehypePrettyCode from "rehype-pretty-code";
-import { serialize } from "next-mdx-remote/serialize";
+import { serialize } from "next-mdx-remote-client/serialize";
 
 // @widgets
 import {
@@ -458,6 +458,23 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     ? headLink.replace("html/", "react/")
     : headLink;
 
+  if ("error" in mdxSource) {
+    return (
+      <>
+        <Head>
+          <title>Error</title>
+        </Head>
+        <OfferBar />
+        <div className="relative mb-8 flex min-h-[50vh] w-full items-center justify-center bg-white p-8">
+          <p className="text-red-600">
+            Failed to load this page: {String(mdxSource.error?.message ?? "Unknown error")}
+          </p>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -482,7 +499,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
               setMobileNav={setMobileNav}
             />
             <div className="mt-6 w-full lg:w-[60%] lg:px-6">
-              <MDXRemote {...mdxSource} components={components} />
+              <MDXClient {...mdxSource} components={components} />
             </div>
             <PageMap type={frameworkType} frontMatter={frontMatter} />
           </div>
@@ -530,11 +547,14 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
 
-  const mdxSource = await serialize(content, {
-    mdxOptions: {
-      rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeConfig]],
-      remarkPlugins: [remarkGfm],
-      development: false,
+  const mdxSource = await serialize({
+    source: content,
+    options: {
+      mdxOptions: {
+        rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeConfig]],
+        remarkPlugins: [remarkGfm],
+        development: false,
+      },
     },
   });
 
