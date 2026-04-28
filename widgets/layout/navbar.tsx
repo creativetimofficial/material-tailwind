@@ -138,7 +138,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
         <NavItem href="/pro">Pro</NavItem>
         <NavItem href="/blocks">Blocks</NavItem>
         <a
-          href="https://www.creative-tim.com/ui/openclaw"
+          href="https://www.creative-tim.com/ui/openclaw?ref=material-tailwind.com"
           target="_blank"
           className="focus:!outline-none"
         >
