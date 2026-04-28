@@ -1,14 +1,15 @@
 export const rehypePrettyCodeConfig = {
   theme: "github-dark",
+  bypassInlineCode: true,
   onVisitLine(node) {
     if (node.children.length === 0) {
       node.children = [{ type: "text", value: " " }];
     }
   },
   onVisitHighlightedLine(node) {
-    node.properties.className.push("highlighted");
+    node.properties.className = [...(node.properties.className ?? []), "highlighted"];
   },
-  onVisitHighlightedWord(node) {
+  onVisitHighlightedChars(node) {
     node.properties.className = ["word"];
   },
   keepBackground: false,

@@ -163,9 +163,9 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
       <div className="ml-2 flex items-center gap-2">
         <div className="group relative mt-1">
           <Input
-            type="email"
-            placeholder="Search"
-            className="!h-9 w-full border-[1.5px] !border-blue-gray-100 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
+            type="search"
+            placeholder="Search..."
+            className="!h-9 w-full border-[1.5px] !border-blue-gray-100 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:!opacity-100 placeholder:text-gray-500 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
             labelProps={{
               className: "hidden",
             }}
@@ -181,7 +181,6 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
           </div>
           <div className="absolute inset-0 w-full opacity-0">
             <Search />
-            ab
           </div>
         </div>
         <Tooltip content="Help with a star" placement="bottom" offset={-2.5}>

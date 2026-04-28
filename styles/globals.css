@@ -145,11 +145,11 @@
 }
 
 /* Rehype Pretty Code */
-[data-rehype-pretty-code-fragment] {
+[data-rehype-pretty-code-figure] {
   position: relative;
 }
 
-[data-rehype-pretty-code-fragment] pre {
+[data-rehype-pretty-code-figure] pre {
   background-color: #1e293b;
   max-height: 32rem;
   margin: 0;
@@ -159,14 +159,14 @@
   overflow: scroll;
 }
 
-.code-preview [data-rehype-pretty-code-fragment] pre {
+.code-preview [data-rehype-pretty-code-figure] pre {
   max-height: max-content;
   border: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-[data-rehype-pretty-code-fragment] .highlighted::after {
+[data-rehype-pretty-code-figure] .highlighted::after {
   content: " +";
   display: grid;
   align-items: center;
@@ -182,13 +182,13 @@
   background-color: rgba(74, 222, 128, 0.1);
 }
 
-[data-rehype-pretty-code-fragment] .word {
+[data-rehype-pretty-code-figure] .word {
   padding: 0.0875rem 0.125rem;
   border-radius: 0.25rem;
   background-color: rgba(74, 222, 128, 0.15);
 }
 
-[data-rehype-pretty-code-fragment] code {
+[data-rehype-pretty-code-figure] code {
   display: block;
   width: 100%;
   font-family: "Fira Code";
@@ -200,18 +200,18 @@ table tbody tr td code {
   font-weight: 600;
 }
 
-[data-rehype-pretty-code-fragment] code .line {
+[data-rehype-pretty-code-figure] code .line {
   display: inline-block;
   width: 100%;
   position: relative;
 }
 
-[data-rehype-pretty-code-fragment] .line.highlighted span {
+[data-rehype-pretty-code-figure] .line.highlighted span {
   position: relative;
   z-index: 2;
 }
 
-[data-rehype-pretty-code-fragment] code > .line::before {
+[data-rehype-pretty-code-figure] code > .line::before {
   counter-increment: line;
   content: counter(line);
   display: inline-block;
