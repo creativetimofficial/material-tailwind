@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import PropTypes from "prop-types";
 
 // generic types
-import type { colors } from "../generic";
 import { propTypesColors } from "../generic";
 
 /**
@@ -10,9 +9,9 @@ import { propTypesColors } from "../generic";
  */
 
 // typescript types
-export type variant = "filled" | "outlined" | "gradient" | "text";
-export type size = "sm" | "md" | "lg";
-export type color = "white" | "black" | colors;
+export type variant = typeof propTypesVariant[number];
+export type size = typeof propTypesSize[number];
+export type color = typeof propTypesColor[number];
 export type fullWidth = boolean;
 export type ripple = boolean;
 export type className = string;
@@ -20,11 +19,11 @@ export type children = ReactNode;
 export type loading = boolean;
 
 // javascript prop-types
-export const propTypesVariant: any = ["filled", "outlined", "gradient", "text"];
-export const propTypesSize: any = ["sm", "md", "lg"];
-export const propTypesColor: any = ["white", "black", ...propTypesColors];
-export const propTypesFullWidth: any = PropTypes.bool;
-export const propTypesRipple: any = PropTypes.bool;
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesChildren: any = PropTypes.node.isRequired;
-export const propTypesLoading: any = PropTypes.bool;
+export const propTypesVariant = ["filled", "outlined", "gradient", "text"] as const;
+export const propTypesSize = ["sm", "md", "lg"] as const;
+export const propTypesColor = ["white", "black", ...propTypesColors] as const;
+export const propTypesFullWidth = PropTypes.bool;
+export const propTypesRipple = PropTypes.bool;
+export const propTypesClassName = PropTypes.string;
+export const propTypesChildren = PropTypes.node.isRequired;
+export const propTypesLoading = PropTypes.bool;

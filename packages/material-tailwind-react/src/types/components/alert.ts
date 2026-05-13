@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import PropTypes from "prop-types";
 
 // generic types
-import type { colors, animation } from "../generic";
+import type { animation } from "../generic";
 import { propTypesColors, propTypesAnimation } from "../generic";
 
 /**
@@ -10,8 +10,8 @@ import { propTypesColors, propTypesAnimation } from "../generic";
  */
 
 // typescript types
-export type variant = "filled" | "gradient" | "outlined" | "ghost";
-export type color = colors;
+export type variant = typeof propTypesVariant[number];
+export type color = typeof propTypesColor[number];
 export type icon = ReactNode;
 export type open = boolean;
 export type onClose = () => void;
@@ -21,12 +21,12 @@ export type className = string;
 export type children = ReactNode;
 
 // javascript prop-types
-export const propTypesVariant: any = ["filled", "gradient", "outlined", "ghost"];
-export const propTypesColor: any = propTypesColors;
-export const propTypesIcon: any = PropTypes.node;
-export const propTypesOpen: any = PropTypes.bool;
-export const propTypesOnClose: any = PropTypes.func;
-export const propTypesAction: any = PropTypes.node;
-export const propTypesAnimate: any = propTypesAnimation;
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesChildren: any = PropTypes.node.isRequired;
+export const propTypesVariant = ["filled", "gradient", "outlined", "ghost"];
+export const propTypesColor = propTypesColors;
+export const propTypesIcon = PropTypes.node;
+export const propTypesOpen = PropTypes.bool;
+export const propTypesOnClose = PropTypes.func;
+export const propTypesAction = PropTypes.node;
+export const propTypesAnimate = propTypesAnimation;
+export const propTypesClassName = PropTypes.string;
+export const propTypesChildren = PropTypes.node.isRequired;

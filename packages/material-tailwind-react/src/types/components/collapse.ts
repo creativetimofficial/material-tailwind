@@ -16,7 +16,7 @@ export type open = boolean;
 export type animate = animation;
 
 // javascript prop-types
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesChildren: any = PropTypes.node.isRequired;
-export const propTypesOpen: any = PropTypes.bool.isRequired;
-export const propTypesAnimate: any = propTypesAnimation;
+export const propTypesClassName = PropTypes.string;
+export const propTypesChildren = PropTypes.node.isRequired;
+export const propTypesOpen = PropTypes.bool.isRequired;
+export const propTypesAnimate = propTypesAnimation;

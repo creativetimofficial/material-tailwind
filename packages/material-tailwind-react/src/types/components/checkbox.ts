@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import PropTypes from "prop-types";
 
 // generic types
-import type { colors } from "../generic";
 import { propTypesColors } from "../generic";
 
 /**
@@ -10,7 +9,7 @@ import { propTypesColors } from "../generic";
  */
 
 // typescript types
-export type color = colors;
+export type color = typeof propTypesColor[number];
 export type label = ReactNode;
 export type icon = ReactNode;
 export type ripple = boolean;
@@ -20,10 +19,10 @@ export type objectType = {
   [key: string]: any;
 };
 // javascript prop-types
-export const propTypesColor: any = propTypesColors;
-export const propTypesLabel: any = PropTypes.node;
-export const propTypesIcon: any = PropTypes.node;
-export const propTypesRipple: any = PropTypes.bool;
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesDisabled: any = PropTypes.bool;
-export const propTypesObject: any = PropTypes.instanceOf(Object);
+export const propTypesColor = propTypesColors;
+export const propTypesLabel = PropTypes.node;
+export const propTypesIcon = PropTypes.node;
+export const propTypesRipple = PropTypes.bool;
+export const propTypesClassName = PropTypes.string;
+export const propTypesDisabled = PropTypes.bool;
+export const propTypesObject = PropTypes.instanceOf(Object);

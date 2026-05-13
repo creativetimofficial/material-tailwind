@@ -13,8 +13,8 @@ export type ripple = boolean;
 export type children = ReactNode;
 
 // javascript prop-types
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesDisabled: any = PropTypes.bool;
-export const propTypesSelected: any = PropTypes.bool;
-export const propTypesRipple: any = PropTypes.bool;
-export const propTypesChildren: any = PropTypes.node.isRequired;
+export const propTypesClassName = PropTypes.string;
+export const propTypesDisabled = PropTypes.bool;
+export const propTypesSelected = PropTypes.bool;
+export const propTypesRipple = PropTypes.bool;
+export const propTypesChildren = PropTypes.node.isRequired;
