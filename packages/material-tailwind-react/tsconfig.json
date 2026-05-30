@@ -17,7 +17,7 @@
     "noUncheckedIndexedAccess": true,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "dist",
+    "outDir": "dist/commonjs",
     "declarationMap": true,
     "baseUrl": ".",
     "typeRoots": ["./node_modules/@types"]
