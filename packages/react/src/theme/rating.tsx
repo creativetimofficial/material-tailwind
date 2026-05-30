@@ -39,7 +39,7 @@ export const ratingTheme = {
     readonly: false,
   },
   baseStyle:
-    "inline-flex items-center [&_data-slot=icon]:w-5 [&_data-slot=icon]:h-5 [&_data-slot=icon]:text-inherit [&_data-slot=icon]:cursor-pointer",
+    "inline-flex items-center [&_[data-slot=icon]]:w-5 [&_[data-slot=icon]]:h-5 [&_[data-slot=icon]]:text-inherit [&_[data-slot=icon]]:cursor-pointer",
   color: {
     primary: "text-primary",
     secondary: "text-secondary",
