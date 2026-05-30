@@ -43,7 +43,7 @@ export const selectTriggerTheme = {
     ),
   },
   baseStyle:
-    "flex items-center gap-4 justify-between h-max w-full outline-none focus:outline-none text-foreground bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none text-start data-[shape=pill]:rounded-full [&_data-slot=placeholder]:text-foreground/60",
+    "flex items-center gap-4 justify-between h-max w-full outline-none focus:outline-none text-foreground bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none text-start data-[shape=pill]:rounded-full [&_[data-slot=placeholder]]:text-foreground/60",
   size: {
     sm: "text-sm rounded-md py-1.5 px-2 ring shadow-sm",
     md: "text-sm rounded-md py-2 px-2.5 ring shadow-sm",
