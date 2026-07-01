@@ -68,6 +68,7 @@ export const propTypesColors: string[] = [
 ];
 
 export const propTypesAnimation = PropTypes.shape({
+  initial: PropTypes.instanceOf(Object),
   mount: PropTypes.instanceOf(Object),
   unmount: PropTypes.instanceOf(Object),
 });
@@ -94,7 +95,7 @@ export const propTypesOffsetType = PropTypes.oneOfType([
   PropTypes.shape({
     mainAxis: PropTypes.number,
     crossAxis: PropTypes.number,
-    alignmentAxis: PropTypes.number,
+    alignmentAxis: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf([null])]),
   }),
 ]);
 

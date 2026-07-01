@@ -3,5 +3,5 @@ export default function filterArray(array) {
     return flat.concat(
       Array.isArray(toFlatten) ? filterArray(toFlatten) : toFlatten
     );
-  }, []);
+  }, []).filter((item) => item !== undefined && item !== null);
 }

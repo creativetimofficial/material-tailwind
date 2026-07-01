@@ -417,6 +417,7 @@ export default function Example() {
 }
 ```
 
+
 <br />
 
 ## @material-tailwind/html

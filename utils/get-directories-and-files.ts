@@ -1,16 +1,17 @@
-import { readdirSync } from "fs";
+import { readdirSync, statSync } from "fs";
 import path from "path";
-
 export default function getDirectoriesAndFile(dir: string) {
-  return dir === "documentation/.DS_Store"
-    ? null
-    : readdirSync(dir)
-        .map((file) => {
-          if (path.extname(file) === ".mdx") {
-            return [dir, file.replace(".mdx", "")];
-          } else {
-            return getDirectoriesAndFile(path.join(dir, file));
-          }
-        })
-        .filter((dir) => dir !== undefined);
+  if (path.basename(dir) === ".DS_Store") return null;
+  return readdirSync(dir)
+    .map((file) => {
+      const filePath = path.join(dir, file);
+      if (path.extname(file) === ".mdx") {
+        return [dir, file.replace(".mdx", "")];
+      } else if (statSync(filePath).isDirectory()) {
+        return getDirectoriesAndFile(filePath);
+      } else {
+        return undefined;
+      }
+    })
+    .filter((dir) => dir !== undefined && dir !== null);
 }
